@@ -20,7 +20,7 @@ return [
                 '05-volumes-and-networking' => ['title' => 'Volumes & Networking', 'status' => 'available'],
                 '06-docker-compose' => ['title' => 'Docker Compose — multi-container apps', 'status' => 'available'],
                 '07-best-practices-debugging' => ['title' => 'Best practices + debugging', 'status' => 'available'],
-                '08-real-project-laravel-dockerize' => ['title' => 'Real project: Dockerize a Laravel app', 'status' => 'coming_soon'],
+                '08-real-project-laravel-dockerize' => ['title' => 'Real project: Dockerize a Laravel app', 'status' => 'available'],
             ],
         ],
         'linux-shell' => ['title' => 'Linux & Shell Basics', 'tagline' => 'The language you use to talk to a server.', 'folder' => '02-linux-shell', 'status' => 'coming_soon', 'chapters' => []],
