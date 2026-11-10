@@ -14,7 +14,7 @@ return [
             'status' => 'available',
             'chapters' => [
                 '01-what-is-docker' => ['title' => 'What is Docker, and why does it matter?', 'status' => 'available'],
-                '02-install-and-first-container' => ['title' => 'Install Docker + your first container', 'status' => 'coming_soon'],
+                '02-install-and-first-container' => ['title' => 'Install Docker + your first container', 'status' => 'available'],
                 '03-images-vs-containers' => ['title' => 'Images vs Containers', 'status' => 'coming_soon'],
                 '04-dockerfile' => ['title' => 'Dockerfile — write your own image', 'status' => 'coming_soon'],
                 '05-volumes-and-networking' => ['title' => 'Volumes & Networking', 'status' => 'coming_soon'],
