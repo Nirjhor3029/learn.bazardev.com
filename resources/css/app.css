@@ -36,3 +36,5 @@
 .markdown-body summary { @apply cursor-pointer font-medium text-gray-700; }
 .markdown-body details[open] summary { @apply mb-2; }
 .markdown-body hr { @apply my-8 border-gray-100; }
+.markdown-body img { @apply my-4 max-w-full rounded-lg border border-gray-100; }
+.markdown-body iframe { @apply my-4 aspect-video h-auto w-full rounded-lg; }
