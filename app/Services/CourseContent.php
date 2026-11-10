@@ -29,7 +29,7 @@ class CourseContent
         return ['slug' => $slug, ...$course];
     }
 
-    public function chapter(string $courseSlug, string $chapterSlug): array
+    public function chapter(string $courseSlug, string $chapterSlug, string $lang = 'en'): array
     {
         $course = $this->course($courseSlug);
         $meta = $course['chapters'][$chapterSlug] ?? null;
@@ -38,7 +38,14 @@ class CourseContent
             throw new NotFoundHttpException;
         }
 
-        $path = rtrim(config('course.content_path'), '/')."/{$course['folder']}/{$chapterSlug}.md";
+        // English is the GitHub-readable master copy (devops-for-developers repo).
+        // Bangla is a website-only translation, kept inside this app so the content
+        // repo stays English-only for GitHub readers.
+        $path = $lang === 'bn'
+            ? resource_path("content/bn/{$course['folder']}/{$chapterSlug}.md")
+            : rtrim(config('course.content_path'), '/')."/{$course['folder']}/{$chapterSlug}.md";
+
+        $hasBn = File::exists(resource_path("content/bn/{$course['folder']}/{$chapterSlug}.md"));
 
         if (! File::exists($path)) {
             throw new NotFoundHttpException;
@@ -55,6 +62,8 @@ class CourseContent
             'title' => $meta['title'],
             'html' => $html,
             'course' => $course,
+            'lang' => $lang,
+            'has_bn' => $hasBn,
             'github_url' => config('course.github_repo')."/blob/main/{$course['folder']}/{$chapterSlug}.md",
             'prev' => $this->sibling($course, $slugs, $index - 1),
             'next' => $this->sibling($course, $slugs, $index + 1),

@@ -1,7 +1,7 @@
 <x-layout title="DevOps Shikhbo — Zero to Hero">
     <section class="mx-auto max-w-5xl px-4 pt-14 pb-10 text-center">
-        <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl">DevOps shikhun, <span class="text-blue-600">shuru theke</span></h1>
-        <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-500">Bangla te, practical project diye, GitHub + website — jekhane khushi porun.</p>
+        <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl">Learn DevOps, <span class="text-blue-600">from zero</span></h1>
+        <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-500">In English and Bangla, with real projects — read it on GitHub or right here.</p>
     </section>
 
     <section class="mx-auto max-w-5xl px-4 pb-20">

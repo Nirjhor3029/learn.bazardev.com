@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $title ?? 'DevOps Shikhbo' }} — learn.bazardev.com</title>
-    <meta name="description" content="Zero theke DevOps shikhun — Bangla te, practical project diye, free resource shoho.">
+    <meta name="description" content="Learn DevOps from zero — in English and Bangla, with real projects and free resources.">
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700,800" rel="stylesheet" />
     @vite(['resources/css/app.css'])
@@ -18,7 +18,7 @@
                 DevOps Shikhbo
             </a>
             <a href="https://github.com/Nirjhor3029/devops-for-developers" target="_blank" rel="noopener"
-               class="text-sm text-gray-500 hover:text-gray-900">GitHub e porun →</a>
+               class="text-sm text-gray-500 hover:text-gray-900">Read on GitHub →</a>
         </div>
     </header>
 
@@ -27,7 +27,7 @@
     </main>
 
     <footer class="mt-16 border-t border-gray-200 py-8 text-center text-sm text-gray-400">
-        Bangladesh er developer der jonno, free-e. &middot; learn.bazardev.com
+        Free, for developers in Bangladesh and beyond. &middot; learn.bazardev.com
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script>

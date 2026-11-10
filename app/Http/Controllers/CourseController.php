@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\CourseContent;
+use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class CourseController extends Controller
@@ -19,8 +20,10 @@ class CourseController extends Controller
         return view('courses.toc', ['course' => $this->content->course($course)]);
     }
 
-    public function chapter(string $course, string $chapter): View
+    public function chapter(Request $request, string $course, string $chapter): View
     {
-        return view('courses.chapter', $this->content->chapter($course, $chapter));
+        $lang = $request->query('lang') === 'bn' ? 'bn' : 'en';
+
+        return view('courses.chapter', $this->content->chapter($course, $chapter, $lang));
     }
 }
