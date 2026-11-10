@@ -33,7 +33,7 @@ return [
                 '02-files-and-directories' => ['title' => 'Working with files and directories', 'status' => 'available'],
                 '03-permissions-and-ownership' => ['title' => 'Permissions and ownership', 'status' => 'available'],
                 '04-users-groups-and-sudo' => ['title' => 'Users, groups, and sudo', 'status' => 'available'],
-                '05-processes-and-services' => ['title' => 'Processes and services (systemd)', 'status' => 'coming_soon'],
+                '05-processes-and-services' => ['title' => 'Processes and services (systemd)', 'status' => 'available'],
                 '06-package-management' => ['title' => 'Package management (apt)', 'status' => 'coming_soon'],
                 '07-pipes-redirection-text-tools' => ['title' => 'Pipes, redirection, and text tools', 'status' => 'coming_soon'],
                 '08-ssh-and-remote-access' => ['title' => 'SSH and remote access', 'status' => 'coming_soon'],
