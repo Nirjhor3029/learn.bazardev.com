@@ -30,7 +30,7 @@ return [
             'status' => 'available',
             'chapters' => [
                 '01-finding-your-way-around' => ['title' => 'Why Linux, and finding your way around', 'status' => 'available'],
-                '02-files-and-directories' => ['title' => 'Working with files and directories', 'status' => 'coming_soon'],
+                '02-files-and-directories' => ['title' => 'Working with files and directories', 'status' => 'available'],
                 '03-permissions-and-ownership' => ['title' => 'Permissions and ownership', 'status' => 'coming_soon'],
                 '04-users-groups-and-sudo' => ['title' => 'Users, groups, and sudo', 'status' => 'coming_soon'],
                 '05-processes-and-services' => ['title' => 'Processes and services (systemd)', 'status' => 'coming_soon'],
