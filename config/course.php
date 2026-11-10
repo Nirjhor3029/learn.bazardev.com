@@ -36,7 +36,7 @@ return [
                 '05-processes-and-services' => ['title' => 'Processes and services (systemd)', 'status' => 'available'],
                 '06-package-management' => ['title' => 'Package management (apt)', 'status' => 'available'],
                 '07-pipes-redirection-text-tools' => ['title' => 'Pipes, redirection, and text tools', 'status' => 'available'],
-                '08-ssh-and-remote-access' => ['title' => 'SSH and remote access', 'status' => 'coming_soon'],
+                '08-ssh-and-remote-access' => ['title' => 'SSH and remote access', 'status' => 'available'],
             ],
         ],
         'git-github' => ['title' => 'Git & GitHub (Advanced)', 'tagline' => 'Version control for working in a team, deep dive.', 'folder' => '03-git-github', 'status' => 'coming_soon', 'chapters' => []],
