@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Exam;
 use App\Services\Learning;
 use App\Services\Quiz;
 use Illuminate\Http\RedirectResponse;
@@ -16,7 +17,7 @@ use Illuminate\View\View;
  */
 class QuizController extends Controller
 {
-    public function __construct(private Quiz $quiz, private Learning $learning) {}
+    public function __construct(private Quiz $quiz, private Learning $learning, private Exam $exam) {}
 
     public function show(Request $request, string $course, string $chapter): View
     {
@@ -44,6 +45,7 @@ class QuizController extends Controller
             'best' => $user && ! $result ? $this->quiz->best($user, $course, $chapter) : null,
             'chapterInfo' => $this->learning->describe($course, $chapter),
             'next' => $next ? $this->learning->describe($course, $next) : null,
+            'examUrl' => ! $next && $this->exam->exists($course) ? route('exam.show', $course) : null,
         ]);
     }
 

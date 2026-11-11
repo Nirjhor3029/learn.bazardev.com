@@ -1,0 +1,354 @@
+[
+  {
+    "ref": "01-what-is-docker",
+    "q": { "en": "A teammate says \"a container is just a lightweight VM\". What is the most accurate correction?", "bn": "এক teammate বলল, “container মানে হালকা একটা VM”। সবচেয়ে সঠিক সংশোধন কোনটি?" },
+    "options": [
+      { "en": "A container shares the host's kernel and isolates processes, instead of virtualizing hardware and booting its own OS", "bn": "Container host-এর kernel share করে আর process আলাদা করে রাখে; hardware virtualize করে নিজের OS boot করে না" },
+      { "en": "A container has its own kernel but fewer drivers than a VM", "bn": "Container-এর নিজের kernel আছে, শুধু VM-এর চেয়ে driver কম" },
+      { "en": "A container is a VM without a network card", "bn": "Container মানে network card ছাড়া একটা VM" },
+      { "en": "A container is the same as a VM, but it only runs on Linux", "bn": "Container আর VM একই জিনিস, শুধু container কেবল Linux-এ চলে" }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "01-what-is-docker",
+    "q": { "en": "Which Docker part is a read-only blueprint that containers are created from?", "bn": "Docker-এর কোন অংশটা read-only blueprint, যা থেকে container তৈরি হয়?" },
+    "options": [
+      { "en": "The Docker Engine", "bn": "Docker Engine" },
+      { "en": "The image", "bn": "Image" },
+      { "en": "Docker Hub", "bn": "Docker Hub" },
+      { "en": "The Docker CLI", "bn": "Docker CLI" }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "01-what-is-docker",
+    "q": { "en": "Why can one server usually run far more containers than virtual machines?", "bn": "একটা server-এ VM-এর চেয়ে container সাধারণত অনেক বেশি চালানো যায় কেন?" },
+    "options": [
+      { "en": "Containers do not use any memory", "bn": "Container কোনো memory ব্যবহার করে না" },
+      { "en": "Virtual machines cannot run on servers", "bn": "Server-এ VM চলে না" },
+      { "en": "Containers share the host kernel, so none of them needs a full guest OS (MBs instead of GBs)", "bn": "Container-রা host kernel share করে, তাই কারো পুরো guest OS লাগে না (GB-র বদলে MB)" },
+      { "en": "Containers are compressed on disk", "bn": "Container disk-এ compress করা থাকে" }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "01-what-is-docker",
+    "q": { "en": "Which Linux kernel features do containers build on?", "bn": "Container কোন Linux kernel feature-এর উপর দাঁড়িয়ে আছে?" },
+    "options": [
+      { "en": "systemd and cron", "bn": "systemd আর cron" },
+      { "en": "apt and dpkg", "bn": "apt আর dpkg" },
+      { "en": "Only SELinux", "bn": "শুধু SELinux" },
+      { "en": "Namespaces and cgroups", "bn": "Namespaces আর cgroups" }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "02-install-and-first-container",
+    "q": { "en": "Running `docker run hello-world` a second time is almost instant. Why?", "bn": "`docker run hello-world` দ্বিতীয়বার চালালে প্রায় সাথে সাথে হয়ে যায়। কেন?" },
+    "options": [
+      { "en": "The first container is still running and is reused", "bn": "প্রথম container এখনও চলছে এবং সেটাই আবার ব্যবহার হয়" },
+      { "en": "The image is already cached locally, so there is nothing to download", "bn": "Image আগেই local-এ cache করা আছে, তাই নতুন করে download করতে হয় না" },
+      { "en": "Docker Hub answers faster the second time", "bn": "দ্বিতীয়বার Docker Hub দ্রুত সাড়া দেয়" },
+      { "en": "hello-world is built into the Docker Engine", "bn": "hello-world Docker Engine-এর ভেতরেই বানানো" }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "02-install-and-first-container",
+    "q": { "en": "Which command lists every container, including the ones that have stopped?", "bn": "কোন command সব container দেখায়, বন্ধ হয়ে যাওয়াগুলোসহ?" },
+    "options": [
+      { "en": "`docker ps`", "bn": "`docker ps`" },
+      { "en": "`docker ls`", "bn": "`docker ls`" },
+      { "en": "`docker ps -a`", "bn": "`docker ps -a`" },
+      { "en": "`docker images -a`", "bn": "`docker images -a`" }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "02-install-and-first-container",
+    "q": { "en": "Your nginx container is not behaving. Which command shows what it has printed so far?", "bn": "তোমার nginx container ঠিকমতো কাজ করছে না। এ পর্যন্ত সে কী print করেছে তা দেখতে কোন command?" },
+    "options": [
+      { "en": "`docker history my-nginx`", "bn": "`docker history my-nginx`" },
+      { "en": "`docker images my-nginx`", "bn": "`docker images my-nginx`" },
+      { "en": "`docker stop my-nginx`", "bn": "`docker stop my-nginx`" },
+      { "en": "`docker logs my-nginx`", "bn": "`docker logs my-nginx`" }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "02-install-and-first-container",
+    "q": { "en": "What does `docker rm -f my-nginx` do to a running container?", "bn": "চলমান একটা container-এ `docker rm -f my-nginx` কী করে?" },
+    "options": [
+      { "en": "Stops it and removes it in one step", "bn": "এক ধাপে থামায় আর মুছে দেয়" },
+      { "en": "Only forces a restart", "bn": "শুধু জোর করে restart করায়" },
+      { "en": "Removes the image it was started from", "bn": "যে image থেকে চালু হয়েছিল সেটা মুছে দেয়" },
+      { "en": "Removes its volumes and leaves it running", "bn": "এর volume মুছে দেয়, container চলতে থাকে" }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "03-images-vs-containers",
+    "q": { "en": "Two images both start from `ubuntu:22.04`. What does Docker do with that shared base layer?", "bn": "দুটো image-ই `ubuntu:22.04` থেকে শুরু। এই common base layer নিয়ে Docker কী করে?" },
+    "options": [
+      { "en": "Downloads it twice, once per image", "bn": "প্রতি image-এর জন্য একবার করে দুবার download করে" },
+      { "en": "Merges the two images into one", "bn": "দুটো image জুড়ে একটা বানিয়ে ফেলে" },
+      { "en": "Deletes it from the first image", "bn": "প্রথম image থেকে সেটা মুছে দেয়" },
+      { "en": "Downloads it once and reuses it for both", "bn": "একবারই download করে আর দুটোর জন্য reuse করে" }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "03-images-vs-containers",
+    "q": { "en": "`docker rmi nginx:1.27` refuses because a container is using the image. What is the right fix?", "bn": "একটা container image-টা ব্যবহার করছে বলে `docker rmi nginx:1.27` কাজ করছে না। ঠিক সমাধান কী?" },
+    "options": [
+      { "en": "Run `docker image prune` instead", "bn": "এর বদলে `docker image prune` চালানো" },
+      { "en": "Stop and remove the containers that use it, then try again", "bn": "যে container-গুলো এটা ব্যবহার করছে সেগুলো থামিয়ে মুছে আবার চেষ্টা করা" },
+      { "en": "Restart the Docker service", "bn": "Docker service restart করা" },
+      { "en": "Add `-it` to the command", "bn": "Command-এ `-it` যোগ করা" }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "03-images-vs-containers",
+    "q": { "en": "What are \"dangling images\", which `docker image prune` cleans up?", "bn": "“Dangling image” কী, যেগুলো `docker image prune` পরিষ্কার করে?" },
+    "options": [
+      { "en": "Images that are currently running", "bn": "যেসব image এখন চলছে" },
+      { "en": "Images larger than 1 GB", "bn": "১ GB-র চেয়ে বড় image" },
+      { "en": "Layers left over from old builds that nothing points to any more", "bn": "পুরনো build-এর পড়ে-থাকা layer, যেগুলোর দিকে আর কেউ নির্দেশ করে না" },
+      { "en": "Images you pulled from Docker Hub", "bn": "Docker Hub থেকে pull করা image" }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "03-images-vs-containers",
+    "q": { "en": "What does `docker cp my-nginx:/etc/nginx/nginx.conf ./nginx.conf` do?", "bn": "`docker cp my-nginx:/etc/nginx/nginx.conf ./nginx.conf` কী করে?" },
+    "options": [
+      { "en": "Copies the file out of the container onto your machine", "bn": "Container থেকে file-টা তোমার machine-এ copy করে আনে" },
+      { "en": "Copies your local file into the image permanently", "bn": "তোমার local file স্থায়ীভাবে image-এর ভেতরে ঢুকিয়ে দেয়" },
+      { "en": "Creates a second container named nginx.conf", "bn": "nginx.conf নামে দ্বিতীয় একটা container বানায়" },
+      { "en": "Copies the whole container to Docker Hub", "bn": "পুরো container-কে Docker Hub-এ copy করে" }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "04-dockerfile",
+    "q": { "en": "A Dockerfile has `COPY . .` before `RUN npm install`. What is the practical downside?", "bn": "একটা Dockerfile-এ `RUN npm install`-এর আগে `COPY . .` আছে। বাস্তব অসুবিধা কী?" },
+    "options": [
+      { "en": "The build always fails", "bn": "Build সবসময় fail করে" },
+      { "en": "Editing any line of code invalidates the cache and reinstalls every dependency", "bn": "Code-এর যেকোনো এক লাইন বদলালেই cache নষ্ট হয়ে সব dependency আবার install হয়" },
+      { "en": "The image becomes insecure", "bn": "Image নিরাপত্তাহীন হয়ে যায়" },
+      { "en": "npm ignores `package.json`", "bn": "npm `package.json` উপেক্ষা করে" }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "04-dockerfile",
+    "q": { "en": "Which file keeps `node_modules` and `.git` out of the build context?", "bn": "কোন file `node_modules` আর `.git`-কে build context-এর বাইরে রাখে?" },
+    "options": [
+      { "en": "`.gitignore`", "bn": "`.gitignore`" },
+      { "en": "`.dockerfile`", "bn": "`.dockerfile`" },
+      { "en": "`.dockerignore`", "bn": "`.dockerignore`" },
+      { "en": "`docker-compose.yml`", "bn": "`docker-compose.yml`" }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "04-dockerfile",
+    "q": { "en": "A Dockerfile has `ENTRYPOINT [\"ping\"]`. You run `docker run my-image example.com`. What executes?", "bn": "Dockerfile-এ `ENTRYPOINT [\"ping\"]` আছে। তুমি `docker run my-image example.com` চালালে কী চলবে?" },
+    "options": [
+      { "en": "`example.com` as a command, replacing `ping`", "bn": "`ping`-কে সরিয়ে `example.com` নিজেই একটা command হিসেবে" },
+      { "en": "Just `ping`, the extra word is ignored", "bn": "শুধু `ping`, বাড়তি শব্দটা উপেক্ষিত" },
+      { "en": "Docker reports an error", "bn": "Docker error দেখায়" },
+      { "en": "`ping example.com`, because arguments are appended to an ENTRYPOINT", "bn": "`ping example.com`, কারণ ENTRYPOINT-এর পেছনে argument জোড়া হয়" }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "04-dockerfile",
+    "q": { "en": "What does `WORKDIR /app` do?", "bn": "`WORKDIR /app` কী করে?" },
+    "options": [
+      { "en": "Copies your project into `/app` on your machine", "bn": "তোমার machine-এর `/app`-এ project copy করে" },
+      { "en": "Publishes the container's `/app` folder as a volume", "bn": "Container-এর `/app` folder-কে volume হিসেবে publish করে" },
+      { "en": "Starts the application in a new container", "bn": "একটা নতুন container-এ application চালু করে" },
+      { "en": "Sets the current folder inside the image for the instructions that follow", "bn": "পরের instruction-গুলোর জন্য image-এর ভেতরের current folder ঠিক করে" }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "05-volumes-and-networking",
+    "q": { "en": "Which flag mounts the named volume `db-data` where MySQL keeps its data?", "bn": "MySQL যেখানে data রাখে, সেখানে `db-data` named volume mount করার flag কোনটি?" },
+    "options": [
+      { "en": "`-v /var/lib/mysql:db-data`", "bn": "`-v /var/lib/mysql:db-data`" },
+      { "en": "`-v db-data:/var/lib/mysql`", "bn": "`-v db-data:/var/lib/mysql`" },
+      { "en": "`--network db-data`", "bn": "`--network db-data`" },
+      { "en": "`-p db-data:3306`", "bn": "`-p db-data:3306`" }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "05-volumes-and-networking",
+    "q": { "en": "What does `docker volume rm db-data` do?", "bn": "`docker volume rm db-data` কী করে?" },
+    "options": [
+      { "en": "Deletes the volume and the data in it", "bn": "Volume আর তার ভেতরের data মুছে দেয়" },
+      { "en": "Detaches it but keeps the data", "bn": "Detach করে, কিন্তু data রেখে দেয়" },
+      { "en": "Renames it", "bn": "নাম বদলায়" },
+      { "en": "Backs it up to Docker Hub", "bn": "Docker Hub-এ backup নেয়" }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "05-volumes-and-networking",
+    "q": { "en": "`docker exec -it app ping db` works on a custom network you created. What makes the name `db` resolve?", "bn": "তোমার বানানো custom network-এ `docker exec -it app ping db` কাজ করে। `db` নামটা resolve হয় কীভাবে?" },
+    "options": [
+      { "en": "Docker edits `/etc/hosts` on your host machine", "bn": "Docker তোমার host machine-এর `/etc/hosts` বদলে দেয়" },
+      { "en": "The public internet DNS knows every container name", "bn": "Public internet DNS সব container-এর নাম জানে" },
+      { "en": "Docker runs a built-in DNS server on every custom network", "bn": "প্রতিটা custom network-এ Docker একটা built-in DNS server চালায়" },
+      { "en": "The `EXPOSE` instruction registers the name", "bn": "`EXPOSE` instruction নামটা register করে" }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "05-volumes-and-networking",
+    "q": { "en": "For a database's files, which is the better fit, and why?", "bn": "Database-এর file-এর জন্য কোনটা ভালো, আর কেন?" },
+    "options": [
+      { "en": "A bind mount, because it is faster to type", "bn": "Bind mount, কারণ লিখতে সহজ" },
+      { "en": "Neither: databases must keep data inside the container", "bn": "কোনোটাই নয়: database-কে data container-এর ভেতরেই রাখতে হয়" },
+      { "en": "A bind mount to your project's `src` folder", "bn": "তোমার project-এর `src` folder-এ bind mount" },
+      { "en": "A named volume, because Docker manages it and it survives the container", "bn": "Named volume, কারণ Docker সেটা সামলায় আর container মুছলেও থেকে যায়" }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "06-docker-compose",
+    "q": { "en": "Which command stops and removes the containers of a Compose project but keeps its named volumes?", "bn": "কোন command একটা Compose project-এর container বন্ধ করে মুছে দেয়, কিন্তু named volume রেখে দেয়?" },
+    "options": [
+      { "en": "`docker compose down -v`", "bn": "`docker compose down -v`" },
+      { "en": "`docker compose down`", "bn": "`docker compose down`" },
+      { "en": "`docker compose rm --all`", "bn": "`docker compose rm --all`" },
+      { "en": "`docker compose build`", "bn": "`docker compose build`" }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "06-docker-compose",
+    "q": { "en": "In a Compose project, which hostname should the `app` service use to reach the MySQL service named `db`?", "bn": "Compose project-এ `db` নামের MySQL service-এ পৌঁছাতে `app` service কোন hostname ব্যবহার করবে?" },
+    "options": [
+      { "en": "`localhost`", "bn": "`localhost`" },
+      { "en": "`127.0.0.1`", "bn": "`127.0.0.1`" },
+      { "en": "`db`", "bn": "`db`" },
+      { "en": "The container's random ID", "bn": "Container-এর random ID" }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "06-docker-compose",
+    "q": { "en": "`app` crashes on start because MySQL is not ready yet, even with `depends_on: - db`. What is a proper fix?", "bn": "`depends_on: - db` থাকা সত্ত্বেও MySQL প্রস্তুত না হওয়ায় `app` চালুর সময় crash করে। ঠিক সমাধান কী?" },
+    "options": [
+      { "en": "Rename the service so it sorts first", "bn": "Service-এর নাম এমন দাও যাতে সে আগে সাজানো হয়" },
+      { "en": "Add `-v` to `docker compose up`", "bn": "`docker compose up`-এ `-v` দাও" },
+      { "en": "Add a `healthcheck` to `db` and use `condition: service_healthy` (or let the app retry the connection)", "bn": "`db`-তে `healthcheck` দিয়ে `condition: service_healthy` ব্যবহার করো (বা app-কে connection retry করতে দাও)" },
+      { "en": "Remove `depends_on`; it causes the crash", "bn": "`depends_on` মুছে দাও; ওটাই crash ঘটায়" }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "06-docker-compose",
+    "q": { "en": "Where in a Compose file do you declare that `db-data` is a named volume?", "bn": "Compose file-এর কোথায় ঘোষণা করা হয় যে `db-data` একটা named volume?" },
+    "options": [
+      { "en": "In a top-level `volumes:` section, outside `services:`", "bn": "`services:`-এর বাইরে, সবার উপরের স্তরের `volumes:` অংশে" },
+      { "en": "Inside the `ports:` list", "bn": "`ports:` list-এর ভেতরে" },
+      { "en": "In the `Dockerfile`", "bn": "`Dockerfile`-এ" },
+      { "en": "In a `.dockerignore` file", "bn": "`.dockerignore` file-এ" }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "07-best-practices-debugging",
+    "q": { "en": "Why is `node:20.11-alpine` a better base in production than `node:latest`?", "bn": "Production-এ `node:latest`-এর চেয়ে `node:20.11-alpine` ভালো base কেন?" },
+    "options": [
+      { "en": "`latest` cannot be pulled from Docker Hub", "bn": "`latest` Docker Hub থেকে pull করা যায় না" },
+      { "en": "Alpine images always run as root", "bn": "Alpine image সবসময় root হিসেবে চলে" },
+      { "en": "Pinned versions are not cached by Docker", "bn": "Pin করা version Docker cache করে না" },
+      { "en": "A pinned tag gives the same image every time, and alpine images are small", "bn": "Pin করা tag প্রতিবার একই image দেয়, আর alpine image ছোট" }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "07-best-practices-debugging",
+    "q": { "en": "Which Dockerfile line is a security mistake?", "bn": "Dockerfile-এর কোন লাইনটা নিরাপত্তার ভুল?" },
+    "options": [
+      { "en": "`ENV DB_PASSWORD=supersecret123`", "bn": "`ENV DB_PASSWORD=supersecret123`" },
+      { "en": "`USER appuser`", "bn": "`USER appuser`" },
+      { "en": "`COPY --from=build /app/dist ./dist`", "bn": "`COPY --from=build /app/dist ./dist`" },
+      { "en": "`HEALTHCHECK CMD curl -f http://localhost:3000/ || exit 1`", "bn": "`HEALTHCHECK CMD curl -f http://localhost:3000/ || exit 1`" }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "07-best-practices-debugging",
+    "q": { "en": "`docker inspect` shows `\"OOMKilled\": true` for a crashed container. What happened?", "bn": "Crash করা একটা container-এর `docker inspect`-এ `\"OOMKilled\": true` দেখাচ্ছে। কী ঘটেছে?" },
+    "options": [
+      { "en": "It was stopped by `docker stop`", "bn": "`docker stop` দিয়ে থামানো হয়েছে" },
+      { "en": "It was killed for using more memory than it was allowed", "bn": "অনুমোদিত memory-র বেশি ব্যবহার করায় তাকে kill করা হয়েছে" },
+      { "en": "It could not find its image", "bn": "নিজের image খুঁজে পায়নি" },
+      { "en": "Its port was already in use", "bn": "তার port আগেই ব্যবহার হচ্ছিল" }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "07-best-practices-debugging",
+    "q": { "en": "You pull an image on an Apple Silicon Mac and get `exec format error`. What is the likely cause?", "bn": "Apple Silicon Mac-এ একটা image pull করার পর `exec format error` এল। সম্ভাব্য কারণ কী?" },
+    "options": [
+      { "en": "The Docker daemon is not running", "bn": "Docker daemon চলছে না" },
+      { "en": "Another process is using the port", "bn": "অন্য একটা process port ব্যবহার করছে" },
+      { "en": "The image was built for a different CPU architecture", "bn": "Image অন্য CPU architecture-এর জন্য বানানো" },
+      { "en": "The `.dockerignore` file is missing", "bn": "`.dockerignore` file নেই" }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "08-real-project-laravel-dockerize",
+    "q": { "en": "In the Laravel setup, which container receives the browser's HTTP requests first?", "bn": "Laravel setup-এ browser-এর HTTP request আগে কোন container পায়?" },
+    "options": [
+      { "en": "`webserver` (nginx)", "bn": "`webserver` (nginx)" },
+      { "en": "`app` (PHP-FPM)", "bn": "`app` (PHP-FPM)" },
+      { "en": "`db` (MySQL)", "bn": "`db` (MySQL)" },
+      { "en": "The Composer build stage", "bn": "Composer-এর build stage" }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "08-real-project-laravel-dockerize",
+    "q": { "en": "Why does the Composer stage never end up in the final Laravel image?", "bn": "Composer stage কেন শেষ পর্যন্ত Laravel-এর final image-এ থাকে না?" },
+    "options": [
+      { "en": "Docker deletes the first stage after every build", "bn": "প্রতিটা build-এর পর Docker প্রথম stage মুছে ফেলে" },
+      { "en": "Only what the final stage copies with `COPY --from=vendor` is kept; the rest is discarded", "bn": "Final stage `COPY --from=vendor` দিয়ে যা নেয় শুধু সেটাই থাকে; বাকি সব ফেলে দেওয়া হয়" },
+      { "en": "Composer cannot run inside Docker", "bn": "Composer Docker-এর ভেতরে চলে না" },
+      { "en": "The `.env` file excludes it", "bn": "`.env` file এটাকে বাদ দেয়" }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "08-real-project-laravel-dockerize",
+    "q": { "en": "What happens if you run `docker compose down -v` on the Laravel stack?", "bn": "Laravel stack-এ `docker compose down -v` চালালে কী হবে?" },
+    "options": [
+      { "en": "Nothing is removed; `-v` only prints more output", "bn": "কিছুই মোছে না; `-v` শুধু বেশি output দেখায়" },
+      { "en": "Only the images are removed", "bn": "শুধু image মুছে যায়" },
+      { "en": "Only the network is removed", "bn": "শুধু network মুছে যায়" },
+      { "en": "The containers and the volumes are removed, including `db-data`, so the database is lost", "bn": "Container আর volume দুটোই মুছে যায়, `db-data`-সহ, ফলে database হারিয়ে যায়" }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "08-real-project-laravel-dockerize",
+    "q": { "en": "How would you add Redis to the Laravel stack, using only what the course taught?", "bn": "এই course-এ যা শেখানো হয়েছে শুধু তা দিয়ে Laravel stack-এ Redis কীভাবে যোগ করবে?" },
+    "options": [
+      { "en": "Install Redis inside the `db` container", "bn": "`db` container-এর ভেতরে Redis install করবে" },
+      { "en": "Edit the nginx config to proxy to Redis", "bn": "nginx config বদলে Redis-এ proxy করবে" },
+      { "en": "Add another service with `image: redis:alpine` and set `CACHE_DRIVER=redis` in `.env`", "bn": "আরেকটা service যোগ করবে `image: redis:alpine` দিয়ে, আর `.env`-এ `CACHE_DRIVER=redis` দেবে" },
+      { "en": "Run Redis on your host and publish port 6379 from `app`", "bn": "Host-এ Redis চালিয়ে `app` থেকে 6379 port publish করবে" }
+    ],
+    "answer": 2
+  }
+]

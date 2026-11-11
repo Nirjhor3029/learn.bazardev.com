@@ -56,6 +56,7 @@ class LearningController extends Controller
             'notes' => $notes,
             'contributions' => $contributions,
             'quizzes' => $this->quiz->courseCounts($user),
+            'certificates' => $user->certificates()->latest()->get(),
             'stats' => [
                 'done' => array_sum(array_column($progress, 'done')),
                 'total' => array_sum(array_column($progress, 'total')),

@@ -7,8 +7,10 @@ use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\ContributionController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ExamController;
 use App\Http\Controllers\LearningController;
 use App\Http\Controllers\QuizController;
 use Illuminate\Support\Facades\Route;
@@ -81,6 +83,20 @@ $courseSlugs = array_keys(config('course.courses'));
 Route::get('/{course}', [CourseController::class, 'show'])
     ->whereIn('course', $courseSlugs)
     ->name('course.show');
+
+// Final exam: logged-in readers only, registered before the chapter route so "exam" is never read as a chapter.
+Route::middleware('auth')->group(function () use ($courseSlugs) {
+    Route::get('/{course}/exam', [ExamController::class, 'show'])
+        ->whereIn('course', $courseSlugs)->name('exam.show');
+    Route::post('/{course}/exam', [ExamController::class, 'submit'])
+        ->whereIn('course', $courseSlugs)->middleware('throttle:10,1')->name('exam.submit');
+});
+
+// Certificates: the page is public (the link is the proof); only the owner can refresh the printed name.
+Route::get('/certificate/{code}', [CertificateController::class, 'show'])
+    ->where('code', '[A-Za-z0-9-]{14}')->name('certificate.show');
+Route::post('/certificate/{code}/name', [CertificateController::class, 'refreshName'])
+    ->where('code', '[A-Za-z0-9-]{14}')->middleware(['auth', 'throttle:20,1'])->name('certificate.name');
 
 Route::get('/{course}/{chapter}', [CourseController::class, 'chapter'])
     ->whereIn('course', $courseSlugs)

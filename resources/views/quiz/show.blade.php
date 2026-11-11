@@ -57,6 +57,8 @@
                     <a href="{{ $quizUrl }}" class="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 shadow-sm transition-colors hover:bg-gray-50 focus:outline-none focus-visible:ring-4 focus-visible:ring-gray-100">{{ $result['passed'] ? 'Take it again' : 'Try again' }}</a>
                     @if ($result['passed'] && $next)
                         <a href="{{ route('course.chapter', [$course, $next['chapter']]) }}{{ $langQuery }}" class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-200">Next chapter <x-icon name="arrow-right" class="h-4 w-4" /></a>
+                    @elseif ($result['passed'] && $examUrl)
+                        <a href="{{ $examUrl }}" class="inline-flex items-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-blue-200">Go to the final exam <x-icon name="arrow-right" class="h-4 w-4" /></a>
                     @else
                         <a href="{{ $chapterUrl }}" class="inline-flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-semibold text-blue-700 transition-colors hover:bg-blue-50">Back to the chapter</a>
                     @endif

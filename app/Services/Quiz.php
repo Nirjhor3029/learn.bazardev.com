@@ -33,7 +33,7 @@ class Quiz
             return null;
         }
 
-        return $this->loaded["{$course}/{$chapter}"] ??= $this->read(resource_path("content/quiz/{$course}/{$chapter}.json"));
+        return $this->loaded["{$course}/{$chapter}"] ??= $this->load(resource_path("content/quiz/{$course}/{$chapter}.json"));
     }
 
     public function has(string $course, string $chapter): bool
@@ -117,6 +117,15 @@ class Quiz
             ->orderByDesc('passed')->orderByDesc('score')->orderByDesc('id')->first();
     }
 
+    /** @return list<string> chapter slugs of this course whose quiz the reader has passed (that still have a quiz) */
+    public function passedChapters(User $user, string $course): array
+    {
+        return $user->quizAttempts()->where(['course' => $course, 'passed' => true])->whereNotNull('chapter')
+            ->distinct()->pluck('chapter')
+            ->filter(fn (string $chapter) => $this->has($course, $chapter))
+            ->values()->all();
+    }
+
     /**
      * Quizzes passed per course, for the dashboard. Only courses that have quizzes appear.
      *
@@ -161,10 +170,10 @@ class Quiz
     }
 
     /** True when every text of the quiz also exists in Bangla. */
-    public function hasBangla(array $questions): bool
+    public function hasBangla(array $questions, bool $explained = true): bool
     {
         foreach ($questions as $question) {
-            $texts = [$question['q'], $question['why'], ...$question['options']];
+            $texts = [$question['q'], ...($explained ? [$question['why']] : []), ...$question['options']];
 
             foreach ($texts as $text) {
                 if (empty($text['bn'])) {
@@ -177,7 +186,7 @@ class Quiz
     }
 
     /** @return list<array>|null */
-    private function read(string $path): ?array
+    public function load(string $path, bool $explained = true): ?array
     {
         if (! is_file($path)) {
             return null;
@@ -190,7 +199,7 @@ class Quiz
         }
 
         foreach ($questions as $question) {
-            if (! $this->valid($question)) {
+            if (! $this->valid($question, $explained)) {
                 return null;
             }
         }
@@ -198,9 +207,13 @@ class Quiz
         return $questions;
     }
 
-    private function valid(mixed $question): bool
+    private function valid(mixed $question, bool $explained): bool
     {
-        if (! is_array($question) || ! isset($question['q']['en'], $question['why']['en'], $question['options'], $question['answer'])) {
+        if (! is_array($question) || ! isset($question['q']['en'], $question['options'], $question['answer'])) {
+            return false;
+        }
+
+        if ($explained && ! isset($question['why']['en'])) {
             return false;
         }
 

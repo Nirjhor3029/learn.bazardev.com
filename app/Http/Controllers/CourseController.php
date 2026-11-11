@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contribution;
 use App\Services\CourseContent;
+use App\Services\Exam;
 use App\Services\Learning;
 use App\Services\Quiz;
 use Illuminate\Http\Request;
@@ -11,7 +12,7 @@ use Illuminate\View\View;
 
 class CourseController extends Controller
 {
-    public function __construct(private CourseContent $content, private Learning $learning, private Quiz $quizzes) {}
+    public function __construct(private CourseContent $content, private Learning $learning, private Quiz $quizzes, private Exam $exams) {}
 
     public function home(Request $request): View
     {
@@ -34,6 +35,7 @@ class CourseController extends Controller
             'done' => $user ? $this->learning->doneSlugs($user, $course) : [],
             'bookmarked' => $user ? $this->learning->bookmarkedSlugs($user, $course) : [],
             'nextUp' => $user ? $this->learning->nextInCourse($user, $course) : null,
+            'exam' => $this->exams->summary($user, $course),
         ]);
     }
 

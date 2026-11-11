@@ -69,5 +69,47 @@
                 </li>
             @endforeach
         </ol>
+
+        {{-- Final exam + certificate --}}
+        @if ($exam)
+            <div class="mt-6 rounded-2xl border p-5 shadow-sm {{ $exam['certificate'] ? 'border-emerald-200 bg-emerald-50' : 'border-gray-100 bg-white' }}">
+                <div class="flex flex-wrap items-center justify-between gap-4">
+                    <div class="min-w-0">
+                        <p class="flex flex-wrap items-center gap-2 font-semibold text-gray-900">
+                            Final exam &amp; certificate
+                            @if ($exam['certificate'])
+                                <span class="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-800"><x-icon name="check" class="h-3 w-3" /> Certificate earned</span>
+                            @endif
+                        </p>
+                        <p class="mt-0.5 text-sm {{ $exam['certificate'] ? 'text-emerald-800' : 'text-gray-500' }} tabular-nums">
+                            @if ($exam['certificate'])
+                                You passed the final exam. Your certificate is ready.
+                            @elseif (! auth()->check())
+                                Pass every chapter quiz, then a {{ $exam['questions'] }}-question final exam ({{ $exam['need'] }} right) to earn a certificate. Free.
+                            @elseif ($exam['ready'])
+                                All chapter quizzes passed. The final exam has {{ $exam['questions'] }} questions; {{ $exam['need'] }} right earns your certificate.
+                            @else
+                                Pass the quiz of {{ $exam['remaining'] === 1 ? 'the last chapter' : 'the remaining '.$exam['remaining'].' chapters' }} to open the final exam.
+                            @endif
+                            @if ($exam['best'] && ! $exam['certificate'])
+                                Your best: {{ $exam['best']->score }}/{{ $exam['best']->total }}.
+                            @endif
+                        </p>
+                    </div>
+
+                    @if ($exam['certificate'])
+                        <a href="{{ route('certificate.show', $exam['certificate']->code) }}" class="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-emerald-700 focus:outline-none focus-visible:ring-4 focus-visible:ring-emerald-200">View certificate <x-icon name="arrow-right" class="h-4 w-4" /></a>
+                    @elseif (! auth()->check())
+                        <a href="{{ route('login', ['next' => '/'.$course['slug']]) }}" class="inline-flex items-center rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 shadow-sm transition-colors hover:bg-gray-50">Log in to start</a>
+                    @else
+                        <a href="{{ route('exam.show', $course['slug']) }}"
+                           class="inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold shadow-sm transition-colors focus:outline-none focus-visible:ring-4 {{ $exam['ready'] ? 'bg-blue-600 text-white hover:bg-blue-700 focus-visible:ring-blue-200' : 'border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 focus-visible:ring-gray-100' }}">
+                            @unless ($exam['ready'])<x-icon name="lock" class="h-4 w-4" />@endunless
+                            {{ $exam['ready'] ? 'Take the final exam' : 'See what is left' }}
+                        </a>
+                    @endif
+                </div>
+            </div>
+        @endif
     </section>
 </x-layout>

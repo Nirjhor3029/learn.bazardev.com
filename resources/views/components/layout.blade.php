@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css">
 </head>
 <body class="bg-gray-50 text-gray-900 antialiased">
-    <header class="border-b border-gray-200 bg-white">
+    <header class="border-b border-gray-200 bg-white print:hidden">
         <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3">
             <a href="{{ route('home') }}" class="flex items-center gap-2 text-lg font-bold tracking-tight">
                 <span class="inline-flex h-7 w-7 items-center justify-center rounded-md bg-gray-900 text-sm text-white">⌘</span>
@@ -86,7 +86,7 @@
         {{ $slot }}
     </main>
 
-    <footer class="mt-16 border-t border-gray-200 py-8 text-center text-sm text-gray-400">
+    <footer class="mt-16 border-t border-gray-200 py-8 text-center text-sm text-gray-400 print:hidden">
         Free, for developers in Bangladesh and beyond. &middot; learn.bazardev.com
     </footer>
 

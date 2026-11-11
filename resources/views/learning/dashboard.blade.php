@@ -92,6 +92,27 @@
             </div>
         </div>
 
+        {{-- Certificates (only once there is one) --}}
+        @if ($certificates->isNotEmpty())
+            <div class="mt-10" id="certificates">
+                <h2 class="text-lg font-bold tracking-tight">Certificates</h2>
+                <ul class="mt-4 grid gap-4 sm:grid-cols-2">
+                    @foreach ($certificates as $certificate)
+                        <li>
+                            <a href="{{ route('certificate.show', $certificate->code) }}" class="flex h-full items-start gap-3 rounded-2xl border border-emerald-200 bg-emerald-50 p-5 shadow-sm transition-colors hover:bg-emerald-100">
+                                <span class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700"><x-icon name="check" class="h-5 w-5" /></span>
+                                <span class="min-w-0">
+                                    <span class="block font-semibold text-emerald-950">{{ $certificate->courseTitle() }}</span>
+                                    <span class="mt-0.5 block text-xs text-emerald-800 tabular-nums">Score {{ $certificate->score }}/{{ $certificate->total }} · {{ $certificate->created_at->format('j M Y') }}</span>
+                                    <span class="mt-2 inline-flex items-center gap-1 text-sm font-medium text-emerald-900">View certificate <x-icon name="arrow-right" class="h-4 w-4" /></span>
+                                </span>
+                            </a>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         {{-- Notes --}}
         <div class="mt-10" id="notes">
             <h2 class="text-lg font-bold tracking-tight">Notes</h2>
