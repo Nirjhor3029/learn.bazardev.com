@@ -49,7 +49,7 @@ return [
                 '02-merge-vs-rebase' => ['title' => 'Merge vs rebase', 'status' => 'available'],
                 '03-resolving-merge-conflicts' => ['title' => 'Resolving merge conflicts', 'status' => 'available'],
                 '04-interactive-rebase' => ['title' => 'Interactive rebase: cleaning up history', 'status' => 'available'],
-                '05-stash-cherry-pick-reflog' => ['title' => 'Stash, cherry-pick, and reflog', 'status' => 'coming_soon'],
+                '05-stash-cherry-pick-reflog' => ['title' => 'Stash, cherry-pick, and reflog', 'status' => 'available'],
                 '06-pull-requests-and-code-review' => ['title' => 'Pull requests and code review on GitHub', 'status' => 'coming_soon'],
                 '07-reset-vs-revert' => ['title' => 'Undoing mistakes: reset vs revert', 'status' => 'coming_soon'],
                 '08-github-power-features' => ['title' => 'GitHub power features', 'status' => 'coming_soon'],
