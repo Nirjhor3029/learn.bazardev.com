@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Why does a real Laravel deployment use nginx + PHP-FPM + a database instead of one container running `php artisan serve`?",
+      "bn": "Real Laravel deployment-এ একটা container-এ `php artisan serve` না চালিয়ে nginx + PHP-FPM + database ব্যবহার করা হয় কেন?"
+    },
+    "options": [
+      { "en": "`php artisan serve` does not exist inside Docker", "bn": "Docker-এর ভেতরে `php artisan serve` চলেই না" },
+      { "en": "The built-in server is a development convenience, while nginx + PHP-FPM is the standard, battle-tested production setup", "bn": "Built-in server শুধু development-এর সুবিধার জন্য; nginx + PHP-FPM হলো production-এর standard, বহু পরীক্ষিত ব্যবস্থা" },
+      { "en": "nginx is required to run MySQL", "bn": "MySQL চালাতে nginx লাগে" },
+      { "en": "Laravel cannot talk to a database from one container", "bn": "এক container থেকে Laravel database-এর সাথে কথা বলতে পারে না" }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "nginx serves static files itself and forwards `.php` requests to PHP-FPM (`app`). The database is a third container.",
+      "bn": "nginx static file নিজেই দেয় আর `.php` request PHP-FPM-এ (`app`) পাঠায়। Database তৃতীয় একটা container।"
+    }
+  },
+  {
+    "q": {
+      "en": "In the nginx config, `fastcgi_pass app:9000` — what is `app`?",
+      "bn": "nginx config-এ `fastcgi_pass app:9000` — এই `app` কী?"
+    },
+    "options": [
+      { "en": "The Laravel project folder", "bn": "Laravel project-এর folder" },
+      { "en": "The IP address of the host machine", "bn": "Host machine-এর IP address" },
+      { "en": "A PHP extension", "bn": "একটা PHP extension" },
+      { "en": "The Compose service name, resolved on the shared network", "bn": "Compose-এর service নাম, যা shared network-এ resolve হয়" }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "This is the service-name networking from Chapters 5 and 6, used for real: two separate containers find each other by name.",
+      "bn": "এটা Chapter 5 আর 6-এ শেখা service-name networking-এর বাস্তব প্রয়োগ: দুটো আলাদা container নাম দিয়ে একে অপরকে খুঁজে নেয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why does the Dockerfile run `chown -R laravel:laravel storage bootstrap/cache` before `USER laravel`?",
+      "bn": "Dockerfile-এ `USER laravel`-এর আগে `chown -R laravel:laravel storage bootstrap/cache` চালানো হয় কেন?"
+    },
+    "options": [
+      { "en": "To make the image smaller", "bn": "Image ছোট করতে" },
+      { "en": "To speed up `composer install`", "bn": "`composer install` দ্রুত করতে" },
+      { "en": "Laravel must write logs, views and cache there at run time; if they stay owned by root, every request fails with a permission error", "bn": "Laravel-কে run করার সময় সেখানে log, view আর cache লিখতে হয়; root-এর মালিকানায় থাকলে প্রতিটা request permission error-এ fail করে" },
+      { "en": "Because nginx demands it", "bn": "কারণ nginx সেটা দাবি করে" }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Ownership has to be fixed while the build still runs as root, so it comes before `USER`. This is the most common real-world Docker + Laravel bug.",
+      "bn": "Build যখন এখনও root হিসেবে চলছে তখনই মালিকানা ঠিক করতে হয়, তাই এটা `USER`-এর আগে আসে। Docker + Laravel-এর বাস্তব জীবনের সবচেয়ে সাধারণ bug এটাই।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why are `config:cache`, `route:cache` and `view:cache` run inside the Dockerfile?",
+      "bn": "`config:cache`, `route:cache` আর `view:cache` Dockerfile-এর ভেতরে চালানো হয় কেন?"
+    },
+    "options": [
+      { "en": "Baking them in at build time means the app does not re-parse config and routes on every request in production", "bn": "Build-এর সময়ই এগুলো তৈরি করে রাখলে production-এ প্রতি request-এ app-কে config আর route আবার parse করতে হয় না" },
+      { "en": "They are required before running migrations", "bn": "Migration চালানোর আগে এগুলো বাধ্যতামূলক" },
+      { "en": "They hide the `.env` file", "bn": "এগুলো `.env` file লুকিয়ে ফেলে" },
+      { "en": "They let nginx find the files", "bn": "এগুলো nginx-কে file খুঁজে পেতে সাহায্য করে" }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "It is a real production performance win, done at build time instead of as a manual step someone forgets.",
+      "bn": "এটা production-এর একটা বাস্তব performance সুবিধা, যা কেউ ভুলে যেতে পারে এমন hand-করা ধাপ না রেখে build-এর সময়ই করা হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why do `app` and `webserver` both mount the same `app-code` volume?",
+      "bn": "`app` আর `webserver` দুটোই একই `app-code` volume mount করে কেন?"
+    },
+    "options": [
+      { "en": "So they can share the database", "bn": "যাতে তারা database share করতে পারে" },
+      { "en": "nginx needs the same code on disk to serve CSS, JS and images itself, and Docker pre-fills the empty volume from the image's files", "bn": "CSS, JS আর image নিজে দিতে nginx-এর disk-এ একই code দরকার, আর খালি volume-টা Docker image-এর file দিয়ে আগেই ভরে দেয়" },
+      { "en": "Because Compose allows only one volume per project", "bn": "কারণ Compose এক project-এ একটাই volume অনুমতি দেয়" },
+      { "en": "To make `docker compose down` faster", "bn": "`docker compose down` দ্রুত করতে" }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A new empty named volume mounted over a folder that already has files in the image is filled with those files the first time. That is how `webserver` gets the code without its own `COPY`.",
+      "bn": "Image-এ file আছে এমন folder-এর উপর নতুন খালি named volume mount করলে প্রথমবার সেই file দিয়ে ভরে যায়। এভাবেই `webserver` নিজের `COPY` ছাড়াই code পায়।"
+    }
+  }
+]

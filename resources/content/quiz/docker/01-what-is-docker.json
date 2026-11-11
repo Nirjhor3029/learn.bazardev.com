@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Which statement best describes how a container differs from a virtual machine?",
+      "bn": "Container আর virtual machine (VM)-এর মধ্যে মূল পার্থক্য কোনটি?"
+    },
+    "options": [
+      { "en": "A container runs its own full guest operating system", "bn": "Container নিজের একটা পুরো guest operating system চালায়" },
+      { "en": "A container shares the host's OS kernel and only isolates the process", "bn": "Container host-এর OS kernel share করে, শুধু process-কে আলাদা (isolated) করে রাখে" },
+      { "en": "A container needs a hypervisor to boot", "bn": "Boot করতে container-এর একটা hypervisor লাগে" },
+      { "en": "A container is just a VM with less RAM", "bn": "Container মানে কম RAM-এর একটা VM" }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A container wraps a process in an isolated bubble (its own filesystem, network and process list) but shares the host's kernel. That is why it is small and starts in seconds, while a VM boots a whole guest OS.",
+      "bn": "Container একটা process-কে নিজের filesystem, network আর process list সহ আলাদা ‘বুদবুদে’ রাখে, কিন্তু host-এর kernel share করে। তাই এটা ছোট আর কয়েক সেকেন্ডে চালু হয়; VM-কে পুরো একটা guest OS boot করতে হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "You run `docker run nginx` three times. What do you end up with?",
+      "bn": "তুমি `docker run nginx` তিনবার চালালে শেষে কী পাবে?"
+    },
+    "options": [
+      { "en": "One container that was restarted three times", "bn": "একটা container, যেটা তিনবার restart হয়েছে" },
+      { "en": "Three images", "bn": "তিনটা image" },
+      { "en": "One image and three containers", "bn": "একটা image আর তিনটা container" },
+      { "en": "One image and one container", "bn": "একটা image আর একটা container" }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "The image is the recipe and a container is a dish cooked from it. You can cook as many containers as you like from one image.",
+      "bn": "Image হলো recipe, আর container হলো তা থেকে রান্না করা খাবার। একই image থেকে যত খুশি container চালানো যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is Docker Hub?",
+      "bn": "Docker Hub কী?"
+    },
+    "options": [
+      { "en": "An online registry where you pull ready-made images and push your own", "bn": "একটা online registry, যেখান থেকে ready-made image pull করা যায় আর নিজের image push করা যায়" },
+      { "en": "The background service that creates and runs containers", "bn": "যে background service container বানায় আর চালায়" },
+      { "en": "The command-line tool you type `docker` commands into", "bn": "যে command-line tool-এ তুমি `docker` command লেখো" },
+      { "en": "A desktop app that draws your containers on a map", "bn": "একটা desktop app, যা container-গুলোকে map-এর মতো এঁকে দেখায়" }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Docker Hub is like GitHub, but for images. The background service is the Docker Engine (`dockerd`) and the command-line tool is the Docker CLI.",
+      "bn": "Docker Hub হলো GitHub-এর মতোই, তবে image-এর জন্য। Background service-টা হলো Docker Engine (`dockerd`) আর command-line tool-টা হলো Docker CLI।"
+    }
+  },
+  {
+    "q": {
+      "en": "You type `docker run nginx`. Which part receives the command from the CLI and actually creates the container?",
+      "bn": "তুমি `docker run nginx` লিখলে CLI থেকে command টা কে পায় এবং আসলে container বানায়?"
+    },
+    "options": [
+      { "en": "Docker Hub", "bn": "Docker Hub" },
+      { "en": "The image", "bn": "Image" },
+      { "en": "Another CLI", "bn": "আরেকটা CLI" },
+      { "en": "The Docker daemon (`dockerd`)", "bn": "Docker daemon (`dockerd`)" }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "The CLI is only a client. It sends the command to the daemon, which checks for the image (pulling it from Docker Hub if needed) and starts the container.",
+      "bn": "CLI শুধু একটা client। সে command টা daemon-কে পাঠায়; daemon image আছে কি না দেখে (না থাকলে Docker Hub থেকে pull করে) তারপর container চালু করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which of these is NOT a benefit of Docker mentioned in this chapter?",
+      "bn": "এই chapter-এ বলা Docker-এর সুবিধার মধ্যে কোনটি সুবিধা নয়?"
+    },
+    "options": [
+      { "en": "The same behaviour in dev, staging and production", "bn": "Dev, staging আর production-এ একই আচরণ" },
+      { "en": "A new teammate can start every service with `docker compose up`", "bn": "নতুন teammate `docker compose up` দিয়ে সব service চালু করতে পারে" },
+      { "en": "Containers are more strongly isolated from each other than VMs are", "bn": "VM-এর চেয়ে container একে অপর থেকে বেশি শক্তভাবে আলাদা থাকে" },
+      { "en": "More services fit on the same hardware than with VMs", "bn": "VM-এর তুলনায় একই hardware-এ বেশি service ধরে" }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "It is the other way round: a VM isolates at hardware level, a container only at process level. Containers win on speed, size and density, not on isolation strength.",
+      "bn": "ব্যাপারটা উল্টো: VM আলাদা করে hardware স্তরে, আর container শুধু process স্তরে। Container জেতে গতি, size আর density-তে, isolation-এর শক্তিতে নয়।"
+    }
+  }
+]

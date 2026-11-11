@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Which Dockerfile instruction runs a command while the image is being built, for example to install packages?",
+      "bn": "Image বানানোর সময় কোনো command চালাতে (যেমন package install করতে) Dockerfile-এর কোন instruction লাগে?"
+    },
+    "options": [
+      { "en": "`CMD`", "bn": "`CMD`" },
+      { "en": "`RUN`", "bn": "`RUN`" },
+      { "en": "`EXPOSE`", "bn": "`EXPOSE`" },
+      { "en": "`ENV`", "bn": "`ENV`" }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "`RUN` executes at build time and its result becomes a layer. `CMD` is different: it runs when a container starts.",
+      "bn": "`RUN` build করার সময় চলে আর তার ফল একটা layer হয়ে যায়। `CMD` আলাদা: সেটা চলে যখন container চালু হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why do good Dockerfiles `COPY package.json` and run `npm install` before `COPY . .`?",
+      "bn": "ভালো Dockerfile-এ `COPY . .`-এর আগে `package.json` copy করে `npm install` চালানো হয় কেন?"
+    },
+    "options": [
+      { "en": "Docker refuses to build if the order is reversed", "bn": "ক্রম উল্টো হলে Docker build-ই করে না" },
+      { "en": "It makes the final image smaller", "bn": "এতে final image ছোট হয়" },
+      { "en": "`npm install` only works with a single file", "bn": "`npm install` শুধু একটা file থাকলে কাজ করে" },
+      { "en": "Editing your code then does not invalidate the cached dependency layer, so rebuilds are fast", "bn": "তাহলে code বদলালে cache-করা dependency layer নষ্ট হয় না, ফলে rebuild দ্রুত হয়" }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "`package.json` rarely changes, so `npm install` stays cached. Only `COPY . .` and what follows re-run when your source changes.",
+      "bn": "`package.json` খুব কম বদলায়, তাই `npm install` cache-এ থাকে। Source বদলালে শুধু `COPY . .` আর তার পরের ধাপগুলো আবার চলে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `EXPOSE 3000` in a Dockerfile do?",
+      "bn": "Dockerfile-এ `EXPOSE 3000` কী করে?"
+    },
+    "options": [
+      { "en": "Publishes port 3000 on your machine", "bn": "তোমার machine-এ 3000 port publish করে" },
+      { "en": "Documents that the container listens on 3000; you still publish it with `-p` at run time", "bn": "জানিয়ে রাখে যে container 3000 port-এ শোনে; publish করতে তখনও `-p` লাগে" },
+      { "en": "Opens port 3000 in your firewall", "bn": "তোমার firewall-এ 3000 port খুলে দেয়" },
+      { "en": "Forces the app to listen on port 3000", "bn": "App-কে 3000 port-এ শুনতে বাধ্য করে" }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "`EXPOSE` is documentation. Nothing becomes reachable from outside until you run with `-p host:container`.",
+      "bn": "`EXPOSE` শুধুই documentation। `-p host:container` দিয়ে না চালানো পর্যন্ত বাইরে থেকে কিছু reach করা যায় না।"
+    }
+  },
+  {
+    "q": {
+      "en": "The Dockerfile ends with `CMD [\"node\", \"app.js\"]`. What happens with `docker run my-first-app node other-script.js`?",
+      "bn": "Dockerfile-এর শেষে `CMD [\"node\", \"app.js\"]` আছে। `docker run my-first-app node other-script.js` চালালে কী হবে?"
+    },
+    "options": [
+      { "en": "The `CMD` is ignored and `node other-script.js` runs instead", "bn": "`CMD` উপেক্ষিত হয়, তার বদলে `node other-script.js` চলে" },
+      { "en": "Both scripts run one after the other", "bn": "দুটো script পরপর চলে" },
+      { "en": "Docker shows an error", "bn": "Docker error দেখায়" },
+      { "en": "`other-script.js` is appended to `node app.js`", "bn": "`other-script.js` পেছনে জুড়ে `node app.js other-script.js` চলে" }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "`CMD` is only a default and is easy to override. `ENTRYPOINT` is the one where extra arguments get appended instead.",
+      "bn": "`CMD` শুধু একটা default, সহজেই বদলে দেওয়া যায়। যেটায় বাড়তি argument পেছনে জোড়া হয় সেটা `ENTRYPOINT`।"
+    }
+  },
+  {
+    "q": {
+      "en": "In `docker build -t my-first-app .`, what is the final `.`?",
+      "bn": "`docker build -t my-first-app .`-এ শেষের `.` মানে কী?"
+    },
+    "options": [
+      { "en": "The name of the image", "bn": "Image-এর নাম" },
+      { "en": "A hidden file Docker creates", "bn": "Docker যে hidden file বানায়" },
+      { "en": "The build context: the folder Docker reads the files for `COPY` from", "bn": "Build context: যে folder থেকে Docker `COPY`-র জন্য file পড়ে" },
+      { "en": "The version number", "bn": "Version number" }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "The whole folder is sent to Docker first. That is why `.dockerignore` matters: keep `node_modules`, `.git` and `vendor` out of it.",
+      "bn": "পুরো folder-টা আগে Docker-এর কাছে পাঠানো হয়। তাই `.dockerignore` জরুরি: `node_modules`, `.git`, `vendor` সেখান থেকে বাদ রাখো।"
+    }
+  }
+]

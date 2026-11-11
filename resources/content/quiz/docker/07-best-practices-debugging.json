@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "What does a multi-stage build do?",
+      "bn": "Multi-stage build কী করে?"
+    },
+    "options": [
+      { "en": "Runs several containers at once", "bn": "একসাথে কয়েকটা container চালায়" },
+      { "en": "Shares layers between different computers", "bn": "আলাদা computer-এর মধ্যে layer share করে" },
+      { "en": "Keeps heavy build tools in a throwaway stage and copies only the finished result into a small final image", "bn": "ভারী build tool একটা ফেলে-দেওয়া stage-এ রাখে আর শুধু তৈরি ফলটা ছোট final image-এ copy করে" },
+      { "en": "Encrypts the image", "bn": "Image encrypt করে" }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "`COPY --from=build` reaches back into the first stage and takes only what you name. Everything else is thrown away, so images shrink a lot and have a smaller attack surface.",
+      "bn": "`COPY --from=build` প্রথম stage-এ ফিরে গিয়ে শুধু যা নাম দাও তা নেয়। বাকি সব ফেলে দেওয়া হয়, তাই image অনেক ছোট হয় আর আক্রমণের সুযোগও কমে।"
+    }
+  },
+  {
+    "q": {
+      "en": "`docker ps -a` shows your container with exit code 137. What does that most often mean?",
+      "bn": "`docker ps -a`-তে তোমার container-এর exit code 137 দেখাচ্ছে। এটার সবচেয়ে সাধারণ মানে কী?"
+    },
+    "options": [
+      { "en": "It exited cleanly (the job was done)", "bn": "সে ঠিকভাবে exit করেছে (কাজ শেষ)" },
+      { "en": "A segmentation fault inside the process", "bn": "Process-এর ভেতরে segmentation fault" },
+      { "en": "It was stopped gracefully with `docker stop`", "bn": "`docker stop` দিয়ে নরমভাবে বন্ধ করা হয়েছে" },
+      { "en": "It was killed, very often because it ran out of memory (OOMKilled)", "bn": "জোর করে kill করা হয়েছে, প্রায়ই memory শেষ হয়ে যাওয়ার কারণে (OOMKilled)" }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Clean exit is 0, segfault is 139, graceful stop is 143. For 137 run `docker inspect` and look for `\"OOMKilled\": true`.",
+      "bn": "ঠিকভাবে exit মানে 0, segfault হলো 139, নরম stop হলো 143। 137 দেখলে `docker inspect` চালিয়ে `\"OOMKilled\": true` খোঁজো।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which is the safe way to give a container its database password?",
+      "bn": "Container-কে database password দেওয়ার নিরাপদ উপায় কোনটি?"
+    },
+    "options": [
+      { "en": "Pass it at run time, for example `-e DB_PASSWORD=...` or a `.env` file that is never committed", "bn": "Run করার সময় দেওয়া, যেমন `-e DB_PASSWORD=...` বা কখনো commit-না-করা একটা `.env` file" },
+      { "en": "Put `ENV DB_PASSWORD=...` in the Dockerfile", "bn": "Dockerfile-এ `ENV DB_PASSWORD=...` লেখা" },
+      { "en": "`COPY .env .` into the image", "bn": "Image-এ `COPY .env .` করা" },
+      { "en": "Bake it in, then delete it in a later layer", "bn": "আগে image-এ ঢুকিয়ে দিয়ে পরের layer-এ মুছে ফেলা" }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Anything baked in with `ENV` or `COPY` can be read with `docker history` or `docker inspect`. Deleting it in a later layer does not help, because the earlier layer still holds it.",
+      "bn": "`ENV` বা `COPY` দিয়ে ঢোকানো সবকিছু `docker history` বা `docker inspect` দিয়ে পড়া যায়। পরের layer-এ মুছলেও লাভ নেই, কারণ আগের layer-এ সেটা থেকেই যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Docker says `port is already allocated`. What is going on?",
+      "bn": "Docker বলছে `port is already allocated`। ব্যাপারটা কী?"
+    },
+    "options": [
+      { "en": "The image was built for a different CPU architecture", "bn": "Image অন্য CPU architecture-এর জন্য বানানো" },
+      { "en": "Something else is already using that host port — change the `-p` mapping or stop the other process", "bn": "ওই host port অন্য কিছু আগেই ব্যবহার করছে — `-p` mapping বদলাও বা অন্য process বন্ধ করো" },
+      { "en": "The Docker daemon is not running", "bn": "Docker daemon চলছে না" },
+      { "en": "The container ran out of memory", "bn": "Container-এর memory শেষ হয়ে গেছে" }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Two things cannot listen on the same host port. The other messages in the table (architecture mismatch, daemon not running) look different.",
+      "bn": "দুটো জিনিস একই host port-এ শুনতে পারে না। Table-এর অন্য message-গুলো (architecture না মেলা, daemon না চলা) দেখতে আলাদা।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why should a container run as a non-root user?",
+      "bn": "Container কেন non-root user হিসেবে চালানো উচিত?"
+    },
+    "options": [
+      { "en": "Root users cannot write files in containers", "bn": "Container-এ root user file লিখতে পারে না" },
+      { "en": "Docker will not start without it", "bn": "এটা ছাড়া Docker চালুই হয় না" },
+      { "en": "It makes the app faster", "bn": "এতে app দ্রুত চলে" },
+      { "en": "If an attacker breaks into the app, running as root makes the damage much easier to spread", "bn": "কেউ app-এ ঢুকে পড়লে root হিসেবে চললে ক্ষতি ছড়ানো তার জন্য অনেক সহজ হয়" }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Add a user and switch to it with `USER appuser`. It limits what an attacker can do if the app has a vulnerability.",
+      "bn": "একটা user বানিয়ে `USER appuser` দিয়ে তাতে switch করো। App-এ দুর্বলতা থাকলে আক্রমণকারী কী করতে পারে, এতে তা সীমিত থাকে।"
+    }
+  }
+]

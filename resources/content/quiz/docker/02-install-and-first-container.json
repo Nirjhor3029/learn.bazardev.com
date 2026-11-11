@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "What does `-p 8080:80` do in `docker run -d -p 8080:80 nginx`?",
+      "bn": "`docker run -d -p 8080:80 nginx`-এ `-p 8080:80` কী করে?"
+    },
+    "options": [
+      { "en": "Gives the container 8080 MB of memory and 80 CPU shares", "bn": "Container-কে 8080 MB memory আর 80 CPU share দেয়" },
+      { "en": "Forwards requests on port 8080 of your machine to port 80 inside the container", "bn": "তোমার machine-এর 8080 port-এ আসা request container-এর ভেতরের 80 port-এ পাঠিয়ে দেয়" },
+      { "en": "Forwards requests on port 80 of your machine to port 8080 inside the container", "bn": "তোমার machine-এর 80 port-এ আসা request container-এর ভেতরের 8080 port-এ পাঠিয়ে দেয়" },
+      { "en": "Starts 8080 copies of the container", "bn": "Container-এর 8080টা copy চালু করে" }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The format is `host_port:container_port`. nginx listens on 80 inside the container, so you open `http://localhost:8080` on your machine.",
+      "bn": "Format হলো `host_port:container_port`। Container-এর ভেতরে nginx 80 port-এ শোনে, তাই তুমি নিজের machine-এ `http://localhost:8080` খোলো।"
+    }
+  },
+  {
+    "q": {
+      "en": "You ran `docker run hello-world` a minute ago, but `docker ps` shows nothing. Why?",
+      "bn": "তুমি একটু আগে `docker run hello-world` চালিয়েছ, কিন্তু `docker ps` কিছুই দেখাচ্ছে না। কারণ কী?"
+    },
+    "options": [
+      { "en": "The container already exited after printing its message; `docker ps` shows only running containers (use `docker ps -a` to see it)", "bn": "Message print করেই container exit করে গেছে; `docker ps` শুধু চলমান container দেখায় (`docker ps -a` দিলে দেখা যাবে)" },
+      { "en": "The installation failed", "bn": "Installation fail করেছে" },
+      { "en": "Docker deletes every container as soon as it stops", "bn": "Container বন্ধ হলেই Docker সেটা মুছে ফেলে" },
+      { "en": "You need `sudo` to see containers", "bn": "Container দেখতে `sudo` লাগে" }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "hello-world has one job: print a message and exit. The stopped container still exists, so `docker ps -a` lists it.",
+      "bn": "hello-world-এর কাজ একটাই: message print করে exit করা। বন্ধ হওয়া container তবুও থেকে যায়, তাই `docker ps -a` তাকে দেখায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does the `-d` flag do?",
+      "bn": "`-d` flag কী করে?"
+    },
+    "options": [
+      { "en": "Turns on debug mode", "bn": "Debug mode চালু করে" },
+      { "en": "Deletes the container when it stops", "bn": "Container বন্ধ হলে সেটা মুছে দেয়" },
+      { "en": "Only downloads the image without starting it", "bn": "শুধু image download করে, চালু করে না" },
+      { "en": "Runs the container in the background (detached) and gives your terminal back", "bn": "Container-কে background-এ (detached) চালায় আর তোমার terminal ফিরিয়ে দেয়" }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "`-d` means detached. Without it the container keeps your terminal busy until it stops.",
+      "bn": "`-d` মানে detached। এটা না দিলে container বন্ধ না হওয়া পর্যন্ত তোমার terminal আটকে থাকে।"
+    }
+  },
+  {
+    "q": {
+      "en": "On Linux, `docker` says \"permission denied\" unless you use `sudo`. What does the chapter suggest?",
+      "bn": "Linux-এ `sudo` ছাড়া `docker` চালালে \"permission denied\" আসে। Chapter-এ কী করতে বলা হয়েছে?"
+    },
+    "options": [
+      { "en": "Reinstall Docker Desktop", "bn": "Docker Desktop আবার install করা" },
+      { "en": "Delete the `docker` group", "bn": "`docker` group মুছে ফেলা" },
+      { "en": "Run `sudo usermod -aG docker $USER`, then log out and back in", "bn": "`sudo usermod -aG docker $USER` চালিয়ে log out করে আবার log in করা" },
+      { "en": "Run `chmod 777` on the Docker program", "bn": "Docker program-এ `chmod 777` চালানো" }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Adding your user to the `docker` group lets you run Docker without `sudo`. The group change only takes effect after you log out and back in.",
+      "bn": "তোমার user-কে `docker` group-এ যোগ করলে `sudo` ছাড়াই Docker চলে। তবে group-এর পরিবর্তন কাজ করে log out করে আবার log in করার পর।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the difference between `docker stop my-nginx` and `docker rm my-nginx`?",
+      "bn": "`docker stop my-nginx` আর `docker rm my-nginx`-এর পার্থক্য কী?"
+    },
+    "options": [
+      { "en": "Both delete the container; `rm` is just faster", "bn": "দুটোই container মুছে দেয়; `rm` শুধু একটু দ্রুত" },
+      { "en": "`stop` shuts the container down but it still exists; `rm` removes it completely", "bn": "`stop` container বন্ধ করে, কিন্তু সেটা থেকে যায়; `rm` সেটা পুরোপুরি মুছে দেয়" },
+      { "en": "`stop` deletes the image; `rm` deletes the container", "bn": "`stop` image মুছে দেয়; `rm` container মুছে দেয়" },
+      { "en": "`stop` pauses the container; `rm` resumes it", "bn": "`stop` container-কে pause করে; `rm` আবার চালু করে" }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A stopped container still shows up in `docker ps -a`. `docker rm -f` does both steps in one go.",
+      "bn": "বন্ধ করা container তখনও `docker ps -a`-তে দেখা যায়। `docker rm -f` দুটো কাজ একসাথে করে ফেলে।"
+    }
+  }
+]

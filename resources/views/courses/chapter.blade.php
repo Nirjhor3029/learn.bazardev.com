@@ -88,9 +88,13 @@
                 {!! $html !!}
             </div>
 
+            @if ($quiz)
+                @include('courses.partials.quiz-card')
+            @endif
+
             @auth
                 {{-- Mark as done --}}
-                <section class="mt-12 rounded-2xl border border-gray-100 bg-white p-5 shadow-sm sm:p-6" aria-label="Your progress">
+                <section class="{{ $quiz ? 'mt-4' : 'mt-12' }} rounded-2xl border border-gray-100 bg-white p-5 shadow-sm sm:p-6" aria-label="Your progress">
                     <div class="flex flex-wrap items-center justify-between gap-4">
                         <div class="min-w-0">
                             <p class="font-semibold text-gray-900">
@@ -150,7 +154,7 @@
                 </section>
             @else
                 {{-- Reading is free; an account only remembers things. --}}
-                <section class="mt-12 rounded-2xl border border-blue-100 bg-blue-50 p-5 sm:p-6">
+                <section class="{{ $quiz ? 'mt-4' : 'mt-12' }} rounded-2xl border border-blue-100 bg-blue-50 p-5 sm:p-6">
                     <div class="flex flex-wrap items-center justify-between gap-4">
                         <div class="min-w-0">
                             <p class="font-semibold text-gray-900">Finished this chapter? Keep track of it.</p>

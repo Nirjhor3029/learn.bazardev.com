@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "An image is built from layers. What does each layer store?",
+      "bn": "একটা image অনেকগুলো layer দিয়ে তৈরি। প্রতিটা layer-এ কী থাকে?"
+    },
+    "options": [
+      { "en": "A full copy of the filesystem", "bn": "পুরো filesystem-এর একটা full copy" },
+      { "en": "Only what changed compared with the layer below it", "bn": "নিচের layer-এর তুলনায় শুধু যা বদলেছে" },
+      { "en": "Only your application code", "bn": "শুধু তোমার application code" },
+      { "en": "Only environment variables", "bn": "শুধু environment variable" }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Layers are like stacked transparent sheets: each one holds only the difference from the one below. Stack them all and you get the full image.",
+      "bn": "Layer হলো একটার উপর আরেকটা রাখা স্বচ্ছ কাগজের মতো: প্রতিটায় থাকে শুধু নিচেরটার সাথে পার্থক্য। সব একসাথে রাখলে পুরো image পাওয়া যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "You remove a running container with `docker rm -f`. What happens to its writable top layer?",
+      "bn": "তুমি `docker rm -f` দিয়ে একটা container মুছে ফেললে। তার উপরের writable layer-এর কী হয়?"
+    },
+    "options": [
+      { "en": "It stays attached to the image", "bn": "সেটা image-এর সাথে লেগে থাকে" },
+      { "en": "It is merged into the image", "bn": "সেটা image-এর সাথে merge হয়ে যায়" },
+      { "en": "It disappears, and the image underneath is untouched", "bn": "সেটা হারিয়ে যায়, নিচের image একদম অক্ষত থাকে" },
+      { "en": "It is uploaded to Docker Hub", "bn": "সেটা Docker Hub-এ upload হয়ে যায়" }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "The image is read-only. A container adds one writable layer on top, and deleting the container deletes only that layer. This is exactly why databases need volumes (Chapter 5).",
+      "bn": "Image read-only। Container তার উপর একটা writable layer যোগ করে, আর container মুছলে শুধু সেই layer-টাই যায়। ঠিক এই কারণেই database-এর জন্য volume লাগে (Chapter 5)।"
+    }
+  },
+  {
+    "q": {
+      "en": "You want a shell inside the running container `my-nginx`. Which command do you use?",
+      "bn": "চলমান `my-nginx` container-এর ভেতরে shell পেতে কোন command দেবে?"
+    },
+    "options": [
+      { "en": "`docker exec -it my-nginx bash`", "bn": "`docker exec -it my-nginx bash`" },
+      { "en": "`docker pull my-nginx bash`", "bn": "`docker pull my-nginx bash`" },
+      { "en": "`docker history my-nginx`", "bn": "`docker history my-nginx`" },
+      { "en": "`docker image prune my-nginx`", "bn": "`docker image prune my-nginx`" }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "`docker exec -it` runs a command inside an existing container; `-it` gives you an interactive terminal. It is your main debugging tool.",
+      "bn": "`docker exec -it` একটা চলমান container-এর ভেতরে command চালায়; `-it` দেয় interactive terminal। এটাই তোমার প্রধান debugging tool।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why is it risky to rely on the `latest` tag in a real project?",
+      "bn": "Real project-এ `latest` tag-এর উপর ভরসা করা ঝুঁকির কেন?"
+    },
+    "options": [
+      { "en": "It is slower to download", "bn": "এটা download হতে বেশি সময় নেয়" },
+      { "en": "It always points to the oldest version", "bn": "এটা সবসময় সবচেয়ে পুরনো version-কে বোঝায়" },
+      { "en": "It does not work with nginx", "bn": "এটা nginx-এর সাথে কাজ করে না" },
+      { "en": "It is just a label someone chose, not guaranteed to be the newest or stable version, so you should pin a specific tag", "bn": "এটা শুধু কারো দেওয়া একটা label, নিশ্চিত নয় যে এটাই সর্বশেষ বা stable version; তাই নির্দিষ্ট একটা tag pin করা ভালো" }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Pin something like `nginx:1.27`. Then the same command gives you the same image today and next year.",
+      "bn": "`nginx:1.27`-এর মতো নির্দিষ্ট tag দাও। তাহলে একই command আজও আর এক বছর পরেও একই image আনবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which command shows the layers an image is made of, in the order they were built?",
+      "bn": "কোন command দেখায় একটা image কোন কোন layer দিয়ে, কোন ক্রমে তৈরি?"
+    },
+    "options": [
+      { "en": "`docker layers nginx:1.27`", "bn": "`docker layers nginx:1.27`" },
+      { "en": "`docker history nginx:1.27`", "bn": "`docker history nginx:1.27`" },
+      { "en": "`docker ps -a`", "bn": "`docker ps -a`" },
+      { "en": "`docker image prune`", "bn": "`docker image prune`" }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "`docker history` lists every layer — it is the command version of the layer diagram. (`docker layers` does not exist, and `prune` deletes unused images.)",
+      "bn": "`docker history` প্রতিটা layer দেখায় — layer-এর ছবির command রূপ। (`docker layers` বলে কিছু নেই, আর `prune` অব্যবহৃত image মুছে দেয়।)"
+    }
+  }
+]

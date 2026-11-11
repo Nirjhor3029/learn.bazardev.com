@@ -6,6 +6,7 @@ use App\Models\ChapterState;
 use App\Models\Contribution;
 use App\Models\Note;
 use App\Services\Learning;
+use App\Services\Quiz;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ use Illuminate\View\View;
  */
 class LearningController extends Controller
 {
-    public function __construct(private Learning $learning) {}
+    public function __construct(private Learning $learning, private Quiz $quiz) {}
 
     public function dashboard(Request $request): View
     {
@@ -54,6 +55,7 @@ class LearningController extends Controller
             'bookmarks' => $bookmarks,
             'notes' => $notes,
             'contributions' => $contributions,
+            'quizzes' => $this->quiz->courseCounts($user),
             'stats' => [
                 'done' => array_sum(array_column($progress, 'done')),
                 'total' => array_sum(array_column($progress, 'total')),

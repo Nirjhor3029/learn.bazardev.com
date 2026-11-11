@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Contribution;
 use App\Services\CourseContent;
 use App\Services\Learning;
+use App\Services\Quiz;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class CourseController extends Controller
 {
-    public function __construct(private CourseContent $content, private Learning $learning) {}
+    public function __construct(private CourseContent $content, private Learning $learning, private Quiz $quizzes) {}
 
     public function home(Request $request): View
     {
@@ -52,6 +53,7 @@ class CourseController extends Controller
             ...$data,
             'number' => array_search($chapter, array_keys($data['course']['chapters']), true) + 1,
             'state' => $state,
+            'quiz' => $this->quizzes->summary($user, $course, $chapter),
             'note' => $user?->notes()->where(['course' => $course, 'chapter' => $chapter])->first(),
             'done' => $user ? $this->learning->doneSlugs($user, $course) : [],
             'progress' => $user ? $this->learning->courseProgress($user, $course) : null,

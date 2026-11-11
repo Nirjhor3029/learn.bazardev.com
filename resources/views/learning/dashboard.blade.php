@@ -53,6 +53,9 @@
                                         <span class="text-sm text-gray-500 tabular-nums">{{ $mine['done'] }} / {{ $mine['total'] }}</span>
                                     @endif
                                 </span>
+                                @isset($quizzes[$slug])
+                                    <span class="mt-1.5 block text-xs text-gray-500 tabular-nums">Quizzes passed: {{ $quizzes[$slug]['passed'] }} / {{ $quizzes[$slug]['total'] }}</span>
+                                @endisset
                                 <x-progress :done="$mine['done']" :total="$mine['total']" class="mt-3" />
                             </a>
                         </li>

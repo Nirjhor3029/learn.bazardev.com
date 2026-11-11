@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "In a Compose file the app has `DB_HOST=db`. What does `db` refer to?",
+      "bn": "Compose file-এ app-এর `DB_HOST=db` দেওয়া আছে। এই `db` কী বোঝায়?"
+    },
+    "options": [
+      { "en": "A folder in your project", "bn": "তোমার project-এর একটা folder" },
+      { "en": "The name of the `db` service, which every other service can reach on the network Compose creates", "bn": "`db` service-এর নাম, যাকে Compose-এর বানানো network-এ অন্য সব service নাম দিয়ে পায়" },
+      { "en": "The `db-data` volume", "bn": "`db-data` volume" },
+      { "en": "An alias for `localhost`", "bn": "`localhost`-এর আরেক নাম" }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Compose creates a shared network automatically, and each service is reachable by its service name. No `docker network create` needed.",
+      "bn": "Compose নিজে থেকেই একটা shared network বানায়, আর প্রতিটা service তার service-এর নামে পাওয়া যায়। আলাদা `docker network create` লাগে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the difference between `docker compose down` and `docker compose down -v`?",
+      "bn": "`docker compose down` আর `docker compose down -v`-এর পার্থক্য কী?"
+    },
+    "options": [
+      { "en": "`-v` only prints more output", "bn": "`-v` শুধু বেশি output দেখায়" },
+      { "en": "`-v` validates the Compose file first", "bn": "`-v` আগে Compose file validate করে" },
+      { "en": "`-v` rebuilds the images", "bn": "`-v` image-গুলো আবার build করে" },
+      { "en": "`-v` also deletes the volumes, so your database data is gone", "bn": "`-v` volume-গুলোও মুছে দেয়, ফলে database-এর data চলে যায়" }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Plain `down` removes the containers but keeps your volumes. Use `-v` only when you really want to wipe the data.",
+      "bn": "শুধু `down` container মোছে কিন্তু volume রেখে দেয়। Data সত্যিই মুছতে চাইলেই শুধু `-v` ব্যবহার করো।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `depends_on: - db` guarantee?",
+      "bn": "`depends_on: - db` কী নিশ্চিত করে?"
+    },
+    "options": [
+      { "en": "The `db` container starts before `app` — but not that MySQL inside it is ready for connections", "bn": "`db` container `app`-এর আগে চালু হয় — কিন্তু ভেতরের MySQL যে connection নিতে প্রস্তুত, তা নয়" },
+      { "en": "MySQL is fully booted and accepting connections before `app` starts", "bn": "`app` চালুর আগেই MySQL পুরো boot করে connection নিতে প্রস্তুত থাকে" },
+      { "en": "`app` restarts automatically if `db` crashes", "bn": "`db` crash করলে `app` নিজে থেকে restart হয়" },
+      { "en": "`app` and `db` share a volume", "bn": "`app` আর `db` একটা volume share করে" }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "`depends_on` controls start order, not readiness. For real readiness add a `healthcheck` and `condition: service_healthy`, or let the app retry the connection.",
+      "bn": "`depends_on` শুধু চালুর ক্রম ঠিক করে, প্রস্তুতি নয়। সত্যিকারের প্রস্তুতির জন্য `healthcheck` আর `condition: service_healthy` দাও, অথবা app-কে connection retry করতে দাও।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `build: .` do for a service in `docker-compose.yml`?",
+      "bn": "`docker-compose.yml`-এ কোনো service-এ `build: .` দিলে কী হয়?"
+    },
+    "options": [
+      { "en": "Pulls an image named `.` from Docker Hub", "bn": "Docker Hub থেকে `.` নামের একটা image pull করে" },
+      { "en": "Copies the current folder into a volume", "bn": "বর্তমান folder-টা একটা volume-এ copy করে" },
+      { "en": "Builds an image from the Dockerfile in the current folder, instead of pulling a ready-made one", "bn": "ready-made image pull না করে বর্তমান folder-এর Dockerfile থেকে image build করে" },
+      { "en": "Starts a container from the newest local image", "bn": "সবচেয়ে নতুন local image থেকে একটা container চালু করে" }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "`image:` pulls a ready-made image, `build:` builds your own from a Dockerfile. One Compose file can mix both.",
+      "bn": "`image:` ready-made image আনে, `build:` Dockerfile থেকে নিজের image বানায়। একই Compose file-এ দুটোই মিশিয়ে ব্যবহার করা যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which command starts the whole multi-container app in the background?",
+      "bn": "পুরো multi-container app background-এ চালু করার command কোনটি?"
+    },
+    "options": [
+      { "en": "`docker compose run db app adminer`", "bn": "`docker compose run db app adminer`" },
+      { "en": "`docker compose up -d`", "bn": "`docker compose up -d`" },
+      { "en": "`docker compose build -d`", "bn": "`docker compose build -d`" },
+      { "en": "`docker compose create network`", "bn": "`docker compose create network`" }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "`up` builds or pulls what is needed, creates the network and volumes, and starts every service; `-d` keeps it in the background.",
+      "bn": "`up` যা দরকার build বা pull করে, network আর volume বানায় এবং সব service চালু করে; `-d` দিলে সব background-এ চলে।"
+    }
+  }
+]

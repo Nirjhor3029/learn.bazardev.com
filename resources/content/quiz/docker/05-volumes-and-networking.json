@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "You delete your MySQL container, then start a new one with the same `-v db-data:/var/lib/mysql`. What happens to the data?",
+      "bn": "তুমি MySQL container মুছে ফেলে একই `-v db-data:/var/lib/mysql` দিয়ে নতুন একটা চালালে। Data-র কী হবে?"
+    },
+    "options": [
+      { "en": "It is lost, because it lived inside the container", "bn": "হারিয়ে যাবে, কারণ data container-এর ভেতরে ছিল" },
+      { "en": "It is still there, because it lived in the volume outside the container", "bn": "থেকে যাবে, কারণ data ছিল container-এর বাইরের volume-এ" },
+      { "en": "It is only kept if you first run `docker cp`", "bn": "আগে `docker cp` চালালে তবেই থাকবে" },
+      { "en": "It is kept only after a restart", "bn": "Restart করার পরই শুধু থাকবে" }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A volume lives outside any one container, so you can remove and recreate the container freely and the data stays put.",
+      "bn": "Volume কোনো একটা container-এর বাইরে থাকে, তাই container যতবার খুশি মুছে নতুন করে বানাও, data ঠিক থাকে।"
+    }
+  },
+  {
+    "q": {
+      "en": "You want edits to the `src` folder on your laptop to show up instantly inside a running container. What do you use?",
+      "bn": "তোমার laptop-এর `src` folder-এ কিছু বদলালেই চলমান container-এর ভেতরে তা সাথে সাথে দেখতে চাও। কী ব্যবহার করবে?"
+    },
+    "options": [
+      { "en": "`docker cp` after every edit", "bn": "প্রতিবার বদলানোর পর `docker cp`" },
+      { "en": "`docker network create`", "bn": "`docker network create`" },
+      { "en": "A bind mount, for example `-v $(pwd)/src:/app/src`", "bn": "একটা bind mount, যেমন `-v $(pwd)/src:/app/src`" },
+      { "en": "`docker image prune`", "bn": "`docker image prune`" }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "A bind mount maps a real folder from your machine into the container, which is ideal for live-editing code in local development.",
+      "bn": "Bind mount তোমার machine-এর আসল একটা folder container-এর ভেতরে মিলিয়ে দেয়, local development-এ live code edit করার জন্য এটাই আদর্শ।"
+    }
+  },
+  {
+    "q": {
+      "en": "`app` and `db` are on the same custom network `mynet`. How does `app` reach the database?",
+      "bn": "`app` আর `db` একই custom network `mynet`-এ আছে। `app` কীভাবে database-এ পৌঁছায়?"
+    },
+    "options": [
+      { "en": "Through `localhost`", "bn": "`localhost` দিয়ে" },
+      { "en": "Through your host machine's IP address", "bn": "তোমার host machine-এর IP address দিয়ে" },
+      { "en": "Only through a published port", "bn": "শুধু publish করা port দিয়ে" },
+      { "en": "By using the container name `db` as the hostname — Docker's built-in DNS resolves it", "bn": "Container-এর নাম `db`-কেই hostname হিসেবে ব্যবহার করে — Docker-এর built-in DNS সেটা resolve করে দেয়" }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Every custom network has a built-in DNS server, so names resolve to the right internal IP. You never hardcode an IP that might change.",
+      "bn": "প্রতিটা custom network-এ একটা built-in DNS server থাকে, তাই নাম থেকে সঠিক internal IP পাওয়া যায়। বদলে যেতে পারে এমন IP আর hardcode করতে হয় না।"
+    }
+  },
+  {
+    "q": {
+      "en": "You start two containers without `--network`, so they use Docker's default network. What is true?",
+      "bn": "তুমি `--network` ছাড়া দুটো container চালালে, ফলে তারা Docker-এর default network-এ আছে। কোনটি সত্য?"
+    },
+    "options": [
+      { "en": "They can always reach each other by name", "bn": "তারা সবসময় নাম দিয়ে একে অপরকে পায়" },
+      { "en": "They cannot reliably reach each other by name, so create a custom network", "bn": "নাম দিয়ে নির্ভরযোগ্যভাবে একে অপরকে পায় না, তাই custom network বানাও" },
+      { "en": "They are blocked from the internet", "bn": "তাদের internet বন্ধ থাকে" },
+      { "en": "They share all their volumes", "bn": "তারা নিজেদের সব volume share করে" }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Name-based lookup only works on a custom network. That is why real projects create one, and why Docker Compose does it for you automatically.",
+      "bn": "নাম দিয়ে খোঁজা শুধু custom network-এই কাজ করে। তাই real project-এ একটা বানানো হয়, আর Docker Compose সেটা নিজে থেকেই করে দেয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which statement about named volumes is correct?",
+      "bn": "Named volume নিয়ে কোন কথাটা ঠিক?"
+    },
+    "options": [
+      { "en": "They are folders you pick on your machine, managed by you", "bn": "এগুলো তোমার machine-এর যে folder তুমি বেছে নাও, তুমিই সামলাও" },
+      { "en": "They are deleted automatically when the container stops", "bn": "Container বন্ধ হলে এগুলো নিজে থেকেই মুছে যায়" },
+      { "en": "They are managed by Docker and are a good fit for databases", "bn": "এগুলো Docker নিজে সামলায় এবং database-এর জন্য উপযুক্ত" },
+      { "en": "They only work on a custom network", "bn": "এগুলো শুধু custom network-এ কাজ করে" }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "A named volume lives in Docker's own storage area. The \"folder you pick\" description fits a bind mount instead.",
+      "bn": "Named volume থাকে Docker-এর নিজস্ব storage area-তে। ‘নিজের বাছা folder’ কথাটা বরং bind mount-এর ক্ষেত্রে খাটে।"
+    }
+  }
+]

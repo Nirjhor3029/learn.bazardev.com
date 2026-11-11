@@ -10,6 +10,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ContributionController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\LearningController;
+use App\Http\Controllers\QuizController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [CourseController::class, 'home'])->name('home');
@@ -84,3 +85,13 @@ Route::get('/{course}', [CourseController::class, 'show'])
 Route::get('/{course}/{chapter}', [CourseController::class, 'chapter'])
     ->whereIn('course', $courseSlugs)
     ->name('course.chapter');
+
+// Chapter quizzes: anyone can take one; only a logged-in reader's result is saved.
+Route::get('/{course}/{chapter}/quiz', [QuizController::class, 'show'])
+    ->whereIn('course', $courseSlugs)
+    ->name('quiz.show');
+
+Route::post('/{course}/{chapter}/quiz', [QuizController::class, 'submit'])
+    ->whereIn('course', $courseSlugs)
+    ->middleware('throttle:30,1')
+    ->name('quiz.submit');
