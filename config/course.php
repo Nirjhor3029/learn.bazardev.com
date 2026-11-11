@@ -68,7 +68,7 @@ return [
                 '05-caching-and-artifacts' => ['title' => 'Caching and artifacts', 'status' => 'available'],
                 '06-automated-testing-in-ci' => ['title' => 'Automated testing in CI', 'status' => 'available'],
                 '07-continuous-deployment' => ['title' => 'Continuous deployment: shipping automatically', 'status' => 'available'],
-                '08-real-project-laravel-pipeline' => ['title' => 'Real project: a full pipeline for a Dockerized Laravel app', 'status' => 'coming_soon'],
+                '08-real-project-laravel-pipeline' => ['title' => 'Real project: a full pipeline for a Dockerized Laravel app', 'status' => 'available'],
             ],
         ],
         'kubernetes' => ['title' => 'Kubernetes', 'tagline' => 'Managing many containers at scale.', 'folder' => '05-kubernetes', 'status' => 'coming_soon', 'chapters' => []],
