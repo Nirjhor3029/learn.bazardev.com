@@ -1,7 +1,7 @@
 <x-layout title="Admin · Users">
     <section class="mx-auto max-w-5xl px-4 pt-10 pb-20">
-        <p class="text-sm font-semibold text-blue-600">Admin</p>
-        <h1 class="mt-1 text-2xl font-extrabold tracking-tight sm:text-3xl">Users</h1>
+        <x-admin.nav />
+        <h1 class="mt-3 text-2xl font-extrabold tracking-tight sm:text-3xl">Users</h1>
         <p class="mt-2 text-sm text-gray-500">Approve an account to mark it verified without the email link.</p>
 
         <div class="mt-6 flex flex-wrap items-center justify-between gap-3">

@@ -84,7 +84,7 @@
             <details class="mt-6 rounded-2xl border border-rose-100 bg-white p-6 shadow-sm sm:p-8" @if ($errors->delete->any()) open @endif>
                 <summary class="cursor-pointer text-sm font-semibold text-rose-600">Delete my account</summary>
 
-                <p class="mt-4 text-sm text-gray-600">This permanently deletes your account and everything saved in it. This cannot be undone.</p>
+                <p class="mt-4 text-sm text-gray-600">This permanently deletes your account and everything saved in it — progress, bookmarks, notes and anything you contributed to a chapter. This cannot be undone.</p>
 
                 <form method="POST" action="{{ route('account.destroy') }}" class="mt-5 space-y-5" novalidate>
                     @csrf

@@ -180,6 +180,8 @@
                 @endif
             </div>
 
+            @include('courses.partials.community')
+
             <a href="{{ $github_url }}" target="_blank" rel="noopener" class="mt-6 inline-block text-xs text-gray-400 hover:text-gray-600">View this chapter on GitHub →</a>
         </article>
     </div>

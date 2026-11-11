@@ -45,6 +45,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Note::class);
     }
 
+    public function contributions(): HasMany
+    {
+        return $this->hasMany(Contribution::class);
+    }
+
     /** One or two letters for the avatar circle, e.g. "Sazzad Hossain" -> "SH". */
     public function initials(): string
     {

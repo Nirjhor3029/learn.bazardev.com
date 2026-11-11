@@ -126,5 +126,59 @@
                 </ul>
             @endif
         </div>
+
+        {{-- Contributions --}}
+        <div class="mt-10" id="contributions">
+            <h2 class="text-lg font-bold tracking-tight">My contributions</h2>
+            @if ($contributions->isEmpty())
+                <div class="mt-4 rounded-2xl border border-dashed border-gray-200 p-6 text-center">
+                    <x-icon name="bulb" class="mx-auto h-6 w-6 text-gray-300" />
+                    <p class="mt-2 text-sm font-medium text-gray-700">Nothing shared yet</p>
+                    <p class="mt-1 text-sm text-gray-500">At the end of every chapter you can suggest a helpful link, add a tip, or report a mistake.</p>
+                </div>
+            @else
+                @php
+                    $statusTones = [
+                        \App\Models\Contribution::PENDING => 'bg-amber-50 text-amber-700',
+                        \App\Models\Contribution::APPROVED => 'bg-emerald-50 text-emerald-700',
+                        \App\Models\Contribution::REJECTED => 'bg-gray-100 text-gray-600',
+                    ];
+                    $typeIcons = ['resource' => 'link', 'tip' => 'bulb', 'correction' => 'flag'];
+                @endphp
+                <ul class="mt-4 divide-y divide-gray-100 overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm">
+                    @foreach ($contributions as $item)
+                        <li class="flex flex-wrap items-start justify-between gap-x-4 gap-y-3 px-5 py-4">
+                            <div class="flex min-w-0 flex-1 gap-3">
+                                <x-icon :name="$typeIcons[$item->type] ?? 'link'" class="mt-0.5 h-4 w-4 flex-shrink-0 text-gray-400" />
+                                <div class="min-w-0">
+                                    <p class="text-sm font-medium break-words text-gray-900">{{ $item->title ?? \Illuminate\Support\Str::limit($item->body, 120) }}</p>
+                                    <p class="mt-0.5 text-xs text-gray-500">
+                                        {{ $item->typeLabel() }} ·
+                                        @if ($item->place)
+                                            <a href="{{ route('course.chapter', [$item->place['course'], $item->place['chapter']]) }}#community" class="hover:text-blue-600">{{ $item->place['course_title'] }} · Chapter {{ $item->place['number'] }}</a>
+                                        @else
+                                            chapter no longer available
+                                        @endif
+                                        · {{ $item->created_at->diffForHumans() }}
+                                    </p>
+                                    @if ($item->status === \App\Models\Contribution::REJECTED && $item->admin_note)
+                                        <p class="mt-2 rounded-lg bg-gray-50 px-3 py-2 text-xs text-gray-600"><span class="font-medium text-gray-700">Note from the admin:</span> {{ $item->admin_note }}</p>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="flex flex-shrink-0 items-center gap-3">
+                                <span class="rounded-full px-2.5 py-0.5 text-xs font-medium {{ $statusTones[$item->status] ?? 'bg-gray-100 text-gray-600' }}">{{ $item->statusLabel() }}</span>
+                                <form method="POST" action="{{ route('contributions.destroy', $item) }}"
+                                      onsubmit="return confirm('Remove this contribution? This cannot be undone.')">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="rounded-md px-2 py-1 text-xs font-medium text-gray-500 transition-colors hover:bg-rose-50 hover:text-rose-600 focus:outline-none focus-visible:ring-4 focus-visible:ring-rose-100">Remove</button>
+                                </form>
+                            </div>
+                        </li>
+                    @endforeach
+                </ul>
+            @endif
+        </div>
     </section>
 </x-layout>

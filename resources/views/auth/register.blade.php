@@ -5,7 +5,7 @@
         ['title' => 'Track your progress', 'text' => 'Mark chapters as done and see how far you are in every course.', 'live' => true],
         ['title' => 'Bookmark chapters', 'text' => 'Save the chapters you want to come back to.', 'live' => true],
         ['title' => 'Keep private notes', 'text' => 'Write your own notes beside each chapter — only you can see them.', 'live' => true],
-        ['title' => 'Suggest resources', 'text' => 'Share a helpful link or tip; approved ones appear under the chapter with your name.', 'live' => false],
+        ['title' => 'Suggest resources', 'text' => 'Share a helpful link or tip; approved ones appear under the chapter with your name.', 'live' => true],
     ];
 @endphp
 

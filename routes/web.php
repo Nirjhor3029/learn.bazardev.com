@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\Admin\ContributionController as AdminContributionController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\ContributionController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\LearningController;
 use Illuminate\Support\Facades\Route;
@@ -46,6 +48,11 @@ Route::middleware('auth')->group(function () {
         Route::put('/note', [LearningController::class, 'note'])->name('note');
     });
 
+    // Contributions: a resource, a tip or a mistake report for a chapter. Public only after admin approval.
+    Route::post('/learn/{course}/{chapter}/contributions', [ContributionController::class, 'store'])
+        ->middleware('throttle:20,1')->name('contributions.store');
+    Route::delete('/contributions/{contribution}', [ContributionController::class, 'destroy'])->name('contributions.destroy');
+
     Route::get('/email/verify/{id}/{hash}', [EmailVerificationController::class, 'verify'])
         ->middleware(['signed', 'throttle:6,1'])->name('verification.verify');
     Route::post('/email/verification-notification', [EmailVerificationController::class, 'send'])
@@ -54,6 +61,10 @@ Route::middleware('auth')->group(function () {
     Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
         Route::get('/users', [AdminUserController::class, 'index'])->name('users.index');
         Route::post('/users/{user}/verify', [AdminUserController::class, 'verify'])->name('users.verify');
+
+        Route::get('/contributions', [AdminContributionController::class, 'index'])->name('contributions.index');
+        Route::post('/contributions/{contribution}/approve', [AdminContributionController::class, 'approve'])->name('contributions.approve');
+        Route::post('/contributions/{contribution}/reject', [AdminContributionController::class, 'reject'])->name('contributions.reject');
     });
 });
 

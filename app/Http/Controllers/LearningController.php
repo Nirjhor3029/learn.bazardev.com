@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ChapterState;
+use App\Models\Contribution;
 use App\Models\Note;
 use App\Services\Learning;
 use Illuminate\Http\JsonResponse;
@@ -41,6 +42,9 @@ class LearningController extends Controller
                 'chapter' => $this->learning->describe($note->course, $note->chapter),
             ]);
 
+        $contributions = $user->contributions()->latest()->get()
+            ->each(fn (Contribution $item) => $item->setAttribute('place', $this->learning->describe($item->course, $item->chapter)));
+
         return view('learning.dashboard', [
             'user' => $user,
             'courses' => config('course.courses'),
@@ -49,6 +53,7 @@ class LearningController extends Controller
             'start' => $this->learning->firstChapter(),
             'bookmarks' => $bookmarks,
             'notes' => $notes,
+            'contributions' => $contributions,
             'stats' => [
                 'done' => array_sum(array_column($progress, 'done')),
                 'total' => array_sum(array_column($progress, 'total')),

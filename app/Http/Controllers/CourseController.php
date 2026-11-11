@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contribution;
 use App\Services\CourseContent;
 use App\Services\Learning;
 use Illuminate\Http\Request;
@@ -54,6 +55,14 @@ class CourseController extends Controller
             'note' => $user?->notes()->where(['course' => $course, 'chapter' => $chapter])->first(),
             'done' => $user ? $this->learning->doneSlugs($user, $course) : [],
             'progress' => $user ? $this->learning->courseProgress($user, $course) : null,
+            // Approved resources and tips from readers — public, like the chapter itself.
+            'contributions' => Contribution::query()->visible()->with('user')
+                ->where(['course' => $course, 'chapter' => $chapter])
+                ->oldest('reviewed_at')->get(),
+            // The reader's own suggestions that are still waiting, so they know they arrived.
+            'waiting' => $user
+                ? $user->contributions()->where(['course' => $course, 'chapter' => $chapter, 'status' => Contribution::PENDING])->oldest()->get()
+                : collect(),
         ]);
     }
 }
