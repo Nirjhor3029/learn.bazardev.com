@@ -66,7 +66,7 @@ return [
                 '03-triggers-and-events' => ['title' => 'Triggers: events, branches, paths, schedules', 'status' => 'available'],
                 '04-env-vars-secrets-matrix' => ['title' => 'Environment variables, secrets, and matrix builds', 'status' => 'available'],
                 '05-caching-and-artifacts' => ['title' => 'Caching and artifacts', 'status' => 'available'],
-                '06-automated-testing-in-ci' => ['title' => 'Automated testing in CI', 'status' => 'coming_soon'],
+                '06-automated-testing-in-ci' => ['title' => 'Automated testing in CI', 'status' => 'available'],
                 '07-continuous-deployment' => ['title' => 'Continuous deployment: shipping automatically', 'status' => 'coming_soon'],
                 '08-real-project-laravel-pipeline' => ['title' => 'Real project: a full pipeline for a Dockerized Laravel app', 'status' => 'coming_soon'],
             ],
