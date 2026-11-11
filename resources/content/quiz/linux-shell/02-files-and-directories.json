@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "Which command creates `my-project/src/components` in one go, even if none of those folders exist yet?",
+      "bn": "কোন command এক চালেই `my-project/src/components` বানায়, যদিও এর কোনো folder এখনও নেই?"
+    },
+    "options": [
+      {
+        "en": "`mkdir my-project/src/components`",
+        "bn": "`mkdir my-project/src/components`"
+      },
+      {
+        "en": "`mkdir -p my-project/src/components`",
+        "bn": "`mkdir -p my-project/src/components`"
+      },
+      {
+        "en": "`touch -p my-project/src/components`",
+        "bn": "`touch -p my-project/src/components`"
+      },
+      {
+        "en": "`mkdir -r my-project/src/components`",
+        "bn": "`mkdir -r my-project/src/components`"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "`-p` creates every missing folder in the path without complaining. Plain `mkdir` fails if the parent folders are missing.",
+      "bn": "`-p` পথের প্রতিটা অনুপস্থিত folder বানিয়ে দেয়। শুধু `mkdir` দিলে parent folder না থাকলে fail করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "You want to watch a log file live while new lines are being added. Which command?",
+      "bn": "নতুন লাইন যোগ হতে থাকা একটা log file live দেখতে চাও। কোন command?"
+    },
+    "options": [
+      {
+        "en": "`cat /var/log/app.log`",
+        "bn": "`cat /var/log/app.log`"
+      },
+      {
+        "en": "`head -f /var/log/app.log`",
+        "bn": "`head -f /var/log/app.log`"
+      },
+      {
+        "en": "`less -r /var/log/app.log`",
+        "bn": "`less -r /var/log/app.log`"
+      },
+      {
+        "en": "`tail -f /var/log/app.log`",
+        "bn": "`tail -f /var/log/app.log`"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "`tail -f` keeps watching the end of the file. It is the same idea as `docker logs -f`.",
+      "bn": "`tail -f` file-এর শেষ অংশ ধরে দেখতে থাকে। এটা `docker logs -f`-এর মতোই ধারণা।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the difference between `cp` and `mv`?",
+      "bn": "`cp` আর `mv`-এর পার্থক্য কী?"
+    },
+    "options": [
+      {
+        "en": "`cp` keeps the original and makes a copy; after `mv` the file exists only in the new place",
+        "bn": "`cp` আসলটা রেখে copy বানায়; `mv`-এর পর file শুধু নতুন জায়গায় থাকে"
+      },
+      {
+        "en": "`cp` deletes the original; `mv` keeps it",
+        "bn": "`cp` আসলটা মুছে দেয়; `mv` রেখে দেয়"
+      },
+      {
+        "en": "They are the same, `mv` is just shorter",
+        "bn": "দুটো একই, `mv` শুধু ছোট"
+      },
+      {
+        "en": "`mv` only works on folders",
+        "bn": "`mv` শুধু folder-এ কাজ করে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "`mv` is also how you rename: moving a file to a new name in the same folder renames it.",
+      "bn": "`mv` দিয়েই rename করা হয়: একই folder-এ নতুন নামে সরালেই নাম বদলে যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "`cp my-project my-project-backup` refuses to work. Why?",
+      "bn": "`cp my-project my-project-backup` কাজ করছে না। কেন?"
+    },
+    "options": [
+      {
+        "en": "Folders cannot be copied at all",
+        "bn": "Folder copy করা যায়ই না"
+      },
+      {
+        "en": "It needs `sudo`",
+        "bn": "এতে `sudo` লাগে"
+      },
+      {
+        "en": "`my-project` is a folder, so `cp` needs `-r` (recursive)",
+        "bn": "`my-project` একটা folder, তাই `cp`-এর `-r` (recursive) লাগে"
+      },
+      {
+        "en": "The backup folder must already exist",
+        "bn": "Backup folder আগে থেকেই থাকতে হয়"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Without `-r`, `cp` will not guess whether you meant to copy everything inside a folder. Use `cp -r my-project my-project-backup`.",
+      "bn": "`-r` ছাড়া `cp` আন্দাজ করে না যে তুমি folder-এর ভেতরের সব copy করতে চেয়েছ। `cp -r my-project my-project-backup` দাও।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which habit is the safest before running `rm -rf some-folder`?",
+      "bn": "`rm -rf some-folder` চালানোর আগে কোন অভ্যাসটা সবচেয়ে নিরাপদ?"
+    },
+    "options": [
+      {
+        "en": "Add `-f` so it does not ask questions",
+        "bn": "`-f` যোগ করা যাতে কোনো প্রশ্ন না করে"
+      },
+      {
+        "en": "Run `pwd` and `ls` on the exact path first to see what you are about to delete",
+        "bn": "আগে `pwd` আর ঠিক ওই path-এ `ls` চালিয়ে দেখা কী মুছতে যাচ্ছ"
+      },
+      {
+        "en": "Run it with `sudo` to avoid errors",
+        "bn": "Error এড়াতে `sudo` দিয়ে চালানো"
+      },
+      {
+        "en": "Run it from the root folder `/`",
+        "bn": "Root folder `/` থেকে চালানো"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "`rm -rf` is permanent. Most disaster stories come from being in the wrong folder or a typo, so look before you delete.",
+      "bn": "`rm -rf` স্থায়ী। বেশিরভাগ দুর্ঘটনা ঘটে ভুল folder-এ থেকে বা টাইপের ভুলে, তাই মোছার আগে দেখে নাও।"
+    }
+  }
+]

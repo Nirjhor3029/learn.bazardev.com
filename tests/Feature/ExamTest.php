@@ -76,6 +76,63 @@ class ExamTest extends TestCase
         $this->assertSame(count($pool), count(array_unique(array_column(array_column($pool, 'q'), 'en'))), 'duplicate question');
     }
 
+    public function test_every_exam_pool_on_disk_is_valid_complete_and_matches_the_chapter_quizzes(): void
+    {
+        $exam = app(Exam::class);
+        $quiz = app(Quiz::class);
+
+        foreach (glob(resource_path('content/exam/*.json')) as $file) {
+            $course = basename($file, '.json');
+            $chapters = array_keys(config("course.courses.{$course}.chapters", []));
+            $pool = $exam->pool($course);
+
+            $this->assertNotNull($pool, "{$course}: exam pool is invalid, too small, or not a real course");
+            $this->assertTrue($quiz->hasBangla($pool, explained: false), "{$course}: a Bangla text is missing");
+
+            $refs = [];
+            foreach ($pool as $i => $question) {
+                $this->assertContains($question['ref'] ?? null, $chapters, "{$course} #{$i}: ref must be a real chapter");
+                $this->assertCount(4, $question['options'], "{$course} #{$i}");
+                $refs[$question['ref']] = ($refs[$question['ref']] ?? 0) + 1;
+            }
+
+            $this->assertCount(count($chapters), $refs, "{$course}: every chapter needs questions in the pool");
+            $this->assertSame(count($pool), count(array_unique(array_column(array_column($pool, 'q'), 'en'))), "{$course}: duplicate question");
+
+            // The exam only means something if every chapter has a quiz to unlock it.
+            foreach ($chapters as $chapter) {
+                $this->assertTrue($quiz->has($course, $chapter), "{$course}/{$chapter} has no quiz but the course has an exam");
+            }
+        }
+    }
+
+    public function test_every_course_with_an_exam_can_be_passed_end_to_end(): void
+    {
+        foreach (glob(resource_path('content/exam/*.json')) as $file) {
+            $course = basename($file, '.json');
+            $user = User::factory()->create(['name' => "Reader {$course}"]);
+
+            foreach (array_keys(config("course.courses.{$course}.chapters")) as $chapter) {
+                $user->quizAttempts()->create(['course' => $course, 'chapter' => $chapter, 'score' => 5, 'total' => 5, 'passed' => true]);
+            }
+
+            $this->actingAs($user)->get("/{$course}/exam")->assertOk()->assertSee('Submit the exam');
+
+            $pool = app(Exam::class)->pool($course);
+            $answers = [];
+            foreach (session("exam_draw.{$course}") as $i => $id) {
+                $answers[$i] = $pool[$id]['answer'];
+            }
+
+            $this->actingAs($user)->post("/{$course}/exam", ['answers' => $answers])->assertRedirect();
+
+            $certificate = $user->certificates()->where('course', $course)->first();
+            $this->assertNotNull($certificate, "{$course}: no certificate after a perfect exam");
+            $this->assertSame(20, $certificate->score);
+            $this->get("/certificate/{$certificate->code}")->assertOk()->assertSee("Reader {$course}")->assertSee(config("course.courses.{$course}.title"));
+        }
+    }
+
     public function test_pass_mark_is_sixteen_of_twenty(): void
     {
         $this->assertSame(20, Exam::QUESTIONS);
@@ -94,9 +151,9 @@ class ExamTest extends TestCase
     {
         $user = $this->reader();
 
-        $this->actingAs($user)->get('/linux-shell/exam')->assertNotFound();
         $this->actingAs($user)->get('/kubernetes/exam')->assertNotFound();
-        $this->actingAs($user)->post('/linux-shell/exam', ['answers' => [0]])->assertNotFound();
+        $this->actingAs($user)->get('/cloud/exam')->assertNotFound();
+        $this->actingAs($user)->post('/kubernetes/exam', ['answers' => [0]])->assertNotFound();
     }
 
     public function test_the_exam_is_locked_until_every_chapter_quiz_is_passed(): void
@@ -372,7 +429,7 @@ class ExamTest extends TestCase
 
     public function test_courses_without_an_exam_show_no_exam_card(): void
     {
-        $this->get('/linux-shell')->assertOk()->assertDontSee('Final exam');
+        $this->get('/cloud')->assertOk()->assertDontSee('Final exam');
     }
 
     public function test_passing_the_last_chapter_quiz_points_to_the_final_exam(): void

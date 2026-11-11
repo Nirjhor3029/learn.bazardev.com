@@ -56,6 +56,30 @@ class QuizTest extends TestCase
         }
     }
 
+    public function test_a_course_that_has_quizzes_has_one_for_every_chapter_in_both_languages(): void
+    {
+        $quiz = app(Quiz::class);
+
+        foreach (array_keys(config('course.courses')) as $course) {
+            if (! is_dir(resource_path("content/quiz/{$course}"))) {
+                continue;
+            }
+
+            foreach (array_keys(config("course.courses.{$course}.chapters")) as $chapter) {
+                $questions = $quiz->questions($course, $chapter);
+
+                $this->assertNotNull($questions, "{$course}/{$chapter} has no valid quiz");
+                $this->assertCount(5, $questions, "{$course}/{$chapter}");
+                $this->assertTrue($quiz->hasBangla($questions), "{$course}/{$chapter} is missing a Bangla text");
+
+                foreach ($questions as $i => $question) {
+                    $this->assertCount(4, $question['options'], "{$course}/{$chapter} #{$i}");
+                    $this->assertNotSame('', trim($question['why']['en']));
+                }
+            }
+        }
+    }
+
     public function test_every_quiz_file_on_disk_belongs_to_a_real_chapter_and_is_valid(): void
     {
         $quiz = app(Quiz::class);
@@ -228,9 +252,8 @@ class QuizTest extends TestCase
         $this->post('/docker/no-such-chapter/quiz', ['answers' => [0]])->assertNotFound();
         $this->get('/docker/..%2F..%2Fenv/quiz')->assertNotFound();
 
-        // These chapters exist but have no quiz yet.
-        $this->get('/linux-shell/01-finding-your-way-around/quiz')->assertNotFound();
-        $this->get('/linux-shell/01-finding-your-way-around')->assertOk()->assertDontSee('Check what you learned');
+        // A course that is not available yet has no chapters, so no quizzes.
+        $this->get('/kubernetes/01-anything/quiz')->assertNotFound();
     }
 
     public function test_lang_is_kept_when_the_form_is_sent_in_bangla(): void

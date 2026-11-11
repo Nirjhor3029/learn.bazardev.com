@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What does `sudo apt update` do?",
+      "bn": "`sudo apt update` কী করে?"
+    },
+    "options": [
+      {
+        "en": "Upgrades every installed package",
+        "bn": "সব installed package upgrade করে"
+      },
+      {
+        "en": "Installs the newest version of one package",
+        "bn": "একটা package-এর সর্বশেষ version install করে"
+      },
+      {
+        "en": "Refreshes the list of available packages; it installs nothing by itself",
+        "bn": "পাওয়া যাওয়া package-এর list হালনাগাদ করে; নিজে কিছুই install করে না"
+      },
+      {
+        "en": "Updates the Linux kernel only",
+        "bn": "শুধু Linux kernel update করে"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Think of it as refreshing a catalog, not buying from it. The actual installing is done by `upgrade` or `install`.",
+      "bn": "এটাকে catalog হালনাগাদ করা ভাবো, কেনা নয়। আসল install করে `upgrade` বা `install`।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which command removes nginx AND its configuration files?",
+      "bn": "কোন command nginx আর তার configuration file দুটোই মুছে দেয়?"
+    },
+    "options": [
+      {
+        "en": "`sudo apt purge nginx`",
+        "bn": "`sudo apt purge nginx`"
+      },
+      {
+        "en": "`sudo apt remove nginx`",
+        "bn": "`sudo apt remove nginx`"
+      },
+      {
+        "en": "`sudo apt autoremove nginx`",
+        "bn": "`sudo apt autoremove nginx`"
+      },
+      {
+        "en": "`sudo apt update nginx`",
+        "bn": "`sudo apt update nginx`"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "`remove` keeps the config files (handy if you reinstall later); `purge` deletes them too for a clean removal.",
+      "bn": "`remove` config file রেখে দেয় (পরে আবার install করলে কাজে লাগে); `purge` সেগুলোও মুছে সম্পূর্ণ পরিষ্কার করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why should you run `apt update` before `apt upgrade`?",
+      "bn": "`apt upgrade`-এর আগে `apt update` চালানো উচিত কেন?"
+    },
+    "options": [
+      {
+        "en": "`upgrade` refuses to start without it",
+        "bn": "এটা ছাড়া `upgrade` চালুই হয় না"
+      },
+      {
+        "en": "`update` makes `upgrade` run faster",
+        "bn": "`update` করলে `upgrade` দ্রুত চলে"
+      },
+      {
+        "en": "They are the same command",
+        "bn": "দুটো একই command"
+      },
+      {
+        "en": "`upgrade` works from the current catalog, so a stale catalog can miss newly released versions",
+        "bn": "`upgrade` বর্তমান catalog থেকে কাজ করে, তাই পুরনো catalog নতুন প্রকাশিত version মিস করতে পারে"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "The safe habit is `sudo apt update && sudo apt upgrade`.",
+      "bn": "ভালো অভ্যাস হলো `sudo apt update && sudo apt upgrade`।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `sudo apt autoremove` do?",
+      "bn": "`sudo apt autoremove` কী করে?"
+    },
+    "options": [
+      {
+        "en": "Deletes your personal files that you have not used recently",
+        "bn": "তুমি সম্প্রতি ব্যবহার করোনি এমন ব্যক্তিগত file মুছে দেয়"
+      },
+      {
+        "en": "Removes packages that were installed only as dependencies and are no longer needed",
+        "bn": "যে package শুধু dependency হিসেবে install হয়েছিল আর এখন কারো দরকার নেই সেগুলো সরায়"
+      },
+      {
+        "en": "Removes every package that has an update available",
+        "bn": "যেসব package-এর update আছে সব সরায়"
+      },
+      {
+        "en": "Removes all packages you installed yourself",
+        "bn": "তুমি নিজে install করা সব package সরায়"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "It is good hygiene to run it now and then, after removing software.",
+      "bn": "Software সরানোর পর মাঝে মাঝে চালানো ভালো অভ্যাস।"
+    }
+  },
+  {
+    "q": {
+      "en": "Where does `apt` keep the list of repositories it trusts?",
+      "bn": "`apt` যে repository-গুলো বিশ্বাস করে তার list কোথায় রাখে?"
+    },
+    "options": [
+      {
+        "en": "`/var/log/apt`",
+        "bn": "`/var/log/apt`"
+      },
+      {
+        "en": "`/home/<user>/.apt`",
+        "bn": "`/home/<user>/.apt`"
+      },
+      {
+        "en": "`/etc/apt/sources.list`",
+        "bn": "`/etc/apt/sources.list`"
+      },
+      {
+        "en": "`/usr/bin/apt`",
+        "bn": "`/usr/bin/apt`"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "`apt update` re-reads `/etc/apt/sources.list` and the files in `/etc/apt/sources.list.d/`. A PPA adds one more source there.",
+      "bn": "`apt update` `/etc/apt/sources.list` আর `/etc/apt/sources.list.d/`-এর file আবার পড়ে। PPA সেখানে আরেকটা source যোগ করে।"
+    }
+  }
+]

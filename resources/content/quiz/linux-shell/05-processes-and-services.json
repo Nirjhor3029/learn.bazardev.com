@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What is a PID?",
+      "bn": "PID কী?"
+    },
+    "options": [
+      {
+        "en": "The name of a program on disk",
+        "bn": "Disk-এ থাকা program-এর নাম"
+      },
+      {
+        "en": "The unique number given to each running process",
+        "bn": "প্রতিটা চলমান process-কে দেওয়া অনন্য নম্বর"
+      },
+      {
+        "en": "The amount of memory a process uses",
+        "bn": "একটা process কতটা memory নেয় তার পরিমাণ"
+      },
+      {
+        "en": "A permission setting for a file",
+        "bn": "একটা file-এর permission সেটিং"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Even one program can run as several processes, each with its own PID.",
+      "bn": "একই program একাধিক process হিসেবে চলতে পারে, প্রতিটার আলাদা PID থাকে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which command asks a process to shut down politely, giving it time to clean up?",
+      "bn": "কোন command একটা process-কে ভদ্রভাবে বন্ধ হতে বলে এবং পরিষ্কার করার সময় দেয়?"
+    },
+    "options": [
+      {
+        "en": "`kill -9 12345`",
+        "bn": "`kill -9 12345`"
+      },
+      {
+        "en": "`nohup 12345`",
+        "bn": "`nohup 12345`"
+      },
+      {
+        "en": "`kill 12345`",
+        "bn": "`kill 12345`"
+      },
+      {
+        "en": "`bg 12345`",
+        "bn": "`bg 12345`"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Plain `kill` sends SIGTERM, a polite request. `kill -9` sends SIGKILL, which ends the process instantly with no cleanup.",
+      "bn": "সাধারণ `kill` SIGTERM পাঠায়, একটা ভদ্র অনুরোধ। `kill -9` SIGKILL পাঠায়, যা কোনো পরিষ্কার না করেই সাথে সাথে process শেষ করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the difference between `systemctl start caddy` and `systemctl enable caddy`?",
+      "bn": "`systemctl start caddy` আর `systemctl enable caddy`-এর পার্থক্য কী?"
+    },
+    "options": [
+      {
+        "en": "`start` runs it now; `enable` makes it start automatically at every boot",
+        "bn": "`start` এখনই চালু করে; `enable` প্রতিটা boot-এ নিজে থেকে চালু হওয়ার ব্যবস্থা করে"
+      },
+      {
+        "en": "`start` is for the first install; `enable` is for updates",
+        "bn": "`start` প্রথম install-এর জন্য; `enable` update-এর জন্য"
+      },
+      {
+        "en": "They do exactly the same thing",
+        "bn": "দুটো ঠিক একই কাজ করে"
+      },
+      {
+        "en": "`enable` stops the service from starting at boot",
+        "bn": "`enable` boot-এ service চালু হওয়া বন্ধ করে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "They answer different questions: \"run it now?\" and \"run it on every boot?\". You usually want both.",
+      "bn": "দুটো আলাদা প্রশ্নের উত্তর: “এখন চালাব?” আর “প্রতিবার boot-এ চালাব?”। সাধারণত দুটোই লাগে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which command follows a service's logs live?",
+      "bn": "কোন command একটা service-এর log live অনুসরণ করে?"
+    },
+    "options": [
+      {
+        "en": "`systemctl logs caddy`",
+        "bn": "`systemctl logs caddy`"
+      },
+      {
+        "en": "`ps aux caddy`",
+        "bn": "`ps aux caddy`"
+      },
+      {
+        "en": "`top -u caddy`",
+        "bn": "`top -u caddy`"
+      },
+      {
+        "en": "`journalctl -u caddy -f`",
+        "bn": "`journalctl -u caddy -f`"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "`journalctl -u <service> -f` is the systemd version of `tail -f` and `docker logs -f`: same idea, different tool.",
+      "bn": "`journalctl -u <service> -f` হলো `tail -f` আর `docker logs -f`-এর systemd রূপ: একই ধারণা, আলাদা tool।"
+    }
+  },
+  {
+    "q": {
+      "en": "You started a script, closed the terminal and the script died. What keeps a process alive after the terminal closes?",
+      "bn": "তুমি একটা script চালিয়ে terminal বন্ধ করতেই script মরে গেল। Terminal বন্ধ হলেও process বাঁচিয়ে রাখে কী?"
+    },
+    "options": [
+      {
+        "en": "`fg long-running-script.sh`",
+        "bn": "`fg long-running-script.sh`"
+      },
+      {
+        "en": "`nohup long-running-script.sh &`",
+        "bn": "`nohup long-running-script.sh &`"
+      },
+      {
+        "en": "`jobs long-running-script.sh`",
+        "bn": "`jobs long-running-script.sh`"
+      },
+      {
+        "en": "`top long-running-script.sh`",
+        "bn": "`top long-running-script.sh`"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "`nohup` (no hang up) ignores the hang-up signal sent when the terminal closes. For real services, use systemd instead.",
+      "bn": "`nohup` (no hang up) terminal বন্ধ হলে যে hang-up signal যায় তা উপেক্ষা করে। আসল service-এর জন্য systemd ব্যবহার করো।"
+    }
+  }
+]

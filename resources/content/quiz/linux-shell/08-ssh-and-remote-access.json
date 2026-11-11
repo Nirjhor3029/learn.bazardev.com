@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "In an SSH key pair, which file must never leave your machine?",
+      "bn": "SSH key pair-এর কোন file তোমার machine-এর বাইরে কখনো যাওয়া উচিত নয়?"
+    },
+    "options": [
+      {
+        "en": "The private key (`id_ed25519`)",
+        "bn": "Private key (`id_ed25519`)"
+      },
+      {
+        "en": "The public key (`id_ed25519.pub`)",
+        "bn": "Public key (`id_ed25519.pub`)"
+      },
+      {
+        "en": "Neither: both should be shared with the server",
+        "bn": "কোনোটাই নয়: দুটোই server-এর সাথে share করা উচিত"
+      },
+      {
+        "en": "Both: the server needs them to log you in",
+        "bn": "দুটোই: login করাতে server-এর দুটোই লাগে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The public key is safe to put on any server. The server only checks that you hold the matching private key; it never sees it.",
+      "bn": "Public key যেকোনো server-এ রাখা নিরাপদ। Server শুধু যাচাই করে যে তোমার কাছে মিলে-যাওয়া private key আছে; সেটা সে কখনো দেখে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which command copies your public key to a server so you can log in without a password?",
+      "bn": "কোন command তোমার public key server-এ copy করে, যাতে password ছাড়া login করা যায়?"
+    },
+    "options": [
+      {
+        "en": "`scp id_ed25519 dev@167.86.127.108:/`",
+        "bn": "`scp id_ed25519 dev@167.86.127.108:/`"
+      },
+      {
+        "en": "`ssh-keygen dev@167.86.127.108`",
+        "bn": "`ssh-keygen dev@167.86.127.108`"
+      },
+      {
+        "en": "`ssh -p dev@167.86.127.108`",
+        "bn": "`ssh -p dev@167.86.127.108`"
+      },
+      {
+        "en": "`ssh-copy-id dev@167.86.127.108`",
+        "bn": "`ssh-copy-id dev@167.86.127.108`"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "`ssh-copy-id` appends your public key to the server's `~/.ssh/authorized_keys`.",
+      "bn": "`ssh-copy-id` তোমার public key server-এর `~/.ssh/authorized_keys`-এ যোগ করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "SSH says `WARNING: UNPROTECTED PRIVATE KEY FILE!`. What is the fix?",
+      "bn": "SSH বলছে `WARNING: UNPROTECTED PRIVATE KEY FILE!`। সমাধান কী?"
+    },
+    "options": [
+      {
+        "en": "`chmod 777 ~/.ssh/id_ed25519`",
+        "bn": "`chmod 777 ~/.ssh/id_ed25519`"
+      },
+      {
+        "en": "`chown root ~/.ssh/id_ed25519`",
+        "bn": "`chown root ~/.ssh/id_ed25519`"
+      },
+      {
+        "en": "`chmod 600 ~/.ssh/id_ed25519`",
+        "bn": "`chmod 600 ~/.ssh/id_ed25519`"
+      },
+      {
+        "en": "Delete the key and use a password",
+        "bn": "Key মুছে password ব্যবহার করা"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "The key's permissions are too open, so SSH refuses to use it. `600` means only the owner can read and write it (Chapter 3 again).",
+      "bn": "Key-র permission বেশি খোলা, তাই SSH সেটা ব্যবহার করতে চায় না। `600` মানে শুধু owner পড়তে ও লিখতে পারে (আবার Chapter 3)।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does a `~/.ssh/config` entry with `Host myserver` let you do?",
+      "bn": "`~/.ssh/config`-এ `Host myserver` লিখলে কী করা যায়?"
+    },
+    "options": [
+      {
+        "en": "Skip the key pair and log in with no authentication",
+        "bn": "Key pair ছাড়াই কোনো authentication ছাড়া login করা"
+      },
+      {
+        "en": "Type `ssh myserver` instead of the full `ssh -p PORT user@host` command",
+        "bn": "পুরো `ssh -p PORT user@host`-এর বদলে শুধু `ssh myserver` লেখা"
+      },
+      {
+        "en": "Run a command on the server every night",
+        "bn": "প্রতি রাতে server-এ একটা command চালানো"
+      },
+      {
+        "en": "Open ports on the server's firewall",
+        "bn": "Server-এর firewall-এ port খোলা"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "It is a file on your own machine. Set it up once and you never type the long command again.",
+      "bn": "এটা তোমার নিজের machine-এর file। একবার বানালে লম্বা command আর লিখতে হয় না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which command downloads `/home/dev/remote-file.txt` from the server into your current folder?",
+      "bn": "কোন command server থেকে `/home/dev/remote-file.txt` তোমার বর্তমান folder-এ নামায়?"
+    },
+    "options": [
+      {
+        "en": "`scp ./ dev@167.86.127.108:/home/dev/remote-file.txt`",
+        "bn": "`scp ./ dev@167.86.127.108:/home/dev/remote-file.txt`"
+      },
+      {
+        "en": "`ssh dev@167.86.127.108 remote-file.txt`",
+        "bn": "`ssh dev@167.86.127.108 remote-file.txt`"
+      },
+      {
+        "en": "`scp remote-file.txt dev@167.86.127.108`",
+        "bn": "`scp remote-file.txt dev@167.86.127.108`"
+      },
+      {
+        "en": "`scp dev@167.86.127.108:/home/dev/remote-file.txt ./`",
+        "bn": "`scp dev@167.86.127.108:/home/dev/remote-file.txt ./`"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "`scp source destination`: a remote path is written as `user@host:/path`. Putting it first and `./` last pulls the file down.",
+      "bn": "`scp source destination`: remote path লিখতে হয় `user@host:/path` আকারে। সেটা আগে আর `./` শেষে দিলে file নেমে আসে।"
+    }
+  }
+]

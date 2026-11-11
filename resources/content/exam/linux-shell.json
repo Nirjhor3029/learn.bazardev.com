@@ -1,0 +1,834 @@
+[
+  {
+    "ref": "01-finding-your-way-around",
+    "q": {
+      "en": "You run `cd /home` and then `cd -`. Where do you end up?",
+      "bn": "তুমি `cd /home` চালিয়ে তারপর `cd -` চালালে। শেষে কোথায় থাকবে?"
+    },
+    "options": [
+      {
+        "en": "In `/home` again",
+        "bn": "আবার `/home`-এ"
+      },
+      {
+        "en": "Back in the folder you were in before `cd /home`",
+        "bn": "`cd /home`-এর আগে যে folder-এ ছিলে সেখানে ফিরে যাবে"
+      },
+      {
+        "en": "In your home folder `~`",
+        "bn": "তোমার home folder `~`-এ"
+      },
+      {
+        "en": "In the root `/`",
+        "bn": "Root `/`-এ"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "01-finding-your-way-around",
+    "q": {
+      "en": "Which command lists everything in the current folder, hidden files included, in long format?",
+      "bn": "কোন command বর্তমান folder-এর সবকিছু, hidden file সহ, long format-এ দেখায়?"
+    },
+    "options": [
+      {
+        "en": "`ls -l`",
+        "bn": "`ls -l`"
+      },
+      {
+        "en": "`ls -a`",
+        "bn": "`ls -a`"
+      },
+      {
+        "en": "`ls -h`",
+        "bn": "`ls -h`"
+      },
+      {
+        "en": "`ls -la`",
+        "bn": "`ls -la`"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "01-finding-your-way-around",
+    "q": {
+      "en": "A script runs `cd projects/shop`. It works on your laptop but fails on the server. What is the most likely reason?",
+      "bn": "একটা script `cd projects/shop` চালায়। তোমার laptop-এ চলে কিন্তু server-এ fail করে। সবচেয়ে সম্ভাব্য কারণ কী?"
+    },
+    "options": [
+      {
+        "en": "It uses a relative path that depends on the current folder; scripts should use absolute paths",
+        "bn": "এটা relative path ব্যবহার করে যা বর্তমান folder-এর উপর নির্ভর করে; script-এ absolute path ব্যবহার করা উচিত"
+      },
+      {
+        "en": "The server has no `cd` command",
+        "bn": "Server-এ `cd` command নেই"
+      },
+      {
+        "en": "`projects` is a reserved word on servers",
+        "bn": "Server-এ `projects` একটা সংরক্ষিত শব্দ"
+      },
+      {
+        "en": "Relative paths only work on Windows",
+        "bn": "Relative path শুধু Windows-এ চলে"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "01-finding-your-way-around",
+    "q": {
+      "en": "Where should you NOT keep anything important, because it can be wiped on reboot?",
+      "bn": "গুরুত্বপূর্ণ কিছু কোথায় রাখা উচিত নয়, কারণ reboot-এ তা মুছে যেতে পারে?"
+    },
+    "options": [
+      {
+        "en": "`/home/dev`",
+        "bn": "`/home/dev`"
+      },
+      {
+        "en": "`/var`",
+        "bn": "`/var`"
+      },
+      {
+        "en": "`/tmp`",
+        "bn": "`/tmp`"
+      },
+      {
+        "en": "`/etc`",
+        "bn": "`/etc`"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "02-files-and-directories",
+    "q": {
+      "en": "What does `mv notes.txt final-notes.txt` do when both names are in the same folder?",
+      "bn": "দুটো নামই একই folder-এ থাকলে `mv notes.txt final-notes.txt` কী করে?"
+    },
+    "options": [
+      {
+        "en": "It renames the file",
+        "bn": "File-এর নাম বদলে দেয়"
+      },
+      {
+        "en": "It copies the file and keeps both names",
+        "bn": "File copy করে দুটো নামই রাখে"
+      },
+      {
+        "en": "It moves the file into a folder called `final-notes.txt`",
+        "bn": "`final-notes.txt` নামের folder-এ file সরায়"
+      },
+      {
+        "en": "It fails, because `mv` cannot rename",
+        "bn": "Fail করে, কারণ `mv` rename করতে পারে না"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "02-files-and-directories",
+    "q": {
+      "en": "Why is `rm -rf / home/user/old-folder` (note the space after `/`) so dangerous?",
+      "bn": "`rm -rf / home/user/old-folder` (`/`-এর পরে ফাঁকা লক্ষ করো) এত বিপজ্জনক কেন?"
+    },
+    "options": [
+      {
+        "en": "Nothing: the space is ignored",
+        "bn": "কিছুই না: ফাঁকা উপেক্ষিত হয়"
+      },
+      {
+        "en": "It only deletes `/home`",
+        "bn": "এটা শুধু `/home` মোছে"
+      },
+      {
+        "en": "It is just a syntax error and does nothing",
+        "bn": "এটা শুধু syntax error, কিছু করে না"
+      },
+      {
+        "en": "The space makes `/` a separate path, so it also tries to delete the whole root",
+        "bn": "ফাঁকার কারণে `/` আলাদা একটা path হয়ে যায়, ফলে পুরো root মুছতেও চেষ্টা করে"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "02-files-and-directories",
+    "q": {
+      "en": "What does `find . -name \"*.log\"` do?",
+      "bn": "`find . -name \"*.log\"` কী করে?"
+    },
+    "options": [
+      {
+        "en": "Lists only `.log` files in the current folder, not in subfolders",
+        "bn": "শুধু বর্তমান folder-এর `.log` file দেখায়, subfolder-এর নয়"
+      },
+      {
+        "en": "Deletes every `.log` file",
+        "bn": "সব `.log` file মুছে দেয়"
+      },
+      {
+        "en": "Searches the current folder and every subfolder for names ending in `.log`",
+        "bn": "বর্তমান folder আর সব subfolder-এ `.log`-এ শেষ হওয়া নাম খোঁজে"
+      },
+      {
+        "en": "Searches only inside `/var/log`",
+        "bn": "শুধু `/var/log`-এর ভেতরে খোঁজে"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "02-files-and-directories",
+    "q": {
+      "en": "What does `which php` tell you?",
+      "bn": "`which php` তোমাকে কী জানায়?"
+    },
+    "options": [
+      {
+        "en": "Where the PHP documentation lives",
+        "bn": "PHP-র documentation কোথায় আছে"
+      },
+      {
+        "en": "Which installed program would run if you typed `php`",
+        "bn": "`php` লিখলে কোন installed program চলবে"
+      },
+      {
+        "en": "Which PHP version is newest online",
+        "bn": "Online-এ PHP-র কোন version সবচেয়ে নতুন"
+      },
+      {
+        "en": "Which users are allowed to run PHP",
+        "bn": "কোন user-রা PHP চালাতে পারে"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "03-permissions-and-ownership",
+    "q": {
+      "en": "Which permission is right for a private SSH key?",
+      "bn": "Private SSH key-র জন্য কোন permission ঠিক?"
+    },
+    "options": [
+      {
+        "en": "`644`",
+        "bn": "`644`"
+      },
+      {
+        "en": "`755`",
+        "bn": "`755`"
+      },
+      {
+        "en": "`777`",
+        "bn": "`777`"
+      },
+      {
+        "en": "`600`",
+        "bn": "`600`"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "03-permissions-and-ownership",
+    "q": {
+      "en": "After `chmod 755 deploy.sh`, what can users who are neither the owner nor in the group do?",
+      "bn": "`chmod 755 deploy.sh`-এর পর, যারা owner নয় আর group-এও নেই তারা কী করতে পারে?"
+    },
+    "options": [
+      {
+        "en": "Only read it",
+        "bn": "শুধু পড়তে পারে"
+      },
+      {
+        "en": "Read and execute it, but not change it",
+        "bn": "পড়তে আর চালাতে পারে, বদলাতে পারে না"
+      },
+      {
+        "en": "Read, write and execute it",
+        "bn": "পড়তে, লিখতে আর চালাতে পারে"
+      },
+      {
+        "en": "Nothing at all",
+        "bn": "কিছুই পারে না"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "03-permissions-and-ownership",
+    "q": {
+      "en": "The first character of `drwxr-xr-x` is `d`. What does it mean?",
+      "bn": "`drwxr-xr-x`-এর প্রথম অক্ষর `d`। এর মানে কী?"
+    },
+    "options": [
+      {
+        "en": "It is a directory",
+        "bn": "এটা একটা directory"
+      },
+      {
+        "en": "It is a regular file",
+        "bn": "এটা একটা সাধারণ file"
+      },
+      {
+        "en": "It is a symbolic link",
+        "bn": "এটা একটা symbolic link"
+      },
+      {
+        "en": "It is a hidden file",
+        "bn": "এটা একটা hidden file"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "03-permissions-and-ownership",
+    "q": {
+      "en": "What does `sudo chown dev:www-data notes.txt` change?",
+      "bn": "`sudo chown dev:www-data notes.txt` কী বদলায়?"
+    },
+    "options": [
+      {
+        "en": "Only the owner, to `www-data`",
+        "bn": "শুধু owner-কে, `www-data` করে"
+      },
+      {
+        "en": "The permissions, to `dev:www-data`",
+        "bn": "Permission-কে `dev:www-data` করে"
+      },
+      {
+        "en": "The owner to `dev` and the group to `www-data`",
+        "bn": "Owner `dev` আর group `www-data` করে"
+      },
+      {
+        "en": "Nothing, it only reports who owns the file",
+        "bn": "কিছুই না, শুধু জানায় file-এর মালিক কে"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "04-users-groups-and-sudo",
+    "q": {
+      "en": "What does `sudo usermod -G docker dev` (without `-a`) risk?",
+      "bn": "`sudo usermod -G docker dev` (`-a` ছাড়া) কী ঝুঁকি তৈরি করে?"
+    },
+    "options": [
+      {
+        "en": "It deletes the user",
+        "bn": "এটা user-কে মুছে দেয়"
+      },
+      {
+        "en": "It replaces all of dev's other extra groups with only `docker`",
+        "bn": "এটা dev-এর বাকি সব অতিরিক্ত group সরিয়ে শুধু `docker` রাখে"
+      },
+      {
+        "en": "Nothing: it is identical to `-aG`",
+        "bn": "কিছুই না: এটা `-aG`-এর মতোই"
+      },
+      {
+        "en": "It locks the account",
+        "bn": "এটা account lock করে দেয়"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "04-users-groups-and-sudo",
+    "q": {
+      "en": "On Ubuntu, membership of which group lets a user run `sudo`?",
+      "bn": "Ubuntu-তে কোন group-এর সদস্য হলে user `sudo` চালাতে পারে?"
+    },
+    "options": [
+      {
+        "en": "`admins`",
+        "bn": "`admins`"
+      },
+      {
+        "en": "`root`",
+        "bn": "`root`"
+      },
+      {
+        "en": "`sudo`",
+        "bn": "`sudo`"
+      },
+      {
+        "en": "`users`",
+        "bn": "`users`"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "04-users-groups-and-sudo",
+    "q": {
+      "en": "`id` prints `uid=1002(dev) gid=1002(dev) groups=1002(dev),27(sudo),100(users)`. How many groups does this user belong to?",
+      "bn": "`id` print করল `uid=1002(dev) gid=1002(dev) groups=1002(dev),27(sudo),100(users)`। এই user কয়টা group-এর সদস্য?"
+    },
+    "options": [
+      {
+        "en": "One",
+        "bn": "একটি"
+      },
+      {
+        "en": "Two",
+        "bn": "দুটি"
+      },
+      {
+        "en": "Four",
+        "bn": "চারটি"
+      },
+      {
+        "en": "Three",
+        "bn": "তিনটি"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "04-users-groups-and-sudo",
+    "q": {
+      "en": "Why do modern systems prefer `sudo` over staying in a root shell?",
+      "bn": "আধুনিক system root shell-এর বদলে `sudo` পছন্দ করে কেন?"
+    },
+    "options": [
+      {
+        "en": "It applies to one command at a time and records who ran what",
+        "bn": "এটা একবারে একটা command-এ সীমিত থাকে আর কে কী চালিয়েছে তা লিখে রাখে"
+      },
+      {
+        "en": "It is faster to type",
+        "bn": "এটা টাইপ করতে দ্রুত"
+      },
+      {
+        "en": "It needs no password at all",
+        "bn": "এতে কোনো password-ই লাগে না"
+      },
+      {
+        "en": "It gives more power than root",
+        "bn": "এটা root-এর চেয়েও বেশি ক্ষমতা দেয়"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "05-processes-and-services",
+    "q": {
+      "en": "A process ignores a plain `kill 4321`. What is the sensible next step?",
+      "bn": "একটা process সাধারণ `kill 4321` উপেক্ষা করছে। এরপর যুক্তিসঙ্গত পদক্ষেপ কী?"
+    },
+    "options": [
+      {
+        "en": "Reboot the whole server first",
+        "bn": "আগে পুরো server reboot করা"
+      },
+      {
+        "en": "Run `kill 4321` again until it works",
+        "bn": "কাজ না হওয়া পর্যন্ত `kill 4321` বারবার চালানো"
+      },
+      {
+        "en": "Use `kill -9 4321` as a last resort, since the process is genuinely stuck",
+        "bn": "শেষ উপায় হিসেবে `kill -9 4321` ব্যবহার করা, কারণ process সত্যিই আটকে আছে"
+      },
+      {
+        "en": "Delete the program's folder",
+        "bn": "Program-এর folder মুছে দেওয়া"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "05-processes-and-services",
+    "q": {
+      "en": "In `ps aux`, what does `Z` in the STAT column mean?",
+      "bn": "`ps aux`-এ STAT column-এ `Z` মানে কী?"
+    },
+    "options": [
+      {
+        "en": "Sleeping",
+        "bn": "ঘুমিয়ে আছে"
+      },
+      {
+        "en": "Running",
+        "bn": "চলছে"
+      },
+      {
+        "en": "Paused by the user",
+        "bn": "ব্যবহারকারী pause করেছে"
+      },
+      {
+        "en": "A zombie: it has finished but has not been cleaned up yet",
+        "bn": "Zombie: কাজ শেষ হয়েছে কিন্তু এখনও পরিষ্কার হয়নি"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "05-processes-and-services",
+    "q": {
+      "en": "You want caddy to run now and also start at every boot. What do you do?",
+      "bn": "তুমি চাও caddy এখন চলুক আর প্রতিটা boot-এও চালু হোক। কী করবে?"
+    },
+    "options": [
+      {
+        "en": "Only `systemctl start caddy`",
+        "bn": "শুধু `systemctl start caddy`"
+      },
+      {
+        "en": "Run both `systemctl enable caddy` and `systemctl start caddy`",
+        "bn": "`systemctl enable caddy` আর `systemctl start caddy` দুটোই চালাব"
+      },
+      {
+        "en": "Only `systemctl reload caddy`",
+        "bn": "শুধু `systemctl reload caddy`"
+      },
+      {
+        "en": "Only `systemctl status caddy`",
+        "bn": "শুধু `systemctl status caddy`"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "05-processes-and-services",
+    "q": {
+      "en": "How does `systemctl reload caddy` differ from `restart`?",
+      "bn": "`systemctl reload caddy` আর `restart`-এর পার্থক্য কী?"
+    },
+    "options": [
+      {
+        "en": "`reload` re-reads the config without dropping current connections (when supported)",
+        "bn": "`reload` চলমান connection না ফেলে config আবার পড়ে (যেখানে সমর্থিত)"
+      },
+      {
+        "en": "`reload` reinstalls the package",
+        "bn": "`reload` package আবার install করে"
+      },
+      {
+        "en": "`reload` is the same as `stop`",
+        "bn": "`reload` আর `stop` একই"
+      },
+      {
+        "en": "`reload` makes the service start at boot",
+        "bn": "`reload` boot-এ service চালু হওয়ার ব্যবস্থা করে"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "06-package-management",
+    "q": {
+      "en": "You run `apt remove nginx`, later reinstall it, and your old settings are back. Why?",
+      "bn": "তুমি `apt remove nginx` চালিয়ে পরে আবার install করলে, আর আগের settings ফিরে এল। কেন?"
+    },
+    "options": [
+      {
+        "en": "The settings were never stored on disk",
+        "bn": "Settings কখনো disk-এ জমা ছিলই না"
+      },
+      {
+        "en": "`remove` moves them into `/tmp`",
+        "bn": "`remove` সেগুলো `/tmp`-এ সরায়"
+      },
+      {
+        "en": "apt downloads them again from the repository",
+        "bn": "apt সেগুলো repository থেকে আবার নামায়"
+      },
+      {
+        "en": "`remove` keeps the configuration files",
+        "bn": "`remove` configuration file রেখে দেয়"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "06-package-management",
+    "q": {
+      "en": "Which command lists everything currently installed?",
+      "bn": "কোন command এখন যা যা installed আছে সব দেখায়?"
+    },
+    "options": [
+      {
+        "en": "`apt list --installed`",
+        "bn": "`apt list --installed`"
+      },
+      {
+        "en": "`apt search installed`",
+        "bn": "`apt search installed`"
+      },
+      {
+        "en": "`apt show --all`",
+        "bn": "`apt show --all`"
+      },
+      {
+        "en": "`apt update --list`",
+        "bn": "`apt update --list`"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "06-package-management",
+    "q": {
+      "en": "What is a PPA on Ubuntu?",
+      "bn": "Ubuntu-তে PPA কী?"
+    },
+    "options": [
+      {
+        "en": "A program that cleans up old packages",
+        "bn": "পুরনো package পরিষ্কার করার program"
+      },
+      {
+        "en": "A Personal Package Archive: an extra repository you add as a software source",
+        "bn": "Personal Package Archive: অতিরিক্ত একটা repository যা তুমি software source হিসেবে যোগ করো"
+      },
+      {
+        "en": "A permission setting for packages",
+        "bn": "Package-এর একটা permission সেটিং"
+      },
+      {
+        "en": "A type of firewall rule",
+        "bn": "এক ধরনের firewall rule"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "06-package-management",
+    "q": {
+      "en": "When software is in your distribution's official repositories, why prefer `apt install` over a `curl | sh` script?",
+      "bn": "Software যখন distribution-এর official repository-তে আছে, তখন `curl | sh` script-এর বদলে `apt install` পছন্দের কেন?"
+    },
+    "options": [
+      {
+        "en": "It always installs a newer version",
+        "bn": "এটা সবসময় নতুন version install করে"
+      },
+      {
+        "en": "It needs no internet connection",
+        "bn": "এতে internet connection লাগে না"
+      },
+      {
+        "en": "It is easier to audit and to manage later",
+        "bn": "এটা যাচাই করা আর পরে সামলানো সহজ"
+      },
+      {
+        "en": "Scripts cannot run on Ubuntu",
+        "bn": "Ubuntu-তে script চলে না"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "07-pipes-redirection-text-tools",
+    "q": {
+      "en": "`ls -la > filelist.txt` runs while `filelist.txt` already has content. What happens to that content?",
+      "bn": "`filelist.txt`-এ আগে থেকে লেখা থাকা অবস্থায় `ls -la > filelist.txt` চালালে সেই লেখার কী হয়?"
+    },
+    "options": [
+      {
+        "en": "It is overwritten",
+        "bn": "Overwrite হয়ে যায়"
+      },
+      {
+        "en": "The new output is added at the end",
+        "bn": "নতুন output শেষে যোগ হয়"
+      },
+      {
+        "en": "The command fails",
+        "bn": "Command fail করে"
+      },
+      {
+        "en": "It is moved to `filelist.txt.bak`",
+        "bn": "`filelist.txt.bak`-এ সরে যায়"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "07-pipes-redirection-text-tools",
+    "q": {
+      "en": "Which redirect sends only the error output of a command to a file?",
+      "bn": "কোন redirect একটা command-এর শুধু error output একটা file-এ পাঠায়?"
+    },
+    "options": [
+      {
+        "en": "`>`",
+        "bn": "`>`"
+      },
+      {
+        "en": "`>>`",
+        "bn": "`>>`"
+      },
+      {
+        "en": "`2>`",
+        "bn": "`2>`"
+      },
+      {
+        "en": "`|`",
+        "bn": "`|`"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "07-pipes-redirection-text-tools",
+    "q": {
+      "en": "Does `sed 's/old/new/g' file.txt` change `file.txt`?",
+      "bn": "`sed 's/old/new/g' file.txt` কি `file.txt` বদলে দেয়?"
+    },
+    "options": [
+      {
+        "en": "Yes, always",
+        "bn": "হ্যাঁ, সবসময়"
+      },
+      {
+        "en": "No, it prints the result; add `-i` to edit the file in place",
+        "bn": "না, ফলাফল print করে; file-টা সরাসরি বদলাতে `-i` দিতে হয়"
+      },
+      {
+        "en": "Only if the file is empty",
+        "bn": "শুধু file খালি থাকলে"
+      },
+      {
+        "en": "Only when run with `sudo`",
+        "bn": "শুধু `sudo` দিয়ে চালালে"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "07-pipes-redirection-text-tools",
+    "q": {
+      "en": "Why must `sort` come before `uniq -c` in the classic pipeline?",
+      "bn": "Classic pipeline-এ `uniq -c`-এর আগে `sort` লাগে কেন?"
+    },
+    "options": [
+      {
+        "en": "`uniq` cannot read files",
+        "bn": "`uniq` file পড়তে পারে না"
+      },
+      {
+        "en": "`sort` creates the counts",
+        "bn": "`sort` গণনা তৈরি করে"
+      },
+      {
+        "en": "Pipes only accept sorted text",
+        "bn": "Pipe শুধু সাজানো text নেয়"
+      },
+      {
+        "en": "`uniq` only collapses duplicates that sit next to each other",
+        "bn": "`uniq` শুধু পাশাপাশি থাকা duplicate এক করে"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "08-ssh-and-remote-access",
+    "q": {
+      "en": "Which key do you add to the server's `~/.ssh/authorized_keys`?",
+      "bn": "Server-এর `~/.ssh/authorized_keys`-এ কোন key যোগ করো?"
+    },
+    "options": [
+      {
+        "en": "Your private key",
+        "bn": "তোমার private key"
+      },
+      {
+        "en": "Both keys",
+        "bn": "দুটো key-ই"
+      },
+      {
+        "en": "Your public key",
+        "bn": "তোমার public key"
+      },
+      {
+        "en": "Your password",
+        "bn": "তোমার password"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "08-ssh-and-remote-access",
+    "q": {
+      "en": "After a server rebuild you get `Host key verification failed`. What does it mean?",
+      "bn": "Server rebuild-এর পর `Host key verification failed` এল। এর মানে কী?"
+    },
+    "options": [
+      {
+        "en": "The server's identity fingerprint changed: expected after a rebuild, alarming if unexpected",
+        "bn": "Server-এর identity fingerprint বদলেছে: rebuild-এর পর স্বাভাবিক, অপ্রত্যাশিত হলে উদ্বেগের"
+      },
+      {
+        "en": "Your private key has expired",
+        "bn": "তোমার private key-র মেয়াদ শেষ"
+      },
+      {
+        "en": "The server has no SSH installed",
+        "bn": "Server-এ SSH install করা নেই"
+      },
+      {
+        "en": "Your password is wrong",
+        "bn": "তোমার password ভুল"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "08-ssh-and-remote-access",
+    "q": {
+      "en": "Which ports does a typical web server need open to the internet?",
+      "bn": "একটা সাধারণ web server-এর internet-এর জন্য কোন port খোলা দরকার?"
+    },
+    "options": [
+      {
+        "en": "Every port, to be safe",
+        "bn": "নিরাপদ থাকতে সব port"
+      },
+      {
+        "en": "Only 3306 and 6379",
+        "bn": "শুধু 3306 আর 6379"
+      },
+      {
+        "en": "Only port 22",
+        "bn": "শুধু 22 port"
+      },
+      {
+        "en": "22 for SSH, and 80/443 for web traffic",
+        "bn": "SSH-এর জন্য 22, আর web traffic-এর জন্য 80/443"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "08-ssh-and-remote-access",
+    "q": {
+      "en": "What does `ssh -p 2222 dev@167.86.127.108` do?",
+      "bn": "`ssh -p 2222 dev@167.86.127.108` কী করে?"
+    },
+    "options": [
+      {
+        "en": "Connects on port 22 and forwards port 2222",
+        "bn": "22 port-এ connect করে 2222 port forward করে"
+      },
+      {
+        "en": "Connects as `dev` using port 2222 instead of the default 22",
+        "bn": "Default 22-এর বদলে 2222 port দিয়ে `dev` হিসেবে connect করে"
+      },
+      {
+        "en": "Copies a file to port 2222",
+        "bn": "2222 port-এ একটা file copy করে"
+      },
+      {
+        "en": "Sets the password to 2222",
+        "bn": "Password 2222 করে দেয়"
+      }
+    ],
+    "answer": 1
+  }
+]

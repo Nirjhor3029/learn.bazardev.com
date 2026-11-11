@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "In `cat app.log | grep \"ERROR\" | wc -l`, what does each `|` do?",
+      "bn": "`cat app.log | grep \"ERROR\" | wc -l`-এ প্রতিটা `|` কী করে?"
+    },
+    "options": [
+      {
+        "en": "Runs both commands at the same time on separate files",
+        "bn": "দুটো command আলাদা file-এ একই সময়ে চালায়"
+      },
+      {
+        "en": "Saves the output into a file",
+        "bn": "Output একটা file-এ সেভ করে"
+      },
+      {
+        "en": "Runs the second command only if the first one fails",
+        "bn": "প্রথমটা fail করলে তবেই দ্বিতীয়টা চালায়"
+      },
+      {
+        "en": "Sends the output of the command on its left in as the input of the command on its right",
+        "bn": "বাঁ দিকের command-এর output ডান দিকের command-এর input হিসেবে পাঠায়"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Read left to right: show the file, keep only lines with ERROR, count them. Each tool does one simple job.",
+      "bn": "বাঁ থেকে ডানে পড়ো: file দেখাও, শুধু ERROR-এর লাইন রাখো, গুনে ফেলো। প্রতিটা tool একটা সহজ কাজ করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which operator adds to the end of a file instead of overwriting it?",
+      "bn": "কোন operator file-কে overwrite না করে শেষে যোগ করে?"
+    },
+    "options": [
+      {
+        "en": "`>`",
+        "bn": "`>`"
+      },
+      {
+        "en": "`>>`",
+        "bn": "`>>`"
+      },
+      {
+        "en": "`2>`",
+        "bn": "`2>`"
+      },
+      {
+        "en": "`|`",
+        "bn": "`|`"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "`>` overwrites, `>>` appends and `2>` sends only the error output to a file.",
+      "bn": "`>` overwrite করে, `>>` শেষে যোগ করে আর `2>` শুধু error output একটা file-এ পাঠায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which `grep` option shows only the lines that do NOT match?",
+      "bn": "কোন `grep` option শুধু সেই লাইনগুলো দেখায় যেগুলো মেলে না?"
+    },
+    "options": [
+      {
+        "en": "`-v`",
+        "bn": "`-v`"
+      },
+      {
+        "en": "`-i`",
+        "bn": "`-i`"
+      },
+      {
+        "en": "`-n`",
+        "bn": "`-n`"
+      },
+      {
+        "en": "`-r`",
+        "bn": "`-r`"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "`-v` inverts the match. `-i` ignores case, `-n` shows line numbers and `-r` searches folders recursively.",
+      "bn": "`-v` মেলানোকে উল্টে দেয়। `-i` বড়-ছোট হাতের অক্ষর উপেক্ষা করে, `-n` লাইন নম্বর দেখায়, `-r` সব folder-এ খোঁজে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `awk '{print $1}' access.log` print?",
+      "bn": "`awk '{print $1}' access.log` কী print করে?"
+    },
+    "options": [
+      {
+        "en": "Only the first line of the file",
+        "bn": "File-এর শুধু প্রথম লাইন"
+      },
+      {
+        "en": "The number of lines in the file",
+        "bn": "File-এ কতটা লাইন আছে তার সংখ্যা"
+      },
+      {
+        "en": "The first whitespace-separated column of every line",
+        "bn": "প্রতিটা লাইনের প্রথম (ফাঁকা দিয়ে আলাদা) column"
+      },
+      {
+        "en": "The last column of every line",
+        "bn": "প্রতিটা লাইনের শেষ column"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "`$1`, `$2`, `$3`… are the 1st, 2nd, 3rd fields. In a web server log the first field is often the visitor's IP address.",
+      "bn": "`$1`, `$2`, `$3`… হলো ১ম, ২য়, ৩য় field। Web server log-এ প্রথম field প্রায়ই visitor-এর IP address।"
+    }
+  },
+  {
+    "q": {
+      "en": "What question does `sort | uniq -c | sort -rn` answer?",
+      "bn": "`sort | uniq -c | sort -rn` কোন প্রশ্নের উত্তর দেয়?"
+    },
+    "options": [
+      {
+        "en": "Which lines are the longest",
+        "bn": "কোন লাইনগুলো সবচেয়ে লম্বা"
+      },
+      {
+        "en": "Which values appear most often, with counts, highest first",
+        "bn": "কোন value সবচেয়ে বেশিবার আসে, সংখ্যা সহ, বেশি থেকে কম"
+      },
+      {
+        "en": "Which lines were added most recently",
+        "bn": "কোন লাইনগুলো সবচেয়ে সম্প্রতি যোগ হয়েছে"
+      },
+      {
+        "en": "Which lines contain an error",
+        "bn": "কোন লাইনে error আছে"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "`uniq` only collapses neighbouring duplicates, so the first `sort` is needed. Then `-c` counts and `sort -rn` puts the biggest count first.",
+      "bn": "`uniq` শুধু পাশাপাশি থাকা duplicate এক করে, তাই প্রথম `sort` লাগে। তারপর `-c` গোনে আর `sort -rn` বড় সংখ্যা আগে রাখে।"
+    }
+  }
+]

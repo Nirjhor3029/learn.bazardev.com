@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "Why does it matter for DevOps that everything in Linux can be done with text commands?",
+      "bn": "Linux-এ সবকিছু text command দিয়ে করা যায় — DevOps-এর জন্য এটা গুরুত্বপূর্ণ কেন?"
+    },
+    "options": [
+      {
+        "en": "Typing is always faster than clicking, even for beginners",
+        "bn": "Beginner-দের জন্যও টাইপ করা সবসময় ক্লিক করার চেয়ে দ্রুত"
+      },
+      {
+        "en": "Linux has no graphical programs at all",
+        "bn": "Linux-এ কোনো graphical program-ই নেই"
+      },
+      {
+        "en": "Tasks can be scripted and repeated, which makes automation possible",
+        "bn": "কাজগুলো script করে বারবার চালানো যায়, ফলে automation সম্ভব হয়"
+      },
+      {
+        "en": "Windows and macOS cannot run commands",
+        "bn": "Windows আর macOS-এ command চালানোই যায় না"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Because every step is text, it can be saved in a script and replayed exactly. Automating repetitive work is most of what DevOps means.",
+      "bn": "সব ধাপ text বলে সেগুলো script-এ জমিয়ে হুবহু আবার চালানো যায়। বারবার করা কাজ automate করাই DevOps-এর বড় অংশ।"
+    }
+  },
+  {
+    "q": {
+      "en": "You are inside `/home/dev`. Which one is an absolute path to the `projects` folder?",
+      "bn": "তুমি `/home/dev`-এর ভেতরে আছ। `projects` folder-এর absolute path কোনটি?"
+    },
+    "options": [
+      {
+        "en": "`/home/dev/projects`",
+        "bn": "`/home/dev/projects`"
+      },
+      {
+        "en": "`projects`",
+        "bn": "`projects`"
+      },
+      {
+        "en": "`./projects`",
+        "bn": "`./projects`"
+      },
+      {
+        "en": "`../projects`",
+        "bn": "`../projects`"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "An absolute path starts with `/` and means the same place wherever you are. The others depend on your current folder.",
+      "bn": "Absolute path `/` দিয়ে শুরু হয় এবং তুমি যেখানেই থাকো একই জায়গা বোঝায়। বাকিগুলো তোমার বর্তমান folder-এর উপর নির্ভর করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which folder holds the configuration files for almost everything on the system?",
+      "bn": "প্রায় সবকিছুর configuration file কোন folder-এ থাকে?"
+    },
+    "options": [
+      {
+        "en": "`/var`",
+        "bn": "`/var`"
+      },
+      {
+        "en": "`/usr`",
+        "bn": "`/usr`"
+      },
+      {
+        "en": "`/tmp`",
+        "bn": "`/tmp`"
+      },
+      {
+        "en": "`/etc`",
+        "bn": "`/etc`"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "`/etc` is for configuration. `/var` holds changing data like logs, `/usr` holds programs, and `/tmp` is for temporary files.",
+      "bn": "`/etc`-তে থাকে configuration। `/var`-এ log-এর মতো বদলাতে-থাকা data, `/usr`-এ program, আর `/tmp`-তে সাময়িক file।"
+    }
+  },
+  {
+    "q": {
+      "en": "You feel lost in the terminal. Which command tells you exactly where you are?",
+      "bn": "Terminal-এ তুমি হারিয়ে ফেলেছ। তুমি ঠিক কোথায় আছ তা কোন command বলে?"
+    },
+    "options": [
+      {
+        "en": "`ls`",
+        "bn": "`ls`"
+      },
+      {
+        "en": "`pwd`",
+        "bn": "`pwd`"
+      },
+      {
+        "en": "`cd -`",
+        "bn": "`cd -`"
+      },
+      {
+        "en": "`whoami`",
+        "bn": "`whoami`"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "`pwd` (print working directory) prints your current location. `ls` only lists what is inside it.",
+      "bn": "`pwd` (print working directory) বর্তমান অবস্থান দেখায়। `ls` শুধু ভেতরে কী আছে তা দেখায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `cd -` do?",
+      "bn": "`cd -` কী করে?"
+    },
+    "options": [
+      {
+        "en": "Goes one folder up",
+        "bn": "এক folder উপরে যায়"
+      },
+      {
+        "en": "Goes to your home folder",
+        "bn": "তোমার home folder-এ যায়"
+      },
+      {
+        "en": "Takes you back to the previous folder you were in",
+        "bn": "আগে যে folder-এ ছিলে সেখানে ফিরিয়ে নেয়"
+      },
+      {
+        "en": "Goes to the root `/`",
+        "bn": "root `/`-এ যায়"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "`cd ..` goes up, `cd ~` goes home and `cd /` goes to the root. `cd -` lets you jump back and forth between two places.",
+      "bn": "`cd ..` উপরে যায়, `cd ~` home-এ, `cd /` root-এ। `cd -` দুই জায়গার মধ্যে আসা-যাওয়া করায়।"
+    }
+  }
+]

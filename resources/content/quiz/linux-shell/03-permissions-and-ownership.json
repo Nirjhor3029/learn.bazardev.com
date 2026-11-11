@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "`-rwxr-xr-- 1 dev www-data 1024 Nov 10 10:00 deploy.sh` — what can the group `www-data` do?",
+      "bn": "`-rwxr-xr-- 1 dev www-data 1024 Nov 10 10:00 deploy.sh` — `www-data` group কী করতে পারে?"
+    },
+    "options": [
+      {
+        "en": "Read and execute, but not write",
+        "bn": "পড়তে আর চালাতে পারে, লিখতে পারে না"
+      },
+      {
+        "en": "Read, write and execute",
+        "bn": "পড়তে, লিখতে আর চালাতে পারে"
+      },
+      {
+        "en": "Only read",
+        "bn": "শুধু পড়তে পারে"
+      },
+      {
+        "en": "Nothing at all",
+        "bn": "কিছুই করতে পারে না"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The string splits into owner `rwx`, group `r-x` and others `r--`. The group's middle letter is `-`, so it cannot write.",
+      "bn": "String-টা ভাগ হয় owner `rwx`, group `r-x` আর others `r--`-এ। Group-এর মাঝের অক্ষর `-`, তাই লেখার অনুমতি নেই।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `chmod 644 notes.txt` set?",
+      "bn": "`chmod 644 notes.txt` কী সেট করে?"
+    },
+    "options": [
+      {
+        "en": "`rwxr-xr-x`: everyone can run it",
+        "bn": "`rwxr-xr-x`: সবাই চালাতে পারে"
+      },
+      {
+        "en": "`rw-------`: only the owner can read it",
+        "bn": "`rw-------`: শুধু owner পড়তে পারে"
+      },
+      {
+        "en": "`rw-r--r--`: the owner can edit, everyone else can only read",
+        "bn": "`rw-r--r--`: owner edit করতে পারে, বাকিরা শুধু পড়তে পারে"
+      },
+      {
+        "en": "`r--r--r--`: nobody can edit it",
+        "bn": "`r--r--r--`: কেউই edit করতে পারে না"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "r=4, w=2, x=1, added per scope: 6 for the owner (rw-), 4 for the group and 4 for others (r--).",
+      "bn": "r=4, w=2, x=1; প্রতিটা scope-এ যোগ করে: owner-এর জন্য 6 (rw-), group আর others-এর জন্য 4 (r--)।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does the `x` permission mean on a folder?",
+      "bn": "Folder-এ `x` permission-এর মানে কী?"
+    },
+    "options": [
+      {
+        "en": "It lets you run the folder as a program",
+        "bn": "এটা folder-কে program হিসেবে চালাতে দেয়"
+      },
+      {
+        "en": "It lets you delete the folder",
+        "bn": "এটা folder মুছতে দেয়"
+      },
+      {
+        "en": "It lets you list the file names inside",
+        "bn": "এটা ভেতরের file-এর নাম দেখতে দেয়"
+      },
+      {
+        "en": "It lets you enter the folder with `cd`",
+        "bn": "এটা দিয়ে `cd` করে folder-এর ভেতরে ঢোকা যায়"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "On a folder, `x` means \"can enter\". Listing names is `r`, and creating or deleting things inside is `w`.",
+      "bn": "Folder-এ `x` মানে “ঢুকতে পারে”। নাম দেখা `r`, আর ভেতরে জিনিস বানানো বা মোছা `w`।"
+    }
+  },
+  {
+    "q": {
+      "en": "Your web server runs as `www-data` and gets \"permission denied\" writing to `storage/`. What is the usual fix?",
+      "bn": "তোমার web server `www-data` হিসেবে চলে আর `storage/`-এ লিখতে গিয়ে \"permission denied\" পায়। সাধারণ সমাধান কী?"
+    },
+    "options": [
+      {
+        "en": "`chmod 777` on everything",
+        "bn": "সবকিছুতে `chmod 777`"
+      },
+      {
+        "en": "Make `www-data` the group (`chown :www-data`) and give the group write access (`chmod 775`)",
+        "bn": "`www-data`-কে group বানানো (`chown :www-data`) আর group-কে লেখার অনুমতি দেওয়া (`chmod 775`)"
+      },
+      {
+        "en": "Run the web server as root",
+        "bn": "Web server root হিসেবে চালানো"
+      },
+      {
+        "en": "`chmod 000` so nobody can interfere",
+        "bn": "`chmod 000` দেওয়া যাতে কেউ বিরক্ত না করে"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "This `chown` + `chmod 775` pair is one of the most common real fixes. `777` lets anyone, including an attacker, modify the files.",
+      "bn": "এই `chown` + `chmod 775` জোড়াই সবচেয়ে সাধারণ বাস্তব সমাধান। `777` দিলে যে কেউ, এমনকি আক্রমণকারীও, file বদলাতে পারে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `chmod u+x deploy.sh` do?",
+      "bn": "`chmod u+x deploy.sh` কী করে?"
+    },
+    "options": [
+      {
+        "en": "Removes execute permission from the owner",
+        "bn": "Owner-এর চালানোর অনুমতি তুলে নেয়"
+      },
+      {
+        "en": "Gives execute permission to everyone",
+        "bn": "সবাইকে চালানোর অনুমতি দেয়"
+      },
+      {
+        "en": "Adds execute permission for the owner only",
+        "bn": "শুধু owner-কে চালানোর অনুমতি যোগ করে"
+      },
+      {
+        "en": "Sets the permissions to exactly `700`",
+        "bn": "Permission ঠিক `700` করে দেয়"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "`u` is the owner, `g` the group, `o` others; `+` adds, `-` removes and `=` sets exactly.",
+      "bn": "`u` মানে owner, `g` group, `o` others; `+` যোগ করে, `-` তুলে নেয়, আর `=` ঠিক সেটাই বসায়।"
+    }
+  }
+]

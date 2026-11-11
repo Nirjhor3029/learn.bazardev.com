@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "Which command shows your user ID and every group you belong to?",
+      "bn": "কোন command তোমার user ID আর তুমি যে সব group-এর সদস্য সেগুলো দেখায়?"
+    },
+    "options": [
+      {
+        "en": "`whoami`",
+        "bn": "`whoami`"
+      },
+      {
+        "en": "`passwd`",
+        "bn": "`passwd`"
+      },
+      {
+        "en": "`cat /etc/shadow`",
+        "bn": "`cat /etc/shadow`"
+      },
+      {
+        "en": "`id`",
+        "bn": "`id`"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "`whoami` prints only your username. `id` also lists your user ID, primary group and all other groups.",
+      "bn": "`whoami` শুধু username দেখায়। `id` ছাড়াও user ID, primary group আর বাকি সব group দেখায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why does `sudo usermod -aG docker dev` include `-a`?",
+      "bn": "`sudo usermod -aG docker dev`-এ `-a` কেন আছে?"
+    },
+    "options": [
+      {
+        "en": "It appends the group without removing the user's other group memberships",
+        "bn": "এটা অন্য group-এর সদস্যপদ না মুছে নতুন group যোগ করে"
+      },
+      {
+        "en": "It makes the change permanent after a reboot",
+        "bn": "এটা reboot-এর পরেও পরিবর্তন স্থায়ী রাখে"
+      },
+      {
+        "en": "It asks for the user's password first",
+        "bn": "এটা আগে user-এর password চায়"
+      },
+      {
+        "en": "It creates the group if it does not exist",
+        "bn": "Group না থাকলে এটা বানিয়ে দেয়"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Forgetting `-a` replaces all the user's other groups with just the new one — a classic mistake.",
+      "bn": "`-a` ভুলে গেলে user-এর বাকি সব group মুছে শুধু নতুনটা থাকে — একটা পুরনো ভুল।"
+    }
+  },
+  {
+    "q": {
+      "en": "You added yourself to the `docker` group, but `docker` still says permission denied. Why?",
+      "bn": "তুমি নিজেকে `docker` group-এ যোগ করেছ, তবুও `docker` permission denied বলছে। কেন?"
+    },
+    "options": [
+      {
+        "en": "The server must be rebooted first",
+        "bn": "আগে server reboot করতে হবে"
+      },
+      {
+        "en": "Your current session loaded its group list at login; log out and back in",
+        "bn": "তোমার বর্তমান session login-এর সময়ই group list পড়ে নিয়েছে; log out করে আবার log in করো"
+      },
+      {
+        "en": "Only root can use the `docker` group",
+        "bn": "`docker` group শুধু root ব্যবহার করতে পারে"
+      },
+      {
+        "en": "The group change takes a day to apply",
+        "bn": "Group পরিবর্তন কার্যকর হতে একদিন লাগে"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "`/etc/group` updates at once, but an already-running session keeps the old list. A new session sees the new group.",
+      "bn": "`/etc/group` সাথে সাথে বদলায়, কিন্তু চলমান session পুরনো list-ই ধরে রাখে। নতুন session নতুন group দেখে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the key difference between `sudo` and `su root`?",
+      "bn": "`sudo` আর `su root`-এর মূল পার্থক্য কী?"
+    },
+    "options": [
+      {
+        "en": "They are identical",
+        "bn": "দুটো হুবহু একই"
+      },
+      {
+        "en": "`su` only runs one command; `sudo` keeps you as root",
+        "bn": "`su` শুধু একটা command চালায়; `sudo` তোমাকে root করে রাখে"
+      },
+      {
+        "en": "`sudo` runs one command as root with your own password and logs it; `su` switches you into a full root session with root's password",
+        "bn": "`sudo` তোমার নিজের password দিয়ে একটা command root হিসেবে চালায় আর log রাখে; `su` root-এর password দিয়ে পুরো root session-এ নিয়ে যায়"
+      },
+      {
+        "en": "`sudo` needs root's password; `su` needs yours",
+        "bn": "`sudo`-তে root-এর password লাগে; `su`-তে তোমারটা"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "`sudo` is scoped to one command and records who ran what, which is why it is the standard on modern systems.",
+      "bn": "`sudo` একটা command-এ সীমিত থাকে এবং কে কী চালিয়েছে লিখে রাখে, তাই আধুনিক system-এ এটাই standard।"
+    }
+  },
+  {
+    "q": {
+      "en": "In the `/etc/passwd` line `dev:x:1002:1002:,,,:/home/dev:/bin/bash`, what is `/bin/bash`?",
+      "bn": "`/etc/passwd`-এর লাইন `dev:x:1002:1002:,,,:/home/dev:/bin/bash`-এ `/bin/bash` কী?"
+    },
+    "options": [
+      {
+        "en": "The user's home folder",
+        "bn": "User-এর home folder"
+      },
+      {
+        "en": "The user's password hash",
+        "bn": "User-এর password hash"
+      },
+      {
+        "en": "The user's group name",
+        "bn": "User-এর group-এর নাম"
+      },
+      {
+        "en": "The user's default shell",
+        "bn": "User-এর default shell"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "The fields are username, password placeholder, user ID, group ID, full name, home folder and default shell, in that order.",
+      "bn": "ক্রমে field-গুলো হলো username, password placeholder, user ID, group ID, পুরো নাম, home folder আর default shell।"
+    }
+  }
+]
