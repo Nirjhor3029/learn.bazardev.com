@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Support\ReturnTo;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,8 +15,10 @@ class LoginController extends Controller
 {
     private const MAX_ATTEMPTS = 5;
 
-    public function create(): View
+    public function create(Request $request): View
     {
+        ReturnTo::remember($request);
+
         return view('auth.login');
     }
 

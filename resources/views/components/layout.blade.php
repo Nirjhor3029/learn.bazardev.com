@@ -30,6 +30,8 @@
                        class="rounded-lg bg-blue-600 px-3.5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700">Sign up free</a>
                 @else
                     @php $me = auth()->user(); @endphp
+                    <a href="{{ route('learning.dashboard') }}"
+                       class="rounded-lg px-3 py-2 text-sm font-medium transition-colors {{ request()->routeIs('learning.dashboard') ? 'bg-blue-50 text-blue-700' : 'text-gray-700 hover:bg-gray-100' }}">My Learning</a>
                     <details class="relative" data-dropdown>
                         <summary class="flex cursor-pointer list-none items-center gap-2 rounded-full py-1 pr-2 pl-1 transition-colors hover:bg-gray-100 [&::-webkit-details-marker]:hidden"
                                  aria-label="Open account menu">
@@ -44,6 +46,7 @@
                                 <p class="truncate text-xs text-gray-500">{{ $me->email }}</p>
                             </div>
                             <div class="py-1.5">
+                                <a href="{{ route('learning.dashboard') }}" class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">My Learning</a>
                                 <a href="{{ route('account.edit') }}" class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">Account settings</a>
                                 @if ($me->is_admin)
                                     <a href="{{ route('admin.users.index') }}" class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">Admin · Users</a>

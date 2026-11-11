@@ -3,27 +3,57 @@
 namespace App\Http\Controllers;
 
 use App\Services\CourseContent;
+use App\Services\Learning;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class CourseController extends Controller
 {
-    public function __construct(private CourseContent $content) {}
+    public function __construct(private CourseContent $content, private Learning $learning) {}
 
-    public function home(): View
+    public function home(Request $request): View
     {
-        return view('home', ['courses' => $this->content->courses()]);
+        $user = $request->user();
+
+        return view('home', [
+            'courses' => $this->content->courses(),
+            'progress' => $user ? $this->learning->progress($user) : [],
+            'resume' => $user ? $this->learning->resume($user) : null,
+        ]);
     }
 
-    public function show(string $course): View
+    public function show(Request $request, string $course): View
     {
-        return view('courses.toc', ['course' => $this->content->course($course)]);
+        $user = $request->user();
+
+        return view('courses.toc', [
+            'course' => $this->content->course($course),
+            'progress' => $user ? $this->learning->courseProgress($user, $course) : null,
+            'done' => $user ? $this->learning->doneSlugs($user, $course) : [],
+            'bookmarked' => $user ? $this->learning->bookmarkedSlugs($user, $course) : [],
+            'nextUp' => $user ? $this->learning->nextInCourse($user, $course) : null,
+        ]);
     }
 
     public function chapter(Request $request, string $course, string $chapter): View
     {
         $lang = $request->query('lang') === 'bn' ? 'bn' : 'en';
 
-        return view('courses.chapter', $this->content->chapter($course, $chapter, $lang));
+        // Throws a 404 for anything that is not a readable chapter, before we store anything.
+        $data = $this->content->chapter($course, $chapter, $lang);
+
+        $user = $request->user();
+
+        // Reading is public. A logged-in reader also gets their own state for this chapter.
+        $state = $user ? $this->learning->touchViewed($user, $course, $chapter) : null;
+
+        return view('courses.chapter', [
+            ...$data,
+            'number' => array_search($chapter, array_keys($data['course']['chapters']), true) + 1,
+            'state' => $state,
+            'note' => $user?->notes()->where(['course' => $course, 'chapter' => $chapter])->first(),
+            'done' => $user ? $this->learning->doneSlugs($user, $course) : [],
+            'progress' => $user ? $this->learning->courseProgress($user, $course) : null,
+        ]);
     }
 }

@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\LearningController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [CourseController::class, 'home'])->name('home');
@@ -36,6 +37,14 @@ Route::middleware('auth')->group(function () {
     Route::patch('/account', [AccountController::class, 'update'])->name('account.update');
     Route::put('/account/password', [AccountController::class, 'updatePassword'])->name('account.password');
     Route::delete('/account', [AccountController::class, 'destroy'])->name('account.destroy');
+
+    // Personal learning: progress, bookmarks, private notes.
+    Route::get('/my-learning', [LearningController::class, 'dashboard'])->name('learning.dashboard');
+    Route::middleware('throttle:120,1')->prefix('learn/{course}/{chapter}')->name('learning.')->group(function () {
+        Route::post('/done', [LearningController::class, 'done'])->name('done');
+        Route::post('/bookmark', [LearningController::class, 'bookmark'])->name('bookmark');
+        Route::put('/note', [LearningController::class, 'note'])->name('note');
+    });
 
     Route::get('/email/verify/{id}/{hash}', [EmailVerificationController::class, 'verify'])
         ->middleware(['signed', 'throttle:6,1'])->name('verification.verify');
