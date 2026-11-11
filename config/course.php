@@ -62,7 +62,7 @@ return [
             'status' => 'available',
             'chapters' => [
                 '01-what-is-cicd' => ['title' => 'What is CI/CD, and why does it matter?', 'status' => 'available'],
-                '02-github-actions-basics' => ['title' => 'GitHub Actions basics: workflows, jobs, steps', 'status' => 'coming_soon'],
+                '02-github-actions-basics' => ['title' => 'GitHub Actions basics: workflows, jobs, steps', 'status' => 'available'],
                 '03-triggers-and-events' => ['title' => 'Triggers: events, branches, paths, schedules', 'status' => 'coming_soon'],
                 '04-env-vars-secrets-matrix' => ['title' => 'Environment variables, secrets, and matrix builds', 'status' => 'coming_soon'],
                 '05-caching-and-artifacts' => ['title' => 'Caching and artifacts', 'status' => 'coming_soon'],
