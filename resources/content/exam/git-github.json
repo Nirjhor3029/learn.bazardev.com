@@ -1,0 +1,834 @@
+[
+  {
+    "ref": "01-branching-strategies",
+    "q": {
+      "en": "A small team deploys `main` several times a day. Which branching model fits best?",
+      "bn": "একটা ছোট team দিনে কয়েকবার `main` deploy করে। কোন branching model সবচেয়ে মানানসই?"
+    },
+    "options": [
+      {
+        "en": "Git Flow with a long-lived `develop` and `release/*` branches",
+        "bn": "দীর্ঘস্থায়ী `develop` আর `release/*` branch-সহ Git Flow"
+      },
+      {
+        "en": "Trunk-based development",
+        "bn": "Trunk-based development"
+      },
+      {
+        "en": "One long-lived personal branch per developer",
+        "bn": "প্রতি developer-এর একটা করে দীর্ঘস্থায়ী ব্যক্তিগত branch"
+      },
+      {
+        "en": "No branches and no reviews",
+        "bn": "কোনো branch নেই, কোনো review নেই"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "01-branching-strategies",
+    "q": {
+      "en": "Why are branches useful when several people work on one codebase?",
+      "bn": "একটা codebase-এ কয়েকজন কাজ করলে branch কেন কাজের?"
+    },
+    "options": [
+      {
+        "en": "They make Git run faster",
+        "bn": "এগুলো Git-কে দ্রুত চালায়"
+      },
+      {
+        "en": "They let everyone edit the same file at once without ever merging",
+        "bn": "কখনো merge না করেই সবাই একই file একসাথে edit করতে পারে"
+      },
+      {
+        "en": "They back up the code to GitHub automatically",
+        "bn": "এগুলো নিজে থেকে code GitHub-এ backup রাখে"
+      },
+      {
+        "en": "Work stays isolated until it is merged, so an unfinished feature cannot disturb anyone else",
+        "bn": "Merge না হওয়া পর্যন্ত কাজ আলাদা থাকে, তাই অসমাপ্ত feature অন্য কাউকে বিরক্ত করে না"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "01-branching-strategies",
+    "q": {
+      "en": "Which command creates a new branch AND switches to it?",
+      "bn": "কোন command নতুন branch বানায় এবং সেখানে switch করে?"
+    },
+    "options": [
+      {
+        "en": "`git switch -c feature/login`",
+        "bn": "`git switch -c feature/login`"
+      },
+      {
+        "en": "`git branch feature/login`",
+        "bn": "`git branch feature/login`"
+      },
+      {
+        "en": "`git switch feature/login`",
+        "bn": "`git switch feature/login`"
+      },
+      {
+        "en": "`git branch -d feature/login`",
+        "bn": "`git branch -d feature/login`"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "01-branching-strategies",
+    "q": {
+      "en": "Which is a downside of Git Flow compared with trunk-based development?",
+      "bn": "Trunk-based development-এর তুলনায় Git Flow-এর অসুবিধা কোনটি?"
+    },
+    "options": [
+      {
+        "en": "It cannot handle urgent hotfixes",
+        "bn": "এটা জরুরি hotfix সামলাতে পারে না"
+      },
+      {
+        "en": "It cannot be used with pull requests",
+        "bn": "এটা pull request-এর সাথে ব্যবহার করা যায় না"
+      },
+      {
+        "en": "More branch types to track and longer-lived branches",
+        "bn": "বেশি ধরনের branch সামলাতে হয় আর branch বেশি দিন টেকে"
+      },
+      {
+        "en": "It forbids tags",
+        "bn": "এটা tag নিষিদ্ধ করে"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "02-merge-vs-rebase",
+    "q": {
+      "en": "After `git rebase main` on your feature branch, what is true about its commits?",
+      "bn": "Feature branch-এ `git rebase main`-এর পর তার commit সম্পর্কে কোনটি সত্য?"
+    },
+    "options": [
+      {
+        "en": "They are new commits with new hashes",
+        "bn": "সেগুলো নতুন hash-সহ নতুন commit"
+      },
+      {
+        "en": "They keep their old hashes",
+        "bn": "পুরনো hash-ই থাকে"
+      },
+      {
+        "en": "They are merged into a single commit",
+        "bn": "সব একটা commit-এ মিশে যায়"
+      },
+      {
+        "en": "They are deleted",
+        "bn": "মুছে যায়"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "02-merge-vs-rebase",
+    "q": {
+      "en": "A teammate has pulled your `feature` branch and added commits to it. What should you do instead of rebasing it?",
+      "bn": "এক teammate তোমার `feature` branch pull করে তাতে commit যোগ করেছে। Rebase না করে কী করবে?"
+    },
+    "options": [
+      {
+        "en": "Rebase and force-push; they will catch up",
+        "bn": "Rebase করে force-push করবে; সে মানিয়ে নেবে"
+      },
+      {
+        "en": "Delete the branch and recreate it",
+        "bn": "Branch মুছে আবার বানাবে"
+      },
+      {
+        "en": "Rebase and tell nobody",
+        "bn": "Rebase করবে আর কাউকে জানাবে না"
+      },
+      {
+        "en": "Merge, because rebasing shared history would diverge their copy",
+        "bn": "Merge করবে, কারণ shared history rebase করলে তার copy আলাদা হয়ে যাবে"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "02-merge-vs-rebase",
+    "q": {
+      "en": "Which way of combining branches shows that two lines of work existed in parallel and then joined?",
+      "bn": "শাখা মেলানোর কোন উপায় দেখায় যে দুটো কাজ সমান্তরালে ছিল, তারপর জুড়েছে?"
+    },
+    "options": [
+      {
+        "en": "A rebase",
+        "bn": "Rebase"
+      },
+      {
+        "en": "A fast-forward merge",
+        "bn": "Fast-forward merge"
+      },
+      {
+        "en": "A regular merge with a merge commit",
+        "bn": "Merge commit-সহ সাধারণ merge"
+      },
+      {
+        "en": "A `reset --hard`",
+        "bn": "`reset --hard`"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "02-merge-vs-rebase",
+    "q": {
+      "en": "What does `git merge --no-ff feature` force?",
+      "bn": "`git merge --no-ff feature` কী জোর করে?"
+    },
+    "options": [
+      {
+        "en": "A rebase of `feature` first",
+        "bn": "আগে `feature`-এর rebase"
+      },
+      {
+        "en": "A merge commit, even when a fast-forward would be possible",
+        "bn": "Fast-forward সম্ভব হলেও একটা merge commit"
+      },
+      {
+        "en": "Deleting `feature` afterwards",
+        "bn": "পরে `feature` মুছে ফেলা"
+      },
+      {
+        "en": "A merge that ignores conflicts",
+        "bn": "Conflict উপেক্ষা করা merge"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "03-resolving-merge-conflicts",
+    "q": {
+      "en": "Your branch changed line 10 of `app.js` and `main` changed line 80. What happens when you merge?",
+      "bn": "তোমার branch `app.js`-এর লাইন ১০ বদলেছে আর `main` লাইন ৮০। Merge করলে কী হয়?"
+    },
+    "options": [
+      {
+        "en": "A conflict, because the same file changed",
+        "bn": "Conflict হয়, কারণ একই file বদলেছে"
+      },
+      {
+        "en": "Git refuses to merge",
+        "bn": "Git merge করতে রাজি হয় না"
+      },
+      {
+        "en": "Git keeps only `main`'s change",
+        "bn": "Git শুধু `main`-এর পরিবর্তন রাখে"
+      },
+      {
+        "en": "Git merges both changes automatically, with no conflict",
+        "bn": "Git দুটো পরিবর্তন নিজে মিলিয়ে দেয়, conflict হয় না"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "03-resolving-merge-conflicts",
+    "q": {
+      "en": "After a conflict, which command shows exactly which files still need your attention?",
+      "bn": "Conflict-এর পর কোন command দেখায় ঠিক কোন file-এ এখনও তোমার নজর লাগবে?"
+    },
+    "options": [
+      {
+        "en": "`git log`",
+        "bn": "`git log`"
+      },
+      {
+        "en": "`git status`",
+        "bn": "`git status`"
+      },
+      {
+        "en": "`git branch`",
+        "bn": "`git branch`"
+      },
+      {
+        "en": "`git remote`",
+        "bn": "`git remote`"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "03-resolving-merge-conflicts",
+    "q": {
+      "en": "What does `git add config.js` mean in the middle of a conflict?",
+      "bn": "Conflict-এর মাঝখানে `git add config.js` মানে কী?"
+    },
+    "options": [
+      {
+        "en": "It tells Git you have resolved that file's conflict",
+        "bn": "এটা Git-কে জানায় যে ওই file-এর conflict তুমি মিটিয়েছ"
+      },
+      {
+        "en": "It stages a brand-new change for review",
+        "bn": "এটা review-এর জন্য একটা একেবারে নতুন পরিবর্তন stage করে"
+      },
+      {
+        "en": "It aborts the merge",
+        "bn": "এটা merge বাতিল করে"
+      },
+      {
+        "en": "It copies the incoming version over yours",
+        "bn": "এটা আসতে-থাকা version তোমারটার উপর copy করে"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "03-resolving-merge-conflicts",
+    "q": {
+      "en": "Which habit prevents most painful conflicts?",
+      "bn": "কোন অভ্যাস বেশিরভাগ কষ্টকর conflict আটকায়?"
+    },
+    "options": [
+      {
+        "en": "Work on one huge branch for weeks and merge once",
+        "bn": "সপ্তাহের পর সপ্তাহ একটা বিশাল branch-এ কাজ করে একবারে merge করা"
+      },
+      {
+        "en": "Never pull from `main`",
+        "bn": "কখনো `main` থেকে pull না করা"
+      },
+      {
+        "en": "Keep feature branches short-lived and sync them with `main` often",
+        "bn": "Feature branch ছোট আয়ুর রাখা আর প্রায়ই `main`-এর সাথে মেলানো"
+      },
+      {
+        "en": "Edit the same file as your teammates at the same time",
+        "bn": "Teammate-দের সাথে একই সময়ে একই file edit করা"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "04-interactive-rebase",
+    "q": {
+      "en": "In an interactive-rebase to-do list you change a commit's line from `pick` to `squash`. What happens?",
+      "bn": "Interactive rebase-এর to-do list-এ তুমি একটা commit-এর লাইন `pick` থেকে `squash` করলে। কী হয়?"
+    },
+    "options": [
+      {
+        "en": "It is deleted",
+        "bn": "এটা মুছে যায়"
+      },
+      {
+        "en": "It is folded into the commit above it, and you can edit the combined message",
+        "bn": "এটা উপরের commit-এর সাথে জুড়ে যায়, আর একত্র message edit করা যায়"
+      },
+      {
+        "en": "It is moved to the top of the list",
+        "bn": "এটা list-এর উপরে চলে যায়"
+      },
+      {
+        "en": "Nothing changes",
+        "bn": "কিছুই বদলায় না"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "04-interactive-rebase",
+    "q": {
+      "en": "Why is `git push --force-with-lease` safer than `git push --force`?",
+      "bn": "`git push --force`-এর চেয়ে `git push --force-with-lease` নিরাপদ কেন?"
+    },
+    "options": [
+      {
+        "en": "It encrypts the push",
+        "bn": "এটা push encrypt করে"
+      },
+      {
+        "en": "It pushes only the last commit",
+        "bn": "এটা শুধু শেষ commit push করে"
+      },
+      {
+        "en": "It refuses to overwrite the remote if someone pushed commits you have not fetched",
+        "bn": "যে commit তুমি fetch করোনি সেগুলো কেউ push করে থাকলে এটা remote overwrite করতে রাজি হয় না"
+      },
+      {
+        "en": "It asks GitHub for permission first",
+        "bn": "এটা আগে GitHub-এর অনুমতি চায়"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "04-interactive-rebase",
+    "q": {
+      "en": "You want to rewrite your last 3 commits. Which command starts that?",
+      "bn": "তুমি শেষ ৩টা commit নতুন করে লিখতে চাও। কোন command দিয়ে শুরু?"
+    },
+    "options": [
+      {
+        "en": "`git reset -i HEAD~3`",
+        "bn": "`git reset -i HEAD~3`"
+      },
+      {
+        "en": "`git commit --amend HEAD~3`",
+        "bn": "`git commit --amend HEAD~3`"
+      },
+      {
+        "en": "`git revert HEAD~3`",
+        "bn": "`git revert HEAD~3`"
+      },
+      {
+        "en": "`git rebase -i HEAD~3`",
+        "bn": "`git rebase -i HEAD~3`"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "04-interactive-rebase",
+    "q": {
+      "en": "What does `reword` do in an interactive rebase?",
+      "bn": "Interactive rebase-এ `reword` কী করে?"
+    },
+    "options": [
+      {
+        "en": "Keeps the commit but pauses so you can edit its message",
+        "bn": "Commit রাখে, কিন্তু থামে যাতে তুমি তার message edit করতে পারো"
+      },
+      {
+        "en": "Deletes the commit",
+        "bn": "Commit মুছে দেয়"
+      },
+      {
+        "en": "Moves the commit up one line",
+        "bn": "Commit এক লাইন উপরে সরায়"
+      },
+      {
+        "en": "Combines it with the commit above",
+        "bn": "এটাকে উপরের commit-এর সাথে জোড়ে"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "05-stash-cherry-pick-reflog",
+    "q": {
+      "en": "How do you apply a stash but keep it in the stash list afterwards?",
+      "bn": "কীভাবে stash প্রয়োগ করবে কিন্তু পরে stash list-এও রেখে দেবে?"
+    },
+    "options": [
+      {
+        "en": "`git stash pop`",
+        "bn": "`git stash pop`"
+      },
+      {
+        "en": "`git stash drop`",
+        "bn": "`git stash drop`"
+      },
+      {
+        "en": "`git stash apply`",
+        "bn": "`git stash apply`"
+      },
+      {
+        "en": "`git stash list`",
+        "bn": "`git stash list`"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "05-stash-cherry-pick-reflog",
+    "q": {
+      "en": "Which is a classic use of `git cherry-pick`?",
+      "bn": "`git cherry-pick`-এর একটা চেনা ব্যবহার কোনটি?"
+    },
+    "options": [
+      {
+        "en": "Deleting a branch after it is merged",
+        "bn": "Merge হওয়ার পর branch মোছা"
+      },
+      {
+        "en": "Undoing a merge commit",
+        "bn": "একটা merge commit বাতিল করা"
+      },
+      {
+        "en": "Saving uncommitted changes for later",
+        "bn": "Commit-না-করা পরিবর্তন পরের জন্য রাখা"
+      },
+      {
+        "en": "Putting a critical fix from `hotfix` onto `main` without merging the rest of `hotfix`",
+        "bn": "`hotfix`-এর বাকি অংশ merge না করে জরুরি fix `main`-এ বসানো"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "05-stash-cherry-pick-reflog",
+    "q": {
+      "en": "By default, how long can unreachable commits typically be found through the reflog before cleanup?",
+      "bn": "Default-এ পরিষ্কার হওয়ার আগে পর্যন্ত নাগালের-বাইরে-যাওয়া commit সাধারণত কতদিন reflog দিয়ে পাওয়া যায়?"
+    },
+    "options": [
+      {
+        "en": "About 90 minutes",
+        "bn": "প্রায় ৯০ মিনিট"
+      },
+      {
+        "en": "About 90 days",
+        "bn": "প্রায় ৯০ দিন"
+      },
+      {
+        "en": "Until the next `git push`",
+        "bn": "পরের `git push` পর্যন্ত"
+      },
+      {
+        "en": "Forever; they are never removed",
+        "bn": "চিরকাল; কখনো সরানো হয় না"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "05-stash-cherry-pick-reflog",
+    "q": {
+      "en": "You want to look inside a stash without applying it. Which command?",
+      "bn": "Stash প্রয়োগ না করে ভেতরটা দেখতে চাও। কোন command?"
+    },
+    "options": [
+      {
+        "en": "`git stash show -p stash@{0}`",
+        "bn": "`git stash show -p stash@{0}`"
+      },
+      {
+        "en": "`git stash pop stash@{0}`",
+        "bn": "`git stash pop stash@{0}`"
+      },
+      {
+        "en": "`git stash drop stash@{0}`",
+        "bn": "`git stash drop stash@{0}`"
+      },
+      {
+        "en": "`git stash clear stash@{0}`",
+        "bn": "`git stash clear stash@{0}`"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "06-pull-requests-and-code-review",
+    "q": {
+      "en": "Which merge method gives a fully linear history, replaying each commit with no merge commit?",
+      "bn": "কোন merge পদ্ধতি merge commit ছাড়া, প্রতিটা commit আবার চালিয়ে, পুরো সরলরেখা history দেয়?"
+    },
+    "options": [
+      {
+        "en": "Merge commit",
+        "bn": "Merge commit"
+      },
+      {
+        "en": "Squash and merge",
+        "bn": "Squash and merge"
+      },
+      {
+        "en": "Draft merge",
+        "bn": "Draft merge"
+      },
+      {
+        "en": "Rebase and merge",
+        "bn": "Rebase and merge"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "06-pull-requests-and-code-review",
+    "q": {
+      "en": "Beyond the diff, what should a good PR description mainly add?",
+      "bn": "Diff-এর বাইরে ভালো PR description মূলত কী যোগ করে?"
+    },
+    "options": [
+      {
+        "en": "Why the change was made, plus tradeoffs and how it was tested",
+        "bn": "পরিবর্তনটা কেন করা হলো, সাথে tradeoff আর কীভাবে পরীক্ষা হয়েছে"
+      },
+      {
+        "en": "A copy of every changed line",
+        "bn": "প্রতিটা বদলানো লাইনের copy"
+      },
+      {
+        "en": "The author's working hours",
+        "bn": "লেখকের কাজের সময়"
+      },
+      {
+        "en": "A list of every file name",
+        "bn": "প্রতিটা file-এর নামের list"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "06-pull-requests-and-code-review",
+    "q": {
+      "en": "A reviewer asks for changes. What does the author do?",
+      "bn": "Reviewer পরিবর্তন চাইল। লেখক কী করে?"
+    },
+    "options": [
+      {
+        "en": "Closes the PR and opens a new one",
+        "bn": "PR বন্ধ করে নতুন একটা খোলে"
+      },
+      {
+        "en": "Pushes more commits to the same branch; they appear in the same PR",
+        "bn": "একই branch-এ আরও commit push করে; সেগুলো একই PR-এ দেখা যায়"
+      },
+      {
+        "en": "Deletes the branch",
+        "bn": "Branch মুছে ফেলে"
+      },
+      {
+        "en": "Force-pushes to `main`",
+        "bn": "`main`-এ force-push করে"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "06-pull-requests-and-code-review",
+    "q": {
+      "en": "What can branch protection require before a PR may be merged?",
+      "bn": "PR merge হওয়ার আগে branch protection কী বাধ্যতামূলক করতে পারে?"
+    },
+    "options": [
+      {
+        "en": "A tag on every commit",
+        "bn": "প্রতিটা commit-এ একটা tag"
+      },
+      {
+        "en": "A successful local `git gc`",
+        "bn": "একটা সফল local `git gc`"
+      },
+      {
+        "en": "Passing status checks (CI) and approving reviews",
+        "bn": "Passing status check (CI) আর অনুমোদনকারী review"
+      },
+      {
+        "en": "Nothing: it only affects deleting branches",
+        "bn": "কিছুই না: এটা শুধু branch মোছায় প্রভাব ফেলে"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "07-reset-vs-revert",
+    "q": {
+      "en": "Which `git reset` mode is used when you give none?",
+      "bn": "কোনো mode না দিলে `git reset` কোন mode ব্যবহার করে?"
+    },
+    "options": [
+      {
+        "en": "`--mixed`",
+        "bn": "`--mixed`"
+      },
+      {
+        "en": "`--soft`",
+        "bn": "`--soft`"
+      },
+      {
+        "en": "`--hard`",
+        "bn": "`--hard`"
+      },
+      {
+        "en": "`--force`",
+        "bn": "`--force`"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "07-reset-vs-revert",
+    "q": {
+      "en": "Why is `git reset --hard` followed by a force-push on a shared branch a bad idea?",
+      "bn": "Shared branch-এ `git reset --hard`-এর পর force-push করা খারাপ বুদ্ধি কেন?"
+    },
+    "options": [
+      {
+        "en": "It deletes the remote repository",
+        "bn": "এটা remote repository মুছে দেয়"
+      },
+      {
+        "en": "It is not possible",
+        "bn": "এটা সম্ভবই নয়"
+      },
+      {
+        "en": "It rewrites history everyone else has already pulled, breaking their copies",
+        "bn": "সবাই যে history pull করে ফেলেছে সেটা বদলে দেয়, ফলে তাদের copy ভেঙে যায়"
+      },
+      {
+        "en": "It only works on tags",
+        "bn": "এটা শুধু tag-এ কাজ করে"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "07-reset-vs-revert",
+    "q": {
+      "en": "Before running `git reset --hard`, what should you check first?",
+      "bn": "`git reset --hard` চালানোর আগে প্রথমে কী দেখা উচিত?"
+    },
+    "options": [
+      {
+        "en": "`git remote -v`",
+        "bn": "`git remote -v`"
+      },
+      {
+        "en": "`git status`, because uncommitted changes are discarded permanently",
+        "bn": "`git status`, কারণ commit-না-করা পরিবর্তন স্থায়ীভাবে ফেলে দেওয়া হয়"
+      },
+      {
+        "en": "`git tag`",
+        "bn": "`git tag`"
+      },
+      {
+        "en": "Nothing: it always keeps a backup",
+        "bn": "কিছুই না: এটা সবসময় backup রাখে"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "07-reset-vs-revert",
+    "q": {
+      "en": "A `git revert` hits a conflict. How do you finish it?",
+      "bn": "একটা `git revert`-এ conflict হলো। শেষ করবে কীভাবে?"
+    },
+    "options": [
+      {
+        "en": "Run `git merge --continue`",
+        "bn": "`git merge --continue` চালাও"
+      },
+      {
+        "en": "Run `git reset --hard`",
+        "bn": "`git reset --hard` চালাও"
+      },
+      {
+        "en": "Delete the revert commit",
+        "bn": "Revert commit মুছে ফেলো"
+      },
+      {
+        "en": "Fix the markers, `git add`, then `git revert --continue`",
+        "bn": "Marker ঠিক করো, `git add` দাও, তারপর `git revert --continue`"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "08-github-power-features",
+    "q": {
+      "en": "Which `gh` command opens a PR using your branch's commits for the title and body?",
+      "bn": "কোন `gh` command তোমার branch-এর commit দিয়ে title আর body বানিয়ে PR খোলে?"
+    },
+    "options": [
+      {
+        "en": "`gh pr status`",
+        "bn": "`gh pr status`"
+      },
+      {
+        "en": "`gh pr checkout --fill`",
+        "bn": "`gh pr checkout --fill`"
+      },
+      {
+        "en": "`gh pr create --fill`",
+        "bn": "`gh pr create --fill`"
+      },
+      {
+        "en": "`gh repo clone --fill`",
+        "bn": "`gh repo clone --fill`"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "08-github-power-features",
+    "q": {
+      "en": "How do you publish all your local tags to GitHub?",
+      "bn": "তোমার সব local tag GitHub-এ কীভাবে পাঠাবে?"
+    },
+    "options": [
+      {
+        "en": "`git push --tags`",
+        "bn": "`git push --tags`"
+      },
+      {
+        "en": "`git tag --push`",
+        "bn": "`git tag --push`"
+      },
+      {
+        "en": "`git commit --tags`",
+        "bn": "`git commit --tags`"
+      },
+      {
+        "en": "`git pull --tags`",
+        "bn": "`git pull --tags`"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "08-github-power-features",
+    "q": {
+      "en": "What is a gist?",
+      "bn": "Gist কী?"
+    },
+    "options": [
+      {
+        "en": "A pull request template",
+        "bn": "একটা pull request template"
+      },
+      {
+        "en": "A kind of branch protection",
+        "bn": "এক ধরনের branch protection"
+      },
+      {
+        "en": "A type of GitHub Action",
+        "bn": "এক ধরনের GitHub Action"
+      },
+      {
+        "en": "A quick, shareable file or snippet with its own lightweight version history",
+        "bn": "দ্রুত share করার মতো একটা file বা snippet, যার নিজস্ব হালকা version history আছে"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "08-github-power-features",
+    "q": {
+      "en": "What is the purpose of an `ISSUE_TEMPLATE/` folder?",
+      "bn": "`ISSUE_TEMPLATE/` folder-এর উদ্দেশ্য কী?"
+    },
+    "options": [
+      {
+        "en": "To store closed issues",
+        "bn": "বন্ধ issue জমা রাখা"
+      },
+      {
+        "en": "To give bug reports and feature requests a consistent shape",
+        "bn": "Bug report আর feature request-কে একটা সঙ্গতিপূর্ণ আকার দেওয়া"
+      },
+      {
+        "en": "To block spam accounts",
+        "bn": "Spam account আটকানো"
+      },
+      {
+        "en": "To store release notes",
+        "bn": "Release note জমা রাখা"
+      }
+    ],
+    "answer": 1
+  }
+]

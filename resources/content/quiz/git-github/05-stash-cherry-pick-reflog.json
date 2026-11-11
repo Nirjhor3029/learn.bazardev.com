@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "You are mid-change and must switch branches urgently. Which commands shelve your uncommitted work and bring it back?",
+      "bn": "তুমি কাজের মাঝখানে, হঠাৎ branch বদলাতে হবে। কোন command অসম্পূর্ণ কাজ সরিয়ে রাখে আর ফিরিয়ে আনে?"
+    },
+    "options": [
+      {
+        "en": "`git shelve` and `git unshelve`",
+        "bn": "`git shelve` আর `git unshelve`"
+      },
+      {
+        "en": "`git stash` and `git stash pop`",
+        "bn": "`git stash` আর `git stash pop`"
+      },
+      {
+        "en": "`git commit --amend` and `git reset`",
+        "bn": "`git commit --amend` আর `git reset`"
+      },
+      {
+        "en": "`git stash drop` and `git stash push`",
+        "bn": "`git stash drop` আর `git stash push`"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A stash is local only: it is never pushed and stays in your repository until you pop, apply or drop it.",
+      "bn": "Stash শুধু local: কখনো push হয় না, আর pop, apply বা drop না করা পর্যন্ত তোমার repository-তে থাকে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `git cherry-pick a1b2c3d` do?",
+      "bn": "`git cherry-pick a1b2c3d` কী করে?"
+    },
+    "options": [
+      {
+        "en": "Moves the whole branch of that commit onto yours",
+        "bn": "ওই commit-এর পুরো branch তোমারটার উপর সরিয়ে আনে"
+      },
+      {
+        "en": "Merges `a1b2c3d` and every earlier commit",
+        "bn": "`a1b2c3d` আর তার আগের সব commit merge করে"
+      },
+      {
+        "en": "Deletes that commit from its original branch",
+        "bn": "ওই commit তার আসল branch থেকে মুছে দেয়"
+      },
+      {
+        "en": "Applies that commit's changes to your current branch as a brand-new commit with a new hash",
+        "bn": "ওই commit-এর পরিবর্তন তোমার বর্তমান branch-এ নতুন hash-সহ একেবারে নতুন একটা commit হিসেবে বসায়"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "It copies one commit's changes. A classic use is putting a critical hotfix on `main` without taking anything else from `hotfix`.",
+      "bn": "এটা একটা commit-এর পরিবর্তন copy করে। চেনা ব্যবহার: `hotfix` থেকে আর কিছু না এনে জরুরি fix `main`-এ বসানো।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the reflog?",
+      "bn": "Reflog কী?"
+    },
+    "options": [
+      {
+        "en": "A local record of everywhere your `HEAD` has pointed: commits, resets, rebases, checkouts",
+        "bn": "তোমার `HEAD` যেখানে যেখানে গেছে তার local রেকর্ড: commit, reset, rebase, checkout"
+      },
+      {
+        "en": "A shared log that is pushed to GitHub",
+        "bn": "GitHub-এ push হওয়া একটা shared log"
+      },
+      {
+        "en": "A list of everyone who contributed",
+        "bn": "যারা অবদান রেখেছে তাদের list"
+      },
+      {
+        "en": "A log of failed pushes",
+        "bn": "ব্যর্থ push-এর log"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "It exists only in your own repository, separate from your visible commit history.",
+      "bn": "এটা শুধু তোমার নিজের repository-তে থাকে, দেখা-যাওয়া commit history থেকে আলাদা।"
+    }
+  },
+  {
+    "q": {
+      "en": "You ran `git reset --hard` too far and commits vanished from `git log`. What is the first move?",
+      "bn": "তুমি `git reset --hard` বেশি দূর চালিয়েছ আর `git log` থেকে commit হারিয়েছে। প্রথম পদক্ষেপ কী?"
+    },
+    "options": [
+      {
+        "en": "Re-clone the repository; the commits are gone for good",
+        "bn": "Repository আবার clone করা; commit চিরতরে গেছে"
+      },
+      {
+        "en": "Run `git gc` to bring them back",
+        "bn": "`git gc` চালিয়ে ফেরানো"
+      },
+      {
+        "en": "Find the commit in `git reflog`, then `git reset --hard` to it (or cherry-pick it)",
+        "bn": "`git reflog`-এ commit-টা খুঁজে `git reset --hard` দিয়ে সেখানে ফেরা (বা cherry-pick করা)"
+      },
+      {
+        "en": "Ask GitHub support to restore them",
+        "bn": "GitHub support-কে ফিরিয়ে দিতে বলা"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Git does not delete commit objects at once; it just stops pointing at them. By default they stay reachable via the reflog for about 90 days.",
+      "bn": "Git commit object সাথে সাথে মোছে না; শুধু সেদিকে নির্দেশ করা বন্ধ করে। Default-এ প্রায় ৯০ দিন reflog দিয়ে সেগুলো পাওয়া যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which pair exists only in your local repository and is never pushed?",
+      "bn": "কোন জোড়া শুধু তোমার local repository-তে থাকে আর কখনো push হয় না?"
+    },
+    "options": [
+      {
+        "en": "Commits and branches after you push them",
+        "bn": "Push করার পর commit আর branch"
+      },
+      {
+        "en": "Stash entries and reflog entries",
+        "bn": "Stash entry আর reflog entry"
+      },
+      {
+        "en": "Issues and pull requests",
+        "bn": "Issue আর pull request"
+      },
+      {
+        "en": "Commits already on `main` on GitHub",
+        "bn": "GitHub-এ `main`-এ থাকা commit"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Neither stashes nor the reflog are shared with teammates, so they cannot rescue you on someone else's machine.",
+      "bn": "Stash আর reflog কোনোটাই teammate-দের সাথে share হয় না, তাই অন্যের machine-এ এগুলো তোমাকে বাঁচাতে পারবে না।"
+    }
+  }
+]

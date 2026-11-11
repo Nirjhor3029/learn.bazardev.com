@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What is the main idea of trunk-based development?",
+      "bn": "Trunk-based development-এর মূল ধারণা কী?"
+    },
+    "options": [
+      {
+        "en": "Two long-lived branches, `main` and `develop`",
+        "bn": "দুটো দীর্ঘস্থায়ী branch, `main` আর `develop`"
+      },
+      {
+        "en": "One long-lived `main` branch, with short-lived feature branches merged back within a day or two",
+        "bn": "একটাই দীর্ঘস্থায়ী `main` branch, আর ছোট আয়ুর feature branch যেগুলো এক-দুই দিনের মধ্যে ফিরে merge হয়"
+      },
+      {
+        "en": "Every developer works on a personal branch for weeks",
+        "bn": "প্রতিটা developer সপ্তাহের পর সপ্তাহ নিজের branch-এ কাজ করে"
+      },
+      {
+        "en": "Branches are forbidden; nobody may create one",
+        "bn": "Branch বানানোই নিষেধ"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Short-lived branches keep merges small and `main` always deployable. It is the simpler, modern default.",
+      "bn": "ছোট আয়ুর branch merge ছোট রাখে আর `main` সবসময় deploy-যোগ্য থাকে। এটাই সহজ, আধুনিক default।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which model is built for scheduled, versioned releases?",
+      "bn": "কোন model নির্দিষ্ট সময়ে, version দিয়ে release করার জন্য বানানো?"
+    },
+    "options": [
+      {
+        "en": "Trunk-based development",
+        "bn": "Trunk-based development"
+      },
+      {
+        "en": "Committing straight to `main` with no branches",
+        "bn": "Branch ছাড়া সরাসরি `main`-এ commit করা"
+      },
+      {
+        "en": "Branch protection rules",
+        "bn": "Branch protection rule"
+      },
+      {
+        "en": "Git Flow, with `main`, `develop`, `feature/*`, `release/*` and `hotfix/*` branches",
+        "bn": "Git Flow, যেখানে `main`, `develop`, `feature/*`, `release/*` আর `hotfix/*` branch থাকে"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Git Flow adds structure for scheduled releases, at the cost of more branch types and longer-lived branches.",
+      "bn": "Git Flow নির্দিষ্ট সময়ের release-এর জন্য কাঠামো দেয়, বিনিময়ে বেশি ধরনের আর বেশি দিন টিকে থাকা branch আসে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which branch name follows the prefix convention from the chapter?",
+      "bn": "Chapter-এর prefix নিয়ম অনুযায়ী কোন branch-এর নাম ঠিক?"
+    },
+    "options": [
+      {
+        "en": "`fix/checkout-crash-on-ios`",
+        "bn": "`fix/checkout-crash-on-ios`"
+      },
+      {
+        "en": "`my-branch-2`",
+        "bn": "`my-branch-2`"
+      },
+      {
+        "en": "`new stuff`",
+        "bn": "`new stuff`"
+      },
+      {
+        "en": "`final-final-v3`",
+        "bn": "`final-final-v3`"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A prefix such as `feature/`, `fix/`, `chore/` or `docs/` tells anyone what kind of change the branch holds, before they open it.",
+      "bn": "`feature/`, `fix/`, `chore/` বা `docs/`-এর মতো prefix খোলার আগেই বলে দেয় branch-টা কী ধরনের পরিবর্তন।"
+    }
+  },
+  {
+    "q": {
+      "en": "How do you stop people pushing directly to `main` on GitHub?",
+      "bn": "GitHub-এ কীভাবে সরাসরি `main`-এ push করা বন্ধ করবে?"
+    },
+    "options": [
+      {
+        "en": "Run `git lock main` on your laptop",
+        "bn": "নিজের laptop-এ `git lock main` চালানো"
+      },
+      {
+        "en": "Delete the `main` branch",
+        "bn": "`main` branch মুছে ফেলা"
+      },
+      {
+        "en": "Turn on a branch protection rule, so every change must go through a pull request",
+        "bn": "Branch protection rule চালু করা, যাতে প্রতিটা পরিবর্তন pull request দিয়ে আসতে হয়"
+      },
+      {
+        "en": "Ask everyone to promise not to",
+        "bn": "সবাইকে কথা দিতে বলা যে করবে না"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Branch protection is a GitHub setting, not a Git command. It can also require passing checks or an approving review.",
+      "bn": "Branch protection GitHub-এর একটা setting, Git command নয়। এটা passing check বা অনুমোদনকারী review-ও বাধ্যতামূলক করতে পারে।"
+    }
+  },
+  {
+    "q": {
+      "en": "In Git Flow, where does an urgent production fix (`hotfix/*`) branch off, and where is it merged?",
+      "bn": "Git Flow-তে জরুরি production fix (`hotfix/*`) কোথা থেকে বের হয় আর কোথায় merge হয়?"
+    },
+    "options": [
+      {
+        "en": "It branches from `develop` and is merged only into `develop`",
+        "bn": "`develop` থেকে বের হয় আর শুধু `develop`-এ merge হয়"
+      },
+      {
+        "en": "It branches from `main` and is merged into both `main` and `develop`",
+        "bn": "`main` থেকে বের হয় আর `main` ও `develop` দুটোতেই merge হয়"
+      },
+      {
+        "en": "It branches from a `release/*` branch and is merged nowhere",
+        "bn": "`release/*` থেকে বের হয় আর কোথাও merge হয় না"
+      },
+      {
+        "en": "It branches from `main` and is merged only into `main`",
+        "bn": "`main` থেকে বের হয় আর শুধু `main`-এ merge হয়"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "It must go back into `develop` too, otherwise the next release would bring the bug back.",
+      "bn": "`develop`-এও ফিরতে হবে, নইলে পরের release-এ bug-টা আবার ফিরে আসবে।"
+    }
+  }
+]

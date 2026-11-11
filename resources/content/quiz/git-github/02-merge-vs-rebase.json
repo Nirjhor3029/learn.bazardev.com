@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What does `git merge feature` create when both branches have new commits?",
+      "bn": "দুই branch-এই নতুন commit থাকলে `git merge feature` কী তৈরি করে?"
+    },
+    "options": [
+      {
+        "en": "A straight line of commits with new hashes",
+        "bn": "নতুন hash-সহ commit-এর একটা সরলরেখা"
+      },
+      {
+        "en": "A copy of `feature` named `main`",
+        "bn": "`feature`-এর একটা copy যার নাম `main`"
+      },
+      {
+        "en": "Nothing: merge only moves a pointer",
+        "bn": "কিছুই না: merge শুধু একটা pointer সরায়"
+      },
+      {
+        "en": "A merge commit with two parents; existing history is not rewritten",
+        "bn": "দুই parent-ওয়ালা একটা merge commit; আগের history বদলায় না"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "A merge honestly shows that two lines of work existed and then joined.",
+      "bn": "Merge সত্যি কথাটা দেখায়: দুটো কাজ সমান্তরালে ছিল, তারপর জুড়েছে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `git rebase main` do when run on `feature`?",
+      "bn": "`feature`-এ থেকে `git rebase main` চালালে কী হয়?"
+    },
+    "options": [
+      {
+        "en": "Replays feature's own commits on top of main's tip, as new commits, giving a linear history",
+        "bn": "Feature-এর নিজস্ব commit-গুলো main-এর ডগার উপর নতুন commit হিসেবে আবার চালায়, ফলে history সরলরেখা হয়"
+      },
+      {
+        "en": "Adds a merge commit to `feature`",
+        "bn": "`feature`-এ একটা merge commit যোগ করে"
+      },
+      {
+        "en": "Deletes `main`",
+        "bn": "`main` মুছে দেয়"
+      },
+      {
+        "en": "Copies main's commits into `feature` and keeps the same hashes",
+        "bn": "Main-এর commit `feature`-এ copy করে, hash একই রেখে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Replayed commits get new hashes. There is no merge commit.",
+      "bn": "আবার-চালানো commit নতুন hash পায়। কোনো merge commit থাকে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "In which situation must you NOT rebase?",
+      "bn": "কোন পরিস্থিতিতে rebase করা চলবে না?"
+    },
+    "options": [
+      {
+        "en": "On a branch only you work on, before pushing it",
+        "bn": "যে branch-এ শুধু তুমি কাজ করো, push করার আগে"
+      },
+      {
+        "en": "To bring your private feature branch up to date with `main`",
+        "bn": "নিজের private feature branch `main`-এর সাথে হালনাগাদ করতে"
+      },
+      {
+        "en": "On a branch teammates have already pulled and built work on",
+        "bn": "যে branch teammate-রা আগেই pull করে তার উপর কাজ করেছে"
+      },
+      {
+        "en": "To tidy your own commits before opening a PR",
+        "bn": "PR খোলার আগে নিজের commit গোছাতে"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Rebasing creates new hashes, so anyone who has the old commits ends up with diverged history that Git cannot reconcile cleanly.",
+      "bn": "Rebase নতুন hash বানায়, তাই যাদের কাছে পুরনো commit আছে তাদের history আলাদা হয়ে যায়, যা Git পরিষ্কারভাবে মেলাতে পারে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Your finished feature is ready to go into `main` through a pull request. Which method does the chapter recommend?",
+      "bn": "তোমার শেষ-হওয়া feature pull request দিয়ে `main`-এ যাবে। Chapter কোন পদ্ধতি সুপারিশ করে?"
+    },
+    "options": [
+      {
+        "en": "Rebase `main` onto your feature",
+        "bn": "`main`-কে তোমার feature-এর উপর rebase করা"
+      },
+      {
+        "en": "Merge, through a reviewed pull request",
+        "bn": "Review-করা pull request-এর মাধ্যমে merge"
+      },
+      {
+        "en": "Force-push your branch over `main`",
+        "bn": "তোমার branch `main`-এর উপর force-push করা"
+      },
+      {
+        "en": "Cherry-pick every commit by hand",
+        "bn": "প্রতিটা commit হাতে cherry-pick করা"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Merge is safe on a shared branch and keeps the true history.",
+      "bn": "Shared branch-এ merge নিরাপদ এবং আসল history রাখে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is a fast-forward merge?",
+      "bn": "Fast-forward merge কী?"
+    },
+    "options": [
+      {
+        "en": "`main`'s pointer just slides forward to the feature's tip, with no merge commit",
+        "bn": "`main`-এর pointer শুধু feature-এর ডগা পর্যন্ত এগিয়ে যায়, কোনো merge commit হয় না"
+      },
+      {
+        "en": "A merge that skips conflict checks",
+        "bn": "যে merge conflict-যাচাই এড়িয়ে যায়"
+      },
+      {
+        "en": "A merge that squashes all commits into one",
+        "bn": "যে merge সব commit এক করে ফেলে"
+      },
+      {
+        "en": "A merge that only works with `--force`",
+        "bn": "যে merge শুধু `--force` দিয়ে চলে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "It happens when `main` has not moved since you branched. `git merge --no-ff` forces a merge commit anyway.",
+      "bn": "এটা হয় যখন branch করার পর `main` এগোয়নি। `git merge --no-ff` তবুও জোর করে একটা merge commit বানায়।"
+    }
+  }
+]

@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What does `git rebase -i HEAD~4` open?",
+      "bn": "`git rebase -i HEAD~4` কী খোলে?"
+    },
+    "options": [
+      {
+        "en": "An editable to-do list of your last 4 commits, oldest first, that Git will carry out",
+        "bn": "তোমার শেষ ৪টা commit-এর একটা edit-করা-যায় এমন to-do list, পুরনো আগে, যা Git হুবহু চালাবে"
+      },
+      {
+        "en": "A read-only log of the last 4 commits, newest first",
+        "bn": "শেষ ৪টা commit-এর read-only log, নতুন আগে"
+      },
+      {
+        "en": "A list of 4 branches to merge",
+        "bn": "Merge করার ৪টা branch-এর list"
+      },
+      {
+        "en": "A diff of the last 4 commits against `main`",
+        "bn": "`main`-এর সাথে শেষ ৪টা commit-এর diff"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "It is a literal to-do list: change a word, reorder or delete a line, save, and Git does exactly that.",
+      "bn": "এটা আক্ষরিক to-do list: শব্দ বদলাও, লাইন সরাও বা মোছো, save করো, Git ঠিক তাই করবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which command folds a commit into the one above it and silently throws away its message?",
+      "bn": "কোন command একটা commit উপরের commit-এর সাথে জুড়ে দেয় আর তার message নিঃশব্দে ফেলে দেয়?"
+    },
+    "options": [
+      {
+        "en": "`squash`",
+        "bn": "`squash`"
+      },
+      {
+        "en": "`drop`",
+        "bn": "`drop`"
+      },
+      {
+        "en": "`fixup`",
+        "bn": "`fixup`"
+      },
+      {
+        "en": "`reword`",
+        "bn": "`reword`"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "`squash` also folds the commit up but lets you edit the combined message. `fixup` is for throwaway messages like \"wip\" or \"fix typo\".",
+      "bn": "`squash`-ও উপরে জুড়ে দেয় কিন্তু একত্র message edit করতে দেয়। `fixup` “wip” বা “fix typo”-র মতো ফেলনা message-এর জন্য।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which interactive-rebase command removes a commit entirely?",
+      "bn": "Interactive rebase-এর কোন command একটা commit পুরোপুরি সরিয়ে দেয়?"
+    },
+    "options": [
+      {
+        "en": "`pick`",
+        "bn": "`pick`"
+      },
+      {
+        "en": "`reword`",
+        "bn": "`reword`"
+      },
+      {
+        "en": "`squash`",
+        "bn": "`squash`"
+      },
+      {
+        "en": "`drop`",
+        "bn": "`drop`"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Deleting the line has the same effect as `drop`.",
+      "bn": "লাইনটা মুছে দিলেও `drop`-এর মতোই ফল হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "When is the right time to clean up history with interactive rebase?",
+      "bn": "Interactive rebase দিয়ে history গোছানোর সঠিক সময় কখন?"
+    },
+    "options": [
+      {
+        "en": "After the pull request has been merged",
+        "bn": "Pull request merge হয়ে যাওয়ার পরে"
+      },
+      {
+        "en": "Before you first push the branch, or while only you work on it",
+        "bn": "Branch প্রথমবার push করার আগে, বা যতক্ষণ শুধু তুমি তাতে কাজ করছ"
+      },
+      {
+        "en": "After teammates have built work on the branch",
+        "bn": "Teammate-রা branch-এর উপর কাজ করার পরে"
+      },
+      {
+        "en": "On `main`, before every release",
+        "bn": "প্রতিটা release-এর আগে `main`-এ"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "It rewrites commits, so every commit it touches gets a new hash, just like a plain rebase.",
+      "bn": "এটা commit বদলায়, তাই সাধারণ rebase-এর মতোই প্রতিটা commit নতুন hash পায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "You rebased a branch you had already pushed (nobody else pulled it) and a normal push is rejected. What do you use?",
+      "bn": "আগে push করা একটা branch তুমি rebase করেছ (কেউ pull করেনি), আর সাধারণ push বাতিল হচ্ছে। কী ব্যবহার করবে?"
+    },
+    "options": [
+      {
+        "en": "`git push --force-with-lease`",
+        "bn": "`git push --force-with-lease`"
+      },
+      {
+        "en": "`git push --force`",
+        "bn": "`git push --force`"
+      },
+      {
+        "en": "`git push --delete`",
+        "bn": "`git push --delete`"
+      },
+      {
+        "en": "`git pull --rebase`",
+        "bn": "`git pull --rebase`"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "`--force-with-lease` refuses to overwrite the remote if someone pushed new commits since your last fetch. Plain `--force` has no such check.",
+      "bn": "তোমার শেষ fetch-এর পর কেউ নতুন commit push করলে `--force-with-lease` overwrite করতে রাজি হয় না। সাধারণ `--force`-এ এই যাচাই নেই।"
+    }
+  }
+]

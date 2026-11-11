@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What is a pull request?",
+      "bn": "Pull request কী?"
+    },
+    "options": [
+      {
+        "en": "A Git command that downloads someone's branch",
+        "bn": "অন্যের branch নামানোর একটা Git command"
+      },
+      {
+        "en": "A special kind of Git commit",
+        "bn": "বিশেষ ধরনের Git commit"
+      },
+      {
+        "en": "A GitHub feature: a proposal to merge a pushed branch, with the diff, discussion and checks on one page",
+        "bn": "GitHub-এর একটা feature: push-করা branch merge করার প্রস্তাব, যেখানে diff, আলোচনা আর check একই পাতায়"
+      },
+      {
+        "en": "A setting in `.gitconfig`",
+        "bn": "`.gitconfig`-এর একটা setting"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "A pull request is not a Git concept. It is built on top of Git by GitHub, so it works the same with any branch you push.",
+      "bn": "Pull request Git-এর ধারণা নয়। GitHub এটা Git-এর উপর বানিয়েছে, তাই push-করা যেকোনো branch-এ একই কাজ করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `Closes #42` in a PR description do?",
+      "bn": "PR description-এ `Closes #42` লিখলে কী হয়?"
+    },
+    "options": [
+      {
+        "en": "Closes issue #42 automatically when the PR is merged",
+        "bn": "PR merge হলে issue #42 নিজে থেকে বন্ধ হয়ে যায়"
+      },
+      {
+        "en": "Closes the PR immediately",
+        "bn": "PR সাথে সাথে বন্ধ করে দেয়"
+      },
+      {
+        "en": "Deletes the branch",
+        "bn": "Branch মুছে দেয়"
+      },
+      {
+        "en": "Assigns the PR to user 42",
+        "bn": "PR ৪২ নম্বর user-কে দেয়"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "It keeps the issue tracker honest without any manual step.",
+      "bn": "হাতে কিছু না করেই issue tracker ঠিক রাখে।"
+    }
+  },
+  {
+    "q": {
+      "en": "You want early CI feedback but your PR is not ready for review. What do you open?",
+      "bn": "তুমি আগেভাগে CI feedback চাও কিন্তু PR এখনও review-এর জন্য তৈরি নয়। কী খুলবে?"
+    },
+    "options": [
+      {
+        "en": "An issue",
+        "bn": "একটা issue"
+      },
+      {
+        "en": "A fork",
+        "bn": "একটা fork"
+      },
+      {
+        "en": "A tag",
+        "bn": "একটা tag"
+      },
+      {
+        "en": "A draft pull request",
+        "bn": "Draft pull request"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "A draft PR runs the same checks but signals that it is not ready to merge.",
+      "bn": "Draft PR একই check চালায় কিন্তু জানায় যে এটা এখনও merge-এর জন্য তৈরি নয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which review choice can block merging when branch protection requires it?",
+      "bn": "Branch protection চাইলে কোন review বিকল্প merge আটকাতে পারে?"
+    },
+    "options": [
+      {
+        "en": "Comment",
+        "bn": "Comment"
+      },
+      {
+        "en": "Request changes",
+        "bn": "Request changes"
+      },
+      {
+        "en": "Approve",
+        "bn": "Approve"
+      },
+      {
+        "en": "Suggestion",
+        "bn": "Suggestion"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A comment passes no judgment, approve says it is good to merge, and a suggestion proposes exact replacement text. Request changes blocks.",
+      "bn": "Comment কোনো রায় দেয় না, approve বলে merge-এর যোগ্য, suggestion হুবহু বদলানোর লেখা প্রস্তাব করে। Request changes আটকায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Your branch has many \"wip\" and \"fix typo\" commits, and you want one clean commit per feature on `main`. Which merge button?",
+      "bn": "তোমার branch-এ অনেক “wip” আর “fix typo” commit, আর তুমি `main`-এ প্রতি feature-এ একটা পরিষ্কার commit চাও। কোন merge button?"
+    },
+    "options": [
+      {
+        "en": "Merge commit",
+        "bn": "Merge commit"
+      },
+      {
+        "en": "Rebase and merge",
+        "bn": "Rebase and merge"
+      },
+      {
+        "en": "Squash and merge",
+        "bn": "Squash and merge"
+      },
+      {
+        "en": "Revert",
+        "bn": "Revert"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Squash and merge combines every commit of the branch into one new commit on the base branch — one entry per PR.",
+      "bn": "Squash and merge branch-এর সব commit base branch-এ একটা নতুন commit-এ জুড়ে দেয় — প্রতি PR-এ একটা এন্ট্রি।"
+    }
+  }
+]

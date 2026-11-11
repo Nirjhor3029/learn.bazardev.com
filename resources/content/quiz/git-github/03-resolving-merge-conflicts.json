@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "When does a merge conflict happen?",
+      "bn": "Merge conflict কখন হয়?"
+    },
+    "options": [
+      {
+        "en": "Whenever two branches have different commits",
+        "bn": "যখনই দুই branch-এর commit আলাদা"
+      },
+      {
+        "en": "Whenever two people edit the same file, even in different places",
+        "bn": "যখনই দুজন একই file edit করে, আলাদা জায়গায় হলেও"
+      },
+      {
+        "en": "When both branches changed the same (or very nearby) lines of the same file",
+        "bn": "যখন দুই branch-ই একই file-এর একই (বা খুব কাছাকাছি) লাইন বদলেছে"
+      },
+      {
+        "en": "Whenever you forget to pull",
+        "bn": "যখনই pull করতে ভুলে যাও"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "If one branch changed line 10 and the other line 80, Git merges both automatically.",
+      "bn": "এক branch লাইন ১০ আর অন্যটা লাইন ৮০ বদলালে Git দুটোই নিজে মিলিয়ে দেয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "In a conflicted file, what is between `<<<<<<< HEAD` and `=======`?",
+      "bn": "Conflict-হওয়া file-এ `<<<<<<< HEAD` আর `=======`-এর মাঝে কী থাকে?"
+    },
+    "options": [
+      {
+        "en": "Your current branch's version",
+        "bn": "তোমার বর্তমান branch-এর version"
+      },
+      {
+        "en": "The incoming branch's version",
+        "bn": "আসতে-থাকা branch-এর version"
+      },
+      {
+        "en": "The common ancestor's version",
+        "bn": "দুই branch-এর সাধারণ পূর্বপুরুষের version"
+      },
+      {
+        "en": "A backup Git made of the file",
+        "bn": "Git-এর বানানো file-এর backup"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The incoming version is between `=======` and `>>>>>>> branch-name`, and the name tells you which branch it came from.",
+      "bn": "আসতে-থাকা version থাকে `=======` আর `>>>>>>> branch-name`-এর মাঝে, আর নামটা বলে সেটা কোন branch থেকে।"
+    }
+  },
+  {
+    "q": {
+      "en": "After fixing a conflicted file by hand, how do you tell Git it is resolved?",
+      "bn": "হাতে conflict ঠিক করার পর Git-কে কীভাবে জানাবে যে resolved?"
+    },
+    "options": [
+      {
+        "en": "`git resolve config.js`",
+        "bn": "`git resolve config.js`"
+      },
+      {
+        "en": "`git merge --finish`",
+        "bn": "`git merge --finish`"
+      },
+      {
+        "en": "`git stash pop`",
+        "bn": "`git stash pop`"
+      },
+      {
+        "en": "`git add config.js`",
+        "bn": "`git add config.js`"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Here `git add` does not stage a new change; it marks that file's conflict as resolved.",
+      "bn": "এখানে `git add` নতুন পরিবর্তন stage করে না; সে ওই file-এর conflict resolved বলে চিহ্নিত করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "A conflict happened during a rebase. You fixed the file and ran `git add`. What is next?",
+      "bn": "Rebase-এর সময় conflict হলো। তুমি file ঠিক করে `git add` দিয়েছ। এরপর কী?"
+    },
+    "options": [
+      {
+        "en": "`git commit`",
+        "bn": "`git commit`"
+      },
+      {
+        "en": "`git rebase --continue`",
+        "bn": "`git rebase --continue`"
+      },
+      {
+        "en": "`git merge --abort`",
+        "bn": "`git merge --abort`"
+      },
+      {
+        "en": "`git stash`",
+        "bn": "`git stash`"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A merge conflict ends with `git commit`; a rebase conflict ends with `git rebase --continue`, and may repeat for each replayed commit.",
+      "bn": "Merge conflict শেষ হয় `git commit` দিয়ে; rebase conflict শেষ হয় `git rebase --continue` দিয়ে, আর প্রতিটা আবার-চালানো commit-এ এটা ফিরে আসতে পারে।"
+    }
+  },
+  {
+    "q": {
+      "en": "You are in a messy merge and want to start over safely. Which command?",
+      "bn": "তুমি একটা এলোমেলো merge-এর মধ্যে আছ, নিরাপদে নতুন করে শুরু করতে চাও। কোন command?"
+    },
+    "options": [
+      {
+        "en": "`git reset --hard origin/main`",
+        "bn": "`git reset --hard origin/main`"
+      },
+      {
+        "en": "`rm -rf .git`",
+        "bn": "`rm -rf .git`"
+      },
+      {
+        "en": "`git merge --abort`",
+        "bn": "`git merge --abort`"
+      },
+      {
+        "en": "`git clean -fd`",
+        "bn": "`git clean -fd`"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "`git merge --abort` throws away only the half-finished merge and restores things as before. The other commands can destroy real work.",
+      "bn": "`git merge --abort` শুধু আধা-শেষ merge ফেলে দেয় আর আগের অবস্থা ফিরিয়ে আনে। বাকি command-গুলো আসল কাজ নষ্ট করতে পারে।"
+    }
+  }
+]

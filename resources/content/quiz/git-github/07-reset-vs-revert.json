@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What does `git reset --soft HEAD~1` do?",
+      "bn": "`git reset --soft HEAD~1` কী করে?"
+    },
+    "options": [
+      {
+        "en": "Undoes the last commit and discards its changes",
+        "bn": "শেষ commit বাতিল করে আর পরিবর্তন ফেলে দেয়"
+      },
+      {
+        "en": "Undoes the last commit and leaves its changes unstaged",
+        "bn": "শেষ commit বাতিল করে আর পরিবর্তন unstaged রাখে"
+      },
+      {
+        "en": "Adds a new commit that cancels the last one",
+        "bn": "শেষটাকে বাতিল করা একটা নতুন commit যোগ করে"
+      },
+      {
+        "en": "Undoes the last commit but keeps its changes staged",
+        "bn": "শেষ commit বাতিল করে, কিন্তু তার পরিবর্তন staged অবস্থায় রাখে"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "All three modes move the branch pointer the same way; they differ in what happens to the staging area and your files.",
+      "bn": "তিন mode-ই branch pointer একইভাবে সরায়; পার্থক্য শুধু staging area আর তোমার file-এর কী হয় তাতে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which `git reset` mode permanently discards the undone commit's changes from your working directory?",
+      "bn": "কোন `git reset` mode বাতিল-করা commit-এর পরিবর্তন তোমার working directory থেকে স্থায়ীভাবে ফেলে দেয়?"
+    },
+    "options": [
+      {
+        "en": "`--soft`",
+        "bn": "`--soft`"
+      },
+      {
+        "en": "`--hard`",
+        "bn": "`--hard`"
+      },
+      {
+        "en": "`--mixed`",
+        "bn": "`--mixed`"
+      },
+      {
+        "en": "None: reset never touches files",
+        "bn": "কোনোটাই নয়: reset কখনো file ছোঁয় না"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Check `git status` first. And remember `git reflog` can still recover a commit you reset past.",
+      "bn": "আগে `git status` দেখো। আর মনে রেখো, reset করে পেরিয়ে-যাওয়া commit `git reflog` দিয়ে এখনও ফেরানো যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "A bad commit is already on `main` and teammates have pulled it. What should you use to undo it?",
+      "bn": "একটা খারাপ commit `main`-এ আছে আর teammate-রা pull করে ফেলেছে। বাতিল করতে কী ব্যবহার করবে?"
+    },
+    "options": [
+      {
+        "en": "`git revert <hash>`",
+        "bn": "`git revert <hash>`"
+      },
+      {
+        "en": "`git reset --hard HEAD~1`, then force-push",
+        "bn": "`git reset --hard HEAD~1`, then force-push"
+      },
+      {
+        "en": "`git rebase -i`, dropping it",
+        "bn": "`git rebase -i`, dropping it"
+      },
+      {
+        "en": "`git stash`",
+        "bn": "`git stash`"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Revert adds a new commit and rewrites nothing. Rewriting shared history would diverge everyone else's copy.",
+      "bn": "Revert নতুন একটা commit যোগ করে, কিছু বদলায় না। Shared history বদলালে সবার copy আলাদা হয়ে যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `git revert a1b2c3d` do?",
+      "bn": "`git revert a1b2c3d` কী করে?"
+    },
+    "options": [
+      {
+        "en": "Deletes `a1b2c3d` from history",
+        "bn": "`a1b2c3d` history থেকে মুছে দেয়"
+      },
+      {
+        "en": "Moves the branch back to `a1b2c3d`",
+        "bn": "Branch `a1b2c3d`-তে ফিরিয়ে নেয়"
+      },
+      {
+        "en": "Adds a new commit that applies the opposite change; the original commit stays in history",
+        "bn": "উল্টো পরিবর্তন প্রয়োগ করা একটা নতুন commit যোগ করে; আসল commit history-তে থেকে যায়"
+      },
+      {
+        "en": "Copies `a1b2c3d` to another branch",
+        "bn": "`a1b2c3d` অন্য branch-এ copy করে"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Revert can conflict like a merge; resolve it, `git add`, then `git revert --continue`.",
+      "bn": "Revert merge-এর মতো conflict করতে পারে; ঠিক করে `git add`, তারপর `git revert --continue`।"
+    }
+  },
+  {
+    "q": {
+      "en": "A commit exists only on your laptop and was never pushed. What is the sensible way to undo it?",
+      "bn": "একটা commit শুধু তোমার laptop-এ আছে, কখনো push হয়নি। বাতিল করার যুক্তিসঙ্গত উপায় কী?"
+    },
+    "options": [
+      {
+        "en": "`git revert`, because reset is never allowed",
+        "bn": "`git revert`, কারণ reset কখনোই অনুমোদিত নয়"
+      },
+      {
+        "en": "`git reset`: nobody else has it, so rewriting your own history is safe",
+        "bn": "`git reset`: আর কারো কাছে নেই, তাই নিজের history বদলানো নিরাপদ"
+      },
+      {
+        "en": "Ask teammates to pull first",
+        "bn": "আগে teammate-দের pull করতে বলা"
+      },
+      {
+        "en": "Delete the repository and clone it again",
+        "bn": "Repository মুছে আবার clone করা"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Reset is for commits only you have. Revert is for commits that might already be on a shared branch.",
+      "bn": "Reset শুধু তোমার একার commit-এর জন্য। Revert সেই commit-এর জন্য যা shared branch-এ থাকতে পারে।"
+    }
+  }
+]

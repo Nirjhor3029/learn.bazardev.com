@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "Which file pre-fills the description box every time someone opens a new pull request?",
+      "bn": "কোন file নতুন pull request খোলার প্রতিবার description box আগে থেকে ভরে দেয়?"
+    },
+    "options": [
+      {
+        "en": "`.github/PULL_REQUEST_TEMPLATE.md`",
+        "bn": "`.github/PULL_REQUEST_TEMPLATE.md`"
+      },
+      {
+        "en": "`README.md`",
+        "bn": "`README.md`"
+      },
+      {
+        "en": "`.github/CODEOWNERS`",
+        "bn": "`.github/CODEOWNERS`"
+      },
+      {
+        "en": "`CONTRIBUTING.txt`",
+        "bn": "`CONTRIBUTING.txt`"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "It turns \"what changed, why, how was it tested\" into a habit instead of hoping people remember.",
+      "bn": "এটা “কী বদলাল, কেন, কীভাবে পরীক্ষা হলো”-কে অভ্যাসে পরিণত করে, মানুষের মনে রাখার ভরসায় থাকতে হয় না।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does a `CODEOWNERS` file do?",
+      "bn": "`CODEOWNERS` file কী করে?"
+    },
+    "options": [
+      {
+        "en": "Lists who is allowed to clone the repository",
+        "bn": "কে repository clone করতে পারবে তার list"
+      },
+      {
+        "en": "Stores the repository's licence",
+        "bn": "Repository-র licence রাখে"
+      },
+      {
+        "en": "Blocks all pushes to `main`",
+        "bn": "`main`-এ সব push আটকায়"
+      },
+      {
+        "en": "Maps file paths to users or teams, so a PR touching them automatically requests their review",
+        "bn": "File path-কে user বা team-এর সাথে জুড়ে দেয়, ফলে সেগুলো ছোঁয়া PR-এ তাদের review নিজে থেকে চাওয়া হয়"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Combined with branch protection you can require that owner's approval specifically.",
+      "bn": "Branch protection-এর সাথে মিলিয়ে ওই owner-এর অনুমোদনই বাধ্যতামূলক করা যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which `gh` command fetches and switches to the branch behind pull request 42 so you can review it locally?",
+      "bn": "কোন `gh` command ৪২ নম্বর pull request-এর branch এনে সেখানে switch করে, যাতে local-এ review করা যায়?"
+    },
+    "options": [
+      {
+        "en": "`gh pr create 42`",
+        "bn": "`gh pr create 42`"
+      },
+      {
+        "en": "`gh pr status 42`",
+        "bn": "`gh pr status 42`"
+      },
+      {
+        "en": "`gh pr checkout 42`",
+        "bn": "`gh pr checkout 42`"
+      },
+      {
+        "en": "`gh issue checkout 42`",
+        "bn": "`gh issue checkout 42`"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "`gh pr create` opens a PR, `gh pr status` shows your open PRs, and `gh pr checkout` brings one down to review.",
+      "bn": "`gh pr create` PR খোলে, `gh pr status` তোমার খোলা PR দেখায়, আর `gh pr checkout` একটা review করতে নামিয়ে আনে।"
+    }
+  },
+  {
+    "q": {
+      "en": "How does a tag differ from a branch?",
+      "bn": "Tag আর branch-এর পার্থক্য কী?"
+    },
+    "options": [
+      {
+        "en": "A tag moves forward with each commit; a branch stays on one commit",
+        "bn": "Tag প্রতি commit-এ এগোয়; branch একটা commit-এ স্থির থাকে"
+      },
+      {
+        "en": "A tag is a permanent pointer to one commit and does not move; a branch moves forward with new commits",
+        "bn": "Tag একটা commit-এর স্থায়ী pointer, নড়ে না; branch নতুন commit-এর সাথে এগোয়"
+      },
+      {
+        "en": "A tag can only be created on GitHub",
+        "bn": "Tag শুধু GitHub-এ বানানো যায়"
+      },
+      {
+        "en": "A tag always contains compiled files",
+        "bn": "Tag-এ সবসময় compiled file থাকে"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Tags mark version numbers, for example `git tag v1.2.0`. Publish them with `git push --tags`.",
+      "bn": "Tag version নম্বর চিহ্নিত করে, যেমন `git tag v1.2.0`। প্রকাশ করতে `git push --tags`।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is a GitHub Release built on?",
+      "bn": "GitHub Release কিসের উপর দাঁড়িয়ে?"
+    },
+    "options": [
+      {
+        "en": "A branch named `release`",
+        "bn": "`release` নামের একটা branch"
+      },
+      {
+        "en": "A pull request",
+        "bn": "একটা pull request"
+      },
+      {
+        "en": "A gist",
+        "bn": "একটা gist"
+      },
+      {
+        "en": "A tag, plus release notes and optional attached files",
+        "bn": "একটা tag, সাথে release note আর ঐচ্ছিক সংযুক্ত file"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "GitHub can even generate the notes from the PRs merged since the last release.",
+      "bn": "GitHub শেষ release-এর পর merge-হওয়া PR থেকে note নিজে বানিয়েও দিতে পারে।"
+    }
+  }
+]
