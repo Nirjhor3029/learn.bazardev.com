@@ -47,7 +47,7 @@ return [
             'chapters' => [
                 '01-branching-strategies' => ['title' => 'Branching strategies for teams', 'status' => 'available'],
                 '02-merge-vs-rebase' => ['title' => 'Merge vs rebase', 'status' => 'available'],
-                '03-resolving-merge-conflicts' => ['title' => 'Resolving merge conflicts', 'status' => 'coming_soon'],
+                '03-resolving-merge-conflicts' => ['title' => 'Resolving merge conflicts', 'status' => 'available'],
                 '04-interactive-rebase' => ['title' => 'Interactive rebase: cleaning up history', 'status' => 'coming_soon'],
                 '05-stash-cherry-pick-reflog' => ['title' => 'Stash, cherry-pick, and reflog', 'status' => 'coming_soon'],
                 '06-pull-requests-and-code-review' => ['title' => 'Pull requests and code review on GitHub', 'status' => 'coming_soon'],
