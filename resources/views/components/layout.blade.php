@@ -13,8 +13,8 @@
 </head>
 <body class="bg-gray-50 text-gray-900 antialiased">
     <header class="border-b border-gray-200 bg-white print:hidden">
-        <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3">
-            <a href="{{ route('home') }}" class="flex items-center gap-2 text-lg font-bold tracking-tight">
+        <div class="mx-auto flex max-w-5xl items-center justify-between gap-2 px-3 py-3 sm:gap-4 sm:px-4">
+            <a href="{{ route('home') }}" class="flex shrink-0 items-center gap-2 whitespace-nowrap text-base font-bold tracking-tight sm:text-lg">
                 <span class="inline-flex h-7 w-7 items-center justify-center rounded-md bg-gray-900 text-sm text-white">⌘</span>
                 DevOps Shikhbo
             </a>
@@ -25,9 +25,9 @@
 
                 @guest
                     <a href="{{ route('login') }}"
-                       class="rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100">Log in</a>
+                       class="whitespace-nowrap rounded-lg px-2 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 sm:px-3">Log in</a>
                     <a href="{{ route('register') }}"
-                       class="rounded-lg bg-blue-600 px-3.5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700">Sign up free</a>
+                       class="whitespace-nowrap rounded-lg bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700"><span class="sm:hidden">Sign up</span><span class="hidden sm:inline">Sign up free</span></a>
                 @else
                     @php $me = auth()->user(); @endphp
                     <a href="{{ route('learning.dashboard') }}"
