@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What does a `services:` block (for example MySQL) give your test job?",
+      "bn": "`services:` block (যেমন MySQL) তোমার test job-কে কী দেয়?"
+    },
+    "options": [
+      {
+        "en": "A faster runner",
+        "bn": "একটা দ্রুততর runner"
+      },
+      {
+        "en": "A real container, such as a database, running alongside the job for its duration",
+        "bn": "একটা আসল container, যেমন database, যা job-এর সময়টুকু পাশে চলে"
+      },
+      {
+        "en": "A mock database made of fake data",
+        "bn": "নকল data দিয়ে বানানো একটা mock database"
+      },
+      {
+        "en": "A permanent database shared by all repositories",
+        "bn": "সব repository-র জন্য একটা স্থায়ী database"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Testing against the real thing catches differences a mock would hide.",
+      "bn": "আসল জিনিসের বিরুদ্ধে test করলে সেই পার্থক্য ধরা পড়ে যা mock লুকিয়ে ফেলত।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why add `--health-cmd=\"mysqladmin ping\"` to a database service?",
+      "bn": "Database service-এ `--health-cmd=\"mysqladmin ping\"` যোগ করা হয় কেন?"
+    },
+    "options": [
+      {
+        "en": "To make the database faster",
+        "bn": "Database দ্রুত করতে"
+      },
+      {
+        "en": "To back the database up",
+        "bn": "Database-এর backup নিতে"
+      },
+      {
+        "en": "To hide the password in the logs",
+        "bn": "Log-এ password লুকাতে"
+      },
+      {
+        "en": "So the steps wait until the database actually accepts connections",
+        "bn": "যাতে database সত্যিই connection নেওয়ার মতো হওয়া পর্যন্ত steps অপেক্ষা করে"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "A container that has started is not necessarily ready. Without the check, tests may connect too early and fail for no real reason.",
+      "bn": "চালু হওয়া container মানেই তৈরি নয়। Check না থাকলে test খুব আগে connect করে অকারণে fail করতে পারে।"
+    }
+  },
+  {
+    "q": {
+      "en": "When does `if: always()` on an upload step make sense?",
+      "bn": "একটা upload step-এ `if: always()` কখন কাজের?"
+    },
+    "options": [
+      {
+        "en": "When you want the report uploaded even if the tests failed",
+        "bn": "যখন test fail করলেও report upload চাও"
+      },
+      {
+        "en": "When you want the step skipped if anything failed",
+        "bn": "যখন কিছু fail করলে step বাদ দিতে চাও"
+      },
+      {
+        "en": "When you want the whole workflow to run twice",
+        "bn": "যখন পুরো workflow দুবার চালাতে চাও"
+      },
+      {
+        "en": "When you want to ignore the report",
+        "bn": "যখন report উপেক্ষা করতে চাও"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "By default a step is skipped after an earlier failure. The report of what failed is exactly what you need then.",
+      "bn": "আগের step fail করলে ডিফল্টভাবে পরের step বাদ যায়। কী fail করল তার report তখনই সবচেয়ে দরকার।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is a flaky test?",
+      "bn": "Flaky test কী?"
+    },
+    "options": [
+      {
+        "en": "A test that always fails",
+        "bn": "যে test সবসময় fail করে"
+      },
+      {
+        "en": "A test that runs very slowly",
+        "bn": "যে test খুব ধীরে চলে"
+      },
+      {
+        "en": "One that sometimes passes and sometimes fails with no code change",
+        "bn": "যা code না বদলেও কখনো পাস করে, কখনো fail করে"
+      },
+      {
+        "en": "A test that has no assertions",
+        "bn": "যে test-এ কোনো assertion নেই"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Typical causes: timing assumptions, shared state between tests, or depending on something external.",
+      "bn": "সাধারণ কারণ: সময়ের ধারণা, test-গুলোর মধ্যে shared state, বা বাইরের কিছুর উপর নির্ভরতা।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the right way to deal with a flaky test?",
+      "bn": "Flaky test সামলানোর সঠিক উপায় কী?"
+    },
+    "options": [
+      {
+        "en": "Re-run the job until it turns green",
+        "bn": "সবুজ না হওয়া পর্যন্ত job আবার চালানো"
+      },
+      {
+        "en": "Find and fix the root cause, instead of just re-running until it passes",
+        "bn": "পাস না হওয়া পর্যন্ত আবার চালানোর বদলে মূল কারণ খুঁজে ঠিক করা"
+      },
+      {
+        "en": "Delete the whole test suite",
+        "bn": "পুরো test suite মুছে ফেলা"
+      },
+      {
+        "en": "Turn off CI for that branch",
+        "bn": "ওই branch-এ CI বন্ধ করা"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Blind re-runs hide a real bug, and a team used to \"just re-run it\" stops trusting red results.",
+      "bn": "চোখ বুজে re-run একটা আসল bug লুকায়, আর \"আবার চালাও\" অভ্যাস হলে দল লাল ফলাফলে আস্থা হারায়।"
+    }
+  }
+]

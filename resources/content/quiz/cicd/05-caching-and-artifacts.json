@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What is a cache key like `composer-${{ hashFiles('composer.lock') }}` usually based on?",
+      "bn": "`composer-${{ hashFiles('composer.lock') }}`-এর মতো cache key সাধারণত কীসের উপর নির্ভর করে?"
+    },
+    "options": [
+      {
+        "en": "The current time, so it changes every minute",
+        "bn": "বর্তমান সময়, তাই প্রতি মিনিটে বদলায়"
+      },
+      {
+        "en": "The name of the developer who pushed",
+        "bn": "যে developer push করেছে তার নাম"
+      },
+      {
+        "en": "A hash of the lock file, so it changes only when the dependencies change",
+        "bn": "Lock file-এর hash, তাই dependency বদলালেই শুধু key বদলায়"
+      },
+      {
+        "en": "A random number",
+        "bn": "একটা random সংখ্যা"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Same lock file means same key, so the saved `vendor/` folder is restored and `composer install` finishes almost instantly.",
+      "bn": "Lock file একই মানে key একই, তাই সেভ করা `vendor/` folder ফিরে আসে আর `composer install` প্রায় সাথে সাথে শেষ হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What happens on a cache miss?",
+      "bn": "Cache miss হলে কী হয়?"
+    },
+    "options": [
+      {
+        "en": "The step runs normally, slower, and a new cache is saved; nothing fails",
+        "bn": "Step স্বাভাবিকভাবে চলে, ধীরে, আর নতুন cache সেভ হয়; কিছু fail করে না"
+      },
+      {
+        "en": "The whole workflow fails",
+        "bn": "পুরো workflow fail করে"
+      },
+      {
+        "en": "GitHub blocks the pull request",
+        "bn": "GitHub pull request আটকে দেয়"
+      },
+      {
+        "en": "The repository's code is deleted",
+        "bn": "Repository-র code মুছে যায়"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A miss is only about speed, never correctness.",
+      "bn": "Miss শুধু গতির ব্যাপার, সঠিকতার নয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the job of `restore-keys`?",
+      "bn": "`restore-keys`-এর কাজ কী?"
+    },
+    "options": [
+      {
+        "en": "It deletes old caches",
+        "bn": "এটা পুরনো cache মুছে ফেলে"
+      },
+      {
+        "en": "It encrypts the cache",
+        "bn": "এটা cache encrypt করে"
+      },
+      {
+        "en": "It restores deleted secrets",
+        "bn": "এটা মুছে যাওয়া secret ফিরিয়ে আনে"
+      },
+      {
+        "en": "A fallback prefix, so a close-but-not-exact cache is restored if the exact key is not found",
+        "bn": "একটা fallback prefix, যাতে ঠিক key না পেলে কাছাকাছি একটা cache ফিরিয়ে আনা যায়"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "A slightly outdated `vendor/` is far better than starting from nothing.",
+      "bn": "একটু পুরনো `vendor/` শূন্য থেকে শুরু করার চেয়ে অনেক ভালো।"
+    }
+  },
+  {
+    "q": {
+      "en": "Job `deploy` needs the `dist/` folder that job `build` created. What carries it across?",
+      "bn": "`deploy` job-এর `build` job-এর বানানো `dist/` folder দরকার। সেটা কীভাবে যায়?"
+    },
+    "options": [
+      {
+        "en": "`actions/cache` only",
+        "bn": "`actions/cache` only"
+      },
+      {
+        "en": "`upload-artifact` in `build` and `download-artifact` in `deploy`",
+        "bn": "`upload-artifact` in `build` and `download-artifact` in `deploy`"
+      },
+      {
+        "en": "Nothing: both jobs share one runner so the folder is just there",
+        "bn": "কিছুই লাগে না: দুই job একই runner শেয়ার করে তাই folder আছেই"
+      },
+      {
+        "en": "`git pull` inside `deploy`",
+        "bn": "`deploy`-এর ভেতরে `git pull`"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Each job has its own runner. The folder disappears when `build` ends unless an artifact carries it forward. `needs: build` makes `deploy` wait.",
+      "bn": "প্রতিটা job-এর নিজের runner। `build` শেষ হলে folder হারিয়ে যায়, artifact না নিলে। `needs: build` দিলে `deploy` অপেক্ষা করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which statement about cache vs artifact is correct?",
+      "bn": "Cache আর artifact নিয়ে কোন কথাটা সঠিক?"
+    },
+    "options": [
+      {
+        "en": "A missing artifact only slows things down",
+        "bn": "Artifact না থাকলে শুধু ধীর হয়"
+      },
+      {
+        "en": "Both are the same feature with different names",
+        "bn": "দুটো একই feature-এর দুই নাম"
+      },
+      {
+        "en": "A missing cache only slows things down; a missing artifact makes the job that needs it fail",
+        "bn": "Cache না থাকলে শুধু ধীর হয়; artifact না থাকলে যে job-এর দরকার সেটা fail করে"
+      },
+      {
+        "en": "A cache is for moving files between jobs",
+        "bn": "Cache এক job থেকে আরেক job-এ file নেওয়ার জন্য"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Cache is a speed-up across runs. An artifact is real data that moves within a run, or out to a human.",
+      "bn": "Cache হলো run-এর মধ্যে গতি বাড়ানো। Artifact হলো আসল data, যা এক run-এর ভেতরে বা মানুষের কাছে যায়।"
+    }
+  }
+]

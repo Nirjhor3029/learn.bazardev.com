@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What does Continuous Integration (CI) mean?",
+      "bn": "Continuous Integration (CI) মানে কী?"
+    },
+    "options": [
+      {
+        "en": "Every push or pull request is automatically built and tested",
+        "bn": "প্রতিটা push বা pull request নিজে থেকে build আর test হয়"
+      },
+      {
+        "en": "The code is tested once a week by the whole team",
+        "bn": "পুরো team সপ্তাহে একবার code test করে"
+      },
+      {
+        "en": "Every change is deployed to production without any tests",
+        "bn": "কোনো test ছাড়াই প্রতিটা change production-এ যায়"
+      },
+      {
+        "en": "Developers merge their branches only at the end of a project",
+        "bn": "Developer-রা project শেষে একবারে branch merge করে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The point is to catch problems early, on every change, not whenever someone remembers.",
+      "bn": "উদ্দেশ্য হলো সমস্যা আগে ধরা, প্রতিটা change-এ, কেউ মনে করলে তখন নয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the difference between Continuous Delivery and Continuous Deployment?",
+      "bn": "Continuous Delivery আর Continuous Deployment-এর পার্থক্য কী?"
+    },
+    "options": [
+      {
+        "en": "Delivery skips the tests; Deployment runs them",
+        "bn": "Delivery test এড়িয়ে যায়; Deployment test চালায়"
+      },
+      {
+        "en": "They are two names for exactly the same thing",
+        "bn": "দুটো একই জিনিসের দুই নাম"
+      },
+      {
+        "en": "Delivery waits for a human to click deploy; Deployment ships by itself",
+        "bn": "Delivery-তে deploy-এর জন্য একজন মানুষ click করে; Deployment নিজে নিজেই ship করে"
+      },
+      {
+        "en": "Delivery is only for Docker apps; Deployment is only for PHP apps",
+        "bn": "Delivery শুধু Docker app-এর জন্য; Deployment শুধু PHP app-এর জন্য"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Both automate everything up to the release. Only the final \"ship it\" step differs: a human click or no click.",
+      "bn": "দুটোই release পর্যন্ত সব automate করে। শুধু শেষ \"ship it\" ধাপ আলাদা: মানুষের click আছে বা নেই।"
+    }
+  },
+  {
+    "q": {
+      "en": "The `test` step of a pipeline fails. What happens to the steps after it?",
+      "bn": "Pipeline-এর `test` ধাপ fail করল। এর পরের ধাপগুলোর কী হয়?"
+    },
+    "options": [
+      {
+        "en": "They run anyway, so you can see all the errors at once",
+        "bn": "তবুও চলে, যাতে সব error একসাথে দেখা যায়"
+      },
+      {
+        "en": "They never run, so the broken change is never packaged or deployed",
+        "bn": "সেগুলো চলেই না, তাই ভাঙা change কখনো package বা deploy হয় না"
+      },
+      {
+        "en": "They run, but only on the weekend",
+        "bn": "চলে, কিন্তু শুধু সপ্তাহান্তে"
+      },
+      {
+        "en": "GitHub deletes the repository",
+        "bn": "GitHub repository মুছে দেয়"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A failure at any step stops everything after it. That is exactly how a pipeline keeps broken code away from production.",
+      "bn": "যেকোনো ধাপে failure হলে তার পরের সব থেমে যায়। এভাবেই pipeline ভাঙা code-কে production থেকে দূরে রাখে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which is the correct order of a typical pipeline?",
+      "bn": "একটা সাধারণ pipeline-এর সঠিক ক্রম কোনটি?"
+    },
+    "options": [
+      {
+        "en": "deploy → test → build → package",
+        "bn": "deploy → test → build → package"
+      },
+      {
+        "en": "test → deploy → package → build",
+        "bn": "test → deploy → package → build"
+      },
+      {
+        "en": "package → deploy → build → test",
+        "bn": "package → deploy → build → test"
+      },
+      {
+        "en": "build → test → package → deploy",
+        "bn": "build → test → package → deploy"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "First make sure it builds, then test it, then package it (for example a Docker image), and only then deploy.",
+      "bn": "আগে দেখো build হয় কিনা, তারপর test, তারপর package (যেমন Docker image), শেষে deploy।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why can CI/CD be worth it even for one developer working alone?",
+      "bn": "একা কাজ করা একজন developer-এর জন্যও CI/CD কেন কাজের?"
+    },
+    "options": [
+      {
+        "en": "It makes the code shorter",
+        "bn": "এতে code ছোট হয়"
+      },
+      {
+        "en": "Tests and deploys run the same way every time, with a visible record of what was tested",
+        "bn": "Test আর deploy প্রতিবার একইভাবে চলে, আর কী test হয়েছে তার দৃশ্যমান record থাকে"
+      },
+      {
+        "en": "It removes the need for Git",
+        "bn": "এতে Git আর লাগে না"
+      },
+      {
+        "en": "It is only useful with ten or more developers",
+        "bn": "দশজন বা বেশি developer না থাকলে এটা কাজে আসে না"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "It removes \"did I run the tests?\" and \"which command was it again?\" from your head.",
+      "bn": "\"test চালিয়েছি তো?\" আর \"command-টা কী ছিল যেন?\" এই চিন্তা মাথা থেকে সরে যায়।"
+    }
+  }
+]

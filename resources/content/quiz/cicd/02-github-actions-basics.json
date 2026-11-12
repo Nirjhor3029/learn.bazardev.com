@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "Where must a GitHub Actions workflow file live in your repository?",
+      "bn": "GitHub Actions workflow file repository-তে কোথায় থাকতে হবে?"
+    },
+    "options": [
+      {
+        "en": "`workflows/ci.yml` in the root",
+        "bn": "`workflows/ci.yml` in the root"
+      },
+      {
+        "en": "`.actions/ci.json`",
+        "bn": "`.actions/ci.json`"
+      },
+      {
+        "en": "`.github/workflows/*.yml`",
+        "bn": "`.github/workflows/*.yml`"
+      },
+      {
+        "en": "`.github/ci.sh`",
+        "bn": "`.github/ci.sh`"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Any YAML file in `.github/workflows/` is read by GitHub as a workflow.",
+      "bn": "`.github/workflows/`-এর যেকোনো YAML file GitHub একটা workflow হিসেবে পড়ে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why does almost every job start with `actions/checkout@v4`?",
+      "bn": "প্রায় প্রতিটা job `actions/checkout@v4` দিয়ে শুরু হয় কেন?"
+    },
+    "options": [
+      {
+        "en": "The runner starts empty, so checkout fetches your repository's code onto it",
+        "bn": "Runner খালি অবস্থায় শুরু হয়, তাই checkout তোমার repository-র code সেখানে আনে"
+      },
+      {
+        "en": "It installs PHP on the runner",
+        "bn": "এটা runner-এ PHP install করে"
+      },
+      {
+        "en": "It logs in to GitHub",
+        "bn": "এটা GitHub-এ login করায়"
+      },
+      {
+        "en": "It makes the workflow run faster",
+        "bn": "এটা workflow-কে দ্রুত চালায়"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Each job gets a fresh virtual machine with nothing on it, not even your own code.",
+      "bn": "প্রতিটা job একটা নতুন virtual machine পায়, যাতে কিছুই নেই, তোমার নিজের code-ও না।"
+    }
+  },
+  {
+    "q": {
+      "en": "A workflow has two jobs, `test` and `lint`, with no `needs:`. How do they run?",
+      "bn": "একটা workflow-এ `test` আর `lint` নামে দুটো job আছে, কোনো `needs:` নেই। এরা কীভাবে চলে?"
+    },
+    "options": [
+      {
+        "en": "One after the other, in alphabetical order",
+        "bn": "একটার পর একটা, বর্ণানুক্রমে"
+      },
+      {
+        "en": "Only `test` runs; `lint` is ignored",
+        "bn": "শুধু `test` চলে; `lint` উপেক্ষিত হয়"
+      },
+      {
+        "en": "Both on the same runner, sharing files",
+        "bn": "দুটোই একই runner-এ, file share করে"
+      },
+      {
+        "en": "In parallel, each on its own runner",
+        "bn": "Parallel-এ, প্রতিটা নিজের runner-এ"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Jobs run at the same time by default. Use `needs:` when one must wait for another.",
+      "bn": "Job-গুলো ডিফল্টভাবে একই সময়ে চলে। একটা আরেকটার জন্য অপেক্ষা করতে চাইলে `needs:` দাও।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the difference between a `run:` step and a `uses:` step?",
+      "bn": "`run:` step আর `uses:` step-এর পার্থক্য কী?"
+    },
+    "options": [
+      {
+        "en": "`run:` is for Linux only; `uses:` is for Windows only",
+        "bn": "`run:` শুধু Linux-এর জন্য; `uses:` শুধু Windows-এর জন্য"
+      },
+      {
+        "en": "`run:` executes a shell command; `uses:` runs a reusable, versioned action",
+        "bn": "`run:` একটা shell command চালায়; `uses:` একটা পুনর্ব্যবহারযোগ্য, version-সহ action চালায়"
+      },
+      {
+        "en": "`run:` is for jobs; `uses:` is for workflows",
+        "bn": "`run:` job-এর জন্য; `uses:` workflow-এর জন্য"
+      },
+      {
+        "en": "There is no difference; they are aliases",
+        "bn": "কোনো পার্থক্য নেই; এরা একই জিনিসের alias"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "`uses: owner/repo@version` points at an action someone already wrote, such as `actions/checkout@v4`.",
+      "bn": "`uses: owner/repo@version` এমন একটা action-কে দেখায় যা অন্য কেউ আগেই লিখেছে, যেমন `actions/checkout@v4`।"
+    }
+  },
+  {
+    "q": {
+      "en": "A run shows a red X on a job. Where do you look first?",
+      "bn": "একটা run-এ job-এর পাশে লাল X। প্রথমে কোথায় দেখবে?"
+    },
+    "options": [
+      {
+        "en": "In the repository's README",
+        "bn": "Repository-র README-তে"
+      },
+      {
+        "en": "In the Settings → Billing page",
+        "bn": "Settings → Billing পাতায়"
+      },
+      {
+        "en": "In the Actions tab: open the run, open the job, and read the failing step's log",
+        "bn": "Actions tab-এ: run খুলে, job খুলে, ব্যর্থ step-এর log পড়ো"
+      },
+      {
+        "en": "Nowhere, you must re-run it until it passes",
+        "bn": "কোথাও না, পাস না হওয়া পর্যন্ত আবার চালাতে হবে"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "The log is the same output you would see running the commands in your own terminal.",
+      "bn": "Log-এ সেই output-ই থাকে যা তুমি নিজের terminal-এ command চালালে দেখতে।"
+    }
+  }
+]

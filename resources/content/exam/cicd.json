@@ -1,0 +1,834 @@
+[
+  {
+    "ref": "01-what-is-cicd",
+    "q": {
+      "en": "How does CI relate to the status checks on a pull request?",
+      "bn": "CI-এর সাথে pull request-এর status check-এর সম্পর্ক কী?"
+    },
+    "options": [
+      {
+        "en": "They are written by hand by the reviewer",
+        "bn": "এগুলো reviewer হাতে লেখে"
+      },
+      {
+        "en": "The checks are CI running automatically on that PR and reporting pass or fail",
+        "bn": "Check-গুলো হলো ওই PR-এ নিজে থেকে চলা CI, যা pass বা fail জানায়"
+      },
+      {
+        "en": "They are only shown on the main branch",
+        "bn": "এগুলো শুধু main branch-এ দেখায়"
+      },
+      {
+        "en": "They have nothing to do with CI",
+        "bn": "CI-এর সাথে এগুলোর কোনো সম্পর্ক নেই"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "01-what-is-cicd",
+    "q": {
+      "en": "Which situation is a sign of manual, error-prone deployment?",
+      "bn": "কোন অবস্থাটা হাতে করা, ভুলপ্রবণ deployment-এর লক্ষণ?"
+    },
+    "options": [
+      {
+        "en": "A workflow runs the same steps on every push",
+        "bn": "একটা workflow প্রতিটা push-এ একই step চালায়"
+      },
+      {
+        "en": "Tests run automatically on each pull request",
+        "bn": "প্রতিটা pull request-এ test নিজে থেকে চলে"
+      },
+      {
+        "en": "The deploy script lives in the repository",
+        "bn": "Deploy script repository-তেই থাকে"
+      },
+      {
+        "en": "Someone SSHes into the server, pulls the code and restarts the app by memory",
+        "bn": "কেউ মনে রেখে server-এ SSH করে code pull করে আর app restart করে"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "01-what-is-cicd",
+    "q": {
+      "en": "Why is a bug caught at push time cheaper than one found in production?",
+      "bn": "Push-এর সময় ধরা bug production-এ পাওয়া bug-এর চেয়ে সস্তা কেন?"
+    },
+    "options": [
+      {
+        "en": "The cause is fresh and obvious: the change that was just pushed",
+        "bn": "কারণটা টাটকা আর স্পষ্ট: এইমাত্র push করা change"
+      },
+      {
+        "en": "Production bugs cannot be fixed",
+        "bn": "Production-এর bug ঠিক করা যায় না"
+      },
+      {
+        "en": "Push-time bugs fix themselves",
+        "bn": "Push-এর সময়ের bug নিজে ঠিক হয়ে যায়"
+      },
+      {
+        "en": "Tests do not run in production",
+        "bn": "Production-এ test চলে না"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "01-what-is-cicd",
+    "q": {
+      "en": "A team wants a manual gate before anything reaches real users. Which practice fits?",
+      "bn": "একটা team চায় real user-এর কাছে যাওয়ার আগে একটা হাতে-নেওয়া গেট থাকুক। কোন practice মানায়?"
+    },
+    "options": [
+      {
+        "en": "Continuous Deployment",
+        "bn": "Continuous Deployment"
+      },
+      {
+        "en": "Deploying without a pipeline",
+        "bn": "Pipeline ছাড়া deploy"
+      },
+      {
+        "en": "Continuous Delivery",
+        "bn": "Continuous Delivery"
+      },
+      {
+        "en": "Skipping the build step",
+        "bn": "Build ধাপ বাদ দেওয়া"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "02-github-actions-basics",
+    "q": {
+      "en": "What is a \"runner\" in GitHub Actions?",
+      "bn": "GitHub Actions-এ \"runner\" কী?"
+    },
+    "options": [
+      {
+        "en": "A virtual machine started for a job and thrown away when the job ends",
+        "bn": "একটা virtual machine, যা job-এর জন্য চালু হয় আর job শেষে ফেলে দেওয়া হয়"
+      },
+      {
+        "en": "A person who approves deployments",
+        "bn": "যে মানুষ deployment অনুমোদন করে"
+      },
+      {
+        "en": "A file that stores secrets",
+        "bn": "যে file-এ secret থাকে"
+      },
+      {
+        "en": "A branch used for releases",
+        "bn": "Release-এর জন্য ব্যবহৃত branch"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "02-github-actions-basics",
+    "q": {
+      "en": "What does `runs-on: ubuntu-latest` choose?",
+      "bn": "`runs-on: ubuntu-latest` কী বেছে নেয়?"
+    },
+    "options": [
+      {
+        "en": "The Ubuntu version of your production server",
+        "bn": "তোমার production server-এর Ubuntu version"
+      },
+      {
+        "en": "The language of your project",
+        "bn": "তোমার project-এর ভাষা"
+      },
+      {
+        "en": "The branch the job runs on",
+        "bn": "যে branch-এ job চলবে"
+      },
+      {
+        "en": "The operating system of the runner that will run the job",
+        "bn": "যে runner job চালাবে তার operating system"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "02-github-actions-basics",
+    "q": {
+      "en": "Do steps inside one job see the files left by earlier steps?",
+      "bn": "একই job-এর ভেতরের step-গুলো কি আগের step-এর রেখে যাওয়া file দেখতে পায়?"
+    },
+    "options": [
+      {
+        "en": "No, every step gets its own empty runner",
+        "bn": "না, প্রতিটা step নিজের খালি runner পায়"
+      },
+      {
+        "en": "Only if you upload an artifact between each step",
+        "bn": "শুধু যদি প্রতি step-এর মাঝে artifact upload করো"
+      },
+      {
+        "en": "Yes, they run in order on the same runner",
+        "bn": "হ্যাঁ, তারা একই runner-এ ক্রমানুসারে চলে"
+      },
+      {
+        "en": "Only for `uses:` steps, not `run:` steps",
+        "bn": "শুধু `uses:` step-এর জন্য, `run:` নয়"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "02-github-actions-basics",
+    "q": {
+      "en": "What does `with:` do in a `uses:` step?",
+      "bn": "`uses:` step-এ `with:` কী করে?"
+    },
+    "options": [
+      {
+        "en": "Names the job",
+        "bn": "Job-এর নাম দেয়"
+      },
+      {
+        "en": "Passes inputs to the action, such as `php-version: '8.3'`",
+        "bn": "Action-কে input দেয়, যেমন `php-version: '8.3'`"
+      },
+      {
+        "en": "Sets the cron schedule",
+        "bn": "Cron schedule ঠিক করে"
+      },
+      {
+        "en": "Adds a secret to the repository",
+        "bn": "Repository-তে একটা secret যোগ করে"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "03-triggers-and-events",
+    "q": {
+      "en": "A workflow lists `push` and `workflow_dispatch` under `on:`. When does it run?",
+      "bn": "একটা workflow-এর `on:`-এ `push` আর `workflow_dispatch` আছে। কখন চলে?"
+    },
+    "options": [
+      {
+        "en": "Only when both happen together",
+        "bn": "শুধু দুটো একসাথে ঘটলে"
+      },
+      {
+        "en": "Only on the manual button",
+        "bn": "শুধু হাতে চালানোর button-এ"
+      },
+      {
+        "en": "Never, the two cancel each other",
+        "bn": "কখনো না, দুটো একে অপরকে কাটে"
+      },
+      {
+        "en": "When either event happens",
+        "bn": "যেকোনো একটা event ঘটলে"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "03-triggers-and-events",
+    "q": {
+      "en": "What does this restrict? `on: pull_request: branches: [main]`",
+      "bn": "এটা কী সীমিত করে? `on: pull_request: branches: [main]`"
+    },
+    "options": [
+      {
+        "en": "It runs for pull requests opened from `main`",
+        "bn": "যে pull request `main` থেকে খোলা সেগুলোর জন্য চলে"
+      },
+      {
+        "en": "It runs for pull requests that target `main`",
+        "bn": "যে pull request-এর target `main` সেগুলোর জন্য চলে"
+      },
+      {
+        "en": "It runs for every branch",
+        "bn": "সব branch-এর জন্য চলে"
+      },
+      {
+        "en": "It blocks merging into `main`",
+        "bn": "`main`-এ merge আটকে দেয়"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "03-triggers-and-events",
+    "q": {
+      "en": "In a monorepo, which key makes a service's tests run only when its own folder changed?",
+      "bn": "Monorepo-তে কোন key একটা service-এর test শুধু তার নিজের folder বদলালে চালায়?"
+    },
+    "options": [
+      {
+        "en": "`paths:`",
+        "bn": "`paths:`"
+      },
+      {
+        "en": "`paths-ignore:` listing the whole repository",
+        "bn": "পুরো repository দিয়ে `paths-ignore:`"
+      },
+      {
+        "en": "`schedule:`",
+        "bn": "`schedule:`"
+      },
+      {
+        "en": "`needs:`",
+        "bn": "`needs:`"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "03-triggers-and-events",
+    "q": {
+      "en": "Why shouldn't you rely on a `schedule` trigger running at the exact second?",
+      "bn": "`schedule` trigger ঠিক সেকেন্ডে চলবে এই ভরসা কেন করা উচিত নয়?"
+    },
+    "options": [
+      {
+        "en": "Cron only supports daily runs",
+        "bn": "Cron শুধু দৈনিক run সমর্থন করে"
+      },
+      {
+        "en": "Scheduled runs always run a day late",
+        "bn": "Scheduled run সবসময় একদিন দেরিতে চলে"
+      },
+      {
+        "en": "GitHub notes scheduled runs can be delayed during periods of high load",
+        "bn": "GitHub বলে বেশি load-এর সময় scheduled run-এ দেরি হতে পারে"
+      },
+      {
+        "en": "It runs only when someone pushes",
+        "bn": "কেউ push করলেই শুধু চলে"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "04-env-vars-secrets-matrix",
+    "q": {
+      "en": "Where can `env:` be set?",
+      "bn": "`env:` কোথায় দেওয়া যায়?"
+    },
+    "options": [
+      {
+        "en": "Only at the workflow level",
+        "bn": "শুধু workflow স্তরে"
+      },
+      {
+        "en": "At the workflow, job or step level",
+        "bn": "Workflow, job বা step স্তরে"
+      },
+      {
+        "en": "Only inside secrets",
+        "bn": "শুধু secret-এর ভেতরে"
+      },
+      {
+        "en": "Only in a separate `.env` file in the repo",
+        "bn": "শুধু repo-র আলাদা একটা `.env` file-এ"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "04-env-vars-secrets-matrix",
+    "q": {
+      "en": "What does `${{ github.sha }}` give you?",
+      "bn": "`${{ github.sha }}` কী দেয়?"
+    },
+    "options": [
+      {
+        "en": "The name of the branch",
+        "bn": "Branch-এর নাম"
+      },
+      {
+        "en": "The person who triggered the run",
+        "bn": "যে run চালিয়েছে তার নাম"
+      },
+      {
+        "en": "The commit being built",
+        "bn": "যে commit build হচ্ছে সেটা"
+      },
+      {
+        "en": "The runner's operating system",
+        "bn": "Runner-এর operating system"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "04-env-vars-secrets-matrix",
+    "q": {
+      "en": "Where do you add a secret for a repository?",
+      "bn": "Repository-র জন্য secret কোথায় যোগ করবে?"
+    },
+    "options": [
+      {
+        "en": "In a `secrets.yml` file committed to the repository",
+        "bn": "Repository-তে commit করা একটা `secrets.yml` file-এ"
+      },
+      {
+        "en": "In the first line of the workflow file",
+        "bn": "Workflow file-এর প্রথম লাইনে"
+      },
+      {
+        "en": "In the pull request description",
+        "bn": "Pull request-এর বর্ণনায়"
+      },
+      {
+        "en": "Settings → Secrets and variables → Actions",
+        "bn": "Settings → Secrets and variables → Actions"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "04-env-vars-secrets-matrix",
+    "q": {
+      "en": "What does `fail-fast: false` do in a matrix?",
+      "bn": "Matrix-এ `fail-fast: false` কী করে?"
+    },
+    "options": [
+      {
+        "en": "Lets every combination finish even if one fails",
+        "bn": "একটা fail করলেও সব combination শেষ হতে দেয়"
+      },
+      {
+        "en": "Cancels the others as soon as one fails",
+        "bn": "একটা fail করলেই বাকিগুলো বাতিল করে"
+      },
+      {
+        "en": "Skips failing tests",
+        "bn": "ব্যর্থ test বাদ দেয়"
+      },
+      {
+        "en": "Runs the matrix jobs one by one",
+        "bn": "Matrix job-গুলো একটা একটা করে চালায়"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "05-caching-and-artifacts",
+    "q": {
+      "en": "What happens if `composer.lock` changes?",
+      "bn": "`composer.lock` বদলালে কী হয়?"
+    },
+    "options": [
+      {
+        "en": "The workflow is cancelled",
+        "bn": "Workflow বাতিল হয়"
+      },
+      {
+        "en": "The old cache is used and the change is ignored",
+        "bn": "পুরনো cache ব্যবহার হয়, change উপেক্ষিত"
+      },
+      {
+        "en": "The cache key no longer matches, so there is a miss and a fresh cache is saved afterwards",
+        "bn": "Cache key আর মেলে না, তাই miss হয় আর পরে নতুন cache সেভ হয়"
+      },
+      {
+        "en": "GitHub rewrites `composer.lock`",
+        "bn": "GitHub নিজে `composer.lock` লিখে দেয়"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "05-caching-and-artifacts",
+    "q": {
+      "en": "Roughly how long does GitHub keep an unused cache entry?",
+      "bn": "অব্যবহৃত cache entry GitHub মোটামুটি কতদিন রাখে?"
+    },
+    "options": [
+      {
+        "en": "Forever",
+        "bn": "চিরকাল"
+      },
+      {
+        "en": "One hour",
+        "bn": "এক ঘণ্টা"
+      },
+      {
+        "en": "Until you delete them by hand",
+        "bn": "তুমি হাতে না মোছা পর্যন্ত"
+      },
+      {
+        "en": "Entries unused for 7 days are evicted automatically",
+        "bn": "৭ দিন অব্যবহৃত থাকলে entry নিজে থেকে মুছে যায়"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "05-caching-and-artifacts",
+    "q": {
+      "en": "Besides passing files between jobs, what are artifacts good for?",
+      "bn": "Job-এর মধ্যে file পাঠানো ছাড়া artifact আর কীসে কাজের?"
+    },
+    "options": [
+      {
+        "en": "Making the runner faster",
+        "bn": "Runner দ্রুত করা"
+      },
+      {
+        "en": "Letting a human download test reports, logs or screenshots from the run page",
+        "bn": "Run-এর পাতা থেকে মানুষের test report, log বা screenshot নামানো"
+      },
+      {
+        "en": "Storing secrets",
+        "bn": "Secret রাখা"
+      },
+      {
+        "en": "Replacing the Dockerfile",
+        "bn": "Dockerfile-এর বদলে কাজ করা"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "05-caching-and-artifacts",
+    "q": {
+      "en": "What is cached by `path: vendor`?",
+      "bn": "`path: vendor` দিলে কী cache হয়?"
+    },
+    "options": [
+      {
+        "en": "The `vendor/` folder with the installed dependencies",
+        "bn": "Install করা dependency-সহ `vendor/` folder"
+      },
+      {
+        "en": "Your whole repository history",
+        "bn": "তোমার repository-র পুরো history"
+      },
+      {
+        "en": "The secrets of the repository",
+        "bn": "Repository-র secret"
+      },
+      {
+        "en": "The Docker image",
+        "bn": "Docker image"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "06-automated-testing-in-ci",
+    "q": {
+      "en": "A fast alternative to a MySQL service for tests that do not need MySQL-specific behaviour is:",
+      "bn": "যে test-এ MySQL-এর নির্দিষ্ট আচরণ দরকার নেই, MySQL service-এর দ্রুত বিকল্প হলো:"
+    },
+    "options": [
+      {
+        "en": "Skipping the tests",
+        "bn": "Test বাদ দেওয়া"
+      },
+      {
+        "en": "Using the production database",
+        "bn": "Production database ব্যবহার করা"
+      },
+      {
+        "en": "Deleting the migrations",
+        "bn": "Migration মুছে ফেলা"
+      },
+      {
+        "en": "A lightweight SQLite configuration (for example `.env.ci`)",
+        "bn": "একটা হালকা SQLite configuration (যেমন `.env.ci`)"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "06-automated-testing-in-ci",
+    "q": {
+      "en": "What does `php artisan test --coverage-clover=coverage.xml` produce?",
+      "bn": "`php artisan test --coverage-clover=coverage.xml` কী তৈরি করে?"
+    },
+    "options": [
+      {
+        "en": "A coverage report showing how much of the code the tests exercised",
+        "bn": "একটা coverage report, যা দেখায় test কতটা code ছুঁয়েছে"
+      },
+      {
+        "en": "A faster test run",
+        "bn": "একটা দ্রুততর test run"
+      },
+      {
+        "en": "A backup of the database",
+        "bn": "Database-এর backup"
+      },
+      {
+        "en": "A Docker image",
+        "bn": "একটা Docker image"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "06-automated-testing-in-ci",
+    "q": {
+      "en": "Why does the test step connect to the service as `127.0.0.1:3306`?",
+      "bn": "Test step service-এ `127.0.0.1:3306` দিয়ে connect করে কেন?"
+    },
+    "options": [
+      {
+        "en": "MySQL is installed inside every repository",
+        "bn": "প্রতিটা repository-র ভেতরে MySQL install করা থাকে"
+      },
+      {
+        "en": "The `ports:` mapping exposes the container on the runner",
+        "bn": "`ports:` mapping container-টাকে runner-এ খুলে দেয়"
+      },
+      {
+        "en": "GitHub ignores the port setting",
+        "bn": "GitHub port setting উপেক্ষা করে"
+      },
+      {
+        "en": "Because `127.0.0.1` is the GitHub website",
+        "bn": "কারণ `127.0.0.1` হলো GitHub-এর website"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "06-automated-testing-in-ci",
+    "q": {
+      "en": "Why does a team that is used to \"just re-run it\" lose value from CI?",
+      "bn": "\"আবার চালাও\" অভ্যাসের দল CI থেকে মূল্য হারায় কেন?"
+    },
+    "options": [
+      {
+        "en": "Re-running costs nothing and fixes bugs",
+        "bn": "আবার চালাতে খরচ নেই আর bug ঠিক হয়"
+      },
+      {
+        "en": "GitHub disables CI after two re-runs",
+        "bn": "দুবার re-run করলে GitHub CI বন্ধ করে দেয়"
+      },
+      {
+        "en": "People stop trusting red results, so real failures get ignored",
+        "bn": "মানুষ লাল ফলাফলে আস্থা হারায়, তাই আসল failure উপেক্ষিত হয়"
+      },
+      {
+        "en": "Re-runs delete the test files",
+        "bn": "Re-run test file মুছে ফেলে"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "07-continuous-deployment",
+    "q": {
+      "en": "Which action logs in to Docker Hub in the example deploy workflow?",
+      "bn": "Example deploy workflow-তে কোন action Docker Hub-এ login করে?"
+    },
+    "options": [
+      {
+        "en": "`docker/login-action`",
+        "bn": "`docker/login-action`"
+      },
+      {
+        "en": "`actions/checkout`",
+        "bn": "`actions/checkout`"
+      },
+      {
+        "en": "`actions/cache`",
+        "bn": "`actions/cache`"
+      },
+      {
+        "en": "`appleboy/ssh-action`",
+        "bn": "`appleboy/ssh-action`"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "07-continuous-deployment",
+    "q": {
+      "en": "What does the `build-and-push` job do?",
+      "bn": "`build-and-push` job কী করে?"
+    },
+    "options": [
+      {
+        "en": "Runs the test suite",
+        "bn": "Test suite চালায়"
+      },
+      {
+        "en": "Restarts the production server",
+        "bn": "Production server restart করে"
+      },
+      {
+        "en": "Builds the Docker image and pushes it to a registry",
+        "bn": "Docker image build করে আর registry-তে push করে"
+      },
+      {
+        "en": "Creates the GitHub repository",
+        "bn": "GitHub repository বানায়"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "07-continuous-deployment",
+    "q": {
+      "en": "Why can the server accept a deploy with only an SSH key?",
+      "bn": "শুধু SSH key দিয়েই server deploy নিতে পারে কেন?"
+    },
+    "options": [
+      {
+        "en": "The server rebuilds everything from the repository",
+        "bn": "Server repository থেকে সব আবার build করে"
+      },
+      {
+        "en": "The image was already built and pushed, so the server just pulls and runs it",
+        "bn": "Image আগেই build আর push হয়ে গেছে, তাই server শুধু pull করে চালায়"
+      },
+      {
+        "en": "The SSH key contains the Docker image",
+        "bn": "SSH key-র ভেতরেই Docker image থাকে"
+      },
+      {
+        "en": "GitHub copies the runner to the server",
+        "bn": "GitHub runner-টাকে server-এ copy করে"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "07-continuous-deployment",
+    "q": {
+      "en": "How could a team build a \"rollback button\"?",
+      "bn": "একটা দল \"rollback button\" কীভাবে বানাতে পারে?"
+    },
+    "options": [
+      {
+        "en": "A `schedule` workflow that deploys every minute",
+        "bn": "একটা `schedule` workflow, যা প্রতি মিনিটে deploy করে"
+      },
+      {
+        "en": "Deleting the `main` branch",
+        "bn": "`main` branch মুছে ফেলা"
+      },
+      {
+        "en": "Pushing an empty commit and hoping",
+        "bn": "একটা ফাঁকা commit push করে আশা করা"
+      },
+      {
+        "en": "A `workflow_dispatch` workflow that takes a SHA and runs only the deploy step",
+        "bn": "একটা `workflow_dispatch` workflow, যা SHA নেয় আর শুধু deploy step চালায়"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "08-real-project-laravel-pipeline",
+    "q": {
+      "en": "In the full workflow, which job runs the tests and the coverage upload?",
+      "bn": "পুরো workflow-তে কোন job test আর coverage upload চালায়?"
+    },
+    "options": [
+      {
+        "en": "`deploy`",
+        "bn": "`deploy`"
+      },
+      {
+        "en": "`build-and-push`",
+        "bn": "`build-and-push`"
+      },
+      {
+        "en": "`test`",
+        "bn": "`test`"
+      },
+      {
+        "en": "None; tests are run by hand",
+        "bn": "কোনোটাই না; test হাতে চালাতে হয়"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "08-real-project-laravel-pipeline",
+    "q": {
+      "en": "What does `paths-ignore: ['docs/**']` achieve in the final workflow?",
+      "bn": "চূড়ান্ত workflow-তে `paths-ignore: ['docs/**']` কী করে?"
+    },
+    "options": [
+      {
+        "en": "A push that changes only docs does not trigger the pipeline",
+        "bn": "যে push শুধু docs বদলায় তা pipeline চালু করে না"
+      },
+      {
+        "en": "Docs are deleted before the build",
+        "bn": "Build-এর আগে docs মুছে যায়"
+      },
+      {
+        "en": "Docs are deployed twice",
+        "bn": "Docs দুবার deploy হয়"
+      },
+      {
+        "en": "The test job is skipped for every push",
+        "bn": "প্রতিটা push-এ test job বাদ যায়"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "08-real-project-laravel-pipeline",
+    "q": {
+      "en": "A pull request is opened against `main`. Which jobs run?",
+      "bn": "`main`-এর বিরুদ্ধে একটা pull request খোলা হলো। কোন job চলে?"
+    },
+    "options": [
+      {
+        "en": "All three, so every PR is deployed",
+        "bn": "তিনটাই, তাই প্রতিটা PR deploy হয়"
+      },
+      {
+        "en": "Only `deploy`",
+        "bn": "শুধু `deploy`"
+      },
+      {
+        "en": "None, pull requests never trigger workflows",
+        "bn": "কোনোটাই না, pull request কখনো workflow চালায় না"
+      },
+      {
+        "en": "Only `test`; `build-and-push` is limited to `main` and `deploy` needs it",
+        "bn": "শুধু `test`; `build-and-push` শুধু `main`-এর জন্য আর `deploy` সেটার উপর নির্ভর করে"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "08-real-project-laravel-pipeline",
+    "q": {
+      "en": "What does the final pipeline guarantee about production?",
+      "bn": "চূড়ান্ত pipeline production সম্পর্কে কী নিশ্চিত করে?"
+    },
+    "options": [
+      {
+        "en": "It always runs the newest commit, even a broken one",
+        "bn": "সবচেয়ে নতুন commit-ই চলে, ভাঙা হলেও"
+      },
+      {
+        "en": "It runs the exact code that was reviewed, merged and passed the tests",
+        "bn": "সেখানে সেই code-ই চলে যা review হয়েছে, merge হয়েছে আর test পাস করেছে"
+      },
+      {
+        "en": "It is never updated",
+        "bn": "কখনো update হয় না"
+      },
+      {
+        "en": "It runs code from any fork",
+        "bn": "যেকোনো fork-এর code চলে"
+      }
+    ],
+    "answer": 1
+  }
+]

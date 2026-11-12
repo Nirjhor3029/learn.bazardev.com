@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What does `workflow_dispatch` add to a workflow?",
+      "bn": "`workflow_dispatch` একটা workflow-এ কী যোগ করে?"
+    },
+    "options": [
+      {
+        "en": "A nightly automatic run",
+        "bn": "প্রতি রাতে নিজে থেকে চলা"
+      },
+      {
+        "en": "A manual \"Run workflow\" button on the Actions tab",
+        "bn": "Actions tab-এ একটা হাতে চালানোর \"Run workflow\" button"
+      },
+      {
+        "en": "A run on every push",
+        "bn": "প্রতিটা push-এ চলা"
+      },
+      {
+        "en": "A run when a fork opens a pull request",
+        "bn": "Fork থেকে pull request এলে চলা"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "It is useful for things a human should decide to run, such as a production deploy or a rollback.",
+      "bn": "যেটা মানুষ সিদ্ধান্ত নিয়ে চালাবে তার জন্য কাজের, যেমন production deploy বা rollback।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `cron: '0 2 * * *'` mean?",
+      "bn": "`cron: '0 2 * * *'` মানে কী?"
+    },
+    "options": [
+      {
+        "en": "Every 2 minutes",
+        "bn": "প্রতি ২ মিনিটে"
+      },
+      {
+        "en": "Only on the 2nd of each month",
+        "bn": "প্রতি মাসের শুধু ২ তারিখে"
+      },
+      {
+        "en": "Every push at 2 AM",
+        "bn": "রাত ২টায় প্রতিটা push-এ"
+      },
+      {
+        "en": "Every day at 2:00 AM UTC",
+        "bn": "প্রতিদিন UTC সময় রাত ২:০০ টায়"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "A `schedule` trigger runs on a timer, no matter whether anyone pushed a commit. Runs can be slightly delayed under heavy load.",
+      "bn": "`schedule` trigger একটা timer-এ চলে, কেউ commit push করুক বা না করুক। বেশি load-এ একটু দেরি হতে পারে।"
+    }
+  },
+  {
+    "q": {
+      "en": "A workflow has `paths-ignore: ['docs/**']` under `push`. A commit changes only `docs/setup.md`. Does it run?",
+      "bn": "একটা workflow-এর `push`-এ `paths-ignore: ['docs/**']` আছে। একটা commit শুধু `docs/setup.md` বদলাল। workflow কি চলবে?"
+    },
+    "options": [
+      {
+        "en": "No, every changed file matches the ignore pattern, so the run is skipped",
+        "bn": "না, বদলানো সব file ignore pattern-এর সাথে মেলে, তাই run বাদ যায়"
+      },
+      {
+        "en": "Yes, `paths-ignore` only affects pull requests",
+        "bn": "হ্যাঁ, `paths-ignore` শুধু pull request-এ প্রভাব ফেলে"
+      },
+      {
+        "en": "Yes, but only the first job",
+        "bn": "হ্যাঁ, কিন্তু শুধু প্রথম job"
+      },
+      {
+        "en": "It fails with an error",
+        "bn": "এটা error দিয়ে fail করে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A docs-only change does not affect the code, so there is no point spending CI time on it.",
+      "bn": "শুধু docs বদলালে code-এ প্রভাব পড়ে না, তাই CI-এর সময় খরচ করার মানে নেই।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `branches: ['release/**']` match?",
+      "bn": "`branches: ['release/**']` কোন branch-গুলো ধরে?"
+    },
+    "options": [
+      {
+        "en": "Only a branch named exactly `release`",
+        "bn": "শুধু ঠিক `release` নামের branch"
+      },
+      {
+        "en": "Every branch in the repository",
+        "bn": "Repository-র সব branch"
+      },
+      {
+        "en": "Any branch whose name starts with `release/`",
+        "bn": "যেকোনো branch যার নাম `release/` দিয়ে শুরু"
+      },
+      {
+        "en": "Only tags",
+        "bn": "শুধু tag"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "`**` is a pattern, so `release/1.0` and `release/2.x` both match.",
+      "bn": "`**` একটা pattern, তাই `release/1.0` আর `release/2.x` দুটোই মেলে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why do `pull_request` runs from a forked repository get restricted permissions?",
+      "bn": "Fork করা repository থেকে আসা `pull_request` run-কে সীমিত অনুমতি দেওয়া হয় কেন?"
+    },
+    "options": [
+      {
+        "en": "To save money on runners",
+        "bn": "Runner-এর খরচ বাঁচাতে"
+      },
+      {
+        "en": "The PR contains code from an outsider, so it must not reach your secrets or push changes",
+        "bn": "PR-এ বাইরের কারো code থাকে, তাই এটা তোমার secret ছুঁতে বা change push করতে পারবে না"
+      },
+      {
+        "en": "Because forks are always out of date",
+        "bn": "কারণ fork সবসময় পুরনো থাকে"
+      },
+      {
+        "en": "Because forked PRs cannot contain code",
+        "bn": "কারণ forked PR-এ code থাকতে পারে না"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "`pull_request_target` has more access, so using it carelessly can let a malicious fork run with your real permissions.",
+      "bn": "`pull_request_target`-এর অনুমতি বেশি, তাই অসাবধানে ব্যবহার করলে ক্ষতিকর fork তোমার আসল অনুমতি নিয়ে চলতে পারে।"
+    }
+  }
+]

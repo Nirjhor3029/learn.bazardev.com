@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "Why chain `test` → `build-and-push` → `deploy` with `needs:`?",
+      "bn": "`test` → `build-and-push` → `deploy` কেন `needs:` দিয়ে জোড়া হয়?"
+    },
+    "options": [
+      {
+        "en": "It makes the three jobs run in parallel",
+        "bn": "এতে তিনটা job parallel-এ চলে"
+      },
+      {
+        "en": "It makes the pipeline cheaper",
+        "bn": "এতে pipeline সস্তা হয়"
+      },
+      {
+        "en": "It is only for naming the jobs",
+        "bn": "এটা শুধু job-এর নাম দেওয়ার জন্য"
+      },
+      {
+        "en": "Each job starts only if the previous one succeeded, so a broken change is stopped at the earliest gate",
+        "bn": "আগের job সফল হলেই পরেরটা শুরু হয়, তাই ভাঙা change সবচেয়ে আগের গেটেই থামে"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "A failing test stops the image build; a failed build stops the deploy.",
+      "bn": "Test fail করলে image build হয় না; build fail করলে deploy হয় না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why tag the image with `${{ github.sha }}` as well as `latest`?",
+      "bn": "Image-কে `latest`-এর পাশাপাশি `${{ github.sha }}` দিয়েও tag করা হয় কেন?"
+    },
+    "options": [
+      {
+        "en": "Every shipped build stays individually addressable, so you can redeploy an older one",
+        "bn": "প্রতিটা ship হওয়া build আলাদাভাবে চেনা যায়, তাই পুরনোটা আবার deploy করা যায়"
+      },
+      {
+        "en": "`latest` is not allowed on Docker Hub",
+        "bn": "Docker Hub-এ `latest` অনুমোদিত নয়"
+      },
+      {
+        "en": "The SHA makes the image smaller",
+        "bn": "SHA image ছোট করে"
+      },
+      {
+        "en": "GitHub refuses to push without a SHA tag",
+        "bn": "SHA tag ছাড়া GitHub push করতে দেয় না"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "If only `latest` existed, going back to a known-good version would mean rebuilding it from an old commit.",
+      "bn": "শুধু `latest` থাকলে ভালো পুরনো version-এ ফিরতে পুরনো commit থেকে আবার build করতে হতো।"
+    }
+  },
+  {
+    "q": {
+      "en": "What can a GitHub Environment such as `production` do?",
+      "bn": "`production`-এর মতো একটা GitHub Environment কী করতে পারে?"
+    },
+    "options": [
+      {
+        "en": "Automatically fix failing tests",
+        "bn": "ব্যর্থ test নিজে ঠিক করা"
+      },
+      {
+        "en": "Make the Docker image smaller",
+        "bn": "Docker image ছোট করা"
+      },
+      {
+        "en": "Require manual approval, restrict which branches may deploy, and hold environment-specific secrets",
+        "bn": "হাতে অনুমোদন চাওয়া, কোন branch deploy করতে পারবে তা সীমিত করা, আর environment-নির্দিষ্ট secret রাখা"
+      },
+      {
+        "en": "Replace the need for a server",
+        "bn": "Server-এর দরকার মিটিয়ে দেওয়া"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "This is where a team doing Continuous Delivery places its one human click.",
+      "bn": "Continuous Delivery করা দল তাদের একমাত্র মানুষের click এখানেই রাখে।"
+    }
+  },
+  {
+    "q": {
+      "en": "How does `appleboy/ssh-action` deploy to your own server?",
+      "bn": "`appleboy/ssh-action` তোমার নিজের server-এ কীভাবে deploy করে?"
+    },
+    "options": [
+      {
+        "en": "It copies the whole repository over FTP",
+        "bn": "এটা FTP দিয়ে পুরো repository copy করে"
+      },
+      {
+        "en": "It SSHes in and runs your `script:` exactly as if you typed it yourself",
+        "bn": "এটা SSH করে ঢোকে আর তোমার `script:` ঠিক নিজে টাইপ করার মতো চালায়"
+      },
+      {
+        "en": "It rebuilds the image on the server from source",
+        "bn": "এটা server-এ source থেকে image আবার build করে"
+      },
+      {
+        "en": "It needs your GitHub password on the server",
+        "bn": "Server-এ এর তোমার GitHub password দরকার"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The server only needs to accept the SSH key. The image was already built and pushed in the previous job.",
+      "bn": "Server-কে শুধু SSH key মানতে হয়। Image আগের job-এই build আর push হয়ে গেছে।"
+    }
+  },
+  {
+    "q": {
+      "en": "A deploy goes wrong. What is the simplest rollback when images are tagged by SHA?",
+      "bn": "একটা deploy ভুল হলো। Image SHA দিয়ে tag করা থাকলে সবচেয়ে সহজ rollback কী?"
+    },
+    "options": [
+      {
+        "en": "Delete the repository and start again",
+        "bn": "Repository মুছে আবার শুরু করা"
+      },
+      {
+        "en": "Wait for the next release",
+        "bn": "পরের release পর্যন্ত অপেক্ষা করা"
+      },
+      {
+        "en": "Rebuild everything from scratch on the server",
+        "bn": "Server-এ সব শূন্য থেকে আবার build করা"
+      },
+      {
+        "en": "Redeploy the previous commit's already-built image tag, with no rebuild or new commit",
+        "bn": "আগের commit-এর আগে থেকে build করা image tag আবার deploy করা, rebuild বা নতুন commit ছাড়াই"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Some teams wrap this in a `workflow_dispatch` workflow that takes a SHA: a rollback button.",
+      "bn": "কিছু দল এটাকে SHA নেওয়া একটা `workflow_dispatch` workflow-তে বেঁধে রাখে: একটা rollback button।"
+    }
+  }
+]

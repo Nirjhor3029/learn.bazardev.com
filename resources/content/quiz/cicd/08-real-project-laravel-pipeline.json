@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "In the final pipeline, why does `build-and-push` have `if: github.ref == 'refs/heads/main'`?",
+      "bn": "চূড়ান্ত pipeline-এ `build-and-push`-এ `if: github.ref == 'refs/heads/main'` কেন?"
+    },
+    "options": [
+      {
+        "en": "So the pipeline never runs on `main`",
+        "bn": "যাতে pipeline `main`-এ কখনো না চলে"
+      },
+      {
+        "en": "So an image is built and pushed only from `main`; pull requests just need to pass the tests",
+        "bn": "যাতে image শুধু `main` থেকে build ও push হয়; pull request-কে শুধু test পাস করতে হয়"
+      },
+      {
+        "en": "So only the repository owner can trigger it",
+        "bn": "যাতে শুধু repository owner চালাতে পারে"
+      },
+      {
+        "en": "So the tests are skipped",
+        "bn": "যাতে test বাদ যায়"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Otherwise every PR branch would push an image to your registry.",
+      "bn": "না হলে প্রতিটা PR branch তোমার registry-তে image push করত।"
+    }
+  },
+  {
+    "q": {
+      "en": "Where do `DOCKERHUB_TOKEN` and `SERVER_SSH_KEY` appear in the workflow file?",
+      "bn": "`DOCKERHUB_TOKEN` আর `SERVER_SSH_KEY` workflow file-এ কীভাবে থাকে?"
+    },
+    "options": [
+      {
+        "en": "As plain text, so the team can read them",
+        "bn": "সাদা লেখায়, যাতে team পড়তে পারে"
+      },
+      {
+        "en": "Base64-encoded inside the YAML",
+        "bn": "YAML-এর ভেতরে Base64 করা"
+      },
+      {
+        "en": "Only as `${{ secrets.NAME }}` references, never as the values themselves",
+        "bn": "শুধু `${{ secrets.NAME }}` reference হিসেবে, আসল value কখনো নয়"
+      },
+      {
+        "en": "In a comment at the top of the file",
+        "bn": "File-এর উপরে একটা comment-এ"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "The actual values live in repository settings and are masked in every log.",
+      "bn": "আসল value থাকে repository settings-এ, আর প্রতিটা log-এ ঢাকা থাকে।"
+    }
+  },
+  {
+    "q": {
+      "en": "The `test` job restores `vendor/` with `actions/cache`. When does it get a cache hit?",
+      "bn": "`test` job `actions/cache` দিয়ে `vendor/` ফেরায়। কখন cache hit হয়?"
+    },
+    "options": [
+      {
+        "en": "Every time, no matter what",
+        "bn": "প্রতিবার, যাই হোক"
+      },
+      {
+        "en": "Only on the first run ever",
+        "bn": "শুধু প্রথম run-এ"
+      },
+      {
+        "en": "Only when `README.md` changed",
+        "bn": "শুধু `README.md` বদলালে"
+      },
+      {
+        "en": "When `composer.lock` is unchanged since the cache was saved",
+        "bn": "Cache সেভ করার পর `composer.lock` না বদলালে"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "The key is a hash of `composer.lock`, so it changes only when the dependencies change.",
+      "bn": "Key হলো `composer.lock`-এর hash, তাই dependency বদলালেই শুধু বদলায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "A test fails on the `main` branch. What happens to production?",
+      "bn": "`main` branch-এ একটা test fail করল। Production-এর কী হয়?"
+    },
+    "options": [
+      {
+        "en": "Nothing: the later jobs never run, so production keeps running the previous version",
+        "bn": "কিছুই না: পরের job চলে না, তাই production আগের version-ই চালাতে থাকে"
+      },
+      {
+        "en": "The broken version is deployed anyway",
+        "bn": "ভাঙা version তবু deploy হয়"
+      },
+      {
+        "en": "The server is switched off",
+        "bn": "Server বন্ধ হয়ে যায়"
+      },
+      {
+        "en": "Production is rolled back to an even older version",
+        "bn": "Production আরও পুরনো version-এ ফিরে যায়"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Nothing partial and nothing broken ever reaches production.",
+      "bn": "আংশিক বা ভাঙা কিছু কখনো production-এ পৌঁছায় না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which job in the final pipeline uses `environment: production`?",
+      "bn": "চূড়ান্ত pipeline-এ কোন job `environment: production` ব্যবহার করে?"
+    },
+    "options": [
+      {
+        "en": "`test`",
+        "bn": "`test`"
+      },
+      {
+        "en": "`deploy`",
+        "bn": "`deploy`"
+      },
+      {
+        "en": "`build-and-push`",
+        "bn": "`build-and-push`"
+      },
+      {
+        "en": "All three jobs",
+        "bn": "তিনটা job-ই"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "That is the one place where a human approval can be required, if the team wants Continuous Delivery.",
+      "bn": "টিম Continuous Delivery চাইলে এখানেই একমাত্র মানুষের অনুমোদন চাওয়া যায়।"
+    }
+  }
+]
