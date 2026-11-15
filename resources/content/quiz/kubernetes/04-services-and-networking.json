@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "Why do we put a Service in front of a set of Pods?",
+      "bn": "একদল Pod-এর সামনে আমরা কেন Service বসাই?"
+    },
+    "options": [
+      {
+        "en": "To make the Pods start faster",
+        "bn": "Pod দ্রুত চালু করতে"
+      },
+      {
+        "en": "To give them one stable IP and DNS name, with traffic shared between them",
+        "bn": "ওদের একটা স্থির IP ও DNS নাম দিতে, আর traffic ওদের মধ্যে ভাগ করতে"
+      },
+      {
+        "en": "To store the Pods' data permanently",
+        "bn": "Pod-এর data স্থায়ীভাবে রাখতে"
+      },
+      {
+        "en": "To build the container image",
+        "bn": "Container image বানাতে"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Pod IPs change whenever a Pod is replaced; a Service follows labels, not IPs.",
+      "bn": "Pod বদলালেই তার IP বদলায়; Service IP নয়, label অনুসরণ করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "How does a Service decide which Pods to send traffic to?",
+      "bn": "Service কীভাবে ঠিক করে কোন Pod-এ traffic পাঠাবে?"
+    },
+    "options": [
+      {
+        "en": "Its label selector matches the Pods' labels",
+        "bn": "তার label selector Pod-এর label-এর সাথে মেলে"
+      },
+      {
+        "en": "It picks Pods with the lowest IP address",
+        "bn": "সবচেয়ে ছোট IP-র Pod বেছে নেয়"
+      },
+      {
+        "en": "It sends traffic to every node equally",
+        "bn": "প্রতিটা node-এ সমানভাবে traffic পাঠায়"
+      },
+      {
+        "en": "It reads the image name",
+        "bn": "Image-এর নাম পড়ে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "This is the same label/selector idea as in Deployments.",
+      "bn": "এটা Deployment-এর মতোই label/selector-এর ধারণা।"
+    }
+  },
+  {
+    "q": {
+      "en": "`kubectl get endpoints web` prints an empty list. What is the most likely cause?",
+      "bn": "`kubectl get endpoints web` খালি তালিকা দেখায়। সবচেয়ে সম্ভাব্য কারণ কী?"
+    },
+    "options": [
+      {
+        "en": "The cluster has too many nodes",
+        "bn": "Cluster-এ অনেক বেশি node"
+      },
+      {
+        "en": "The Service type must be LoadBalancer",
+        "bn": "Service type LoadBalancer হতে হবে"
+      },
+      {
+        "en": "kubectl is out of date",
+        "bn": "kubectl পুরনো"
+      },
+      {
+        "en": "The Service selector doesn't match any Pod labels",
+        "bn": "Service selector কোনো Pod-এর label-এর সাথে মেলেনি"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Endpoints are the Pod IPs behind the Service. No match means no endpoints; check for a label typo.",
+      "bn": "Endpoints হলো Service-এর পেছনের Pod IP। না মিললে endpoint থাকে না; label-এ বানান ভুল দেখো।"
+    }
+  },
+  {
+    "q": {
+      "en": "A database should be reachable only by other Pods in the cluster. Which Service type fits?",
+      "bn": "একটা database-এ শুধু cluster-এর অন্য Pod পৌঁছাবে। কোন Service type মানায়?"
+    },
+    "options": [
+      {
+        "en": "LoadBalancer",
+        "bn": "LoadBalancer"
+      },
+      {
+        "en": "NodePort",
+        "bn": "NodePort"
+      },
+      {
+        "en": "ClusterIP",
+        "bn": "ClusterIP"
+      },
+      {
+        "en": "ExternalPublic",
+        "bn": "ExternalPublic"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "ClusterIP is the default and is internal only. NodePort and LoadBalancer expose things outside.",
+      "bn": "ClusterIP default আর শুধু ভেতরের জন্য। NodePort ও LoadBalancer বাইরে খুলে দেয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "In a Service, what is `targetPort`?",
+      "bn": "Service-এ `targetPort` কী?"
+    },
+    "options": [
+      {
+        "en": "The port on your laptop",
+        "bn": "তোমার laptop-এর port"
+      },
+      {
+        "en": "The port the container listens on",
+        "bn": "Container যে port-এ শোনে"
+      },
+      {
+        "en": "The port Kubernetes' API server uses",
+        "bn": "Kubernetes API server-এর port"
+      },
+      {
+        "en": "The port range 30000–32767",
+        "bn": "৩০০০০–৩২৭৬৭ port-এর পরিসর"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "`port` is the Service's own port; `targetPort` is forwarded to the container.",
+      "bn": "`port` হলো Service-এর নিজের port; `targetPort` container-এ পাঠানো হয়।"
+    }
+  }
+]
