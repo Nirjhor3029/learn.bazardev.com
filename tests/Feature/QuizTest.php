@@ -65,7 +65,12 @@ class QuizTest extends TestCase
                 continue;
             }
 
-            foreach (array_keys(config("course.courses.{$course}.chapters")) as $chapter) {
+            foreach (config("course.courses.{$course}.chapters") as $chapter => $meta) {
+                // Chapters that are still "coming soon" do not have a quiz yet.
+                if ($meta['status'] !== 'available') {
+                    continue;
+                }
+
                 $questions = $quiz->questions($course, $chapter);
 
                 $this->assertNotNull($questions, "{$course}/{$chapter} has no valid quiz");

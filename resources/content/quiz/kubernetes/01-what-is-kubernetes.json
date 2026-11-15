@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What does it mean that Kubernetes is \"declarative\"?",
+      "bn": "Kubernetes \"declarative\" মানে কী?"
+    },
+    "options": [
+      {
+        "en": "You describe the state you want, and Kubernetes keeps reality matching it",
+        "bn": "তুমি চাওয়া অবস্থা বর্ণনা করো, আর Kubernetes বাস্তবকে তার সাথে মিলিয়ে রাখে"
+      },
+      {
+        "en": "You must type every command in the exact order to run",
+        "bn": "প্রতিটা command ঠিক ক্রমে হাতে টাইপ করতে হয়"
+      },
+      {
+        "en": "It only works with declared (named) servers",
+        "bn": "এটা শুধু declare করা (নাম দেওয়া) server-এ কাজ করে"
+      },
+      {
+        "en": "It declares your app finished once it has been deployed",
+        "bn": "Deploy হলেই এটা তোমার app-কে শেষ বলে ঘোষণা করে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Desired state in, constant reconciliation out. This idea runs through the whole course.",
+      "bn": "কাঙ্ক্ষিত অবস্থা দাও, বাকিটা সারাক্ষণ মিলিয়ে রাখে। পুরো course-জুড়ে এই ধারণাটাই চলে।"
+    }
+  },
+  {
+    "q": {
+      "en": "You asked for 3 copies of your app and one of them crashes. What does Kubernetes do?",
+      "bn": "তুমি app-এর ৩টা copy চেয়েছিলে আর একটা crash করল। Kubernetes কী করে?"
+    },
+    "options": [
+      {
+        "en": "Nothing, until you run the command again by hand",
+        "bn": "কিছুই না, যতক্ষণ না তুমি হাতে আবার command চালাও"
+      },
+      {
+        "en": "It shuts down the other two to stay consistent",
+        "bn": "সামঞ্জস্য রাখতে সে বাকি দুটোও বন্ধ করে দেয়"
+      },
+      {
+        "en": "It notices only 2 are running and starts a replacement",
+        "bn": "সে দেখে মাত্র ২টা চলছে আর একটা বদলি চালু করে"
+      },
+      {
+        "en": "It deletes the whole cluster and rebuilds it",
+        "bn": "সে পুরো cluster মুছে নতুন করে বানায়"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Actual state (2) no longer matches desired state (3), so a controller fixes the difference. That is self-healing.",
+      "bn": "আসল অবস্থা (২) আর কাঙ্ক্ষিত অবস্থা (৩) মিলছে না, তাই একটা controller পার্থক্য ঠিক করে। এটাই self-healing।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which part of the control plane stores the cluster's desired and current state?",
+      "bn": "Control plane-এর কোন অংশ cluster-এর কাঙ্ক্ষিত ও বর্তমান অবস্থা রাখে?"
+    },
+    "options": [
+      {
+        "en": "kubelet",
+        "bn": "kubelet"
+      },
+      {
+        "en": "etcd",
+        "bn": "etcd"
+      },
+      {
+        "en": "kube-scheduler",
+        "bn": "kube-scheduler"
+      },
+      {
+        "en": "The container runtime",
+        "bn": "Container runtime"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "etcd is the cluster's database. The scheduler only picks nodes, and the kubelet lives on the worker nodes.",
+      "bn": "etcd হলো cluster-এর database। scheduler শুধু node বাছে, আর kubelet থাকে worker node-এ।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which component decides which node a new Pod runs on?",
+      "bn": "নতুন Pod কোন node-এ চলবে তা কোন অংশ ঠিক করে?"
+    },
+    "options": [
+      {
+        "en": "etcd",
+        "bn": "etcd"
+      },
+      {
+        "en": "kube-proxy",
+        "bn": "kube-proxy"
+      },
+      {
+        "en": "The Docker image",
+        "bn": "Docker image"
+      },
+      {
+        "en": "kube-scheduler",
+        "bn": "kube-scheduler"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "The scheduler looks at free CPU and memory and picks a suitable node.",
+      "bn": "Scheduler free CPU আর memory দেখে একটা উপযুক্ত node বেছে নেয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "A small blog runs well on one VPS with Docker Compose. What is the sensible conclusion?",
+      "bn": "একটা ছোট blog এক VPS-এ Docker Compose দিয়ে ভালো চলছে। যুক্তিসঙ্গত সিদ্ধান্ত কী?"
+    },
+    "options": [
+      {
+        "en": "It must move to Kubernetes immediately or it is unsafe",
+        "bn": "এখনই Kubernetes-এ যেতে হবে, নইলে নিরাপদ নয়"
+      },
+      {
+        "en": "Kubernetes is probably not needed yet, because it adds real complexity",
+        "bn": "Kubernetes সম্ভবত এখনো লাগে না, কারণ এটা আসল জটিলতা আনে"
+      },
+      {
+        "en": "Docker Compose cannot run in production at all",
+        "bn": "Docker Compose production-এ একদমই চলে না"
+      },
+      {
+        "en": "Kubernetes is required to use containers",
+        "bn": "Container ব্যবহারের জন্য Kubernetes বাধ্যতামূলক"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Kubernetes pays off with several servers, zero-downtime releases or automatic recovery. Not every app needs it.",
+      "bn": "কয়েকটা server, zero-downtime release বা নিজে থেকে recovery লাগলে Kubernetes কাজে আসে। সব app-এর এটা লাগে না।"
+    }
+  }
+]

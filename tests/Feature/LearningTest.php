@@ -186,9 +186,14 @@ class LearningTest extends TestCase
         // A leftover row for a chapter that no longer exists must not break or inflate anything.
         $user->chapterStates()->create(['course' => 'docker', 'chapter' => '99-removed', 'completed_at' => now(), 'bookmarked_at' => now()]);
 
+        // Total = every chapter that is live right now (grows as new chapters are published).
+        $total = collect(config('course.courses'))
+            ->filter(fn ($c) => $c['status'] === 'available')
+            ->sum(fn ($c) => collect($c['chapters'])->where('status', 'available')->count());
+
         $this->actingAs($user)->get('/my-learning')->assertOk()
             ->assertSee('Rahim')
-            ->assertSeeInOrder(['Chapters done', '1', '/ 32'])
+            ->assertSeeInOrder(['Chapters done', '1', '/ '.$total])
             ->assertSee('1 / 8')
             ->assertSee('No notes yet');
     }
