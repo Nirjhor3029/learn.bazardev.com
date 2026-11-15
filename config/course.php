@@ -78,7 +78,7 @@ return [
             'status' => 'available',
             'chapters' => [
                 '01-what-is-kubernetes' => ['title' => 'What is Kubernetes, and why does it matter?', 'status' => 'available'],
-                '02-local-cluster-and-kubectl' => ['title' => 'Local cluster, kubectl, and your first Pod', 'status' => 'coming_soon'],
+                '02-local-cluster-and-kubectl' => ['title' => 'Local cluster, kubectl, and your first Pod', 'status' => 'available'],
                 '03-pods-replicasets-deployments' => ['title' => 'Pods, ReplicaSets, and Deployments', 'status' => 'coming_soon'],
                 '04-services-and-networking' => ['title' => 'Services and networking', 'status' => 'coming_soon'],
                 '05-configmaps-and-secrets' => ['title' => 'ConfigMaps and Secrets', 'status' => 'coming_soon'],

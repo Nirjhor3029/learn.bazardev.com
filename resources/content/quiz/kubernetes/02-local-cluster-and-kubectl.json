@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "Which command lists the servers (nodes) in your cluster?",
+      "bn": "কোন command তোমার cluster-এর server (node)-গুলোর তালিকা দেখায়?"
+    },
+    "options": [
+      {
+        "en": "`kubectl list servers`",
+        "bn": "`kubectl list servers`"
+      },
+      {
+        "en": "`kubectl show cluster`",
+        "bn": "`kubectl show cluster`"
+      },
+      {
+        "en": "`kubectl nodes --all`",
+        "bn": "`kubectl nodes --all`"
+      },
+      {
+        "en": "`kubectl get nodes`",
+        "bn": "`kubectl get nodes`"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "The pattern is always `kubectl <verb> <thing>`, so `get nodes`. A healthy node shows `Ready`.",
+      "bn": "Pattern সবসময় `kubectl <verb> <thing>`, তাই `get nodes`। সুস্থ node `Ready` দেখায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which four top-level fields do almost all Kubernetes YAML files have?",
+      "bn": "প্রায় সব Kubernetes YAML file-এ কোন চারটা top-level field থাকে?"
+    },
+    "options": [
+      {
+        "en": "`apiVersion`, `kind`, `metadata`, `spec`",
+        "bn": "`apiVersion`, `kind`, `metadata`, `spec`"
+      },
+      {
+        "en": "`name`, `image`, `ports`, `replicas`",
+        "bn": "`name`, `image`, `ports`, `replicas`"
+      },
+      {
+        "en": "`version`, `type`, `labels`, `data`",
+        "bn": "`version`, `type`, `labels`, `data`"
+      },
+      {
+        "en": "`from`, `run`, `copy`, `cmd`",
+        "bn": "`from`, `run`, `copy`, `cmd`"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "`kind` says what it is, `metadata` names it, and `spec` holds the desired state.",
+      "bn": "`kind` বলে এটা কী, `metadata` নাম দেয়, আর `spec`-এ থাকে কাঙ্ক্ষিত অবস্থা।"
+    }
+  },
+  {
+    "q": {
+      "en": "You create a Pod with `kubectl run hello --image=nginx`, then delete it. What happens next?",
+      "bn": "তুমি `kubectl run hello --image=nginx` দিয়ে একটা Pod বানিয়ে delete করলে। এরপর কী হয়?"
+    },
+    "options": [
+      {
+        "en": "Kubernetes recreates it within seconds",
+        "bn": "Kubernetes কয়েক সেকেন্ডে এটা আবার বানায়"
+      },
+      {
+        "en": "The whole cluster restarts",
+        "bn": "পুরো cluster restart হয়"
+      },
+      {
+        "en": "It stays gone, because nothing controls a bare Pod",
+        "bn": "এটা চলেই যায়, কারণ একা Pod-কে কোনো কিছু নিয়ন্ত্রণ করে না"
+      },
+      {
+        "en": "The image is deleted from every node",
+        "bn": "প্রতিটা node থেকে image মুছে যায়"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Self-healing comes from a controller such as a Deployment, which is the next chapter.",
+      "bn": "Self-healing আসে Deployment-এর মতো controller থেকে, যা পরের chapter।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which command shows what the container inside a Pod has printed?",
+      "bn": "Pod-এর ভেতরের container যা print করেছে তা কোন command দেখায়?"
+    },
+    "options": [
+      {
+        "en": "`kubectl get logs hello`",
+        "bn": "`kubectl get logs hello`"
+      },
+      {
+        "en": "`kubectl logs hello`",
+        "bn": "`kubectl logs hello`"
+      },
+      {
+        "en": "`kubectl apply logs hello`",
+        "bn": "`kubectl apply logs hello`"
+      },
+      {
+        "en": "`kubectl show output hello`",
+        "bn": "`kubectl show output hello`"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "`kubectl logs <pod>` prints the container's output; `describe` shows details and Events instead.",
+      "bn": "`kubectl logs <pod>` container-এর output দেখায়; `describe` তার বদলে বিস্তারিত আর Events দেখায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "A Pod's status is `ImagePullBackOff`. What does it most likely mean?",
+      "bn": "একটা Pod-এর status `ImagePullBackOff`। এর সবচেয়ে সম্ভাব্য মানে কী?"
+    },
+    "options": [
+      {
+        "en": "The image can't be downloaded: wrong name or tag, or no access",
+        "bn": "Image download করা যাচ্ছে না: নাম বা tag ভুল, অথবা access নেই"
+      },
+      {
+        "en": "The container started and then crashed repeatedly",
+        "bn": "Container চালু হয়ে বারবার crash করেছে"
+      },
+      {
+        "en": "The Pod is waiting for a node with enough memory",
+        "bn": "Pod যথেষ্ট memory-সহ একটা node-এর অপেক্ষায়"
+      },
+      {
+        "en": "The Pod finished its work successfully",
+        "bn": "Pod সফলভাবে তার কাজ শেষ করেছে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A crashing container shows `CrashLoopBackOff` instead. Run `kubectl describe pod <name>` and read the Events.",
+      "bn": "Crash করা container বরং `CrashLoopBackOff` দেখায়। `kubectl describe pod <name>` চালিয়ে Events পড়ো।"
+    }
+  }
+]
