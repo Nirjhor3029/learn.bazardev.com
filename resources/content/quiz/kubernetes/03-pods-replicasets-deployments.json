@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "Which object keeps a set number of identical Pods running and replaces any that disappear?",
+      "bn": "কোন object নির্দিষ্ট সংখ্যক একই রকম Pod চালু রাখে আর হারানোগুলো বদলে দেয়?"
+    },
+    "options": [
+      {
+        "en": "A ReplicaSet",
+        "bn": "একটা ReplicaSet"
+      },
+      {
+        "en": "A bare Pod",
+        "bn": "একটা একা Pod"
+      },
+      {
+        "en": "A Namespace",
+        "bn": "একটা Namespace"
+      },
+      {
+        "en": "A ConfigMap",
+        "bn": "একটা ConfigMap"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A ReplicaSet compares desired and actual counts. A Deployment creates and manages ReplicaSets for you.",
+      "bn": "ReplicaSet কাঙ্ক্ষিত আর আসল সংখ্যার তুলনা করে। Deployment তোমার হয়ে ReplicaSet বানায় ও পরিচালনা করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does a Deployment add on top of a ReplicaSet?",
+      "bn": "ReplicaSet-এর ওপর Deployment কী যোগ করে?"
+    },
+    "options": [
+      {
+        "en": "The ability to run containers at all",
+        "bn": "আদৌ container চালানোর ক্ষমতা"
+      },
+      {
+        "en": "A public IP address for each Pod",
+        "bn": "প্রতিটা Pod-এর জন্য public IP address"
+      },
+      {
+        "en": "Rolling updates and rollbacks",
+        "bn": "Rolling update আর rollback"
+      },
+      {
+        "en": "Automatic image building",
+        "bn": "স্বয়ংক্রিয় image build"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Pods already run containers; the Deployment's value is safe updates and the ability to go back.",
+      "bn": "Pod আগে থেকেই container চালায়; Deployment-এর মূল্য হলো নিরাপদ update আর ফিরে যাওয়ার সুযোগ।"
+    }
+  },
+  {
+    "q": {
+      "en": "Your Deployment says `replicas: 3` and one Pod is deleted. What happens?",
+      "bn": "তোমার Deployment-এ `replicas: 3` আর একটা Pod delete হলো। কী হয়?"
+    },
+    "options": [
+      {
+        "en": "The Deployment stays at 2 Pods",
+        "bn": "Deployment ২টা Pod-এই থেকে যায়"
+      },
+      {
+        "en": "A new Pod is created to get back to 3",
+        "bn": "আবার ৩ করতে একটা নতুন Pod তৈরি হয়"
+      },
+      {
+        "en": "The Deployment is deleted too",
+        "bn": "Deployment-ও মুছে যায়"
+      },
+      {
+        "en": "All Pods restart at once",
+        "bn": "সব Pod একবারে restart হয়"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Desired is 3, actual is 2, so the ReplicaSet creates one more. This is self-healing.",
+      "bn": "কাঙ্ক্ষিত ৩, আসল ২, তাই ReplicaSet আরেকটা বানায়। এটাই self-healing।"
+    }
+  },
+  {
+    "q": {
+      "en": "How does a Deployment find the Pods that belong to it?",
+      "bn": "Deployment কীভাবে নিজের Pod-গুলো খুঁজে পায়?"
+    },
+    "options": [
+      {
+        "en": "By Pod name alphabetical order",
+        "bn": "Pod-এর নামের বর্ণানুক্রমে"
+      },
+      {
+        "en": "By the node the Pods run on",
+        "bn": "Pod যে node-এ চলে সেটা দিয়ে"
+      },
+      {
+        "en": "By the image tag",
+        "bn": "Image tag দিয়ে"
+      },
+      {
+        "en": "By matching `selector.matchLabels` to the Pod labels",
+        "bn": "`selector.matchLabels`-কে Pod-এর label-এর সাথে মিলিয়ে"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "If the selector and template labels don't match, the Deployment is rejected or can't manage its Pods.",
+      "bn": "Selector আর template label না মিললে Deployment reject হয় বা নিজের Pod পরিচালনা করতে পারে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which command changes a Deployment named `web` to 5 Pods?",
+      "bn": "`web` নামের Deployment-কে ৫টা Pod-এ বদলায় কোন command?"
+    },
+    "options": [
+      {
+        "en": "`kubectl scale deployment web --replicas=5`",
+        "bn": "`kubectl scale deployment web --replicas=5`"
+      },
+      {
+        "en": "`kubectl grow web 5`",
+        "bn": "`kubectl grow web 5`"
+      },
+      {
+        "en": "`kubectl run web --count=5`",
+        "bn": "`kubectl run web --count=5`"
+      },
+      {
+        "en": "`kubectl set pods web 5`",
+        "bn": "`kubectl set pods web 5`"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "You can also edit `replicas:` in the YAML and re-apply; that keeps the file as the source of truth.",
+      "bn": "YAML-এ `replicas:` বদলে আবার apply-ও করা যায়; তাতে ফাইলটাই সত্যের উৎস থাকে।"
+    }
+  }
+]
