@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What does an Ingress do?",
+      "bn": "Ingress কী করে?"
+    },
+    "options": [
+      {
+        "en": "Routes HTTP(S) traffic by host and path to Services through one entry point",
+        "bn": "একটা প্রবেশপথ দিয়ে host ও path অনুযায়ী Service-এ HTTP(S) traffic পাঠায়"
+      },
+      {
+        "en": "Stores Pod data permanently",
+        "bn": "Pod-এর data স্থায়ীভাবে রাখে"
+      },
+      {
+        "en": "Builds container images",
+        "bn": "Container image বানায়"
+      },
+      {
+        "en": "Encrypts Secrets",
+        "bn": "Secret encrypt করে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "One Ingress entry point can serve many sites, instead of one LoadBalancer per app.",
+      "bn": "প্রতি app-এ একটা LoadBalancer-এর বদলে একটা Ingress প্রবেশপথ অনেক site-এর সেবা দিতে পারে।"
+    }
+  },
+  {
+    "q": {
+      "en": "You applied an Ingress but its rules have no effect. What is the most likely missing piece?",
+      "bn": "তুমি Ingress apply করলে কিন্তু নিয়মগুলোর কোনো প্রভাব নেই। সবচেয়ে সম্ভাব্য বাদ পড়া অংশ কী?"
+    },
+    "options": [
+      {
+        "en": "A second Deployment",
+        "bn": "দ্বিতীয় একটা Deployment"
+      },
+      {
+        "en": "A larger node",
+        "bn": "আরও বড় একটা node"
+      },
+      {
+        "en": "An Ingress controller such as ingress-nginx",
+        "bn": "ingress-nginx-এর মতো একটা Ingress controller"
+      },
+      {
+        "en": "A newer kubectl",
+        "bn": "নতুন kubectl"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Kubernetes does not ship an Ingress controller by default; the Ingress object is only rules.",
+      "bn": "Kubernetes default-এ Ingress controller দেয় না; Ingress object শুধু নিয়ম।"
+    }
+  },
+  {
+    "q": {
+      "en": "A readiness probe fails for one Pod. What happens?",
+      "bn": "একটা Pod-এর readiness probe ব্যর্থ হলো। কী হয়?"
+    },
+    "options": [
+      {
+        "en": "The container is restarted immediately",
+        "bn": "Container সাথে সাথে restart হয়"
+      },
+      {
+        "en": "The Pod is removed from the Service's endpoints and gets no traffic, but is not restarted",
+        "bn": "Pod Service-এর endpoint থেকে সরে যায় ও traffic পায় না, কিন্তু restart হয় না"
+      },
+      {
+        "en": "The whole Deployment is deleted",
+        "bn": "পুরো Deployment মুছে যায়"
+      },
+      {
+        "en": "The node is rebooted",
+        "bn": "Node reboot হয়"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Liveness failure restarts the container; readiness failure only stops traffic.",
+      "bn": "Liveness ব্যর্থ হলে container restart হয়; readiness ব্যর্থ হলে শুধু traffic বন্ধ হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "A container uses more memory than its limit. What happens?",
+      "bn": "একটা container তার limit-এর চেয়ে বেশি memory ব্যবহার করল। কী হয়?"
+    },
+    "options": [
+      {
+        "en": "It is only slowed down (throttled)",
+        "bn": "শুধু ধীর (throttle) হয়"
+      },
+      {
+        "en": "Kubernetes silently raises the limit",
+        "bn": "Kubernetes নিঃশব্দে limit বাড়িয়ে দেয়"
+      },
+      {
+        "en": "Nothing, limits are only suggestions",
+        "bn": "কিছুই না, limit শুধু পরামর্শ"
+      },
+      {
+        "en": "It is killed with OOMKilled and restarted",
+        "bn": "সে OOMKilled হয়ে মারা যায় ও restart হয়"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Over the CPU limit the container is throttled; over the memory limit it is killed.",
+      "bn": "CPU limit ছাড়ালে throttle হয়; memory limit ছাড়ালে মারা যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is a resource *request* used for?",
+      "bn": "Resource *request* কীসের জন্য ব্যবহার হয়?"
+    },
+    "options": [
+      {
+        "en": "The scheduler uses it to choose a node with enough free room",
+        "bn": "Scheduler এটা দিয়ে যথেষ্ট খালি জায়গাওয়ালা node বাছে"
+      },
+      {
+        "en": "It is the hard maximum the container may use",
+        "bn": "এটা container-এর সর্বোচ্চ কড়া সীমা"
+      },
+      {
+        "en": "It sets the container's image tag",
+        "bn": "এটা container-এর image tag ঠিক করে"
+      },
+      {
+        "en": "It chooses the Service type",
+        "bn": "এটা Service type বাছে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A request reserves resources for scheduling; a limit is the ceiling.",
+      "bn": "Request scheduling-এর জন্য সম্পদ সংরক্ষণ করে; limit হলো সর্বোচ্চ সীমা।"
+    }
+  }
+]

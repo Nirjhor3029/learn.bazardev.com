@@ -83,7 +83,7 @@ return [
                 '04-services-and-networking' => ['title' => 'Services and networking', 'status' => 'available'],
                 '05-configmaps-and-secrets' => ['title' => 'ConfigMaps and Secrets', 'status' => 'available'],
                 '06-volumes-and-statefulsets' => ['title' => 'Volumes, PersistentVolumes, and StatefulSets', 'status' => 'available'],
-                '07-ingress-probes-and-limits' => ['title' => 'Ingress, health probes, and resource limits', 'status' => 'coming_soon'],
+                '07-ingress-probes-and-limits' => ['title' => 'Ingress, health probes, and resource limits', 'status' => 'available'],
                 '08-real-project-laravel-on-kubernetes' => ['title' => 'Real project: a Laravel app on Kubernetes', 'status' => 'coming_soon'],
             ],
         ],
