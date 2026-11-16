@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "Which log level fits a payment that failed because the gateway timed out?",
+      "bn": "Gateway timeout হয়ে একটা payment ব্যর্থ হলো। কোন log level মানায়?"
+    },
+    "options": [
+      {
+        "en": "`debug`",
+        "bn": "`debug`"
+      },
+      {
+        "en": "`error`",
+        "bn": "`error`"
+      },
+      {
+        "en": "`info`",
+        "bn": "`info`"
+      },
+      {
+        "en": "`emergency`",
+        "bn": "`emergency`"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "`error` means a request or job failed. `emergency` is for a system that is unusable.",
+      "bn": "`error` মানে একটা request বা job ব্যর্থ। `emergency` হলো system ব্যবহারের অযোগ্য হলে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why put the order id in the context array instead of inside the message text?",
+      "bn": "Order id message-এর লেখার ভেতরে না দিয়ে context array-তে কেন দেবে?"
+    },
+    "options": [
+      {
+        "en": "Because context is encrypted automatically",
+        "bn": "কারণ context নিজে নিজে encrypt হয়"
+      },
+      {
+        "en": "Because the message cannot contain numbers",
+        "bn": "কারণ message-এ সংখ্যা থাকতে পারে না"
+      },
+      {
+        "en": "The message stays constant, so you can search it exactly and still filter by `order_id`",
+        "bn": "Message স্থির থাকে, তাই হুবহু খোঁজা যায় আর তবু `order_id` ধরে filter করা যায়"
+      },
+      {
+        "en": "Because it makes the log file smaller than any other way",
+        "bn": "কারণ এতে log file অন্য যেকোনো উপায়ের চেয়ে ছোট হয়"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "A constant message groups and counts well; the changing details live in named fields.",
+      "bn": "স্থির message ভালো group ও গোনা যায়; বদলানো বিবরণ নামযুক্ত field-এ থাকে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which of these should never be written to an application log?",
+      "bn": "এর মধ্যে কোনটা application log-এ কখনো লেখা উচিত নয়?"
+    },
+    "options": [
+      {
+        "en": "A user's password or a one-time code (OTP)",
+        "bn": "User-এর password বা একবার-ব্যবহারের code (OTP)"
+      },
+      {
+        "en": "The order id",
+        "bn": "Order id"
+      },
+      {
+        "en": "The name of the payment gateway",
+        "bn": "Payment gateway-এর নাম"
+      },
+      {
+        "en": "How long a query took in milliseconds",
+        "bn": "একটা query কত মিলিসেকেন্ড নিল"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Logs are copied and read by many people, so secrets must never go in. An id or a timing is fine.",
+      "bn": "Log কপি হয় আর অনেকে পড়ে, তাই গোপন জিনিস কখনো নয়। Id বা সময় ঠিক আছে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `LOG_LEVEL=warning` do?",
+      "bn": "`LOG_LEVEL=warning` কী করে?"
+    },
+    "options": [
+      {
+        "en": "Writes only `warning` lines and drops errors",
+        "bn": "শুধু `warning` line লেখে আর error বাদ দেয়"
+      },
+      {
+        "en": "Sends an email every time a warning happens",
+        "bn": "প্রতিবার warning হলে ইমেইল পাঠায়"
+      },
+      {
+        "en": "Turns the log file into JSON",
+        "bn": "Log file-কে JSON বানিয়ে দেয়"
+      },
+      {
+        "en": "Drops `debug`, `info` and `notice` lines, and keeps `warning` and above",
+        "bn": "`debug`, `info` আর `notice` line বাদ দেয়, `warning` ও তার ওপরেরগুলো রাখে"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "The level is a minimum: that level and everything more serious is kept.",
+      "bn": "Level একটা সর্বনিম্ন সীমা: ওই level আর তার চেয়ে গুরুতর সবকিছু থাকে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which logrotate option copies the log and then empties the original, so a running app can keep writing without a restart?",
+      "bn": "কোন logrotate option log কপি করে আসলটা খালি করে, ফলে চলমান app restart ছাড়াই লিখতে পারে?"
+    },
+    "options": [
+      {
+        "en": "`notifempty`",
+        "bn": "`notifempty`"
+      },
+      {
+        "en": "`copytruncate`",
+        "bn": "`copytruncate`"
+      },
+      {
+        "en": "`missingok`",
+        "bn": "`missingok`"
+      },
+      {
+        "en": "`delaycompress`",
+        "bn": "`delaycompress`"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Its small trade-off: a few lines written during the copy can be lost.",
+      "bn": "ছোট অসুবিধা: কপির সময় লেখা কয়েকটা line হারাতে পারে।"
+    }
+  }
+]
