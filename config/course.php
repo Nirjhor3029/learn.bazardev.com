@@ -99,7 +99,7 @@ return [
                 '04-web-server-and-https' => ['title' => 'A web server with HTTPS', 'status' => 'available'],
                 '05-aws-core-concepts' => ['title' => 'AWS core concepts: accounts, regions, and IAM', 'status' => 'available'],
                 '06-ec2-s3-and-rds' => ['title' => 'AWS EC2, S3, and RDS', 'status' => 'available'],
-                '07-networking-security-and-costs' => ['title' => 'Networking, security, backups, and costs', 'status' => 'coming_soon'],
+                '07-networking-security-and-costs' => ['title' => 'Networking, security, backups, and costs', 'status' => 'available'],
                 '08-real-project-laravel-in-production' => ['title' => 'Real project: a Laravel app in production', 'status' => 'coming_soon'],
             ],
         ],

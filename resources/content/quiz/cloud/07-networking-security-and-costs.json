@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What makes a subnet \"public\"?",
+      "bn": "একটা subnet কীভাবে \"public\" হয়?"
+    },
+    "options": [
+      {
+        "en": "It has a route to an internet gateway",
+        "bn": "তার একটা internet gateway-এ route আছে"
+      },
+      {
+        "en": "It has more than 256 addresses",
+        "bn": "তার ২৫৬টার বেশি address আছে"
+      },
+      {
+        "en": "It contains only S3 buckets",
+        "bn": "তাতে শুধু S3 bucket আছে"
+      },
+      {
+        "en": "It is in the default Region",
+        "bn": "এটা default Region-এ"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A private subnet has no route in from the internet, so a database there is hidden from it.",
+      "bn": "Private subnet-এ internet থেকে ঢোকার route নেই, তাই সেখানের database internet থেকে লুকানো।"
+    }
+  },
+  {
+    "q": {
+      "en": "How do you allow only your web servers to connect to the database on port 3306?",
+      "bn": "শুধু তোমার web server-কে port 3306-এ database-এ সংযোগ করতে দেবে কীভাবে?"
+    },
+    "options": [
+      {
+        "en": "Open port 3306 to 0.0.0.0/0 and hope for the best",
+        "bn": "Port 3306 `0.0.0.0/0`-তে খুলে ভালোর আশা করো"
+      },
+      {
+        "en": "Give the database a public IP and a long name",
+        "bn": "Database-কে public IP আর লম্বা নাম দাও"
+      },
+      {
+        "en": "In the database's security group, allow port 3306 with the web servers' security group as the source",
+        "bn": "Database-এর security group-এ port 3306 অনুমোদন করো, source হিসেবে web server-দের security group দিয়ে"
+      },
+      {
+        "en": "Turn off the security group",
+        "bn": "Security group বন্ধ করে দাও"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Referencing another security group means you never write IP addresses, and new web servers get access automatically.",
+      "bn": "অন্য security group উল্লেখ করলে IP address লিখতে হয় না, আর নতুন web server নিজে নিজে access পায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "A security group is \"stateful\". What does that mean?",
+      "bn": "Security group \"stateful\"। এর মানে কী?"
+    },
+    "options": [
+      {
+        "en": "It remembers every visitor forever",
+        "bn": "এটা প্রতিটা visitor-কে চিরকাল মনে রাখে"
+      },
+      {
+        "en": "If a request is allowed in, the reply is automatically allowed back out",
+        "bn": "আসা request অনুমোদিত হলে উত্তর নিজে নিজে ফিরে যেতে পারে"
+      },
+      {
+        "en": "It can only be used in one Region",
+        "bn": "এটা শুধু একটা Region-এ ব্যবহার করা যায়"
+      },
+      {
+        "en": "It supports only deny rules",
+        "bn": "এটা শুধু deny নিয়ম সমর্থন করে"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Security groups have allow rules only; anything not allowed is blocked.",
+      "bn": "Security group-এ শুধু allow নিয়ম থাকে; যা অনুমোদিত নয় তা আটকানো।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why is a Multi-AZ database not a replacement for backups?",
+      "bn": "Multi-AZ database কেন backup-এর বিকল্প নয়?"
+    },
+    "options": [
+      {
+        "en": "Multi-AZ deletes data every night",
+        "bn": "Multi-AZ প্রতি রাতে data মুছে দেয়"
+      },
+      {
+        "en": "Backups cannot be used with RDS",
+        "bn": "RDS-এ backup ব্যবহার করা যায় না"
+      },
+      {
+        "en": "Multi-AZ only works for S3",
+        "bn": "Multi-AZ শুধু S3-র জন্য কাজ করে"
+      },
+      {
+        "en": "A mistaken delete or corrupted data is copied to the standby too",
+        "bn": "ভুল মোছা বা নষ্ট data standby-তেও কপি হয়ে যায়"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Multi-AZ protects against hardware or data-center failure. For your own mistakes you need real backups, and tested restores.",
+      "bn": "Multi-AZ hardware বা data center বিকলের বিরুদ্ধে রক্ষা করে। নিজের ভুলের জন্য আসল backup আর পরীক্ষিত restore লাগে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which of these still costs money after you stop an EC2 instance?",
+      "bn": "EC2 instance stop করার পরও এগুলোর কোনটায় টাকা খরচ হয়?"
+    },
+    "options": [
+      {
+        "en": "Nothing at all, stopped means free",
+        "bn": "কিছুই না, stopped মানে বিনামূল্যে"
+      },
+      {
+        "en": "Its attached EBS disk and any snapshots",
+        "bn": "তার জোড়া EBS disk আর যেকোনো snapshot"
+      },
+      {
+        "en": "Only the root user's password",
+        "bn": "শুধু root user-এর password"
+      },
+      {
+        "en": "Only the domain's TTL",
+        "bn": "শুধু domain-এর TTL"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Stopped is not free. Clean up disks, snapshots, Elastic IPs and test servers after practising.",
+      "bn": "Stopped মানে বিনামূল্যে নয়। অনুশীলনের পর disk, snapshot, Elastic IP আর test server পরিষ্কার করো।"
+    }
+  }
+]
