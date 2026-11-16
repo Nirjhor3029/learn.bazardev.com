@@ -1,0 +1,834 @@
+[
+  {
+    "ref": "01-what-is-the-cloud",
+    "q": {
+      "en": "A team wants a platform where they only manage their app and data, not the OS. Which model is that?",
+      "bn": "একটা team চায় এমন platform যেখানে শুধু app ও data সামলাবে, OS নয়। সেটা কোন model?"
+    },
+    "options": [
+      {
+        "en": "IaaS",
+        "bn": "IaaS"
+      },
+      {
+        "en": "PaaS",
+        "bn": "PaaS"
+      },
+      {
+        "en": "A bare VPS with root access",
+        "bn": "root access-সহ একটা সাধারণ VPS"
+      },
+      {
+        "en": "Shared hosting with cPanel only",
+        "bn": "শুধু cPanel-সহ shared hosting"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "01-what-is-the-cloud",
+    "q": {
+      "en": "Which is a real advantage of a VPS over shared hosting for a Laravel app?",
+      "bn": "Laravel app-এর জন্য shared hosting-এর চেয়ে VPS-এর একটা আসল সুবিধা কোনটা?"
+    },
+    "options": [
+      {
+        "en": "Someone else patches your operating system for you",
+        "bn": "অন্য কেউ তোমার operating system patch করে দেয়"
+      },
+      {
+        "en": "It is always free",
+        "bn": "এটা সবসময় বিনামূল্যের"
+      },
+      {
+        "en": "You share the same resources with hundreds of other sites",
+        "bn": "তুমি শত শত অন্য site-এর সাথে একই resource ভাগ করো"
+      },
+      {
+        "en": "Root access, so you can install your own software such as Docker or a queue worker",
+        "bn": "Root access, তাই নিজের software (যেমন Docker বা queue worker) install করা যায়"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "01-what-is-the-cloud",
+    "q": {
+      "en": "In the shared responsibility model, who is responsible for the password strength of your server accounts?",
+      "bn": "Shared responsibility model-এ তোমার server account-এর password-এর শক্তির দায় কার?"
+    },
+    "options": [
+      {
+        "en": "You are",
+        "bn": "তোমার"
+      },
+      {
+        "en": "The provider",
+        "bn": "Provider-এর"
+      },
+      {
+        "en": "The domain registrar",
+        "bn": "Domain registrar-এর"
+      },
+      {
+        "en": "Nobody",
+        "bn": "কারো নয়"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "01-what-is-the-cloud",
+    "q": {
+      "en": "A Bangladeshi startup's users are mostly in Dhaka. What should guide the choice of region?",
+      "bn": "একটা বাংলাদেশি startup-এর user বেশিরভাগ ঢাকায়। Region বাছতে কী পথ দেখাবে?"
+    },
+    "options": [
+      {
+        "en": "Always pick the region with the longest name",
+        "bn": "সবসময় সবচেয়ে লম্বা নামের region বাছো"
+      },
+      {
+        "en": "Pick the region farthest away for safety",
+        "bn": "নিরাপত্তার জন্য সবচেয়ে দূরের region বাছো"
+      },
+      {
+        "en": "Pick a region close to the users to lower latency",
+        "bn": "Latency কমাতে user-দের কাছের একটা region বাছো"
+      },
+      {
+        "en": "Region has no effect on speed",
+        "bn": "Region-এর গতিতে কোনো প্রভাব নেই"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "02-your-first-vps",
+    "q": {
+      "en": "Why use an SSH key instead of a password to log in?",
+      "bn": "Login-এর জন্য password-এর বদলে SSH key কেন?"
+    },
+    "options": [
+      {
+        "en": "There is no short secret for bots to guess; the private key never leaves your computer",
+        "bn": "bot-দের আন্দাজ করার মতো ছোট কোনো secret নেই; private key তোমার computer ছাড়ে না"
+      },
+      {
+        "en": "Keys make the server faster",
+        "bn": "Key server-কে দ্রুত করে"
+      },
+      {
+        "en": "Passwords are not supported on Linux",
+        "bn": "Linux-এ password সমর্থিত নয়"
+      },
+      {
+        "en": "A key can be shared safely with everyone",
+        "bn": "Key সবার সাথে নিরাপদে ভাগ করা যায়"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "02-your-first-vps",
+    "q": {
+      "en": "What should you do before closing your original root session after disabling root login?",
+      "bn": "Root login বন্ধ করার পর আগের root session বন্ধ করার আগে কী করবে?"
+    },
+    "options": [
+      {
+        "en": "Reboot the server immediately",
+        "bn": "সাথে সাথে server reboot করো"
+      },
+      {
+        "en": "Delete the SSH keys",
+        "bn": "SSH key মুছে ফেলো"
+      },
+      {
+        "en": "Turn off the firewall",
+        "bn": "Firewall বন্ধ করো"
+      },
+      {
+        "en": "Open a second terminal and confirm the new user can still log in with sudo",
+        "bn": "একটা দ্বিতীয় terminal খুলে নিশ্চিত হও নতুন user এখনও sudo-সহ login করতে পারে"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "02-your-first-vps",
+    "q": {
+      "en": "Which UFW order avoids locking you out?",
+      "bn": "UFW-র কোন ক্রম তোমাকে তালাবদ্ধ হওয়া থেকে বাঁচায়?"
+    },
+    "options": [
+      {
+        "en": "`ufw enable`, then `ufw allow OpenSSH`",
+        "bn": "`ufw enable`, তারপর `ufw allow OpenSSH`"
+      },
+      {
+        "en": "`ufw deny OpenSSH`, then `ufw enable`",
+        "bn": "`ufw deny OpenSSH`, তারপর `ufw enable`"
+      },
+      {
+        "en": "`ufw allow OpenSSH`, then `ufw enable`",
+        "bn": "`ufw allow OpenSSH`, তারপর `ufw enable`"
+      },
+      {
+        "en": "`ufw disable`, then `ufw reset`",
+        "bn": "`ufw disable`, তারপর `ufw reset`"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "02-your-first-vps",
+    "q": {
+      "en": "You are locked out of your VPS by a firewall mistake. What is the usual way back in?",
+      "bn": "Firewall-এর ভুলে তুমি VPS থেকে তালাবদ্ধ। ফেরার সাধারণ উপায় কী?"
+    },
+    "options": [
+      {
+        "en": "Buy a new domain",
+        "bn": "নতুন domain কেনো"
+      },
+      {
+        "en": "Use the provider's web (recovery) console to fix the firewall or SSH config",
+        "bn": "Firewall বা SSH config ঠিক করতে provider-এর web (recovery) console ব্যবহার করো"
+      },
+      {
+        "en": "Wait for the server to fix itself",
+        "bn": "Server নিজে ঠিক হওয়ার অপেক্ষা করো"
+      },
+      {
+        "en": "Ask the registrar to reset DNS",
+        "bn": "Registrar-কে DNS reset করতে বলো"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "03-domains-and-dns",
+    "q": {
+      "en": "In `blog.myshop.com`, which part is the subdomain?",
+      "bn": "`blog.myshop.com`-এ subdomain কোন অংশ?"
+    },
+    "options": [
+      {
+        "en": "com",
+        "bn": "com"
+      },
+      {
+        "en": "myshop",
+        "bn": "myshop"
+      },
+      {
+        "en": "myshop.com",
+        "bn": "myshop.com"
+      },
+      {
+        "en": "blog",
+        "bn": "blog"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "03-domains-and-dns",
+    "q": {
+      "en": "You want `www.myshop.com` to always follow wherever `myshop.com` points. Which record fits?",
+      "bn": "তুমি চাও `www.myshop.com` সবসময় `myshop.com` যেখানে যায় সেখানেই যাক। কোন record মানায়?"
+    },
+    "options": [
+      {
+        "en": "An MX record",
+        "bn": "একটা MX record"
+      },
+      {
+        "en": "A CNAME from `www` to `myshop.com`",
+        "bn": "`www` থেকে `myshop.com`-এ একটা CNAME"
+      },
+      {
+        "en": "A TXT record with the IP",
+        "bn": "IP-সহ একটা TXT record"
+      },
+      {
+        "en": "An NS record for `www`",
+        "bn": "`www`-এর জন্য একটা NS record"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "03-domains-and-dns",
+    "q": {
+      "en": "You will move a site to a new server tomorrow. What should you do today to make the DNS change take effect faster?",
+      "bn": "কাল তুমি একটা site নতুন server-এ সরাবে। DNS পরিবর্তন দ্রুত কার্যকর করতে আজ কী করবে?"
+    },
+    "options": [
+      {
+        "en": "Lower the record's TTL (for example to 300 seconds)",
+        "bn": "Record-এর TTL কমাও (যেমন ৩০০ সেকেন্ড)"
+      },
+      {
+        "en": "Raise the TTL to the maximum",
+        "bn": "TTL সর্বোচ্চ করো"
+      },
+      {
+        "en": "Delete the domain",
+        "bn": "Domain মুছে দাও"
+      },
+      {
+        "en": "Turn off the old server's firewall",
+        "bn": "পুরনো server-এর firewall বন্ধ করো"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "03-domains-and-dns",
+    "q": {
+      "en": "What does `dig +short myshop.com NS` show?",
+      "bn": "`dig +short myshop.com NS` কী দেখায়?"
+    },
+    "options": [
+      {
+        "en": "The server's CPU usage",
+        "bn": "Server-এর CPU ব্যবহার"
+      },
+      {
+        "en": "The HTTPS certificate expiry",
+        "bn": "HTTPS certificate-এর মেয়াদ"
+      },
+      {
+        "en": "The name servers that answer for the domain",
+        "bn": "Domain-এর হয়ে উত্তর দেওয়া name server"
+      },
+      {
+        "en": "The contents of the website",
+        "bn": "Website-এর বিষয়বস্তু"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "04-web-server-and-https",
+    "q": {
+      "en": "Which of these is NOT a job of a web server?",
+      "bn": "এগুলোর কোনটা web server-এর কাজ নয়?"
+    },
+    "options": [
+      {
+        "en": "Listening on ports 80 and 443",
+        "bn": "80 ও 443 port-এ শোনা"
+      },
+      {
+        "en": "Registering the domain name",
+        "bn": "Domain নাম register করা"
+      },
+      {
+        "en": "Passing requests to PHP-FPM or a container",
+        "bn": "PHP-FPM বা container-এ request পাঠানো"
+      },
+      {
+        "en": "Redirecting HTTP to HTTPS",
+        "bn": "HTTP থেকে HTTPS-এ redirect করা"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "04-web-server-and-https",
+    "q": {
+      "en": "What is the main benefit of Caddy compared with Nginx for HTTPS?",
+      "bn": "HTTPS-এর ক্ষেত্রে Nginx-এর তুলনায় Caddy-র প্রধান সুবিধা কী?"
+    },
+    "options": [
+      {
+        "en": "It needs no DNS",
+        "bn": "এর DNS লাগে না"
+      },
+      {
+        "en": "It works without any open ports",
+        "bn": "এটা কোনো port খোলা ছাড়াই কাজ করে"
+      },
+      {
+        "en": "It obtains and renews certificates automatically",
+        "bn": "এটা certificate নিজে নিজে আনে ও renew করে"
+      },
+      {
+        "en": "It replaces the firewall",
+        "bn": "এটা firewall-এর জায়গা নেয়"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "04-web-server-and-https",
+    "q": {
+      "en": "A Let's Encrypt certificate is valid for 90 days. What keeps your site's HTTPS working?",
+      "bn": "Let's Encrypt certificate ৯০ দিন বৈধ। তোমার site-এর HTTPS কী চালু রাখে?"
+    },
+    "options": [
+      {
+        "en": "Nothing, certificates never expire",
+        "bn": "কিছুই না, certificate-এর মেয়াদ কখনো শেষ হয় না"
+      },
+      {
+        "en": "Restarting the server every 90 days by hand",
+        "bn": "প্রতি ৯০ দিনে হাতে server restart করা"
+      },
+      {
+        "en": "Buying a new domain each time",
+        "bn": "প্রতিবার নতুন domain কেনা"
+      },
+      {
+        "en": "An automatic renewal timer, which you should test with `certbot renew --dry-run`",
+        "bn": "একটা স্বয়ংক্রিয় renewal timer, যা `certbot renew --dry-run` দিয়ে পরীক্ষা করা উচিত"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "04-web-server-and-https",
+    "q": {
+      "en": "Visitors see 502 Bad Gateway. Which place do you check first?",
+      "bn": "Visitor 502 Bad Gateway দেখছে। আগে কোথায় দেখবে?"
+    },
+    "options": [
+      {
+        "en": "Whether the app behind the proxy is running, and the web server's error log",
+        "bn": "Proxy-র পেছনের app চলছে কিনা, আর web server-এর error log"
+      },
+      {
+        "en": "The registrar's billing page",
+        "bn": "Registrar-এর billing page"
+      },
+      {
+        "en": "The browser's bookmarks",
+        "bn": "Browser-এর bookmark"
+      },
+      {
+        "en": "The domain's WHOIS record",
+        "bn": "Domain-এর WHOIS record"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "05-aws-core-concepts",
+    "q": {
+      "en": "Why enable MFA on the AWS root user?",
+      "bn": "AWS root user-এ MFA চালু করা হয় কেন?"
+    },
+    "options": [
+      {
+        "en": "It makes the console load faster",
+        "bn": "এতে console দ্রুত লোড হয়"
+      },
+      {
+        "en": "It lowers the monthly bill",
+        "bn": "এতে মাসিক বিল কমে"
+      },
+      {
+        "en": "A stolen password alone is not enough to take over the account",
+        "bn": "শুধু চুরি হওয়া password দিয়ে account দখল করা যায় না"
+      },
+      {
+        "en": "It is required to create an S3 bucket",
+        "bn": "S3 bucket বানাতে এটা বাধ্যতামূলক"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "05-aws-core-concepts",
+    "q": {
+      "en": "What does \"least privilege\" mean in IAM?",
+      "bn": "IAM-এ \"least privilege\" মানে কী?"
+    },
+    "options": [
+      {
+        "en": "Give everyone AdministratorAccess to avoid errors",
+        "bn": "ভুল এড়াতে সবাইকে AdministratorAccess দাও"
+      },
+      {
+        "en": "Remove all passwords",
+        "bn": "সব password সরাও"
+      },
+      {
+        "en": "Use only the root user",
+        "bn": "শুধু root user ব্যবহার করো"
+      },
+      {
+        "en": "Give each user or role only the permissions it actually needs",
+        "bn": "প্রতিটা user বা role-কে শুধু আসলে যে permission লাগে তাই দাও"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "05-aws-core-concepts",
+    "q": {
+      "en": "A developer commits AWS access keys to a public GitHub repository. What should happen immediately?",
+      "bn": "একজন developer public GitHub repository-তে AWS access key commit করল। সাথে সাথে কী করতে হবে?"
+    },
+    "options": [
+      {
+        "en": "Nothing, deleting the commit is enough",
+        "bn": "কিছুই না, commit মুছলেই যথেষ্ট"
+      },
+      {
+        "en": "Deactivate or delete the keys in IAM and create new ones",
+        "bn": "IAM-এ key নিষ্ক্রিয় বা মুছে নতুন key বানাও"
+      },
+      {
+        "en": "Make the repository private and keep the keys",
+        "bn": "Repository private করো আর key রেখে দাও"
+      },
+      {
+        "en": "Rename the AWS account",
+        "bn": "AWS account-এর নাম বদলাও"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "05-aws-core-concepts",
+    "q": {
+      "en": "An AWS Availability Zone is best described as:",
+      "bn": "AWS Availability Zone-কে সবচেয়ে ভালোভাবে বলা যায়:"
+    },
+    "options": [
+      {
+        "en": "A separate data center (or group of them) inside a Region",
+        "bn": "একটা Region-এর ভেতরের আলাদা data center (বা তাদের দল)"
+      },
+      {
+        "en": "A paid support plan",
+        "bn": "একটা পেইড support plan"
+      },
+      {
+        "en": "A type of IAM policy",
+        "bn": "এক ধরনের IAM policy"
+      },
+      {
+        "en": "A DNS record type",
+        "bn": "এক ধরনের DNS record"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "06-ec2-s3-and-rds",
+    "q": {
+      "en": "Which two things should you choose when launching an EC2 instance for SSH access?",
+      "bn": "SSH access-এর জন্য EC2 instance চালুর সময় কোন দুটো জিনিস বাছতে হবে?"
+    },
+    "options": [
+      {
+        "en": "A bucket name and a policy version",
+        "bn": "একটা bucket নাম ও একটা policy version"
+      },
+      {
+        "en": "A CNAME and an MX record",
+        "bn": "একটা CNAME ও একটা MX record"
+      },
+      {
+        "en": "A read replica and a snapshot",
+        "bn": "একটা read replica ও একটা snapshot"
+      },
+      {
+        "en": "A key pair and a security group allowing port 22 from your IP",
+        "bn": "একটা key pair আর তোমার IP থেকে port 22 অনুমোদনকারী একটা security group"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "06-ec2-s3-and-rds",
+    "q": {
+      "en": "You terminate an EC2 instance that stored its only copy of important data on its own disk. What happens to the data?",
+      "bn": "তুমি এমন EC2 instance terminate করলে যার নিজের disk-এ গুরুত্বপূর্ণ data-র একমাত্র কপি ছিল। Data-র কী হয়?"
+    },
+    "options": [
+      {
+        "en": "It is gone, because the disk is deleted along with the instance by default",
+        "bn": "চলে যায়, কারণ default-এ instance-এর সাথে disk-ও মুছে যায়"
+      },
+      {
+        "en": "It is automatically moved to S3",
+        "bn": "এটা নিজে S3-তে চলে যায়"
+      },
+      {
+        "en": "It is kept forever for free",
+        "bn": "এটা চিরকাল বিনামূল্যে থাকে"
+      },
+      {
+        "en": "It is copied to RDS",
+        "bn": "এটা RDS-এ কপি হয়"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "06-ec2-s3-and-rds",
+    "q": {
+      "en": "Which statement about S3 is correct?",
+      "bn": "S3 নিয়ে কোন কথাটা ঠিক?"
+    },
+    "options": [
+      {
+        "en": "It is a relational database for SQL queries",
+        "bn": "এটা SQL query-র জন্য relational database"
+      },
+      {
+        "en": "It stores objects in buckets, and new buckets block public access by default",
+        "bn": "এটা bucket-এ object রাখে, আর নতুন bucket default-এ public access আটকায়"
+      },
+      {
+        "en": "It is the firewall for EC2",
+        "bn": "এটা EC2-র firewall"
+      },
+      {
+        "en": "It only works inside a single server",
+        "bn": "এটা শুধু একটা server-এর ভেতরে কাজ করে"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "06-ec2-s3-and-rds",
+    "q": {
+      "en": "Which choice is a good use of a Multi-AZ RDS setup?",
+      "bn": "Multi-AZ RDS setup-এর ভালো ব্যবহার কোনটা?"
+    },
+    "options": [
+      {
+        "en": "Making every read query faster",
+        "bn": "প্রতিটা read query দ্রুত করা"
+      },
+      {
+        "en": "Replacing the need for backups",
+        "bn": "Backup-এর প্রয়োজন মিটিয়ে দেওয়া"
+      },
+      {
+        "en": "Automatic failover to a standby in another Availability Zone",
+        "bn": "অন্য Availability Zone-এর standby-তে স্বয়ংক্রিয় failover"
+      },
+      {
+        "en": "Storing user uploads",
+        "bn": "User-এর upload রাখা"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "07-networking-security-and-costs",
+    "q": {
+      "en": "Where should the production database normally live in a VPC?",
+      "bn": "VPC-তে production database সাধারণত কোথায় থাকা উচিত?"
+    },
+    "options": [
+      {
+        "en": "In a private subnet, reachable only from the app's security group",
+        "bn": "একটা private subnet-এ, শুধু app-এর security group থেকে পৌঁছানোর মতো"
+      },
+      {
+        "en": "In a public subnet open to 0.0.0.0/0",
+        "bn": "`0.0.0.0/0`-তে খোলা একটা public subnet-এ"
+      },
+      {
+        "en": "On the visitor's laptop",
+        "bn": "Visitor-এর laptop-এ"
+      },
+      {
+        "en": "Inside the DNS zone",
+        "bn": "DNS zone-এর ভেতরে"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "07-networking-security-and-costs",
+    "q": {
+      "en": "What is the safest way to allow SSH to an EC2 instance?",
+      "bn": "EC2 instance-এ SSH অনুমোদনের সবচেয়ে নিরাপদ উপায় কী?"
+    },
+    "options": [
+      {
+        "en": "Allow port 22 from 0.0.0.0/0",
+        "bn": "Port 22 `0.0.0.0/0` থেকে অনুমোদন করো"
+      },
+      {
+        "en": "Allow every port from everywhere",
+        "bn": "প্রতিটা port সব জায়গা থেকে অনুমোদন করো"
+      },
+      {
+        "en": "Allow port 22 only from your own IP address",
+        "bn": "Port 22 শুধু তোমার নিজের IP address থেকে অনুমোদন করো"
+      },
+      {
+        "en": "Turn on password login and share it",
+        "bn": "Password login চালু করে সবাইকে দাও"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "07-networking-security-and-costs",
+    "q": {
+      "en": "Your business can lose at most 1 hour of orders. What does that describe, and what does it imply?",
+      "bn": "তোমার business সর্বোচ্চ ১ ঘণ্টার order হারাতে পারে। এটা কী বর্ণনা করে, আর কী বোঝায়?"
+    },
+    "options": [
+      {
+        "en": "An RTO of 1 hour, so buy a bigger server",
+        "bn": "১ ঘণ্টার RTO, তাই বড় server কেনো"
+      },
+      {
+        "en": "An RPO of 1 hour, so back up at least every hour",
+        "bn": "১ ঘণ্টার RPO, তাই অন্তত প্রতি ঘণ্টায় backup নাও"
+      },
+      {
+        "en": "A TTL of 1 hour, so lower DNS caching",
+        "bn": "১ ঘণ্টার TTL, তাই DNS caching কমাও"
+      },
+      {
+        "en": "A CIDR of /1",
+        "bn": "`/1` CIDR"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "07-networking-security-and-costs",
+    "q": {
+      "en": "Which habit best prevents a surprise AWS bill?",
+      "bn": "কোন অভ্যাস আকস্মিক AWS বিল সবচেয়ে ভালো ঠেকায়?"
+    },
+    "options": [
+      {
+        "en": "Never look at the billing page",
+        "bn": "Billing page কখনো দেখো না"
+      },
+      {
+        "en": "Leave test servers running in case you need them",
+        "bn": "যদি লাগে ভেবে test server চালু রেখে দাও"
+      },
+      {
+        "en": "Use only the largest instance size",
+        "bn": "শুধু সবচেয়ে বড় instance size ব্যবহার করো"
+      },
+      {
+        "en": "Set a budget with email alerts, tag resources and clean up unused ones after practice",
+        "bn": "Email alert-সহ budget বসাও, resource-এ tag দাও আর অনুশীলনের পর অব্যবহৃত জিনিস পরিষ্কার করো"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "08-real-project-laravel-in-production",
+    "q": {
+      "en": "Which command applies pending database migrations on a production Laravel server without a confirmation prompt?",
+      "bn": "কোন command production Laravel server-এ confirmation prompt ছাড়া অপেক্ষমাণ migration প্রয়োগ করে?"
+    },
+    "options": [
+      {
+        "en": "`php artisan migrate:fresh`",
+        "bn": "`php artisan migrate:fresh`"
+      },
+      {
+        "en": "`php artisan db:wipe`",
+        "bn": "`php artisan db:wipe`"
+      },
+      {
+        "en": "`php artisan migrate --force`",
+        "bn": "`php artisan migrate --force`"
+      },
+      {
+        "en": "`php artisan key:generate`",
+        "bn": "`php artisan key:generate`"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "08-real-project-laravel-in-production",
+    "q": {
+      "en": "Why should the Laravel queue worker run under systemd?",
+      "bn": "Laravel queue worker systemd-এর অধীনে চালানো উচিত কেন?"
+    },
+    "options": [
+      {
+        "en": "So it starts on boot and is restarted automatically if it crashes",
+        "bn": "যাতে boot-এ চালু হয় আর crash করলে নিজে restart হয়"
+      },
+      {
+        "en": "So it can serve web pages directly",
+        "bn": "যাতে সে সরাসরি web page দিতে পারে"
+      },
+      {
+        "en": "So it can replace MySQL",
+        "bn": "যাতে সে MySQL-এর জায়গা নেয়"
+      },
+      {
+        "en": "So the firewall can skip it",
+        "bn": "যাতে firewall তাকে বাদ দেয়"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "08-real-project-laravel-in-production",
+    "q": {
+      "en": "Where should the database password for a `mysqldump` backup script be kept?",
+      "bn": "`mysqldump` backup script-এর database password কোথায় রাখা উচিত?"
+    },
+    "options": [
+      {
+        "en": "Typed on the command line in the cron entry",
+        "bn": "Cron entry-র command line-এ লেখা"
+      },
+      {
+        "en": "In a public GitHub repository",
+        "bn": "একটা public GitHub repository-তে"
+      },
+      {
+        "en": "In the website's public folder",
+        "bn": "Website-এর public folder-এ"
+      },
+      {
+        "en": "In a private file such as `~/.my.cnf` with `chmod 600`",
+        "bn": "`chmod 600`-সহ `~/.my.cnf`-এর মতো একটা private ফাইলে"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "08-real-project-laravel-in-production",
+    "q": {
+      "en": "Which setup matches the \"private database\" rule from the networking chapter on this single VPS?",
+      "bn": "এই একটা VPS-এ networking chapter-এর \"private database\" নিয়মের সাথে কোন setup মেলে?"
+    },
+    "options": [
+      {
+        "en": "MySQL open to the whole internet with a weak password",
+        "bn": "দুর্বল password-সহ MySQL পুরো internet-এর জন্য খোলা"
+      },
+      {
+        "en": "MySQL listening only on localhost, with port 3306 closed in the firewall",
+        "bn": "MySQL শুধু localhost-এ শোনে, আর firewall-এ port 3306 বন্ধ"
+      },
+      {
+        "en": "MySQL's root account used by the web app",
+        "bn": "Web app-এ MySQL-এর root account ব্যবহার"
+      },
+      {
+        "en": "Port 3306 open to 0.0.0.0/0 for convenience",
+        "bn": "সুবিধার জন্য port 3306 `0.0.0.0/0`-তে খোলা"
+      }
+    ],
+    "answer": 1
+  }
+]

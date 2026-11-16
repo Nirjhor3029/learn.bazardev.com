@@ -436,7 +436,19 @@ class ExamTest extends TestCase
 
     public function test_courses_without_an_exam_show_no_exam_card(): void
     {
-        $this->get('/cloud')->assertOk()->assertDontSee('Final exam');
+        // Available courses that have no exam file yet (empty once every course has an exam).
+        $without = collect(config('course.courses'))
+            ->filter(fn ($course) => $course['status'] === 'available')
+            ->keys()
+            ->reject(fn ($slug) => file_exists(resource_path("content/exam/{$slug}.json")));
+
+        if ($without->isEmpty()) {
+            $this->markTestSkipped('Every available course has an exam.');
+        }
+
+        foreach ($without as $slug) {
+            $this->get("/{$slug}")->assertOk()->assertDontSee('Final exam');
+        }
     }
 
     public function test_passing_the_last_chapter_quiz_points_to_the_final_exam(): void
