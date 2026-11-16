@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "Which AWS service is the closest equivalent of a VPS?",
+      "bn": "কোন AWS service VPS-এর সবচেয়ে কাছের সমতুল্য?"
+    },
+    "options": [
+      {
+        "en": "EC2",
+        "bn": "EC2"
+      },
+      {
+        "en": "S3",
+        "bn": "S3"
+      },
+      {
+        "en": "RDS",
+        "bn": "RDS"
+      },
+      {
+        "en": "IAM",
+        "bn": "IAM"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "EC2 gives you a virtual server (an instance) whose operating system you manage.",
+      "bn": "EC2 তোমাকে একটা virtual server (instance) দেয় যার operating system তুমি সামলাও।"
+    }
+  },
+  {
+    "q": {
+      "en": "You stop an EC2 instance. What happens to its disk and cost?",
+      "bn": "তুমি একটা EC2 instance stop করলে। তার disk ও খরচের কী হয়?"
+    },
+    "options": [
+      {
+        "en": "The disk is deleted immediately",
+        "bn": "Disk সাথে সাথে মুছে যায়"
+      },
+      {
+        "en": "The disk is kept and still costs money, but compute is no longer billed",
+        "bn": "Disk থেকে যায় ও তার খরচ চলে, কিন্তু compute-এর বিল আর হয় না"
+      },
+      {
+        "en": "Everything becomes free forever",
+        "bn": "সবকিছু চিরকালের জন্য বিনামূল্যের হয়"
+      },
+      {
+        "en": "The instance is terminated",
+        "bn": "Instance terminate হয়"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Stop is not free. Terminate deletes the instance (and, by default, its disk), so data is gone.",
+      "bn": "Stop বিনামূল্যে নয়। Terminate instance (আর default-এ তার disk) মুছে দেয়, তাই data চলে যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is an S3 bucket?",
+      "bn": "S3 bucket কী?"
+    },
+    "options": [
+      {
+        "en": "A virtual server that runs your PHP code",
+        "bn": "একটা virtual server যা তোমার PHP code চালায়"
+      },
+      {
+        "en": "A relational database",
+        "bn": "একটা relational database"
+      },
+      {
+        "en": "A container with a globally unique name that holds objects (files)",
+        "bn": "বিশ্বজুড়ে অনন্য নামের একটা পাত্র যা object (ফাইল) রাখে"
+      },
+      {
+        "en": "A firewall rule",
+        "bn": "একটা firewall rule"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Objects are identified by keys like `uploads/photo.jpg`; S3 has no real folders.",
+      "bn": "Object চেনা যায় `uploads/photo.jpg`-এর মতো key দিয়ে; S3-তে আসল folder নেই।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why is S3 better than the web server's local disk for user uploads when you run several servers?",
+      "bn": "একাধিক server চালালে user-এর upload-এর জন্য web server-এর local disk-এর চেয়ে S3 ভালো কেন?"
+    },
+    "options": [
+      {
+        "en": "It makes the website load without a network",
+        "bn": "এটা network ছাড়াই website লোড করে"
+      },
+      {
+        "en": "It encrypts every file with your SSH key",
+        "bn": "এটা প্রতিটা ফাইল তোমার SSH key দিয়ে encrypt করে"
+      },
+      {
+        "en": "It stops people from uploading",
+        "bn": "এটা মানুষকে upload করা থেকে আটকায়"
+      },
+      {
+        "en": "It is shared, so every server sees the same files and servers can be replaced without losing them",
+        "bn": "এটা ভাগ করা, তাই প্রতিটা server একই ফাইল দেখে আর server বদলালে ফাইল হারায় না"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Each server's own disk is separate; S3 is one shared store.",
+      "bn": "প্রতিটা server-এর নিজের disk আলাদা; S3 একটাই ভাগ করা ভাণ্ডার।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which is true about RDS?",
+      "bn": "RDS সম্পর্কে কোনটা সত্য?"
+    },
+    "options": [
+      {
+        "en": "AWS handles patching, backups and failover, but you still own your schema and queries",
+        "bn": "AWS patch, backup ও failover সামলায়, কিন্তু schema ও query তোমারই"
+      },
+      {
+        "en": "It removes the need to design a database schema",
+        "bn": "এটা database schema নকশা করার প্রয়োজন মিটিয়ে দেয়"
+      },
+      {
+        "en": "It should be open to the whole internet",
+        "bn": "এটা পুরো internet-এর জন্য খোলা থাকা উচিত"
+      },
+      {
+        "en": "It can only store files, not tables",
+        "bn": "এটা শুধু ফাইল রাখে, table নয়"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "RDS manages the database engine. Keep it private so only your app's security group can connect.",
+      "bn": "RDS database engine সামলায়। এটা private রাখো যাতে শুধু তোমার app-এর security group সংযোগ করতে পারে।"
+    }
+  }
+]
