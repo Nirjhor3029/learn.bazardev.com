@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "Why is `php artisan migrate` run as a Kubernetes Job rather than inside every app Pod?",
+      "bn": "`php artisan migrate` প্রতিটা app Pod-এর ভেতরে না চালিয়ে Kubernetes Job হিসেবে চালানো হয় কেন?"
+    },
+    "options": [
+      {
+        "en": "A Job runs once to completion, so migrations don't run several times at once",
+        "bn": "Job একবার শেষ পর্যন্ত চলে, তাই migration একসাথে কয়েকবার চলে না"
+      },
+      {
+        "en": "Jobs run faster than Pods",
+        "bn": "Job Pod-এর চেয়ে দ্রুত চলে"
+      },
+      {
+        "en": "Pods are not allowed to use the database",
+        "bn": "Pod-কে database ব্যবহার করতে দেওয়া হয় না"
+      },
+      {
+        "en": "Migrations only work on StatefulSets",
+        "bn": "Migration শুধু StatefulSet-এ কাজ করে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "With 3 replicas, running migrations in each Pod could clash. A Job is for one-off tasks.",
+      "bn": "৩টা replica থাকলে প্রতিটা Pod-এ migration সংঘাত বাধাতে পারে। Job একবারের কাজের জন্য।"
+    }
+  },
+  {
+    "q": {
+      "en": "The Laravel Pod needs to reach MySQL. What should `DB_HOST` be set to?",
+      "bn": "Laravel Pod-কে MySQL-এ পৌঁছাতে হবে। `DB_HOST`-এ কী দেবে?"
+    },
+    "options": [
+      {
+        "en": "The IP address of the first MySQL Pod",
+        "bn": "প্রথম MySQL Pod-এর IP address"
+      },
+      {
+        "en": "The node's public IP",
+        "bn": "Node-এর public IP"
+      },
+      {
+        "en": "The MySQL Service name, such as `mysql`",
+        "bn": "MySQL Service-এর নাম, যেমন `mysql`"
+      },
+      {
+        "en": "`localhost`",
+        "bn": "`localhost`"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Cluster DNS resolves Service names. Pod IPs change, and `localhost` is the app Pod itself.",
+      "bn": "Cluster DNS Service-এর নাম চিনিয়ে দেয়। Pod IP বদলায়, আর `localhost` মানে app Pod নিজেই।"
+    }
+  },
+  {
+    "q": {
+      "en": "Where should `DB_PASSWORD` and `APP_KEY` be stored?",
+      "bn": "`DB_PASSWORD` আর `APP_KEY` কোথায় রাখা উচিত?"
+    },
+    "options": [
+      {
+        "en": "In the ConfigMap in Git",
+        "bn": "Git-এ থাকা ConfigMap-এ"
+      },
+      {
+        "en": "In a Kubernetes Secret created without committing the values to Git",
+        "bn": "Git-এ মান commit না করে বানানো একটা Kubernetes Secret-এ"
+      },
+      {
+        "en": "In the Docker image",
+        "bn": "Docker image-এর ভেতরে"
+      },
+      {
+        "en": "In the Ingress rules",
+        "bn": "Ingress-এর নিয়মে"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Passwords and keys belong in a Secret; non-sensitive settings belong in a ConfigMap.",
+      "bn": "Password ও key থাকে Secret-এ; স্পর্শকাতর নয় এমন setting থাকে ConfigMap-এ।"
+    }
+  },
+  {
+    "q": {
+      "en": "You deploy version 1.0.1 and users get errors. What is the fastest safe fix?",
+      "bn": "তুমি version 1.0.1 deploy করলে আর user error পাচ্ছে। সবচেয়ে দ্রুত নিরাপদ সমাধান কী?"
+    },
+    "options": [
+      {
+        "en": "Delete the namespace",
+        "bn": "Namespace মুছে দাও"
+      },
+      {
+        "en": "Rebuild the cluster",
+        "bn": "Cluster আবার বানাও"
+      },
+      {
+        "en": "Wait for the bug to fix itself",
+        "bn": "Bug নিজে ঠিক হওয়ার অপেক্ষা করো"
+      },
+      {
+        "en": "`kubectl rollout undo deployment/app`",
+        "bn": "`kubectl rollout undo deployment/app`"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Rollback is quick because the Deployment keeps the old ReplicaSet. Deleting the namespace would also delete the database.",
+      "bn": "Rollback দ্রুত কারণ Deployment পুরনো ReplicaSet রেখে দেয়। Namespace মুছলে database-ও মুছে যাবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "The app runs 3 replicas. Which choice is a problem for user file uploads saved in each Pod's local `storage` folder?",
+      "bn": "App ৩টা replica চালায়। প্রতিটা Pod-এর local `storage` folder-এ user-এর upload রাখলে কোন সমস্যা হয়?"
+    },
+    "options": [
+      {
+        "en": "Each Pod has its own copy, so files differ between replicas and are lost on restart",
+        "bn": "প্রতিটা Pod-এর নিজের কপি, তাই replica-গুলোতে ফাইল আলাদা হয় আর restart-এ হারায়"
+      },
+      {
+        "en": "Kubernetes forbids writing files",
+        "bn": "Kubernetes ফাইল লেখা নিষিদ্ধ করে"
+      },
+      {
+        "en": "The Service blocks file traffic",
+        "bn": "Service ফাইলের traffic আটকে দেয়"
+      },
+      {
+        "en": "Uploads only work with 1 replica of MySQL",
+        "bn": "Upload শুধু ১টা MySQL replica-তে কাজ করে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Use object storage or a shared volume for uploads when running several replicas.",
+      "bn": "একাধিক replica চালালে upload-এর জন্য object storage বা shared volume ব্যবহার করো।"
+    }
+  }
+]
