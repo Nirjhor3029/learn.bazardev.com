@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What is the job of Alertmanager?",
+      "bn": "Alertmanager-এর কাজ কী?"
+    },
+    "options": [
+      {
+        "en": "Scrape metrics from servers and store them",
+        "bn": "Server থেকে metric scrape করা ও জমানো"
+      },
+      {
+        "en": "Draw dashboards from metrics",
+        "bn": "Metric থেকে dashboard আঁকা"
+      },
+      {
+        "en": "Receive firing alerts, group and silence them, and send the notification to the right receiver",
+        "bn": "Firing alert গ্রহণ করা, সেগুলো group ও silence করা আর সঠিক receiver-এ notification পাঠানো"
+      },
+      {
+        "en": "Decide when an alert rule's condition is true",
+        "bn": "Alert rule-এর শর্ত কখন সত্য তা ঠিক করা"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Prometheus decides WHEN (rules); Alertmanager decides WHO is told and how.",
+      "bn": "Prometheus ঠিক করে কখন (rule); Alertmanager ঠিক করে কাকে ও কীভাবে জানানো হবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "A rule has `for: 10m`. What does that mean?",
+      "bn": "একটা rule-এ `for: 10m` আছে। এর মানে কী?"
+    },
+    "options": [
+      {
+        "en": "The condition must stay true for 10 minutes before the alert fires",
+        "bn": "Alert fire হওয়ার আগে শর্ত টানা ১০ মিনিট সত্য থাকতে হবে"
+      },
+      {
+        "en": "The alert is checked once every 10 minutes",
+        "bn": "Alert প্রতি ১০ মিনিটে একবার যাচাই হয়"
+      },
+      {
+        "en": "The alert is deleted after 10 minutes",
+        "bn": "১০ মিনিট পরে alert মুছে যায়"
+      },
+      {
+        "en": "The notification is repeated every 10 minutes",
+        "bn": "Notification প্রতি ১০ মিনিটে আবার পাঠানো হয়"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Until then the alert is only pending and nothing is sent, so short blips do not wake anyone.",
+      "bn": "ততক্ষণ alert শুধু pending থাকে আর কিছু পাঠানো হয় না, তাই ক্ষণিক ঝলকানিতে কেউ জাগে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which alert follows the advice \"alert on symptoms, not causes\"?",
+      "bn": "কোন alert-টা \"কারণের নয়, লক্ষণের alert দাও\" পরামর্শ মানে?"
+    },
+    "options": [
+      {
+        "en": "CPU is above 80% for one minute",
+        "bn": "CPU এক মিনিট ধরে ৮০%-এর ওপরে"
+      },
+      {
+        "en": "A background process was restarted",
+        "bn": "একটা background process restart হয়েছে"
+      },
+      {
+        "en": "The server's load average changed",
+        "bn": "Server-এর load average বদলেছে"
+      },
+      {
+        "en": "More than 5% of requests are failing with a server error",
+        "bn": "৫%-এর বেশি request server error-এ ব্যর্থ হচ্ছে"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Failing requests are what users feel; CPU and restarts are only possible causes, better kept on the dashboard.",
+      "bn": "ব্যর্থ request-ই ব্যবহারকারী টের পায়; CPU আর restart শুধু সম্ভাব্য কারণ, dashboard-এ রাখাই ভালো।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why does an inhibit rule usually include `equal: [instance]`?",
+      "bn": "Inhibit rule-এ সাধারণত `equal: [instance]` কেন থাকে?"
+    },
+    "options": [
+      {
+        "en": "So that alerts are sent to every instance at once",
+        "bn": "যাতে alert একসাথে সব instance-এ যায়"
+      },
+      {
+        "en": "So that one server being down mutes only that server's warnings, not every server's",
+        "bn": "যাতে একটা server বন্ধ থাকলে শুধু ওই server-এর warning চুপ হয়, সব server-এর নয়"
+      },
+      {
+        "en": "So that silences never expire",
+        "bn": "যাতে silence-এর মেয়াদ কখনো শেষ না হয়"
+      },
+      {
+        "en": "So that Prometheus scrapes the instance faster",
+        "bn": "যাতে Prometheus instance-কে দ্রুত scrape করে"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Without `equal`, the muting would apply to alerts about unrelated servers too.",
+      "bn": "`equal` ছাড়া চুপ করানো অসম্পর্কিত server-এর alert-এও প্রযোজ্য হতো।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why should Alertmanager's port 9093 stay private?",
+      "bn": "Alertmanager-এর port 9093 private রাখা উচিত কেন?"
+    },
+    "options": [
+      {
+        "en": "Out of the box it asks for no login, so anyone who can reach it could silence your alerts",
+        "bn": "সরাসরি এটা কোনো login চায় না, তাই যে-ই ধরতে পারে সে তোমার alert silence করতে পারে"
+      },
+      {
+        "en": "Because it stores your website's source code",
+        "bn": "কারণ এটা তোমার website-এর source code রাখে"
+      },
+      {
+        "en": "Because Prometheus cannot reach a public address",
+        "bn": "কারণ Prometheus কোনো public ঠিকানায় পৌঁছাতে পারে না"
+      },
+      {
+        "en": "Because email only works on private ports",
+        "bn": "কারণ email শুধু private port-এ কাজ করে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Bind it to the local machine and block it in the firewall, like Prometheus and Grafana.",
+      "bn": "Prometheus ও Grafana-র মতো এটাকে local machine-এ bind করো আর firewall-এ আটকাও।"
+    }
+  }
+]
