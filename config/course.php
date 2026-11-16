@@ -94,7 +94,7 @@ return [
             'status' => 'available',
             'chapters' => [
                 '01-what-is-the-cloud' => ['title' => 'What is the cloud? VPS vs AWS vs shared hosting', 'status' => 'available'],
-                '02-your-first-vps' => ['title' => 'Your first VPS: SSH keys, a safe start, and a firewall', 'status' => 'coming_soon'],
+                '02-your-first-vps' => ['title' => 'Your first VPS: SSH keys, a safe start, and a firewall', 'status' => 'available'],
                 '03-domains-and-dns' => ['title' => 'Domains and DNS', 'status' => 'coming_soon'],
                 '04-web-server-and-https' => ['title' => 'A web server with HTTPS', 'status' => 'coming_soon'],
                 '05-aws-core-concepts' => ['title' => 'AWS core concepts: accounts, regions, and IAM', 'status' => 'coming_soon'],

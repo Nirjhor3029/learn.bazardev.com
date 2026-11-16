@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "Why should a brand-new server be secured immediately?",
+      "bn": "একটা একদম নতুন server কেন সাথে সাথে সুরক্ষিত করা উচিত?"
+    },
+    "options": [
+      {
+        "en": "Automated bots find new servers within minutes and try common logins",
+        "bn": "স্বয়ংক্রিয় bot নতুন server কয়েক মিনিটেই খুঁজে পায় আর চেনা login চেষ্টা করে"
+      },
+      {
+        "en": "Providers delete unsecured servers after an hour",
+        "bn": "Provider অসুরক্ষিত server এক ঘণ্টা পরে মুছে দেয়"
+      },
+      {
+        "en": "Servers only work after a firewall is installed",
+        "bn": "Firewall বসানোর পরই server কাজ করে"
+      },
+      {
+        "en": "Nobody scans new servers for a few weeks",
+        "bn": "কয়েক সপ্তাহ কেউ নতুন server scan করে না"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Close the doors first: keys instead of passwords, no root login, a firewall.",
+      "bn": "আগে দরজা বন্ধ করো: password-এর বদলে key, root login নয়, একটা firewall।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which file of an SSH key pair must stay private?",
+      "bn": "SSH key জোড়ার কোন ফাইলটা গোপন রাখতে হবে?"
+    },
+    "options": [
+      {
+        "en": "The public key, `id_ed25519.pub`",
+        "bn": "Public key, `id_ed25519.pub`"
+      },
+      {
+        "en": "Both files must be uploaded to the server",
+        "bn": "দুটো ফাইলই server-এ upload করতে হয়"
+      },
+      {
+        "en": "The private key, e.g. `id_ed25519`",
+        "bn": "Private key, যেমন `id_ed25519`"
+      },
+      {
+        "en": "Neither, both are safe to publish",
+        "bn": "কোনোটাই নয়, দুটোই প্রকাশ করা নিরাপদ"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "The server holds your public key; only your computer holds the private key.",
+      "bn": "Server-এ তোমার public key থাকে; private key থাকে শুধু তোমার computer-এ।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `PasswordAuthentication no` do?",
+      "bn": "`PasswordAuthentication no` কী করে?"
+    },
+    "options": [
+      {
+        "en": "It deletes all user passwords",
+        "bn": "সব user-এর password মুছে দেয়"
+      },
+      {
+        "en": "Only SSH keys can log in, so password guessing is useless",
+        "bn": "শুধু SSH key দিয়ে login চলে, তাই password আন্দাজ করা বৃথা"
+      },
+      {
+        "en": "It turns off the firewall",
+        "bn": "Firewall বন্ধ করে দেয়"
+      },
+      {
+        "en": "It stops the server from booting",
+        "bn": "Server boot হওয়া আটকে দেয়"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Use it together with `PermitRootLogin no`, after confirming your key login works.",
+      "bn": "তোমার key login কাজ করছে নিশ্চিত হওয়ার পর `PermitRootLogin no`-এর সাথে ব্যবহার করো।"
+    }
+  },
+  {
+    "q": {
+      "en": "You run `ufw enable` without allowing SSH first. What is the likely result?",
+      "bn": "তুমি আগে SSH অনুমোদন না করে `ufw enable` চালালে। সম্ভাব্য ফল কী?"
+    },
+    "options": [
+      {
+        "en": "SSH is allowed automatically",
+        "bn": "SSH নিজে থেকে অনুমোদিত হয়"
+      },
+      {
+        "en": "The firewall refuses to start",
+        "bn": "Firewall চালু হতেই অস্বীকার করে"
+      },
+      {
+        "en": "Only port 80 is blocked",
+        "bn": "শুধু port 80 আটকায়"
+      },
+      {
+        "en": "Port 22 is blocked and you lock yourself out of the server",
+        "bn": "Port 22 আটকে যায় আর তুমি নিজের server থেকে বাইরে পড়ো"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Always `ufw allow OpenSSH` first. If you do lock yourself out, use the provider's web console.",
+      "bn": "সবসময় আগে `ufw allow OpenSSH`। তালাবদ্ধ হলে provider-এর web console ব্যবহার করো।"
+    }
+  },
+  {
+    "q": {
+      "en": "You set `PasswordAuthentication no` in `sshd_config`, yet password login still works. What should you check?",
+      "bn": "তুমি `sshd_config`-এ `PasswordAuthentication no` দিয়েছ, তবু password login চলছে। কী দেখবে?"
+    },
+    "options": [
+      {
+        "en": "Whether the server has enough RAM",
+        "bn": "Server-এ যথেষ্ট RAM আছে কিনা"
+      },
+      {
+        "en": "Another file in `/etc/ssh/sshd_config.d/`, using `sudo sshd -T` to see the effective value",
+        "bn": "`/etc/ssh/sshd_config.d/`-এর অন্য ফাইল, কার্যকর মান দেখতে `sudo sshd -T` দিয়ে"
+      },
+      {
+        "en": "Whether the domain name has TLS",
+        "bn": "Domain নামে TLS আছে কিনা"
+      },
+      {
+        "en": "Whether your private key is too short",
+        "bn": "তোমার private key অতি ছোট কিনা"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Cloud images often ship an override file. `sshd -T` shows what is really in effect.",
+      "bn": "Cloud image প্রায়ই একটা override ফাইল নিয়ে আসে। `sshd -T` দেখায় আসলে কী কার্যকর।"
+    }
+  }
+]
