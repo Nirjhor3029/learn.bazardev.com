@@ -151,9 +151,16 @@ class ExamTest extends TestCase
     {
         $user = $this->reader();
 
-        $this->actingAs($user)->get('/kubernetes/exam')->assertNotFound();
-        $this->actingAs($user)->get('/cloud/exam')->assertNotFound();
-        $this->actingAs($user)->post('/kubernetes/exam', ['answers' => [0]])->assertNotFound();
+        // Every course that has no exam file yet must 404 (this shrinks as new courses get exams).
+        $without = collect(array_keys(config('course.courses')))
+            ->reject(fn ($course) => file_exists(resource_path("content/exam/{$course}.json")));
+
+        $this->assertNotEmpty($without, 'Expected at least one course without an exam.');
+
+        foreach ($without as $course) {
+            $this->actingAs($user)->get("/{$course}/exam")->assertNotFound();
+            $this->actingAs($user)->post("/{$course}/exam", ['answers' => [0]])->assertNotFound();
+        }
     }
 
     public function test_the_exam_is_locked_until_every_chapter_quiz_is_passed(): void

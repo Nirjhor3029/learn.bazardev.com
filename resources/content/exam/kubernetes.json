@@ -1,0 +1,834 @@
+[
+  {
+    "ref": "01-what-is-kubernetes",
+    "q": {
+      "en": "What problem does a container orchestrator like Kubernetes solve?",
+      "bn": "Kubernetes-এর মতো container orchestrator কোন সমস্যার সমাধান করে?"
+    },
+    "options": [
+      {
+        "en": "Writing the application's source code",
+        "bn": "Application-এর source code লেখা"
+      },
+      {
+        "en": "Running, healing and scaling many containers across many servers",
+        "bn": "অনেক server জুড়ে অনেক container চালানো, সারানো আর scale করা"
+      },
+      {
+        "en": "Designing the database schema",
+        "bn": "Database schema নকশা করা"
+      },
+      {
+        "en": "Replacing the need for container images",
+        "bn": "Container image-এর প্রয়োজন মিটিয়ে দেওয়া"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "01-what-is-kubernetes",
+    "q": {
+      "en": "In Kubernetes you declare a \"desired state\". What does that mean?",
+      "bn": "Kubernetes-এ তুমি \"desired state\" ঘোষণা করো। এর মানে কী?"
+    },
+    "options": [
+      {
+        "en": "You list every command to run, step by step, once",
+        "bn": "প্রতিটা command ধাপে ধাপে একবার তালিকা করে দাও"
+      },
+      {
+        "en": "You must watch the cluster and fix it yourself",
+        "bn": "তোমাকে নিজে cluster দেখে ঠিক করতে হয়"
+      },
+      {
+        "en": "Kubernetes ignores the description after the first run",
+        "bn": "প্রথমবারের পর Kubernetes বর্ণনা উপেক্ষা করে"
+      },
+      {
+        "en": "You describe what you want, and Kubernetes keeps working to make reality match it",
+        "bn": "তুমি কী চাও তা বলো, আর Kubernetes বাস্তবকে সেটার সাথে মেলাতে কাজ করে যায়"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "01-what-is-kubernetes",
+    "q": {
+      "en": "Which part of a cluster stores and decides, while worker nodes actually run the containers?",
+      "bn": "Cluster-এর কোন অংশ সিদ্ধান্ত নেয় ও তথ্য রাখে, আর worker node আসলে container চালায়?"
+    },
+    "options": [
+      {
+        "en": "The control plane",
+        "bn": "Control plane"
+      },
+      {
+        "en": "The container image",
+        "bn": "Container image"
+      },
+      {
+        "en": "The Ingress",
+        "bn": "Ingress"
+      },
+      {
+        "en": "The Namespace",
+        "bn": "Namespace"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "01-what-is-kubernetes",
+    "q": {
+      "en": "A worker node crashes. What does Kubernetes do with the Pods that ran on it?",
+      "bn": "একটা worker node crash করল। সেখানে চলা Pod-গুলোর সাথে Kubernetes কী করে?"
+    },
+    "options": [
+      {
+        "en": "It leaves them stopped until an admin acts",
+        "bn": "Admin না করা পর্যন্ত বন্ধ রেখে দেয়"
+      },
+      {
+        "en": "It deletes the Deployment",
+        "bn": "Deployment মুছে দেয়"
+      },
+      {
+        "en": "It notices the difference from the desired state and starts replacements on healthy nodes",
+        "bn": "কাঙ্ক্ষিত অবস্থার সাথে পার্থক্য ধরে সুস্থ node-এ বদলি চালু করে"
+      },
+      {
+        "en": "It restarts the whole cluster",
+        "bn": "পুরো cluster restart করে"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "02-local-cluster-and-kubectl",
+    "q": {
+      "en": "What is `kubectl`?",
+      "bn": "`kubectl` কী?"
+    },
+    "options": [
+      {
+        "en": "The command-line tool that talks to the cluster's API server",
+        "bn": "Cluster-এর API server-এর সাথে কথা বলা command-line tool"
+      },
+      {
+        "en": "A tool that builds Docker images",
+        "bn": "Docker image বানানোর tool"
+      },
+      {
+        "en": "The scheduler inside the control plane",
+        "bn": "Control plane-এর ভেতরের scheduler"
+      },
+      {
+        "en": "A database for cluster state",
+        "bn": "Cluster-এর অবস্থা রাখার database"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "02-local-cluster-and-kubectl",
+    "q": {
+      "en": "Which command creates or updates objects from a YAML file?",
+      "bn": "কোন command একটা YAML file থেকে object তৈরি বা update করে?"
+    },
+    "options": [
+      {
+        "en": "`kubectl read pod.yaml`",
+        "bn": "`kubectl read pod.yaml`"
+      },
+      {
+        "en": "`kubectl get -f pod.yaml --create`",
+        "bn": "`kubectl get -f pod.yaml --create`"
+      },
+      {
+        "en": "`kubectl yaml pod.yaml`",
+        "bn": "`kubectl yaml pod.yaml`"
+      },
+      {
+        "en": "`kubectl apply -f pod.yaml`",
+        "bn": "`kubectl apply -f pod.yaml`"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "02-local-cluster-and-kubectl",
+    "q": {
+      "en": "A Pod is stuck in `CrashLoopBackOff`. What is the best first step to find out why?",
+      "bn": "একটা Pod `CrashLoopBackOff`-এ আটকে। কারণ জানতে সেরা প্রথম ধাপ কী?"
+    },
+    "options": [
+      {
+        "en": "Delete the node",
+        "bn": "Node মুছে ফেলা"
+      },
+      {
+        "en": "Increase the number of replicas",
+        "bn": "Replica-র সংখ্যা বাড়ানো"
+      },
+      {
+        "en": "Read `kubectl logs <pod>` and the Events from `kubectl describe pod <pod>`",
+        "bn": "`kubectl logs <pod>` আর `kubectl describe pod <pod>`-এর Events পড়া"
+      },
+      {
+        "en": "Reinstall kubectl",
+        "bn": "kubectl আবার install করা"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "02-local-cluster-and-kubectl",
+    "q": {
+      "en": "Which command lets you open a shell inside a running container?",
+      "bn": "কোন command চলমান container-এর ভেতরে shell খোলে?"
+    },
+    "options": [
+      {
+        "en": "`kubectl shell <pod>`",
+        "bn": "`kubectl shell <pod>`"
+      },
+      {
+        "en": "`kubectl exec -it <pod> -- sh`",
+        "bn": "`kubectl exec -it <pod> -- sh`"
+      },
+      {
+        "en": "`kubectl login <pod>`",
+        "bn": "`kubectl login <pod>`"
+      },
+      {
+        "en": "`kubectl attach-node <pod>`",
+        "bn": "`kubectl attach-node <pod>`"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "03-pods-replicasets-deployments",
+    "q": {
+      "en": "What is the relationship between a Deployment, a ReplicaSet and Pods?",
+      "bn": "Deployment, ReplicaSet আর Pod-এর সম্পর্ক কী?"
+    },
+    "options": [
+      {
+        "en": "A Pod creates Deployments, which create ReplicaSets",
+        "bn": "Pod Deployment বানায়, যা ReplicaSet বানায়"
+      },
+      {
+        "en": "They are three names for the same object",
+        "bn": "এগুলো একই object-এর তিনটা নাম"
+      },
+      {
+        "en": "A ReplicaSet manages Deployments",
+        "bn": "ReplicaSet Deployment পরিচালনা করে"
+      },
+      {
+        "en": "A Deployment manages ReplicaSets, and a ReplicaSet keeps the Pods running",
+        "bn": "Deployment ReplicaSet পরিচালনা করে, আর ReplicaSet Pod চালু রাখে"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "03-pods-replicasets-deployments",
+    "q": {
+      "en": "During a rolling update, how do users avoid downtime?",
+      "bn": "Rolling update-এর সময় user কীভাবে downtime এড়ায়?"
+    },
+    "options": [
+      {
+        "en": "All old Pods are stopped first, then new ones start",
+        "bn": "আগে সব পুরনো Pod বন্ধ হয়, তারপর নতুন চালু হয়"
+      },
+      {
+        "en": "New Pods are started gradually and old ones are removed only as the new ones become ready",
+        "bn": "নতুন Pod ধীরে ধীরে চালু হয় আর নতুনগুলো ready হলেই কেবল পুরনো সরে"
+      },
+      {
+        "en": "The Service is deleted during the update",
+        "bn": "Update-এর সময় Service মুছে যায়"
+      },
+      {
+        "en": "Traffic is paused until an admin approves",
+        "bn": "Admin অনুমোদন না করা পর্যন্ত traffic থামানো থাকে"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "03-pods-replicasets-deployments",
+    "q": {
+      "en": "What do labels and selectors do in Kubernetes?",
+      "bn": "Kubernetes-এ label আর selector কী করে?"
+    },
+    "options": [
+      {
+        "en": "They connect objects, for example a Deployment or Service finds its Pods",
+        "bn": "এরা object জোড়ে, যেমন Deployment বা Service নিজের Pod খুঁজে পায়"
+      },
+      {
+        "en": "They encrypt the traffic between Pods",
+        "bn": "Pod-দের মধ্যে traffic encrypt করে"
+      },
+      {
+        "en": "They set the CPU limit",
+        "bn": "CPU limit ঠিক করে"
+      },
+      {
+        "en": "They choose the container image",
+        "bn": "Container image বাছে"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "03-pods-replicasets-deployments",
+    "q": {
+      "en": "Which command undoes the last rollout of the Deployment `shop`?",
+      "bn": "`shop` Deployment-এর শেষ rollout কোন command ফিরিয়ে নেয়?"
+    },
+    "options": [
+      {
+        "en": "`kubectl delete deployment shop --undo`",
+        "bn": "`kubectl delete deployment shop --undo`"
+      },
+      {
+        "en": "`kubectl scale deployment shop --back`",
+        "bn": "`kubectl scale deployment shop --back`"
+      },
+      {
+        "en": "`kubectl rollout undo deployment/shop`",
+        "bn": "`kubectl rollout undo deployment/shop`"
+      },
+      {
+        "en": "`kubectl revert shop`",
+        "bn": "`kubectl revert shop`"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "04-services-and-networking",
+    "q": {
+      "en": "Why do other apps talk to a Service instead of directly to Pod IPs?",
+      "bn": "অন্য app কেন Pod IP-তে সরাসরি না গিয়ে Service-এর সাথে কথা বলে?"
+    },
+    "options": [
+      {
+        "en": "Pods have no IP addresses at all",
+        "bn": "Pod-এর কোনো IP address-ই নেই"
+      },
+      {
+        "en": "Pod IPs change when Pods are replaced, but the Service address stays stable",
+        "bn": "Pod বদলালে তার IP বদলায়, কিন্তু Service-এর ঠিকানা স্থির থাকে"
+      },
+      {
+        "en": "Services make containers start faster",
+        "bn": "Service container দ্রুত চালু করে"
+      },
+      {
+        "en": "Pod IPs are always public",
+        "bn": "Pod IP সবসময় public"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "04-services-and-networking",
+    "q": {
+      "en": "Which Service type is reachable only from inside the cluster?",
+      "bn": "কোন Service type শুধু cluster-এর ভেতর থেকে পৌঁছানো যায়?"
+    },
+    "options": [
+      {
+        "en": "NodePort",
+        "bn": "NodePort"
+      },
+      {
+        "en": "LoadBalancer",
+        "bn": "LoadBalancer"
+      },
+      {
+        "en": "ClusterIP",
+        "bn": "ClusterIP"
+      },
+      {
+        "en": "Both NodePort and LoadBalancer",
+        "bn": "NodePort আর LoadBalancer দুটোই"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "04-services-and-networking",
+    "q": {
+      "en": "Inside a cluster, a Pod wants to reach a Service named `mysql` in the same namespace. What can it use?",
+      "bn": "Cluster-এর ভেতরে একটা Pod একই namespace-এর `mysql` নামের Service-এ পৌঁছাতে চায়। সে কী ব্যবহার করতে পারে?"
+    },
+    "options": [
+      {
+        "en": "Only the Service's IP, never a name",
+        "bn": "শুধু Service-এর IP, কখনো নাম নয়"
+      },
+      {
+        "en": "The node's SSH address",
+        "bn": "Node-এর SSH ঠিকানা"
+      },
+      {
+        "en": "A Docker Hub URL",
+        "bn": "একটা Docker Hub URL"
+      },
+      {
+        "en": "The name `mysql`, resolved by cluster DNS",
+        "bn": "`mysql` নামটাই, যা cluster DNS চিনিয়ে দেয়"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "04-services-and-networking",
+    "q": {
+      "en": "`kubectl get endpoints web` returns nothing. What should you check first?",
+      "bn": "`kubectl get endpoints web` কিছুই দেখায় না। আগে কী দেখবে?"
+    },
+    "options": [
+      {
+        "en": "Whether the Service selector matches the Pods' labels",
+        "bn": "Service selector Pod-এর label-এর সাথে মেলে কিনা"
+      },
+      {
+        "en": "Whether the cluster has enough disks",
+        "bn": "Cluster-এ যথেষ্ট disk আছে কিনা"
+      },
+      {
+        "en": "Whether Docker is installed on your laptop",
+        "bn": "তোমার laptop-এ Docker install আছে কিনা"
+      },
+      {
+        "en": "Whether the Ingress has TLS",
+        "bn": "Ingress-এ TLS আছে কিনা"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "05-configmaps-and-secrets",
+    "q": {
+      "en": "Why keep configuration out of the container image?",
+      "bn": "Configuration কেন container image-এর বাইরে রাখা হয়?"
+    },
+    "options": [
+      {
+        "en": "Because images cannot contain text files",
+        "bn": "কারণ image-এ text file থাকতে পারে না"
+      },
+      {
+        "en": "Because settings make images larger than 1 GB",
+        "bn": "কারণ setting image ১ GB-র বেশি বড় করে দেয়"
+      },
+      {
+        "en": "So the same image can run in dev, staging and production with different settings",
+        "bn": "যাতে একই image dev, staging ও production-এ আলাদা setting নিয়ে চলতে পারে"
+      },
+      {
+        "en": "Because Kubernetes refuses images with settings",
+        "bn": "কারণ setting-সহ image Kubernetes নেয় না"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "05-configmaps-and-secrets",
+    "q": {
+      "en": "Which statement about a Secret's base64 value is correct?",
+      "bn": "Secret-এর base64 মান নিয়ে কোন কথাটা ঠিক?"
+    },
+    "options": [
+      {
+        "en": "It is strong encryption",
+        "bn": "এটা শক্ত encryption"
+      },
+      {
+        "en": "It is safe to commit to a public repository",
+        "bn": "Public repository-তে commit করা নিরাপদ"
+      },
+      {
+        "en": "It can never be read by anyone",
+        "bn": "এটা কেউ কখনো পড়তে পারে না"
+      },
+      {
+        "en": "It is an encoding that anyone can decode, so access must be controlled and values kept out of Git",
+        "bn": "এটা একটা encoding যা যে কেউ decode করতে পারে, তাই access নিয়ন্ত্রণ করতে হবে আর মান Git-এর বাইরে রাখতে হবে"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "05-configmaps-and-secrets",
+    "q": {
+      "en": "A Pod reads `DB_HOST` from a ConfigMap as an environment variable. You change the ConfigMap. What must happen for the app to see the new value?",
+      "bn": "Pod ConfigMap থেকে `DB_HOST` env var হিসেবে পড়ে। তুমি ConfigMap বদলালে। নতুন মান দেখতে কী হতে হবে?"
+    },
+    "options": [
+      {
+        "en": "Nothing: env vars change instantly",
+        "bn": "কিছুই না: env var সাথে সাথে বদলায়"
+      },
+      {
+        "en": "The Pods must be restarted, e.g. with `kubectl rollout restart`",
+        "bn": "Pod restart হতে হবে, যেমন `kubectl rollout restart` দিয়ে"
+      },
+      {
+        "en": "The image must be rebuilt",
+        "bn": "Image আবার build করতে হবে"
+      },
+      {
+        "en": "The node must be replaced",
+        "bn": "Node বদলাতে হবে"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "05-configmaps-and-secrets",
+    "q": {
+      "en": "Which two ways can a Pod receive values from a ConfigMap?",
+      "bn": "ConfigMap থেকে Pod কোন দুই উপায়ে মান পেতে পারে?"
+    },
+    "options": [
+      {
+        "en": "As environment variables or as files in a mounted volume",
+        "bn": "Environment variable হিসেবে বা mount করা volume-এর ফাইল হিসেবে"
+      },
+      {
+        "en": "Only as Docker labels",
+        "bn": "শুধু Docker label হিসেবে"
+      },
+      {
+        "en": "Only through the Ingress",
+        "bn": "শুধু Ingress-এর মাধ্যমে"
+      },
+      {
+        "en": "Only by editing the image",
+        "bn": "শুধু image edit করে"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "06-volumes-and-statefulsets",
+    "q": {
+      "en": "A database Pod restarts and its data is lost. What is the likely cause?",
+      "bn": "একটা database Pod restart হলো আর data হারাল। সম্ভাব্য কারণ কী?"
+    },
+    "options": [
+      {
+        "en": "The Service type was NodePort",
+        "bn": "Service type NodePort ছিল"
+      },
+      {
+        "en": "The Pod had too few labels",
+        "bn": "Pod-এ label কম ছিল"
+      },
+      {
+        "en": "The cluster had too many namespaces",
+        "bn": "Cluster-এ namespace বেশি ছিল"
+      },
+      {
+        "en": "The data was written to the container's own filesystem instead of a persistent volume",
+        "bn": "Data persistent volume-এর বদলে container-এর নিজের filesystem-এ লেখা হয়েছিল"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "06-volumes-and-statefulsets",
+    "q": {
+      "en": "What is the role of a PersistentVolumeClaim?",
+      "bn": "PersistentVolumeClaim-এর ভূমিকা কী?"
+    },
+    "options": [
+      {
+        "en": "It is a Pod's request for storage, which gets bound to a PersistentVolume",
+        "bn": "এটা Pod-এর storage চাওয়ার অনুরোধ, যা একটা PersistentVolume-এর সাথে bound হয়"
+      },
+      {
+        "en": "It backs up the volume every night",
+        "bn": "প্রতি রাতে volume-এর backup নেয়"
+      },
+      {
+        "en": "It encrypts Secrets",
+        "bn": "Secret encrypt করে"
+      },
+      {
+        "en": "It routes HTTP traffic to Pods",
+        "bn": "Pod-এ HTTP traffic পাঠায়"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "06-volumes-and-statefulsets",
+    "q": {
+      "en": "Which is a feature of a StatefulSet that a Deployment lacks?",
+      "bn": "StatefulSet-এর কোন বৈশিষ্ট্য Deployment-এ নেই?"
+    },
+    "options": [
+      {
+        "en": "It runs without containers",
+        "bn": "এটা container ছাড়া চলে"
+      },
+      {
+        "en": "Stable ordered Pod names and a separate volume per Pod via volumeClaimTemplates",
+        "bn": "স্থির ক্রমিক Pod-নাম আর volumeClaimTemplates দিয়ে প্রতি Pod-এর আলাদা volume"
+      },
+      {
+        "en": "It makes data automatically backed up",
+        "bn": "এটা data নিজে backup করে"
+      },
+      {
+        "en": "It needs no scheduler",
+        "bn": "এর scheduler লাগে না"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "06-volumes-and-statefulsets",
+    "q": {
+      "en": "Why is a PersistentVolume not a replacement for backups?",
+      "bn": "PersistentVolume কেন backup-এর বিকল্প নয়?"
+    },
+    "options": [
+      {
+        "en": "Volumes are deleted every hour",
+        "bn": "Volume প্রতি ঘণ্টায় মুছে যায়"
+      },
+      {
+        "en": "Volumes can only store text",
+        "bn": "Volume শুধু text রাখতে পারে"
+      },
+      {
+        "en": "If data is deleted or corrupted, the volume simply keeps that damaged state",
+        "bn": "Data মুছে বা নষ্ট হলে volume সেই ক্ষতিগ্রস্ত অবস্থাটাই ধরে রাখে"
+      },
+      {
+        "en": "Kubernetes forbids copying volumes",
+        "bn": "Kubernetes volume কপি করা নিষিদ্ধ করে"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "07-ingress-probes-and-limits",
+    "q": {
+      "en": "Why use an Ingress instead of one LoadBalancer per app?",
+      "bn": "প্রতি app-এ একটা LoadBalancer-এর বদলে Ingress কেন?"
+    },
+    "options": [
+      {
+        "en": "One entry point can route many hostnames and paths to many Services",
+        "bn": "একটা প্রবেশপথ অনেক hostname ও path অনেক Service-এ পাঠাতে পারে"
+      },
+      {
+        "en": "Ingress stores database files",
+        "bn": "Ingress database-এর ফাইল রাখে"
+      },
+      {
+        "en": "Ingress replaces Deployments",
+        "bn": "Ingress Deployment-এর জায়গা নেয়"
+      },
+      {
+        "en": "Ingress makes Pods use less memory",
+        "bn": "Ingress Pod-এর memory কমায়"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "07-ingress-probes-and-limits",
+    "q": {
+      "en": "What happens when a liveness probe keeps failing?",
+      "bn": "Liveness probe বারবার ব্যর্থ হলে কী হয়?"
+    },
+    "options": [
+      {
+        "en": "The Pod is removed from the Service but not restarted",
+        "bn": "Pod Service থেকে সরে যায় কিন্তু restart হয় না"
+      },
+      {
+        "en": "The node is deleted",
+        "bn": "Node মুছে যায়"
+      },
+      {
+        "en": "Kubernetes restarts the container",
+        "bn": "Kubernetes container restart করে"
+      },
+      {
+        "en": "The Secret is rotated",
+        "bn": "Secret বদলে যায়"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "07-ingress-probes-and-limits",
+    "q": {
+      "en": "Why are readiness probes important during a rolling update?",
+      "bn": "Rolling update-এর সময় readiness probe কেন গুরুত্বপূর্ণ?"
+    },
+    "options": [
+      {
+        "en": "They make the image smaller",
+        "bn": "এরা image ছোট করে"
+      },
+      {
+        "en": "Traffic goes to a new Pod, and old Pods retire, only once the new Pod reports ready",
+        "bn": "নতুন Pod ready জানালে তবেই তাতে traffic যায় আর পুরনো Pod সরে"
+      },
+      {
+        "en": "They delete failed Pods at once",
+        "bn": "এরা ব্যর্থ Pod সাথে সাথে মুছে দেয়"
+      },
+      {
+        "en": "They encrypt the rollout",
+        "bn": "এরা rollout encrypt করে"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "07-ingress-probes-and-limits",
+    "q": {
+      "en": "What is the difference between exceeding a CPU limit and exceeding a memory limit?",
+      "bn": "CPU limit ছাড়ানো আর memory limit ছাড়ানোর পার্থক্য কী?"
+    },
+    "options": [
+      {
+        "en": "Both simply raise the limit automatically",
+        "bn": "দুটোই নিজে limit বাড়িয়ে নেয়"
+      },
+      {
+        "en": "CPU is killed, memory is throttled",
+        "bn": "CPU মারা যায়, memory throttle হয়"
+      },
+      {
+        "en": "Neither has any effect",
+        "bn": "কোনোটারই প্রভাব নেই"
+      },
+      {
+        "en": "CPU use is throttled, but a container over its memory limit is OOMKilled",
+        "bn": "CPU throttle হয়, কিন্তু memory limit ছাড়ালে container OOMKilled হয়"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "08-real-project-laravel-on-kubernetes",
+    "q": {
+      "en": "In the Laravel project, why is the migration run as a Job?",
+      "bn": "Laravel project-এ migration Job হিসেবে চলে কেন?"
+    },
+    "options": [
+      {
+        "en": "Jobs are the only way to run PHP",
+        "bn": "PHP চালানোর একমাত্র উপায় Job"
+      },
+      {
+        "en": "Deployments cannot use Secrets",
+        "bn": "Deployment Secret ব্যবহার করতে পারে না"
+      },
+      {
+        "en": "It should run once to completion, not in every replica",
+        "bn": "এটা একবার শেষ পর্যন্ত চলবে, প্রতিটা replica-তে নয়"
+      },
+      {
+        "en": "Jobs make the database faster",
+        "bn": "Job database দ্রুত করে"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "08-real-project-laravel-on-kubernetes",
+    "q": {
+      "en": "Which `DB_HOST` value lets the Laravel Pods find MySQL?",
+      "bn": "কোন `DB_HOST` মান Laravel Pod-কে MySQL খুঁজে পেতে দেয়?"
+    },
+    "options": [
+      {
+        "en": "The MySQL Service name, e.g. `mysql`",
+        "bn": "MySQL Service-এর নাম, যেমন `mysql`"
+      },
+      {
+        "en": "`127.0.0.1`",
+        "bn": "`127.0.0.1`"
+      },
+      {
+        "en": "The IP of a single MySQL Pod written by hand",
+        "bn": "হাতে লেখা একটা MySQL Pod-এর IP"
+      },
+      {
+        "en": "The Ingress hostname `laravel.local`",
+        "bn": "Ingress hostname `laravel.local`"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "08-real-project-laravel-on-kubernetes",
+    "q": {
+      "en": "What is the safest way to supply `APP_KEY` and `DB_PASSWORD`?",
+      "bn": "`APP_KEY` আর `DB_PASSWORD` দেওয়ার সবচেয়ে নিরাপদ উপায় কী?"
+    },
+    "options": [
+      {
+        "en": "Write them into the ConfigMap YAML in Git",
+        "bn": "Git-এ থাকা ConfigMap YAML-এ লেখো"
+      },
+      {
+        "en": "Bake them into the Docker image",
+        "bn": "Docker image-এ ঢুকিয়ে দাও"
+      },
+      {
+        "en": "Put them in the Service name",
+        "bn": "Service-এর নামে রাখো"
+      },
+      {
+        "en": "Create a Secret from the command line so the values are never committed to Git",
+        "bn": "Command line থেকে Secret বানাও, যাতে মান কখনো Git-এ commit না হয়"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "08-real-project-laravel-on-kubernetes",
+    "q": {
+      "en": "Why use a versioned image tag like `1.0.1` instead of `latest` in a Deployment?",
+      "bn": "Deployment-এ `latest`-এর বদলে `1.0.1`-এর মতো version-সহ image tag কেন?"
+    },
+    "options": [
+      {
+        "en": "Because `latest` is not allowed in YAML",
+        "bn": "কারণ YAML-এ `latest` অনুমোদিত নয়"
+      },
+      {
+        "en": "So you know exactly what is running and a rollback returns to a known version",
+        "bn": "যাতে ঠিক কী চলছে জানা যায় আর rollback একটা জানা version-এ ফেরে"
+      },
+      {
+        "en": "Because versioned tags make Pods start instantly",
+        "bn": "কারণ version tag Pod সাথে সাথে চালু করে"
+      },
+      {
+        "en": "Because tags control the replica count",
+        "bn": "কারণ tag replica সংখ্যা ঠিক করে"
+      }
+    ],
+    "answer": 1
+  }
+]
