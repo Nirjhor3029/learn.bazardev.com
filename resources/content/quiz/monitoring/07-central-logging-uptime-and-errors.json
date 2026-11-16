@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "Why is `order_id` a bad Loki label?",
+      "bn": "`order_id` কেন খারাপ Loki label?"
+    },
+    "options": [
+      {
+        "en": "Its value is different on almost every line, creating huge numbers of streams that bloat the index",
+        "bn": "এর মান প্রায় প্রতিটা লাইনে আলাদা, ফলে অসংখ্য stream তৈরি হয়ে index ফুলে যায়"
+      },
+      {
+        "en": "Loki cannot store numbers",
+        "bn": "Loki সংখ্যা রাখতে পারে না"
+      },
+      {
+        "en": "Labels may only contain letters",
+        "bn": "Label-এ শুধু অক্ষর থাকতে পারে"
+      },
+      {
+        "en": "Labels are never searchable",
+        "bn": "Label কখনো খোঁজা যায় না"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Use stable labels (job, env, host) and find one order with a line filter such as |= \"1042\".",
+      "bn": "স্থির label (job, env, host) ব্যবহার করো আর একটা order খোঁজো |= \"1042\"-এর মতো line filter দিয়ে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which agent should you use to ship logs to Loki today?",
+      "bn": "আজ Loki-তে log পাঠাতে কোন agent ব্যবহার করবে?"
+    },
+    "options": [
+      {
+        "en": "Promtail, because it is the newest",
+        "bn": "Promtail, কারণ সেটা সবচেয়ে নতুন"
+      },
+      {
+        "en": "Grafana Alloy, because Promtail reached end of life on March 2, 2026",
+        "bn": "Grafana Alloy, কারণ Promtail ২ মার্চ, ২০২৬-এ end of life হয়েছে"
+      },
+      {
+        "en": "Blackbox exporter",
+        "bn": "Blackbox exporter"
+      },
+      {
+        "en": "Alertmanager",
+        "bn": "Alertmanager"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Alloy is where all new development happens, and it can convert a Promtail config.",
+      "bn": "সব নতুন উন্নয়ন Alloy-তে হয়, আর সে Promtail config রূপান্তর করতে পারে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why can Prometheus on the same server not tell you that the whole server is down?",
+      "bn": "একই server-এর Prometheus কেন বলতে পারে না যে পুরো server বন্ধ?"
+    },
+    "options": [
+      {
+        "en": "Prometheus cannot measure uptime at all",
+        "bn": "Prometheus uptime মাপতেই পারে না"
+      },
+      {
+        "en": "Because up is always 1",
+        "bn": "কারণ up সবসময় 1"
+      },
+      {
+        "en": "It goes down together with the server, so nothing reports the failure",
+        "bn": "সে server-এর সাথেই বন্ধ হয়, তাই ব্যর্থতার খবর কেউ দেয় না"
+      },
+      {
+        "en": "Because Grafana blocks it",
+        "bn": "কারণ Grafana তাকে আটকায়"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "A real uptime check must run from another machine or an outside service.",
+      "bn": "সত্যিকারের uptime check অন্য machine বা বাইরের service থেকে চলতে হবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which Blackbox exporter metric is 1 when a check passed and 0 when it failed?",
+      "bn": "কোন Blackbox exporter metric check পাস করলে 1 আর ব্যর্থ হলে 0?"
+    },
+    "options": [
+      {
+        "en": "probe_duration_seconds",
+        "bn": "probe_duration_seconds"
+      },
+      {
+        "en": "probe_ssl_earliest_cert_expiry",
+        "bn": "probe_ssl_earliest_cert_expiry"
+      },
+      {
+        "en": "probe_success",
+        "bn": "probe_success"
+      },
+      {
+        "en": "up_total",
+        "bn": "up_total"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "probe_success is the one to alert on (SiteDown); the SSL metric is for certificate expiry.",
+      "bn": "probe_success-এর ওপরই alert দিতে হয় (SiteDown); SSL metric certificate-এর মেয়াদের জন্য।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does an error tracker such as Sentry give you that a plain log file does not?",
+      "bn": "Sentry-র মতো error tracker এমন কী দেয় যা সাধারণ log file দেয় না?"
+    },
+    "options": [
+      {
+        "en": "Faster web pages",
+        "bn": "দ্রুততর web page"
+      },
+      {
+        "en": "Automatic fixes for the bugs",
+        "bn": "বাগ গুলোর স্বয়ংক্রিয় সমাধান"
+      },
+      {
+        "en": "A replacement for the database",
+        "bn": "Database-এর বিকল্প"
+      },
+      {
+        "en": "Exceptions with stack traces, grouped into one issue with a count of occurrences and affected users",
+        "bn": "Stack trace-সহ exception, একটা issue-তে জোট করা, ঘটনার সংখ্যা ও আক্রান্ত ব্যবহারকারীসহ"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "It also tells you when an issue is new or comes back after a fix.",
+      "bn": "সে এটাও জানায় কখন একটা issue নতুন, বা ঠিক করার পরে ফিরে এসেছে।"
+    }
+  }
+]

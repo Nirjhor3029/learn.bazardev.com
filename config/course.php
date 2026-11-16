@@ -115,7 +115,7 @@ return [
                 '04-metrics-and-prometheus' => ['title' => 'Metrics and Prometheus', 'status' => 'available'],
                 '05-grafana-dashboards' => ['title' => 'Grafana dashboards', 'status' => 'available'],
                 '06-alerting' => ['title' => 'Alerting that helps instead of annoys', 'status' => 'available'],
-                '07-central-logging-uptime-and-errors' => ['title' => 'Central logging, uptime checks, and error tracking', 'status' => 'coming_soon'],
+                '07-central-logging-uptime-and-errors' => ['title' => 'Central logging, uptime checks, and error tracking', 'status' => 'available'],
                 '08-real-project-monitoring-a-laravel-app' => ['title' => 'Real project: monitoring a Laravel app', 'status' => 'coming_soon'],
             ],
         ],
