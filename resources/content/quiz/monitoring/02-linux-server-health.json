@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "A 6-core server shows a 1-minute load average of 15. What does that suggest?",
+      "bn": "একটা ৬-core server-এর ১ মিনিটের load average ১৫। এটা কী ইঙ্গিত দেয়?"
+    },
+    "options": [
+      {
+        "en": "Far more work is waiting than the cores can run, so things are queueing and will feel slow",
+        "bn": "কোর যত কাজ চালাতে পারে তার চেয়ে অনেক বেশি কাজ অপেক্ষায়, তাই সারি জমছে আর সব ধীর লাগবে"
+      },
+      {
+        "en": "The server is almost idle",
+        "bn": "Server প্রায় idle"
+      },
+      {
+        "en": "The disk is 15% full",
+        "bn": "Disk ১৫% ভরা"
+      },
+      {
+        "en": "The server has been up for 15 days",
+        "bn": "Server ১৫ দিন ধরে চলছে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Compare load average with the number of cores (`nproc`). Around the core count means \"full\"; well above means queueing.",
+      "bn": "Load average-কে core-এর সংখ্যার (`nproc`) সাথে তুলনা করো। Core-এর সংখ্যার কাছাকাছি মানে \"ভরা\"; অনেক ওপরে মানে সারি।"
+    }
+  },
+  {
+    "q": {
+      "en": "In `top`, a high `wa` value means:",
+      "bn": "`top`-এ `wa`-এর উঁচু মান মানে:"
+    },
+    "options": [
+      {
+        "en": "The CPU is idle and unused",
+        "bn": "CPU idle ও অব্যবহৃত"
+      },
+      {
+        "en": "Too many users are logged in",
+        "bn": "অনেক user login করে আছে"
+      },
+      {
+        "en": "The CPU is waiting for disk I/O, so the disk is the bottleneck",
+        "bn": "CPU disk I/O-র অপেক্ষায়, তাই bottleneck হলো disk"
+      },
+      {
+        "en": "The firewall is blocking traffic",
+        "bn": "Firewall traffic আটকাচ্ছে"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "`wa` is I/O wait. Look at disk activity with `vmstat` or `iostat -x`.",
+      "bn": "`wa` হলো I/O wait। `vmstat` বা `iostat -x` দিয়ে disk-এর কাজ দেখো।"
+    }
+  },
+  {
+    "q": {
+      "en": "`free -h` shows only 1.8 GB \"free\" out of 11 GB. Which column tells you how much memory programs can still use without swapping?",
+      "bn": "`free -h` ১১ GB-র মধ্যে মাত্র ১.৮ GB \"free\" দেখায়। কোন কলাম বলে swap না করে program আর কতটা memory পেতে পারে?"
+    },
+    "options": [
+      {
+        "en": "`shared`",
+        "bn": "`shared`"
+      },
+      {
+        "en": "`available`",
+        "bn": "`available`"
+      },
+      {
+        "en": "`Swap total`",
+        "bn": "`Swap total`"
+      },
+      {
+        "en": "`used`",
+        "bn": "`used`"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Linux uses spare RAM as cache, so low `free` is normal. `available` is the number to trust.",
+      "bn": "Linux বাড়তি RAM cache-এ লাগায়, তাই কম `free` স্বাভাবিক। `available`-ই ভরসার সংখ্যা।"
+    }
+  },
+  {
+    "q": {
+      "en": "A service keeps disappearing and its own log shows no error. Where might you find the cause?",
+      "bn": "একটা service বারবার উধাও হয় আর তার নিজের log-এ কোনো error নেই। কারণ কোথায় পেতে পারো?"
+    },
+    "options": [
+      {
+        "en": "In the browser's history",
+        "bn": "Browser-এর history-তে"
+      },
+      {
+        "en": "In the DNS records",
+        "bn": "DNS record-এ"
+      },
+      {
+        "en": "In the domain registrar's invoice",
+        "bn": "Domain registrar-এর invoice-এ"
+      },
+      {
+        "en": "In the kernel log (`journalctl -k` or `dmesg`), where the OOM killer records killed processes",
+        "bn": "Kernel log-এ (`journalctl -k` বা `dmesg`), যেখানে OOM killer মারা process লিখে রাখে"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "When memory runs out the kernel kills a process, often the biggest one, without the process logging it.",
+      "bn": "Memory ফুরালে kernel একটা process (প্রায়ই সবচেয়ে বড়টা) মারে, process নিজে তা log করে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "`df -h` shows 40% used, yet you cannot create new files. What else should you check?",
+      "bn": "`df -h` ৪০% ব্যবহৃত দেখায়, তবু নতুন ফাইল বানানো যায় না। আর কী দেখবে?"
+    },
+    "options": [
+      {
+        "en": "The server's uptime",
+        "bn": "Server-এর uptime"
+      },
+      {
+        "en": "Inode usage with `df -i`",
+        "bn": "`df -i` দিয়ে inode ব্যবহার"
+      },
+      {
+        "en": "The TTL of the DNS record",
+        "bn": "DNS record-এর TTL"
+      },
+      {
+        "en": "The size of the SSH key",
+        "bn": "SSH key-র আকার"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A filesystem can run out of inodes (file entries) while it still has free space.",
+      "bn": "জায়গা থাকতেও filesystem-এর inode (ফাইলের এন্ট্রি) ফুরাতে পারে।"
+    }
+  }
+]
