@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "Why must `APP_DEBUG` be `false` in production?",
+      "bn": "Production-এ `APP_DEBUG` কেন `false` হতে হবে?"
+    },
+    "options": [
+      {
+        "en": "Debug error pages can expose environment details like passwords to any visitor",
+        "bn": "Debug error page যেকোনো visitor-কে password-এর মতো environment-এর তথ্য দেখিয়ে দিতে পারে"
+      },
+      {
+        "en": "It makes the site look nicer",
+        "bn": "এতে site দেখতে ভালো লাগে"
+      },
+      {
+        "en": "It is required for HTTPS to work",
+        "bn": "HTTPS কাজ করতে এটা দরকার"
+      },
+      {
+        "en": "It speeds up the database",
+        "bn": "এতে database দ্রুত হয়"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Also set APP_ENV=production and never commit `.env`.",
+      "bn": "আর APP_ENV=production দাও এবং `.env` কখনো commit করো না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why is the web server's document root the `public/` folder rather than the project folder?",
+      "bn": "Web server-এর document root project folder-এর বদলে `public/` folder কেন?"
+    },
+    "options": [
+      {
+        "en": "Because PHP cannot run outside `public/`",
+        "bn": "কারণ PHP `public/`-এর বাইরে চলতে পারে না"
+      },
+      {
+        "en": "To make the database faster",
+        "bn": "Database দ্রুত করতে"
+      },
+      {
+        "en": "So `.env`, source code and `vendor` can't be reached from the web",
+        "bn": "যাতে `.env`, source code ও `vendor` web থেকে পৌঁছানো না যায়"
+      },
+      {
+        "en": "Because Composer requires it",
+        "bn": "কারণ Composer এটা চায়"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Only `public/` should face the internet; everything else stays private.",
+      "bn": "শুধু `public/` internet-মুখী হওয়া উচিত; বাকি সব ব্যক্তিগত থাকে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why run `php artisan queue:restart` after each deploy?",
+      "bn": "প্রতিটা deploy-এর পর `php artisan queue:restart` কেন চালাও?"
+    },
+    "options": [
+      {
+        "en": "It deletes all queued jobs",
+        "bn": "এটা সব queued job মুছে দেয়"
+      },
+      {
+        "en": "A running queue worker keeps the old code in memory; restarting makes it load the new code",
+        "bn": "চলমান queue worker পুরনো code memory-তে রাখে; restart করলে সে নতুন code লোড করে"
+      },
+      {
+        "en": "It renews the HTTPS certificate",
+        "bn": "এটা HTTPS certificate renew করে"
+      },
+      {
+        "en": "It backs up the database",
+        "bn": "এটা database-এর backup নেয়"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Workers are long-running processes. They don't notice new code until restarted.",
+      "bn": "Worker দীর্ঘক্ষণ চলা process। Restart না হলে সে নতুন code টের পায় না।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `set -euo pipefail` do at the top of a deploy script?",
+      "bn": "Deploy script-এর শুরুতে `set -euo pipefail` কী করে?"
+    },
+    "options": [
+      {
+        "en": "Makes the script run faster",
+        "bn": "Script দ্রুত চালায়"
+      },
+      {
+        "en": "Deletes old releases automatically",
+        "bn": "পুরনো release নিজে মুছে দেয়"
+      },
+      {
+        "en": "Sends an email after the deploy",
+        "bn": "Deploy-এর পর email পাঠায়"
+      },
+      {
+        "en": "Stops the script at the first error instead of carrying on with a half-finished deploy",
+        "bn": "অর্ধেক-শেষ deploy নিয়ে এগিয়ে না গিয়ে প্রথম error-এই script থামিয়ে দেয়"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "A deploy script should fail loudly rather than continue after a failed step.",
+      "bn": "Deploy script কোনো ধাপ ব্যর্থ হলে চুপচাপ এগোনোর বদলে জোরে ব্যর্থ হওয়া উচিত।"
+    }
+  },
+  {
+    "q": {
+      "en": "What makes a database backup trustworthy?",
+      "bn": "কী একটা database backup-কে ভরসাযোগ্য করে?"
+    },
+    "options": [
+      {
+        "en": "A backup file kept only on the same disk as the database",
+        "bn": "Database-এর একই disk-এ রাখা একটা backup ফাইল"
+      },
+      {
+        "en": "A copy stored off the server, and a restore you have actually tested",
+        "bn": "Server-এর বাইরে রাখা একটা কপি, আর এমন restore যা তুমি সত্যিই পরীক্ষা করেছ"
+      },
+      {
+        "en": "Never opening the backup file",
+        "bn": "Backup ফাইল কখনো না খোলা"
+      },
+      {
+        "en": "Backing up only once, at launch",
+        "bn": "শুধু launch-এর সময় একবার backup"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A copy on the same server is lost with the server, and an untested backup is only a hope.",
+      "bn": "একই server-এর কপি server-এর সাথেই হারায়, আর পরীক্ষা-না-করা backup শুধু আশা।"
+    }
+  }
+]

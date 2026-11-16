@@ -273,7 +273,7 @@ kubectl apply -f ingress.yaml
 minikube ip                      # যেমন 192.168.49.2
 ```
 
-নামটা যাতে চেনা যায় সেজন্য তোমার computer-এর hosts ফাইলে একটা লাইন যোগ করো: `192.168.49.2  laravel.local`, তারপর `http://laravel.local` খোলো। (কিছু setup-এ, যেমন macOS বা Windows-এ Docker driver, `minikube tunnel` লাগে; minikube-এর Ingress tutorial-এ এটা ব্যাখ্যা করা আছে।)
+নামটা যাতে চেনা যায় সেজন্য তোমার computer-এর hosts ফাইলে একটা লাইন যোগ করো: `192.168.49.2  laravel.local`, তারপর `http://laravel.local` খোলো। (কিছু setup-এ, যেমন macOS বা Windows-এ Docker driver, `minikube tunnel` লাগে; minikube-এর "Accessing apps" documentation-এ এটা ব্যাখ্যা করা আছে।)
 
 ## ৮. Day-2 operation
 
