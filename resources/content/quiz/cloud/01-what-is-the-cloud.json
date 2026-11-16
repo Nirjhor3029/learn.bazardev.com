@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "Which description of \"the cloud\" is the most accurate?",
+      "bn": "\"Cloud\"-এর কোন বর্ণনাটা সবচেয়ে সঠিক?"
+    },
+    "options": [
+      {
+        "en": "Computers owned by a provider that you rent over the internet, usually paying for what you use",
+        "bn": "Provider-এর মালিকানার computer, যা তুমি internet দিয়ে ভাড়া নাও, সাধারণত ব্যবহার অনুযায়ী টাকা দিয়ে"
+      },
+      {
+        "en": "A single giant computer that belongs to everyone",
+        "bn": "সবার মালিকানার একটা বিশাল computer"
+      },
+      {
+        "en": "Software that stores files only on your laptop",
+        "bn": "যে software শুধু তোমার laptop-এ ফাইল রাখে"
+      },
+      {
+        "en": "A free service with no limits",
+        "bn": "কোনো সীমা ছাড়া বিনামূল্যের সেবা"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "You rent capacity instead of buying and running hardware yourself.",
+      "bn": "Hardware কিনে নিজে চালানোর বদলে তুমি সক্ষমতা ভাড়া নাও।"
+    }
+  },
+  {
+    "q": {
+      "en": "With IaaS (such as a VPS or AWS EC2), what are you responsible for?",
+      "bn": "IaaS-এ (যেমন VPS বা AWS EC2) তোমার দায়িত্ব কী?"
+    },
+    "options": [
+      {
+        "en": "Only the app, the provider handles everything else",
+        "bn": "শুধু app, বাকি সব provider সামলায়"
+      },
+      {
+        "en": "Nothing, the provider runs it all",
+        "bn": "কিছুই না, provider সব চালায়"
+      },
+      {
+        "en": "The operating system, software updates, security and your app",
+        "bn": "Operating system, software update, security আর তোমার app"
+      },
+      {
+        "en": "Only the physical cables in the data center",
+        "bn": "Data center-এর শুধু physical cable"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "IaaS gives you a virtual server; keeping it patched and secure is your job.",
+      "bn": "IaaS তোমাকে virtual server দেয়; তাকে patched ও সুরক্ষিত রাখা তোমার কাজ।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which is a typical limit of shared hosting compared with a VPS?",
+      "bn": "VPS-এর তুলনায় shared hosting-এর একটা সাধারণ সীমাবদ্ধতা কোনটা?"
+    },
+    "options": [
+      {
+        "en": "You get your own dedicated IP and full control",
+        "bn": "তুমি নিজের dedicated IP ও পূর্ণ নিয়ন্ত্রণ পাও"
+      },
+      {
+        "en": "You usually can't install your own software or get root access",
+        "bn": "সাধারণত নিজের software install বা root access পাওয়া যায় না"
+      },
+      {
+        "en": "It always costs more than a VPS",
+        "bn": "এটার খরচ সবসময় VPS-এর চেয়ে বেশি"
+      },
+      {
+        "en": "It cannot host any website",
+        "bn": "এটা কোনো website-ই চালাতে পারে না"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Shared hosting is cheap and easy but you share resources and have little control.",
+      "bn": "Shared hosting সস্তা ও সহজ, কিন্তু resource ভাগ করতে হয় আর নিয়ন্ত্রণ কম।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does \"shared responsibility\" mean in the cloud?",
+      "bn": "Cloud-এ \"shared responsibility\" মানে কী?"
+    },
+    "options": [
+      {
+        "en": "The provider is responsible for everything, including your passwords",
+        "bn": "Provider সবকিছুর দায়ী, তোমার password-সহ"
+      },
+      {
+        "en": "You are responsible for the provider's buildings",
+        "bn": "Provider-এর ভবনের দায় তোমার"
+      },
+      {
+        "en": "Nobody is responsible for security",
+        "bn": "নিরাপত্তার দায় কারো নয়"
+      },
+      {
+        "en": "The provider secures the hardware and data center; you secure your servers, data and passwords",
+        "bn": "Provider hardware ও data center সুরক্ষিত রাখে; তুমি তোমার server, data ও password সুরক্ষিত রাখো"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Security is split: the provider protects the platform, you protect what you put on it.",
+      "bn": "নিরাপত্তা ভাগ করা: provider platform রক্ষা করে, তুমি তার ওপর যা রাখো তা রক্ষা করো।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why choose a region close to your users?",
+      "bn": "User-দের কাছের region কেন বাছবে?"
+    },
+    "options": [
+      {
+        "en": "Shorter distance means lower latency, so the site feels faster",
+        "bn": "দূরত্ব কম মানে latency কম, তাই site দ্রুত মনে হয়"
+      },
+      {
+        "en": "It makes the server cheaper to buy",
+        "bn": "এতে server কেনা সস্তা হয়"
+      },
+      {
+        "en": "It removes the need for a firewall",
+        "bn": "এতে firewall-এর প্রয়োজন থাকে না"
+      },
+      {
+        "en": "It lets you skip DNS",
+        "bn": "এতে DNS বাদ দেওয়া যায়"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Network distance adds delay. A nearby region is usually faster for your readers.",
+      "bn": "Network-এর দূরত্ব দেরি বাড়ায়। কাছের region সাধারণত পাঠকদের জন্য দ্রুত।"
+    }
+  }
+]
