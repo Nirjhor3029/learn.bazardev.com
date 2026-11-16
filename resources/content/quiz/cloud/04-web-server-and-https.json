@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "Which command should you run before reloading Nginx after editing its config?",
+      "bn": "Config edit করার পর Nginx reload করার আগে কোন command চালানো উচিত?"
+    },
+    "options": [
+      {
+        "en": "`sudo nginx -t`",
+        "bn": "`sudo nginx -t`"
+      },
+      {
+        "en": "`sudo nginx --delete`",
+        "bn": "`sudo nginx --delete`"
+      },
+      {
+        "en": "`sudo nginx -x`",
+        "bn": "`sudo nginx -x`"
+      },
+      {
+        "en": "`sudo ufw disable`",
+        "bn": "`sudo ufw disable`"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "`nginx -t` checks the syntax, so a typo doesn't take your sites down on reload.",
+      "bn": "`nginx -t` syntax পরীক্ষা করে, তাই একটা বানান ভুল reload-এ তোমার site বসিয়ে দেয় না।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does a reverse proxy do?",
+      "bn": "Reverse proxy কী করে?"
+    },
+    "options": [
+      {
+        "en": "Stores the website's database",
+        "bn": "Website-এর database রাখে"
+      },
+      {
+        "en": "Encrypts the server's disk",
+        "bn": "Server-এর disk encrypt করে"
+      },
+      {
+        "en": "Accepts public requests and forwards them to an app listening privately on a local port",
+        "bn": "Public request নেয় আর local port-এ গোপনে শোনা app-এ পাঠায়"
+      },
+      {
+        "en": "Registers domain names",
+        "bn": "Domain নাম register করে"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "It lets many apps share one server and one front door, each on its own private port.",
+      "bn": "এটা অনেক app-কে এক server ও এক সদর দরজা ভাগ করতে দেয়, প্রতিটা নিজের গোপন port-এ।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which three things does HTTPS provide?",
+      "bn": "HTTPS কোন তিনটা জিনিস দেয়?"
+    },
+    "options": [
+      {
+        "en": "Faster disks, more RAM and cheaper bills",
+        "bn": "দ্রুত disk, বেশি RAM আর সস্তা বিল"
+      },
+      {
+        "en": "Encryption, integrity and identity of the server",
+        "bn": "Encryption, integrity আর server-এর identity"
+      },
+      {
+        "en": "A domain name, an IP address and a firewall",
+        "bn": "একটা domain নাম, একটা IP address আর একটা firewall"
+      },
+      {
+        "en": "Backups, monitoring and logging",
+        "bn": "Backup, monitoring আর logging"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "TLS keeps data private, unchanged, and proves the server owns the domain.",
+      "bn": "TLS data গোপন ও অপরিবর্তিত রাখে, আর প্রমাণ করে server domain-এর মালিক।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which is required before Let's Encrypt can issue a certificate for `myshop.com`?",
+      "bn": "`myshop.com`-এর জন্য Let's Encrypt certificate দেওয়ার আগে কোনটা দরকার?"
+    },
+    "options": [
+      {
+        "en": "A paid certificate from a bank",
+        "bn": "ব্যাংক থেকে কেনা একটা certificate"
+      },
+      {
+        "en": "The server must have no firewall at all",
+        "bn": "Server-এ কোনো firewall-ই থাকা চলবে না"
+      },
+      {
+        "en": "A Docker image of the website",
+        "bn": "Website-এর একটা Docker image"
+      },
+      {
+        "en": "The domain's DNS must already point to the server and port 80 must be reachable",
+        "bn": "Domain-এর DNS আগে থেকেই server-এর দিকে থাকতে হবে আর port 80 পৌঁছানো যেতে হবে"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Let's Encrypt checks that you control the domain by making a request to it.",
+      "bn": "Let's Encrypt domain-এ একটা request করে যাচাই করে যে তুমি domain নিয়ন্ত্রণ করো।"
+    }
+  },
+  {
+    "q": {
+      "en": "You see a 502 Bad Gateway from Nginx. What does it usually mean?",
+      "bn": "Nginx থেকে 502 Bad Gateway দেখছ। সাধারণত এর মানে কী?"
+    },
+    "options": [
+      {
+        "en": "Nginx works, but the app it forwards to isn't running or is on a different port",
+        "bn": "Nginx কাজ করছে, কিন্তু যে app-এ সে পাঠায় সেটা চলছে না বা অন্য port-এ"
+      },
+      {
+        "en": "The domain has expired",
+        "bn": "Domain-এর মেয়াদ শেষ"
+      },
+      {
+        "en": "The certificate is too new",
+        "bn": "Certificate অতি নতুন"
+      },
+      {
+        "en": "The user typed the wrong password",
+        "bn": "User ভুল password দিয়েছে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Check the app (container or PHP-FPM) and the port in `proxy_pass`, then read the error log.",
+      "bn": "App (container বা PHP-FPM) আর `proxy_pass`-এর port দেখো, তারপর error log পড়ো।"
+    }
+  }
+]
