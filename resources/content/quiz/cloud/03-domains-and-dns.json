@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What does DNS do?",
+      "bn": "DNS কী করে?"
+    },
+    "options": [
+      {
+        "en": "It encrypts traffic between browser and server",
+        "bn": "Browser ও server-এর মধ্যে traffic encrypt করে"
+      },
+      {
+        "en": "It translates names like `myshop.com` into IP addresses",
+        "bn": "`myshop.com`-এর মতো নামকে IP address-এ অনুবাদ করে"
+      },
+      {
+        "en": "It stores your website's files",
+        "bn": "তোমার website-এর ফাইল রাখে"
+      },
+      {
+        "en": "It builds Docker images",
+        "bn": "Docker image বানায়"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Computers use IP addresses; DNS lets humans use names instead.",
+      "bn": "Computer IP address ব্যবহার করে; DNS মানুষকে তার বদলে নাম ব্যবহার করতে দেয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the difference between a registrar and a DNS host?",
+      "bn": "Registrar আর DNS host-এর পার্থক্য কী?"
+    },
+    "options": [
+      {
+        "en": "The registrar sells the domain; the DNS host holds the records that say where it points",
+        "bn": "Registrar domain বিক্রি করে; DNS host সেই record রাখে যা বলে এটা কোথায় যায়"
+      },
+      {
+        "en": "They are always the same company and cannot be separated",
+        "bn": "ওরা সবসময় একই company, আলাদা করা যায় না"
+      },
+      {
+        "en": "The registrar hosts your website files",
+        "bn": "Registrar তোমার website-এর ফাইল হোস্ট করে"
+      },
+      {
+        "en": "The DNS host sells the domain name",
+        "bn": "DNS host domain নাম বিক্রি করে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "NS records link a domain to its DNS host, so you can buy in one place and use DNS in another.",
+      "bn": "NS record domain-কে তার DNS host-এর সাথে জোড়ে, তাই এক জায়গায় কিনে অন্য জায়গার DNS ব্যবহার করা যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which record type maps a name to an IPv4 address?",
+      "bn": "কোন record type নামকে IPv4 address-এ জোড়ে?"
+    },
+    "options": [
+      {
+        "en": "MX",
+        "bn": "MX"
+      },
+      {
+        "en": "TXT",
+        "bn": "TXT"
+      },
+      {
+        "en": "NS",
+        "bn": "NS"
+      },
+      {
+        "en": "A",
+        "bn": "A"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "A = IPv4, AAAA = IPv6, CNAME = name to name, MX = mail, TXT = text, NS = name servers.",
+      "bn": "A = IPv4, AAAA = IPv6, CNAME = নাম থেকে নাম, MX = mail, TXT = লেখা, NS = name server।"
+    }
+  },
+  {
+    "q": {
+      "en": "Where can a CNAME record NOT be used?",
+      "bn": "CNAME record কোথায় ব্যবহার করা যায় না?"
+    },
+    "options": [
+      {
+        "en": "On a subdomain like `www`",
+        "bn": "`www`-এর মতো subdomain-এ"
+      },
+      {
+        "en": "On a subdomain like `api`",
+        "bn": "`api`-এর মতো subdomain-এ"
+      },
+      {
+        "en": "On the apex (root) domain itself, like `myshop.com`",
+        "bn": "Apex (root) domain নিজে, যেমন `myshop.com`-এ"
+      },
+      {
+        "en": "Anywhere, there are no restrictions",
+        "bn": "যেকোনো জায়গায়, কোনো বিধিনিষেধ নেই"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Use an A record on the apex, and CNAMEs on subdomains if you like.",
+      "bn": "Apex-এ A record ব্যবহার করো, আর চাইলে subdomain-এ CNAME।"
+    }
+  },
+  {
+    "q": {
+      "en": "You changed an A record, but some people still see the old IP. What is the usual reason?",
+      "bn": "তুমি A record বদলেছ, কিন্তু কিছু মানুষ এখনও পুরনো IP দেখছে। সাধারণ কারণ কী?"
+    },
+    "options": [
+      {
+        "en": "The domain was deleted",
+        "bn": "Domain মুছে গেছে"
+      },
+      {
+        "en": "Resolvers cached the old answer and keep it until its TTL expires",
+        "bn": "Resolver পুরনো উত্তর cache-এ রেখেছে আর TTL শেষ না হওয়া পর্যন্ত রাখে"
+      },
+      {
+        "en": "The server's firewall blocks DNS records",
+        "bn": "Server-এর firewall DNS record আটকায়"
+      },
+      {
+        "en": "DNS only updates once a year",
+        "bn": "DNS বছরে একবারই update হয়"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Propagation\" is just caches expiring. Lower the TTL before a planned change.",
+      "bn": "\"Propagation\" শুধু cache-এর মেয়াদ ফুরানো। পরিকল্পিত পরিবর্তনের আগে TTL কমাও।"
+    }
+  }
+]
