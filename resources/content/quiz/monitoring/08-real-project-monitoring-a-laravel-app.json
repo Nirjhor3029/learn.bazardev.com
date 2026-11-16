@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "In our test, the database was deliberately broken. What did Laravel's built-in `/up` route answer?",
+      "bn": "আমাদের test-এ database ইচ্ছে করে ভাঙা হয়েছিল। Laravel-এর built-in `/up` route কী উত্তর দিল?"
+    },
+    "options": [
+      {
+        "en": "503, because it checks the database",
+        "bn": "503, কারণ সে database পরীক্ষা করে"
+      },
+      {
+        "en": "200, because it only shows that the application boots",
+        "bn": "200, কারণ সে শুধু দেখায় application boot হয়"
+      },
+      {
+        "en": "404, because the route disappears",
+        "bn": "404, কারণ route উধাও হয়ে যায়"
+      },
+      {
+        "en": "It crashed without an answer",
+        "bn": "সে কোনো উত্তর না দিয়ে crash করল"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "That is why a deeper /health route that touches the database and cache, and returns 503 on failure, is needed.",
+      "bn": "তাই database ও cache ছুঁয়ে দেখা আর ব্যর্থ হলে 503 দেওয়া একটা গভীরতর /health route দরকার।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why does the request-counting middleware do its work in `terminate()`?",
+      "bn": "Request-গোনা middleware তার কাজ `terminate()`-এ করে কেন?"
+    },
+    "options": [
+      {
+        "en": "Because `handle()` cannot read the status code",
+        "bn": "কারণ `handle()` status code পড়তে পারে না"
+      },
+      {
+        "en": "Because it runs only on errors",
+        "bn": "কারণ সেটা শুধু error-এ চলে"
+      },
+      {
+        "en": "It runs after the response was sent, so counting costs the visitor no waiting time",
+        "bn": "সেটা response পাঠানোর পরে চলে, তাই গোনার জন্য দর্শককে অপেক্ষা করতে হয় না"
+      },
+      {
+        "en": "Because Prometheus calls it directly",
+        "bn": "কারণ Prometheus সরাসরি সেটা call করে"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "It also skips /metrics, /up and /health so the monitoring does not inflate the numbers.",
+      "bn": "সে /metrics, /up ও /health বাদ দেয়, যাতে monitoring সংখ্যা না ফোলায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "A client requests `/metrics` with a wrong bearer token. What does the app return?",
+      "bn": "একজন client ভুল bearer token দিয়ে `/metrics` চাইল। App কী ফেরত দেয়?"
+    },
+    "options": [
+      {
+        "en": "404, as if the page did not exist",
+        "bn": "404, যেন পাতাটাই নেই"
+      },
+      {
+        "en": "The metrics, with a warning",
+        "bn": "সতর্কতা-সহ metric"
+      },
+      {
+        "en": "500 with the stack trace",
+        "bn": "stack trace-সহ 500"
+      },
+      {
+        "en": "A redirect to the login page",
+        "bn": "login পাতায় redirect"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A second lock in Caddy limits the path to the monitoring server's address.",
+      "bn": "Caddy-র দ্বিতীয় তালা পথটা monitoring server-এর ঠিকানায় সীমিত করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What happens to the cache-based counters on `php artisan cache:clear`, and why is it acceptable?",
+      "bn": "`php artisan cache:clear`-এ cache-ভিত্তিক counter-এর কী হয়, আর সেটা গ্রহণযোগ্য কেন?"
+    },
+    "options": [
+      {
+        "en": "They double; rate() halves them again",
+        "bn": "সেগুলো দ্বিগুণ হয়; rate() আবার অর্ধেক করে"
+      },
+      {
+        "en": "The server restarts",
+        "bn": "Server restart হয়"
+      },
+      {
+        "en": "Prometheus deletes its history",
+        "bn": "Prometheus তার ইতিহাস মুছে ফেলে"
+      },
+      {
+        "en": "They restart from zero, and rate() copes with counter resets",
+        "bn": "সেগুলো শূন্য থেকে আবার শুরু হয়, আর rate() counter reset সামলাতে পারে"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "That is why counters in the cache are fine for a small single-server setup.",
+      "bn": "তাই ছোট এক-server setup-এর জন্য cache-এর counter ঠিক আছে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which alerts in this chapter are critical?",
+      "bn": "এই chapter-এর কোন alert গুলো critical?"
+    },
+    "options": [
+      {
+        "en": "SiteDown and HighErrorRate, because they describe what users feel right now",
+        "bn": "SiteDown ও HighErrorRate, কারণ এরা বর্ণনা করে ব্যবহারকারী এখনই যা টের পাচ্ছে"
+      },
+      {
+        "en": "QueueBacklog and FailedJobs",
+        "bn": "QueueBacklog ও FailedJobs"
+      },
+      {
+        "en": "All of them",
+        "bn": "সবগুলো"
+      },
+      {
+        "en": "None; Prometheus has no severity levels",
+        "bn": "একটাও না; Prometheus-এ কোনো severity স্তর নেই"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Causes such as queue backlog, failed jobs and certificate expiry are warnings that can wait for working hours.",
+      "bn": "Queue জমা, ব্যর্থ job আর certificate-এর মেয়াদের মতো কারণ হলো warning, যা কাজের সময় পর্যন্ত অপেক্ষা করতে পারে।"
+    }
+  }
+]

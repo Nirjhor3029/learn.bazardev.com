@@ -116,7 +116,7 @@ return [
                 '05-grafana-dashboards' => ['title' => 'Grafana dashboards', 'status' => 'available'],
                 '06-alerting' => ['title' => 'Alerting that helps instead of annoys', 'status' => 'available'],
                 '07-central-logging-uptime-and-errors' => ['title' => 'Central logging, uptime checks, and error tracking', 'status' => 'available'],
-                '08-real-project-monitoring-a-laravel-app' => ['title' => 'Real project: monitoring a Laravel app', 'status' => 'coming_soon'],
+                '08-real-project-monitoring-a-laravel-app' => ['title' => 'Real project: monitoring a Laravel app', 'status' => 'available'],
             ],
         ],
         'iac' => ['title' => 'Infra as Code (Terraform/Ansible)', 'tagline' => 'Writing server setup as code.', 'folder' => '08-iac', 'status' => 'coming_soon', 'chapters' => []],
