@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What is Grafana's role next to Prometheus?",
+      "bn": "Prometheus-এর পাশে Grafana-র ভূমিকা কী?"
+    },
+    "options": [
+      {
+        "en": "Prometheus stores the metrics; Grafana connects to it and draws dashboards",
+        "bn": "Prometheus metric জমায়; Grafana তার সাথে যুক্ত হয়ে dashboard আঁকে"
+      },
+      {
+        "en": "Grafana collects the metrics and Prometheus draws them",
+        "bn": "Grafana metric জমায় আর Prometheus সেগুলো আঁকে"
+      },
+      {
+        "en": "Grafana replaces the need for any data source",
+        "bn": "Grafana-র জন্য কোনো data source-এর প্রয়োজনই থাকে না"
+      },
+      {
+        "en": "Grafana only works with log files",
+        "bn": "Grafana শুধু log file-এর সাথে কাজ করে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Grafana only reads from a data source, so rebuilding a dashboard never loses data.",
+      "bn": "Grafana শুধু data source থেকে পড়ে, তাই dashboard নতুন করে বানালে data হারায় না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which pair of Grafana defaults is risky if left unchanged?",
+      "bn": "Grafana-র কোন ডিফল্ট জোড়া না বদলালে ঝুঁকিপূর্ণ?"
+    },
+    "options": [
+      {
+        "en": "Anonymous access disabled, and dashboards in dark mode",
+        "bn": "Anonymous access বন্ধ, আর dashboard dark mode-এ"
+      },
+      {
+        "en": "The default time range, and the panel colours",
+        "bn": "ডিফল্ট সময়-পরিসর, আর panel-এর রঙ"
+      },
+      {
+        "en": "Login `admin`/`admin`, and port 3000 listening on all interfaces",
+        "bn": "Login `admin`/`admin`, আর port 3000 সব interface-এ শোনা"
+      },
+      {
+        "en": "The folder name, and the dashboard title",
+        "bn": "Folder-এর নাম, আর dashboard-এর শিরোনাম"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Change the password, set `http_addr = 127.0.0.1` and put Caddy with HTTPS in front.",
+      "bn": "Password বদলাও, `http_addr = 127.0.0.1` দাও আর সামনে HTTPS-সহ Caddy বসাও।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which panel type best suits \"is the site up right now?\"",
+      "bn": "\"Site কি এখন চালু?\"-র জন্য কোন panel ধরন সবচেয়ে মানায়?"
+    },
+    "options": [
+      {
+        "en": "Stat (one big, coloured number)",
+        "bn": "Stat (একটা বড়, রঙিন সংখ্যা)"
+      },
+      {
+        "en": "Heatmap",
+        "bn": "Heatmap"
+      },
+      {
+        "en": "Logs",
+        "bn": "Logs"
+      },
+      {
+        "en": "Table with 500 rows",
+        "bn": "৫০০ সারির Table"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Use a time series for \"is it getting worse?\" and a stat or gauge for \"is it OK right now?\".",
+      "bn": "\"খারাপ হচ্ছে কি?\"-র জন্য time series, আর \"এখন ঠিক আছে কি?\"-র জন্য stat বা gauge।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why use `rate(...[$__rate_interval])` instead of a fixed `[5m]`?",
+      "bn": "স্থির `[5m]`-এর বদলে `rate(...[$__rate_interval])` কেন ব্যবহার করবে?"
+    },
+    "options": [
+      {
+        "en": "It makes the query run on the server's disk",
+        "bn": "এতে query server-এর disk-এ চলে"
+      },
+      {
+        "en": "It turns a counter into a gauge",
+        "bn": "এতে counter gauge হয়ে যায়"
+      },
+      {
+        "en": "It sends an alert when the rate is high",
+        "bn": "Rate বেশি হলে এটা alert পাঠায়"
+      },
+      {
+        "en": "Grafana picks a window that fits the scrape interval and zoom level, so graphs stay correct",
+        "bn": "Grafana scrape interval ও zoom স্তরের সাথে মানানসই জানালা বাছে, তাই graph ঠিক থাকে"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "A fixed window can be too short when zoomed out, or too long when zoomed in.",
+      "bn": "স্থির জানালা zoom out করলে খুব ছোট, zoom in করলে খুব লম্বা হতে পারে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is a good reason to keep dashboards as JSON files in Git with provisioning?",
+      "bn": "Provisioning দিয়ে dashboard-কে Git-এ JSON file হিসেবে রাখার একটা ভালো কারণ কী?"
+    },
+    "options": [
+      {
+        "en": "Grafana refuses to start without them",
+        "bn": "এগুলো ছাড়া Grafana চালুই হয় না"
+      },
+      {
+        "en": "They are versioned, reviewable and repeatable, and survive the loss of the Grafana server",
+        "bn": "এগুলো version করা, review করা যায়, পুনরাবৃত্তিযোগ্য, আর Grafana server হারালেও টিকে থাকে"
+      },
+      {
+        "en": "It makes the dashboards load faster than any other way",
+        "bn": "এতে dashboard অন্য যেকোনো উপায়ের চেয়ে দ্রুত লোড হয়"
+      },
+      {
+        "en": "It removes the need for a data source",
+        "bn": "এতে data source-এর প্রয়োজন মেটে"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A dashboard built only by clicking lives inside Grafana and is lost if the server dies.",
+      "bn": "শুধু ক্লিকে বানানো dashboard Grafana-র ভেতরে থাকে আর server মরলে হারায়।"
+    }
+  }
+]
