@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What is the main purpose of monitoring?",
+      "bn": "Monitoring-এর মূল উদ্দেশ্য কী?"
+    },
+    "options": [
+      {
+        "en": "To find out about problems before your users tell you",
+        "bn": "User জানানোর আগেই সমস্যা জানা"
+      },
+      {
+        "en": "To make the application's code shorter",
+        "bn": "Application-এর code ছোট করা"
+      },
+      {
+        "en": "To replace the need for backups",
+        "bn": "Backup-এর প্রয়োজন মিটিয়ে দেওয়া"
+      },
+      {
+        "en": "To speed up the database automatically",
+        "bn": "Database নিজে নিজে দ্রুত করা"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "In many outages the expensive part is not knowing, not the repair itself.",
+      "bn": "অনেক outage-এ দামি অংশ মেরামত নয়, না জানা।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which pair correctly matches a tool of observability with its job?",
+      "bn": "Observability-র কোন জোড়াটা ঠিকভাবে মেলে?"
+    },
+    "options": [
+      {
+        "en": "Logs show trends; metrics store every error message",
+        "bn": "Log প্রবণতা দেখায়; metric প্রতিটা error message জমা রাখে"
+      },
+      {
+        "en": "Alerts store the history of every request",
+        "bn": "Alert প্রতিটা request-এর ইতিহাস জমা রাখে"
+      },
+      {
+        "en": "Metrics show that something is wrong; logs explain why",
+        "bn": "Metric দেখায় কিছু ভুল; log ব্যাখ্যা করে কেন"
+      },
+      {
+        "en": "Metrics only work when the server is off",
+        "bn": "Metric শুধু server বন্ধ থাকলে কাজ করে"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Metrics are numbers over time; logs are detailed event records; alerts make sure a human hears.",
+      "bn": "Metric সময়ের সাথে সংখ্যা; log বিস্তারিত ঘটনার রেকর্ড; alert নিশ্চিত করে কেউ শোনে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which are the four golden signals?",
+      "bn": "চারটা golden signal কোনগুলো?"
+    },
+    "options": [
+      {
+        "en": "CPU, RAM, disk and network cable",
+        "bn": "CPU, RAM, disk আর network cable"
+      },
+      {
+        "en": "Latency, traffic, errors and saturation",
+        "bn": "Latency, traffic, errors আর saturation"
+      },
+      {
+        "en": "Uptime, price, speed and colour",
+        "bn": "Uptime, দাম, গতি আর রং"
+      },
+      {
+        "en": "Logs, backups, DNS and TLS",
+        "bn": "Log, backup, DNS আর TLS"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Measure these four first for almost any user-facing service.",
+      "bn": "প্রায় যেকোনো user-মুখী service-এর জন্য প্রথমে এই চারটা মাপো।"
+    }
+  },
+  {
+    "q": {
+      "en": "99 requests take 100 ms and one takes 10 seconds. Why is the p99 more useful than the average?",
+      "bn": "৯৯টা request ১০০ ms আর একটা ১০ সেকেন্ড নেয়। গড়ের চেয়ে p99 বেশি কাজের কেন?"
+    },
+    "options": [
+      {
+        "en": "The average is always wrong by exactly 50%",
+        "bn": "গড় সবসময় ঠিক ৫০% ভুল"
+      },
+      {
+        "en": "p99 measures disk usage",
+        "bn": "p99 disk ব্যবহার মাপে"
+      },
+      {
+        "en": "Percentiles cannot be graphed",
+        "bn": "Percentile graph করা যায় না"
+      },
+      {
+        "en": "The average looks fine (about 200 ms) but p99 shows the slow requests users actually feel",
+        "bn": "গড় ঠিকঠাক দেখায় (প্রায় ২০০ ms), কিন্তু p99 সেই ধীর request দেখায় যা user আসলে টের পায়"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Averages hide outliers. A high percentile exposes the worst experiences.",
+      "bn": "গড় বিচ্ছিন্ন চরম মান লুকায়। উঁচু percentile সবচেয়ে খারাপ অভিজ্ঞতা প্রকাশ করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why do you need an outside (black-box) check such as an uptime monitor in addition to internal metrics?",
+      "bn": "ভেতরের metric-এর সাথে uptime monitor-এর মতো বাইরের (black-box) check-ও লাগে কেন?"
+    },
+    "options": [
+      {
+        "en": "Internal metrics are never accurate",
+        "bn": "ভেতরের metric কখনো সঠিক নয়"
+      },
+      {
+        "en": "If the whole server is down, its own metrics stop too, so only an outside check notices",
+        "bn": "পুরো server বন্ধ হলে তার নিজের metric-ও থেমে যায়, তাই শুধু বাইরের check টের পায়"
+      },
+      {
+        "en": "Uptime monitors make the server faster",
+        "bn": "Uptime monitor server দ্রুত করে"
+      },
+      {
+        "en": "Outside checks replace the need for logs",
+        "bn": "বাইরের check log-এর প্রয়োজন মিটিয়ে দেয়"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Black-box checks the service like a user; white-box looks inside. Use both.",
+      "bn": "Black-box user-এর মতো service পরীক্ষা করে; white-box ভেতরে দেখে। দুটোই ব্যবহার করো।"
+    }
+  }
+]

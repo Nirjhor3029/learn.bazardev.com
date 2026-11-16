@@ -103,7 +103,22 @@ return [
                 '08-real-project-laravel-in-production' => ['title' => 'Real project: a Laravel app in production', 'status' => 'available'],
             ],
         ],
-        'monitoring' => ['title' => 'Monitoring & Logging', 'tagline' => 'Knowing what is happening in production.', 'folder' => '07-monitoring', 'status' => 'coming_soon', 'chapters' => []],
+        'monitoring' => [
+            'title' => 'Monitoring & Logging',
+            'tagline' => 'Knowing what is happening in production.',
+            'folder' => '07-monitoring',
+            'status' => 'available',
+            'chapters' => [
+                '01-why-monitor-and-what-to-watch' => ['title' => 'Why monitor? Metrics, logs, alerts, and the four golden signals', 'status' => 'available'],
+                '02-linux-server-health' => ['title' => 'Linux server health: CPU, memory, disk, and the logs', 'status' => 'coming_soon'],
+                '03-application-logs' => ['title' => 'Application logs: levels, structure, and rotation', 'status' => 'coming_soon'],
+                '04-metrics-and-prometheus' => ['title' => 'Metrics and Prometheus', 'status' => 'coming_soon'],
+                '05-grafana-dashboards' => ['title' => 'Grafana dashboards', 'status' => 'coming_soon'],
+                '06-alerting' => ['title' => 'Alerting that helps instead of annoys', 'status' => 'coming_soon'],
+                '07-central-logging-uptime-and-errors' => ['title' => 'Central logging, uptime checks, and error tracking', 'status' => 'coming_soon'],
+                '08-real-project-monitoring-a-laravel-app' => ['title' => 'Real project: monitoring a Laravel app', 'status' => 'coming_soon'],
+            ],
+        ],
         'iac' => ['title' => 'Infra as Code (Terraform/Ansible)', 'tagline' => 'Writing server setup as code.', 'folder' => '08-iac', 'status' => 'coming_soon', 'chapters' => []],
     ],
 ];
