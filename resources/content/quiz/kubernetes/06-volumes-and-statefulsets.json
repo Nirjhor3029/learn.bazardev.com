@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "A database Pod is recreated and its data is gone. What is the most likely cause?",
+      "bn": "একটা database Pod আবার তৈরি হলো আর data নেই। সবচেয়ে সম্ভাব্য কারণ কী?"
+    },
+    "options": [
+      {
+        "en": "The data was in the container's own filesystem, not on a persistent volume",
+        "bn": "Data persistent volume-এ নয়, container-এর নিজের filesystem-এ ছিল"
+      },
+      {
+        "en": "The Service type was ClusterIP",
+        "bn": "Service type ছিল ClusterIP"
+      },
+      {
+        "en": "The Pod had too many labels",
+        "bn": "Pod-এ অনেক বেশি label ছিল"
+      },
+      {
+        "en": "kubectl was out of date",
+        "bn": "kubectl পুরনো ছিল"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A container filesystem is temporary. Use a PersistentVolumeClaim for data that must survive.",
+      "bn": "Container-এর filesystem অস্থায়ী। যে data বাঁচতে হবে তার জন্য PersistentVolumeClaim ব্যবহার করো।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is a PersistentVolumeClaim (PVC)?",
+      "bn": "PersistentVolumeClaim (PVC) কী?"
+    },
+    "options": [
+      {
+        "en": "A backup of a database",
+        "bn": "একটা database-এর backup"
+      },
+      {
+        "en": "A type of Service",
+        "bn": "এক ধরনের Service"
+      },
+      {
+        "en": "A request for storage that gets bound to a PersistentVolume",
+        "bn": "Storage-এর অনুরোধ, যা একটা PersistentVolume-এর সাথে bound হয়"
+      },
+      {
+        "en": "A way to encrypt Secrets",
+        "bn": "Secret encrypt করার উপায়"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "The PV is the actual storage; the PVC is the Pod's request for some of it.",
+      "bn": "PV হলো আসল storage; PVC হলো Pod-এর তার কিছু অংশ চাওয়ার অনুরোধ।"
+    }
+  },
+  {
+    "q": {
+      "en": "How long does an `emptyDir` volume last?",
+      "bn": "একটা `emptyDir` volume কতক্ষণ থাকে?"
+    },
+    "options": [
+      {
+        "en": "Forever, even after the Pod is deleted",
+        "bn": "চিরকাল, Pod delete হলেও"
+      },
+      {
+        "en": "As long as the Pod exists",
+        "bn": "Pod যতক্ষণ আছে"
+      },
+      {
+        "en": "Only for 60 seconds",
+        "bn": "মাত্র ৬০ সেকেন্ড"
+      },
+      {
+        "en": "Until the next kubectl command",
+        "bn": "পরের kubectl command পর্যন্ত"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "emptyDir is scratch space tied to the Pod. It is lost when the Pod is deleted.",
+      "bn": "emptyDir Pod-এর সাথে বাঁধা scratch জায়গা। Pod delete হলে হারায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does a StatefulSet give its Pods that a Deployment does not?",
+      "bn": "Deployment যা দেয় না, StatefulSet তার Pod-কে তা কী দেয়?"
+    },
+    "options": [
+      {
+        "en": "Faster CPUs",
+        "bn": "দ্রুত CPU"
+      },
+      {
+        "en": "Automatic backups",
+        "bn": "স্বয়ংক্রিয় backup"
+      },
+      {
+        "en": "Free public IP addresses",
+        "bn": "বিনামূল্যের public IP address"
+      },
+      {
+        "en": "Stable numbered names like `db-0` and their own persistent disk each",
+        "bn": "`db-0`-এর মতো স্থির সংখ্যাযুক্ত নাম আর প্রত্যেকের নিজের persistent disk"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Each Pod gets a stable identity and its own PVC from volumeClaimTemplates. Backups are still your job.",
+      "bn": "প্রতিটা Pod স্থির পরিচয় আর volumeClaimTemplates থেকে নিজের PVC পায়। Backup তবু তোমারই কাজ।"
+    }
+  },
+  {
+    "q": {
+      "en": "Does a PersistentVolume replace the need for backups?",
+      "bn": "PersistentVolume কি backup-এর প্রয়োজন মিটিয়ে দেয়?"
+    },
+    "options": [
+      {
+        "en": "Yes: it automatically keeps old versions of files",
+        "bn": "হ্যাঁ: এটা ফাইলের পুরনো version নিজে রাখে"
+      },
+      {
+        "en": "No: it keeps data across restarts, but deleted or corrupted data stays lost",
+        "bn": "না: এটা restart-এর পরেও data রাখে, কিন্তু মুছে যাওয়া বা নষ্ট data হারানোই থাকে"
+      },
+      {
+        "en": "Yes: Kubernetes copies it to another cluster",
+        "bn": "হ্যাঁ: Kubernetes এটা অন্য cluster-এ কপি করে"
+      },
+      {
+        "en": "Yes: but only with ReadWriteMany",
+        "bn": "হ্যাঁ: তবে শুধু ReadWriteMany-তে"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A volume is durability across Pod restarts, not a backup. Keep separate backups.",
+      "bn": "Volume মানে Pod restart-এর পরেও টিকে থাকা, backup নয়। আলাদা backup রাখো।"
+    }
+  }
+]
