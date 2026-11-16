@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What should you do with the AWS root user after signing up?",
+      "bn": "সাইন আপের পর AWS root user-কে নিয়ে কী করা উচিত?"
+    },
+    "options": [
+      {
+        "en": "Secure it with a strong password and MFA, then use a separate IAM user for daily work",
+        "bn": "শক্ত password ও MFA দিয়ে সুরক্ষিত করো, তারপর প্রতিদিনের কাজে আলাদা IAM user ব্যবহার করো"
+      },
+      {
+        "en": "Use it for all daily work and share it with the team",
+        "bn": "প্রতিদিনের সব কাজে ব্যবহার করো আর team-কে দাও"
+      },
+      {
+        "en": "Create access keys for it and put them in your code",
+        "bn": "এর জন্য access key বানিয়ে code-এ রাখো"
+      },
+      {
+        "en": "Delete it immediately",
+        "bn": "সাথে সাথে মুছে দাও"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The root user can do anything, including closing the account, so protect it and rarely use it.",
+      "bn": "Root user সবকিছু করতে পারে, account বন্ধ করা সহ, তাই তাকে রক্ষা করো আর কদাচিৎ ব্যবহার করো।"
+    }
+  },
+  {
+    "q": {
+      "en": "You created a server in Singapore, but you can't see it in the console. What is the first thing to check?",
+      "bn": "তুমি সিঙ্গাপুরে একটা server বানিয়েছ, কিন্তু console-এ দেখা যাচ্ছে না। আগে কী দেখবে?"
+    },
+    "options": [
+      {
+        "en": "Whether the root user is logged in",
+        "bn": "Root user login করা আছে কিনা"
+      },
+      {
+        "en": "Whether the server has a domain name",
+        "bn": "Server-এর domain নাম আছে কিনা"
+      },
+      {
+        "en": "The console's Region selector, since resources live in one Region",
+        "bn": "Console-এর Region selector, কারণ resource একটা Region-এ থাকে"
+      },
+      {
+        "en": "Whether the policy uses JSON",
+        "bn": "Policy JSON ব্যবহার করে কিনা"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Regions are separate worlds. The server is fine; the console is just showing another Region.",
+      "bn": "Region আলাদা আলাদা জগৎ। Server ঠিকই আছে; console শুধু অন্য Region দেখাচ্ছে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What are the three main parts of an IAM policy statement?",
+      "bn": "IAM policy statement-এর তিনটা প্রধান অংশ কী?"
+    },
+    "options": [
+      {
+        "en": "Name, Price and Region",
+        "bn": "Name, Price আর Region"
+      },
+      {
+        "en": "Effect, Action and Resource",
+        "bn": "Effect, Action আর Resource"
+      },
+      {
+        "en": "Domain, Record and TTL",
+        "bn": "Domain, Record আর TTL"
+      },
+      {
+        "en": "Image, Port and Volume",
+        "bn": "Image, Port আর Volume"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Effect says Allow or Deny, Action says what can be done, Resource says on which things.",
+      "bn": "Effect বলে Allow বা Deny, Action বলে কী করা যাবে, Resource বলে কোন জিনিসে।"
+    }
+  },
+  {
+    "q": {
+      "en": "A new IAM user has no policies attached. What can they do?",
+      "bn": "একটা নতুন IAM user-এর কোনো policy জোড়া নেই। সে কী করতে পারে?"
+    },
+    "options": [
+      {
+        "en": "Everything, like the root user",
+        "bn": "সবকিছু, root user-এর মতো"
+      },
+      {
+        "en": "Read all resources",
+        "bn": "সব resource পড়তে পারে"
+      },
+      {
+        "en": "Only use the S3 service",
+        "bn": "শুধু S3 service ব্যবহার করতে পারে"
+      },
+      {
+        "en": "Nothing, because everything is denied by default",
+        "bn": "কিছুই না, কারণ সবকিছু default-এ নিষিদ্ধ"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "IAM is deny-by-default. Permissions only exist where a policy allows them.",
+      "bn": "IAM default-এ নিষেধ। Permission শুধু সেখানেই আছে যেখানে কোনো policy অনুমতি দেয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why is an IAM role usually safer than an access key for a server running on AWS?",
+      "bn": "AWS-এ চলা server-এর জন্য access key-র চেয়ে IAM role সাধারণত নিরাপদ কেন?"
+    },
+    "options": [
+      {
+        "en": "Roles are free while access keys cost money",
+        "bn": "Role বিনামূল্যের আর access key-তে টাকা লাগে"
+      },
+      {
+        "en": "A role gives short-lived credentials automatically, so there's no long-lived secret to leak into code or Git",
+        "bn": "Role স্বয়ংক্রিয়ভাবে স্বল্পস্থায়ী credential দেয়, তাই code বা Git-এ ফাঁস হওয়ার মতো দীর্ঘস্থায়ী secret থাকে না"
+      },
+      {
+        "en": "Roles make the server faster",
+        "bn": "Role server-কে দ্রুত করে"
+      },
+      {
+        "en": "Access keys cannot be used on servers",
+        "bn": "Server-এ access key ব্যবহার করা যায় না"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Leaked access keys are a top cause of surprise bills. No key means nothing to leak.",
+      "bn": "ফাঁস হওয়া access key আকস্মিক বিলের একটা প্রধান কারণ। key না থাকলে ফাঁস হওয়ার কিছুই থাকে না।"
+    }
+  }
+]
