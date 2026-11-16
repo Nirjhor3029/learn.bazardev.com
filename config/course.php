@@ -112,7 +112,7 @@ return [
                 '01-why-monitor-and-what-to-watch' => ['title' => 'Why monitor? Metrics, logs, alerts, and the four golden signals', 'status' => 'available'],
                 '02-linux-server-health' => ['title' => 'Linux server health: CPU, memory, disk, and the logs', 'status' => 'available'],
                 '03-application-logs' => ['title' => 'Application logs: levels, structure, and rotation', 'status' => 'available'],
-                '04-metrics-and-prometheus' => ['title' => 'Metrics and Prometheus', 'status' => 'coming_soon'],
+                '04-metrics-and-prometheus' => ['title' => 'Metrics and Prometheus', 'status' => 'available'],
                 '05-grafana-dashboards' => ['title' => 'Grafana dashboards', 'status' => 'coming_soon'],
                 '06-alerting' => ['title' => 'Alerting that helps instead of annoys', 'status' => 'coming_soon'],
                 '07-central-logging-uptime-and-errors' => ['title' => 'Central logging, uptime checks, and error tracking', 'status' => 'coming_soon'],

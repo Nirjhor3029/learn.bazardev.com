@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "How does Prometheus get its data?",
+      "bn": "Prometheus তার data কীভাবে পায়?"
+    },
+    "options": [
+      {
+        "en": "It pulls (scrapes) each target's `/metrics` page every few seconds",
+        "bn": "সে প্রতি কয়েক সেকেন্ডে প্রতিটা target-এর `/metrics` পেজ টেনে আনে (scrape)"
+      },
+      {
+        "en": "Each server pushes its numbers to it by email",
+        "bn": "প্রতিটা server ইমেইলে তার সংখ্যা পাঠায়"
+      },
+      {
+        "en": "It reads the application's source code",
+        "bn": "সে application-এর source code পড়ে"
+      },
+      {
+        "en": "It guesses the numbers from the log files",
+        "bn": "সে log file থেকে সংখ্যা আন্দাজ করে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Pulling means a dead target is noticed (`up = 0`) instead of just going quiet.",
+      "bn": "Pull করায় মরে যাওয়া target ধরা পড়ে (`up = 0`), চুপ হয়ে যায় না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which metric type only goes up (and resets to 0 when the program restarts)?",
+      "bn": "কোন metric ধরন শুধু বাড়ে (আর program restart হলে ০ হয়ে যায়)?"
+    },
+    "options": [
+      {
+        "en": "Gauge",
+        "bn": "Gauge"
+      },
+      {
+        "en": "Counter",
+        "bn": "Counter"
+      },
+      {
+        "en": "Label",
+        "bn": "Label"
+      },
+      {
+        "en": "Target",
+        "bn": "Target"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Total requests served is a counter. Memory in use goes up and down, so it is a gauge.",
+      "bn": "মোট পরিবেশিত request একটা counter। ব্যবহৃত memory বাড়ে-কমে, তাই সেটা gauge।"
+    }
+  },
+  {
+    "q": {
+      "en": "A counter reads 100 now and 160 sixty seconds later. What is its rate?",
+      "bn": "একটা counter এখন ১০০ আর ষাট সেকেন্ড পরে ১৬০। তার rate কত?"
+    },
+    "options": [
+      {
+        "en": "160 per second",
+        "bn": "প্রতি সেকেন্ডে ১৬০"
+      },
+      {
+        "en": "100 per second",
+        "bn": "প্রতি সেকেন্ডে ১০০"
+      },
+      {
+        "en": "1 per second (60 divided by 60 seconds)",
+        "bn": "প্রতি সেকেন্ডে ১ (৬০ কে ৬০ সেকেন্ড দিয়ে ভাগ)"
+      },
+      {
+        "en": "60 per second",
+        "bn": "প্রতি সেকেন্ডে ৬০"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "A rate is the difference between two scrapes divided by the time between them.",
+      "bn": "Rate হলো দুটো scrape-এর পার্থক্য, মাঝের সময় দিয়ে ভাগ।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why is `user_id` a bad label on a metric?",
+      "bn": "Metric-এর label হিসেবে `user_id` কেন খারাপ?"
+    },
+    "options": [
+      {
+        "en": "Labels can only contain letters, never numbers",
+        "bn": "Label-এ শুধু অক্ষর থাকতে পারে, সংখ্যা নয়"
+      },
+      {
+        "en": "Prometheus refuses to store any label at all",
+        "bn": "Prometheus কোনো label-ই জমা রাখতে রাজি নয়"
+      },
+      {
+        "en": "It makes the metric a gauge instead of a counter",
+        "bn": "এতে metric counter-এর বদলে gauge হয়ে যায়"
+      },
+      {
+        "en": "Every distinct value creates a new series, so many users cause high cardinality and can crash Prometheus",
+        "bn": "প্রতিটা আলাদা মান নতুন series বানায়, তাই অনেক user high cardinality ঘটায় আর Prometheus crash করাতে পারে"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Keep labels to a small fixed set (method, status code). Per-user detail belongs in logs.",
+      "bn": "Label ছোট স্থির সেটে রাখো (method, status code)। User-ভিত্তিক বিবরণ log-এ।"
+    }
+  },
+  {
+    "q": {
+      "en": "What should you do about `node_exporter`'s port 9100?",
+      "bn": "`node_exporter`-এর port 9100 নিয়ে কী করা উচিত?"
+    },
+    "options": [
+      {
+        "en": "Open it to everyone so Prometheus can find it",
+        "bn": "সবার জন্য খুলে দাও যাতে Prometheus খুঁজে পায়"
+      },
+      {
+        "en": "Keep it private: listen on `127.0.0.1` or a private address and block it from the internet",
+        "bn": "এটা private রাখো: `127.0.0.1` বা private ঠিকানায় শোনাও আর internet থেকে আটকাও"
+      },
+      {
+        "en": "Change it to port 80",
+        "bn": "এটা port 80 করে দাও"
+      },
+      {
+        "en": "Nothing, it is always protected automatically",
+        "bn": "কিছু না, এটা সবসময় নিজে নিজে সুরক্ষিত"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A metrics page reveals details about your server, so it should not be reachable by the public.",
+      "bn": "Metric পেজ তোমার server-এর খুঁটিনাটি প্রকাশ করে, তাই জনসাধারণের নাগালে থাকা উচিত নয়।"
+    }
+  }
+]
