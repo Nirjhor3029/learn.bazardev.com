@@ -2,6 +2,7 @@
     <section class="mx-auto max-w-5xl px-4 pt-14 pb-10 text-center">
         <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl">Learn DevOps, <span class="text-blue-600">from zero</span></h1>
         <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-500">In English and Bangla, with real projects — read it on GitHub or right here.</p>
+        <p class="mx-auto mt-3 max-w-2xl text-sm text-gray-400">Take the courses in order, 1 to {{ count($courses) }}: each one assumes the ones before it.</p>
     </section>
 
     {{-- Logged-in readers go straight back to where they stopped. --}}
@@ -22,7 +23,7 @@
                    class="group flex flex-col rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition
                           {{ $available ? 'hover:border-blue-200 hover:shadow-md' : 'opacity-60 cursor-not-allowed' }}">
                     <div class="flex items-center justify-between gap-3">
-                        <h2 class="text-lg font-semibold">{{ $course['title'] }}</h2>
+                        <h2 class="flex items-center gap-2 text-lg font-semibold"><span class="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gray-100 text-xs font-semibold text-gray-600 tabular-nums">{{ $loop->iteration }}</span>{{ $course['title'] }}</h2>
                         @if ($mine && $mine['done'] === $mine['total'])
                             <span class="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-medium text-emerald-700"><x-icon name="check" class="h-3 w-3" /> Completed</span>
                         @elseif ($available)

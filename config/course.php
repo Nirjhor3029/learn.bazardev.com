@@ -11,6 +11,7 @@ return [
             'title' => 'Linux & Shell Basics',
             'tagline' => 'The language you use to talk to a server.',
             'folder' => '02-linux-shell',
+            'requires' => [],
             'status' => 'available',
             'chapters' => [
                 '01-finding-your-way-around' => ['title' => 'Why Linux, and finding your way around', 'status' => 'available'],
@@ -27,6 +28,7 @@ return [
             'title' => 'Git & GitHub (Advanced)',
             'tagline' => 'Version control for working in a team, deep dive.',
             'folder' => '03-git-github',
+            'requires' => ['linux-shell'],
             'status' => 'available',
             'chapters' => [
                 '01-branching-strategies' => ['title' => 'Branching strategies for teams', 'status' => 'available'],
@@ -43,6 +45,7 @@ return [
             'title' => 'Docker',
             'tagline' => 'What containers are, why they matter, and Dockerizing a real app — start to finish.',
             'folder' => '01-docker',
+            'requires' => ['linux-shell', 'git-github'],
             'status' => 'available',
             'chapters' => [
                 '01-what-is-docker' => ['title' => 'What is Docker, and why does it matter?', 'status' => 'available'],
@@ -59,6 +62,7 @@ return [
             'title' => 'CI/CD (GitHub Actions)',
             'tagline' => 'Push code, get automatic tests and deploys.',
             'folder' => '04-cicd',
+            'requires' => ['git-github', 'docker'],
             'status' => 'available',
             'chapters' => [
                 '01-what-is-cicd' => ['title' => 'What is CI/CD, and why does it matter?', 'status' => 'available'],
@@ -75,6 +79,7 @@ return [
             'title' => 'Cloud (AWS / VPS Basics)',
             'tagline' => 'Provisioning servers, domains, and deployment.',
             'folder' => '06-cloud',
+            'requires' => ['linux-shell', 'cicd'],
             'status' => 'available',
             'chapters' => [
                 '01-what-is-the-cloud' => ['title' => 'What is the cloud? VPS vs AWS vs shared hosting', 'status' => 'available'],
@@ -91,6 +96,7 @@ return [
             'title' => 'Monitoring & Logging',
             'tagline' => 'Knowing what is happening in production.',
             'folder' => '07-monitoring',
+            'requires' => ['linux-shell', 'cloud'],
             'status' => 'available',
             'chapters' => [
                 '01-why-monitor-and-what-to-watch' => ['title' => 'Why monitor? Metrics, logs, alerts, and the four golden signals', 'status' => 'available'],
@@ -107,6 +113,7 @@ return [
             'title' => 'Infra as Code & Ansible',
             'tagline' => 'Writing server setup as code, and configuring servers with Ansible.',
             'folder' => '08-iac',
+            'requires' => ['linux-shell', 'git-github', 'cloud'],
             'status' => 'available',
             'chapters' => [
                 '01-why-infrastructure-as-code' => ['title' => 'Why Infrastructure as Code? Terraform and Ansible in one picture', 'status' => 'available'],
@@ -123,6 +130,7 @@ return [
             'title' => 'Terraform',
             'tagline' => 'Building cloud infrastructure from code.',
             'folder' => '09-terraform',
+            'requires' => ['iac', 'docker'],
             'status' => 'available',
             'chapters' => [
                 '01-what-is-terraform-and-your-first-run' => ['title' => 'What is Terraform? Install and your first run (no cloud needed)', 'status' => 'available'],
@@ -139,6 +147,7 @@ return [
             'title' => 'Kubernetes',
             'tagline' => 'Managing many containers at scale.',
             'folder' => '05-kubernetes',
+            'requires' => ['docker', 'git-github', 'cicd'],
             'status' => 'available',
             'chapters' => [
                 '01-what-is-kubernetes' => ['title' => 'What is Kubernetes, and why does it matter?', 'status' => 'available'],

@@ -4,6 +4,18 @@
         <h1 class="mt-3 text-3xl font-extrabold tracking-tight">{{ $course['title'] }}</h1>
         <p class="mt-2 text-gray-500">{{ $course['tagline'] }}</p>
 
+        @php
+            $requires = config('course.courses.'.$course['slug'].'.requires', []);
+        @endphp
+        @if (count($requires) > 0)
+            <p class="mt-3 text-sm text-gray-500">
+                Take these first:
+                @foreach ($requires as $required)
+                    <a href="{{ route('course.show', $required) }}" class="font-medium text-blue-600 hover:underline">{{ config('course.courses.'.$required.'.title') }}</a>{{ $loop->last ? '' : ',' }}
+                @endforeach
+            </p>
+        @endif
+
         {{-- Logged-in readers: how far they are, and one button to carry on. --}}
         @if ($progress && $progress['total'] > 0)
             <div class="mt-6 rounded-2xl border border-gray-100 bg-white p-5 shadow-sm">

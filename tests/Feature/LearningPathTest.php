@@ -1,0 +1,39 @@
+<?php
+
+namespace Tests\Feature;
+
+use Tests\TestCase;
+
+class LearningPathTest extends TestCase
+{
+    public function test_every_course_only_requires_courses_that_come_before_it(): void
+    {
+        $slugs = array_keys(config('course.courses'));
+
+        foreach (config('course.courses') as $slug => $course) {
+            foreach ($course['requires'] ?? [] as $required) {
+                $this->assertContains($required, $slugs, "{$slug} requires an unknown course {$required}");
+                $this->assertLessThan(
+                    array_search($slug, $slugs, true),
+                    array_search($required, $slugs, true),
+                    "{$slug} requires {$required}, which must come earlier in the learning path",
+                );
+            }
+        }
+    }
+
+    public function test_the_path_starts_with_linux_and_ends_with_kubernetes(): void
+    {
+        $slugs = array_keys(config('course.courses'));
+
+        $this->assertSame('linux-shell', $slugs[0]);
+        $this->assertSame('kubernetes', end($slugs));
+    }
+
+    public function test_the_home_page_numbers_the_courses_and_course_pages_list_prerequisites(): void
+    {
+        $this->get('/')->assertOk()->assertSee('Take the courses in order');
+
+        $this->get('/docker')->assertOk()->assertSee('Take these first')->assertSee('Linux &amp; Shell Basics', false);
+    }
+}

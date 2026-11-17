@@ -155,12 +155,22 @@ class ExamTest extends TestCase
         $without = collect(array_keys(config('course.courses')))
             ->reject(fn ($course) => file_exists(resource_path("content/exam/{$course}.json")));
 
-        $this->assertNotEmpty($without, 'Expected at least one course without an exam.');
+        if ($without->isEmpty()) {
+            $this->markTestSkipped('Every available course has an exam.');
+        }
 
         foreach ($without as $course) {
             $this->actingAs($user)->get("/{$course}/exam")->assertNotFound();
             $this->actingAs($user)->post("/{$course}/exam", ['answers' => [0]])->assertNotFound();
         }
+    }
+
+    public function test_unknown_courses_have_no_exam(): void
+    {
+        $user = $this->reader();
+
+        $this->actingAs($user)->get('/no-such-course/exam')->assertNotFound();
+        $this->actingAs($user)->post('/no-such-course/exam', ['answers' => [0]])->assertNotFound();
     }
 
     public function test_the_exam_is_locked_until_every_chapter_quiz_is_passed(): void
