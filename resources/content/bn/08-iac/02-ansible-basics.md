@@ -332,4 +332,4 @@ Check mode। কিছু না বদলে বলে কী বদলাত,
 
 ---
 
-**পরের chapter:** Chapter 3 — Ansible playbook: module, handler ও idempotency *(শীঘ্রই আসছে)*
+**পরের chapter:** [Chapter 3 — Ansible playbook: module, handler ও idempotency](03-ansible-playbooks.md)

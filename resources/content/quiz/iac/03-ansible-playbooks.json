@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "You run the same playbook twice on a server. The second PLAY RECAP should show:",
+      "bn": "একই playbook একটা server-এ দুইবার চালালে দ্বিতীয়বারের PLAY RECAP-এ কী দেখা উচিত?"
+    },
+    "options": [
+      {
+        "en": "changed equal to the number of tasks",
+        "bn": "changed = task-এর সংখ্যার সমান"
+      },
+      {
+        "en": "changed=0",
+        "bn": "changed=0"
+      },
+      {
+        "en": "failed=1",
+        "bn": "failed=1"
+      },
+      {
+        "en": "unreachable=1",
+        "bn": "unreachable=1"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Once the machine is in the desired state, an idempotent playbook has nothing left to change.",
+      "bn": "machine কাঙ্ক্ষিত অবস্থায় এলে idempotent playbook-এর বদলানোর কিছু থাকে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "A task has `notify: Restart caddy`. When does the handler run?",
+      "bn": "একটা task-এ `notify: Restart caddy` আছে। Handler কখন চলে?"
+    },
+    "options": [
+      {
+        "en": "Only if that task reported changed, once, after the play's tasks finish",
+        "bn": "শুধু যদি ওই task changed জানায়, একবার, play-এর task শেষ হওয়ার পরে"
+      },
+      {
+        "en": "Every time, immediately after the task",
+        "bn": "প্রতিবার, task-এর ঠিক পরেই"
+      },
+      {
+        "en": "Only on the first run ever",
+        "bn": "শুধু প্রথম চালানোতেই"
+      },
+      {
+        "en": "Only when you add --check",
+        "bn": "শুধু --check দিলে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Handlers run only when notified by a changed task, and only once even if notified several times.",
+      "bn": "handler শুধু changed task notify করলে চলে, আর একাধিকবার notify হলেও একবারই।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why is `name: \"{{ packages }}\"` written with quotes?",
+      "bn": "`name: \"{{ packages }}\"` quote দিয়ে লেখা হয় কেন?"
+    },
+    "options": [
+      {
+        "en": "A YAML value starting with {{ must be quoted, or YAML reads it wrongly",
+        "bn": "`{{` দিয়ে শুরু হওয়া YAML মান quote করতে হয়, নইলে YAML ভুল পড়ে"
+      },
+      {
+        "en": "Quotes make the package install faster",
+        "bn": "quote দিলে package দ্রুত install হয়"
+      },
+      {
+        "en": "Quotes encrypt the variable",
+        "bn": "quote variable-কে encrypt করে"
+      },
+      {
+        "en": "Ansible ignores a variable unless it is quoted twice",
+        "bn": "দুইবার quote না করলে Ansible variable উপেক্ষা করে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Otherwise YAML cannot tell a variable from the start of a dictionary and reports a syntax error.",
+      "bn": "নইলে YAML variable আর dictionary-র শুরু আলাদা করতে পারে না, syntax error দেয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "A task runs `ansible.builtin.command: /usr/bin/make_database.sh` and always reports changed. What is the best fix if no real module exists?",
+      "bn": "একটা task `ansible.builtin.command: /usr/bin/make_database.sh` চালায় আর সবসময় changed জানায়। আসল module না থাকলে সেরা সমাধান কী?"
+    },
+    "options": [
+      {
+        "en": "Add -f 10 to the command",
+        "bn": "command-এ -f 10 দাও"
+      },
+      {
+        "en": "Switch the file's mode to 0644",
+        "bn": "file-এর mode 0644 করো"
+      },
+      {
+        "en": "Move the task into handlers",
+        "bn": "task-টা handlers-এ সরাও"
+      },
+      {
+        "en": "Add `creates=` with a file the command produces, so it is skipped when that file exists",
+        "bn": "command যে file বানায় তার নামে `creates=` দাও, যাতে file থাকলে এটা বাদ যায়"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "command cannot tell whether it needed to run; creates (or removes) gives it a condition.",
+      "bn": "command বুঝতে পারে না চালানো দরকার ছিল কি না; creates (বা removes) তাকে একটা শর্ত দেয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which sequence is the safest before applying a playbook to real servers?",
+      "bn": "বাস্তব server-এ playbook apply করার আগে কোন ক্রম সবচেয়ে নিরাপদ?"
+    },
+    "options": [
+      {
+        "en": "Apply to all servers, then read the recap",
+        "bn": "সব server-এ apply করো, তারপর recap পড়ো"
+      },
+      {
+        "en": "Skip checks; playbooks are always idempotent",
+        "bn": "check বাদ দাও; playbook সবসময় idempotent"
+      },
+      {
+        "en": "--syntax-check, then --list-tasks, then --check --diff on a small group, then apply",
+        "bn": "--syntax-check, তারপর --list-tasks, তারপর ছোট group-এ --check --diff, তারপর apply"
+      },
+      {
+        "en": "Run with -e to override every variable",
+        "bn": "প্রতিটা variable override করতে -e দিয়ে চালাও"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Checks first, a small group first. A dry run is not a guarantee, and not every module supports check mode fully.",
+      "bn": "আগে check, আগে ছোট group। dry run নিশ্চয়তা নয়, আর সব module পুরো check mode সমর্থন করে না।"
+    }
+  }
+]
