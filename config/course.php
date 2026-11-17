@@ -126,7 +126,7 @@ return [
             'status' => 'available',
             'chapters' => [
                 '01-why-infrastructure-as-code' => ['title' => 'Why Infrastructure as Code? Terraform and Ansible in one picture', 'status' => 'available'],
-                '02-ansible-basics' => ['title' => 'Ansible basics: inventory and ad-hoc commands', 'status' => 'coming_soon'],
+                '02-ansible-basics' => ['title' => 'Ansible basics: inventory and ad-hoc commands', 'status' => 'available'],
                 '03-ansible-playbooks' => ['title' => 'Ansible playbooks, modules, handlers, and idempotency', 'status' => 'coming_soon'],
                 '04-ansible-roles-templates-and-vault' => ['title' => 'Ansible roles, templates, and Vault for secrets', 'status' => 'coming_soon'],
                 '05-terraform-basics' => ['title' => 'Terraform basics: providers, resources, plan and apply', 'status' => 'coming_soon'],

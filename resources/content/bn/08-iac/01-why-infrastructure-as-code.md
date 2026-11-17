@@ -186,4 +186,4 @@ Code বদলাও, server নয়। Server-এ হাতে বদলা�
 
 ---
 
-**পরের chapter:** Chapter 2 — Ansible-এর গোড়ার কথা: Inventory আর ad-hoc command *(শীঘ্রই আসছে)*
+**পরের chapter:** [Chapter 2 — Ansible-এর গোড়ার কথা: Inventory আর ad-hoc command](02-ansible-basics.md)

@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "Which machine needs Ansible installed?",
+      "bn": "কোন machine-এ Ansible install থাকা লাগে?"
+    },
+    "options": [
+      {
+        "en": "The control node, where you run Ansible",
+        "bn": "control node, যেখানে তুমি Ansible চালাও"
+      },
+      {
+        "en": "Every managed node",
+        "bn": "প্রতিটা managed node"
+      },
+      {
+        "en": "Only the database servers",
+        "bn": "শুধু database server"
+      },
+      {
+        "en": "None: Ansible runs from the cloud provider",
+        "bn": "কোনোটাতেই নয়: Ansible cloud provider থেকে চলে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Ansible is agentless: managed nodes only need SSH access and Python.",
+      "bn": "Ansible agentless: managed node-এ শুধু SSH access আর Python লাগে।"
+    }
+  },
+  {
+    "q": {
+      "en": "In `ansible web -m ping -i inventory.ini`, what does `web` mean?",
+      "bn": "`ansible web -m ping -i inventory.ini`-এ `web` মানে কী?"
+    },
+    "options": [
+      {
+        "en": "The module to run",
+        "bn": "যে module চালাবে"
+      },
+      {
+        "en": "The SSH user name",
+        "bn": "SSH user-এর নাম"
+      },
+      {
+        "en": "The name of the inventory file",
+        "bn": "inventory file-এর নাম"
+      },
+      {
+        "en": "The pattern: which hosts or group to run on",
+        "bn": "pattern: কোন host বা group-এ চালাবে"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "The first argument is the pattern. The module comes after -m and the inventory after -i.",
+      "bn": "প্রথম argument pattern। module -m-এর পরে, inventory -i-এর পরে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `\"ping\": \"pong\"` in Ansible output prove?",
+      "bn": "Ansible output-এ `\"ping\": \"pong\"` কী প্রমাণ করে?"
+    },
+    "options": [
+      {
+        "en": "The host answered a network ICMP ping",
+        "bn": "host network ICMP ping-এর উত্তর দিয়েছে"
+      },
+      {
+        "en": "The host has the latest packages",
+        "bn": "host-এ সব package-এর সর্বশেষ version আছে"
+      },
+      {
+        "en": "Ansible could log in over SSH and run Python on that host",
+        "bn": "Ansible SSH দিয়ে ঢুকে ওই host-এ Python চালাতে পেরেছে"
+      },
+      {
+        "en": "The host's disk is not full",
+        "bn": "host-এর disk ভরা নয়"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "It is Ansible's own connection test, not a network ping.",
+      "bn": "এটা Ansible-এর নিজস্ব সংযোগ পরীক্ষা, network ping নয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "You want to see what an ad-hoc command would change, without changing anything. Which flag?",
+      "bn": "একটা ad-hoc command কী বদলাত, কিছু না বদলে দেখতে চাও। কোন flag?"
+    },
+    "options": [
+      {
+        "en": "-f 10",
+        "bn": "-f 10"
+      },
+      {
+        "en": "-C (--check)",
+        "bn": "-C (--check)"
+      },
+      {
+        "en": "-u username",
+        "bn": "-u username"
+      },
+      {
+        "en": "--become",
+        "bn": "--become"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Check mode reports what would change. Not every module can predict its result, so test on a practice machine first.",
+      "bn": "Check mode বলে কী বদলাত। সব module ফল আগে বলতে পারে না, তাই আগে practice machine-এ পরীক্ষা করো।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which command can use pipes (`|`) and redirects (`>`)?",
+      "bn": "কোন module-এ pipe (`|`) ও redirect (`>`) চলে?"
+    },
+    "options": [
+      {
+        "en": "ansible.builtin.shell",
+        "bn": "ansible.builtin.shell"
+      },
+      {
+        "en": "ansible.builtin.command (the default module)",
+        "bn": "ansible.builtin.command (ডিফল্ট module)"
+      },
+      {
+        "en": "ansible.builtin.ping",
+        "bn": "ansible.builtin.ping"
+      },
+      {
+        "en": "ansible.builtin.setup",
+        "bn": "ansible.builtin.setup"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "command, the default, does not understand pipes or redirects; shell runs through a shell.",
+      "bn": "ডিফল্ট command pipe বা redirect বোঝে না; shell একটা shell দিয়ে চলে।"
+    }
+  }
+]
