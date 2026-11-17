@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "In a role, where should settings that users may want to override go?",
+      "bn": "একটা role-এ, ব্যবহারকারী ওভাররাইড করতে চাইতে পারে এমন setting কোথায় যাবে?"
+    },
+    "options": [
+      {
+        "en": "vars/main.yml, because it has the highest precedence",
+        "bn": "vars/main.yml, কারণ এর অগ্রাধিকার সবচেয়ে বেশি"
+      },
+      {
+        "en": "meta/main.yml, because it holds dependencies",
+        "bn": "meta/main.yml, কারণ এতে dependency থাকে"
+      },
+      {
+        "en": "defaults/main.yml, because it has the lowest precedence",
+        "bn": "defaults/main.yml, কারণ এর অগ্রাধিকার সবচেয়ে কম"
+      },
+      {
+        "en": "files/, because it holds static files",
+        "bn": "files/, কারণ এতে static file থাকে"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Defaults are easy to override from the play, inventory or -e, and they list the role's knobs in one place.",
+      "bn": "Defaults play, inventory বা -e থেকে সহজে ওভাররাইড হয়, আর role-এর knob গুলো এক জায়গায় দেখায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the main difference between the copy and template modules?",
+      "bn": "copy আর template module-এর প্রধান পার্থক্য কী?"
+    },
+    "options": [
+      {
+        "en": "template fills a Jinja2 file with variables before sending it; copy sends the same file as it is",
+        "bn": "template পাঠানোর আগে একটা Jinja2 file variable দিয়ে ভরে; copy একই file যেমন আছে তেমন পাঠায়"
+      },
+      {
+        "en": "copy is faster because it uses SSH; template does not",
+        "bn": "copy দ্রুত কারণ সে SSH ব্যবহার করে; template করে না"
+      },
+      {
+        "en": "template can only be used for Caddy",
+        "bn": "template শুধু Caddy-র জন্য ব্যবহার করা যায়"
+      },
+      {
+        "en": "copy encrypts the file; template does not",
+        "bn": "copy file encrypt করে; template করে না"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Templating happens on the control node, so each machine can receive a slightly different result.",
+      "bn": "Templating control node-এ হয়, তাই প্রতিটা machine একটু আলাদা ফল পেতে পারে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does the validate option of the template module do?",
+      "bn": "template module-এর validate option কী করে?"
+    },
+    "options": [
+      {
+        "en": "It encrypts the rendered file with Vault",
+        "bn": "এটা rendered file Vault দিয়ে encrypt করে"
+      },
+      {
+        "en": "It makes the task run twice",
+        "bn": "এটা task দুইবার চালায়"
+      },
+      {
+        "en": "It runs a check command on the rendered temporary file before it is copied into place",
+        "bn": "এটা rendered অস্থায়ী file-এ একটা check command চালায়, জায়গামতো copy করার আগে"
+      },
+      {
+        "en": "It removes the file when the play ends",
+        "bn": "play শেষ হলে এটা file মুছে দেয়"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "The temporary file is passed in as %s. A failing check stops a broken config from replacing a working one.",
+      "bn": "অস্থায়ী file %s হিসেবে যায়। check ব্যর্থ হলে ভাঙা config কাজের config-কে প্রতিস্থাপন করতে পারে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which rule applies to the vault password file?",
+      "bn": "vault password file-এর ক্ষেত্রে কোন নিয়ম প্রযোজ্য?"
+    },
+    "options": [
+      {
+        "en": "Rename it to .env so Laravel reads it",
+        "bn": "নাম .env করো যাতে Laravel পড়ে"
+      },
+      {
+        "en": "Never add it to source control, and keep its permissions restrictive",
+        "bn": "কখনো source control-এ যোগ করো না, আর permission কড়া রাখো"
+      },
+      {
+        "en": "Keep permissions loose so every user can read it",
+        "bn": "permission ঢিলা রাখো যাতে সব user পড়তে পারে"
+      },
+      {
+        "en": "Commit it next to secrets.yml so teammates can find it",
+        "bn": "secrets.yml-এর পাশে commit করো যাতে সহকর্মীরা পায়"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The docs say not to add password files to source control and to make sure the permissions are appropriate.",
+      "bn": "Docs বলে password file source control-এ যোগ করো না আর permission যথাযথ রাখো।"
+    }
+  },
+  {
+    "q": {
+      "en": "A task writes a .env containing a vaulted password. What should you add to the task, and what is its limit?",
+      "bn": "একটা task vaulted password সহ .env লেখে। task-এ কী দেবে, আর এর সীমা কী?"
+    },
+    "options": [
+      {
+        "en": "no_log: true; it does not hide the output of debug tasks",
+        "bn": "no_log: true; এটা debug task-এর output লুকায় না"
+      },
+      {
+        "en": "no_log: true; it also hides everything debug prints",
+        "bn": "no_log: true; এটা debug যা print করে তাও লুকায়"
+      },
+      {
+        "en": "changed_when: false; it encrypts the output",
+        "bn": "changed_when: false; এটা output encrypt করে"
+      },
+      {
+        "en": "become: false; it removes the secret from memory",
+        "bn": "become: false; এটা memory থেকে secret মুছে দেয়"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The docs say no_log does not affect debugging output, so never leave a debug task printing a secret.",
+      "bn": "Docs বলে no_log debugging output-কে প্রভাবিত করে না, তাই debug task-কে secret print করতে রেখো না।"
+    }
+  }
+]

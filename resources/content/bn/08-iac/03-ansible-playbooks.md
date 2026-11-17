@@ -303,4 +303,4 @@ Playbook একটা সংরক্ষিত YAML file: পুনরাবৃ�
 
 ---
 
-**পরের chapter:** Chapter 4 — Ansible role, template ও secret-এর জন্য Vault *(শীঘ্রই আসছে)*
+**পরের chapter:** [Chapter 4 — Ansible role, template ও secret-এর জন্য Vault](04-ansible-roles-templates-and-vault.md)
