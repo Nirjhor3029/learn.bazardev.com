@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What does `ansible-playbook site.yml --limit 'web:!web3'` do?",
+      "bn": "`ansible-playbook site.yml --limit 'web:!web3'` কী করে?"
+    },
+    "options": [
+      {
+        "en": "Runs only on web3",
+        "bn": "শুধু web3-তে চালায়"
+      },
+      {
+        "en": "Runs on the hosts in group web except web3",
+        "bn": "web group-এর host-এ চালায়, web3 বাদে"
+      },
+      {
+        "en": "Runs on every host in the inventory",
+        "bn": "inventory-র প্রতিটা host-এ চালায়"
+      },
+      {
+        "en": "Deletes web3 from the inventory",
+        "bn": "web3-কে inventory থেকে মোছে"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "In a host pattern, :! excludes. Use single quotes so the shell does not interpret the exclamation mark.",
+      "bn": "host pattern-এ :! বাদ দেয়। single quote দাও যাতে shell বিস্ময়চিহ্ন ব্যাখ্যা না করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "How do you preview which tasks would run for `--tags caddy`, without running anything?",
+      "bn": "কিছু না চালিয়ে `--tags caddy`-র জন্য কোন task চলত তার preview কীভাবে দেখবে?"
+    },
+    "options": [
+      {
+        "en": "Add --list-tasks",
+        "bn": "--list-tasks যোগ করো"
+      },
+      {
+        "en": "Add --force-handlers",
+        "bn": "--force-handlers যোগ করো"
+      },
+      {
+        "en": "Add --ask-vault-pass",
+        "bn": "--ask-vault-pass যোগ করো"
+      },
+      {
+        "en": "Add --step and press n",
+        "bn": "--step যোগ করো আর n চাপো"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "ansible-playbook site.yml --tags caddy --list-tasks lists the matching tasks and runs nothing.",
+      "bn": "ansible-playbook site.yml --tags caddy --list-tasks মিলে যাওয়া task তালিকাভুক্ত করে, কিছু চালায় না।"
+    }
+  },
+  {
+    "q": {
+      "en": "`serial: 10` and `max_fail_percentage: 30` are set. When does the play abort?",
+      "bn": "`serial: 10` ও `max_fail_percentage: 30` সেট করা। play কখন থামে?"
+    },
+    "options": [
+      {
+        "en": "As soon as one host fails",
+        "bn": "একটা host ব্যর্থ হলেই"
+      },
+      {
+        "en": "Only if all ten hosts in a batch fail",
+        "bn": "শুধু যদি একটা batch-এর দশটা host-ই ব্যর্থ হয়"
+      },
+      {
+        "en": "Never; max_fail_percentage is ignored with serial",
+        "bn": "কখনো না; serial-এর সাথে max_fail_percentage উপেক্ষিত"
+      },
+      {
+        "en": "When more than three hosts in a batch fail",
+        "bn": "যখন একটা batch-এ তিনটার বেশি host ব্যর্থ হয়"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "The percentage must be exceeded, not equalled, and it is applied per batch when serial is used.",
+      "bn": "শতাংশ ছাড়িয়ে যেতে হবে, শুধু সমান হলে নয়, আর serial থাকলে এটা প্রতি batch-এ প্রযোজ্য।"
+    }
+  },
+  {
+    "q": {
+      "en": "A block's `rescue` section recovers from a failure. What happens in the recap?",
+      "bn": "একটা block-এর `rescue` অংশ ব্যর্থতা সামলায়। recap-এ কী হয়?"
+    },
+    "options": [
+      {
+        "en": "The play continues, but Ansible still reports the failure in the statistics",
+        "bn": "play চলতে থাকে, কিন্তু Ansible এখনো পরিসংখ্যানে ব্যর্থতা জানায়"
+      },
+      {
+        "en": "The failure disappears from the statistics",
+        "bn": "পরিসংখ্যান থেকে ব্যর্থতা মুছে যায়"
+      },
+      {
+        "en": "The whole play always stops",
+        "bn": "পুরো play সবসময় থামে"
+      },
+      {
+        "en": "The task is retried forever",
+        "bn": "task অনন্তকাল আবার চেষ্টা হয়"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A rescued failure does not trigger max_fail_percentage or any_errors_fatal, but it is still counted in the statistics.",
+      "bn": "rescue করা ব্যর্থতা max_fail_percentage বা any_errors_fatal চালু করে না, কিন্তু পরিসংখ্যানে তবু গোনা হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "ansible-lint reports `no-changed-when` for a command task. What does that mean and what is the fix?",
+      "bn": "ansible-lint একটা command task-এ `no-changed-when` জানায়। এর মানে কী আর সমাধান কী?"
+    },
+    "options": [
+      {
+        "en": "The task has no handler; add notify",
+        "bn": "task-এর handler নেই; notify যোগ করো"
+      },
+      {
+        "en": "The task is too slow; add async",
+        "bn": "task খুব ধীর; async যোগ করো"
+      },
+      {
+        "en": "The task always reports changed; add changed_when (for example false for a read-only command)",
+        "bn": "task সবসময় changed জানায়; changed_when যোগ করো (শুধু-পড়া command-এর জন্য যেমন false)"
+      },
+      {
+        "en": "The task needs become; add become: true",
+        "bn": "task-এর become লাগে; become: true যোগ করো"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "The rule's message is: Commands should not change things if nothing needs doing. It is the idempotency lesson of Chapters 3 and 5.",
+      "bn": "rule-এর বার্তা: Commands should not change things if nothing needs doing। এটা Chapter 3 ও 5-এর idempotency-র শিক্ষা।"
+    }
+  }
+]

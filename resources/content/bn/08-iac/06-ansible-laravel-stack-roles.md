@@ -356,4 +356,4 @@ Role গুলো তালিকার ক্রমে চলে, আর Caddy 
 
 ---
 
-**পরের chapter:** Chapter 7 — নিরাপদে Ansible চালানো: tag, limit, lint ও CI *(শীঘ্রই আসছে)*
+**পরের chapter:** [Chapter 7 — নিরাপদে Ansible চালানো: tag, limit, lint ও CI](07-ansible-safety-testing-and-ci.md)
