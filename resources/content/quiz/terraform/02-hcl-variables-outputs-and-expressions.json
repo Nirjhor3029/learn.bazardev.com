@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "A variable is set by `TF_VAR_port=9090`, by `terraform.tfvars` (8080) and by `-var=\"port=7070\"`. Which value does Terraform use?",
+      "bn": "একটা variable `TF_VAR_port=9090` দিয়ে, `terraform.tfvars` (8080) দিয়ে, আর `-var=\"port=7070\"` দিয়ে সেট হলো। Terraform কোন মান ব্যবহার করে?"
+    },
+    "options": [
+      {
+        "en": "9090, because environment variables win",
+        "bn": "9090, কারণ environment variable জেতে"
+      },
+      {
+        "en": "8080, because the file is read first",
+        "bn": "8080, কারণ file আগে পড়া হয়"
+      },
+      {
+        "en": "7070, because the command line has the highest precedence",
+        "bn": "7070, কারণ command line-এর অগ্রাধিকার সর্বোচ্চ"
+      },
+      {
+        "en": "It reports an error because three values conflict",
+        "bn": "তিনটা মানে সংঘাত বলে এটা error দেয়"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Order, highest first: -var/-var-file, *.auto.tfvars, terraform.tfvars.json, terraform.tfvars, TF_VAR_ environment variables, default.",
+      "bn": "ক্রম, সর্বোচ্চ আগে: -var/-var-file, *.auto.tfvars, terraform.tfvars.json, terraform.tfvars, TF_VAR_ environment variable, default।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `sensitive = true` on a variable do?",
+      "bn": "একটা variable-এ `sensitive = true` কী করে?"
+    },
+    "options": [
+      {
+        "en": "It hides the value in CLI output, but Terraform still stores it in state",
+        "bn": "CLI output-এ মান লুকায়, কিন্তু Terraform তা এখনো state-এ রাখে"
+      },
+      {
+        "en": "It removes the value from the state file",
+        "bn": "state file থেকে মান সরিয়ে দেয়"
+      },
+      {
+        "en": "It encrypts the value with a key",
+        "bn": "একটা key দিয়ে মান encrypt করে"
+      },
+      {
+        "en": "It makes the variable impossible to override",
+        "bn": "variable ওভাররাইড করা অসম্ভব করে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The docs say Terraform still stores sensitive values in state, so state must never be committed.",
+      "bn": "Docs বলে Terraform এখনো sensitive মান state-এ রাখে, তাই state কখনো commit করা চলবে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the job of a `validation` block?",
+      "bn": "`validation` block-এর কাজ কী?"
+    },
+    "options": [
+      {
+        "en": "It formats the file",
+        "bn": "file format করে"
+      },
+      {
+        "en": "It downloads the provider",
+        "bn": "provider নামায়"
+      },
+      {
+        "en": "It deletes invalid resources",
+        "bn": "অবৈধ resource মুছে দেয়"
+      },
+      {
+        "en": "It stops Terraform with your error_message when a value breaks your rule",
+        "bn": "কোনো মান তোমার নিয়ম ভাঙলে তোমার error_message দিয়ে Terraform থামায়"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "A false condition stops Terraform before a plan is made and shows the message you wrote.",
+      "bn": "condition মিথ্যা হলে plan বানানোর আগেই Terraform থামে আর তোমার লেখা বার্তা দেখায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which expression returns 80 when `var.environment` is \"prod\" and 8000 otherwise?",
+      "bn": "`var.environment` \"prod\" হলে 80, নইলে 8000 ফেরত দেয় কোন expression?"
+    },
+    "options": [
+      {
+        "en": "var.environment == \"prod\" ? 80 : 8000",
+        "bn": "var.environment == \"prod\" ? 80 : 8000"
+      },
+      {
+        "en": "if var.environment then 80 else 8000",
+        "bn": "if var.environment then 80 else 8000"
+      },
+      {
+        "en": "[for e in var.environment : 80]",
+        "bn": "[for e in var.environment : 80]"
+      },
+      {
+        "en": "join(\"prod\", [80, 8000])",
+        "bn": "join(\"prod\", [80, 8000])"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The conditional expression is condition ? true_val : false_val, and both results must be the same type.",
+      "bn": "Conditional expression হলো condition ? true_val : false_val, আর দুটো ফলের type এক হতে হবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "You are unsure what an expression returns. What is the safe way to try it?",
+      "bn": "একটা expression কী ফেরত দেয় নিশ্চিত নও। চেষ্টা করার নিরাপদ উপায় কী?"
+    },
+    "options": [
+      {
+        "en": "Run terraform apply and read the result",
+        "bn": "terraform apply চালিয়ে ফল পড়ো"
+      },
+      {
+        "en": "Run terraform destroy first",
+        "bn": "আগে terraform destroy চালাও"
+      },
+      {
+        "en": "Test it in terraform console, which changes no infrastructure",
+        "bn": "terraform console-এ পরীক্ষা করো, যা কোনো infrastructure বদলায় না"
+      },
+      {
+        "en": "Put it in an output and commit the state file",
+        "bn": "একটা output-এ রাখো আর state file commit করো"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "terraform console evaluates expressions and functions interactively, and can read the current workspace's state.",
+      "bn": "terraform console expression ও function interactive ভাবে মূল্যায়ন করে, আর বর্তমান workspace-এর state পড়তে পারে।"
+    }
+  }
+]

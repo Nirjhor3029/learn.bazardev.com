@@ -268,4 +268,4 @@ Create, destroy, জায়গায় update, আর replace (destroy কর
 
 ---
 
-**পরের chapter:** Chapter 2 — HCL: variable, output ও expression *(শীঘ্রই আসছে)*
+**পরের chapter:** [Chapter 2 — HCL: variable, output ও expression](02-hcl-variables-outputs-and-expressions.md)
