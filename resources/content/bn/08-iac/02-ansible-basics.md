@@ -1,6 +1,6 @@
 # Chapter 2 — Ansible-এর গোড়ার কথা: Inventory আর Ad-hoc Command
 
-> **Course:** Infrastructure as Code (Terraform & Ansible) · **Chapter:** 2 of 8
+> **Course:** Infrastructure as Code & Ansible · **Chapter:** 2 of 8
 > 🇬🇧 **English পড়তে চান?** [English এ পড়ুন →](https://learn.bazardev.com/iac/02-ansible-basics)
 
 Chapter 1 তোমাকে ধারণাটা দিয়েছে। এবার প্রথম tool-এর সাথে পরিচয়। এই chapter-এ তুমি Ansible-কে বলবে **কোন machine-গুলো** manage করতে হবে (*inventory*), আর সব machine-এ একসাথে **এক-ঝটকার command** চালাবে (*ad-hoc command*)। শেষে "আমার পাঁচটা server-এর সবগুলোর disk কি ভরে গেছে?" এই প্রশ্নের উত্তর এক লাইনে পাবে।

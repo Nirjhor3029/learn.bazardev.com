@@ -1,6 +1,6 @@
 # Chapter 4 — Ansible Role, Template ও secret-এর জন্য Vault
 
-> **Course:** Infrastructure as Code (Terraform & Ansible) · **Chapter:** 4 of 8
+> **Course:** Infrastructure as Code & Ansible · **Chapter:** 4 of 8
 > 🇬🇧 **English পড়তে চান?** [English এ পড়ুন →](https://learn.bazardev.com/iac/04-ansible-roles-templates-and-vault)
 
 তোমার Chapter 3-এর playbook কাজ করেছে, কিন্তু আসল project বড় হয়। একটা লম্বা file পড়া কঠিন হয়ে যায়। একই config server ভেদে একটু আলাদা হয়। আর দেরিতে হোক বা আগে, setup-এ একটা **password** লাগে, যা কখনো Git-এ সাদা text-এ থাকা চলবে না। এই chapter ওই তিন সমস্যার তিনটা tool দেয়:
@@ -396,4 +396,4 @@ Rendered অস্থায়ী file-এর (`%s` হিসেবে দেও
 
 ---
 
-**পরের chapter:** Chapter 5 — Terraform-এর গোড়ার কথা: provider, resource, plan ও apply *(শীঘ্রই আসছে)*
+**পরের chapter:** Chapter 5 — Ansible variable, fact, condition ও register *(শীঘ্রই আসছে)*

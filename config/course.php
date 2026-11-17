@@ -120,8 +120,8 @@ return [
             ],
         ],
         'iac' => [
-            'title' => 'Infra as Code (Terraform/Ansible)',
-            'tagline' => 'Writing server setup as code.',
+            'title' => 'Infra as Code & Ansible',
+            'tagline' => 'Writing server setup as code, and configuring servers with Ansible.',
             'folder' => '08-iac',
             'status' => 'available',
             'chapters' => [
@@ -129,11 +129,12 @@ return [
                 '02-ansible-basics' => ['title' => 'Ansible basics: inventory and ad-hoc commands', 'status' => 'available'],
                 '03-ansible-playbooks' => ['title' => 'Ansible playbooks, modules, handlers, and idempotency', 'status' => 'available'],
                 '04-ansible-roles-templates-and-vault' => ['title' => 'Ansible roles, templates, and Vault for secrets', 'status' => 'available'],
-                '05-terraform-basics' => ['title' => 'Terraform basics: providers, resources, plan and apply', 'status' => 'coming_soon'],
-                '06-terraform-state-variables-and-modules' => ['title' => 'Terraform state, variables, outputs, and modules', 'status' => 'coming_soon'],
-                '07-terraform-and-ansible-together' => ['title' => 'Using Terraform and Ansible together', 'status' => 'coming_soon'],
-                '08-real-project-a-laravel-server-as-code' => ['title' => 'Real project: a Laravel server, built from code', 'status' => 'coming_soon'],
+                '05-ansible-variables-facts-and-conditions' => ['title' => 'Ansible variables, facts, conditions, and register', 'status' => 'coming_soon'],
+                '06-ansible-laravel-stack-roles' => ['title' => 'Ansible roles for a Laravel stack: PHP, Caddy, MySQL', 'status' => 'coming_soon'],
+                '07-ansible-safety-testing-and-ci' => ['title' => 'Running Ansible safely: tags, limits, lint, and CI', 'status' => 'coming_soon'],
+                '08-real-project-a-laravel-server-with-ansible' => ['title' => 'Real project: a Laravel server, built with Ansible', 'status' => 'coming_soon'],
             ],
         ],
+        'terraform' => ['title' => 'Terraform', 'tagline' => 'Building cloud infrastructure from code.', 'folder' => '09-terraform', 'status' => 'coming_soon', 'chapters' => []],
     ],
 ];

@@ -1,6 +1,6 @@
 # Chapter 3 — Ansible Playbook: Module, Handler ও Idempotency
 
-> **Course:** Infrastructure as Code (Terraform & Ansible) · **Chapter:** 3 of 8
+> **Course:** Infrastructure as Code & Ansible · **Chapter:** 3 of 8
 > 🇬🇧 **English পড়তে চান?** [English এ পড়ুন →](https://learn.bazardev.com/iac/03-ansible-playbooks)
 
 Chapter 2-এ তুমি এক লাইনের **ad-hoc** command চালিয়েছ। সেগুলো দ্রুত, কিন্তু কিছুই সংরক্ষিত হয় না, তাই আবার চালানো, review করা বা Git-এ রাখা যায় না। **Playbook** এটা ঠিক করে। এটা একটা YAML file, যাতে তুমি যা চাও তা ক্রমে লেখা থাকে, আর Ansible machine-গুলোকে তার সাথে মেলায়। এই file-ই শেষ পর্যন্ত তোমাকে "ওই server-টা আবার বানাও" বলতে দেয় আর সত্যিই তা করতে দেয়।

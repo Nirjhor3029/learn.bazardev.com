@@ -1,6 +1,6 @@
 # Chapter 1 — কেন Infrastructure as Code? Terraform আর Ansible এক ছবিতে
 
-> **Course:** Infrastructure as Code (Terraform & Ansible) · **Chapter:** 1 of 8
+> **Course:** Infrastructure as Code & Ansible · **Chapter:** 1 of 8
 > 🇬🇧 **English পড়তে চান?** [English এ পড়ুন →](https://learn.bazardev.com/iac/01-why-infrastructure-as-code)
 
 Cloud course-এ তুমি web console-এ click করে একটা server বানিয়েছিলে, তারপর SSH দিয়ে ঢুকে command টাইপ করতে করতে app চালু করেছিলে। কাজ হয়েছিল। এবার ভাবো, আজ রাতে server-টা মরে গেল, অথবা তোমার boss বললেন "শুক্রবারের মধ্যে ওটার মতো হুবহু আরও তিনটা চাই"। তুমি কি ঠিক **একই রকম** আবার বানাতে পারবে? স্মৃতি থেকে? এই course-এর উত্তর: setup-টাকে **code** হিসেবে লিখে রাখো, যাতে একটা tool সেটা দেখে বারবার, প্রতিবার একইভাবে বানিয়ে দেয়।
@@ -61,7 +61,7 @@ Ansible documentation বলে: যে system আগে থেকেই বর�
 
 ## ৬. দুটো tool, দুটো কাজ
 
-এই course দুটো tool শেখায়। এরা **প্রতিদ্বন্দ্বী নয়**। এদের কাজ আলাদা, আর আসল project-এ প্রায়ই দুটোই ব্যবহার হয়।
+তুমি দুটো tool-এর সাথে পরিচিত হবে। এই course **Ansible** ঠিকমতো শেখায়; **Terraform**-এর এই site-এ নিজের আলাদা course আছে। এরা **প্রতিদ্বন্দ্বী নয়**। এদের কাজ আলাদা, আর আসল project-এ প্রায়ই দুটোই ব্যবহার হয়।
 
 | | **Terraform** (আর OpenTofu) | **Ansible** |
 |---|---|---|
@@ -107,13 +107,13 @@ resource "aws_instance" "web" {
 
 Ansible অংশটা জোরে পড়ো: "`web` নামের host-গুলোতে, administrator হিসেবে, নিশ্চিত করো `git` package **present** আছে।" `present` শব্দটাই declarative ধারণা এক শব্দে: তুমি "install করো" বলছ না; বলছ কী সত্যি হতে হবে। Git আগে থেকে থাকলে কিছুই হয় না।
 
-Chapter 2-4-এ Ansible ঠিকমতো শেখানো হবে, আর Chapter 5-6-এ Terraform।
+Chapter 2-4-এ Ansible ঠিকমতো শেখানো হবে। Terraform শেখানো হবে তার নিজের course-এ, যা শীঘ্রই আসছে।
 
 ## ৮. IaC যা ঠিক করে *না*
 
 - **এটা জাদু নয়।** Code ভুল হতে পারে। একটা খারাপ rule দশটা server-এ লাগালে দশটা server আরও দ্রুত ভাঙে। তাই *review* আর *plan/dry-run ধাপ* এত জরুরি, আর তুমি দুটোই ব্যবহার করবে।
 - **শৃঙ্খলা লাগে।** মানুষ যদি তবু হাতে server বদলায়, code আর বাস্তব আলাদা হয়ে যায়। নিয়ম: **code বদলাও, server নয়।**
-- **Secret-এ সাবধান।** Commit করা code-এ কখনো password বা key রেখো না। Chapter 4 Ansible Vault দেখায়, আর Chapter 6 দেখায় Terraform code ও state থেকে secret দূরে রাখা।
+- **Secret-এ সাবধান।** Commit করা code-এ কখনো password বা key রেখো না। Chapter 4 Ansible Vault দেখায়, আর Terraform course দেখায় Terraform code ও state থেকে secret দূরে রাখা।
 - **এটা আরেকটা শেখার জিনিস।** একটা ছোট server যা কখনো বদলায় না তার জন্য লিখে রাখা checklist-ই যথেষ্ট হতে পারে। IaC লাভজনক হয় যখনই **দ্বিতীয়** কপি লাগে, বা **পুনরাবৃত্তিযোগ্য** rebuild লাগে।
 
 ## ৯. তোমার roadmap
@@ -123,10 +123,12 @@ Chapter 2-4-এ Ansible ঠিকমতো শেখানো হবে, আর 
 | 2 | Ansible-এর গোড়ার কথা: inventory আর ad-hoc command |
 | 3 | Ansible playbook, module, handler, idempotency |
 | 4 | Ansible role, template, আর secret-এর জন্য Vault |
-| 5 | Terraform-এর গোড়ার কথা: provider, resource, `plan` ও `apply` |
-| 6 | Terraform state, variable, output, module |
-| 7 | Terraform আর Ansible একসাথে ব্যবহার |
-| 8 | Real project: code থেকে বানানো একটা Laravel server |
+| 5 | Ansible variable, fact, condition ও `register` |
+| 6 | Laravel stack-এর জন্য Ansible role: PHP, Caddy, MySQL |
+| 7 | নিরাপদে Ansible চালানো: tag, limit, lint ও CI |
+| 8 | Real project: Ansible দিয়ে বানানো একটা Laravel server |
+
+Terraform-এর নিজের আলাদা course আছে, **Terraform**, যা শীঘ্রই আসছে। এতে provider, `plan` ও `apply`, state, module আছে, আর শেষ chapter-এ Terraform দিয়ে server বানিয়ে Ansible দিয়ে তা configure করা হয়।
 
 ## ১০. নিজে যাচাই করো
 
