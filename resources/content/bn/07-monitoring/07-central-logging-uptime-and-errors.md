@@ -358,4 +358,4 @@ Grafana Alloy। Promtail ২ মার্চ, ২০২৬-এ end of life হ�
 
 ---
 
-**পরের chapter:** Chapter 8 — Real project: একটা Laravel app monitor করা *(শীঘ্রই আসছে)*
+**পরের chapter:** [Chapter 8 — Real project: একটা Laravel app monitor করা](08-real-project-monitoring-a-laravel-app.md)

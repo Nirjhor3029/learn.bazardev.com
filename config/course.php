@@ -119,6 +119,21 @@ return [
                 '08-real-project-monitoring-a-laravel-app' => ['title' => 'Real project: monitoring a Laravel app', 'status' => 'available'],
             ],
         ],
-        'iac' => ['title' => 'Infra as Code (Terraform/Ansible)', 'tagline' => 'Writing server setup as code.', 'folder' => '08-iac', 'status' => 'coming_soon', 'chapters' => []],
+        'iac' => [
+            'title' => 'Infra as Code (Terraform/Ansible)',
+            'tagline' => 'Writing server setup as code.',
+            'folder' => '08-iac',
+            'status' => 'available',
+            'chapters' => [
+                '01-why-infrastructure-as-code' => ['title' => 'Why Infrastructure as Code? Terraform and Ansible in one picture', 'status' => 'available'],
+                '02-ansible-basics' => ['title' => 'Ansible basics: inventory and ad-hoc commands', 'status' => 'coming_soon'],
+                '03-ansible-playbooks' => ['title' => 'Ansible playbooks, modules, handlers, and idempotency', 'status' => 'coming_soon'],
+                '04-ansible-roles-templates-and-vault' => ['title' => 'Ansible roles, templates, and Vault for secrets', 'status' => 'coming_soon'],
+                '05-terraform-basics' => ['title' => 'Terraform basics: providers, resources, plan and apply', 'status' => 'coming_soon'],
+                '06-terraform-state-variables-and-modules' => ['title' => 'Terraform state, variables, outputs, and modules', 'status' => 'coming_soon'],
+                '07-terraform-and-ansible-together' => ['title' => 'Using Terraform and Ansible together', 'status' => 'coming_soon'],
+                '08-real-project-a-laravel-server-as-code' => ['title' => 'Real project: a Laravel server, built from code', 'status' => 'coming_soon'],
+            ],
+        ],
     ],
 ];

@@ -344,4 +344,4 @@ Password, API key/token, পুরো card নম্বর আর একবা�
 
 ---
 
-**পরের chapter:** Chapter 4 — Metric আর Prometheus *(শীঘ্রই আসছে)*
+**পরের chapter:** [Chapter 4 — Metric আর Prometheus](04-metrics-and-prometheus.md)

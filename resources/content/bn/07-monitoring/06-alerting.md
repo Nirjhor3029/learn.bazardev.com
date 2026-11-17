@@ -398,4 +398,4 @@ Grouping একই ধরনের alert মিলিয়ে একটা noti
 
 ---
 
-**পরের chapter:** Chapter 7 — Central logging, uptime check ও error tracking *(শীঘ্রই আসছে)*
+**পরের chapter:** [Chapter 7 — Central logging, uptime check ও error tracking](07-central-logging-uptime-and-errors.md)

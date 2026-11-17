@@ -318,4 +318,4 @@ Instant vector হলো প্রতিটা series-এর সর্বশে�
 
 ---
 
-**পরের chapter:** Chapter 5 — Grafana dashboard *(শীঘ্রই আসছে)*
+**পরের chapter:** [Chapter 5 — Grafana dashboard](05-grafana-dashboards.md)

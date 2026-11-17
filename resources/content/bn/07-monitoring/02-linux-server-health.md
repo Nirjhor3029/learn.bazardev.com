@@ -327,4 +327,4 @@ Kernel-এর OOM killer হয়তো মেরেছে। `journalctl -k` �
 
 ---
 
-**Next:** Chapter 3 — Application log: level, গঠন আর rotation *(coming soon)*
+**পরের chapter:** [Chapter 3 — Application log: level, গঠন আর rotation](03-application-logs.md)

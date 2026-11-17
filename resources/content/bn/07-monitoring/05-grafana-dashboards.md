@@ -255,4 +255,4 @@ Grafana এমন জানালা বেছে নেয় যা scrape int
 
 ---
 
-**পরের chapter:** Chapter 6 — Alerting *(শীঘ্রই আসছে)*
+**পরের chapter:** [Chapter 6 — Alerting](06-alerting.md)

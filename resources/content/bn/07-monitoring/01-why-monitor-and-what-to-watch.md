@@ -175,4 +175,4 @@ Black-box বাইরে থেকে user-এর মতো পরীক্ষ�
 
 ---
 
-**Next:** Chapter 2 — Linux server-এর স্বাস্থ্য: CPU, memory, disk আর log *(coming soon)*
+**পরের chapter:** [Chapter 2 — Linux server-এর স্বাস্থ্য: CPU, memory, disk আর log](02-linux-server-health.md)

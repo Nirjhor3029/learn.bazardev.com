@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What is the main problem with a \"snowflake\" server?",
+      "bn": "\"Snowflake\" server-এর প্রধান সমস্যা কী?"
+    },
+    "options": [
+      {
+        "en": "It always runs out of disk space",
+        "bn": "এর disk সবসময় ভরে যায়"
+      },
+      {
+        "en": "It can only be reached over SSH",
+        "bn": "এতে শুধু SSH দিয়ে ঢোকা যায়"
+      },
+      {
+        "en": "Nobody knows exactly what is on it, so it cannot be reliably copied or rebuilt",
+        "bn": "ওতে ঠিক কী আছে কেউ জানে না, তাই নির্ভরযোগ্যভাবে নকল বা আবার বানানো যায় না"
+      },
+      {
+        "en": "It costs more than a normal server",
+        "bn": "এটা সাধারণ server-এর চেয়ে বেশি খরচ করায়"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "A hand-built, hand-changed server holds its setup only in itself and in memory, so copies drift apart.",
+      "bn": "হাতে বানানো ও হাতে বদলানো server-এর setup শুধু তার ভেতরে আর স্মৃতিতে থাকে, তাই কপিগুলো আলাদা হয়ে যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which statement describes a declarative approach?",
+      "bn": "কোন বাক্যটা declarative পদ্ধতি বর্ণনা করে?"
+    },
+    "options": [
+      {
+        "en": "You describe the end state you want, and the tool works out the steps",
+        "bn": "তুমি চাওয়া শেষ অবস্থা বর্ণনা করো, আর tool ধাপগুলো বের করে"
+      },
+      {
+        "en": "You list every command to run, in exact order",
+        "bn": "তুমি চালানোর প্রতিটা command ঠিক ক্রমে লেখো"
+      },
+      {
+        "en": "You click through a web console",
+        "bn": "তুমি web console-এ click করে যাও"
+      },
+      {
+        "en": "You copy files to the server by hand",
+        "bn": "তুমি হাতে file server-এ কপি করো"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Declarative means what, not how. The Terraform docs describe configurations as describing the end state.",
+      "bn": "Declarative মানে কী, কীভাবে নয়। Terraform docs configuration-কে শেষ অবস্থার বর্ণনা বলে।"
+    }
+  },
+  {
+    "q": {
+      "en": "A playbook that is idempotent is run twice on a server that is already correct. What happens the second time?",
+      "bn": "একটা idempotent playbook ইতিমধ্যে ঠিক থাকা server-এ দুইবার চালানো হলো। দ্বিতীয়বার কী হয়?"
+    },
+    "options": [
+      {
+        "en": "Everything is installed again",
+        "bn": "সবকিছু আবার install হয়"
+      },
+      {
+        "en": "Nothing changes",
+        "bn": "কিছুই বদলায় না"
+      },
+      {
+        "en": "The server is rebuilt from scratch",
+        "bn": "server নতুন করে বানানো হয়"
+      },
+      {
+        "en": "The playbook always fails with an error",
+        "bn": "playbook সবসময় error দিয়ে ব্যর্থ হয়"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Idempotent means once or many times gives the same result, so only differences are fixed.",
+      "bn": "Idempotent মানে একবার বা বহুবার একই ফল, তাই শুধু পার্থক্য ঠিক হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which pairing of tool and main job is correct?",
+      "bn": "কোন tool আর প্রধান কাজের জোড়া ঠিক?"
+    },
+    "options": [
+      {
+        "en": "Terraform creates infrastructure; Ansible configures what runs on a machine",
+        "bn": "Terraform infrastructure বানায়; Ansible machine-এর ভেতরে যা চলে তা configure করে"
+      },
+      {
+        "en": "Terraform configures packages; Ansible creates DNS records",
+        "bn": "Terraform package configure করে; Ansible DNS record বানায়"
+      },
+      {
+        "en": "Both only monitor servers",
+        "bn": "দুটোই শুধু server monitor করে"
+      },
+      {
+        "en": "Terraform replaces Git; Ansible replaces SSH",
+        "bn": "Terraform Git-এর বদলে; Ansible SSH-এর বদলে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Terraform provisions (the house), Ansible configures (the furniture). The split is common, not strict.",
+      "bn": "Terraform provision করে (বাড়ি), Ansible configure করে (আসবাব)। ভাগটা সাধারণ, কড়া নয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does it mean that Ansible is \"agentless\"?",
+      "bn": "Ansible \"agentless\" হওয়ার মানে কী?"
+    },
+    "options": [
+      {
+        "en": "It needs no internet connection at all",
+        "bn": "এর কোনো internet সংযোগই লাগে না"
+      },
+      {
+        "en": "It runs only on the cloud provider's own servers",
+        "bn": "এটা শুধু cloud provider-এর নিজের server-এ চলে"
+      },
+      {
+        "en": "It does not need any configuration files",
+        "bn": "এর কোনো configuration file লাগে না"
+      },
+      {
+        "en": "Nothing extra is installed on the managed machines; it connects over SSH",
+        "bn": "managed machine-এ বাড়তি কিছু install করতে হয় না; সে SSH দিয়ে সংযোগ করে"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "The Ansible docs say it uses SSH with existing credentials, with no extra software on managed machines.",
+      "bn": "Ansible docs বলে সে বিদ্যমান credential দিয়ে SSH ব্যবহার করে, managed machine-এ বাড়তি software ছাড়াই।"
+    }
+  }
+]
