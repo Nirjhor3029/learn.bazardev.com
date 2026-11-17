@@ -309,4 +309,4 @@ ansible-playbook site.yml                                      # rung 7: second 
 
 ---
 
-**পরের chapter:** Chapter 8 — Real project: Ansible দিয়ে বানানো একটা Laravel server *(শীঘ্রই আসছে)*
+**পরের chapter:** [Chapter 8 — Real project: Ansible দিয়ে বানানো একটা Laravel server](08-real-project-a-laravel-server-with-ansible.md)

@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "Why does the playbook deploy a Git tag such as v1.0.0 instead of a branch?",
+      "bn": "playbook কেন branch-এর বদলে v1.0.0-এর মতো একটা Git tag deploy করে?"
+    },
+    "options": [
+      {
+        "en": "A tag names one exact state of the code, so deploys are reproducible and a rollback is an older tag",
+        "bn": "একটা tag code-এর একটা ঠিক অবস্থা নাম দেয়, তাই deploy পুনরুৎপাদনযোগ্য আর rollback একটা পুরনো tag"
+      },
+      {
+        "en": "Branches cannot be cloned by Ansible",
+        "bn": "Ansible branch clone করতে পারে না"
+      },
+      {
+        "en": "Tags are faster to download",
+        "bn": "tag নামাতে দ্রুত"
+      },
+      {
+        "en": "Branches are encrypted",
+        "bn": "branch encrypted"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A branch moves; a tag does not. The git module's version accepts a branch, a tag or a commit.",
+      "bn": "branch সরে যায়; tag যায় না। git module-এর version একটা branch, tag বা commit নেয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why is the Composer install task guarded with `when: app_code.changed`?",
+      "bn": "Composer install task কেন `when: app_code.changed` দিয়ে পাহারা দেওয়া?"
+    },
+    "options": [
+      {
+        "en": "Because Composer cannot run twice",
+        "bn": "কারণ Composer দুইবার চলতে পারে না"
+      },
+      {
+        "en": "Because it only needs to run when new code arrived, which keeps the second run at changed=0",
+        "bn": "কারণ এটা শুধু নতুন code এলে চালাতে হয়, যা দ্বিতীয় run-কে changed=0-তে রাখে"
+      },
+      {
+        "en": "Because the register keyword requires it",
+        "bn": "কারণ register keyword এটা চায়"
+      },
+      {
+        "en": "Because Ansible always skips command tasks",
+        "bn": "কারণ Ansible সবসময় command task skip করে"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "register captures the git result; its changed attribute is true only when the code changed.",
+      "bn": "register git-এর ফল ধরে; তার changed attribute শুধু code বদলালে সত্য।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which two Laravel directories does the web server's user need to be able to write to?",
+      "bn": "web server-এর user-এর কোন দুটো Laravel directory-তে লিখতে পারা দরকার?"
+    },
+    "options": [
+      {
+        "en": "app and routes",
+        "bn": "app ও routes"
+      },
+      {
+        "en": "config and public",
+        "bn": "config ও public"
+      },
+      {
+        "en": "resources and tests",
+        "bn": "resources ও tests"
+      },
+      {
+        "en": "storage and bootstrap/cache",
+        "bn": "storage ও bootstrap/cache"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Laravel's deployment docs: it needs to write to bootstrap/cache and storage. The rest of the code can stay owned by the deploy user.",
+      "bn": "Laravel-এর deployment docs: bootstrap/cache ও storage-এ লিখতে হয়। বাকি code deploy user-এর মালিকানায় থাকতে পারে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `php artisan migrate --force` do, and what must you do before automating it?",
+      "bn": "`php artisan migrate --force` কী করে, আর automate করার আগে কী করতে হবে?"
+    },
+    "options": [
+      {
+        "en": "It runs migrations without the production confirmation prompt, so migrations must be reviewed first",
+        "bn": "এটা production নিশ্চিতকরণ prompt ছাড়া migration চালায়, তাই migration আগে review করতে হবে"
+      },
+      {
+        "en": "It rolls back the last migration",
+        "bn": "এটা শেষ migration rollback করে"
+      },
+      {
+        "en": "It deletes the database",
+        "bn": "এটা database মুছে ফেলে"
+      },
+      {
+        "en": "It only previews the migrations",
+        "bn": "এটা শুধু migration-এর preview দেখায়"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Some migration operations are destructive; --force skips the prompt that protects against them.",
+      "bn": "কিছু migration অপারেশন ধ্বংসাত্মক; --force সেগুলোর বিরুদ্ধে সুরক্ষা দেওয়া prompt বাদ দেয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "How do you deploy version v1.1.0 without touching PHP, MySQL or Caddy, and what does a code rollback NOT undo?",
+      "bn": "PHP, MySQL বা Caddy না ছুঁয়ে v1.1.0 কীভাবে deploy করবে, আর code rollback কী ফিরিয়ে নেয় না?"
+    },
+    "options": [
+      {
+        "en": "Run the whole playbook with --check; it undoes migrations too",
+        "bn": "পুরো playbook --check দিয়ে চালাও; এটা migration-ও ফেরায়"
+      },
+      {
+        "en": "--tags app -e app_version=v1.1.0; a rollback does not undo database migrations",
+        "bn": "--tags app -e app_version=v1.1.0; rollback database migration ফেরায় না"
+      },
+      {
+        "en": "--limit app; a rollback undoes everything",
+        "bn": "--limit app; rollback সবকিছু ফেরায়"
+      },
+      {
+        "en": "Edit the server by hand; nothing needs undoing",
+        "bn": "server হাতে edit করো; ফেরানোর কিছু নেই"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The tag limits the run to the app role and -e overrides the version. Review migrations before deploy and keep database backups.",
+      "bn": "tag run-কে app role-এ সীমিত করে আর -e version ওভাররাইড করে। deploy-এর আগে migration review করো আর database backup রাখো।"
+    }
+  }
+]

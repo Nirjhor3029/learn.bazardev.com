@@ -1,0 +1,834 @@
+[
+  {
+    "ref": "01-why-infrastructure-as-code",
+    "q": {
+      "en": "What is a \"snowflake\" server?",
+      "bn": "\"Snowflake\" server কী?"
+    },
+    "options": [
+      {
+        "en": "A server whose exact setup exists only in itself and cannot be reliably copied",
+        "bn": "এমন server যার ঠিক setup শুধু তার নিজের ভেতরে আছে আর নির্ভরযোগ্যভাবে নকল করা যায় না"
+      },
+      {
+        "en": "A server that is always offline",
+        "bn": "যে server সবসময় offline"
+      },
+      {
+        "en": "A server with no firewall",
+        "bn": "firewall ছাড়া server"
+      },
+      {
+        "en": "A server running only Linux",
+        "bn": "শুধু Linux চালানো server"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "01-why-infrastructure-as-code",
+    "q": {
+      "en": "Which description is declarative?",
+      "bn": "কোন বর্ণনা declarative?"
+    },
+    "options": [
+      {
+        "en": "\"Run apt install git, then edit this file\"",
+        "bn": "\"apt install git চালাও, তারপর এই file edit করো\""
+      },
+      {
+        "en": "\"Git is installed; the service is running\"",
+        "bn": "\"Git install করা আছে; service চলছে\""
+      },
+      {
+        "en": "\"Click through the web console\"",
+        "bn": "\"web console-এ click করে যাও\""
+      },
+      {
+        "en": "\"Copy the files by hand\"",
+        "bn": "\"file গুলো হাতে copy করো\""
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "01-why-infrastructure-as-code",
+    "q": {
+      "en": "What does \"idempotent\" mean?",
+      "bn": "\"Idempotent\" মানে কী?"
+    },
+    "options": [
+      {
+        "en": "It always changes something",
+        "bn": "এটা সবসময় কিছু বদলায়"
+      },
+      {
+        "en": "It can only run once",
+        "bn": "এটা শুধু একবার চলতে পারে"
+      },
+      {
+        "en": "Running it once or many times gives the same result",
+        "bn": "একবার বা বহুবার চালালে ফল একই"
+      },
+      {
+        "en": "It needs an internet connection",
+        "bn": "এর internet সংযোগ লাগে"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "01-why-infrastructure-as-code",
+    "q": {
+      "en": "Which sentence best splits the two tools?",
+      "bn": "কোন বাক্য দুটো tool-কে সবচেয়ে ভালোভাবে ভাগ করে?"
+    },
+    "options": [
+      {
+        "en": "Ansible makes the server exist; Terraform makes it useful",
+        "bn": "Ansible server-কে অস্তিত্ব দেয়; Terraform তাকে কাজের করে"
+      },
+      {
+        "en": "Both only monitor servers",
+        "bn": "দুটোই শুধু server monitor করে"
+      },
+      {
+        "en": "They cannot be used together",
+        "bn": "এদের একসাথে ব্যবহার করা যায় না"
+      },
+      {
+        "en": "Terraform makes the server exist; Ansible makes it useful",
+        "bn": "Terraform server-কে অস্তিত্ব দেয়; Ansible তাকে কাজের করে"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "02-ansible-basics",
+    "q": {
+      "en": "What is an inventory?",
+      "bn": "Inventory কী?"
+    },
+    "options": [
+      {
+        "en": "A list of Ansible modules",
+        "bn": "Ansible module-এর তালিকা"
+      },
+      {
+        "en": "A file listing the machines Ansible manages, usually grouped",
+        "bn": "Ansible যে machine manage করে তাদের তালিকার file, সাধারণত group করা"
+      },
+      {
+        "en": "A backup of the server",
+        "bn": "server-এর backup"
+      },
+      {
+        "en": "A log of past runs",
+        "bn": "আগের run-এর log"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "02-ansible-basics",
+    "q": {
+      "en": "What does `--become` do on an ad-hoc command?",
+      "bn": "একটা ad-hoc command-এ `--become` কী করে?"
+    },
+    "options": [
+      {
+        "en": "Switches to a new inventory",
+        "bn": "নতুন inventory-তে যায়"
+      },
+      {
+        "en": "Makes the command run twice",
+        "bn": "command দুইবার চালায়"
+      },
+      {
+        "en": "Escalates privileges on the remote machine, like sudo",
+        "bn": "remote machine-এ অধিকার বাড়ায়, sudo-র মতো"
+      },
+      {
+        "en": "Encrypts the output",
+        "bn": "output encrypt করে"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "02-ansible-basics",
+    "q": {
+      "en": "Why use `shell` instead of the default `command` module?",
+      "bn": "ডিফল্ট `command` module-এর বদলে কেন `shell` ব্যবহার করবে?"
+    },
+    "options": [
+      {
+        "en": "It is always faster",
+        "bn": "এটা সবসময় দ্রুত"
+      },
+      {
+        "en": "It is idempotent by default",
+        "bn": "এটা ডিফল্টে idempotent"
+      },
+      {
+        "en": "It needs no SSH",
+        "bn": "এর SSH লাগে না"
+      },
+      {
+        "en": "When you need pipes or redirects",
+        "bn": "যখন pipe বা redirect লাগে"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "02-ansible-basics",
+    "q": {
+      "en": "Which configuration source does Ansible check first?",
+      "bn": "Ansible কোন configuration উৎস আগে দেখে?"
+    },
+    "options": [
+      {
+        "en": "The ANSIBLE_CONFIG environment variable, if set",
+        "bn": "ANSIBLE_CONFIG environment variable, সেট থাকলে"
+      },
+      {
+        "en": "/etc/ansible/ansible.cfg",
+        "bn": "/etc/ansible/ansible.cfg"
+      },
+      {
+        "en": "~/.ansible.cfg",
+        "bn": "~/.ansible.cfg"
+      },
+      {
+        "en": "ansible.cfg in a random folder",
+        "bn": "যেকোনো folder-এর ansible.cfg"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "03-ansible-playbooks",
+    "q": {
+      "en": "On a correct playbook, what should the second PLAY RECAP show?",
+      "bn": "একটা সঠিক playbook-এ দ্বিতীয় PLAY RECAP কী দেখানো উচিত?"
+    },
+    "options": [
+      {
+        "en": "changed equal to the number of tasks",
+        "bn": "changed = task-এর সংখ্যার সমান"
+      },
+      {
+        "en": "failed=1",
+        "bn": "failed=1"
+      },
+      {
+        "en": "changed=0",
+        "bn": "changed=0"
+      },
+      {
+        "en": "unreachable=1",
+        "bn": "unreachable=1"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "03-ansible-playbooks",
+    "q": {
+      "en": "When does a handler run?",
+      "bn": "Handler কখন চলে?"
+    },
+    "options": [
+      {
+        "en": "After every task, always",
+        "bn": "প্রতিটা task-এর পরে, সবসময়"
+      },
+      {
+        "en": "Only on the first ever run",
+        "bn": "শুধু প্রথম run-এ"
+      },
+      {
+        "en": "Only with --check",
+        "bn": "শুধু --check দিয়ে"
+      },
+      {
+        "en": "Only if a notifying task reported changed, once, after the play's tasks",
+        "bn": "শুধু যদি notify করা task changed জানায়, একবার, play-এর task-এর পরে"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "03-ansible-playbooks",
+    "q": {
+      "en": "Why is `name: \"{{ packages }}\"` quoted?",
+      "bn": "`name: \"{{ packages }}\"` কেন quote করা?"
+    },
+    "options": [
+      {
+        "en": "A YAML value starting with {{ must be quoted",
+        "bn": "`{{` দিয়ে শুরু হওয়া YAML মান quote করতে হয়"
+      },
+      {
+        "en": "Quotes make it faster",
+        "bn": "quote দিলে দ্রুত হয়"
+      },
+      {
+        "en": "Quotes encrypt it",
+        "bn": "quote এটা encrypt করে"
+      },
+      {
+        "en": "Ansible ignores unquoted variables",
+        "bn": "quote ছাড়া variable Ansible উপেক্ষা করে"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "03-ansible-playbooks",
+    "q": {
+      "en": "How can a `command` task avoid always reporting changed?",
+      "bn": "একটা `command` task সবসময় changed জানানো কীভাবে এড়াবে?"
+    },
+    "options": [
+      {
+        "en": "Add -f 10",
+        "bn": "-f 10 দাও"
+      },
+      {
+        "en": "Use a real module, or add creates/removes",
+        "bn": "আসল module ব্যবহার করো, বা creates/removes দাও"
+      },
+      {
+        "en": "Move it to handlers",
+        "bn": "handlers-এ সরাও"
+      },
+      {
+        "en": "Add become: true",
+        "bn": "become: true দাও"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "04-ansible-roles-templates-and-vault",
+    "q": {
+      "en": "Where do a role's easy-to-override settings belong?",
+      "bn": "Role-এর সহজে ওভাররাইড করা যায় এমন setting কোথায় যায়?"
+    },
+    "options": [
+      {
+        "en": "vars/main.yml (highest precedence)",
+        "bn": "vars/main.yml (সর্বোচ্চ অগ্রাধিকার)"
+      },
+      {
+        "en": "meta/main.yml",
+        "bn": "meta/main.yml"
+      },
+      {
+        "en": "files/",
+        "bn": "files/"
+      },
+      {
+        "en": "defaults/main.yml (lowest precedence)",
+        "bn": "defaults/main.yml (সর্বনিম্ন অগ্রাধিকার)"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "04-ansible-roles-templates-and-vault",
+    "q": {
+      "en": "What is the difference between `copy` and `template`?",
+      "bn": "`copy` আর `template`-এর পার্থক্য কী?"
+    },
+    "options": [
+      {
+        "en": "template fills a Jinja2 file with variables before sending it",
+        "bn": "template পাঠানোর আগে একটা Jinja2 file variable দিয়ে ভরে"
+      },
+      {
+        "en": "copy encrypts the file",
+        "bn": "copy file encrypt করে"
+      },
+      {
+        "en": "template only works for Caddy",
+        "bn": "template শুধু Caddy-র জন্য কাজ করে"
+      },
+      {
+        "en": "There is no difference",
+        "bn": "কোনো পার্থক্য নেই"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "04-ansible-roles-templates-and-vault",
+    "q": {
+      "en": "Which rule applies to the vault password file?",
+      "bn": "Vault password file-এর কোন নিয়ম প্রযোজ্য?"
+    },
+    "options": [
+      {
+        "en": "Commit it beside secrets.yml",
+        "bn": "secrets.yml-এর পাশে commit করো"
+      },
+      {
+        "en": "Never add it to source control; keep permissions tight",
+        "bn": "কখনো source control-এ যোগ করো না; permission কড়া রাখো"
+      },
+      {
+        "en": "Name it .env",
+        "bn": "নাম .env রাখো"
+      },
+      {
+        "en": "Make it world-readable",
+        "bn": "সবার পড়ার মতো করো"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "04-ansible-roles-templates-and-vault",
+    "q": {
+      "en": "What is the limit of `no_log: true`?",
+      "bn": "`no_log: true`-এর সীমা কী?"
+    },
+    "options": [
+      {
+        "en": "It encrypts the state file",
+        "bn": "এটা state file encrypt করে"
+      },
+      {
+        "en": "It stops the task running",
+        "bn": "এটা task চলা থামায়"
+      },
+      {
+        "en": "It does not hide debug output",
+        "bn": "এটা debug output লুকায় না"
+      },
+      {
+        "en": "It only works on Windows",
+        "bn": "এটা শুধু Windows-এ কাজ করে"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "05-ansible-variables-facts-and-conditions",
+    "q": {
+      "en": "A value is 256M in group_vars and 512M in host_vars for the same host. Which applies?",
+      "bn": "একই host-এর জন্য একটা মান group_vars-এ 256M আর host_vars-এ 512M। কোনটা প্রযোজ্য?"
+    },
+    "options": [
+      {
+        "en": "512M, the host-specific value",
+        "bn": "512M, host-নির্দিষ্ট মান"
+      },
+      {
+        "en": "256M, the group value",
+        "bn": "256M, group-এর মান"
+      },
+      {
+        "en": "Both, as a list",
+        "bn": "দুটোই, একটা list হিসেবে"
+      },
+      {
+        "en": "Neither; it is an error",
+        "bn": "কোনোটাই নয়; error"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "05-ansible-variables-facts-and-conditions",
+    "q": {
+      "en": "Which `when` is correct?",
+      "bn": "কোন `when` সঠিক?"
+    },
+    "options": [
+      {
+        "en": "when: \"{{ ansible_facts['os_family'] }}\" == Debian",
+        "bn": "when: \"{{ ansible_facts['os_family'] }}\" == Debian"
+      },
+      {
+        "en": "when: ansible_facts['os_family'] == \"Debian\"",
+        "bn": "when: ansible_facts['os_family'] == \"Debian\""
+      },
+      {
+        "en": "when: ansible_facts['os_family'] = \"Debian\"",
+        "bn": "when: ansible_facts['os_family'] = \"Debian\""
+      },
+      {
+        "en": "when: if os_family is Debian",
+        "bn": "when: if os_family is Debian"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "05-ansible-variables-facts-and-conditions",
+    "q": {
+      "en": "A task only reads a Git version. What keeps the second run at changed=0?",
+      "bn": "একটা task শুধু Git version পড়ে। কী দ্বিতীয় run-কে changed=0-তে রাখে?"
+    },
+    "options": [
+      {
+        "en": "ignore_errors: true",
+        "bn": "ignore_errors: true"
+      },
+      {
+        "en": "gather_facts: false",
+        "bn": "gather_facts: false"
+      },
+      {
+        "en": "changed_when: false",
+        "bn": "changed_when: false"
+      },
+      {
+        "en": "failed_when: true",
+        "bn": "failed_when: true"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "05-ansible-variables-facts-and-conditions",
+    "q": {
+      "en": "Why avoid `ignore_errors: true` everywhere?",
+      "bn": "সবখানে `ignore_errors: true` কেন এড়াবে?"
+    },
+    "options": [
+      {
+        "en": "It makes tasks run twice",
+        "bn": "এটা task দুইবার চালায়"
+      },
+      {
+        "en": "It disables facts",
+        "bn": "এটা fact বন্ধ করে"
+      },
+      {
+        "en": "It encrypts the output",
+        "bn": "এটা output encrypt করে"
+      },
+      {
+        "en": "It hides real failures, and does not cover undefined variables or connection failures",
+        "bn": "এটা আসল ব্যর্থতা লুকায়, আর undefined variable বা connection ব্যর্থতা ঢাকে না"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "06-ansible-laravel-stack-roles",
+    "q": {
+      "en": "Why is the Laravel web root the `public` directory?",
+      "bn": "Laravel-এর web root কেন `public` directory?"
+    },
+    "options": [
+      {
+        "en": "Because public is faster",
+        "bn": "কারণ public দ্রুত"
+      },
+      {
+        "en": "Serving the project root would expose sensitive configuration files",
+        "bn": "project root পরিবেশন করলে সংবেদনশীল configuration file উন্মুক্ত হবে"
+      },
+      {
+        "en": "Because MySQL needs it",
+        "bn": "কারণ MySQL এটা চায়"
+      },
+      {
+        "en": "Because Caddy cannot read other folders",
+        "bn": "কারণ Caddy অন্য folder পড়তে পারে না"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "06-ansible-laravel-stack-roles",
+    "q": {
+      "en": "What does `php_fastcgi unix//run/php/php8.3-fpm.sock` do?",
+      "bn": "`php_fastcgi unix//run/php/php8.3-fpm.sock` কী করে?"
+    },
+    "options": [
+      {
+        "en": "Starts MySQL",
+        "bn": "MySQL চালু করে"
+      },
+      {
+        "en": "Installs PHP",
+        "bn": "PHP install করে"
+      },
+      {
+        "en": "Sends PHP requests to PHP-FPM through its socket",
+        "bn": "PHP অনুরোধ PHP-FPM-কে তার socket দিয়ে পাঠায়"
+      },
+      {
+        "en": "Creates the database",
+        "bn": "database বানায়"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "06-ansible-laravel-stack-roles",
+    "q": {
+      "en": "What do the ansible.mysql modules need on the managed server?",
+      "bn": "ansible.mysql module গুলোর managed server-এ কী লাগে?"
+    },
+    "options": [
+      {
+        "en": "A Docker daemon",
+        "bn": "একটা Docker daemon"
+      },
+      {
+        "en": "The Terraform CLI",
+        "bn": "Terraform CLI"
+      },
+      {
+        "en": "Caddy",
+        "bn": "Caddy"
+      },
+      {
+        "en": "The PyMySQL Python package",
+        "bn": "PyMySQL Python package"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "06-ansible-laravel-stack-roles",
+    "q": {
+      "en": "What does `priv: \"laravel.*:ALL\"` grant?",
+      "bn": "`priv: \"laravel.*:ALL\"` কী দেয়?"
+    },
+    "options": [
+      {
+        "en": "All privileges on the laravel database only",
+        "bn": "শুধু laravel database-এ সব অধিকার"
+      },
+      {
+        "en": "All privileges on every database",
+        "bn": "প্রতিটা database-এ সব অধিকার"
+      },
+      {
+        "en": "Read-only access",
+        "bn": "শুধু-পড়ার access"
+      },
+      {
+        "en": "Permission to create other users",
+        "bn": "অন্য user বানানোর অনুমতি"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "07-ansible-safety-testing-and-ci",
+    "q": {
+      "en": "What does `--limit 'web:!web3'` do?",
+      "bn": "`--limit 'web:!web3'` কী করে?"
+    },
+    "options": [
+      {
+        "en": "Runs only on web3",
+        "bn": "শুধু web3-তে চালায়"
+      },
+      {
+        "en": "Deletes web3",
+        "bn": "web3 মোছে"
+      },
+      {
+        "en": "Runs on group web except web3",
+        "bn": "web group-এ চালায়, web3 বাদে"
+      },
+      {
+        "en": "Runs on every host",
+        "bn": "প্রতিটা host-এ চালায়"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "07-ansible-safety-testing-and-ci",
+    "q": {
+      "en": "What does `serial: [1, 5, \"20%\"]` give you?",
+      "bn": "`serial: [1, 5, \"20%\"]` তোমাকে কী দেয়?"
+    },
+    "options": [
+      {
+        "en": "All hosts at once",
+        "bn": "সব host একসাথে"
+      },
+      {
+        "en": "Only one host ever",
+        "bn": "শুধু একটা host কখনো"
+      },
+      {
+        "en": "A random order",
+        "bn": "এলোমেলো ক্রম"
+      },
+      {
+        "en": "A canary rollout: one host, then five, then 20% batches",
+        "bn": "canary rollout: আগে একটা host, তারপর পাঁচটা, তারপর ২০% batch"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "07-ansible-safety-testing-and-ci",
+    "q": {
+      "en": "With `serial: 10` and `max_fail_percentage: 30`, when does the play abort?",
+      "bn": "`serial: 10` ও `max_fail_percentage: 30` থাকলে play কখন থামে?"
+    },
+    "options": [
+      {
+        "en": "When more than three hosts in a batch fail",
+        "bn": "যখন একটা batch-এ তিনটার বেশি host ব্যর্থ হয়"
+      },
+      {
+        "en": "When one host fails",
+        "bn": "যখন একটা host ব্যর্থ হয়"
+      },
+      {
+        "en": "Never",
+        "bn": "কখনো না"
+      },
+      {
+        "en": "Only when all ten fail",
+        "bn": "শুধু যখন দশটাই ব্যর্থ হয়"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "07-ansible-safety-testing-and-ci",
+    "q": {
+      "en": "Why pin the ansible-lint GitHub Action instead of using @main?",
+      "bn": "@main-এর বদলে ansible-lint GitHub Action কেন pin করবে?"
+    },
+    "options": [
+      {
+        "en": "Pinned actions are faster",
+        "bn": "pin করা action দ্রুত"
+      },
+      {
+        "en": "@main follows a moving branch, so results can change without your code changing",
+        "bn": "@main একটা চলমান branch অনুসরণ করে, তাই তোমার code না বদলেও ফল বদলাতে পারে"
+      },
+      {
+        "en": "@main is deprecated",
+        "bn": "@main deprecated"
+      },
+      {
+        "en": "Pinning encrypts the action",
+        "bn": "pin করলে action encrypt হয়"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "08-real-project-a-laravel-server-with-ansible",
+    "q": {
+      "en": "Why deploy a Git tag instead of a branch?",
+      "bn": "কেন branch-এর বদলে Git tag deploy করবে?"
+    },
+    "options": [
+      {
+        "en": "Branches cannot be cloned",
+        "bn": "branch clone করা যায় না"
+      },
+      {
+        "en": "Tags are encrypted",
+        "bn": "tag encrypted"
+      },
+      {
+        "en": "Branches are faster",
+        "bn": "branch দ্রুত"
+      },
+      {
+        "en": "A tag names one exact state, so deploys are reproducible and rollback is an older tag",
+        "bn": "tag একটা ঠিক অবস্থা নাম দেয়, তাই deploy পুনরুৎপাদনযোগ্য আর rollback পুরনো tag"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "08-real-project-a-laravel-server-with-ansible",
+    "q": {
+      "en": "Why is the Composer task guarded with `when: app_code.changed`?",
+      "bn": "Composer task কেন `when: app_code.changed` দিয়ে পাহারা দেওয়া?"
+    },
+    "options": [
+      {
+        "en": "It only needs to run when new code arrived, keeping the second run at changed=0",
+        "bn": "এটা শুধু নতুন code এলে চালাতে হয়, দ্বিতীয় run-কে changed=0-তে রাখে"
+      },
+      {
+        "en": "Composer cannot run twice",
+        "bn": "Composer দুইবার চলতে পারে না"
+      },
+      {
+        "en": "Ansible skips all command tasks",
+        "bn": "Ansible সব command task skip করে"
+      },
+      {
+        "en": "register requires it",
+        "bn": "register এটা চায়"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "08-real-project-a-laravel-server-with-ansible",
+    "q": {
+      "en": "Which two directories must the web server's user be able to write to?",
+      "bn": "web server-এর user-এর কোন দুটো directory-তে লিখতে পারা চাই?"
+    },
+    "options": [
+      {
+        "en": "app and routes",
+        "bn": "app ও routes"
+      },
+      {
+        "en": "storage and bootstrap/cache",
+        "bn": "storage ও bootstrap/cache"
+      },
+      {
+        "en": "config and public",
+        "bn": "config ও public"
+      },
+      {
+        "en": "resources and tests",
+        "bn": "resources ও tests"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "08-real-project-a-laravel-server-with-ansible",
+    "q": {
+      "en": "What does a code rollback NOT undo?",
+      "bn": "Code rollback কী ফিরিয়ে নেয় না?"
+    },
+    "options": [
+      {
+        "en": "The Caddyfile",
+        "bn": "Caddyfile"
+      },
+      {
+        "en": "The installed PHP",
+        "bn": "install করা PHP"
+      },
+      {
+        "en": "Database migrations, so review them and keep backups",
+        "bn": "database migration, তাই সেগুলো review করো আর backup রাখো"
+      },
+      {
+        "en": "The Git tag",
+        "bn": "Git tag"
+      }
+    ],
+    "answer": 2
+  }
+]
