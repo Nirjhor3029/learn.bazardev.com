@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What is the root module?",
+      "bn": "Root module কী?"
+    },
+    "options": [
+      {
+        "en": "The Terraform files in the folder where you run Terraform; every project has one",
+        "bn": "যে folder-এ Terraform চালাও সেখানকার Terraform file; প্রতিটা project-এর একটা আছে"
+      },
+      {
+        "en": "A module downloaded from the registry",
+        "bn": "registry থেকে নামানো একটা module"
+      },
+      {
+        "en": "The .terraform folder",
+        "bn": "`.terraform` folder"
+      },
+      {
+        "en": "The state file",
+        "bn": "state file"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The root module is the configuration you run; it can call child modules with module blocks.",
+      "bn": "Root module হলো যে configuration তুমি চালাও; এটা module block দিয়ে child module ডাকতে পারে।"
+    }
+  },
+  {
+    "q": {
+      "en": "How do you read an output called `url` from a module block labelled `web_dev`?",
+      "bn": "`web_dev` label-এর module block থেকে `url` নামের output কীভাবে পড়বে?"
+    },
+    "options": [
+      {
+        "en": "web_dev.url",
+        "bn": "web_dev.url"
+      },
+      {
+        "en": "output.web_dev.url",
+        "bn": "output.web_dev.url"
+      },
+      {
+        "en": "var.web_dev.url",
+        "bn": "var.web_dev.url"
+      },
+      {
+        "en": "module.web_dev.url",
+        "bn": "module.web_dev.url"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Module outputs are referenced as module.<label>.<output>.",
+      "bn": "Module output reference করা হয় module.<label>.<output> রূপে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why must a reusable child module not contain a `provider` block?",
+      "bn": "পুনর্ব্যবহারযোগ্য child module-এ কেন `provider` block থাকবে না?"
+    },
+    "options": [
+      {
+        "en": "Because modules cannot use providers at all",
+        "bn": "কারণ module কোনো provider-ই ব্যবহার করতে পারে না"
+      },
+      {
+        "en": "Because it inherits the provider configuration from its parent; it only declares required_providers",
+        "bn": "কারণ সে parent থেকে provider configuration উত্তরাধিকারে পায়; সে শুধু required_providers ঘোষণা করে"
+      },
+      {
+        "en": "Because provider blocks are only allowed in outputs.tf",
+        "bn": "কারণ provider block শুধু outputs.tf-এ চলে"
+      },
+      {
+        "en": "Because Docker has no provider",
+        "bn": "কারণ Docker-এর কোনো provider নেই"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The docs: a module meant to be called must not contain provider blocks, yet each module must declare its own provider requirements.",
+      "bn": "Docs: ডাকার জন্য বানানো module-এ provider block থাকবে না, তবু প্রতিটা module-কে নিজের provider requirement ঘোষণা করতে হবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which module is NOT worth writing, according to the docs?",
+      "bn": "Docs অনুযায়ী কোন module লেখার যোগ্য নয়?"
+    },
+    "options": [
+      {
+        "en": "A module that is just a thin wrapper around one resource type",
+        "bn": "যে module শুধু একটা resource type-এর পাতলা মোড়ক"
+      },
+      {
+        "en": "A module that describes a new concept, like a web server or a cluster",
+        "bn": "যে module একটা নতুন ধারণা বর্ণনা করে, যেমন web server বা cluster"
+      },
+      {
+        "en": "A module with variables and outputs that have descriptions",
+        "bn": "description সহ variable ও output থাকা module"
+      },
+      {
+        "en": "A module called from the root with different inputs",
+        "bn": "যে module root থেকে আলাদা input দিয়ে ডাকা হয়"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A good module raises the level of abstraction; thin wrappers around single resource types add nothing.",
+      "bn": "ভালো module abstraction-এর স্তর উঁচু করে; একটা resource type-এর পাতলা মোড়ক কিছুই যোগ করে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "You move `docker_container.nginx` into a module. How do you stop Terraform from destroying and recreating it?",
+      "bn": "`docker_container.nginx` একটা module-এ সরালে। Terraform যেন destroy করে আবার না বানায় তার জন্য কী করবে?"
+    },
+    "options": [
+      {
+        "en": "Delete the state file and apply again",
+        "bn": "state file মুছে আবার apply করো"
+      },
+      {
+        "en": "Add a moved block with from and to, and check the plan shows no destroy",
+        "bn": "from ও to সহ একটা moved block দাও, আর plan-এ কোনো destroy নেই তা দেখো"
+      },
+      {
+        "en": "Set keep_locally to false",
+        "bn": "keep_locally false করো"
+      },
+      {
+        "en": "Run terraform init -upgrade",
+        "bn": "terraform init -upgrade চালাও"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A moved block updates the address without destroying the object. Move first, change arguments later.",
+      "bn": "moved block object destroy না করে address update করে। আগে সরাও, পরে argument বদলাও।"
+    }
+  }
+]

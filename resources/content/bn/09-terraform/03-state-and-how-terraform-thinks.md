@@ -210,4 +210,4 @@ State **বদলায়** এমন যেকোনো command আগে এ�
 
 ---
 
-**পরের chapter:** Chapter 4 — Module: পুনর্ব্যবহারযোগ্য infrastructure *(শীঘ্রই আসছে)*
+**পরের chapter:** [Chapter 4 — Module: পুনর্ব্যবহারযোগ্য infrastructure](04-modules.md)
