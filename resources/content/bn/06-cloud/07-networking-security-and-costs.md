@@ -65,7 +65,7 @@ Subnet স্তরে আরেকটা, মোটা firewall-ও আছে, 
 
 - [ ] Root user ও প্রতিটা মানুষ IAM user-এ **MFA**; root-এর access key নয় (Chapter 5)।
 - [ ] **Least privilege** IAM policy; server-এ access key-র বদলে **role**।
-- [ ] **Git বা image-এ secret নয়** (Docker ও Kubernetes course)।
+- [ ] **Git বা image-এ secret নয়** (Docker course)।
 - [ ] **SSH** শুধু তোমার IP থেকে, key দিয়ে, password login বন্ধ (Chapter 2)।
 - [ ] **Database private**, শুধু app-এর security group থেকে পৌঁছানো যায়।
 - [ ] **S3 bucket private**, যদি না public site উদ্দেশ্য।

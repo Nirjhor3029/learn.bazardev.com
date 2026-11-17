@@ -3,7 +3,7 @@
 > **Course:** Linux & Shell Basics · **Chapter:** 4 of 8
 > 🇬🇧 **English পড়তে চান?** [English এ পড়ুন →](https://learn.bazardev.com/linux-shell/04-users-groups-and-sudo)
 
-Chapter 3-এ দেখেছো owner আর group *কী* নিয়ন্ত্রণ করে। এই chapter দেখাবে user আর group আসলে কোথা থেকে আসে, এবং `sudo` টাইপ করলে ঠিক কী ঘটে — সাথে একটা detail, যা Docker course-এর একটা "fix" ব্যাখ্যা করবে যা তখন পুরোপুরি বোঝা না-ও হয়ে থাকতে পারে।
+Chapter 3-এ দেখেছো owner আর group *কী* নিয়ন্ত্রণ করে। এই chapter দেখাবে user আর group আসলে কোথা থেকে আসে, এবং `sudo` টাইপ করলে ঠিক কী ঘটে — সাথে একটা detail, যা Docker course-এ তোমাকে যে "fix" করতে বলা হবে (log out করে আবার login) তা ব্যাখ্যা করবে।
 
 ## ১. আমি আসলে কে?
 
@@ -51,7 +51,7 @@ sudo usermod -aG docker dev
 ```
 Existing user `dev`-কে `docker` group-এ যোগ করে, **ইতিমধ্যে যে group গুলোর সদস্য আছে তা থেকে সরিয়ে না দিয়ে** (`-a` = append — এটা ভুলে যাওয়া একটা classic ভুল যা কারো অন্য সব group membership মুছে দেয়)।
 
-এই command-টা পরিচিত লাগলে, ঠিক লাগারই কথা — এটা Docker course-এর Chapter 2-এর ঠিক সেই লাইন, এবং এই chapter এখন সেই technique-টা ঠিকমতো ব্যাখ্যা করছে।
+এই লাইনটা তুমি Docker course-এর Chapter 2-এ আবার দেখবে (`sudo` ছাড়া `docker` চালানোর জন্য)। এই chapter technique-টা ঠিকমতো ব্যাখ্যা করছে।
 
 ```bash
 sudo passwd newperson
@@ -60,7 +60,7 @@ sudo passwd newperson
 
 ### Log out করে আবার login করতে হয়েছিল কেন
 
-Docker course-এর Chapter 2-এ সেই `usermod` command-এর পরে "log out করে আবার login করো" বলার কথা মনে আছে? এটার কারণ এখানে: **তোমার current session আগে থেকেই তোমার group list login করার সময় load করে ফেলেছে।** নিজেকে একটা নতুন group-এ যোগ করলে `/etc/group` সাথে সাথে আপডেট হয়, কিন্তু তোমার *ইতিমধ্যে চলা* terminal session automatically সেটা আবার পড়ে না। Log out করে আবার login করা (বা একটা fresh session শুরু করা) shell-কে নতুন group membership নিতে দেয়। এটা প্রথমবার প্রায় সবাইকে confuse করে।
+Docker course-এর Chapter 2-এ সেই `usermod` command-এর পরে তোমাকে "log out করে আবার login করো" বলা হবে। এটার কারণ এখানে: **তোমার current session আগে থেকেই তোমার group list login করার সময় load করে ফেলেছে।** নিজেকে একটা নতুন group-এ যোগ করলে `/etc/group` সাথে সাথে আপডেট হয়, কিন্তু তোমার *ইতিমধ্যে চলা* terminal session automatically সেটা আবার পড়ে না। Log out করে আবার login করা (বা একটা fresh session শুরু করা) shell-কে নতুন group membership নিতে দেয়। এটা প্রথমবার প্রায় সবাইকে confuse করে।
 
 ## ৪. `sudo` vs `su` — পার্থক্যটা যা আসলে গুরুত্বপূর্ণ
 

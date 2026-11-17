@@ -3,7 +3,7 @@
 > **Course:** Linux & Shell Basics · **Chapter:** 3 of 8
 > 🇬🇧 **English পড়তে চান?** [English এ পড়ুন →](https://learn.bazardev.com/linux-shell/03-permissions-and-ownership)
 
-Docker course-এর শেষ chapter করে থাকলে, তুমি ঠিক এই topic-টার সাথেই দেখা করেছো: Laravel-এর `storage/` ফোল্ডারে PHP-FPM write করার আগে সঠিক ownership দরকার ছিল। এই chapter ব্যাখ্যা করে *কেন* এটা এভাবে কাজ করে — এটা একবার বুঝে গেলে, "permission denied" ভয়ংকর থাকে না, একটা দুই-সেকেন্ডের fix হয়ে যায়।
+Docker course-এর শেষ chapter-এ তুমি ঠিক এই topic-টার সাথেই আবার দেখা করবে: Laravel-এর `storage/` ফোল্ডারে PHP-FPM write করার আগে সঠিক ownership দরকার হয়। এই chapter ব্যাখ্যা করে *কেন* এটা এভাবে কাজ করে — এটা একবার বুঝে গেলে, "permission denied" ভয়ংকর থাকে না, একটা দুই-সেকেন্ডের fix হয়ে যায়।
 
 ## ১. Linux কেন তুমি কে তা নিয়ে এত সচেতন
 
@@ -73,7 +73,7 @@ sudo chgrp www-data notes.txt      # group পরিবর্তন করো "w
 sudo chown dev:www-data notes.txt  # দুটোই একসাথে (owner:group)
 ```
 
-এটাই Docker course-এর Laravel chapter-এর ঠিক সেই pattern: একটা web server process তার নিজের user হিসেবে চলে (প্রায়ই `www-data`), এবং এটাকে তোমার `storage/` ফোল্ডারে write করার অনুমতি দিতে, সেই ফোল্ডারের **group**-কে `www-data` হতে হবে, group-write permission সহ (`chmod 775`)। এই combination — `chown ... :www-data` সাথে `chmod 775` — server-এ তুমি টাইপ করবে এমন সবচেয়ে common real-world fix-গুলোর একটা।
+এটাই সেই pattern যা তুমি Docker course-এর Laravel chapter-এ ব্যবহার করবে: একটা web server process তার নিজের user হিসেবে চলে (প্রায়ই `www-data`), এবং এটাকে তোমার `storage/` ফোল্ডারে write করার অনুমতি দিতে, সেই ফোল্ডারের **group**-কে `www-data` হতে হবে, group-write permission সহ (`chmod 775`)। এই combination — `chown ... :www-data` সাথে `chmod 775` — server-এ তুমি টাইপ করবে এমন সবচেয়ে common real-world fix-গুলোর একটা।
 
 ## ৫. নিজে করে দেখো
 

@@ -3,6 +3,8 @@
 > **Course:** Docker (Zero to Hero) · **Chapter:** 1 of 8
 > 🇬🇧 **English পড়তে চান?** [English এ পড়ুন →](https://learn.bazardev.com/docker/01-what-is-docker)
 
+> 🧭 **শুরুর আগে:** এই course ধরে নেয় তুমি terminal-এ স্বচ্ছন্দ (folder-এ চলাফেরা, command চালানো, `sudo` ব্যবহার)। না হলে আগে [Linux & Shell Basics](https://learn.bazardev.com/linux-shell) করো, আর এই পথের বাকি অংশ যে version-control অভ্যাস ব্যবহার করে তার জন্য [Git & GitHub](https://learn.bazardev.com/git-github)।
+
 এই চ্যাপ্টারে কিছু install করতে হবে না — এটা সম্পূর্ণ concept। কিন্তু এই বিষয়টা ঠিকমতো বুঝে নিতে হবে, কারণ পরের প্রতিটা চ্যাপ্টার এর উপর ভিত্তি করেই তৈরি।
 
 ## ১. Docker আসার আগের সমস্যাটা কী ছিল

@@ -58,7 +58,7 @@ Default-এ instance একটা **public IP পায় যা stop আর st
 
 ভালো ব্যবহার: user-এর upload, ছবি, **backup**, log, static website, অন্য service-এর ফাইল।
 
-**Server-এর নিজের disk-এ upload কেন নয়?** তোমার app কয়েকটা server-এ চললে (বা server বদলালে) প্রতিটার নিজের disk, আর একটায় upload হওয়া ফাইল অন্যগুলোয় নেই। S3 ভাগ করা storage, আর তোমার server-গুলো ফেলনা হয়ে যায়। (এটাই Kubernetes-এর শেষ project-এর file-upload সমস্যা।)
+**Server-এর নিজের disk-এ upload কেন নয়?** তোমার app কয়েকটা server-এ চললে (বা server বদলালে) প্রতিটার নিজের disk, আর একটায় upload হওয়া ফাইল অন্যগুলোয় নেই। S3 ভাগ করা storage, আর তোমার server-গুলো ফেলনা হয়ে যায়। (Kubernetes-এর শেষ project-এ তুমি একই file-upload সমস্যায় আবার পড়বে।)
 
 ### CLI থেকে S3
 

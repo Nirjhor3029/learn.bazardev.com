@@ -39,7 +39,7 @@ tail notes.txt           # শেষ ১০ লাইন
 tail -f /var/log/app.log # নতুন লাইন যোগ হওয়ার সাথে সাথে live দেখতে থাকা
 ```
 
-শেষের `tail -f`, এটা নিজেই মনে রাখার মতো — কিছু ঘটার সময় একটা log file real time-এ দেখার ঠিক এই উপায়ে, Docker course-এর `docker logs -f`-এর একই ধারণা।
+শেষের `tail -f`, এটা নিজেই মনে রাখার মতো — কিছু ঘটার সময় একটা log file real time-এ দেখার ঠিক এই উপায়। (Docker course-এ তুমি `docker logs -f`-এ একই ধারণা আবার পাবে।)
 
 ## ৩. Copy আর move করা
 
@@ -143,7 +143,7 @@ which php
 <details>
 <summary><strong>প্রশ্ন ৪. `tail -f /var/log/app.log` কী করে, আর এই ধারণা আগে কোথায় দেখেছো?</strong></summary>
 
-এটা file-টা খোলা রাখে এবং নতুন লাইন যোগ হওয়ার সাথে সাথে live প্রিন্ট করে, একটা fixed snapshot দেখানোর বদলে। এটা Docker course-এর `docker logs -f`-এর একই ধারণা — পরে চেক করার বদলে real time-এ output হওয়া দেখা।
+এটা file-টা খোলা রাখে এবং নতুন লাইন যোগ হওয়ার সাথে সাথে live প্রিন্ট করে, একটা fixed snapshot দেখানোর বদলে। এটা `docker logs -f`-এর একই ধারণা, যা তুমি Docker course-এ পাবে — পরে চেক করার বদলে real time-এ output হওয়া দেখা।
 </details>
 
 ## ৯. ফ্রি রিসোর্স (English)

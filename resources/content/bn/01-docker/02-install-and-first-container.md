@@ -20,7 +20,7 @@ sudo sh get-docker.sh
 sudo usermod -aG docker $USER
 ```
 
-এই group change effective হতে **logout করে আবার login করো** (বা মেশিন reboot দাও)।
+এই group change effective হতে **logout করে আবার login করো** (বা মেশিন reboot দাও)। (`sudo` আর group আসলে কী, আর কেন logout করতে হয়, তা [Linux & Shell Basics, Chapter 4](https://learn.bazardev.com/linux-shell/04-users-groups-and-sudo)-এ ব্যাখ্যা করা আছে।)
 
 ### macOS / Windows
 
