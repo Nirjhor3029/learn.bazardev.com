@@ -130,7 +130,7 @@ return [
                 '03-ansible-playbooks' => ['title' => 'Ansible playbooks, modules, handlers, and idempotency', 'status' => 'available'],
                 '04-ansible-roles-templates-and-vault' => ['title' => 'Ansible roles, templates, and Vault for secrets', 'status' => 'available'],
                 '05-ansible-variables-facts-and-conditions' => ['title' => 'Ansible variables, facts, conditions, and register', 'status' => 'available'],
-                '06-ansible-laravel-stack-roles' => ['title' => 'Ansible roles for a Laravel stack: PHP, Caddy, MySQL', 'status' => 'coming_soon'],
+                '06-ansible-laravel-stack-roles' => ['title' => 'Ansible roles for a Laravel stack: PHP, Caddy, MySQL', 'status' => 'available'],
                 '07-ansible-safety-testing-and-ci' => ['title' => 'Running Ansible safely: tags, limits, lint, and CI', 'status' => 'coming_soon'],
                 '08-real-project-a-laravel-server-with-ansible' => ['title' => 'Real project: a Laravel server, built with Ansible', 'status' => 'coming_soon'],
             ],

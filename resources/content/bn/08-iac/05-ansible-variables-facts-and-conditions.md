@@ -334,4 +334,4 @@ Docs: variable গুলো "যে host-এ সেট হয়েছে তা
 
 ---
 
-**পরের chapter:** Chapter 6 — Laravel stack-এর জন্য Ansible role: PHP, Caddy, MySQL *(শীঘ্রই আসছে)*
+**পরের chapter:** [Chapter 6 — Laravel stack-এর জন্য Ansible role: PHP, Caddy, MySQL](06-ansible-laravel-stack-roles.md)

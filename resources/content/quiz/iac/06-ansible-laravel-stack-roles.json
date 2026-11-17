@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "Why is the Laravel web root the `public` directory and not the project root?",
+      "bn": "Laravel-এর web root কেন `public` directory, project root নয়?"
+    },
+    "options": [
+      {
+        "en": "Because public is faster to read",
+        "bn": "কারণ public পড়তে দ্রুত"
+      },
+      {
+        "en": "Because Caddy cannot read other folders",
+        "bn": "কারণ Caddy অন্য folder পড়তে পারে না"
+      },
+      {
+        "en": "Serving the project root would expose sensitive configuration files to the internet",
+        "bn": "project root পরিবেশন করলে সংবেদনশীল configuration file internet-এ উন্মুক্ত হবে"
+      },
+      {
+        "en": "Because MySQL requires it",
+        "bn": "কারণ MySQL এটা চায়"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Laravel's docs say requests must go to public/index.php and warn against serving from the project root.",
+      "bn": "Laravel docs বলে অনুরোধ public/index.php-তে যেতে হবে আর project root থেকে পরিবেশন না করতে সতর্ক করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What do the `php -m` task and the following `fail` loop in the php role achieve?",
+      "bn": "php role-এ `php -m` task আর তার পরের `fail` loop কী অর্জন করে?"
+    },
+    "options": [
+      {
+        "en": "They check Laravel's required PHP modules are loaded and stop with a clear message if one is missing",
+        "bn": "এগুলো যাচাই করে Laravel-এর দরকারি PHP module load আছে কি না, আর একটা না থাকলে পরিষ্কার বার্তা দিয়ে থামে"
+      },
+      {
+        "en": "They install every PHP module automatically",
+        "bn": "এগুলো প্রতিটা PHP module স্বয়ংক্রিয়ভাবে install করে"
+      },
+      {
+        "en": "They restart PHP-FPM",
+        "bn": "এগুলো PHP-FPM restart করে"
+      },
+      {
+        "en": "They delete unused modules",
+        "bn": "এগুলো অব্যবহৃত module মুছে ফেলে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The package pages did not list every module Laravel needs, so the role checks Laravel's list instead of assuming.",
+      "bn": "Package page Laravel-এর দরকারি প্রতিটা module তালিকাভুক্ত করেনি, তাই role ধরে না নিয়ে Laravel-এর তালিকা যাচাই করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What do the ansible.mysql modules need on the managed server?",
+      "bn": "ansible.mysql module গুলোর managed server-এ কী লাগে?"
+    },
+    "options": [
+      {
+        "en": "A Docker daemon",
+        "bn": "একটা Docker daemon"
+      },
+      {
+        "en": "The Caddy binary",
+        "bn": "Caddy binary"
+      },
+      {
+        "en": "The Terraform CLI",
+        "bn": "Terraform CLI"
+      },
+      {
+        "en": "The PyMySQL Python package",
+        "bn": "PyMySQL Python package"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "The docs require the PyMySQL package on the remote host; on Ubuntu noble it is packaged as python3-pymysql.",
+      "bn": "Docs remote host-এ PyMySQL package চায়; Ubuntu noble-এ এটা python3-pymysql নামে আছে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `priv: \"laravel.*:ALL\"` grant to the application's database user?",
+      "bn": "`priv: \"laravel.*:ALL\"` application-এর database user-কে কী দেয়?"
+    },
+    "options": [
+      {
+        "en": "All privileges on every database on the server",
+        "bn": "server-এর প্রতিটা database-এ সব অধিকার"
+      },
+      {
+        "en": "All privileges on every table of the laravel database only",
+        "bn": "শুধু laravel database-এর প্রতিটা table-এ সব অধিকার"
+      },
+      {
+        "en": "Read-only access to the laravel database",
+        "bn": "laravel database-এ শুধু-পড়ার access"
+      },
+      {
+        "en": "Permission to create other users",
+        "bn": "অন্য user বানানোর অনুমতি"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The format is db.table:privileges, so laravel.*:ALL is least privilege for one database.",
+      "bn": "রূপ db.table:privileges, তাই laravel.*:ALL একটা database-এর জন্য সর্বনিম্ন ক্ষমতা।"
+    }
+  },
+  {
+    "q": {
+      "en": "Where does the database password come from in the mysql role, and what protects it in the output?",
+      "bn": "mysql role-এ database password কোথা থেকে আসে, আর output-এ কী তাকে রক্ষা করে?"
+    },
+    "options": [
+      {
+        "en": "A plain default in defaults/main.yml; nothing protects it",
+        "bn": "defaults/main.yml-এর একটা সাধারণ default; কিছুই রক্ষা করে না"
+      },
+      {
+        "en": "The encrypted vault_db_password variable, with no_log: true on the task",
+        "bn": "encrypted vault_db_password variable, task-এ no_log: true সহ"
+      },
+      {
+        "en": "The state file",
+        "bn": "state file"
+      },
+      {
+        "en": "A comment in site.yml",
+        "bn": "site.yml-এর একটা comment"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The secret lives in Vault and the task uses no_log. no_log does not hide debug output, so never print it.",
+      "bn": "Secret Vault-এ থাকে আর task no_log ব্যবহার করে। no_log debug output লুকায় না, তাই কখনো print করো না।"
+    }
+  }
+]
