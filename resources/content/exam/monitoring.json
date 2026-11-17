@@ -1,0 +1,834 @@
+[
+  {
+    "ref": "01-why-monitor-and-what-to-watch",
+    "q": {
+      "en": "Which four are the \"four golden signals\" of monitoring?",
+      "bn": "\"চার golden signal\" কোন চারটা?"
+    },
+    "options": [
+      {
+        "en": "Latency, traffic, errors, saturation",
+        "bn": "Latency, traffic, error, saturation"
+      },
+      {
+        "en": "CPU, memory, disk, network",
+        "bn": "CPU, memory, disk, network"
+      },
+      {
+        "en": "Uptime, downtime, speed, size",
+        "bn": "Uptime, downtime, speed, size"
+      },
+      {
+        "en": "Logs, metrics, traces, alerts",
+        "bn": "Log, metric, trace, alert"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "01-why-monitor-and-what-to-watch",
+    "q": {
+      "en": "A graph shows that error responses jumped at 14:02. What is the usual job of logs in this situation?",
+      "bn": "একটা graph দেখায় 14:02-এ error response লাফিয়ে বেড়েছে। এই অবস্থায় log-এর সাধারণ কাজ কী?"
+    },
+    "options": [
+      {
+        "en": "To replace the graph",
+        "bn": "graph-এর বিকল্প হওয়া"
+      },
+      {
+        "en": "To explain why it happened",
+        "bn": "কেন হয়েছে তা ব্যাখ্যা করা"
+      },
+      {
+        "en": "To make the site faster",
+        "bn": "site দ্রুত করা"
+      },
+      {
+        "en": "To send the alert to the right person",
+        "bn": "alert সঠিক মানুষের কাছে পাঠানো"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "01-why-monitor-and-what-to-watch",
+    "q": {
+      "en": "Why do experienced teams look at percentiles (for example the 99th) instead of only the average response time?",
+      "bn": "অভিজ্ঞ team গুলো শুধু গড় response-সময়ের বদলে percentile (যেমন ৯৯তম) দেখে কেন?"
+    },
+    "options": [
+      {
+        "en": "Percentiles are always smaller than averages",
+        "bn": "Percentile সবসময় গড়ের চেয়ে ছোট"
+      },
+      {
+        "en": "Averages cannot be calculated by computers",
+        "bn": "Computer গড় হিসাব করতে পারে না"
+      },
+      {
+        "en": "A good average can hide a slow minority of users",
+        "bn": "ভালো গড় ধীর-অভিজ্ঞতা পাওয়া একটা সংখ্যালঘু ব্যবহারকারীকে লুকিয়ে ফেলতে পারে"
+      },
+      {
+        "en": "Percentiles only work for disk usage",
+        "bn": "Percentile শুধু disk ব্যবহারের জন্য কাজ করে"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "01-why-monitor-and-what-to-watch",
+    "q": {
+      "en": "What is \"black-box\" monitoring?",
+      "bn": "\"Black-box\" monitoring কী?"
+    },
+    "options": [
+      {
+        "en": "Reading internal counters inside the application",
+        "bn": "Application-এর ভেতরের counter পড়া"
+      },
+      {
+        "en": "Monitoring only servers with no screen",
+        "bn": "শুধু পর্দাহীন server monitor করা"
+      },
+      {
+        "en": "Hiding the metrics from the team",
+        "bn": "Metric team-এর কাছ থেকে লুকানো"
+      },
+      {
+        "en": "Checking the system from the outside, the way a visitor experiences it",
+        "bn": "সিস্টেমকে বাইরে থেকে পরীক্ষা করা, যেভাবে একজন দর্শক তা অনুভব করে"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "02-linux-server-health",
+    "q": {
+      "en": "In the output of `free -h`, which column best tells you how much memory programs can still use?",
+      "bn": "`free -h`-এর output-এ কোন column সবচেয়ে ভালো বলে program গুলো আর কতটা memory পেতে পারে?"
+    },
+    "options": [
+      {
+        "en": "free",
+        "bn": "free"
+      },
+      {
+        "en": "available",
+        "bn": "available"
+      },
+      {
+        "en": "shared",
+        "bn": "shared"
+      },
+      {
+        "en": "buff/cache",
+        "bn": "buff/cache"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "02-linux-server-health",
+    "q": {
+      "en": "A server has 2 CPU cores and a load average of 4. What does that suggest?",
+      "bn": "একটা server-এর ২টা CPU core আর load average 4। এটা কী ইঙ্গিত করে?"
+    },
+    "options": [
+      {
+        "en": "The machine is half idle",
+        "bn": "Machine অর্ধেক নিষ্ক্রিয়"
+      },
+      {
+        "en": "The load average is always twice the core count",
+        "bn": "Load average সবসময় core সংখ্যার দ্বিগুণ হয়"
+      },
+      {
+        "en": "More work is waiting than the cores can handle: the machine is overloaded",
+        "bn": "Core গুলো যতটা সামলাতে পারে তার চেয়ে বেশি কাজ অপেক্ষা করছে: machine অতিরিক্ত ভারাক্রান্ত"
+      },
+      {
+        "en": "The disk is full",
+        "bn": "Disk ভরে গেছে"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "02-linux-server-health",
+    "q": {
+      "en": "`df -h` shows plenty of free space, yet writing a file fails with \"No space left on device\". What should you check next?",
+      "bn": "`df -h` প্রচুর খালি জায়গা দেখায়, তবু file লিখতে \"No space left on device\" আসে। এরপর কী দেখবে?"
+    },
+    "options": [
+      {
+        "en": "`uptime`",
+        "bn": "`uptime`"
+      },
+      {
+        "en": "`free -h`",
+        "bn": "`free -h`"
+      },
+      {
+        "en": "`ss -tlnp`",
+        "bn": "`ss -tlnp`"
+      },
+      {
+        "en": "`df -i`, because the filesystem may have run out of inodes",
+        "bn": "`df -i`, কারণ filesystem-এর inode ফুরিয়ে যেতে পারে"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "02-linux-server-health",
+    "q": {
+      "en": "In `top`, a high `wa` value means the CPU is mostly:",
+      "bn": "`top`-এ `wa`-এর মান বেশি মানে CPU মূলত:"
+    },
+    "options": [
+      {
+        "en": "Waiting for disk (I/O)",
+        "bn": "Disk (I/O)-র জন্য অপেক্ষা করছে"
+      },
+      {
+        "en": "Idle and happy",
+        "bn": "নিষ্ক্রিয় ও খুশি"
+      },
+      {
+        "en": "Running user programs",
+        "bn": "User program চালাচ্ছে"
+      },
+      {
+        "en": "Being stolen by the hypervisor",
+        "bn": "Hypervisor দ্বারা চুরি হচ্ছে"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "03-application-logs",
+    "q": {
+      "en": "A payment failed and the customer was charged nothing, but someone must look at it. Which log level fits best?",
+      "bn": "একটা payment ব্যর্থ হয়েছে, গ্রাহকের টাকা কাটেনি, কিন্তু কাউকে দেখতে হবে। কোন log level সবচেয়ে মানানসই?"
+    },
+    "options": [
+      {
+        "en": "debug",
+        "bn": "debug"
+      },
+      {
+        "en": "info",
+        "bn": "info"
+      },
+      {
+        "en": "error",
+        "bn": "error"
+      },
+      {
+        "en": "none: payments are never logged",
+        "bn": "কোনোটাই না: payment কখনো log হয় না"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "03-application-logs",
+    "q": {
+      "en": "Which of these must never be written to a log?",
+      "bn": "এগুলোর কোনটা কখনো log-এ লেখা উচিত নয়?"
+    },
+    "options": [
+      {
+        "en": "The request id",
+        "bn": "Request id"
+      },
+      {
+        "en": "The order number",
+        "bn": "Order নম্বর"
+      },
+      {
+        "en": "The name of the route",
+        "bn": "Route-এর নাম"
+      },
+      {
+        "en": "Passwords, tokens and card numbers",
+        "bn": "Password, token ও card নম্বর"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "03-application-logs",
+    "q": {
+      "en": "`laravel.log` gives \"Permission denied\" because the web server and your user both write to it. What is the clean fix?",
+      "bn": "`laravel.log` \"Permission denied\" দিচ্ছে কারণ web server আর তোমার user দুজনেই এতে লেখে। পরিচ্ছন্ন সমাধান কী?"
+    },
+    "options": [
+      {
+        "en": "A shared group with group write permission",
+        "bn": "Group-write permission-সহ একটা shared group"
+      },
+      {
+        "en": "`chmod 777` on the whole project",
+        "bn": "পুরো project-এ `chmod 777`"
+      },
+      {
+        "en": "Delete the log file every hour",
+        "bn": "প্রতি ঘণ্টায় log file মুছে ফেলা"
+      },
+      {
+        "en": "Run the website as root",
+        "bn": "Website root হিসেবে চালানো"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "03-application-logs",
+    "q": {
+      "en": "Why put a request id on every log line of a request?",
+      "bn": "একটা request-এর প্রতিটা log লাইনে request id রাখা হয় কেন?"
+    },
+    "options": [
+      {
+        "en": "To make the log file smaller",
+        "bn": "Log file ছোট করতে"
+      },
+      {
+        "en": "To follow one request's whole story among many lines mixed together",
+        "bn": "মিশে-থাকা অনেক লাইনের মধ্যে একটা request-এর পুরো গল্প অনুসরণ করতে"
+      },
+      {
+        "en": "To hide the user's name",
+        "bn": "ব্যবহারকারীর নাম লুকাতে"
+      },
+      {
+        "en": "Because Laravel refuses to log without it",
+        "bn": "কারণ এটা ছাড়া Laravel log করতেই রাজি হয় না"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "04-metrics-and-prometheus",
+    "q": {
+      "en": "How does Prometheus normally get its data from a target?",
+      "bn": "Prometheus সাধারণত একটা target থেকে তার data কীভাবে পায়?"
+    },
+    "options": [
+      {
+        "en": "Every server pushes mail to it",
+        "bn": "প্রতিটা server তাকে mail পাঠায়"
+      },
+      {
+        "en": "It reads the target's log files over SSH",
+        "bn": "সে SSH দিয়ে target-এর log file পড়ে"
+      },
+      {
+        "en": "It guesses the values",
+        "bn": "সে মান অনুমান করে"
+      },
+      {
+        "en": "It pulls (scrapes) the target's /metrics page regularly",
+        "bn": "সে নিয়মিত target-এর /metrics পাতা টেনে আনে (scrape করে)"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "04-metrics-and-prometheus",
+    "q": {
+      "en": "You want a graph of requests per second from a counter called `http_requests_total`. What do you graph?",
+      "bn": "`http_requests_total` নামের একটা counter থেকে প্রতি সেকেন্ডে request-এর graph চাও। কী graph করবে?"
+    },
+    "options": [
+      {
+        "en": "`rate(http_requests_total[5m])`",
+        "bn": "`rate(http_requests_total[5m])`"
+      },
+      {
+        "en": "The raw `http_requests_total`",
+        "bn": "কাঁচা `http_requests_total`"
+      },
+      {
+        "en": "`up`",
+        "bn": "`up`"
+      },
+      {
+        "en": "`node_load1`",
+        "bn": "`node_load1`"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "04-metrics-and-prometheus",
+    "q": {
+      "en": "What does the built-in metric `up` tell you?",
+      "bn": "Built-in metric `up` তোমাকে কী জানায়?"
+    },
+    "options": [
+      {
+        "en": "How many days the server has been running",
+        "bn": "Server কত দিন ধরে চলছে"
+      },
+      {
+        "en": "Whether the last scrape of a target succeeded (1) or failed (0)",
+        "bn": "একটা target-এর শেষ scrape সফল (1) নাকি ব্যর্থ (0) হয়েছে"
+      },
+      {
+        "en": "How many users are online",
+        "bn": "কতজন ব্যবহারকারী online"
+      },
+      {
+        "en": "How much disk space is free",
+        "bn": "কতটা disk জায়গা খালি"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "04-metrics-and-prometheus",
+    "q": {
+      "en": "Why is `user_id` a bad label for a Prometheus metric?",
+      "bn": "`user_id` একটা Prometheus metric-এর জন্য খারাপ label কেন?"
+    },
+    "options": [
+      {
+        "en": "Labels cannot contain numbers",
+        "bn": "Label-এ সংখ্যা থাকতে পারে না"
+      },
+      {
+        "en": "Prometheus forbids the word \"user\"",
+        "bn": "Prometheus \"user\" শব্দটা নিষিদ্ধ করে"
+      },
+      {
+        "en": "It has a huge number of different values (high cardinality), which creates a huge number of series",
+        "bn": "এর মান অসংখ্য আলাদা (high cardinality), যা অসংখ্য series তৈরি করে"
+      },
+      {
+        "en": "It makes the metric a gauge",
+        "bn": "এটা metric-কে gauge বানিয়ে দেয়"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "05-grafana-dashboards",
+    "q": {
+      "en": "Where do the metric numbers shown on a Grafana dashboard actually live?",
+      "bn": "Grafana dashboard-এ দেখানো metric-এর সংখ্যাগুলো আসলে কোথায় থাকে?"
+    },
+    "options": [
+      {
+        "en": "In the data source, for example Prometheus; Grafana only queries and draws them",
+        "bn": "Data source-এ, যেমন Prometheus; Grafana শুধু query করে আঁকে"
+      },
+      {
+        "en": "Inside Grafana's own time series database only",
+        "bn": "শুধু Grafana-র নিজের time series database-এ"
+      },
+      {
+        "en": "In the browser's cache",
+        "bn": "Browser-এর cache-এ"
+      },
+      {
+        "en": "In the dashboard JSON file",
+        "bn": "Dashboard-এর JSON file-এ"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "05-grafana-dashboards",
+    "q": {
+      "en": "Which panel type best answers \"Is the site up right now?\"",
+      "bn": "কোন panel type \"Site কি এখন চালু?\" প্রশ্নের সবচেয়ে ভালো উত্তর দেয়?"
+    },
+    "options": [
+      {
+        "en": "Heatmap",
+        "bn": "Heatmap"
+      },
+      {
+        "en": "Stat",
+        "bn": "Stat"
+      },
+      {
+        "en": "Logs",
+        "bn": "Logs"
+      },
+      {
+        "en": "Table of all metric names",
+        "bn": "সব metric-নামের Table"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "05-grafana-dashboards",
+    "q": {
+      "en": "Why does the first dashboard divide the load average by the number of CPU cores?",
+      "bn": "প্রথম dashboard-এ load average-কে CPU core সংখ্যা দিয়ে ভাগ করা হয় কেন?"
+    },
+    "options": [
+      {
+        "en": "To convert it to percent of disk",
+        "bn": "এটাকে disk-এর শতাংশে বদলাতে"
+      },
+      {
+        "en": "Because Prometheus cannot store raw load",
+        "bn": "কারণ Prometheus কাঁচা load রাখতে পারে না"
+      },
+      {
+        "en": "So that 1.0 means \"full\" on a server of any size",
+        "bn": "যাতে যেকোনো আকারের server-এ 1.0 মানে \"ভরা\" হয়"
+      },
+      {
+        "en": "To hide overloaded servers",
+        "bn": "অতিরিক্ত ভারাক্রান্ত server লুকাতে"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "05-grafana-dashboards",
+    "q": {
+      "en": "Grafana's defaults are the login admin/admin and a web port open on all network interfaces. What should you do?",
+      "bn": "Grafana-র ডিফল্ট হলো admin/admin login আর সব network interface-এ খোলা web port। কী করবে?"
+    },
+    "options": [
+      {
+        "en": "Nothing; the defaults are safe for the internet",
+        "bn": "কিছুই না; ডিফল্ট internet-এর জন্য নিরাপদ"
+      },
+      {
+        "en": "Share the admin password with the team in chat",
+        "bn": "Admin password chat-এ team-কে জানিয়ে দাও"
+      },
+      {
+        "en": "Open the firewall to port 3000 for everyone",
+        "bn": "Firewall-এ port 3000 সবার জন্য খুলে দাও"
+      },
+      {
+        "en": "Change the password, bind Grafana to 127.0.0.1 and put HTTPS (for example Caddy) in front",
+        "bn": "Password বদলাও, Grafana-কে 127.0.0.1-এ bind করো আর সামনে HTTPS (যেমন Caddy) বসাও"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "06-alerting",
+    "q": {
+      "en": "An alert rule has `for: 10m`. What does that do?",
+      "bn": "একটা alert rule-এ `for: 10m` আছে। এটা কী করে?"
+    },
+    "options": [
+      {
+        "en": "It silences the alert for 10 minutes",
+        "bn": "এটা alert ১০ মিনিট চুপ করায়"
+      },
+      {
+        "en": "The condition must stay true for 10 minutes before the alert fires",
+        "bn": "Alert fire হওয়ার আগে শর্ত ১০ মিনিট টানা সত্য থাকতে হয়"
+      },
+      {
+        "en": "It deletes the alert after 10 minutes",
+        "bn": "এটা ১০ মিনিট পরে alert মুছে দেয়"
+      },
+      {
+        "en": "It checks the rule once every 10 minutes",
+        "bn": "এটা rule প্রতি ১০ মিনিটে একবার যাচাই করে"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "06-alerting",
+    "q": {
+      "en": "What does an Alertmanager inhibition rule do?",
+      "bn": "Alertmanager-এর inhibition rule কী করে?"
+    },
+    "options": [
+      {
+        "en": "It groups all alerts into one",
+        "bn": "এটা সব alert একটাতে জোট করে"
+      },
+      {
+        "en": "It speeds up Prometheus",
+        "bn": "এটা Prometheus-কে দ্রুত করে"
+      },
+      {
+        "en": "It suppresses certain alerts while another, usually the cause, is already firing",
+        "bn": "অন্য একটা (সাধারণত কারণ) alert আগে থেকে firing থাকলে কিছু alert দমন করে"
+      },
+      {
+        "en": "It encrypts the notifications",
+        "bn": "এটা notification এনক্রিপ্ট করে"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "06-alerting",
+    "q": {
+      "en": "Which alert is better to wake someone at 3 a.m.?",
+      "bn": "রাত ৩টায় কাউকে জাগানোর জন্য কোন alert ভালো?"
+    },
+    "options": [
+      {
+        "en": "CPU touched 85% for one second",
+        "bn": "CPU এক সেকেন্ডের জন্য ৮৫% ছুঁয়েছে"
+      },
+      {
+        "en": "A process was restarted",
+        "bn": "একটা process restart হয়েছে"
+      },
+      {
+        "en": "The load average is 1.2 on a 16-core machine",
+        "bn": "১৬-core machine-এ load average 1.2"
+      },
+      {
+        "en": "More than 5% of requests are failing for 5 minutes",
+        "bn": "৫ মিনিট ধরে ৫%-এর বেশি request ব্যর্থ হচ্ছে"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "06-alerting",
+    "q": {
+      "en": "What is `predict_linear` useful for in a disk alert?",
+      "bn": "Disk alert-এ `predict_linear` কীসের কাজে লাগে?"
+    },
+    "options": [
+      {
+        "en": "Warning that the disk will be full in, say, 24 hours, while there is still time to act",
+        "bn": "সতর্ক করা যে disk, ধরো, ২৪ ঘণ্টায় ভরবে, যখন কাজ করার সময় আছে"
+      },
+      {
+        "en": "Deleting old files automatically",
+        "bn": "পুরনো file স্বয়ংক্রিয়ভাবে মুছে ফেলা"
+      },
+      {
+        "en": "Making the disk faster",
+        "bn": "Disk-কে দ্রুত করা"
+      },
+      {
+        "en": "Counting how many files exist",
+        "bn": "কয়টা file আছে গোনা"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "07-central-logging-uptime-and-errors",
+    "q": {
+      "en": "What does Loki index, which makes it cheap to run?",
+      "bn": "Loki কী index করে, যা তাকে চালাতে সস্তা করে?"
+    },
+    "options": [
+      {
+        "en": "Every word of every log line",
+        "bn": "প্রতিটা log লাইনের প্রতিটা শব্দ"
+      },
+      {
+        "en": "Only the file sizes",
+        "bn": "শুধু file-এর আকার"
+      },
+      {
+        "en": "Only the labels of the log streams, not the text of every line",
+        "bn": "শুধু log stream-এর label, প্রতিটা লাইনের লেখা নয়"
+      },
+      {
+        "en": "Nothing at all",
+        "bn": "কিছুই না"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "07-central-logging-uptime-and-errors",
+    "q": {
+      "en": "Which agent should you use to ship logs to Loki today?",
+      "bn": "আজ Loki-তে log পাঠাতে কোন agent ব্যবহার করবে?"
+    },
+    "options": [
+      {
+        "en": "Promtail, because it is the newest",
+        "bn": "Promtail, কারণ সেটা সবচেয়ে নতুন"
+      },
+      {
+        "en": "Alertmanager",
+        "bn": "Alertmanager"
+      },
+      {
+        "en": "node_exporter",
+        "bn": "node_exporter"
+      },
+      {
+        "en": "Grafana Alloy, because Promtail reached end of life on March 2, 2026",
+        "bn": "Grafana Alloy, কারণ Promtail ২ মার্চ, ২০২৬-এ end of life হয়েছে"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "07-central-logging-uptime-and-errors",
+    "q": {
+      "en": "Why should an uptime check come from outside your server?",
+      "bn": "Uptime check তোমার server-এর বাইরে থেকে আসা উচিত কেন?"
+    },
+    "options": [
+      {
+        "en": "A check on the same server dies together with it and cannot tell you the server is down",
+        "bn": "একই server-এর check তার সাথেই মরে আর server বন্ধ তা জানাতে পারে না"
+      },
+      {
+        "en": "Because outside checks are always faster",
+        "bn": "কারণ বাইরের check সবসময় দ্রুত"
+      },
+      {
+        "en": "Because Prometheus cannot probe websites",
+        "bn": "কারণ Prometheus website probe করতে পারে না"
+      },
+      {
+        "en": "Because HTTPS only works from outside",
+        "bn": "কারণ HTTPS শুধু বাইরে থেকে কাজ করে"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "07-central-logging-uptime-and-errors",
+    "q": {
+      "en": "What does an error tracker such as Sentry give you that a plain log file does not?",
+      "bn": "Sentry-র মতো error tracker এমন কী দেয় যা সাধারণ log file দেয় না?"
+    },
+    "options": [
+      {
+        "en": "Faster page loads",
+        "bn": "দ্রুততর page load"
+      },
+      {
+        "en": "Exceptions with stack traces, grouped into issues with a count of occurrences",
+        "bn": "Stack trace-সহ exception, ঘটনার সংখ্যা-সহ issue-তে জোট করা"
+      },
+      {
+        "en": "Automatic bug fixes",
+        "bn": "স্বয়ংক্রিয় bug সমাধান"
+      },
+      {
+        "en": "A free database",
+        "bn": "একটা বিনামূল্যের database"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "08-real-project-monitoring-a-laravel-app",
+    "q": {
+      "en": "The database was deliberately broken in the test. What did Laravel's built-in `/up` route answer?",
+      "bn": "Test-এ database ইচ্ছে করে ভাঙা হয়েছিল। Laravel-এর built-in `/up` route কী উত্তর দিল?"
+    },
+    "options": [
+      {
+        "en": "503, it checks the database",
+        "bn": "503, সে database পরীক্ষা করে"
+      },
+      {
+        "en": "404, the route disappears",
+        "bn": "404, route উধাও হয়ে যায়"
+      },
+      {
+        "en": "It never answers",
+        "bn": "সে কখনো উত্তর দেয় না"
+      },
+      {
+        "en": "200: it only shows that the application boots, so a deeper /health route is needed",
+        "bn": "200: সে শুধু দেখায় application boot হয়, তাই গভীরতর /health route দরকার"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "08-real-project-monitoring-a-laravel-app",
+    "q": {
+      "en": "Why does the request-counting middleware do its work in `terminate()`?",
+      "bn": "Request-গোনা middleware তার কাজ `terminate()`-এ করে কেন?"
+    },
+    "options": [
+      {
+        "en": "It runs after the response was sent, so counting costs the visitor no waiting time",
+        "bn": "এটা response পাঠানোর পরে চলে, তাই গোনার জন্য দর্শককে অপেক্ষা করতে হয় না"
+      },
+      {
+        "en": "`handle()` cannot read the status code",
+        "bn": "`handle()` status code পড়তে পারে না"
+      },
+      {
+        "en": "It only runs when there is an error",
+        "bn": "এটা শুধু error হলে চলে"
+      },
+      {
+        "en": "Prometheus calls it directly",
+        "bn": "Prometheus সরাসরি এটা call করে"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "08-real-project-monitoring-a-laravel-app",
+    "q": {
+      "en": "How is the `/metrics` page kept private in this chapter?",
+      "bn": "এই chapter-এ `/metrics` পাতা private রাখা হয় কীভাবে?"
+    },
+    "options": [
+      {
+        "en": "By hiding the link on the home page",
+        "bn": "Home page-এ link লুকিয়ে"
+      },
+      {
+        "en": "A secret bearer token plus a web-server rule that only allows the monitoring server",
+        "bn": "একটা গোপন bearer token আর একটা web-server rule যা শুধু monitoring server-কে ঢুকতে দেয়"
+      },
+      {
+        "en": "By naming it /secret",
+        "bn": "একে /secret নাম দিয়ে"
+      },
+      {
+        "en": "It is public on purpose",
+        "bn": "এটা ইচ্ছে করেই public"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "08-real-project-monitoring-a-laravel-app",
+    "q": {
+      "en": "Why run a \"fire drill\" on a test copy?",
+      "bn": "একটা test কপিতে \"fire drill\" চালানো হয় কেন?"
+    },
+    "options": [
+      {
+        "en": "To lower the server's cost",
+        "bn": "Server-এর খরচ কমাতে"
+      },
+      {
+        "en": "To delete old logs",
+        "bn": "পুরনো log মুছতে"
+      },
+      {
+        "en": "To prove that every alert fires, reaches you and resolves, instead of trusting that it does",
+        "bn": "প্রমাণ করতে যে প্রতিটা alert fire করে, তোমার কাছে পৌঁছায় ও resolve হয়, শুধু ভরসা না করে"
+      },
+      {
+        "en": "To replace the dashboard",
+        "bn": "Dashboard-এর বিকল্প হতে"
+      }
+    ],
+    "answer": 2
+  }
+]
