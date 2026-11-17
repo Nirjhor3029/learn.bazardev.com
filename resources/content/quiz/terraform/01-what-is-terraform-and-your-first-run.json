@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What does `terraform plan` do?",
+      "bn": "`terraform plan` কী করে?"
+    },
+    "options": [
+      {
+        "en": "Applies the changes and creates the resources immediately",
+        "bn": "পরিবর্তন প্রয়োগ করে আর সাথে সাথে resource বানায়"
+      },
+      {
+        "en": "Shows the changes Terraform would make, without carrying them out",
+        "bn": "Terraform কী কী পরিবর্তন করত তা দেখায়, সেগুলো না চালিয়ে"
+      },
+      {
+        "en": "Deletes the state file",
+        "bn": "state file মুছে দেয়"
+      },
+      {
+        "en": "Downloads the providers",
+        "bn": "provider নামায়"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Plan compares configuration with state and proposes changes; the plan command alone does not carry them out.",
+      "bn": "Plan configuration আর state মেলায় ও পরিবর্তন প্রস্তাব করে; শুধু plan command সেগুলো চালায় না।"
+    }
+  },
+  {
+    "q": {
+      "en": "In a plan, which symbol means a resource will be destroyed and created again?",
+      "bn": "Plan-এ কোন চিহ্ন বোঝায় একটা resource মুছে আবার তৈরি হবে?"
+    },
+    "options": [
+      {
+        "en": "+",
+        "bn": "+"
+      },
+      {
+        "en": "-",
+        "bn": "-"
+      },
+      {
+        "en": "~",
+        "bn": "~"
+      },
+      {
+        "en": "-/+",
+        "bn": "-/+"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "-/+ is replace. ~ is an in-place update, + create, - destroy. Look for - and -/+ first.",
+      "bn": "-/+ হলো replace। ~ জায়গায় update, + create, - destroy। আগে - ও -/+ খোঁজো।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `terraform init` do in a new folder?",
+      "bn": "নতুন folder-এ `terraform init` কী করে?"
+    },
+    "options": [
+      {
+        "en": "Creates cloud servers",
+        "bn": "cloud server বানায়"
+      },
+      {
+        "en": "Destroys everything the project created",
+        "bn": "project যা বানিয়েছে সব মুছে দেয়"
+      },
+      {
+        "en": "Downloads the needed providers into .terraform and writes .terraform.lock.hcl",
+        "bn": "দরকারি provider .terraform-এ নামায় আর .terraform.lock.hcl লেখে"
+      },
+      {
+        "en": "Encrypts the state file",
+        "bn": "state file encrypt করে"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "init prepares the folder; the lock file records the exact provider versions used.",
+      "bn": "init folder তৈরি করে; lock file ব্যবহৃত ঠিক provider version রেকর্ড করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which file must you never commit to Git?",
+      "bn": "কোন file কখনো Git-এ commit করবে না?"
+    },
+    "options": [
+      {
+        "en": "terraform.tfstate, because it can hold secrets in plain text",
+        "bn": "terraform.tfstate, কারণ তাতে secret সাদা text-এ থাকতে পারে"
+      },
+      {
+        "en": "main.tf",
+        "bn": "main.tf"
+      },
+      {
+        "en": ".terraform.lock.hcl",
+        "bn": "`.terraform.lock.hcl`"
+      },
+      {
+        "en": "A README",
+        "bn": "একটা README"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The docs say state is stored in plaintext and advise excluding it from Git. Commit the .tf files and the lock file.",
+      "bn": "Docs বলে state plaintext-এ থাকে আর Git থেকে বাদ রাখতে বলে। .tf file ও lock file commit করো।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `version = \"~> 4.2.0\"` allow?",
+      "bn": "`version = \"~> 4.2.0\"` কী অনুমতি দেয়?"
+    },
+    "options": [
+      {
+        "en": "Any 4.x version, including 4.9",
+        "bn": "যেকোনো 4.x version, 4.9 সহ"
+      },
+      {
+        "en": "Any 4.2.x version, but not 4.3",
+        "bn": "যেকোনো 4.2.x version, কিন্তু 4.3 নয়"
+      },
+      {
+        "en": "Exactly 4.2.0 and nothing else",
+        "bn": "ঠিক 4.2.0, আর কিছু নয়"
+      },
+      {
+        "en": "Any version at all",
+        "bn": "যেকোনো version"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "~> lets only the right-most component increase: 4.2.1 and 4.2.10 yes, 4.3.0 no.",
+      "bn": "~> শুধু ডানদিকের শেষ অংশ বাড়তে দেয়: 4.2.1 ও 4.2.10 হ্যাঁ, 4.3.0 না।"
+    }
+  }
+]
