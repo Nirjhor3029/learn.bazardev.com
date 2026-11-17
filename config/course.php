@@ -145,7 +145,7 @@ return [
                 '02-hcl-variables-outputs-and-expressions' => ['title' => 'HCL: variables, outputs, and expressions', 'status' => 'available'],
                 '03-state-and-how-terraform-thinks' => ['title' => 'State, and how Terraform decides what to change', 'status' => 'available'],
                 '04-modules' => ['title' => 'Modules: reusable infrastructure', 'status' => 'available'],
-                '05-a-real-cloud-provider-plan-only' => ['title' => 'A real cloud provider (plan only)', 'status' => 'coming_soon'],
+                '05-a-real-cloud-provider-plan-only' => ['title' => 'A real cloud provider (plan only)', 'status' => 'available'],
                 '06-dependencies-count-for-each-and-lifecycle' => ['title' => 'Dependencies, count, for_each, and lifecycle', 'status' => 'coming_soon'],
                 '07-remote-state-workspaces-and-ci' => ['title' => 'Remote state, workspaces, and CI', 'status' => 'coming_soon'],
                 '08-real-project-terraform-and-ansible-together' => ['title' => 'Real project: Terraform and Ansible together', 'status' => 'coming_soon'],

@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "Where should the DigitalOcean API token come from?",
+      "bn": "DigitalOcean API token কোথা থেকে আসা উচিত?"
+    },
+    "options": [
+      {
+        "en": "A default value in variables.tf, so teammates do not have to set it",
+        "bn": "variables.tf-এর একটা default মান, যাতে সহকর্মীদের সেট করতে না হয়"
+      },
+      {
+        "en": "The DIGITALOCEAN_TOKEN environment variable, typed so it is not saved in shell history",
+        "bn": "DIGITALOCEAN_TOKEN environment variable, এমনভাবে টাইপ করা যাতে shell history-তে সংরক্ষিত না হয়"
+      },
+      {
+        "en": "A terraform.tfvars file committed to Git",
+        "bn": "Git-এ commit করা একটা terraform.tfvars file"
+      },
+      {
+        "en": "A comment at the top of main.tf",
+        "bn": "main.tf-এর ওপরের একটা comment"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Credentials come from outside the code. The environment variable keeps the token out of every file that could be committed.",
+      "bn": "Credential code-এর বাইরে থেকে আসে। Environment variable token-কে commit হতে পারে এমন প্রতিটা file থেকে দূরে রাখে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which token scope is the right choice for practising `terraform plan`?",
+      "bn": "`terraform plan` অনুশীলনের জন্য কোন token scope সঠিক?"
+    },
+    "options": [
+      {
+        "en": "Full Access, so nothing is ever refused",
+        "bn": "Full Access, যাতে কিছুই কখনো প্রত্যাখ্যাত না হয়"
+      },
+      {
+        "en": "Custom scope with every delete permission",
+        "bn": "প্রতিটা delete অনুমতিসহ Custom scope"
+      },
+      {
+        "en": "Read Only, because a plan only reads and a missing scope returns 403",
+        "bn": "Read Only, কারণ plan শুধু পড়ে আর scope না থাকলে 403 আসে"
+      },
+      {
+        "en": "No token at all",
+        "bn": "কোনো token-ই নয়"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Least privilege: a read-only token can plan, and a mistaken apply should be refused with a 403.",
+      "bn": "সর্বনিম্ন ক্ষমতা: read-only token plan করতে পারে, আর ভুল apply 403 দিয়ে প্রত্যাখ্যাত হওয়ার কথা।"
+    }
+  },
+  {
+    "q": {
+      "en": "You created a token with the wrong scope. What can you do?",
+      "bn": "তুমি ভুল scope-এ একটা token বানিয়েছ। কী করতে পারো?"
+    },
+    "options": [
+      {
+        "en": "Edit its scope in the control panel",
+        "bn": "control panel-এ তার scope edit করা"
+      },
+      {
+        "en": "Create a new token with the right scope and delete the old one",
+        "bn": "সঠিক scope-এ নতুন token বানিয়ে পুরনোটা মুছে ফেলা"
+      },
+      {
+        "en": "Run terraform refresh",
+        "bn": "terraform refresh চালানো"
+      },
+      {
+        "en": "Add the scope in terraform.tfstate",
+        "bn": "terraform.tfstate-এ scope যোগ করা"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The docs say the scope of a token cannot be edited after creation.",
+      "bn": "Docs বলে তৈরির পরে token-এর scope edit করা যায় না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Does `terraform validate` need the API token?",
+      "bn": "`terraform validate`-এর কি API token লাগে?"
+    },
+    "options": [
+      {
+        "en": "Yes, it calls the provider API to check every resource",
+        "bn": "হ্যাঁ, প্রতিটা resource যাচাই করতে সে provider API ডাকে"
+      },
+      {
+        "en": "Yes, but only a Full Access token",
+        "bn": "হ্যাঁ, কিন্তু শুধু Full Access token"
+      },
+      {
+        "en": "No, it checks the code without contacting remote services; it only needs an initialized folder",
+        "bn": "না, সে remote service না ডেকে code যাচাই করে; শুধু একটা initialized folder লাগে"
+      },
+      {
+        "en": "No, because it does not need terraform init",
+        "bn": "না, কারণ এর terraform init লাগে না"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "validate does not validate remote services or provider APIs, but it does need terraform init first.",
+      "bn": "validate remote service বা provider API যাচাই করে না, তবে আগে terraform init লাগে।"
+    }
+  },
+  {
+    "q": {
+      "en": "A DigitalOcean Droplet is powered off. What happens to billing?",
+      "bn": "একটা DigitalOcean Droplet বন্ধ (powered off) করা হলো। Billing-এর কী হয়?"
+    },
+    "options": [
+      {
+        "en": "Billing stops immediately",
+        "bn": "Billing সাথে সাথে থামে"
+      },
+      {
+        "en": "Billing stops after 24 hours",
+        "bn": "২৪ ঘণ্টা পরে billing থামে"
+      },
+      {
+        "en": "Billing continues; it stops only when the Droplet is destroyed",
+        "bn": "Billing চলতে থাকে; Droplet destroy হলেই শুধু থামে"
+      },
+      {
+        "en": "Billing is halved",
+        "bn": "Billing অর্ধেক হয়"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "The docs: billing begins when you create the Droplet and ends when you destroy it; powered-off Droplets still incur charges.",
+      "bn": "Docs: Droplet তৈরি করলে billing শুরু হয় আর destroy করলে শেষ হয়; বন্ধ করা Droplet-এও খরচ চলে।"
+    }
+  }
+]

@@ -303,4 +303,4 @@ Module শুধু সর্বনিম্ন সীমা দেবে (য�
 
 ---
 
-**পরের chapter:** Chapter 5 — একটা আসল cloud provider (শুধু plan) *(শীঘ্রই আসছে)*
+**পরের chapter:** [Chapter 5 — একটা আসল cloud provider (শুধু plan)](05-a-real-cloud-provider-plan-only.md)
