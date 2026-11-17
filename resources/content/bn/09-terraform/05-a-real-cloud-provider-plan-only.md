@@ -287,4 +287,4 @@ Droplet তৈরি হলে শুরু, শুধু destroy হলে শ�
 
 ---
 
-**পরের chapter:** Chapter 6 — Dependency, `count`, `for_each` ও `lifecycle` *(শীঘ্রই আসছে)*
+**পরের chapter:** [Chapter 6 — Dependency, `count`, `for_each` ও `lifecycle`](06-dependencies-count-for-each-and-lifecycle.md)

@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "The container uses `docker_image.nginx.image_id`. What does that give Terraform?",
+      "bn": "Container `docker_image.nginx.image_id` ব্যবহার করে। এটা Terraform-কে কী দেয়?"
+    },
+    "options": [
+      {
+        "en": "Nothing; Terraform builds in the order of the files",
+        "bn": "কিছুই না; Terraform file-এর ক্রমে বানায়"
+      },
+      {
+        "en": "An implicit dependency, so the image is built before the container",
+        "bn": "একটা implicit dependency, তাই image container-এর আগে বানানো হয়"
+      },
+      {
+        "en": "A copy of the image inside the state file",
+        "bn": "state file-এর ভেতরে image-এর একটা কপি"
+      },
+      {
+        "en": "A requirement to add depends_on",
+        "bn": "depends_on যোগ করার চাহিদা"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Referencing another resource's value creates an implicit dependency; the docs prefer it to depends_on.",
+      "bn": "অন্য resource-এর মান উল্লেখ করলে implicit dependency হয়; docs এটাকে depends_on-এর চেয়ে পছন্দ করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "How do you make a resource optional with count?",
+      "bn": "count দিয়ে কীভাবে একটা resource ঐচ্ছিক করবে?"
+    },
+    "options": [
+      {
+        "en": "count = var.enabled ? 1 : 0",
+        "bn": "count = var.enabled ? 1 : 0"
+      },
+      {
+        "en": "count = var.enabled",
+        "bn": "count = var.enabled"
+      },
+      {
+        "en": "for_each = var.enabled",
+        "bn": "for_each = var.enabled"
+      },
+      {
+        "en": "lifecycle { count = 0 }",
+        "bn": "lifecycle { count = 0 }"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "count is a number: 1 creates one instance, 0 creates none.",
+      "bn": "count একটা সংখ্যা: 1 হলে একটা instance, 0 হলে কোনোটাই নয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "You build containers with count from a list of names and remove a name from the middle. Why is this risky?",
+      "bn": "তুমি নামের একটা list থেকে count দিয়ে container বানাও আর মাঝখান থেকে একটা নাম সরাও। এটা ঝুঁকিপূর্ণ কেন?"
+    },
+    "options": [
+      {
+        "en": "count cannot read lists",
+        "bn": "count list পড়তে পারে না"
+      },
+      {
+        "en": "The later instances shift position, so the plan may change or replace more than the removed one",
+        "bn": "পরের instance গুলো অবস্থান বদলায়, তাই plan সরানোটার বেশি বদলাতে বা প্রতিস্থাপন করতে পারে"
+      },
+      {
+        "en": "Terraform deletes the whole state file",
+        "bn": "Terraform পুরো state file মুছে দেয়"
+      },
+      {
+        "en": "Terraform ignores the change",
+        "bn": "Terraform পরিবর্তন উপেক্ষা করে"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "count addresses instances by number (app[0], app[1]); for_each uses stable keys so only the removed key is affected.",
+      "bn": "count instance-কে সংখ্যা (app[0], app[1]) দিয়ে address করে; for_each স্থির key ব্যবহার করে তাই শুধু সরানো key প্রভাবিত হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which statement about for_each is TRUE?",
+      "bn": "for_each সম্পর্কে কোন বাক্যটা সত্য?"
+    },
+    "options": [
+      {
+        "en": "It accepts a plain list without conversion",
+        "bn": "এটা কোনো বদল ছাড়াই সাধারণ list নেয়"
+      },
+      {
+        "en": "It can be combined with count in the same block",
+        "bn": "একই block-এ এটা count-এর সাথে মেশানো যায়"
+      },
+      {
+        "en": "Its keys can be unknown until after apply",
+        "bn": "এর key apply-এর পর পর্যন্ত অজানা থাকতে পারে"
+      },
+      {
+        "en": "It takes a map or a set of strings, and the keys must be known at plan time",
+        "bn": "এটা একটা map বা string-এর set নেয়, আর key গুলো plan-এর সময় জানা থাকতে হবে"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Use toset() for a list; a block cannot use both count and for_each; sensitive values are not allowed.",
+      "bn": "list-এর জন্য toset() ব্যবহার করো; একটা block count ও for_each দুটোই ব্যবহার করতে পারে না; sensitive মান চলে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `prevent_destroy = true` NOT protect you from?",
+      "bn": "`prevent_destroy = true` তোমাকে কীসের থেকে রক্ষা করে না?"
+    },
+    "options": [
+      {
+        "en": "A plan that would destroy the object",
+        "bn": "যে plan object destroy করবে সেটা"
+      },
+      {
+        "en": "Someone deleting the resource's configuration block",
+        "bn": "কেউ resource-এর configuration block মুছে ফেললে"
+      },
+      {
+        "en": "terraform destroy on that object",
+        "bn": "ওই object-এ terraform destroy"
+      },
+      {
+        "en": "An error being shown for a destroying plan",
+        "bn": "destroy করা plan-এর জন্য error দেখানো"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The rule is not recorded in state, so removing the configuration can still destroy the object. Keep reviews and backups.",
+      "bn": "Rule state-এ রেকর্ড হয় না, তাই configuration মুছলে object এখনো destroy হতে পারে। Review ও backup রাখো।"
+    }
+  }
+]
