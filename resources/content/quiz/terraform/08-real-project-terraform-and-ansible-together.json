@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "In the two-tool setup, who owns the firewall and who owns the packages inside the server?",
+      "bn": "দুই-tool ব্যবস্থায় firewall-এর মালিক কে আর server-এর ভেতরের package-এর মালিক কে?"
+    },
+    "options": [
+      {
+        "en": "Ansible owns the firewall; Terraform owns the packages",
+        "bn": "Ansible firewall-এর মালিক; Terraform package-এর"
+      },
+      {
+        "en": "Terraform owns both",
+        "bn": "Terraform দুটোরই মালিক"
+      },
+      {
+        "en": "Terraform owns the firewall; Ansible owns the packages",
+        "bn": "Terraform firewall-এর মালিক; Ansible package-এর"
+      },
+      {
+        "en": "Neither; both are set by hand",
+        "bn": "কেউই নয়; দুটোই হাতে সেট করা"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Terraform owns what exists in the cloud account; Ansible owns what is inside the server.",
+      "bn": "Terraform cloud account-এ যা আছে তার মালিক; Ansible server-এর ভেতরে যা আছে তার।"
+    }
+  },
+  {
+    "q": {
+      "en": "How does Terraform hand the server's address to Ansible?",
+      "bn": "Terraform কীভাবে server-এর address Ansible-কে দেয়?"
+    },
+    "options": [
+      {
+        "en": "By editing the Ansible playbook from inside the Droplet",
+        "bn": "Droplet-এর ভেতর থেকে Ansible playbook edit করে"
+      },
+      {
+        "en": "Through an output, rendered into an inventory file or read with terraform output -raw",
+        "bn": "একটা output দিয়ে, যা inventory file-এ render করা হয় বা terraform output -raw দিয়ে পড়া হয়"
+      },
+      {
+        "en": "By printing the API token into the inventory",
+        "bn": "inventory-তে API token print করে"
+      },
+      {
+        "en": "By committing terraform.tfstate for Ansible to read",
+        "bn": "Ansible পড়ার জন্য terraform.tfstate commit করে"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "An output such as droplet_ip carries the address; templatefile with local_file, or terraform output -raw, turns it into an inventory.",
+      "bn": "droplet_ip-এর মতো একটা output address বহন করে; templatefile ও local_file, বা terraform output -raw, তাকে inventory বানায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why do Terraform's docs advise against running Ansible from a provisioner?",
+      "bn": "Provisioner থেকে Ansible চালানোর বিরুদ্ধে Terraform-এর docs কেন পরামর্শ দেয়?"
+    },
+    "options": [
+      {
+        "en": "Provisioners are faster than Ansible",
+        "bn": "provisioner Ansible-এর চেয়ে দ্রুত"
+      },
+      {
+        "en": "Provisioners are a last resort: a plan cannot model them, they need direct access and credentials, and a failure leaves a half-configured resource",
+        "bn": "provisioner শেষ উপায়: plan এগুলো model করতে পারে না, এগুলো সরাসরি access ও credential চায়, আর ব্যর্থতা resource-কে আধা-configure রাখে"
+      },
+      {
+        "en": "Ansible cannot read inventory files",
+        "bn": "Ansible inventory file পড়তে পারে না"
+      },
+      {
+        "en": "Terraform forbids running any program",
+        "bn": "Terraform কোনো program চালানো নিষিদ্ধ করে"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Run Ansible as its own, reviewable step instead.",
+      "bn": "Ansible-কে নিজস্ব, review-যোগ্য ধাপ হিসেবে চালাও।"
+    }
+  },
+  {
+    "q": {
+      "en": "A server must be rebuilt from nothing. In what order do you run the tools, and what should the second Ansible run show?",
+      "bn": "একটা server শূন্য থেকে আবার বানাতে হবে। tool গুলো কোন ক্রমে চালাবে, আর দ্বিতীয় Ansible run কী দেখানো উচিত?"
+    },
+    "options": [
+      {
+        "en": "Terraform first, then Ansible; the second Ansible run should show changed=0",
+        "bn": "আগে Terraform, তারপর Ansible; দ্বিতীয় Ansible run-এ changed=0 দেখানো উচিত"
+      },
+      {
+        "en": "Ansible first, then Terraform; changed=4",
+        "bn": "আগে Ansible, তারপর Terraform; changed=4"
+      },
+      {
+        "en": "Only Ansible; failed=1",
+        "bn": "শুধু Ansible; failed=1"
+      },
+      {
+        "en": "Only Terraform; changed=0 is impossible",
+        "bn": "শুধু Terraform; changed=0 অসম্ভব"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The server must exist before it can be configured; a healthy idempotent playbook changes nothing on the second run.",
+      "bn": "configure করার আগে server থাকতে হবে; সুস্থ idempotent playbook দ্বিতীয় run-এ কিছুই বদলায় না।"
+    }
+  },
+  {
+    "q": {
+      "en": "After a practice apply you are finished. What must you do, and why?",
+      "bn": "অনুশীলনের apply-এর পরে তুমি শেষ করেছ। কী করতে হবে, আর কেন?"
+    },
+    "options": [
+      {
+        "en": "Power the server off; billing stops immediately",
+        "bn": "server বন্ধ করো; billing সাথে সাথে থামে"
+      },
+      {
+        "en": "Nothing; resources delete themselves",
+        "bn": "কিছুই না; resource নিজে মুছে যায়"
+      },
+      {
+        "en": "Commit the state file so it is safe",
+        "bn": "state file commit করো যাতে নিরাপদ থাকে"
+      },
+      {
+        "en": "Run terraform destroy and check the control panel, because billing continues until the resources are destroyed",
+        "bn": "terraform destroy চালাও আর control panel দেখো, কারণ resource destroy না হওয়া পর্যন্ত billing চলে"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Powered-off Droplets are still billed; billing ends when you destroy them. Then delete the API token.",
+      "bn": "বন্ধ করা Droplet-ও bill হয়; destroy করলে billing শেষ হয়। তারপর API token মুছে ফেলো।"
+    }
+  }
+]

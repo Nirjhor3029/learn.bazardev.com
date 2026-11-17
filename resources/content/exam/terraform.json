@@ -1,0 +1,834 @@
+[
+  {
+    "ref": "01-what-is-terraform-and-your-first-run",
+    "q": {
+      "en": "Which command shows what Terraform would change, without changing anything?",
+      "bn": "কোন command Terraform কী বদলাত তা দেখায়, কিছু না বদলিয়ে?"
+    },
+    "options": [
+      {
+        "en": "terraform plan",
+        "bn": "terraform plan"
+      },
+      {
+        "en": "terraform init",
+        "bn": "terraform init"
+      },
+      {
+        "en": "terraform destroy",
+        "bn": "terraform destroy"
+      },
+      {
+        "en": "terraform fmt",
+        "bn": "terraform fmt"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "01-what-is-terraform-and-your-first-run",
+    "q": {
+      "en": "Which file records the exact provider versions and should be committed to Git?",
+      "bn": "কোন file ঠিক provider version রেকর্ড করে আর Git-এ commit করা উচিত?"
+    },
+    "options": [
+      {
+        "en": "terraform.tfstate",
+        "bn": "terraform.tfstate"
+      },
+      {
+        "en": ".terraform.lock.hcl",
+        "bn": ".terraform.lock.hcl"
+      },
+      {
+        "en": ".terraform/",
+        "bn": "`.terraform/`"
+      },
+      {
+        "en": "main.tf.backup",
+        "bn": "main.tf.backup"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "01-what-is-terraform-and-your-first-run",
+    "q": {
+      "en": "What does the constraint `~> 4.2.0` allow?",
+      "bn": "`~> 4.2.0` constraint কী অনুমতি দেয়?"
+    },
+    "options": [
+      {
+        "en": "Any 4.x, including 4.9",
+        "bn": "যেকোনো 4.x, 4.9 সহ"
+      },
+      {
+        "en": "Exactly 4.2.0 only",
+        "bn": "শুধু ঠিক 4.2.0"
+      },
+      {
+        "en": "Any 4.2.x, but not 4.3",
+        "bn": "যেকোনো 4.2.x, কিন্তু 4.3 নয়"
+      },
+      {
+        "en": "Any version at all",
+        "bn": "যেকোনো version"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "01-what-is-terraform-and-your-first-run",
+    "q": {
+      "en": "What is true about `terraform destroy`?",
+      "bn": "`terraform destroy` সম্পর্কে কোনটা সত্য?"
+    },
+    "options": [
+      {
+        "en": "It can be undone with terraform undo",
+        "bn": "terraform undo দিয়ে এটা undo করা যায়"
+      },
+      {
+        "en": "It also deletes unrelated resources on the machine",
+        "bn": "এটা machine-এর সম্পর্কহীন resource-ও মোছে"
+      },
+      {
+        "en": "It only deletes the state file",
+        "bn": "এটা শুধু state file মোছে"
+      },
+      {
+        "en": "It has no undo, and it only removes resources this project manages",
+        "bn": "এর কোনো undo নেই, আর এটা শুধু এই project-এর manage করা resource সরায়"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "02-hcl-variables-outputs-and-expressions",
+    "q": {
+      "en": "A variable is set by `terraform.tfvars` and by `-var` on the command line. Which wins?",
+      "bn": "একটা variable `terraform.tfvars` দিয়ে এবং command line-এর `-var` দিয়ে সেট হলো। কোনটা জেতে?"
+    },
+    "options": [
+      {
+        "en": "terraform.tfvars",
+        "bn": "terraform.tfvars"
+      },
+      {
+        "en": "The -var on the command line",
+        "bn": "command line-এর -var"
+      },
+      {
+        "en": "The variable's default",
+        "bn": "variable-এর default"
+      },
+      {
+        "en": "Whichever was typed first",
+        "bn": "যেটা আগে টাইপ করা হয়েছে"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "02-hcl-variables-outputs-and-expressions",
+    "q": {
+      "en": "What does `sensitive = true` on a variable do?",
+      "bn": "একটা variable-এ `sensitive = true` কী করে?"
+    },
+    "options": [
+      {
+        "en": "Removes the value from the state file",
+        "bn": "state file থেকে মান সরায়"
+      },
+      {
+        "en": "Encrypts the value with a key",
+        "bn": "একটা key দিয়ে মান encrypt করে"
+      },
+      {
+        "en": "Hides the value in CLI output, but it is still stored in state",
+        "bn": "CLI output-এ মান লুকায়, কিন্তু state-এ তা এখনো থাকে"
+      },
+      {
+        "en": "Makes the variable read-only for everyone",
+        "bn": "variable সবার জন্য read-only করে"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "02-hcl-variables-outputs-and-expressions",
+    "q": {
+      "en": "Which expression returns 80 in `prod` and 8000 otherwise?",
+      "bn": "কোন expression `prod`-এ 80, নইলে 8000 ফেরত দেয়?"
+    },
+    "options": [
+      {
+        "en": "if var.environment then 80 else 8000",
+        "bn": "if var.environment then 80 else 8000"
+      },
+      {
+        "en": "[for e in var.environment : 80]",
+        "bn": "[for e in var.environment : 80]"
+      },
+      {
+        "en": "join(\"prod\", [80, 8000])",
+        "bn": "join(\"prod\", [80, 8000])"
+      },
+      {
+        "en": "var.environment == \"prod\" ? 80 : 8000",
+        "bn": "var.environment == \"prod\" ? 80 : 8000"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "02-hcl-variables-outputs-and-expressions",
+    "q": {
+      "en": "A variable has no default and nobody sets it. What happens?",
+      "bn": "একটা variable-এর default নেই আর কেউ সেট করেনি। কী হয়?"
+    },
+    "options": [
+      {
+        "en": "Terraform prompts for a value before making a plan",
+        "bn": "plan বানানোর আগে Terraform একটা মান জিজ্ঞেস করে"
+      },
+      {
+        "en": "Terraform uses an empty string silently",
+        "bn": "Terraform চুপচাপ একটা ফাঁকা string ব্যবহার করে"
+      },
+      {
+        "en": "The state file is deleted",
+        "bn": "state file মুছে যায়"
+      },
+      {
+        "en": "Terraform skips the resource",
+        "bn": "Terraform resource বাদ দেয়"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "03-state-and-how-terraform-thinks",
+    "q": {
+      "en": "Which three things does Terraform compare when it plans?",
+      "bn": "Plan করার সময় Terraform কোন তিনটা জিনিস তুলনা করে?"
+    },
+    "options": [
+      {
+        "en": "Git history, CI logs, and the lock file",
+        "bn": "Git history, CI log ও lock file"
+      },
+      {
+        "en": "Providers, modules, and outputs",
+        "bn": "provider, module ও output"
+      },
+      {
+        "en": "Configuration, state, and the real world",
+        "bn": "configuration, state ও আসল দুনিয়া"
+      },
+      {
+        "en": "Variables, locals, and functions",
+        "bn": "variable, local ও function"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "03-state-and-how-terraform-thinks",
+    "q": {
+      "en": "You renamed a resource block and want to keep the real object. What do you run?",
+      "bn": "তুমি একটা resource block-এর নাম বদলেছ আর আসল object রাখতে চাও। কী চালাবে?"
+    },
+    "options": [
+      {
+        "en": "terraform state rm NEW",
+        "bn": "terraform state rm NEW"
+      },
+      {
+        "en": "terraform destroy then terraform apply",
+        "bn": "terraform destroy, তারপর terraform apply"
+      },
+      {
+        "en": "Edit terraform.tfstate by hand",
+        "bn": "terraform.tfstate হাতে edit করো"
+      },
+      {
+        "en": "terraform state mv OLD NEW",
+        "bn": "terraform state mv OLD NEW"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "03-state-and-how-terraform-thinks",
+    "q": {
+      "en": "What does `terraform apply -refresh-only` do?",
+      "bn": "`terraform apply -refresh-only` কী করে?"
+    },
+    "options": [
+      {
+        "en": "Updates Terraform's records to match the real world, without changing infrastructure",
+        "bn": "আসল infrastructure না বদলিয়ে Terraform-এর রেকর্ড আসল দুনিয়ার সাথে মেলায়"
+      },
+      {
+        "en": "Recreates every resource",
+        "bn": "প্রতিটা resource আবার বানায়"
+      },
+      {
+        "en": "Deletes the state file",
+        "bn": "state file মোছে"
+      },
+      {
+        "en": "Upgrades the providers",
+        "bn": "provider upgrade করে"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "03-state-and-how-terraform-thinks",
+    "q": {
+      "en": "What does `terraform state rm ADDRESS` do?",
+      "bn": "`terraform state rm ADDRESS` কী করে?"
+    },
+    "options": [
+      {
+        "en": "Destroys the real object",
+        "bn": "আসল object destroy করে"
+      },
+      {
+        "en": "Makes Terraform forget the object without destroying it",
+        "bn": "object destroy না করে Terraform-কে ভুলিয়ে দেয়"
+      },
+      {
+        "en": "Deletes the configuration block",
+        "bn": "configuration block মোছে"
+      },
+      {
+        "en": "Refreshes the state",
+        "bn": "state refresh করে"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "04-modules",
+    "q": {
+      "en": "How do you read an output named `url` from `module \"web_dev\"`?",
+      "bn": "`module \"web_dev\"` থেকে `url` নামের output কীভাবে পড়বে?"
+    },
+    "options": [
+      {
+        "en": "web_dev.url",
+        "bn": "web_dev.url"
+      },
+      {
+        "en": "output.web_dev.url",
+        "bn": "output.web_dev.url"
+      },
+      {
+        "en": "var.web_dev.url",
+        "bn": "var.web_dev.url"
+      },
+      {
+        "en": "module.web_dev.url",
+        "bn": "module.web_dev.url"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "04-modules",
+    "q": {
+      "en": "Why must a reusable child module not contain a `provider` block?",
+      "bn": "পুনর্ব্যবহারযোগ্য child module-এ কেন `provider` block থাকবে না?"
+    },
+    "options": [
+      {
+        "en": "It inherits the provider configuration from its parent, and only declares required_providers",
+        "bn": "সে parent থেকে provider configuration উত্তরাধিকারে পায়, আর শুধু required_providers ঘোষণা করে"
+      },
+      {
+        "en": "Modules cannot use providers",
+        "bn": "module provider ব্যবহার করতে পারে না"
+      },
+      {
+        "en": "provider blocks are only for outputs.tf",
+        "bn": "provider block শুধু outputs.tf-এর জন্য"
+      },
+      {
+        "en": "Docker has no provider",
+        "bn": "Docker-এর কোনো provider নেই"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "04-modules",
+    "q": {
+      "en": "What does a `moved` block do?",
+      "bn": "`moved` block কী করে?"
+    },
+    "options": [
+      {
+        "en": "Moves the state file to another folder",
+        "bn": "state file অন্য folder-এ সরায়"
+      },
+      {
+        "en": "Updates a resource address in the plan without destroying the object",
+        "bn": "object destroy না করে plan-এ resource address update করে"
+      },
+      {
+        "en": "Moves a container between servers",
+        "bn": "একটা container এক server থেকে অন্যটায় সরায়"
+      },
+      {
+        "en": "Deletes and recreates the resource",
+        "bn": "resource মুছে আবার বানায়"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "04-modules",
+    "q": {
+      "en": "Which module is NOT worth writing, according to the docs?",
+      "bn": "Docs অনুযায়ী কোন module লেখার যোগ্য নয়?"
+    },
+    "options": [
+      {
+        "en": "A module that describes a new concept like a web server",
+        "bn": "যে module web server-এর মতো একটা নতুন ধারণা বর্ণনা করে"
+      },
+      {
+        "en": "A module with described variables and outputs",
+        "bn": "বর্ণনাসহ variable ও output থাকা module"
+      },
+      {
+        "en": "A thin wrapper around a single resource type",
+        "bn": "একটা resource type-এর পাতলা মোড়ক"
+      },
+      {
+        "en": "A module called twice with different inputs",
+        "bn": "আলাদা input দিয়ে দুইবার ডাকা module"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "05-a-real-cloud-provider-plan-only",
+    "q": {
+      "en": "Where should the DigitalOcean API token come from?",
+      "bn": "DigitalOcean API token কোথা থেকে আসা উচিত?"
+    },
+    "options": [
+      {
+        "en": "The DIGITALOCEAN_TOKEN environment variable",
+        "bn": "DIGITALOCEAN_TOKEN environment variable"
+      },
+      {
+        "en": "A default value in variables.tf",
+        "bn": "variables.tf-এর একটা default মান"
+      },
+      {
+        "en": "A terraform.tfvars file in Git",
+        "bn": "Git-এ থাকা একটা terraform.tfvars file"
+      },
+      {
+        "en": "A comment in main.tf",
+        "bn": "main.tf-এর একটা comment"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "05-a-real-cloud-provider-plan-only",
+    "q": {
+      "en": "Which token scope is right for practising `terraform plan`, and can you edit it later?",
+      "bn": "`terraform plan` অনুশীলনের জন্য কোন token scope সঠিক, আর পরে কি তা edit করা যায়?"
+    },
+    "options": [
+      {
+        "en": "Full Access; yes, in the control panel",
+        "bn": "Full Access; হ্যাঁ, control panel-এ"
+      },
+      {
+        "en": "Read Only; no, a scope cannot be edited after creation",
+        "bn": "Read Only; না, তৈরির পরে scope edit করা যায় না"
+      },
+      {
+        "en": "Read Only; yes, any time",
+        "bn": "Read Only; হ্যাঁ, যেকোনো সময়"
+      },
+      {
+        "en": "No token is needed for plan",
+        "bn": "plan-এর জন্য কোনো token লাগে না"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "05-a-real-cloud-provider-plan-only",
+    "q": {
+      "en": "Does `terraform validate` need the API token?",
+      "bn": "`terraform validate`-এর কি API token লাগে?"
+    },
+    "options": [
+      {
+        "en": "Yes, a Full Access token",
+        "bn": "হ্যাঁ, একটা Full Access token"
+      },
+      {
+        "en": "Yes, any token",
+        "bn": "হ্যাঁ, যেকোনো token"
+      },
+      {
+        "en": "No, it does not contact remote services",
+        "bn": "না, এটা remote service-কে ডাকে না"
+      },
+      {
+        "en": "Yes, but only on the first run",
+        "bn": "হ্যাঁ, কিন্তু শুধু প্রথম run-এ"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "05-a-real-cloud-provider-plan-only",
+    "q": {
+      "en": "A Droplet is powered off. What happens to billing?",
+      "bn": "একটা Droplet বন্ধ করা হলো। Billing-এর কী হয়?"
+    },
+    "options": [
+      {
+        "en": "It stops at once",
+        "bn": "সাথে সাথে থামে"
+      },
+      {
+        "en": "It stops after 24 hours",
+        "bn": "২৪ ঘণ্টা পরে থামে"
+      },
+      {
+        "en": "It is halved",
+        "bn": "অর্ধেক হয়"
+      },
+      {
+        "en": "It continues until the Droplet is destroyed",
+        "bn": "Droplet destroy না হওয়া পর্যন্ত চলতে থাকে"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "06-dependencies-count-for-each-and-lifecycle",
+    "q": {
+      "en": "The container uses `docker_image.nginx.image_id`. What does that give Terraform?",
+      "bn": "Container `docker_image.nginx.image_id` ব্যবহার করে। এটা Terraform-কে কী দেয়?"
+    },
+    "options": [
+      {
+        "en": "Nothing; order follows the files",
+        "bn": "কিছুই না; ক্রম file অনুযায়ী"
+      },
+      {
+        "en": "An implicit dependency: the image is built first",
+        "bn": "একটা implicit dependency: image আগে বানানো হয়"
+      },
+      {
+        "en": "A copy of the image in state",
+        "bn": "state-এ image-এর একটা কপি"
+      },
+      {
+        "en": "A need to add depends_on",
+        "bn": "depends_on যোগ করার দরকার"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "06-dependencies-count-for-each-and-lifecycle",
+    "q": {
+      "en": "Why is `for_each` usually safer than `count` for named things?",
+      "bn": "নামওয়ালা জিনিসের জন্য `for_each` সাধারণত `count`-এর চেয়ে নিরাপদ কেন?"
+    },
+    "options": [
+      {
+        "en": "It is faster",
+        "bn": "এটা দ্রুত"
+      },
+      {
+        "en": "It needs no values at plan time",
+        "bn": "plan-এর সময় এর কোনো মান লাগে না"
+      },
+      {
+        "en": "It uses stable keys, so removing one key affects only that instance",
+        "bn": "এটা স্থির key ব্যবহার করে, তাই একটা key সরালে শুধু ওই instance প্রভাবিত হয়"
+      },
+      {
+        "en": "It can be combined with count",
+        "bn": "এটা count-এর সাথে মেশানো যায়"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "06-dependencies-count-for-each-and-lifecycle",
+    "q": {
+      "en": "What does `prevent_destroy = true` NOT protect against?",
+      "bn": "`prevent_destroy = true` কীসের থেকে রক্ষা করে না?"
+    },
+    "options": [
+      {
+        "en": "A plan that would destroy the object",
+        "bn": "যে plan object destroy করবে"
+      },
+      {
+        "en": "terraform destroy on that object",
+        "bn": "ওই object-এ terraform destroy"
+      },
+      {
+        "en": "A replacement that destroys the object",
+        "bn": "যে প্রতিস্থাপন object destroy করে"
+      },
+      {
+        "en": "Someone deleting the resource's configuration block",
+        "bn": "কেউ resource-এর configuration block মুছে ফেললে"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "06-dependencies-count-for-each-and-lifecycle",
+    "q": {
+      "en": "How do you make a resource optional with `count`?",
+      "bn": "`count` দিয়ে কীভাবে একটা resource ঐচ্ছিক করবে?"
+    },
+    "options": [
+      {
+        "en": "count = var.enabled ? 1 : 0",
+        "bn": "count = var.enabled ? 1 : 0"
+      },
+      {
+        "en": "count = var.enabled",
+        "bn": "count = var.enabled"
+      },
+      {
+        "en": "for_each = var.enabled",
+        "bn": "for_each = var.enabled"
+      },
+      {
+        "en": "lifecycle { count = 0 }",
+        "bn": "lifecycle { count = 0 }"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "07-remote-state-workspaces-and-ci",
+    "q": {
+      "en": "What does state locking protect against?",
+      "bn": "State locking কীসের থেকে রক্ষা করে?"
+    },
+    "options": [
+      {
+        "en": "Typing the wrong variable",
+        "bn": "ভুল variable টাইপ করা"
+      },
+      {
+        "en": "Provider version upgrades",
+        "bn": "provider version upgrade"
+      },
+      {
+        "en": "Two runs changing the same state at once",
+        "bn": "দুটো run একই state একসাথে বদলানো"
+      },
+      {
+        "en": "Losing the lock file",
+        "bn": "lock file হারানো"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "ref": "07-remote-state-workspaces-and-ci",
+    "q": {
+      "en": "You change the backend and want to keep your state. Which init option?",
+      "bn": "তুমি backend বদলাচ্ছ আর state রাখতে চাও। কোন init option?"
+    },
+    "options": [
+      {
+        "en": "-reconfigure",
+        "bn": "-reconfigure"
+      },
+      {
+        "en": "-backend=false",
+        "bn": "-backend=false"
+      },
+      {
+        "en": "-upgrade",
+        "bn": "-upgrade"
+      },
+      {
+        "en": "-migrate-state",
+        "bn": "-migrate-state"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "07-remote-state-workspaces-and-ci",
+    "q": {
+      "en": "Why are workspaces a poor way to separate dev from prod?",
+      "bn": "dev ও prod আলাদা রাখতে workspace খারাপ উপায় কেন?"
+    },
+    "options": [
+      {
+        "en": "They share one configuration and backend, with no separate credentials or access control",
+        "bn": "এগুলো একটা configuration ও backend ভাগ করে, আলাদা credential বা access control ছাড়া"
+      },
+      {
+        "en": "They cannot hold resources",
+        "bn": "এগুলো resource রাখতে পারে না"
+      },
+      {
+        "en": "The default workspace is deleted on apply",
+        "bn": "apply-এ default workspace মুছে যায়"
+      },
+      {
+        "en": "They only work with Docker",
+        "bn": "এগুলো শুধু Docker-এর সাথে কাজ করে"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "07-remote-state-workspaces-and-ci",
+    "q": {
+      "en": "What is the safest CI pattern for infrastructure?",
+      "bn": "Infrastructure-এর জন্য সবচেয়ে নিরাপদ CI ধাঁচ কোনটা?"
+    },
+    "options": [
+      {
+        "en": "Auto-approve every apply on every push",
+        "bn": "প্রতিটা push-এ প্রতিটা apply স্বয়ংক্রিয় অনুমোদন"
+      },
+      {
+        "en": "Plan on each pull request for review; after merge apply a saved plan with approval",
+        "bn": "প্রতিটা pull request-এ review-র জন্য plan; merge-এর পরে অনুমোদন সহ saved plan apply"
+      },
+      {
+        "en": "Apply from each laptop",
+        "bn": "প্রতিটা laptop থেকে apply"
+      },
+      {
+        "en": "Commit the plan file to Git",
+        "bn": "plan file Git-এ commit"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "08-real-project-terraform-and-ansible-together",
+    "q": {
+      "en": "Who owns the firewall, and who owns the packages inside the server?",
+      "bn": "Firewall-এর মালিক কে, আর server-এর ভেতরের package-এর মালিক কে?"
+    },
+    "options": [
+      {
+        "en": "Ansible owns the firewall; Terraform owns the packages",
+        "bn": "Ansible firewall-এর; Terraform package-এর"
+      },
+      {
+        "en": "Terraform owns both",
+        "bn": "Terraform দুটোরই"
+      },
+      {
+        "en": "Ansible owns both",
+        "bn": "Ansible দুটোরই"
+      },
+      {
+        "en": "Terraform owns the firewall; Ansible owns the packages",
+        "bn": "Terraform firewall-এর; Ansible package-এর"
+      }
+    ],
+    "answer": 3
+  },
+  {
+    "ref": "08-real-project-terraform-and-ansible-together",
+    "q": {
+      "en": "How does Terraform hand the server's address to Ansible?",
+      "bn": "Terraform কীভাবে server-এর address Ansible-কে দেয়?"
+    },
+    "options": [
+      {
+        "en": "Through an output, rendered into an inventory or read with terraform output -raw",
+        "bn": "একটা output দিয়ে, যা inventory-তে render করা হয় বা terraform output -raw দিয়ে পড়া হয়"
+      },
+      {
+        "en": "By running Ansible inside a provisioner",
+        "bn": "একটা provisioner-এর ভেতরে Ansible চালিয়ে"
+      },
+      {
+        "en": "By committing terraform.tfstate",
+        "bn": "terraform.tfstate commit করে"
+      },
+      {
+        "en": "By printing the API token",
+        "bn": "API token print করে"
+      }
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "08-real-project-terraform-and-ansible-together",
+    "q": {
+      "en": "To rebuild a server from nothing, in what order do you run the tools?",
+      "bn": "শূন্য থেকে server আবার বানাতে tool গুলো কোন ক্রমে চালাও?"
+    },
+    "options": [
+      {
+        "en": "Ansible first, then Terraform",
+        "bn": "আগে Ansible, তারপর Terraform"
+      },
+      {
+        "en": "Terraform first, then Ansible",
+        "bn": "আগে Terraform, তারপর Ansible"
+      },
+      {
+        "en": "Only Ansible",
+        "bn": "শুধু Ansible"
+      },
+      {
+        "en": "Both at the same time inside one provisioner",
+        "bn": "একটা provisioner-এর ভেতরে একসাথে দুটো"
+      }
+    ],
+    "answer": 1
+  },
+  {
+    "ref": "08-real-project-terraform-and-ansible-together",
+    "q": {
+      "en": "After a practice apply, what must you do?",
+      "bn": "অনুশীলনের apply-এর পরে কী করতে হবে?"
+    },
+    "options": [
+      {
+        "en": "Power the server off",
+        "bn": "server বন্ধ করো"
+      },
+      {
+        "en": "Nothing; resources delete themselves",
+        "bn": "কিছুই না; resource নিজে মুছে যায়"
+      },
+      {
+        "en": "Run terraform destroy and check the control panel, because billing continues until destroy",
+        "bn": "terraform destroy চালাও আর control panel দেখো, কারণ destroy না হওয়া পর্যন্ত billing চলে"
+      },
+      {
+        "en": "Commit the state file",
+        "bn": "state file commit করো"
+      }
+    ],
+    "answer": 2
+  }
+]

@@ -260,4 +260,4 @@ Review-এর অধীন প্রতিটা commit-এ `terraform plan` চ
 
 ---
 
-**পরের chapter:** Chapter 8 — Real project: Terraform ও Ansible একসাথে *(শীঘ্রই আসছে)*
+**পরের chapter:** [Chapter 8 — Real project: Terraform ও Ansible একসাথে](08-real-project-terraform-and-ansible-together.md)
