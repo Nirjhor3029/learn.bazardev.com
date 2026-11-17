@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "`php_memory_limit` is 256M in group_vars/web.yml and 512M in host_vars/web1.yml. What does web1 get?",
+      "bn": "`php_memory_limit` group_vars/web.yml-এ 256M আর host_vars/web1.yml-এ 512M। web1 কী পায়?"
+    },
+    "options": [
+      {
+        "en": "512M, because the host-specific value is more specific",
+        "bn": "512M, কারণ host-নির্দিষ্ট মান বেশি নির্দিষ্ট"
+      },
+      {
+        "en": "256M, because group values always win",
+        "bn": "256M, কারণ group-এর মান সবসময় জেতে"
+      },
+      {
+        "en": "Both, as a list",
+        "bn": "দুটোই, একটা list হিসেবে"
+      },
+      {
+        "en": "An error, because it is defined twice",
+        "bn": "error, কারণ এটা দুইবার সংজ্ঞায়িত"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Host variables are more specific than group variables, so they override them.",
+      "bn": "Host variable group variable-এর চেয়ে বেশি নির্দিষ্ট, তাই এগুলো ছাপিয়ে যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which line correctly reads the operating-system family from facts?",
+      "bn": "fact থেকে operating-system পরিবার পড়ার সঠিক লাইন কোনটা?"
+    },
+    "options": [
+      {
+        "en": "os_family from group_vars",
+        "bn": "group_vars থেকে os_family"
+      },
+      {
+        "en": "ansible_facts['os_family']",
+        "bn": "ansible_facts['os_family']"
+      },
+      {
+        "en": "register: os_family",
+        "bn": "register: os_family"
+      },
+      {
+        "en": "when: os_family",
+        "bn": "when: os_family"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Facts are read from the ansible_facts dictionary. Run the setup module to see all of them.",
+      "bn": "Fact ansible_facts dictionary থেকে পড়া হয়। সব দেখতে setup module চালাও।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which `when` is written correctly?",
+      "bn": "কোন `when` ঠিকভাবে লেখা?"
+    },
+    "options": [
+      {
+        "en": "when: \"{{ ansible_facts['os_family'] }}\" == Debian",
+        "bn": "when: \"{{ ansible_facts['os_family'] }}\" == Debian"
+      },
+      {
+        "en": "when: ansible_facts['os_family'] = \"Debian\"",
+        "bn": "when: ansible_facts['os_family'] = \"Debian\""
+      },
+      {
+        "en": "when: if ansible_facts['os_family'] is Debian",
+        "bn": "when: if ansible_facts['os_family'] is Debian"
+      },
+      {
+        "en": "when: ansible_facts['os_family'] == \"Debian\"",
+        "bn": "when: ansible_facts['os_family'] == \"Debian\""
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "A when clause is a raw Jinja2 expression without double curly braces.",
+      "bn": "`when` clause হলো double curly brace ছাড়া একটা কাঁচা Jinja2 expression।"
+    }
+  },
+  {
+    "q": {
+      "en": "A task runs `git --version` with register, and only reads data. What should you add so the second run stays at changed=0?",
+      "bn": "একটা task register সহ `git --version` চালায় আর শুধু ডেটা পড়ে। দ্বিতীয় run যেন changed=0-তে থাকে তার জন্য কী দেবে?"
+    },
+    "options": [
+      {
+        "en": "ignore_errors: true",
+        "bn": "ignore_errors: true"
+      },
+      {
+        "en": "changed_when: false",
+        "bn": "changed_when: false"
+      },
+      {
+        "en": "gather_facts: false",
+        "bn": "gather_facts: false"
+      },
+      {
+        "en": "failed_when: true",
+        "bn": "failed_when: true"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "command always reports changed by default; changed_when: false says this read changes nothing.",
+      "bn": "command ডিফল্টে সবসময় changed জানায়; changed_when: false বলে এই পড়া কিছু বদলায় না।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the problem with using `ignore_errors: true` everywhere?",
+      "bn": "সবখানে `ignore_errors: true` ব্যবহারের সমস্যা কী?"
+    },
+    "options": [
+      {
+        "en": "It hides real failures, and it does not even cover undefined variables or connection failures",
+        "bn": "এটা আসল ব্যর্থতা লুকায়, আর undefined variable বা connection ব্যর্থতাও ঢাকে না"
+      },
+      {
+        "en": "It makes tasks run twice",
+        "bn": "এটা task দুইবার চালায়"
+      },
+      {
+        "en": "It disables facts",
+        "bn": "এটা fact বন্ধ করে"
+      },
+      {
+        "en": "It encrypts the output",
+        "bn": "এটা output encrypt করে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Prefer a precise failed_when and use ignore_errors only when a failure is acceptable.",
+      "bn": "একটা সুনির্দিষ্ট failed_when পছন্দ করো আর ব্যর্থতা গ্রহণযোগ্য হলেই শুধু ignore_errors ব্যবহার করো।"
+    }
+  }
+]

@@ -396,4 +396,4 @@ Rendered অস্থায়ী file-এর (`%s` হিসেবে দেও
 
 ---
 
-**পরের chapter:** Chapter 5 — Ansible variable, fact, condition ও register *(শীঘ্রই আসছে)*
+**পরের chapter:** [Chapter 5 — Ansible variable, fact, condition ও register](05-ansible-variables-facts-and-conditions.md)
