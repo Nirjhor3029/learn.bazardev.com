@@ -291,4 +291,4 @@ Container `docker_image.nginx.image_id` উল্লেখ করে। ওই r
 
 ---
 
-**পরের chapter:** Chapter 7 — Remote state, workspace ও CI *(শীঘ্রই আসছে)*
+**পরের chapter:** [Chapter 7 — Remote state, workspace ও CI](07-remote-state-workspaces-and-ci.md)

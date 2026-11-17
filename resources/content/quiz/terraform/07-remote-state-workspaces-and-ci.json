@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "Why does a team need a remote backend instead of a local state file?",
+      "bn": "একটা দলের কেন local state file-এর বদলে remote backend লাগে?"
+    },
+    "options": [
+      {
+        "en": "So everyone shares one state in a safe place, ideally with locking",
+        "bn": "যাতে সবাই একটা নিরাপদ জায়গায় একটাই state ভাগ করে, আদর্শভাবে locking সহ"
+      },
+      {
+        "en": "Because local state is always deleted after apply",
+        "bn": "কারণ apply-এর পরে local state সবসময় মুছে যায়"
+      },
+      {
+        "en": "Because remote backends do not need credentials",
+        "bn": "কারণ remote backend-এর credential লাগে না"
+      },
+      {
+        "en": "Because remote state can be committed to Git",
+        "bn": "কারণ remote state Git-এ commit করা যায়"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A shared, locked, protected state avoids two people applying at once or using an old copy.",
+      "bn": "ভাগ করা, lock করা, রক্ষিত state দুজনের একসাথে apply বা পুরনো কপি ব্যবহার আটকায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "You change the backend and want to keep your existing state. Which init option do you use?",
+      "bn": "তুমি backend বদলাচ্ছ আর বিদ্যমান state রাখতে চাও। কোন init option ব্যবহার করবে?"
+    },
+    "options": [
+      {
+        "en": "-reconfigure",
+        "bn": "-reconfigure"
+      },
+      {
+        "en": "-backend=false",
+        "bn": "-backend=false"
+      },
+      {
+        "en": "-migrate-state",
+        "bn": "-migrate-state"
+      },
+      {
+        "en": "-upgrade",
+        "bn": "-upgrade"
+      }
+    ],
+    "answer": 2,
+    "why": {
+      "en": "-migrate-state copies existing state to the new backend. -reconfigure prevents migration, so the new backend starts empty.",
+      "bn": "-migrate-state বিদ্যমান state নতুন backend-এ কপি করে। -reconfigure migration আটকায়, তাই নতুন backend ফাঁকা শুরু হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Where should a backend's credentials come from?",
+      "bn": "Backend-এর credential কোথা থেকে আসা উচিত?"
+    },
+    "options": [
+      {
+        "en": "Hard-coded in the backend block for convenience",
+        "bn": "সুবিধার জন্য backend block-এ লিখে দেওয়া"
+      },
+      {
+        "en": "Environment variables or CI secrets, because values in the config end up in .terraform and plan files",
+        "bn": "Environment variable বা CI secret, কারণ config-এর মান .terraform ও plan file-এ যায়"
+      },
+      {
+        "en": "A comment in main.tf",
+        "bn": "main.tf-এর একটা comment"
+      },
+      {
+        "en": "The state file itself",
+        "bn": "state file নিজে"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The docs recommend environment variables for credentials and warn about values stored in .terraform and plan files.",
+      "bn": "Docs credential-এর জন্য environment variable সুপারিশ করে আর .terraform ও plan file-এ রাখা মান নিয়ে সতর্ক করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why are workspaces a poor way to separate dev from prod?",
+      "bn": "dev ও prod আলাদা রাখতে workspace খারাপ উপায় কেন?"
+    },
+    "options": [
+      {
+        "en": "Workspaces cannot hold more than one resource",
+        "bn": "Workspace একটার বেশি resource রাখতে পারে না"
+      },
+      {
+        "en": "The default workspace can be deleted",
+        "bn": "default workspace মুছে ফেলা যায়"
+      },
+      {
+        "en": "Workspaces only work with Docker",
+        "bn": "Workspace শুধু Docker-এর সাথে কাজ করে"
+      },
+      {
+        "en": "They share one configuration and backend and give no separate credentials or access control",
+        "bn": "এগুলো একটা configuration ও backend ভাগ করে আর আলাদা credential বা access control দেয় না"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "The docs: workspaces are not appropriate for deployments requiring separate credentials and access controls; use separate configurations with their own backends and shared modules.",
+      "bn": "Docs: আলাদা credential ও access control লাগে এমন deployment-এ workspace উপযুক্ত নয়; নিজের backend সহ আলাদা configuration ও ভাগ করা module ব্যবহার করো।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the safest CI pattern for infrastructure changes?",
+      "bn": "Infrastructure পরিবর্তনের জন্য সবচেয়ে নিরাপদ CI ধাঁচ কোনটা?"
+    },
+    "options": [
+      {
+        "en": "Auto-approve every apply on every push",
+        "bn": "প্রতিটা push-এ প্রতিটা apply স্বয়ংক্রিয়ভাবে অনুমোদন"
+      },
+      {
+        "en": "Plan on each pull request for human review; after merge, apply a saved plan with approval",
+        "bn": "প্রতিটা pull request-এ human review-র জন্য plan; merge-এর পরে অনুমোদন সহ saved plan apply"
+      },
+      {
+        "en": "Apply from each developer's laptop",
+        "bn": "প্রতিটা developer-এর laptop থেকে apply"
+      },
+      {
+        "en": "Commit the plan file to Git",
+        "bn": "plan file Git-এ commit করো"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Reviewers read the plan like a diff; the applied plan is the one a human approved. Auto-approve is only for non-critical infrastructure.",
+      "bn": "Reviewer plan-কে diff-এর মতো পড়ে; যে plan apply হয় সেটা মানুষ অনুমোদন করেছে। Auto-approve শুধু non-critical infrastructure-এর জন্য।"
+    }
+  }
+]
