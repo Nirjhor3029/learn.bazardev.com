@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "Which three things does Terraform compare when it makes a plan?",
+      "bn": "Plan বানানোর সময় Terraform কোন তিনটা জিনিস তুলনা করে?"
+    },
+    "options": [
+      {
+        "en": "Git history, the CI log, and the state file",
+        "bn": "Git history, CI log ও state file"
+      },
+      {
+        "en": "Your configuration, its state, and the real world",
+        "bn": "তোমার configuration, তার state, আর আসল দুনিয়া"
+      },
+      {
+        "en": "The provider, the module, and the output",
+        "bn": "provider, module ও output"
+      },
+      {
+        "en": "Variables, locals, and functions",
+        "bn": "variable, local ও function"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Configuration is what you want, state is what Terraform believes it manages, the real world is what exists.",
+      "bn": "Configuration তুমি যা চাও, state Terraform যা manage করে বলে ভাবে, আসল দুনিয়া যা আছে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Someone deletes a managed container by hand. What does the next `terraform plan` propose?",
+      "bn": "কেউ হাতে একটা managed container মুছে ফেলল। পরের `terraform plan` কী প্রস্তাব করে?"
+    },
+    "options": [
+      {
+        "en": "To create it again, because Terraform refreshes state and sees it is missing",
+        "bn": "আবার create করতে, কারণ Terraform state refresh করে দেখে এটা নেই"
+      },
+      {
+        "en": "Nothing, because Terraform only reads state",
+        "bn": "কিছুই না, কারণ Terraform শুধু state পড়ে"
+      },
+      {
+        "en": "To delete the state file",
+        "bn": "state file মুছতে"
+      },
+      {
+        "en": "To destroy every other resource",
+        "bn": "বাকি সব resource destroy করতে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Before any operation Terraform refreshes state against the real infrastructure; the code still says the container should exist.",
+      "bn": "যেকোনো কাজের আগে Terraform আসল infrastructure-এর বিরুদ্ধে state refresh করে; code এখনো বলছে container থাকা উচিত।"
+    }
+  },
+  {
+    "q": {
+      "en": "You renamed a resource block in the code and want to keep the real object. What do you run?",
+      "bn": "Code-এ একটা resource block-এর নাম বদলেছ আর আসল object রাখতে চাও। কী চালাবে?"
+    },
+    "options": [
+      {
+        "en": "terraform state rm on the new name",
+        "bn": "নতুন নামে terraform state rm"
+      },
+      {
+        "en": "terraform destroy, then terraform apply",
+        "bn": "terraform destroy, তারপর terraform apply"
+      },
+      {
+        "en": "Edit terraform.tfstate with a text editor",
+        "bn": "text editor দিয়ে terraform.tfstate edit"
+      },
+      {
+        "en": "terraform state mv OLD_ADDRESS NEW_ADDRESS",
+        "bn": "terraform state mv OLD_ADDRESS NEW_ADDRESS"
+      }
+    ],
+    "answer": 3,
+    "why": {
+      "en": "state mv moves the binding so the existing object belongs to the new address; without it the plan destroys the old and creates the new.",
+      "bn": "state mv binding সরায় যাতে বিদ্যমান object নতুন address-এর হয়; এটা ছাড়া plan পুরনোটা destroy করে নতুনটা create করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does `terraform state rm ADDRESS` do?",
+      "bn": "`terraform state rm ADDRESS` কী করে?"
+    },
+    "options": [
+      {
+        "en": "It destroys the real object and the state entry",
+        "bn": "আসল object আর state এন্ট্রি দুটোই destroy করে"
+      },
+      {
+        "en": "It removes the binding without destroying the real object, so Terraform forgets it",
+        "bn": "আসল object destroy না করে binding সরায়, ফলে Terraform ভুলে যায়"
+      },
+      {
+        "en": "It deletes the configuration block",
+        "bn": "configuration block মুছে ফেলে"
+      },
+      {
+        "en": "It refreshes the state",
+        "bn": "state refresh করে"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The object keeps running, but the next plan will want to create a new one. Use -dry-run first.",
+      "bn": "Object চলতে থাকে, কিন্তু পরের plan নতুন একটা বানাতে চাইবে। আগে -dry-run দাও।"
+    }
+  },
+  {
+    "q": {
+      "en": "A container is misbehaving but your code has not changed. How do you make Terraform recreate it?",
+      "bn": "একটা container ঠিকমতো চলছে না, কিন্তু তোমার code বদলায়নি। Terraform-কে দিয়ে কীভাবে আবার বানাবে?"
+    },
+    "options": [
+      {
+        "en": "terraform apply -replace=docker_container.nginx",
+        "bn": "terraform apply -replace=docker_container.nginx"
+      },
+      {
+        "en": "terraform apply -refresh=false",
+        "bn": "terraform apply -refresh=false"
+      },
+      {
+        "en": "terraform apply -refresh-only",
+        "bn": "terraform apply -refresh-only"
+      },
+      {
+        "en": "Delete .terraform.lock.hcl",
+        "bn": "`.terraform.lock.hcl` মুছে ফেলো"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "-replace plans to destroy and recreate the given resource address. Preview it with terraform plan -replace=...",
+      "bn": "-replace দেওয়া resource address মুছে আবার বানানোর plan করে। terraform plan -replace=... দিয়ে preview দেখো।"
+    }
+  }
+]

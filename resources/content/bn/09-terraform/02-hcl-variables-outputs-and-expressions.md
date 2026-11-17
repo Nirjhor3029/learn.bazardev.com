@@ -373,4 +373,4 @@ Infrastructure না বদলিয়ে expression ও function interactive 
 
 ---
 
-**পরের chapter:** Chapter 3 — State, আর Terraform কীভাবে ঠিক করে কী বদলাবে *(শীঘ্রই আসছে)*
+**পরের chapter:** [Chapter 3 — State, আর Terraform কীভাবে ঠিক করে কী বদলাবে](03-state-and-how-terraform-thinks.md)

@@ -143,7 +143,7 @@ return [
             'chapters' => [
                 '01-what-is-terraform-and-your-first-run' => ['title' => 'What is Terraform? Install and your first run (no cloud needed)', 'status' => 'available'],
                 '02-hcl-variables-outputs-and-expressions' => ['title' => 'HCL: variables, outputs, and expressions', 'status' => 'available'],
-                '03-state-and-how-terraform-thinks' => ['title' => 'State, and how Terraform decides what to change', 'status' => 'coming_soon'],
+                '03-state-and-how-terraform-thinks' => ['title' => 'State, and how Terraform decides what to change', 'status' => 'available'],
                 '04-modules' => ['title' => 'Modules: reusable infrastructure', 'status' => 'coming_soon'],
                 '05-a-real-cloud-provider-plan-only' => ['title' => 'A real cloud provider (plan only)', 'status' => 'coming_soon'],
                 '06-dependencies-count-for-each-and-lifecycle' => ['title' => 'Dependencies, count, for_each, and lifecycle', 'status' => 'coming_soon'],
