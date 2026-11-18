@@ -180,4 +180,4 @@ Service (MySQL) শুধু একই machine থেকে connection নেয
 
 ---
 
-**Next:** Chapter 2 — DNS-এর basic ছাড়িয়ে: CAA, SRV, DNSSEC, আর `dig`-এর পরেও debugging *(coming soon)*
+**পরের chapter:** [Chapter 2 — DNS-এর basic ছাড়িয়ে: CAA, SRV, DNSSEC, আর `dig`-এর পরেও debugging](02-dns-beyond-the-basics.md)

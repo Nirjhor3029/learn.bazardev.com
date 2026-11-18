@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What does a CAA record control?",
+      "bn": "CAA record কী নিয়ন্ত্রণ করে?"
+    },
+    "options": [
+      {
+        "en": "Which certificate authorities may issue certificates for the domain",
+        "bn": "কোন certificate authority domain-এর জন্য certificate issue করতে পারবে"
+      },
+      {
+        "en": "Which mail servers accept mail for the domain",
+        "bn": "কোন mail server domain-এর জন্য mail নিবে"
+      },
+      {
+        "en": "How long resolvers may cache the domain's records",
+        "bn": "Resolver domain-এর record কতদিন cache রাখতে পারবে"
+      },
+      {
+        "en": "Which name servers are authoritative for the domain",
+        "bn": "কোন name server domain-এর জন্য authoritative"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "CAA names the CAs allowed to issue certificates for a domain, checked by every publicly trusted CA before issuance.",
+      "bn": "CAA বলে দেয় কোন CA domain-এর জন্য certificate issue করতে পারবে, issue করার আগে প্রতিটা publicly trusted CA এটা check করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "A domain has no CAA record at all. What does that mean?",
+      "bn": "একটা domain-এ কোনো CAA record-ই নেই। এর মানে কী?"
+    },
+    "options": [
+      {
+        "en": "No CA can ever issue a certificate for it",
+        "bn": "কোনো CA কখনো এটার জন্য certificate issue করতে পারবে না"
+      },
+      {
+        "en": "Any publicly trusted CA may issue for it",
+        "bn": "কোনো publicly trusted CA এটার জন্য issue করতে পারবে"
+      },
+      {
+        "en": "Only Let's Encrypt may issue for it",
+        "bn": "শুধু Let's Encrypt এটার জন্য issue করতে পারবে"
+      },
+      {
+        "en": "DNSSEC is automatically disabled",
+        "bn": "DNSSEC এমনিতেই বন্ধ হয়ে যায়"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "No CAA record is the common, unrestricted case: any publicly trusted CA may issue a certificate.",
+      "bn": "CAA record না থাকা সাধারণ, অবাধ অবস্থা: যে কোনো publicly trusted CA certificate issue করতে পারবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does SRV advertise that A and CNAME records don't?",
+      "bn": "A আর CNAME record যা দেয় না, SRV কী advertise করে?"
+    },
+    "options": [
+      {
+        "en": "A TTL value",
+        "bn": "একটা TTL value"
+      },
+      {
+        "en": "The specific port a service instance runs on",
+        "bn": "একটা service instance আসলে কোন port-এ চলছে"
+      },
+      {
+        "en": "A mail server's priority",
+        "bn": "একটা mail server-এর priority"
+      },
+      {
+        "en": "The domain's registrar",
+        "bn": "Domain-এর registrar"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "SRV supplies host and port together, for services that can't assume a fixed well-known port; A/CNAME only say where a name points.",
+      "bn": "SRV host আর port একসাথে দেয়, এমন service-এর জন্য যারা fixed well-known port ধরে নিতে পারে না; A/CNAME শুধু বলে নাম কোথায় যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "In DNSSEC, what does a DS record contain?",
+      "bn": "DNSSEC-এ, একটা DS record কী ধারণ করে?"
+    },
+    "options": [
+      {
+        "en": "A hash of the child zone's DNSKEY, published in the parent zone",
+        "bn": "Child zone-এর DNSKEY-এর একটা hash, parent zone-এ publish করা"
+      },
+      {
+        "en": "The IP address of the domain's web server",
+        "bn": "Domain-এর web server-এর IP address"
+      },
+      {
+        "en": "The encrypted contents of the DNS query",
+        "bn": "DNS query-এর encrypted content"
+      },
+      {
+        "en": "A list of allowed certificate authorities",
+        "bn": "অনুমোদিত certificate authority-র একটা list"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A DS record is a hash of the child zone's signing key, published by the parent, which is what builds the chain of trust down from the root.",
+      "bn": "DS record হলো child zone-এর signing key-এর একটা hash, parent-এ publish করা, যা root থেকে নিচে chain of trust বানায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Does DNSSEC encrypt DNS queries and answers?",
+      "bn": "DNSSEC কি DNS query আর answer encrypt করে?"
+    },
+    "options": [
+      {
+        "en": "Yes, that is its main purpose",
+        "bn": "হ্যাঁ, এটাই এর মূল উদ্দেশ্য"
+      },
+      {
+        "en": "No, it only authenticates that answers are genuine and unmodified",
+        "bn": "না, এটা শুধু প্রমাণ করে answer আসল আর অপরিবর্তিত"
+      },
+      {
+        "en": "Only for CAA records",
+        "bn": "শুধু CAA record-এর জন্য"
+      },
+      {
+        "en": "Only when using dig +trace",
+        "bn": "শুধু dig +trace ব্যবহার করলে"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "DNSSEC authenticates DNS answers with signatures; it does not encrypt them — the traffic is still plain text.",
+      "bn": "DNSSEC signature দিয়ে DNS answer authenticate করে; encrypt করে না — traffic এখনও plain text।"
+    }
+  }
+]

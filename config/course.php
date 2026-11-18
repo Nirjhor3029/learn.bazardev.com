@@ -182,7 +182,7 @@ return [
             'section' => 'advanced',
             'chapters' => [
                 '01-how-networks-actually-work' => ['title' => 'How networks actually work: IP, ports, TCP/UDP, and the three-way handshake', 'status' => 'available'],
-                '02-dns-beyond-the-basics' => ['title' => 'DNS beyond the basics: CAA, SRV, DNSSEC, and debugging past dig', 'status' => 'coming_soon'],
+                '02-dns-beyond-the-basics' => ['title' => 'DNS beyond the basics: CAA, SRV, DNSSEC, and debugging past dig', 'status' => 'available'],
                 '03-virtual-hosts-and-sni' => ['title' => 'Virtual hosts and SNI: one server, many sites', 'status' => 'coming_soon'],
                 '04-tls-deep-dive' => ['title' => 'TLS deep dive: the handshake, certificate chains, and HSTS', 'status' => 'coming_soon'],
                 '05-reverse-proxy-patterns' => ['title' => 'Reverse proxy patterns: path routing, websockets, caching, and rate limiting', 'status' => 'coming_soon'],
