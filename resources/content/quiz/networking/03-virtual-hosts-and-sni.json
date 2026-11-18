@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "How does a multi-site web server know which site a plain HTTP request is for?",
+      "bn": "একাধিক site-এর একটা web server কীভাবে জানে একটা plain HTTP request কোন site-এর জন্য?"
+    },
+    "options": [
+      {
+        "en": "From the request's Host header",
+        "bn": "Request-এর Host header থেকে"
+      },
+      {
+        "en": "From the client's IP address",
+        "bn": "Client-এর IP address থেকে"
+      },
+      {
+        "en": "From the TCP port number",
+        "bn": "TCP port number থেকে"
+      },
+      {
+        "en": "It can't — each site needs its own IP",
+        "bn": "পারে না — প্রতিটা site-এর নিজের IP লাগে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The Host header names which configured site the request is meant for, letting many sites share one IP and port 80.",
+      "bn": "Host header বলে দেয় request কোন configure করা site-এর জন্য, যা অনেক site-কে একটা IP আর port 80 ভাগ করতে দেয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why can't an HTTPS server just read the Host header to pick a certificate?",
+      "bn": "একটা HTTPS server কেন শুধু Host header পড়ে certificate বাছতে পারে না?"
+    },
+    "options": [
+      {
+        "en": "The Host header is only readable after encryption has already started",
+        "bn": "Host header encryption শুরু হওয়ার পরই পড়া যায়"
+      },
+      {
+        "en": "HTTPS requests never include a Host header",
+        "bn": "HTTPS request-এ কখনো Host header থাকে না"
+      },
+      {
+        "en": "Certificates don't have a hostname associated with them",
+        "bn": "Certificate-এর সাথে কোনো hostname যুক্ত থাকে না"
+      },
+      {
+        "en": "TCP ports are chosen before the Host header is sent",
+        "bn": "Host header পাঠানোর আগেই TCP port বাছা হয়"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Encryption only starts once a certificate has already been sent — so the Host header, which is encrypted, can't be the thing used to choose that certificate.",
+      "bn": "Encryption শুরু হয় certificate পাঠানোর পরই — তাই encrypted Host header certificate বাছার জিনিস হতে পারে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does SNI send, and when, in the TLS handshake?",
+      "bn": "TLS handshake-এ SNI কী পাঠায়, আর কখন?"
+    },
+    "options": [
+      {
+        "en": "The hostname, encrypted, after the certificate is sent",
+        "bn": "Hostname, encrypted, certificate পাঠানোর পর"
+      },
+      {
+        "en": "The hostname, in plaintext, inside the Client Hello before encryption starts",
+        "bn": "Hostname, plaintext-এ, encryption শুরু হওয়ার আগেই Client Hello-এর ভেতরে"
+      },
+      {
+        "en": "The server's IP address, after the handshake completes",
+        "bn": "Server-এর IP address, handshake শেষ হওয়ার পর"
+      },
+      {
+        "en": "A list of every certificate the server has",
+        "bn": "Server-এর কাছে থাকা প্রতিটা certificate-এর একটা list"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "SNI is sent in the clear, in the very first message (Client Hello), early enough for the server to pick a matching certificate before anything is encrypted.",
+      "bn": "SNI plain text-এ পাঠানো হয়, সবচেয়ে প্রথম message-এ (Client Hello), যথেষ্ট আগে যাতে server কিছু encrypt হওয়ার আগেই মেলা certificate বাছতে পারে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Before SNI existed, why did HTTPS virtual hosting usually require one IP address per site?",
+      "bn": "SNI থাকার আগে, HTTPS virtual hosting-এর জন্য সাধারণত প্রতি site-এ একটা IP address কেন লাগতো?"
+    },
+    "options": [
+      {
+        "en": "Browsers couldn't connect to shared IPs at all",
+        "bn": "Browser ভাগাভাগি করা IP-তে connect-ই করতে পারতো না"
+      },
+      {
+        "en": "There was no way to know which certificate to present before the handshake revealed the hostname",
+        "bn": "Handshake hostname প্রকাশ করার আগে কোন certificate দেখাতে হবে জানার কোনো উপায় ছিল না"
+      },
+      {
+        "en": "Certificates expired faster on shared IPs",
+        "bn": "ভাগাভাগি করা IP-তে certificate দ্রুত expire হতো"
+      },
+      {
+        "en": "DNS could only point to one IP per domain",
+        "bn": "DNS শুধু প্রতি domain-এ একটা IP-তেই point করতে পারতো"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Without SNI, the server had no hostname to go on before sending a certificate, so each certificate needed its own unambiguous IP address.",
+      "bn": "SNI ছাড়া, server-এর certificate পাঠানোর আগে ধরার মতো কোনো hostname ছিল না, তাই প্রতিটা certificate-এর নিজের অস্পষ্টতাহীন IP address লাগতো।"
+    }
+  },
+  {
+    "q": {
+      "en": "Is the hostname sent via SNI visible to someone watching the network traffic?",
+      "bn": "Network traffic দেখা কেউ কি SNI দিয়ে পাঠানো hostname দেখতে পারে?"
+    },
+    "options": [
+      {
+        "en": "Yes — SNI is sent unencrypted, by design",
+        "bn": "হ্যাঁ — SNI unencrypted পাঠানো হয়, design করেই"
+      },
+      {
+        "en": "No — TLS encrypts SNI from the very first byte",
+        "bn": "না — TLS প্রথম byte থেকেই SNI encrypt করে"
+      },
+      {
+        "en": "Only if the site doesn't use HTTPS",
+        "bn": "শুধু site HTTPS ব্যবহার না করলে"
+      },
+      {
+        "en": "Only with TLS 1.2, not TLS 1.3",
+        "bn": "শুধু TLS 1.2-তে, TLS 1.3-তে না"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "SNI is plaintext metadata in the Client Hello; an observer on the network path can see the requested hostname even though the rest of the traffic is encrypted.",
+      "bn": "SNI হলো Client Hello-এর plaintext metadata; network path-এ একজন observer request করা hostname দেখতে পারে, বাকি traffic encrypted থাকলেও।"
+    }
+  }
+]

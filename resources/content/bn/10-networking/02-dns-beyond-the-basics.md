@@ -209,4 +209,4 @@ DNS বা registrar account কখনো compromise হলে ক্ষতি �
 
 ---
 
-**Next:** Chapter 3 — Virtual host আর SNI: একটা server, অনেক site *(coming soon)*
+**পরের chapter:** [Chapter 3 — Virtual host আর SNI: একটা server, অনেক site](03-virtual-hosts-and-sni.md)
