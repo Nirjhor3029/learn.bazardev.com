@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What does the client send in its very first message that lets a TLS 1.3 handshake finish in one round trip?",
+      "bn": "TLS 1.3 handshake এক round trip-এ শেষ হতে দেয়, client তার খুব প্রথম message-এ এমন কী পাঠায়?"
+    },
+    "options": [
+      {
+        "en": "Its key_share — half of a Diffie-Hellman key exchange, sent immediately",
+        "bn": "তার key_share — একটা Diffie-Hellman key exchange-এর অর্ধেক, তখনই পাঠানো"
+      },
+      {
+        "en": "Its own certificate",
+        "bn": "তার নিজের certificate"
+      },
+      {
+        "en": "A list of every cipher suite it has ever supported, from all versions",
+        "bn": "এখন পর্যন্ত support করা সব version-এর সব cipher suite-এর একটা list"
+      },
+      {
+        "en": "A password derived from the domain name",
+        "bn": "Domain name থেকে derive করা একটা password"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The client guesses the key-exchange method and sends its key_share in the ClientHello itself, instead of waiting for the server to ask — that's what lets the server reply with everything, including an encrypted certificate, in a single flight.",
+      "bn": "Client key-exchange method guess করে ClientHello-তেই তার key_share পাঠিয়ে দেয়, server জিজ্ঞেস করার অপেক্ষা না করে — এটাই server-কে সবকিছু, encrypted certificate সহ, একটা মাত্র flight-এ ফেরত দিতে দেয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does \"ephemeral\" mean in a cipher suite like ECDHE, and why does it matter?",
+      "bn": "ECDHE-র মতো একটা cipher suite-এ \"ephemeral\" মানে কী, আর কেন এটা গুরুত্বপূর্ণ?"
+    },
+    "options": [
+      {
+        "en": "A fresh key pair is generated for that one connection and discarded afterward, giving forward secrecy",
+        "bn": "ওই এক connection-এর জন্যই একটা নতুন key pair তৈরি হয় আর পরে ফেলে দেওয়া হয়, যা forward secrecy দেয়"
+      },
+      {
+        "en": "The certificate expires faster than usual",
+        "bn": "Certificate সাধারণের চেয়ে তাড়াতাড়ি expire হয়"
+      },
+      {
+        "en": "The connection only lasts a few seconds",
+        "bn": "Connection শুধু কয়েক সেকেন্ড থাকে"
+      },
+      {
+        "en": "It skips certificate verification for speed",
+        "bn": "গতির জন্য certificate verification বাদ দেয়"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Ephemeral means the key pair exists only for that one connection. Even if the server's long-term private key is compromised later, past traffic can't be decrypted, because the one-time key never existed anywhere else.",
+      "bn": "Ephemeral মানে key pair শুধু ওই এক connection-এর জন্যই থাকে। Server-এর long-term private key পরে compromise হলেও আগের traffic decrypt করা যায় না, কারণ সেই one-time key আর কোথাও কখনো ছিলই না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why does a server send intermediate certificates along with its own, but not the root certificate?",
+      "bn": "একটা server নিজের certificate-এর সাথে intermediate certificate পাঠায়, কিন্তু root certificate পাঠায় না কেন?"
+    },
+    "options": [
+      {
+        "en": "Browsers already ship with a trusted list of root CAs, so only the bridge up to one is needed",
+        "bn": "Browser আগে থেকেই trusted root CA-র একটা list সাথে নিয়ে আসে, তাই শুধু তার একটা পর্যন্ত জোড়াটাই লাগে"
+      },
+      {
+        "en": "Root certificates are too large to send over TLS",
+        "bn": "Root certificate TLS-এ পাঠানোর জন্য অনেক বড়"
+      },
+      {
+        "en": "Root certificates don't contain a public key",
+        "bn": "Root certificate-এ কোনো public key থাকে না"
+      },
+      {
+        "en": "Sending the root certificate is illegal under CA rules",
+        "bn": "Root certificate পাঠানো CA-র নিয়মে অবৈধ"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The client already has the trusted root CAs built in. Intermediates bridge the server's certificate up to one of those roots; sending the root again would be redundant.",
+      "bn": "Client-এর কাছে trusted root CA গুলো আগে থেকেই built in থাকে। Intermediate গুলো server-এর certificate-কে ওই root গুলোর একটা পর্যন্ত জোড়ে; root আবার পাঠানো অতিরিক্তই হতো।"
+    }
+  },
+  {
+    "q": {
+      "en": "A site has had a working HTTP-to-HTTPS redirect for years. Does that alone protect every future visit from an SSL-stripping attack?",
+      "bn": "একটা site-এর বছরের পর বছর ধরে কাজ করা HTTP-থেকে-HTTPS redirect আছে। এটা একাই কি ভবিষ্যতের প্রতিটা visit-কে SSL-stripping attack থেকে বাঁচায়?"
+    },
+    "options": [
+      {
+        "en": "No — the redirect itself is still one unencrypted request each time, which HSTS is needed to eliminate",
+        "bn": "না — redirect-টা নিজেই প্রতিবার একটা unencrypted request, যা বাদ দিতে HSTS লাগে"
+      },
+      {
+        "en": "Yes — a redirect is already encrypted so there is nothing left to intercept",
+        "bn": "হ্যাঁ — redirect আগে থেকেই encrypted, তাই intercept করার কিছু থাকে না"
+      },
+      {
+        "en": "Yes, as long as the certificate is valid",
+        "bn": "হ্যাঁ, যতক্ষণ certificate valid থাকে"
+      },
+      {
+        "en": "No — redirects are blocked by all modern browsers",
+        "bn": "না — redirect সব আধুনিক browser block করে দেয়"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Until a browser has learned (via HSTS) to go straight to HTTPS, the initial request is plain HTTP and can be intercepted before the redirect ever reaches the browser.",
+      "bn": "Browser (HSTS-এর মাধ্যমে) সরাসরি HTTPS-এ যেতে শেখার আগ পর্যন্ত, প্রথম request plain HTTP-ই থাকে, আর redirect browser-এ পৌঁছানোর আগেই সেটা intercept করা যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why shouldn't you add includeSubDomains and submit to HSTS preload the same day you first turn on HTTPS?",
+      "bn": "HTTPS প্রথম চালু করার দিনই includeSubDomains যুক্ত করে HSTS preload-এ submit করা উচিত না কেন?"
+    },
+    "options": [
+      {
+        "en": "Every subdomain must already support HTTPS, and preload removal is slow if something isn't ready",
+        "bn": "প্রতিটা subdomain-এর আগে থেকেই HTTPS support করা লাগে, আর কিছু ready না থাকলে preload থেকে বাদ দেওয়া slow"
+      },
+      {
+        "en": "includeSubDomains is deprecated and no longer supported by browsers",
+        "bn": "includeSubDomains deprecated, browser আর support করে না"
+      },
+      {
+        "en": "Preload only works with a self-signed certificate",
+        "bn": "Preload শুধু self-signed certificate-এর সাথে কাজ করে"
+      },
+      {
+        "en": "HSTS and includeSubDomains cannot be used together at all",
+        "bn": "HSTS আর includeSubDomains একসাথে কখনোই ব্যবহার করা যায় না"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "includeSubDomains immediately forces every subdomain to be HTTPS-only, breaking any that aren't ready, and preload changes only reach users after a browser release rebuild, which can take months to undo.",
+      "bn": "includeSubDomains তখনই প্রতিটা subdomain-কে HTTPS-only বাধ্য করে, যা ready না থাকা কোনো subdomain ভেঙে দেয়, আর preload-এর পরিবর্তন user-এর কাছে পৌঁছায় শুধু পরের browser release rebuild-এর পর, যা বাদ দিতে মাস লাগতে পারে।"
+    }
+  }
+]

@@ -178,4 +178,4 @@ TLS handshake একটা `internal_error` alert দিয়ে fail করল
 
 ---
 
-**পরের chapter:** Chapter 4 — TLS deep dive: the handshake, certificate chains, and HSTS *(coming soon)*
+**পরের chapter:** [Chapter 4 — TLS deep dive: the handshake, certificate chains, and HSTS](04-tls-deep-dive.md)
