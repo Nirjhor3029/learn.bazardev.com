@@ -187,7 +187,7 @@ return [
                 '04-tls-deep-dive' => ['title' => 'TLS deep dive: the handshake, certificate chains, and HSTS', 'status' => 'available'],
                 '05-reverse-proxy-patterns' => ['title' => 'Reverse proxy patterns: path routing, websockets, caching, and rate limiting', 'status' => 'available'],
                 '06-load-balancing' => ['title' => 'Load balancing: L4 vs L7, algorithms, and health checks', 'status' => 'available'],
-                '07-debugging-the-network-like-a-pro' => ['title' => 'Debugging the network like a pro: ss, tcpdump, traceroute, and openssl', 'status' => 'coming_soon'],
+                '07-debugging-the-network-like-a-pro' => ['title' => 'Debugging the network like a pro: ss, tcpdump, traceroute, and openssl', 'status' => 'available'],
                 '08-real-project-load-balanced-laravel' => ['title' => 'Real project: a load-balanced, multi-domain Laravel setup with TLS', 'status' => 'coming_soon'],
             ],
         ],

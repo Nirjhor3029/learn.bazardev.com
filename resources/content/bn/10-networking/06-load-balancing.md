@@ -197,4 +197,4 @@ Active health check — real traffic থেকে স্বাধীন, এক�
 
 ---
 
-**পরের chapter:** Chapter 7 — Debugging the network like a pro: ss, tcpdump, traceroute, and openssl *(coming soon)*
+**পরের chapter:** [Chapter 7 — Debugging the network like a pro: ss, tcpdump, traceroute, and openssl](07-debugging-the-network-like-a-pro.md)

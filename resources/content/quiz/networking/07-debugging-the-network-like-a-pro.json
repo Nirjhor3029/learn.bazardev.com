@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "How does traceroute/mtr discover each router along a path?",
+      "bn": "Traceroute/mtr কীভাবে একটা path-এর প্রতিটা router খুঁজে পায়?"
+    },
+    "options": [
+      {
+        "en": "It sends packets with an increasing TTL; each router that expires one replies with an ICMP Time Exceeded message",
+        "bn": "এটা বাড়তে থাকা TTL-এর packet পাঠায়; প্রতিটা router যা একটা packet-কে expire করে একটা ICMP Time Exceeded message দিয়ে জবাব দেয়"
+      },
+      {
+        "en": "It asks DNS for a list of every router between the client and the server",
+        "bn": "এটা client আর server-এর মাঝে থাকা প্রতিটা router-এর একটা list DNS-কে জিজ্ঞেস করে"
+      },
+      {
+        "en": "It downloads the server's own routing table directly",
+        "bn": "এটা সরাসরি server-এর নিজের routing table download করে"
+      },
+      {
+        "en": "Routers are configured to announce themselves over UDP port 53",
+        "bn": "Router গুলো UDP port 53-এ নিজেদের ঘোষণা করার জন্য configure করা থাকে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Each packet is sent with an increasing TTL, starting at 1. The router that decrements a packet's TTL to 0 discards it and replies with an ICMP Time Exceeded message, revealing itself — one hop per TTL value.",
+      "bn": "প্রতিটা packet বাড়তে থাকা TTL দিয়ে পাঠানো হয়, ১ থেকে শুরু। যেই router একটা packet-এর TTL 0-এ decrement করে তা বাদ দিয়ে দেয় আর একটা ICMP Time Exceeded message দিয়ে জবাব দেয়, নিজেকে প্রকাশ করে — প্রতি TTL value-এ এক hop।"
+    }
+  },
+  {
+    "q": {
+      "en": "In ss -ti output, what does the cwnd field tell you?",
+      "bn": "ss -ti output-এ, cwnd field কী বলে?"
+    },
+    "options": [
+      {
+        "en": "The congestion window — how many unacknowledged packets TCP currently allows in flight to that peer",
+        "bn": "Congestion window — ওই peer-এর দিকে কতটা unacknowledged packet TCP এখন flight-এ allow করে"
+      },
+      {
+        "en": "The total number of bytes the connection has ever sent",
+        "bn": "Connection এখন পর্যন্ত মোট কত byte পাঠিয়েছে"
+      },
+      {
+        "en": "The DNS TTL of the remote hostname",
+        "bn": "Remote hostname-এর DNS TTL"
+      },
+      {
+        "en": "The number of concurrent connections to the same server",
+        "bn": "একই server-এ কতটা সমান্তরাল connection আছে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "cwnd is the congestion window: how many unacknowledged packets TCP currently allows in flight. A cwnd stuck low on an otherwise healthy path suggests something is throttling throughput.",
+      "bn": "cwnd হলো congestion window: TCP এখন কতটা unacknowledged packet flight-এ allow করে। একটা otherwise healthy path-এ কম আটকে থাকা cwnd বোঝায় কিছু একটা throughput আটকে রাখছে।"
+    }
+  },
+  {
+    "q": {
+      "en": "In a tcpdump capture of a TLS connection, why is the ClientHello packet often noticeably larger than the three handshake packets before it?",
+      "bn": "একটা TLS connection-এর tcpdump capture-এ, ClientHello packet প্রায়ই তার আগের তিনটা handshake packet-এর চেয়ে লক্ষণীয়ভাবে বড় কেন?"
+    },
+    "options": [
+      {
+        "en": "It carries real payload — the SNI hostname and the key_share — unlike the flag-only SYN/SYN-ACK/ACK packets",
+        "bn": "এটা real payload বহন করে — SNI hostname আর key_share — শুধু-flag SYN/SYN-ACK/ACK packet-এর মতো না"
+      },
+      {
+        "en": "ClientHello packets are always padded to a fixed large size for security",
+        "bn": "ClientHello packet security-এর জন্য সবসময় একটা fixed বড় size-এ padded করা হয়"
+      },
+      {
+        "en": "It's a bug in most TLS implementations that gets fixed in later versions",
+        "bn": "এটা বেশিরভাগ TLS implementation-এর একটা bug যা পরের version-এ ঠিক হয়ে যায়"
+      },
+      {
+        "en": "The three earlier packets are always larger; ClientHello is actually the smallest",
+        "bn": "আগের তিনটা packet সবসময় বড়ই থাকে; ClientHello আসলে সবচেয়ে ছোট"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The SYN/SYN-ACK/ACK packets carry no application data. The ClientHello carries the SNI hostname and, in TLS 1.3, the key_share needed for a one-round-trip handshake.",
+      "bn": "SYN/SYN-ACK/ACK packet গুলো কোনো application data বহন করে না। ClientHello SNI hostname আর, TLS 1.3-এ, এক-round-trip handshake-এর জন্য দরকারি key_share বহন করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why use tcpdump -n rather than letting it resolve hostnames?",
+      "bn": "Hostname resolve হতে দেওয়ার বদলে কেন tcpdump -n ব্যবহার করবে?"
+    },
+    "options": [
+      {
+        "en": "It's faster and avoids masking the literal IPs, which matters when DNS itself might be part of the problem",
+        "bn": "এটা দ্রুত আর literal IP ঢেকে দেয় না, যা গুরুত্বপূর্ণ যখন DNS নিজেই সমস্যার অংশ হতে পারে"
+      },
+      {
+        "en": "Without -n, tcpdump refuses to capture any packets at all",
+        "bn": "-n ছাড়া, tcpdump আদৌ কোনো packet capture করতেই রাজি হয় না"
+      },
+      {
+        "en": "-n enables capturing encrypted traffic in plaintext",
+        "bn": "-n encrypted traffic plaintext-এ capture করা সম্ভব করে"
+      },
+      {
+        "en": "-n is required to filter by port number",
+        "bn": "Port number দিয়ে filter করতে -n আবশ্যক"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Skipping DNS lookups per packet is faster, and it keeps the literal IP addresses visible instead of masked behind a resolved hostname — useful when hostname resolution itself might be part of what's being debugged.",
+      "bn": "প্রতি packet-এ DNS lookup skip করা দ্রুত, আর এটা literal IP address resolve করা hostname-এর পেছনে ঢেকে না রেখে দেখায় — কাজে লাগে যখন hostname resolution-টাই debug করার বিষয়ের অংশ হতে পারে।"
+    }
+  },
+  {
+    "q": {
+      "en": "A site is completely unreachable for one user. Why check mtr/traceroute before diving into HTTPS/TLS debugging?",
+      "bn": "একজন user-এর জন্য একটা site পুরোপুরি unreachable। HTTPS/TLS debugging-এ ডুব দেওয়ার আগে কেন mtr/traceroute check করবে?"
+    },
+    "options": [
+      {
+        "en": "If the network path is broken before reaching the server, no TLS debugging will explain it — the connection never gets that far",
+        "bn": "Network path server-এ পৌঁছানোর আগেই ভাঙা থাকলে, কোনো TLS debugging-ই এটা ব্যাখ্যা করবে না — connection ওই পর্যন্তই পৌঁছায় না"
+      },
+      {
+        "en": "TLS debugging tools require traceroute to already be running in the background",
+        "bn": "TLS debugging tool-গুলোর জন্য traceroute আগে থেকেই background-এ চলতে হয়"
+      },
+      {
+        "en": "mtr automatically fixes any TLS certificate problems it finds",
+        "bn": "mtr নিজে থেকেই যেকোনো TLS certificate সমস্যা ঠিক করে দেয়"
+      },
+      {
+        "en": "There is no real reason; either order works equally well",
+        "bn": "কোনো real কারণ নেই; দুই order-ই সমানভাবে কাজ করে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "If the path is broken before the server, the connection never reaches far enough for TLS to even start — checking reachability first avoids chasing symptoms of an earlier, simpler problem.",
+      "bn": "Path server-এর আগেই ভাঙা থাকলে, connection TLS শুরু হওয়ার মতো দূর পর্যন্তই পৌঁছায় না — আগে reachability check করা একটা আগের, সহজ সমস্যার symptom-এর পেছনে ছোটা এড়ায়।"
+    }
+  }
+]
