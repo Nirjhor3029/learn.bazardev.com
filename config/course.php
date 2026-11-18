@@ -13,6 +13,7 @@ return [
             'folder' => '02-linux-shell',
             'requires' => [],
             'status' => 'available',
+            'section' => 'core',
             'chapters' => [
                 '01-finding-your-way-around' => ['title' => 'Why Linux, and finding your way around', 'status' => 'available'],
                 '02-files-and-directories' => ['title' => 'Working with files and directories', 'status' => 'available'],
@@ -30,6 +31,7 @@ return [
             'folder' => '03-git-github',
             'requires' => ['linux-shell'],
             'status' => 'available',
+            'section' => 'core',
             'chapters' => [
                 '01-branching-strategies' => ['title' => 'Branching strategies for teams', 'status' => 'available'],
                 '02-merge-vs-rebase' => ['title' => 'Merge vs rebase', 'status' => 'available'],
@@ -47,6 +49,7 @@ return [
             'folder' => '01-docker',
             'requires' => ['linux-shell', 'git-github'],
             'status' => 'available',
+            'section' => 'core',
             'chapters' => [
                 '01-what-is-docker' => ['title' => 'What is Docker, and why does it matter?', 'status' => 'available'],
                 '02-install-and-first-container' => ['title' => 'Install Docker + your first container', 'status' => 'available'],
@@ -64,6 +67,7 @@ return [
             'folder' => '04-cicd',
             'requires' => ['git-github', 'docker'],
             'status' => 'available',
+            'section' => 'core',
             'chapters' => [
                 '01-what-is-cicd' => ['title' => 'What is CI/CD, and why does it matter?', 'status' => 'available'],
                 '02-github-actions-basics' => ['title' => 'GitHub Actions basics: workflows, jobs, steps', 'status' => 'available'],
@@ -81,6 +85,7 @@ return [
             'folder' => '06-cloud',
             'requires' => ['linux-shell', 'cicd'],
             'status' => 'available',
+            'section' => 'core',
             'chapters' => [
                 '01-what-is-the-cloud' => ['title' => 'What is the cloud? VPS vs AWS vs shared hosting', 'status' => 'available'],
                 '02-your-first-vps' => ['title' => 'Your first VPS: SSH keys, a safe start, and a firewall', 'status' => 'available'],
@@ -98,6 +103,7 @@ return [
             'folder' => '07-monitoring',
             'requires' => ['linux-shell', 'cloud'],
             'status' => 'available',
+            'section' => 'core',
             'chapters' => [
                 '01-why-monitor-and-what-to-watch' => ['title' => 'Why monitor? Metrics, logs, alerts, and the four golden signals', 'status' => 'available'],
                 '02-linux-server-health' => ['title' => 'Linux server health: CPU, memory, disk, and the logs', 'status' => 'available'],
@@ -115,6 +121,7 @@ return [
             'folder' => '08-iac',
             'requires' => ['linux-shell', 'git-github', 'cloud'],
             'status' => 'available',
+            'section' => 'core',
             'chapters' => [
                 '01-why-infrastructure-as-code' => ['title' => 'Why Infrastructure as Code? Terraform and Ansible in one picture', 'status' => 'available'],
                 '02-ansible-basics' => ['title' => 'Ansible basics: inventory and ad-hoc commands', 'status' => 'available'],
@@ -132,6 +139,7 @@ return [
             'folder' => '09-terraform',
             'requires' => ['iac', 'docker'],
             'status' => 'available',
+            'section' => 'core',
             'chapters' => [
                 '01-what-is-terraform-and-your-first-run' => ['title' => 'What is Terraform? Install and your first run (no cloud needed)', 'status' => 'available'],
                 '02-hcl-variables-outputs-and-expressions' => ['title' => 'HCL: variables, outputs, and expressions', 'status' => 'available'],
@@ -149,6 +157,7 @@ return [
             'folder' => '05-kubernetes',
             'requires' => ['docker', 'git-github', 'cicd'],
             'status' => 'available',
+            'section' => 'core',
             'chapters' => [
                 '01-what-is-kubernetes' => ['title' => 'What is Kubernetes, and why does it matter?', 'status' => 'available'],
                 '02-local-cluster-and-kubectl' => ['title' => 'Local cluster, kubectl, and your first Pod', 'status' => 'available'],
@@ -158,6 +167,28 @@ return [
                 '06-volumes-and-statefulsets' => ['title' => 'Volumes, PersistentVolumes, and StatefulSets', 'status' => 'available'],
                 '07-ingress-probes-and-limits' => ['title' => 'Ingress, health probes, and resource limits', 'status' => 'available'],
                 '08-real-project-laravel-on-kubernetes' => ['title' => 'Real project: a Laravel app on Kubernetes', 'status' => 'available'],
+            ],
+        ],
+
+        // Advanced part (A1 of 4 agreed): coming_soon, chapters written one at a time.
+        // Builds on top of Cloud ch3 (DNS) and ch4 (web server + HTTPS) rather than repeating them —
+        // each chapter here says explicitly what it assumes from there and what is new.
+        'networking' => [
+            'title' => 'Networking & Web Servers',
+            'tagline' => 'How networks really work, deeper DNS and TLS, reverse proxies, and load balancing.',
+            'folder' => '10-networking',
+            'requires' => ['linux-shell', 'cloud'],
+            'status' => 'available',
+            'section' => 'advanced',
+            'chapters' => [
+                '01-how-networks-actually-work' => ['title' => 'How networks actually work: IP, ports, TCP/UDP, and the three-way handshake', 'status' => 'available'],
+                '02-dns-beyond-the-basics' => ['title' => 'DNS beyond the basics: CAA, SRV, DNSSEC, and debugging past dig', 'status' => 'coming_soon'],
+                '03-virtual-hosts-and-sni' => ['title' => 'Virtual hosts and SNI: one server, many sites', 'status' => 'coming_soon'],
+                '04-tls-deep-dive' => ['title' => 'TLS deep dive: the handshake, certificate chains, and HSTS', 'status' => 'coming_soon'],
+                '05-reverse-proxy-patterns' => ['title' => 'Reverse proxy patterns: path routing, websockets, caching, and rate limiting', 'status' => 'coming_soon'],
+                '06-load-balancing' => ['title' => 'Load balancing: L4 vs L7, algorithms, and health checks', 'status' => 'coming_soon'],
+                '07-debugging-the-network-like-a-pro' => ['title' => 'Debugging the network like a pro: ss, tcpdump, traceroute, and openssl', 'status' => 'coming_soon'],
+                '08-real-project-load-balanced-laravel' => ['title' => 'Real project: a load-balanced, multi-domain Laravel setup with TLS', 'status' => 'coming_soon'],
             ],
         ],
     ],

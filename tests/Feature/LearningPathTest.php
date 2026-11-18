@@ -24,10 +24,24 @@ class LearningPathTest extends TestCase
 
     public function test_the_path_starts_with_linux_and_ends_with_kubernetes(): void
     {
-        $slugs = array_keys(config('course.courses'));
+        $core = array_filter(config('course.courses'), fn (array $course) => ($course['section'] ?? 'core') === 'core');
+        $slugs = array_keys($core);
 
         $this->assertSame('linux-shell', $slugs[0]);
         $this->assertSame('kubernetes', end($slugs));
+    }
+
+    public function test_advanced_courses_only_require_courses_from_the_core_path_or_earlier(): void
+    {
+        $slugs = array_keys(config('course.courses'));
+
+        foreach (config('course.courses') as $slug => $course) {
+            if (($course['section'] ?? 'core') !== 'advanced') {
+                continue;
+            }
+
+            $this->assertNotEmpty($course['requires'] ?? [], "{$slug} is an advanced course and should list prerequisites");
+        }
     }
 
     public function test_the_home_page_numbers_the_courses_and_course_pages_list_prerequisites(): void

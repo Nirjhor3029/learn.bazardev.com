@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What does a port number identify?",
+      "bn": "একটা port number কী চিহ্নিত করে?"
+    },
+    "options": [
+      {
+        "en": "Which program on a machine the traffic is meant for",
+        "bn": "একটা machine-এর কোন program-এর জন্য traffic"
+      },
+      {
+        "en": "Which machine on the network the traffic is meant for",
+        "bn": "Network-এর কোন machine-এর জন্য traffic"
+      },
+      {
+        "en": "Which country the server is located in",
+        "bn": "Server কোন দেশে আছে"
+      },
+      {
+        "en": "How fast the connection is",
+        "bn": "Connection কতটা দ্রুত"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The IP address names the machine; the port names which program on that machine should receive the traffic.",
+      "bn": "IP address machine-কে নাম দেয়; port বলে ওই machine-এর কোন program traffic পাবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What exactly is a socket?",
+      "bn": "Socket আসলে কী?"
+    },
+    "options": [
+      {
+        "en": "Only the server's IP address",
+        "bn": "শুধু server-এর IP address"
+      },
+      {
+        "en": "The 4-tuple of client IP, client port, server IP, and server port",
+        "bn": "Client IP, client port, server IP, আর server port-এর 4-tuple"
+      },
+      {
+        "en": "A physical network cable",
+        "bn": "একটা physical network cable"
+      },
+      {
+        "en": "The firewall rule that allows a port",
+        "bn": "একটা port allow করা firewall rule"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A socket is that exact combination, which is how a server tells apart thousands of connections arriving on the same port.",
+      "bn": "Socket হলো ঠিক এই combination, যা দিয়ে server একই port-এ আসা হাজার হাজার connection আলাদা করে চেনে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why does HTTP run over TCP rather than UDP?",
+      "bn": "HTTP কেন UDP না করে TCP-এর উপর চলে?"
+    },
+    "options": [
+      {
+        "en": "TCP guarantees every byte arrives, in order, without loss",
+        "bn": "TCP নিশ্চিত করে প্রতিটা byte ক্রমে, loss ছাড়া পৌঁছায়"
+      },
+      {
+        "en": "TCP has no handshake, so it's faster",
+        "bn": "TCP-তে কোনো handshake নেই, তাই দ্রুত"
+      },
+      {
+        "en": "UDP cannot use ports",
+        "bn": "UDP port ব্যবহার করতে পারে না"
+      },
+      {
+        "en": "TCP doesn't use IP addresses",
+        "bn": "TCP IP address ব্যবহার করে না"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "An HTTP request/response needs reliable, ordered delivery; TCP guarantees that, UDP does not.",
+      "bn": "HTTP request/response-এর জন্য reliable, ক্রম ঠিক থাকা delivery লাগে; TCP এটা নিশ্চিত করে, UDP করে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "In the TCP three-way handshake, what is the correct order?",
+      "bn": "TCP three-way handshake-এ সঠিক ক্রম কোনটা?"
+    },
+    "options": [
+      {
+        "en": "ACK, SYN, SYN-ACK",
+        "bn": "ACK, SYN, SYN-ACK"
+      },
+      {
+        "en": "SYN, SYN-ACK, ACK",
+        "bn": "SYN, SYN-ACK, ACK"
+      },
+      {
+        "en": "SYN-ACK, SYN, ACK",
+        "bn": "SYN-ACK, SYN, ACK"
+      },
+      {
+        "en": "SYN, ACK, SYN-ACK",
+        "bn": "SYN, ACK, SYN-ACK"
+      }
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The client proposes with SYN, the server agrees and proposes back with SYN-ACK, and the client confirms with ACK — only then does data flow.",
+      "bn": "Client SYN দিয়ে প্রস্তাব করে, server SYN-ACK দিয়ে রাজি হয়ে নিজের প্রস্তাব দেয়, আর client ACK দিয়ে নিশ্চিত করে — তারপরই data যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "A service listens on 127.0.0.1:3306 instead of 0.0.0.0:3306. What does that mean?",
+      "bn": "একটা service 0.0.0.0:3306-এর বদলে 127.0.0.1:3306-এ listen করছে। এর মানে কী?"
+    },
+    "options": [
+      {
+        "en": "It only accepts connections from the same machine, not the network",
+        "bn": "এটা শুধু একই machine থেকে connection নেয়, network থেকে না"
+      },
+      {
+        "en": "It is reachable from any machine on the internet",
+        "bn": "এটা internet-এর যে কোনো machine থেকে পাওয়া যায়"
+      },
+      {
+        "en": "It is using UDP instead of TCP",
+        "bn": "এটা TCP-এর বদলে UDP ব্যবহার করছে"
+      },
+      {
+        "en": "It is not actually running",
+        "bn": "এটা আসলে চলছেই না"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "127.0.0.1 (localhost) only accepts traffic from the same machine — this is why MySQL and Redis stay unreachable from the network even before a firewall rule runs.",
+      "bn": "127.0.0.1 (localhost) শুধু একই machine থেকে traffic নেয় — এই কারণেই MySQL আর Redis কোনো firewall rule চালু হওয়ার আগেই network থেকে পাওয়া যায় না।"
+    }
+  }
+]
