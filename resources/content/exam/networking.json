@@ -1,0 +1,450 @@
+[
+  {
+    "ref": "01-how-networks-actually-work",
+    "q": {
+      "en": "What uniquely identifies one TCP connection among thousands on the same server port?",
+      "bn": "একই server port-এ হাজারো connection-এর মধ্যে একটা TCP connection-কে কী uniquely চিহ্নিত করে?"
+    },
+    "options": [
+      {"en": "The 4-tuple: client IP, client port, server IP, server port", "bn": "4-tuple: client IP, client port, server IP, server port"},
+      {"en": "The server's port number alone", "bn": "শুধু server-এর port number"},
+      {"en": "The client's IP address alone", "bn": "শুধু client-এর IP address"},
+      {"en": "The TCP sequence number alone", "bn": "শুধু TCP sequence number"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "01-how-networks-actually-work",
+    "q": {
+      "en": "In the TCP three-way handshake, what does the server's SYN-ACK packet do?",
+      "bn": "TCP three-way handshake-এ, server-এর SYN-ACK packet কী করে?"
+    },
+    "options": [
+      {"en": "Acknowledges the client's sequence number and sends its own", "bn": "Client-এর sequence number acknowledge করে আর নিজের টা পাঠায়"},
+      {"en": "Requests the client's certificate", "bn": "Client-এর certificate চায়"},
+      {"en": "Closes the connection immediately", "bn": "Connection তখনই বন্ধ করে দেয়"},
+      {"en": "Only happens over UDP, never TCP", "bn": "শুধু UDP-তে হয়, TCP-তে কখনো না"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "01-how-networks-actually-work",
+    "q": {
+      "en": "Why do private IP ranges (like 192.168.x.x) exist?",
+      "bn": "Private IP range (যেমন 192.168.x.x) কেন আছে?"
+    },
+    "options": [
+      {"en": "They are reserved for local networks and are not globally routable on their own", "bn": "এগুলো local network-এর জন্য সংরক্ষিত, নিজে নিজে globally routable না"},
+      {"en": "They are faster than public IP addresses", "bn": "এগুলো public IP address-এর চেয়ে দ্রুত"},
+      {"en": "They are only used for IPv6", "bn": "এগুলো শুধু IPv6-এর জন্য ব্যবহৃত হয়"},
+      {"en": "They expire after 24 hours", "bn": "এগুলো ২৪ ঘণ্টা পর expire হয়ে যায়"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "01-how-networks-actually-work",
+    "q": {
+      "en": "Which protocol guarantees delivery order and retransmits lost data, TCP or UDP?",
+      "bn": "কোন protocol delivery order নিশ্চিত করে আর হারানো data আবার পাঠায়, TCP নাকি UDP?"
+    },
+    "options": [
+      {"en": "TCP", "bn": "TCP"},
+      {"en": "UDP", "bn": "UDP"},
+      {"en": "Both equally", "bn": "দুটোই সমানভাবে"},
+      {"en": "Neither — that's DNS's job", "bn": "কোনোটাই না — এটা DNS-এর কাজ"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "02-dns-beyond-the-basics",
+    "q": {
+      "en": "What does a CAA DNS record restrict?",
+      "bn": "একটা CAA DNS record কী সীমিত করে?"
+    },
+    "options": [
+      {"en": "Which certificate authorities may issue certificates for the domain", "bn": "কোন certificate authority domain-এর জন্য certificate ইস্যু করতে পারে"},
+      {"en": "Which IP addresses may resolve the domain", "bn": "কোন IP address domain resolve করতে পারে"},
+      {"en": "How long the domain's TTL can be", "bn": "domain-এর TTL কতদিন হতে পারে"},
+      {"en": "Which mail servers accept email for the domain", "bn": "কোন mail server domain-এর জন্য email accept করে"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "02-dns-beyond-the-basics",
+    "q": {
+      "en": "What does an SRV record provide that a plain A or CNAME record doesn't?",
+      "bn": "একটা plain A বা CNAME record দেয় না এমন কী একটা SRV record দেয়?"
+    },
+    "options": [
+      {"en": "The specific port a service runs on, plus priority/weight between instances", "bn": "একটা service যেই নির্দিষ্ট port-এ চলে, প্লাস instance-এর মধ্যে priority/weight"},
+      {"en": "A faster DNS lookup time", "bn": "একটা দ্রুত DNS lookup সময়"},
+      {"en": "Automatic HTTPS for the service", "bn": "Service-এর জন্য automatic HTTPS"},
+      {"en": "A built-in load balancer", "bn": "একটা built-in load balancer"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "02-dns-beyond-the-basics",
+    "q": {
+      "en": "What does a DS record contain, and where is it published?",
+      "bn": "একটা DS record কী ধারণ করে, আর কোথায় publish করা হয়?"
+    },
+    "options": [
+      {"en": "A hash of the child zone's DNSKEY, published in the parent zone", "bn": "Child zone-এর DNSKEY-র একটা hash, parent zone-এ publish করা"},
+      {"en": "The domain owner's email address", "bn": "Domain owner-এর email address"},
+      {"en": "The server's IP address, published in the child zone", "bn": "Server-এর IP address, child zone-এ publish করা"},
+      {"en": "A list of allowed certificate authorities", "bn": "Allowed certificate authority-র একটা list"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "02-dns-beyond-the-basics",
+    "q": {
+      "en": "What does dig +trace show that a plain dig query doesn't?",
+      "bn": "Plain dig query যা দেখায় না, dig +trace কী দেখায়?"
+    },
+    "options": [
+      {"en": "Each hop of the delegation chain — root, TLD, then the domain's own servers", "bn": "Delegation chain-এর প্রতিটা hop — root, TLD, তারপর domain-এর নিজের server"},
+      {"en": "The domain's SSL certificate", "bn": "Domain-এর SSL certificate"},
+      {"en": "The domain's registered owner", "bn": "Domain-এর registered owner"},
+      {"en": "Whether the domain supports IPv6", "bn": "Domain IPv6 support করে কিনা"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "03-virtual-hosts-and-sni",
+    "q": {
+      "en": "How does a plain HTTP web server know which site a request is for, when several sites share one IP?",
+      "bn": "একাধিক site একটা IP ভাগ করলে, একটা plain HTTP web server কীভাবে জানে একটা request কোন site-এর জন্য?"
+    },
+    "options": [
+      {"en": "From the request's Host header", "bn": "Request-এর Host header থেকে"},
+      {"en": "From the client's IP address", "bn": "Client-এর IP address থেকে"},
+      {"en": "From the TCP port number alone", "bn": "শুধু TCP port number থেকে"},
+      {"en": "It can't — every site needs its own IP", "bn": "পারে না — প্রতিটা site-এর নিজের IP লাগে"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "03-virtual-hosts-and-sni",
+    "q": {
+      "en": "Why can't an HTTPS server just read the Host header to pick which certificate to present?",
+      "bn": "একটা HTTPS server কেন শুধু Host header পড়ে কোন certificate দেখাবে বাছতে পারে না?"
+    },
+    "options": [
+      {"en": "The Host header is only readable after encryption has already started", "bn": "Host header encryption শুরু হওয়ার পরই পড়া যায়"},
+      {"en": "HTTPS requests never include a Host header", "bn": "HTTPS request-এ কখনো Host header থাকে না"},
+      {"en": "Certificates don't have a hostname associated with them", "bn": "Certificate-এর সাথে কোনো hostname যুক্ত থাকে না"},
+      {"en": "The Host header is always encrypted with a separate key", "bn": "Host header সবসময় একটা আলাদা key দিয়ে encrypted থাকে"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "03-virtual-hosts-and-sni",
+    "q": {
+      "en": "What does SNI send, and at what point in the TLS handshake?",
+      "bn": "SNI কী পাঠায়, আর TLS handshake-এর কোন মুহূর্তে?"
+    },
+    "options": [
+      {"en": "The hostname, in plaintext, inside the Client Hello before encryption starts", "bn": "Hostname, plaintext-এ, encryption শুরু হওয়ার আগেই Client Hello-এর ভেতরে"},
+      {"en": "The server's certificate, encrypted, after the handshake", "bn": "Server-এর certificate, encrypted, handshake-এর পর"},
+      {"en": "The client's IP address, after the handshake completes", "bn": "Client-এর IP address, handshake শেষ হওয়ার পর"},
+      {"en": "A list of every cipher suite the server supports", "bn": "Server support করা সব cipher suite-এর একটা list"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "03-virtual-hosts-and-sni",
+    "q": {
+      "en": "Before SNI existed, why did HTTPS virtual hosting usually require one IP address per site?",
+      "bn": "SNI থাকার আগে, HTTPS virtual hosting-এর জন্য সাধারণত প্রতি site-এ একটা IP কেন লাগতো?"
+    },
+    "options": [
+      {"en": "There was no way to know which certificate to present before the hostname was revealed", "bn": "Hostname প্রকাশ হওয়ার আগে কোন certificate দেখাতে হবে জানার উপায় ছিল না"},
+      {"en": "DNS could only point to one IP per domain", "bn": "DNS শুধু প্রতি domain-এ একটা IP-তেই point করতে পারতো"},
+      {"en": "Browsers didn't support more than one certificate at all", "bn": "Browser একাধিক certificate আদৌ support করতো না"},
+      {"en": "Certificates expired faster when shared across IPs", "bn": "IP ভাগ করলে certificate দ্রুত expire হতো"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "04-tls-deep-dive",
+    "q": {
+      "en": "What lets a TLS 1.3 handshake complete in a single round trip?",
+      "bn": "একটা TLS 1.3 handshake-কে এক round trip-এ শেষ হতে দেয় এমন কী?"
+    },
+    "options": [
+      {"en": "The client sends its key_share immediately in the ClientHello, instead of waiting to be asked", "bn": "Client তার key_share তখনই ClientHello-তে পাঠায়, জিজ্ঞেস করার অপেক্ষা না করে"},
+      {"en": "TLS 1.3 skips certificate verification entirely", "bn": "TLS 1.3 certificate verification পুরোপুরি skip করে"},
+      {"en": "TLS 1.3 only works over UDP", "bn": "TLS 1.3 শুধু UDP-তে কাজ করে"},
+      {"en": "The server pre-shares its private key with the client", "bn": "Server তার private key client-এর সাথে আগেই share করে"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "04-tls-deep-dive",
+    "q": {
+      "en": "What does an ephemeral key exchange like ECDHE give a TLS connection?",
+      "bn": "ECDHE-র মতো একটা ephemeral key exchange একটা TLS connection-কে কী দেয়?"
+    },
+    "options": [
+      {"en": "Forward secrecy — past traffic stays unreadable even if the server's long-term key later leaks", "bn": "Forward secrecy — server-এর long-term key পরে leak হলেও আগের traffic unreadable থেকে যায়"},
+      {"en": "A permanently reusable session key", "bn": "একটা permanently reusable session key"},
+      {"en": "Immunity from all DDoS attacks", "bn": "সব DDoS attack থেকে অনাক্রম্যতা"},
+      {"en": "Automatic certificate renewal", "bn": "Automatic certificate renewal"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "04-tls-deep-dive",
+    "q": {
+      "en": "Why does a server send intermediate certificates along with its own, but not the root certificate?",
+      "bn": "একটা server নিজের certificate-এর সাথে intermediate certificate পাঠায়, কিন্তু root certificate পাঠায় না কেন?"
+    },
+    "options": [
+      {"en": "The client's trust store already has the root; intermediates bridge up to it", "bn": "Client-এর trust store-এ root আগে থেকেই আছে; intermediate গুলো তার পর্যন্ত জোড়ে"},
+      {"en": "Root certificates are too large to transmit", "bn": "Root certificate পাঠাতে অনেক বড়"},
+      {"en": "Root certificates don't contain a public key", "bn": "Root certificate-এ কোনো public key থাকে না"},
+      {"en": "It's illegal under CA/Browser Forum rules", "bn": "CA/Browser Forum-এর নিয়মে এটা অবৈধ"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "04-tls-deep-dive",
+    "q": {
+      "en": "What does HSTS protect against that a plain HTTP-to-HTTPS redirect alone doesn't?",
+      "bn": "শুধু একটা HTTP-থেকে-HTTPS redirect যা করে না, HSTS কী থেকে রক্ষা করে?"
+    },
+    "options": [
+      {"en": "SSL-stripping on repeat visits, by making the browser skip plain HTTP entirely once it has seen the header", "bn": "পরের visit-এ SSL-stripping, browser একবার header দেখার পর plain HTTP পুরোপুরি skip করে দিয়ে"},
+      {"en": "Expired certificates", "bn": "Expired certificate"},
+      {"en": "DNS cache poisoning", "bn": "DNS cache poisoning"},
+      {"en": "Slow server response times", "bn": "Server-এর ধীর response time"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "05-reverse-proxy-patterns",
+    "q": {
+      "en": "When several Nginx location blocks could match a request, which is checked first?",
+      "bn": "একাধিক Nginx location block একটা request-এ match করতে পারলে, কোনটা প্রথমে check হয়?"
+    },
+    "options": [
+      {"en": "An exact match (=)", "bn": "একটা exact match (=)"},
+      {"en": "The shortest prefix", "bn": "সবচেয়ে ছোট prefix"},
+      {"en": "Whichever is written last in the file", "bn": "File-এ যেটা সবচেয়ে শেষে লেখা"},
+      {"en": "A regex, always, regardless of other modifiers", "bn": "একটা regex, সবসময়, অন্য modifier থাকলেও"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "05-reverse-proxy-patterns",
+    "q": {
+      "en": "Why does a plain reverse proxy break WebSocket connections unless configured otherwise?",
+      "bn": "অতিরিক্ত configure না করলে একটা plain reverse proxy কেন WebSocket connection ভেঙে দেয়?"
+    },
+    "options": [
+      {"en": "Upgrade and Connection are hop-by-hop headers, not forwarded to the backend by default", "bn": "Upgrade আর Connection hop-by-hop header, default-এ backend-এ forward হয় না"},
+      {"en": "WebSockets require a different TCP port than HTTP", "bn": "WebSocket-এর জন্য HTTP-র চেয়ে আলাদা TCP port লাগে"},
+      {"en": "Reverse proxies cannot handle encrypted traffic", "bn": "Reverse proxy encrypted traffic handle করতেই পারে না"},
+      {"en": "WebSockets are blocked by TLS 1.3 by design", "bn": "WebSocket TLS 1.3 দিয়ে design করেই block করা"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "05-reverse-proxy-patterns",
+    "q": {
+      "en": "In Nginx, what does X-Cache-Status: EXPIRED tell you?",
+      "bn": "Nginx-এ, X-Cache-Status: EXPIRED তোমাকে কী বলে?"
+    },
+    "options": [
+      {"en": "A cached entry existed but was past its allowed cache time, so the backend was asked again", "bn": "একটা cached entry ছিল কিন্তু তার allowed cache সময় পার হয়ে গিয়েছিল, তাই backend-কে আবার জিজ্ঞেস করা হয়েছে"},
+      {"en": "Nothing was ever cached for this request", "bn": "এই request-এর জন্য কিছুই কখনো cache করা হয়নি"},
+      {"en": "The cache zone ran out of memory", "bn": "Cache zone-এর memory শেষ হয়ে গিয়েছিল"},
+      {"en": "The response was served from cache, fully valid", "bn": "Response cache থেকে দেওয়া হয়েছে, পুরোপুরি valid"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "05-reverse-proxy-patterns",
+    "q": {
+      "en": "In Nginx rate limiting, what does burst with nodelay do, compared to burst alone?",
+      "bn": "Nginx rate limiting-এ, শুধু burst-এর তুলনায় burst এর সাথে nodelay কী করে?"
+    },
+    "options": [
+      {"en": "Lets requests within the burst through immediately instead of queuing and spacing them out", "bn": "Burst-এর ভেতরের request গুলো queue করে ছড়িয়ে না দিয়ে তখনই দিয়ে দেয়"},
+      {"en": "Doubles the configured rate limit permanently", "bn": "Configure করা rate limit permanently দ্বিগুণ করে দেয়"},
+      {"en": "Disables rate limiting entirely", "bn": "Rate limiting পুরোপুরি বন্ধ করে দেয়"},
+      {"en": "Only applies to WebSocket connections", "bn": "শুধু WebSocket connection-এ apply হয়"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "06-load-balancing",
+    "q": {
+      "en": "What's the fundamental difference between L4 and L7 load balancing?",
+      "bn": "L4 আর L7 load balancing-এর মধ্যে মূল পার্থক্য কী?"
+    },
+    "options": [
+      {"en": "L4 forwards raw TCP/UDP by IP and port alone; L7 reads the request to decide", "bn": "L4 শুধু IP আর port দিয়ে raw TCP/UDP forward করে; L7 decision নিতে request পড়ে"},
+      {"en": "L4 is only for databases; L7 is only for web servers", "bn": "L4 শুধু database-এর জন্য; L7 শুধু web server-এর জন্য"},
+      {"en": "L7 is always slower because it decrypts every packet", "bn": "L7 সবসময় ধীর কারণ এটা প্রতিটা packet decrypt করে"},
+      {"en": "They are identical; the names are just historical", "bn": "এগুলো একই রকম; নামগুলো শুধু ঐতিহাসিক"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "06-load-balancing",
+    "q": {
+      "en": "With no load-balancing directive specified, what method does Nginx's upstream block use?",
+      "bn": "কোনো load-balancing directive না দিলে, Nginx-এর upstream block কোন method ব্যবহার করে?"
+    },
+    "options": [
+      {"en": "Weighted round-robin", "bn": "Weighted round-robin"},
+      {"en": "Random", "bn": "Random"},
+      {"en": "IP hash", "bn": "IP hash"},
+      {"en": "Least connections", "bn": "Least connections"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "06-load-balancing",
+    "q": {
+      "en": "What can open-source Nginx's health checking not do, that Caddy's open-source reverse_proxy can?",
+      "bn": "Open-source Nginx-এর health checking কী করতে পারে না, যা Caddy-র open-source reverse_proxy পারে?"
+    },
+    "options": [
+      {"en": "Active health checks, polling a health endpoint on a schedule independent of real traffic", "bn": "Active health check, real traffic থেকে স্বাধীন একটা schedule-এ একটা health endpoint জিজ্ঞেস করা"},
+      {"en": "Marking any backend unavailable at all", "bn": "কোনো backend-কেই unavailable মার্ক করা"},
+      {"en": "Running more than one upstream server", "bn": "একটার বেশি upstream server চালানো"},
+      {"en": "Supporting HTTPS backends", "bn": "HTTPS backend support করা"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "06-load-balancing",
+    "q": {
+      "en": "Why is ip_hash-based session persistence a workaround rather than a real fix?",
+      "bn": "ip_hash-ভিত্তিক session persistence কেন একটা workaround, আসল fix না?"
+    },
+    "options": [
+      {"en": "Load spreads unevenly, and the session is still lost if that specific backend goes down", "bn": "Load অসমানভাবে ছড়ায়, আর সেই specific backend down হলে session তবু হারায়"},
+      {"en": "It is not supported by any real load balancer", "bn": "এটা কোনো real load balancer-ই support করে না"},
+      {"en": "It only works for read-only requests", "bn": "এটা শুধু read-only request-এর জন্য কাজ করে"},
+      {"en": "It requires a commercial license", "bn": "এর জন্য একটা commercial license লাগে"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "07-debugging-the-network-like-a-pro",
+    "q": {
+      "en": "How does traceroute/mtr discover each router along a network path?",
+      "bn": "Traceroute/mtr কীভাবে একটা network path-এর প্রতিটা router খুঁজে পায়?"
+    },
+    "options": [
+      {"en": "By sending packets with increasing TTL and reading each ICMP Time Exceeded reply", "bn": "বাড়তে থাকা TTL-এর packet পাঠিয়ে আর প্রতিটা ICMP Time Exceeded জবাব পড়ে"},
+      {"en": "By querying DNS for a list of routers", "bn": "DNS-কে router-এর একটা list জিজ্ঞেস করে"},
+      {"en": "By downloading the destination's routing table", "bn": "Destination-এর routing table download করে"},
+      {"en": "By asking each router over HTTP", "bn": "প্রতিটা router-কে HTTP-এর উপর দিয়ে জিজ্ঞেস করে"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "07-debugging-the-network-like-a-pro",
+    "q": {
+      "en": "In ss -ti output, what does the cwnd field represent?",
+      "bn": "ss -ti output-এ, cwnd field কী represent করে?"
+    },
+    "options": [
+      {"en": "The congestion window — how many unacknowledged packets can currently be in flight", "bn": "Congestion window — এখন কতটা unacknowledged packet flight-এ থাকতে পারে"},
+      {"en": "The total connection count on the server", "bn": "Server-এ মোট connection সংখ্যা"},
+      {"en": "The DNS TTL of the remote host", "bn": "Remote host-এর DNS TTL"},
+      {"en": "The certificate's expiry countdown", "bn": "Certificate-এর expiry countdown"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "07-debugging-the-network-like-a-pro",
+    "q": {
+      "en": "Why run tcpdump with -n instead of letting it resolve hostnames?",
+      "bn": "Hostname resolve হতে দেওয়ার বদলে tcpdump-এ -n কেন ব্যবহার করবে?"
+    },
+    "options": [
+      {"en": "It's faster and keeps the literal IPs visible, useful when DNS itself might be the problem", "bn": "এটা দ্রুত আর literal IP দেখা যায়, কাজে লাগে যখন DNS নিজেই সমস্যা হতে পারে"},
+      {"en": "Without -n, tcpdump cannot capture any packets", "bn": "-n ছাড়া, tcpdump কোনো packet capture করতেই পারে না"},
+      {"en": "-n decrypts TLS traffic automatically", "bn": "-n automatic-ই TLS traffic decrypt করে দেয়"},
+      {"en": "-n is required before using any filter", "bn": "কোনো filter ব্যবহারের আগে -n আবশ্যক"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "07-debugging-the-network-like-a-pro",
+    "q": {
+      "en": "A site is completely unreachable for one user. Why check path reachability before diving into TLS debugging?",
+      "bn": "একজন user-এর জন্য একটা site পুরোপুরি unreachable। TLS debugging-এ যাওয়ার আগে কেন path reachability check করবে?"
+    },
+    "options": [
+      {"en": "If the path is broken before the server, no amount of TLS debugging explains a connection that never arrives", "bn": "Path server-এর আগেই ভাঙা থাকলে, কোনো পরিমাণ TLS debugging-ই একটা কখনো না পৌঁছানো connection ব্যাখ্যা করবে না"},
+      {"en": "TLS debugging tools require the path to already be confirmed working", "bn": "TLS debugging tool-এর জন্য path আগে থেকেই ঠিক নিশ্চিত থাকতে হয়"},
+      {"en": "It's purely a matter of personal preference", "bn": "এটা পুরোপুরি ব্যক্তিগত পছন্দের বিষয়"},
+      {"en": "mtr automatically repairs broken TLS configurations", "bn": "mtr automatic-ই ভাঙা TLS configuration ঠিক করে দেয়"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "08-real-project-load-balanced-laravel",
+    "q": {
+      "en": "A load-balanced app shows the same session cookie but a different session value depending on which backend answers. What's the cause?",
+      "bn": "একটা load-balanced app একই session cookie দেখায় কিন্তু কোন backend জবাব দিচ্ছে তার উপর ভিত্তি করে আলাদা session value দেখায়। কারণ কী?"
+    },
+    "options": [
+      {"en": "Each backend stores sessions only on its own local disk, unaware of the other's data", "bn": "প্রতিটা backend session শুধু তার নিজের local disk-এ রাখে, অন্যটার data জানে না"},
+      {"en": "The load balancer is corrupting the cookie in transit", "bn": "Load balancer transit-এ cookie corrupt করে দিচ্ছে"},
+      {"en": "The browser is generating a new cookie on every request", "bn": "Browser প্রতি request-এ একটা নতুন cookie তৈরি করছে"},
+      {"en": "TLS 1.3 does not support cookies", "bn": "TLS 1.3 cookie support করে না"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "08-real-project-load-balanced-laravel",
+    "q": {
+      "en": "What's the real production fix for sessions breaking across multiple load-balanced app servers?",
+      "bn": "একাধিক load-balanced app server-এ session ভেঙে যাওয়ার real production fix কী?"
+    },
+    "options": [
+      {"en": "A shared, network-reachable session store such as Redis or a database", "bn": "একটা shared, network-এর উপর দিয়ে পৌঁছানো যায় এমন session store, যেমন Redis বা একটা database"},
+      {"en": "Switching the load balancer's algorithm to round-robin", "bn": "Load balancer-এর algorithm round-robin-এ পরিবর্তন করা"},
+      {"en": "Disabling TLS on the app servers", "bn": "App server-এ TLS বন্ধ করে দেওয়া"},
+      {"en": "Reducing the number of backend servers to exactly one", "bn": "Backend server সংখ্যা ঠিক একটায় কমিয়ে ফেলা"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "08-real-project-load-balanced-laravel",
+    "q": {
+      "en": "Why is Caddy's tls internal directive suitable for a local demo but not a real production domain?",
+      "bn": "Caddy-র tls internal directive কেন একটা local demo-র জন্য উপযুক্ত কিন্তু একটা real production domain-এর জন্য না?"
+    },
+    "options": [
+      {"en": "It issues certificates from a local CA that real browsers don't trust by default", "bn": "এটা একটা local CA থেকে certificate ইস্যু করে যা real browser default-এ trust করে না"},
+      {"en": "It only works over plain HTTP", "bn": "এটা শুধু plain HTTP-তে কাজ করে"},
+      {"en": "It disables load balancing", "bn": "এটা load balancing বন্ধ করে দেয়"},
+      {"en": "It requires a subscription to use at all", "bn": "এটা ব্যবহার করতে একটা subscription লাগে"}
+    ],
+    "answer": 0
+  },
+  {
+    "ref": "08-real-project-load-balanced-laravel",
+    "q": {
+      "en": "On one Caddy instance serving two different domains, how does each request reach the right backend pool?",
+      "bn": "দুটো আলাদা domain serve করা একটা Caddy instance-এ, প্রতিটা request কীভাবে ঠিক backend pool-এ পৌঁছায়?"
+    },
+    "options": [
+      {"en": "Caddy matches the SNI hostname from the TLS ClientHello to the right site block", "bn": "Caddy TLS ClientHello থেকে SNI hostname মেলায় ঠিক site block-এর সাথে"},
+      {"en": "Each domain is manually assigned a different IP address", "bn": "প্রতিটা domain-কে ম্যানুয়ালি একটা আলাদা IP address দেওয়া হয়"},
+      {"en": "Caddy processes domains in alternating hourly shifts", "bn": "Caddy পর্যায়ক্রমে ঘণ্টাভিত্তিক shift-এ domain process করে"},
+      {"en": "It can't — two domains cannot share one Caddy instance", "bn": "পারে না — দুটো domain একই Caddy instance ভাগ করতে পারে না"}
+    ],
+    "answer": 0
+  }
+]

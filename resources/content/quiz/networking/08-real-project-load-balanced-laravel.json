@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "In this chapter's demo, why does the session ID stay identical across requests while the session value changes?",
+      "bn": "এই chapter-এর demo-তে, session ID request-এ request-এ একই থাকে কিন্তু session value কেন বদলায়?"
+    },
+    "options": [
+      {
+        "en": "Each backend stores sessions only on its own local disk, so an unrecognized ID gets a fresh value instead of an error",
+        "bn": "প্রতিটা backend session শুধু তার নিজের local disk-এ রাখে, তাই একটা অচেনা ID error না পেয়ে একটা fresh value পায়"
+      },
+      {
+        "en": "The client regenerates a new session ID on every request",
+        "bn": "Client প্রতি request-এ একটা নতুন session ID তৈরি করে"
+      },
+      {
+        "en": "Caddy rewrites the session value before forwarding the request",
+        "bn": "Caddy request forward করার আগে session value rewrite করে দেয়"
+      },
+      {
+        "en": "The two backends are running two different, incompatible PHP versions",
+        "bn": "দুটো backend দুটো আলাদা, অসামঞ্জস্যপূর্ণ PHP version চালাচ্ছে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The client correctly sends the same cookie every time. Each backend's file-based session storage is local to it, so a backend that has never seen that ID's file silently starts a fresh session under the same ID rather than erroring — the ID stays constant, the value doesn't.",
+      "bn": "Client ঠিকভাবেই প্রতিবার একই cookie পাঠায়। প্রতিটা backend-এর file-based session storage তার নিজের কাছেই সীমিত, তাই যেই backend সেই ID-র file কখনো দেখেনি সে error না দিয়ে চুপচাপ একই ID-র নিচে একটা fresh session শুরু করে — ID ধ্রুব থাকে, value না।"
+    }
+  },
+  {
+    "q": {
+      "en": "What's the actual fix for the session bug demonstrated in this chapter, and what's explicitly not a fix?",
+      "bn": "এই chapter-এ দেখানো session bug-এর আসল fix কী, আর স্পষ্টভাবে কী fix না?"
+    },
+    "options": [
+      {
+        "en": "Shared network-reachable session storage (Redis/database) is the fix; IP-based sticky sessions are not",
+        "bn": "Network-এর উপর দিয়ে পৌঁছানো shared session storage (Redis/database) হলো fix; IP-ভিত্তিক sticky session না"
+      },
+      {
+        "en": "Switching from round-robin to least_conn fixes it completely",
+        "bn": "Round-robin থেকে least_conn-এ পরিবর্তন করলে এটা সম্পূর্ণ fix হয়ে যায়"
+      },
+      {
+        "en": "Adding more backends to the pool fixes it",
+        "bn": "Pool-এ আরো backend যুক্ত করলে এটা fix হয়ে যায়"
+      },
+      {
+        "en": "Switching from TLS 1.2 to TLS 1.3 fixes it",
+        "bn": "TLS 1.2 থেকে TLS 1.3-এ পরিবর্তন করলে এটা fix হয়ে যায়"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The real fix is session storage every backend can reach over the network. ip_hash/cookie stickiness only routes one user back to the same backend and still breaks the moment that specific backend goes down — it hides the problem, it doesn't fix it.",
+      "bn": "আসল fix হলো এমন session storage যা network-এর উপর দিয়ে প্রতিটা backend পৌঁছাতে পারে। ip_hash/cookie stickiness শুধু একজন user-কে একই backend-এ ফিরে route করে আর সেই specific backend down হয়ে গেলে তবু ভেঙে যায় — এটা সমস্যা ঢেকে রাখে, fix করে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why is tls internal appropriate for this chapter's demo but not for a real production domain?",
+      "bn": "কেন tls internal এই chapter-এর demo-র জন্য ঠিক কিন্তু একটা real production domain-এর জন্য না?"
+    },
+    "options": [
+      {
+        "en": "It issues certificates from Caddy's own local CA, which no real browser trusts by default",
+        "bn": "এটা Caddy-র নিজের local CA থেকে certificate ইস্যু করে, যা কোনো real browser default-এ trust করে না"
+      },
+      {
+        "en": "tls internal is slower than Let's Encrypt for every request",
+        "bn": "tls internal প্রতি request-এ Let's Encrypt-এর চেয়ে ধীর"
+      },
+      {
+        "en": "tls internal only supports HTTP, not HTTPS",
+        "bn": "tls internal শুধু HTTP support করে, HTTPS না"
+      },
+      {
+        "en": "tls internal requires a paid Caddy license",
+        "bn": "tls internal-এর জন্য একটা paid Caddy license লাগে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "tls internal issues certificates from Caddy's own locally-trusted CA, fine for fake test domains but not publicly trusted. A real domain should instead get a real, publicly trusted certificate automatically via Caddy's normal automatic HTTPS, by simply not adding tls internal.",
+      "bn": "tls internal Caddy-র নিজের locally-trusted CA থেকে certificate ইস্যু করে, fake test domain-এর জন্য ঠিক আছে কিন্তু publicly trusted না। একটা real domain-এর বদলে Caddy-র সাধারণ automatic HTTPS দিয়ে automatic-ই একটা real, publicly trusted certificate পাওয়া উচিত, শুধু tls internal যুক্ত না করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Two domains on one Caddy instance, each pointing at a different backend pool. Why don't they interfere with each other?",
+      "bn": "একই Caddy instance-এ দুটো domain, প্রতিটা আলাদা backend pool-এর দিকে point করা। এগুলো একে অপরকে বাধা দেয় না কেন?"
+    },
+    "options": [
+      {
+        "en": "Caddy matches each request's site block by SNI (the hostname in the TLS ClientHello)",
+        "bn": "Caddy প্রতি request-এর site block মেলায় SNI দিয়ে (TLS ClientHello-এর hostname)"
+      },
+      {
+        "en": "Each domain automatically gets its own separate IP address",
+        "bn": "প্রতিটা domain automatic-ই তার নিজের আলাদা IP address পায়"
+      },
+      {
+        "en": "Caddy processes one domain's traffic per hour, alternating",
+        "bn": "Caddy প্রতি ঘণ্টায় একটা করে domain-এর traffic process করে, পর্যায়ক্রমে"
+      },
+      {
+        "en": "They actually do interfere, and this is a known limitation",
+        "bn": "এগুলো আসলেই একে অপরকে বাধা দেয়, আর এটা একটা পরিচিত সীমাবদ্ধতা"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Caddy reads the SNI hostname from the TLS ClientHello (Chapter 3) to pick which site block applies, independently matching each domain's traffic to its own backend pool regardless of how many domains share the same IP and port.",
+      "bn": "Caddy TLS ClientHello থেকে SNI hostname পড়ে (Chapter 3) কোন site block apply হবে বাছার জন্য, একই IP আর port যতই domain ভাগ করুক না কেন প্রতিটা domain-এর traffic আলাদাভাবে তার নিজের backend pool-এ মেলায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Does a load-balanced setup like this one need a separate, dedicated load-balancer machine, distinct from the reverse proxy?",
+      "bn": "এই রকম একটা load-balanced setup-এর জন্য reverse proxy থেকে আলাদা, একটা dedicated load-balancer machine লাগে কি?"
+    },
+    "options": [
+      {
+        "en": "No — the same reverse proxy instance can terminate TLS, route by domain, and load-balance at once",
+        "bn": "না — একই reverse proxy instance TLS terminate করতে, domain দিয়ে route করতে, আর load-balance করতে পারে একসাথেই"
+      },
+      {
+        "en": "Yes — Caddy and Nginx are physically unable to load-balance without a separate machine",
+        "bn": "হ্যাঁ — Caddy আর Nginx আলাদা machine ছাড়া load-balance করতেই পারে না"
+      },
+      {
+        "en": "Yes — a dedicated load-balancer machine is required by the TLS protocol itself",
+        "bn": "হ্যাঁ — TLS protocol নিজেই একটা dedicated load-balancer machine দাবি করে"
+      },
+      {
+        "en": "No — but only if every backend is on the same physical machine",
+        "bn": "না — কিন্তু শুধু তখনই যদি প্রতিটা backend একই physical machine-এ থাকে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "One Caddy (or Nginx) instance can do all three jobs at once, as this chapter's demo shows. A dedicated load-balancer tier only becomes worth it at a scale well beyond what this course has covered.",
+      "bn": "একটা Caddy (বা Nginx) instance একাই তিনটা কাজ করতে পারে, যেমন এই chapter-এর demo দেখিয়েছে। একটা dedicated load-balancer tier কাজে লাগে শুধু তখনই যখন এই course যেই scale cover করেছে তার চেয়ে অনেক বড় হয়ে যায়।"
+    }
+  }
+]

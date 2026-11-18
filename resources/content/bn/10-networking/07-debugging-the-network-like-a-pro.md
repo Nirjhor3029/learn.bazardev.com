@@ -175,4 +175,4 @@ Network path নিজেই server-এ পৌঁছানোর আগে ক�
 
 ---
 
-**পরের chapter:** Chapter 8 — Real project: a load-balanced, multi-domain Laravel setup with TLS *(coming soon)*
+**পরের chapter:** [Chapter 8 — Real project: a load-balanced, multi-domain Laravel setup with TLS](08-real-project-load-balanced-laravel.md)
