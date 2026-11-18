@@ -185,7 +185,7 @@ return [
                 '02-dns-beyond-the-basics' => ['title' => 'DNS beyond the basics: CAA, SRV, DNSSEC, and debugging past dig', 'status' => 'available'],
                 '03-virtual-hosts-and-sni' => ['title' => 'Virtual hosts and SNI: one server, many sites', 'status' => 'available'],
                 '04-tls-deep-dive' => ['title' => 'TLS deep dive: the handshake, certificate chains, and HSTS', 'status' => 'available'],
-                '05-reverse-proxy-patterns' => ['title' => 'Reverse proxy patterns: path routing, websockets, caching, and rate limiting', 'status' => 'coming_soon'],
+                '05-reverse-proxy-patterns' => ['title' => 'Reverse proxy patterns: path routing, websockets, caching, and rate limiting', 'status' => 'available'],
                 '06-load-balancing' => ['title' => 'Load balancing: L4 vs L7, algorithms, and health checks', 'status' => 'coming_soon'],
                 '07-debugging-the-network-like-a-pro' => ['title' => 'Debugging the network like a pro: ss, tcpdump, traceroute, and openssl', 'status' => 'coming_soon'],
                 '08-real-project-load-balanced-laravel' => ['title' => 'Real project: a load-balanced, multi-domain Laravel setup with TLS', 'status' => 'coming_soon'],

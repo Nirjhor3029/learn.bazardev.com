@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "In Nginx, what's the effect of a trailing slash on the URL in proxy_pass http://backend/; versus proxy_pass http://backend; (no trailing slash)?",
+      "bn": "Nginx-এ, proxy_pass http://backend/;-এর URL-এ trailing slash থাকা আর proxy_pass http://backend;-এ (trailing slash ছাড়া) না থাকার effect কী?"
+    },
+    "options": [
+      {
+        "en": "With the slash, the matched location prefix is stripped before forwarding; without it, the full path is forwarded",
+        "bn": "Slash থাকলে, forward করার আগে matched location prefix strip করা হয়; না থাকলে, পুরো path forward করা হয়"
+      },
+      {
+        "en": "The trailing slash only changes whether HTTPS is used to reach the backend",
+        "bn": "Trailing slash শুধু backend-এ HTTPS ব্যবহার হবে কিনা বদলায়"
+      },
+      {
+        "en": "There is no difference; both forward the exact same request",
+        "bn": "কোনো পার্থক্য নেই; দুটোই একই request forward করে"
+      },
+      {
+        "en": "The trailing slash forces the request to be cached",
+        "bn": "Trailing slash request-কে cache হতে বাধ্য করে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A trailing slash on proxy_pass's URL strips the matched location prefix before forwarding; without it, the matched prefix stays in the path sent to the backend.",
+      "bn": "proxy_pass-এর URL-এ trailing slash থাকলে forward করার আগে matched location prefix strip হয়; না থাকলে matched prefix backend-এ পাঠানো path-এ থেকে যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "A request could match both an Nginx location ^~ /images/ and a location ~* \\.jpg$. Which one wins?",
+      "bn": "একটা request Nginx-এর location ^~ /images/ আর location ~* \\.jpg$ দুটোতেই match করতে পারে। কোনটা জেতে?"
+    },
+    "options": [
+      {
+        "en": "The ^~ prefix location wins, skipping regex locations entirely",
+        "bn": "^~ prefix location জেতে, regex location গুলো পুরোপুরি skip করে"
+      },
+      {
+        "en": "The regex location always wins over any prefix location",
+        "bn": "Regex location সবসময় যেকোনো prefix location-এর চেয়ে জেতে"
+      },
+      {
+        "en": "Whichever is written first in the config file wins",
+        "bn": "Config file-এ যেটা প্রথমে লেখা থাকে সেটাই জেতে"
+      },
+      {
+        "en": "Nginx refuses to start when this happens",
+        "bn": "এটা হলে Nginx start হতেই রাজি হয় না"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The ^~ modifier tells Nginx that once this is the longest matching prefix, regex locations should not be checked at all, regardless of whether one would otherwise match.",
+      "bn": "^~ modifier Nginx-কে বলে দেয়, একবার এটাই longest matching prefix হলে, regex location গুলো একদমই check করা হবে না, অন্য কিছু match করত কিনা তা দেখা ছাড়াই।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why does a plain Nginx reverse proxy break WebSocket connections unless you add extra configuration?",
+      "bn": "অতিরিক্ত configuration যুক্ত না করলে একটা plain Nginx reverse proxy কেন WebSocket connection ভেঙে দেয়?"
+    },
+    "options": [
+      {
+        "en": "Upgrade and Connection are hop-by-hop headers, so Nginx doesn't forward them to the backend by default",
+        "bn": "Upgrade আর Connection হলো hop-by-hop header, তাই Nginx default-এ এগুলো backend-এ forward করে না"
+      },
+      {
+        "en": "Nginx blocks all non-HTTP traffic for security",
+        "bn": "Nginx security-এর জন্য সব non-HTTP traffic block করে"
+      },
+      {
+        "en": "WebSocket connections require a different TCP port than HTTP",
+        "bn": "WebSocket connection-এর জন্য HTTP-এর চেয়ে আলাদা TCP port লাগে"
+      },
+      {
+        "en": "Nginx closes any connection that lasts longer than one second",
+        "bn": "Nginx এক সেকেন্ডের চেয়ে বেশি স্থায়ী কোনো connection বন্ধ করে দেয়"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Without explicitly forwarding Upgrade and Connection headers via proxy_set_header, the backend never sees the upgrade request and can't switch the connection into a WebSocket tunnel.",
+      "bn": "proxy_set_header দিয়ে Upgrade আর Connection header স্পষ্টভাবে forward না করলে, backend কখনো upgrade request দেখেই না আর connection-কে WebSocket tunnel-এ বদলাতে পারে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Your Nginx response has X-Cache-Status: EXPIRED. What does that tell you?",
+      "bn": "তোমার Nginx response-এ X-Cache-Status: EXPIRED আছে। এটা তোমাকে কী বলে?"
+    },
+    "options": [
+      {
+        "en": "A cached entry existed but was past its allowed cache time, so the backend was asked again",
+        "bn": "একটা cached entry ছিল কিন্তু তার allowed cache সময় পার হয়ে গিয়েছিল, তাই backend-কে আবার জিজ্ঞেস করা হয়েছে"
+      },
+      {
+        "en": "Nothing was ever cached for this request",
+        "bn": "এই request-এর জন্য কিছুই কখনো cache করা হয়নি"
+      },
+      {
+        "en": "The response was served directly from the cache, fully valid",
+        "bn": "Response সরাসরি cache থেকেই দেওয়া হয়েছে, পুরোপুরি valid"
+      },
+      {
+        "en": "The cache zone ran out of disk space",
+        "bn": "Cache zone-এর disk space শেষ হয়ে গিয়েছিল"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "EXPIRED means a cache entry existed but was too old per proxy_cache_valid, so Nginx asked the backend again instead of serving the stale copy — different from MISS (nothing cached) or HIT (a valid cached copy served).",
+      "bn": "EXPIRED মানে একটা cache entry ছিল কিন্তু proxy_cache_valid অনুযায়ী অনেক পুরনো হয়ে গিয়েছিল, তাই পুরনো copy না দিয়ে Nginx backend-কে আবার জিজ্ঞেস করেছে — MISS (কিছুই cache করা ছিল না) বা HIT (একটা valid cached copy দেওয়া হয়েছে) থেকে আলাদা।"
+    }
+  },
+  {
+    "q": {
+      "en": "An Nginx limit_req_zone keys on $binary_remote_addr, but Nginx itself sits behind a load balancer. What goes wrong?",
+      "bn": "একটা Nginx limit_req_zone $binary_remote_addr-এর উপর key করে, কিন্তু Nginx নিজে একটা load balancer-এর পেছনে বসে আছে। কী ভুল হয়?"
+    },
+    "options": [
+      {
+        "en": "Every real visitor shares one rate-limit bucket, since Nginx only sees the load balancer's IP",
+        "bn": "প্রতিটা আসল visitor একটা মাত্র rate-limit bucket ভাগ করে নেয়, কারণ Nginx শুধু load balancer-এর IP-ই দেখে"
+      },
+      {
+        "en": "Rate limiting stops working entirely and no limit is applied",
+        "bn": "Rate limiting পুরোপুরি কাজ করা বন্ধ করে দেয়, কোনো limit-ই apply হয় না"
+      },
+      {
+        "en": "Every request gets rejected immediately",
+        "bn": "প্রতিটা request তখনই reject হয়ে যায়"
+      },
+      {
+        "en": "Nginx automatically detects and fixes the real client IP on its own",
+        "bn": "Nginx নিজে থেকেই আসল client IP ধরে ফেলে ঠিক করে দেয়"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Nginx sees the load balancer's IP as the client for every request, so all real visitors share a single bucket — recovering the real client IP (e.g. with the realip module) is needed first.",
+      "bn": "Nginx প্রতিটা request-এর client হিসেবে load balancer-এর IP-কেই দেখে, তাই সব আসল visitor একটা bucket ভাগ করে নেয় — আগে আসল client IP ফিরে পাওয়া লাগবে (যেমন realip module দিয়ে)।"
+    }
+  }
+]
