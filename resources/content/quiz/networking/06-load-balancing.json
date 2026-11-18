@@ -1,0 +1,147 @@
+[
+  {
+    "q": {
+      "en": "What's the fundamental difference between L4 and L7 load balancing?",
+      "bn": "L4 আর L7 load balancing-এর মধ্যে মূল পার্থক্য কী?"
+    },
+    "options": [
+      {
+        "en": "L4 forwards raw TCP/UDP by IP and port alone; L7 reads the request itself to decide where it goes",
+        "bn": "L4 শুধু IP আর port দিয়ে raw TCP/UDP forward করে; L7 কোথায় যাবে ঠিক করতে request নিজেই পড়ে"
+      },
+      {
+        "en": "L4 is only for websites; L7 is only for databases",
+        "bn": "L4 শুধু website-এর জন্য; L7 শুধু database-এর জন্য"
+      },
+      {
+        "en": "L4 and L7 are two names for the exact same technique",
+        "bn": "L4 আর L7 একই technique-এর দুটো নাম"
+      },
+      {
+        "en": "L7 is always faster than L4 because it skips TCP entirely",
+        "bn": "L7 সবসময় L4-এর চেয়ে দ্রুত কারণ এটা TCP পুরোপুরি skip করে"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "L4 operates on IP/port alone without reading content, so it can't route by hostname or path. L7 reads the request (HTTP headers, hostname, path) to make that routing decision.",
+      "bn": "L4 content না পড়েই শুধু IP/port-এর উপর কাজ করে, তাই hostname বা path দিয়ে route করতে পারে না। L7 এই routing decision নিতে request (HTTP header, hostname, path) পড়ে।"
+    }
+  },
+  {
+    "q": {
+      "en": "How is ssl_preread-based SNI routing different from the SNI demo in Chapter 3?",
+      "bn": "ssl_preread-ভিত্তিক SNI routing Chapter 3-এর SNI demo থেকে কীভাবে আলাদা?"
+    },
+    "options": [
+      {
+        "en": "ssl_preread forwards the connection still encrypted; Chapter 3's proxy terminated TLS itself",
+        "bn": "ssl_preread connection-টা এখনো encrypted অবস্থায়ই forward করে; Chapter 3-এর proxy নিজেই TLS terminate করেছিল"
+      },
+      {
+        "en": "They are exactly the same mechanism under a different name",
+        "bn": "এগুলো একই mechanism, শুধু আলাদা নামে"
+      },
+      {
+        "en": "ssl_preread only works with HTTP, never with TLS",
+        "bn": "ssl_preread শুধু HTTP-র সাথে কাজ করে, TLS-এর সাথে কখনো না"
+      },
+      {
+        "en": "Chapter 3's demo never used SNI at all",
+        "bn": "Chapter 3-এর demo কখনো SNI-ই ব্যবহার করেনি"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Chapter 3's server terminated TLS, decrypting traffic after picking a certificate. ssl_preread reads the same SNI field but passes the connection through still encrypted — a TLS passthrough, not termination.",
+      "bn": "Chapter 3-এর server TLS terminate করেছিল, একটা certificate বেছে traffic decrypt করে। ssl_preread একই SNI field পড়ে কিন্তু connection-টা এখনো encrypted অবস্থায়ই পাস করে দেয় — TLS passthrough, termination না।"
+    }
+  },
+  {
+    "q": {
+      "en": "With no load-balancing directive specified, what method does Nginx's upstream block use by default?",
+      "bn": "কোনো load-balancing directive না দিলে, Nginx-এর upstream block default-এ কোন method ব্যবহার করে?"
+    },
+    "options": [
+      {
+        "en": "Weighted round-robin",
+        "bn": "Weighted round-robin"
+      },
+      {
+        "en": "Random",
+        "bn": "Random"
+      },
+      {
+        "en": "Least connections",
+        "bn": "Least connections"
+      },
+      {
+        "en": "IP hash",
+        "bn": "IP hash"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Nginx defaults to weighted round-robin, cycling through servers in turn, with any weight=N parameter giving a server a proportionally larger share. (Caddy's reverse_proxy, by contrast, defaults to random.)",
+      "bn": "Nginx default-এ weighted round-robin ব্যবহার করে, server-গুলো পর্যায়ক্রমে ঘুরে চলে, কোনো weight=N থাকলে সেই server-এর share proportionally বেশি হয়। (এর বিপরীতে, Caddy-র reverse_proxy default-এ random ব্যবহার করে।)"
+    }
+  },
+  {
+    "q": {
+      "en": "What can open-source Nginx's health checking NOT do, that Caddy's open-source reverse_proxy can?",
+      "bn": "Open-source Nginx-এর health checking কী করতে পারে না, যা Caddy-র open-source reverse_proxy পারে?"
+    },
+    "options": [
+      {
+        "en": "Active health checks — polling a health endpoint on a schedule, independent of real traffic",
+        "bn": "Active health check — real traffic থেকে স্বাধীন, একটা schedule-এ একটা health endpoint-কে জিজ্ঞেস করা"
+      },
+      {
+        "en": "Marking any backend as unavailable at all",
+        "bn": "কোনো backend-কেই unavailable মার্ক করা"
+      },
+      {
+        "en": "Using more than two backends",
+        "bn": "দুটোর বেশি backend ব্যবহার করা"
+      },
+      {
+        "en": "Serving HTTPS traffic",
+        "bn": "HTTPS traffic serve করা"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Open-source Nginx only has passive health checks (max_fails/fail_timeout, learned from real failed requests); active, scheduled health checks are an Nginx Plus-only feature. Caddy's open-source reverse_proxy supports active checks (health_uri, health_interval) directly, as demonstrated live in this chapter.",
+      "bn": "Open-source Nginx-এ শুধু passive health check আছে (max_fails/fail_timeout, real fail হওয়া request থেকে শেখা); active, নিয়মিত সময়ের health check শুধু Nginx Plus-এর feature। Caddy-র open-source reverse_proxy সরাসরি active check support করে (health_uri, health_interval), যা এই chapter-এ live দেখানো হয়েছে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why is ip_hash-based session persistence described as a workaround rather than a fix?",
+      "bn": "ip_hash-ভিত্তিক session persistence-কে কেন একটা fix-এর বদলে একটা workaround বলা হয়?"
+    },
+    "options": [
+      {
+        "en": "It only pins a client to a backend by IP; load spreads unevenly and a session is still lost if that backend goes down",
+        "bn": "এটা শুধু client-কে IP দিয়ে একটা backend-এ pin করে; load অসমানভাবে ছড়ায়, আর সেই backend down হলে session তবু হারায়"
+      },
+      {
+        "en": "It is not supported by any real load balancer",
+        "bn": "এটা কোনো real load balancer-ই support করে না"
+      },
+      {
+        "en": "It encrypts session data automatically, which is unnecessary overhead",
+        "bn": "এটা session data automatically encrypt করে, যা অতিরিক্ত overhead"
+      },
+      {
+        "en": "It only works for UDP traffic, not HTTP",
+        "bn": "এটা শুধু UDP traffic-এর জন্য কাজ করে, HTTP-র জন্য না"
+      }
+    ],
+    "answer": 0,
+    "why": {
+      "en": "ip_hash pins a client to one backend by IP, so load is no longer evenly spread, and every client pinned to a backend that goes down still loses their session. The real fix is shared session storage every backend can reach, not pinning clients to one server.",
+      "bn": "ip_hash client-কে IP দিয়ে একটা backend-এ pin করে, তাই load আর সমানভাবে ছড়ায় না, আর down হয়ে যাওয়া একটা backend-এ pinned প্রতিটা client তবু তার session হারায়। আসল fix হলো প্রতিটা backend-এর reach করার মতো shared session storage, client-দের এক server-এ pin করা না।"
+    }
+  }
+]

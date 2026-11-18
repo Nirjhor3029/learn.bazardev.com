@@ -197,4 +197,4 @@ Nginx প্রতিটা request-এর "client" হিসেবে load bala
 
 ---
 
-**পরের chapter:** Chapter 6 — Load balancing: L4 vs L7, algorithms, and health checks *(coming soon)*
+**পরের chapter:** [Chapter 6 — Load balancing: L4 vs L7, algorithms, and health checks](06-load-balancing.md)
