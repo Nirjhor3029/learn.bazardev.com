@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "What does the \"w\" permission bit mean on a directory, as opposed to a file?",
+      "bn": "একটা directory-তে \"w\" permission bit-এর মানে কী, একটা file-এর তুলনায়?"
+    },
+    "options": [
+      {"en": "Being able to create, delete, or rename entries inside the directory", "bn": "Directory-র ভেতরে entry create, delete, বা rename করতে পারা"},
+      {"en": "Being able to execute any file inside the directory", "bn": "Directory-র ভেতরের যেকোনো file execute করতে পারা"},
+      {"en": "Being able to change the directory's own owner", "bn": "Directory-র নিজের owner বদলাতে পারা"},
+      {"en": "Exactly the same as on a file - editing content", "bn": "একটা file-এর মতোই ঠিক - content edit করা"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "On a directory, write means modifying its listing - creating, deleting, or renaming entries - which is why a file can be deleted based on its directory's permission, not its own.",
+      "bn": "একটা directory-তে, write মানে এর listing modify করা - entry create, delete, বা rename করা - এই কারণেই একটা file তার directory-র permission-এর ভিত্তিতে delete করা যায়, নিজের permission-এ না।"
+    }
+  },
+  {
+    "q": {
+      "en": "A file has permission 000. Can it still be deleted, and under what condition?",
+      "bn": "একটা file-এর permission 000। এটা তখনও delete করা যায়, কোন condition-এ?"
+    },
+    "options": [
+      {"en": "Yes, by anyone with write permission on the directory containing it", "bn": "হ্যাঁ, এটা থাকা directory-তে write permission আছে এমন যে কারো দ্বারা"},
+      {"en": "No, 000 permission makes a file completely undeletable", "bn": "না, 000 permission একটা file সম্পূর্ণ undeletable করে দেয়"},
+      {"en": "Only root can ever delete a file with 000 permission", "bn": "শুধু root-ই 000 permission-এর একটা file delete করতে পারে"},
+      {"en": "Only after changing the file's permission first", "bn": "শুধু প্রথমে file-এর permission বদলানোর পরই"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Deleting a directory entry is a write operation on the directory, not the file - the file's own permission bits are irrelevant to whether it can be removed.",
+      "bn": "একটা directory entry delete করা directory-র উপর একটা write operation, file-এর উপর না - file-এর নিজের permission bit এটা remove করা যাবে কিনা তার সাথে irrelevant।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why is chmod -R 777 the wrong fix for a Laravel storage/ permission error, even though it works?",
+      "bn": "একটা Laravel storage/ permission error-এর জন্য chmod -R 777 কেন ভুল fix, কাজ করলেও?"
+    },
+    "options": [
+      {"en": "It makes the directory writable by every account and process on the machine, not just the web server", "bn": "এটা machine-এর প্রতিটা account আর process-এর জন্য directory writable করে দেয়, শুধু web server-এর জন্য না"},
+      {"en": "It is slower to execute than chmod 775", "bn": "এটা chmod 775-এর চেয়ে execute করতে বেশি সময় নেয়"},
+      {"en": "It does not actually fix the permission error at all", "bn": "এটা আসলে permission error-টাই fix করে না"},
+      {"en": "It only works on files, not directories", "bn": "এটা শুধু file-এ কাজ করে, directory-তে না"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "775 with group ownership gives write access to exactly the web server user via the shared group, while 777 opens write access to every account on the machine - abandoning least privilege for a problem group ownership already solves correctly.",
+      "bn": "Group ownership-সহ 775 shared group-এর মাধ্যমে ঠিক web server user-কে write access দেয়, যখন 777 machine-এর প্রতিটা account-এর জন্য write access খুলে দেয় - group ownership আগে থেকেই ঠিকভাবে সমাধান করা একটা সমস্যার জন্য least privilege ছেড়ে দেওয়া।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why should a long-running service use a dedicated system account rather than a developer's personal login?",
+      "bn": "একটা long-running service কেন একজন developer-এর personal login-এর বদলে একটা dedicated system account ব্যবহার করা উচিত?"
+    },
+    "options": [
+      {"en": "It owns only what that service needs and has no login shell to be misused interactively", "bn": "এটা শুধু সেই service-এর লাগে এমন কিছুর মালিক হয় আর interactively misuse হওয়ার মতো কোনো login shell নেই"},
+      {"en": "System accounts run noticeably faster than personal accounts", "bn": "System account personal account-এর চেয়ে লক্ষণীয়ভাবে দ্রুত চলে"},
+      {"en": "It is required by every Linux distribution's license", "bn": "এটা প্রতিটা Linux distribution-এর license-এর জন্য required"},
+      {"en": "Personal accounts cannot run background processes at all", "bn": "Personal account background process একদমই চালাতে পারে না"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A dedicated service account (--system --no-create-home --shell /usr/sbin/nologin) scopes a service's access to exactly what it needs and can't be used as an interactive login even if its credentials were ever misused.",
+      "bn": "একটা dedicated service account (--system --no-create-home --shell /usr/sbin/nologin) একটা service-এর access ঠিক যা লাগে তার মধ্যে scope করে, আর credential কখনো misuse হলেও interactive login হিসেবে ব্যবহার করা যায় না।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the risk of a sudoers rule like \"deploy ALL=(ALL) NOPASSWD: ALL\" compared to naming specific commands?",
+      "bn": "\"deploy ALL=(ALL) NOPASSWD: ALL\"-এর মতো একটা sudoers rule-এর ঝুঁকি কী, specific command নাম দেওয়ার তুলনায়?"
+    },
+    "options": [
+      {"en": "A compromised deploy account becomes equivalent to a compromised root account, with no second check", "bn": "একটা compromised deploy account একটা compromised root account-এর সমান হয়ে যায়, কোনো second check-ই ছাড়া"},
+      {"en": "It makes the deploy account's SSH key expire faster", "bn": "এটা deploy account-এর SSH key দ্রুত expire করে দেয়"},
+      {"en": "It is only a cosmetic difference with no real security impact", "bn": "এটা শুধু একটা cosmetic পার্থক্য, কোনো real security impact নেই"},
+      {"en": "It prevents the account from running any commands at all", "bn": "এটা account-কে কোনো command-ই চালাতে দেয় না"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A blanket NOPASSWD: ALL rule grants unrestricted, password-free root - naming specific commands bounds the damage from a compromised account to exactly those actions instead.",
+      "bn": "একটা blanket NOPASSWD: ALL rule unrestricted, password-ছাড়া root দেয় - specific command নাম দেওয়া একটা compromised account থেকে damage-কে ঠিক ওই action-গুলোর মধ্যে বেঁধে রাখে।"
+    }
+  }
+]
