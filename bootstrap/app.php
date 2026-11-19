@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\EnsureAdmin;
+use App\Http\Middleware\EnsureTerminalSharedSecret;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -13,7 +14,16 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->alias(['admin' => EnsureAdmin::class]);
+        $middleware->alias([
+            'admin' => EnsureAdmin::class,
+            'terminal.secret' => EnsureTerminalSharedSecret::class,
+        ]);
+
+        // Server-to-server call from the terminal orchestrator — no browser session,
+        // so no CSRF token to present. Guarded instead by the shared-secret middleware.
+        $middleware->validateCsrfTokens(except: [
+            'internal/terminal/verify-ticket',
+        ]);
 
         // Not logged in -> login page; already logged in and visiting /login -> home.
         $middleware->redirectGuestsTo(fn () => route('login'));

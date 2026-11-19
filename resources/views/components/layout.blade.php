@@ -32,6 +32,8 @@
                     @php $me = auth()->user(); @endphp
                     <a href="{{ route('learning.dashboard') }}"
                        class="rounded-lg px-3 py-2 text-sm font-medium transition-colors {{ request()->routeIs('learning.dashboard') ? 'bg-blue-50 text-blue-700' : 'text-gray-700 hover:bg-gray-100' }}">My Learning</a>
+                    <a href="{{ route('terminal.launch') }}" target="_blank" rel="noopener"
+                       class="hidden rounded-lg px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 sm:block">Terminal</a>
                     <details class="relative" data-dropdown>
                         <summary class="flex cursor-pointer list-none items-center gap-2 rounded-full py-1 pr-2 pl-1 transition-colors hover:bg-gray-100 [&::-webkit-details-marker]:hidden"
                                  aria-label="Open account menu">
@@ -47,6 +49,7 @@
                             </div>
                             <div class="py-1.5">
                                 <a href="{{ route('learning.dashboard') }}" class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">My Learning</a>
+                                <a href="{{ route('terminal.launch') }}" target="_blank" rel="noopener" class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 sm:hidden">Terminal</a>
                                 <a href="{{ route('account.edit') }}" class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">Account settings</a>
                                 @if ($me->is_admin)
                                     @php $toReview = \App\Models\Contribution::where('status', \App\Models\Contribution::PENDING)->count(); @endphp

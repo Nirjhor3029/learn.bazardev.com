@@ -13,9 +13,15 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\LearningController;
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\TerminalLaunchController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [CourseController::class, 'home'])->name('home');
+
+// Server-to-server only (shared-secret, not a browser session) — the terminal
+// orchestrator calls this to redeem a launch ticket. See TerminalLaunchController.
+Route::post('/internal/terminal/verify-ticket', [TerminalLaunchController::class, 'verify'])
+    ->middleware('terminal.secret');
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +48,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/account', [AccountController::class, 'update'])->name('account.update');
     Route::put('/account/password', [AccountController::class, 'updatePassword'])->name('account.password');
     Route::delete('/account', [AccountController::class, 'destroy'])->name('account.destroy');
+
+    // Hands this logged-in reader off to terminal.bazardev.com via a one-time ticket.
+    Route::get('/terminal/launch', [TerminalLaunchController::class, 'launch'])->name('terminal.launch');
 
     // Personal learning: progress, bookmarks, private notes.
     Route::get('/my-learning', [LearningController::class, 'dashboard'])->name('learning.dashboard');

@@ -35,4 +35,10 @@ return [
         ],
     ],
 
+    // terminal.bazardev.com launch handoff — see app/Http/Controllers/TerminalLaunchController.php
+    'terminal' => [
+        'url' => env('TERMINAL_URL', 'https://terminal.bazardev.com'),
+        'shared_secret' => env('TERMINAL_SHARED_SECRET'),
+    ],
+
 ];
