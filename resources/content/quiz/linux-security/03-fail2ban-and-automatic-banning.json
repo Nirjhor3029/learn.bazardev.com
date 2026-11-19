@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "What does fail2ban detect that a raw connection-rate limit (like ufw limit) cannot?",
+      "bn": "একটা raw connection-rate limit (যেমন ufw limit) যা detect করতে পারে না, fail2ban তার কী detect করে?"
+    },
+    "options": [
+      {"en": "Specifically failed login attempts, by matching the service's own log", "bn": "নির্দিষ্টভাবে failed login attempt, service-এর নিজের log match করে"},
+      {"en": "The physical location of the attacker", "bn": "Attacker-এর physical location"},
+      {"en": "Whether the connection used TCP or UDP", "bn": "Connection TCP না UDP ব্যবহার করেছে"},
+      {"en": "The exact password that was tried", "bn": "ঠিক কোন password try করা হয়েছিল"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "fail2ban reads a log and matches lines that specifically mean a login failed, which tells a real attack apart from a legitimate user's occasional retry better than counting raw connections.",
+      "bn": "fail2ban একটা log পড়ে আর specifically login fail মানে এমন line match করে, যা raw connection count করার চেয়ে ভালোভাবে একটা real attack আর একজন legitimate user-এর কিছু retry আলাদা করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why should you never edit /etc/fail2ban/jail.conf directly?",
+      "bn": "/etc/fail2ban/jail.conf কেন কখনো সরাসরি edit করা উচিত না?"
+    },
+    "options": [
+      {"en": "It is overwritten on every package upgrade; overrides belong in jail.local instead", "bn": "এটা প্রতিটা package upgrade-এ overwrite হয়ে যায়; override jail.local-এ রাখা উচিত"},
+      {"en": "It is a read-only file and cannot be edited at all", "bn": "এটা একটা read-only file, একদমই edit করা যায় না"},
+      {"en": "Editing it immediately bans your own IP", "bn": "এটা edit করলে সাথে সাথে তোমার নিজের IP ban হয়ে যায়"},
+      {"en": "It only controls logging, not bans", "bn": "এটা শুধু logging নিয়ন্ত্রণ করে, ban না"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "jail.conf ships with the package and is replaced on every upgrade, so any direct edits are silently lost. jail.local is never touched by upgrades and is where overrides belong.",
+      "bn": "jail.conf package-এর সাথে ship হয় আর প্রতিটা upgrade-এ replace হয়ে যায়, তাই সরাসরি করা কোনো edit নিঃশব্দে হারিয়ে যায়। jail.local upgrade কখনো touch করে না, আর override এখানেই রাখা উচিত।"
+    }
+  },
+  {
+    "q": {
+      "en": "With maxretry=5, findtime=10m, and bantime=1h, when is an IP banned and for how long?",
+      "bn": "maxretry=5, findtime=10m, আর bantime=1h দিয়ে, একটা IP কখন ban হয় আর কতক্ষণের জন্য?"
+    },
+    "options": [
+      {"en": "After 5 failures within 10 minutes, banned for 1 hour", "bn": "10 মিনিটের মধ্যে 5টা fail হওয়ার পর, 1 ঘণ্টার জন্য ban"},
+      {"en": "After 1 failure, banned for 10 minutes", "bn": "1টা fail হওয়ার পর, 10 মিনিটের জন্য ban"},
+      {"en": "After 10 failures within 1 hour, banned for 5 minutes", "bn": "1 ঘণ্টার মধ্যে 10টা fail হওয়ার পর, 5 মিনিটের জন্য ban"},
+      {"en": "The ban never expires", "bn": "Ban কখনো শেষ হয় না"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "maxretry failures within the findtime window trigger the ban, which then lasts bantime.",
+      "bn": "findtime window-এর মধ্যে maxretry সংখ্যক fail হওয়া ban trigger করে, যা তারপর bantime ধরে থাকে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why is fail2ban-regex a safe way to test a filter?",
+      "bn": "fail2ban-regex একটা filter test করার নিরাপদ উপায় কেন?"
+    },
+    "options": [
+      {"en": "It checks the regex against log lines in a purely read-only way, without banning anyone", "bn": "এটা সম্পূর্ণ read-only উপায়ে log line-এর বিরুদ্ধে regex check করে, কাউকে ban না করেই"},
+      {"en": "It only runs on a separate test server", "bn": "এটা শুধু একটা আলাদা test server-এ চলে"},
+      {"en": "It automatically whitelists your own IP first", "bn": "এটা প্রথমেই তোমার নিজের IP automatically whitelist করে"},
+      {"en": "It disables fail2ban entirely while testing", "bn": "এটা test করার সময় fail2ban সম্পূর্ণ বন্ধ করে দেয়"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "fail2ban-regex never bans an IP or touches the firewall - it's a pure pattern-match check against existing log lines, which is exactly what makes it safe to run on a live server.",
+      "bn": "fail2ban-regex কখনো কোনো IP ban করে না বা firewall touch করে না - এটা existing log line-এর বিরুদ্ধে একটা pure pattern-match check, যা এটাকে একটা live server-এ চালানো নিরাপদ করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What makes the recidive jail different from a normal jail like sshd?",
+      "bn": "recidive jail-কে sshd-এর মতো একটা normal jail থেকে কী আলাদা করে?"
+    },
+    "options": [
+      {"en": "It watches fail2ban's own ban log and bans repeat offenders of any jail for much longer", "bn": "এটা fail2ban-এর নিজের ban log দেখে আর যেকোনো jail-এর পুনরাবৃত্তি করা আক্রমণকারীকে আরও অনেক বেশি সময়ের জন্য ban করে"},
+      {"en": "It only protects the SSH service", "bn": "এটা শুধু SSH service protect করে"},
+      {"en": "It bans IPs permanently with no way to unban", "bn": "এটা IP permanently ban করে, unban করার কোনো উপায় নেই"},
+      {"en": "It replaces the need for any other jail", "bn": "এটা অন্য কোনো jail-এর দরকার বাতিল করে দেয়"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "recidive reads fail2ban's own ban history rather than a service log, and escalates the ban duration for an IP that keeps getting banned by other jails - an automatic response to repeat offenders.",
+      "bn": "recidive একটা service log-এর বদলে fail2ban-এর নিজের ban history পড়ে, আর যে IP অন্য jail দিয়ে বারবার ban হতে থাকে তার জন্য ban duration escalate করে - পুনরাবৃত্তি করা আক্রমণকারীর জন্য একটা automatic response।"
+    }
+  }
+]
