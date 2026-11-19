@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Why does setting PasswordAuthentication no stop SSH brute-force attacks?",
+      "bn": "PasswordAuthentication no সেট করা কেন SSH brute-force attack বন্ধ করে?"
+    },
+    "options": [
+      {"en": "It removes the entire category of attack — there is no password left to guess", "bn": "এটা পুরো attack category-টাই বাদ দেয় — guess করার মতো কোনো password বাকি থাকে না"},
+      {"en": "It makes passwords take longer to type", "bn": "এটা password টাইপ করতে বেশি সময় নেয়"},
+      {"en": "It blocks all incoming connections on port 22", "bn": "এটা port 22-এ আসা সব connection block করে"},
+      {"en": "It only works together with a firewall", "bn": "এটা শুধু firewall-এর সাথে একসাথে কাজ করে"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Brute-forcing depends entirely on guessing a password. If no password can ever authenticate a session, there is nothing left to guess, regardless of firewall rules.",
+      "bn": "Brute-forcing সম্পূর্ণ নির্ভর করে একটা password guess করার উপর। কোনো password দিয়ে কখনো authenticate করা না গেলে, guess করার মতো কিছু থাকে না, firewall rule যা-ই থাকুক।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why disable both PasswordAuthentication and KbdInteractiveAuthentication?",
+      "bn": "PasswordAuthentication আর KbdInteractiveAuthentication দুটোই কেন বন্ধ করতে হয়?"
+    },
+    "options": [
+      {"en": "Some systems can still accept a password via keyboard-interactive (PAM) even with PasswordAuthentication off", "bn": "PasswordAuthentication বন্ধ থাকলেও কিছু system keyboard-interactive (PAM) দিয়ে password accept করতে পারে"},
+      {"en": "KbdInteractiveAuthentication controls the SSH port number", "bn": "KbdInteractiveAuthentication SSH port number নিয়ন্ত্রণ করে"},
+      {"en": "They are the same setting under two names and only one needs to be set", "bn": "দুটো একই setting দুই নামে, শুধু একটা সেট করলেই হয়"},
+      {"en": "PasswordAuthentication only applies to the root account", "bn": "PasswordAuthentication শুধু root account-এর জন্য প্রযোজ্য"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Keyboard-interactive is a separate PAM-based challenge/response path that can still let a password through on some systems, so both must be disabled to fully close the password path.",
+      "bn": "Keyboard-interactive একটা আলাদা PAM-based challenge/response path, যা কিছু system-এ এখনও password চালাতে পারে, তাই password path পুরোপুরি বন্ধ করতে দুটোই বন্ধ করতে হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What must you do before restarting sshd after editing sshd_config, to avoid locking yourself out?",
+      "bn": "sshd_config edit করার পর sshd restart করার আগে, নিজেকে lock out হওয়া এড়াতে কী করতে হবে?"
+    },
+    "options": [
+      {"en": "Keep your current session open and test the new config from a brand-new session first", "bn": "বর্তমান session খোলা রেখে, নতুন config প্রথমে একটা একদম নতুন session থেকে test করো"},
+      {"en": "Reboot the entire server", "bn": "পুরো server reboot করো"},
+      {"en": "Delete the old authorized_keys file", "bn": "পুরনো authorized_keys file delete করো"},
+      {"en": "Disable the firewall temporarily", "bn": "অস্থায়ীভাবে firewall বন্ধ করো"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "If the new configuration is broken, the still-open original session is the only way back in to fix it — closing it first before confirming a new login works can lock you out entirely.",
+      "bn": "নতুন configuration ভাঙা হলে, খোলা রাখা original session-টাই একমাত্র উপায় ফিরে এসে ঠিক করার — নতুন login কাজ করছে confirm করার আগেই বন্ধ করলে পুরোপুরি lock out হয়ে যেতে পারো।"
+    }
+  },
+  {
+    "q": {
+      "en": "Does moving SSH to a non-default port stop a targeted attacker?",
+      "bn": "SSH-কে non-default port-এ সরানো কি একটা targeted attacker-কে থামায়?"
+    },
+    "options": [
+      {"en": "No — a full port scan finds the service on any port in seconds; it only reduces automated scanner noise", "bn": "না — একটা full port scan সেকেন্ডের মধ্যে যে কোনো port-এ service খুঁজে পায়; এটা শুধু automated scanner-এর noise কমায়"},
+      {"en": "Yes — a non-default port cannot be discovered at all", "bn": "হ্যাঁ — non-default port একদমই আবিষ্কার করা যায় না"},
+      {"en": "Yes — it encrypts the connection more strongly", "bn": "হ্যাঁ — এটা connection আরও strongly encrypt করে"},
+      {"en": "No — it has no effect on anything", "bn": "না — এর কোনো effect-ই নেই"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "This is security through obscurity: it cuts opportunistic, port-22-only scanners, but a targeted attacker running a full port scan finds the service regardless.",
+      "bn": "এটা security through obscurity: opportunistic, শুধু port-22 scan করা scanner-দের বাদ দেয়, কিন্তু একটা targeted attacker full port scan চালিয়ে যেভাবেই হোক service খুঁজে পায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does AllowUsers dev deploy in sshd_config actually do?",
+      "bn": "sshd_config-এ AllowUsers dev deploy আসলে কী করে?"
+    },
+    "options": [
+      {"en": "Only dev and deploy may authenticate over SSH at all; every other account is rejected before authentication is attempted", "bn": "শুধু dev আর deploy SSH-এ authenticate করতে পারবে; বাকি সব account authentication চেষ্টা হওয়ার আগেই reject হয়"},
+      {"en": "It gives dev and deploy sudo access", "bn": "এটা dev আর deploy-কে sudo access দেয়"},
+      {"en": "It creates the dev and deploy user accounts", "bn": "এটা dev আর deploy user account তৈরি করে"},
+      {"en": "It only applies to password logins, not key-based ones", "bn": "এটা শুধু password login-এর জন্য প্রযোজ্য, key-based-এর জন্য না"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "AllowUsers is checked before any authentication method (key or password) — any account not in the list is rejected outright, regardless of what credentials it has.",
+      "bn": "AllowUsers কোনো authentication method (key বা password) check হওয়ার আগেই দেখা হয় — list-এ না থাকা কোনো account সরাসরি reject হয়, তার কাছে যত credential-ই থাকুক।"
+    }
+  }
+]

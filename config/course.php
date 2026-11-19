@@ -191,5 +191,26 @@ return [
                 '08-real-project-load-balanced-laravel' => ['title' => 'Real project: a load-balanced, multi-domain Laravel setup with TLS', 'status' => 'available'],
             ],
         ],
+
+        // Advanced part (A2 of 4 agreed, see devops-for-developers/PROJECT_CONTEXT.md §8):
+        // coming_soon, chapters written one at a time, same pattern as Networking (A1).
+        'linux-security' => [
+            'title' => 'Linux Server Security & Secrets',
+            'tagline' => 'SSH hardening, firewalls, fail2ban, secrets management, and least privilege.',
+            'folder' => '11-linux-security',
+            'requires' => ['linux-shell', 'cloud', 'networking'],
+            'status' => 'available',
+            'section' => 'advanced',
+            'chapters' => [
+                '01-threat-model-and-ssh-hardening' => ['title' => 'Threat model and SSH hardening: locking the front door', 'status' => 'available'],
+                '02-firewalls-ufw-and-nftables' => ['title' => 'Firewalls: UFW and nftables, default-deny done right', 'status' => 'coming_soon'],
+                '03-fail2ban-and-automatic-banning' => ['title' => 'fail2ban: automatic banning for repeat offenders', 'status' => 'coming_soon'],
+                '04-mfa-and-limiting-who-logs-in' => ['title' => 'Multi-factor SSH and limiting who can even try', 'status' => 'coming_soon'],
+                '05-secrets-management' => ['title' => 'Secrets management: never in git, always rotatable', 'status' => 'coming_soon'],
+                '06-least-privilege-and-sudo' => ['title' => 'Least privilege: sudo policy, service accounts, and file permissions', 'status' => 'coming_soon'],
+                '07-security-auditing-and-hardening-checklists' => ['title' => 'Security auditing: Lynis, unattended-upgrades, and a hardening checklist', 'status' => 'coming_soon'],
+                '08-real-project-hardening-a-laravel-server' => ['title' => 'Real project: hardening a Laravel production server end to end', 'status' => 'coming_soon'],
+            ],
+        ],
     ],
 ];
