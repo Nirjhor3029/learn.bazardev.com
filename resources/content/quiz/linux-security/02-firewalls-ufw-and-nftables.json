@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "What does \"default deny incoming\" mean for a firewall?",
+      "bn": "একটা firewall-এর জন্য \"default deny incoming\"-এর মানে কী?"
+    },
+    "options": [
+      {"en": "Every incoming connection is blocked unless a rule explicitly allows it", "bn": "প্রতিটা incoming connection block থাকে, যতক্ষণ না একটা rule explicitly allow করে"},
+      {"en": "Every outgoing connection is blocked", "bn": "প্রতিটা outgoing connection block"},
+      {"en": "All traffic is allowed by default", "bn": "default-এ সব traffic allow থাকে"},
+      {"en": "Only SSH traffic is filtered", "bn": "শুধু SSH traffic filter হয়"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Default-deny closes everything by default, including services installed later and never explicitly firewalled — the opposite of default-allow, which exposes anything you forget to block.",
+      "bn": "Default-deny সবকিছু default-এ বন্ধ রাখে, পরে install করা আর কখনো explicitly firewall না করা service-ও — এটা default-allow-এর বিপরীত, যা তুমি block করতে ভুলে যাওয়া যেকোনো কিছু expose করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why doesn't a firewall need a separate rule to let an HTTP reply back through to a visitor?",
+      "bn": "একজন visitor-কে HTTP reply ফিরিয়ে দেওয়ার জন্য firewall-এর আলাদা rule কেন লাগে না?"
+    },
+    "options": [
+      {"en": "The firewall is stateful and tracks replies to already-approved connections via conntrack", "bn": "Firewall stateful আর conntrack দিয়ে আগে approve করা connection-এর reply track করে"},
+      {"en": "HTTP traffic is never filtered", "bn": "HTTP traffic কখনো filter হয় না"},
+      {"en": "Outgoing traffic always ignores all rules", "bn": "Outgoing traffic সবসময় সব rule ignore করে"},
+      {"en": "Replies use a different port that is always open", "bn": "Reply আলাদা একটা port ব্যবহার করে যা সবসময় খোলা থাকে"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A stateful firewall recognizes a reply as belonging to a connection that was already permitted, and lets it through automatically — only new, unsolicited inbound connections are checked against allow rules.",
+      "bn": "একটা stateful firewall একটা reply-কে আগে permit করা connection-এর অংশ হিসেবে চিনে নেয়, আর automatically যেতে দেয় — শুধু নতুন, unsolicited inbound connection allow rule-এর বিরুদ্ধে check হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is UFW's relationship to nftables?",
+      "bn": "UFW আর nftables-এর সম্পর্ক কী?"
+    },
+    "options": [
+      {"en": "UFW is a simplified front end; every rule it writes becomes a real nftables rule underneath", "bn": "UFW একটা simplified front end; এটা যে rule লেখে সেটা নিচে একটা real nftables rule হয়"},
+      {"en": "nftables is a plugin that only works inside UFW", "bn": "nftables একটা plugin যা শুধু UFW-এর ভেতরে কাজ করে"},
+      {"en": "They filter completely independent sets of packets", "bn": "তারা সম্পূর্ণ আলাদা আলাদা packet filter করে"},
+      {"en": "nftables only applies to IPv6 traffic", "bn": "nftables শুধু IPv6 traffic-এ apply হয়"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "nftables is the real kernel packet-filtering engine; UFW is just a simpler syntax for writing rules into it, and ufw status is a simplified summary of the real nftables ruleset.",
+      "bn": "nftables আসলে kernel-এর real packet-filtering engine; UFW শুধু এতে rule লেখার জন্য একটা সহজ syntax, আর ufw status হলো real nftables ruleset-এর একটা simplified summary।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why can a Docker container's published port be reachable from the internet even when ufw status shows no matching rule?",
+      "bn": "একটা Docker container-এর published port কেন internet থেকে reachable হতে পারে, এমনকি ufw status কোনো matching rule না দেখালেও?"
+    },
+    "options": [
+      {"en": "Docker writes its own accept rules directly into the same nftables ruleset UFW uses, and they can take effect before UFW's deny default applies", "bn": "Docker UFW ব্যবহার করা একই nftables ruleset-এ সরাসরি নিজের accept rule লেখে, আর সেগুলো UFW-এর deny default apply হওয়ার আগেই effect-এ চলে যেতে পারে"},
+      {"en": "UFW does not actually block anything by default", "bn": "UFW আসলে default-এ কিছুই block করে না"},
+      {"en": "Docker containers are not connected to the network at all", "bn": "Docker container একদমই network-এর সাথে connected না"},
+      {"en": "Published ports always ignore nftables entirely", "bn": "Published port সবসময় nftables-কে সম্পূর্ণ ignore করে"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "This is documented Docker behavior: its own rules for published ports go into the same ruleset UFW writes to, and can be evaluated first, making a port reachable without any UFW rule saying so.",
+      "bn": "এটা Docker-এর documented behavior: published port-এর জন্য এর নিজের rule UFW যে ruleset-এ লেখে সেখানেই যায়, আর আগে evaluate হতে পারে, যা কোনো UFW rule না থাকলেও একটা port reachable করে তোলে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the safest way to expose a Docker container's port only to the host itself, not the internet?",
+      "bn": "একটা Docker container-এর port শুধু host-এর নিজের কাছে expose করার, internet-এ না, সবচেয়ে নিরাপদ উপায় কী?"
+    },
+    "options": [
+      {"en": "Bind the published port to 127.0.0.1, e.g. -p 127.0.0.1:5432:5432", "bn": "Published port 127.0.0.1-এ bind করো, যেমন -p 127.0.0.1:5432:5432"},
+      {"en": "Disable UFW entirely", "bn": "UFW সম্পূর্ণ বন্ধ করে দাও"},
+      {"en": "Use a longer container name", "bn": "একটা দীর্ঘ container name ব্যবহার করো"},
+      {"en": "Set IPV6=yes in /etc/default/ufw", "bn": "/etc/default/ufw-এ IPV6=yes সেট করো"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Binding the published port to 127.0.0.1 makes it reachable only from the host machine itself, the same localhost-only pattern used for MySQL in Chapter 1, letting you safely reverse-proxy it instead of exposing it directly.",
+      "bn": "Published port 127.0.0.1-এ bind করলে এটা শুধু host machine নিজের থেকেই reachable হয়, Chapter 1-এ MySQL-এর জন্য দেখা একই localhost-only pattern, যা safely reverse-proxy করতে দেয়, সরাসরি expose না করে।"
+    }
+  }
+]
