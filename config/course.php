@@ -205,7 +205,7 @@ return [
                 '01-threat-model-and-ssh-hardening' => ['title' => 'Threat model and SSH hardening: locking the front door', 'status' => 'available'],
                 '02-firewalls-ufw-and-nftables' => ['title' => 'Firewalls: UFW and nftables, default-deny done right', 'status' => 'available'],
                 '03-fail2ban-and-automatic-banning' => ['title' => 'fail2ban: automatic banning for repeat offenders', 'status' => 'available'],
-                '04-mfa-and-limiting-who-logs-in' => ['title' => 'Multi-factor SSH and limiting who can even try', 'status' => 'coming_soon'],
+                '04-mfa-and-limiting-who-logs-in' => ['title' => 'Multi-factor SSH and limiting who can even try', 'status' => 'available'],
                 '05-secrets-management' => ['title' => 'Secrets management: never in git, always rotatable', 'status' => 'coming_soon'],
                 '06-least-privilege-and-sudo' => ['title' => 'Least privilege: sudo policy, service accounts, and file permissions', 'status' => 'coming_soon'],
                 '07-security-auditing-and-hardening-checklists' => ['title' => 'Security auditing: Lynis, unattended-upgrades, and a hardening checklist', 'status' => 'coming_soon'],

@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Why does adding a TOTP code count as genuine multi-factor authentication, not just a second password?",
+      "bn": "একটা TOTP code যোগ করা কেন genuine multi-factor authentication, শুধু একটা দ্বিতীয় password না কেন?"
+    },
+    "options": [
+      {"en": "It combines a different kind of factor (something you know) with the key (something you have)", "bn": "এটা একটা আলাদা ধরনের factor (something you know) key-এর (something you have) সাথে combine করে"},
+      {"en": "It is simply a longer password", "bn": "এটা শুধু একটা দীর্ঘ password"},
+      {"en": "It replaces the SSH key entirely", "bn": "এটা SSH key সম্পূর্ণ বদলে দেয়"},
+      {"en": "It only works over a VPN", "bn": "এটা শুধু VPN-এর মাধ্যমে কাজ করে"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Real multi-factor combines two different categories of proof - a key you have plus a code you know - so stealing just one factor is no longer enough to authenticate.",
+      "bn": "Real multi-factor দুই আলাদা category-র proof combine করে - একটা key যা তোমার কাছে আছে, সাথে একটা code যা তুমি জানো - তাই শুধু একটা factor চুরি করা authenticate করার জন্য যথেষ্ট না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why does setting KbdInteractiveAuthentication back to \"yes\" not reopen password login, as long as common-auth is replaced in /etc/pam.d/sshd?",
+      "bn": "/etc/pam.d/sshd-এ common-auth replace করা থাকলে, KbdInteractiveAuthentication আবার \"yes\" সেট করা কেন password login আবার খোলে না?"
+    },
+    "options": [
+      {"en": "The keyboard-interactive path now only asks PAM for a TOTP code, never a Unix password", "bn": "Keyboard-interactive path এখন শুধু PAM-কে একটা TOTP code চায়, কখনো Unix password না"},
+      {"en": "sshd_config settings are ignored once PAM is configured", "bn": "PAM configure হয়ে গেলে sshd_config setting ignore হয়"},
+      {"en": "Password login was never actually disabled in chapter 1", "bn": "Chapter 1-এ password login আসলে কখনো disable হয়নি"},
+      {"en": "KbdInteractiveAuthentication has no effect on authentication at all", "bn": "KbdInteractiveAuthentication authentication-এ কোনো effect-ই রাখে না"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "common-auth is what pulls in pam_unix.so, the password-checking module. Replacing it with pam_google_authenticator.so means the keyboard-interactive transport now only ever carries a TOTP prompt.",
+      "bn": "common-auth-ই pam_unix.so, password-check করা module, pull করে। এটা pam_google_authenticator.so দিয়ে replace করা মানে keyboard-interactive transport এখন শুধু একটা TOTP prompt-ই বহন করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does AuthenticationMethods publickey,keyboard-interactive enforce?",
+      "bn": "AuthenticationMethods publickey,keyboard-interactive কী enforce করে?"
+    },
+    "options": [
+      {"en": "Both factors must succeed, in that order - publickey first, then the TOTP step", "bn": "দুটো factor-ই সফল হতে হবে, সেই order-এ - প্রথমে publickey, তারপর TOTP step"},
+      {"en": "Either factor alone is sufficient", "bn": "যেকোনো একটা factor একাই যথেষ্ট"},
+      {"en": "Only the keyboard-interactive step matters", "bn": "শুধু keyboard-interactive step-ই গুরুত্বপূর্ণ"},
+      {"en": "It disables public key authentication entirely", "bn": "এটা public key authentication সম্পূর্ণ বন্ধ করে দেয়"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "OpenSSH requires the listed methods to succeed in order - a stolen key alone passes the first step but is stopped at the second, since it can't produce a valid TOTP code.",
+      "bn": "OpenSSH তালিকায় থাকা method-গুলো order-এ সফল হতে চায় - শুধু একটা চুরি হওয়া key প্রথম step pass করে কিন্তু দ্বিতীয় step-এ থেমে যায়, কারণ এটা একটা valid TOTP code দিতে পারে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why can't a CI/CD deploy key use the same AuthenticationMethods as a human account?",
+      "bn": "একটা CI/CD deploy key কেন একজন human account-এর মতো একই AuthenticationMethods ব্যবহার করতে পারে না?"
+    },
+    "options": [
+      {"en": "It's a non-interactive script and can't type a time-based code from a phone app", "bn": "এটা একটা non-interactive script, একটা phone app-এর time-based code টাইপ করতে পারে না"},
+      {"en": "Deploy keys are not allowed to use publickey authentication", "bn": "Deploy key-কে publickey authentication ব্যবহার করতে দেওয়া হয় না"},
+      {"en": "CI/CD pipelines run as the root user by default", "bn": "CI/CD pipeline default-এ root user হয়ে চলে"},
+      {"en": "Match blocks cannot apply to automation accounts", "bn": "Match block automation account-এর জন্য apply হতে পারে না"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Requiring a keyboard-interactive TOTP step for every account would break any fully automated deploy, since nothing is present to type the code.",
+      "bn": "প্রতিটা account-এর জন্য একটা keyboard-interactive TOTP step চাওয়া যেকোনো fully automated deploy ভেঙে দিতো, কারণ code টাইপ করার জন্য কিছুই নেই।"
+    }
+  },
+  {
+    "q": {
+      "en": "A user's TOTP code looks correct on their phone but the server rejects it. What is one honest, non-obvious cause?",
+      "bn": "একজন user-এর TOTP code তাদের phone-এ সঠিক দেখাচ্ছে কিন্তু server reject করছে। একটা honest, non-obvious কারণ কী?"
+    },
+    "options": [
+      {"en": "The server's system clock has drifted out of sync", "bn": "Server-এর system clock sync-এর বাইরে drift করেছে"},
+      {"en": "The SSH key was generated with the wrong algorithm", "bn": "SSH key ভুল algorithm দিয়ে generate হয়েছে"},
+      {"en": "The firewall is blocking port 443", "bn": "Firewall port 443 block করছে"},
+      {"en": "TOTP codes expire after exactly one use ever", "bn": "TOTP code চিরতরের জন্য একবার ব্যবহারের পরই expire হয়ে যায়"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A TOTP code is only valid because server and phone compute the same time window from the same shared secret - if the server's clock has drifted, a correct code can be rejected for reasons unrelated to the code itself.",
+      "bn": "একটা TOTP code valid হয় শুধু কারণ server আর phone একই shared secret থেকে একই time window compute করে - server-এর clock drift করলে, একটা সঠিক code code-এর সাথে সম্পর্কহীন কারণে reject হতে পারে।"
+    }
+  }
+]
