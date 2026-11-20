@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "A base backup was taken at 2:00 AM; a bad query ran at 2:41 PM. Why can't the base backup alone recover to just before 2:41 PM?",
+      "bn": "একটা base backup 2:00 AM-এ নেওয়া হয়েছিল; একটা খারাপ query 2:41 PM-এ চলেছিল। কেন base backup একা 2:41 PM-এর ঠিক আগে recover করতে পারে না?"
+    },
+    "options": [
+      {"en": "The backup only reflects the database's state at the exact moment it was taken - everything written afterward exists only in the binary log", "bn": "Backup শুধু এটা নেওয়ার exact মুহূর্তের database state reflect করে - তারপর যা লেখা হয়েছে তা শুধু binary log-এ exist করে"},
+      {"en": "mysqldump cannot capture data for databases larger than 1GB", "bn": "mysqldump 1GB-এর চেয়ে বড় database-এর জন্য data capture করতে পারে না"},
+      {"en": "Binary logs are only useful for replication, never for recovery", "bn": "Binary log শুধু replication-এর জন্য useful, recovery-র জন্য কখনো না"},
+      {"en": "A base backup expires after a few hours and becomes unusable", "bn": "একটা base backup কয়েক ঘণ্টা পর expire হয়ে যায় আর unusable হয়ে যায়"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A base backup is a snapshot at one instant. Anything written between that instant and the target recovery time only exists in the binary log, which is exactly why point-in-time recovery combines a base backup with replayed binlog events.",
+      "bn": "একটা base backup একটা instant-এর snapshot। ওই instant আর target recovery time-এর মধ্যে যা লেখা হয়েছে তা শুধু binary log-এ exist করে, যে কারণে point-in-time recovery একটা base backup-কে replayed binlog event-এর সাথে combine করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "How did this chapter verify that the extracted binlog range (positions 24636 to 25678) contained only the intended changes?",
+      "bn": "এই chapter কীভাবে verify করলো extracted binlog range (position 24636 থেকে 25678)-এ শুধু intended change আছে?"
+    },
+    "options": [
+      {"en": "Running mysqlbinlog with -v to decode events into readable comments, then checking it showed exactly the expected INSERT/UPDATE statements and zero DELETEs", "bn": "mysqlbinlog-কে -v দিয়ে চালিয়ে event readable comment-এ decode করে, তারপর check করে এতে exactly expected INSERT/UPDATE statement আছে আর zero DELETE"},
+      {"en": "Trusting that the position numbers were correct without checking the file's contents", "bn": "File-এর content check না করে position number সঠিক এমন trust করা"},
+      {"en": "Comparing the file size to the original binlog file's total size", "bn": "File size-কে original binlog file-এর total size-এর সাথে compare করা"},
+      {"en": "Running the extraction twice and checking the outputs were identical", "bn": "Extraction দুইবার চালিয়ে output identical কিনা check করা"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The -v flag decodes ROW-format binlog events into human-readable ### comments, letting the actual contents be checked directly - the output showed exactly two INSERTs and one UPDATE, with no DELETE, confirming the disaster was correctly excluded.",
+      "bn": "-v flag ROW-format binlog event human-readable ### comment-এ decode করে, actual content সরাসরি check করতে দেয় - output exactly দুটো INSERT আর একটা UPDATE দেখিয়েছে, কোনো DELETE ছাড়া, confirm করে disaster সঠিকভাবে exclude হয়েছে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why does applying a ROW-format binlog event require an actual BINLOG statement instead of plain SQL?",
+      "bn": "একটা ROW-format binlog event apply করতে কেন plain SQL-এর বদলে একটা actual BINLOG statement লাগে?"
+    },
+    "options": [
+      {"en": "ROW format records the actual changed row images, not the SQL text that produced them, so there is no equivalent plain SQL to run instead", "bn": "ROW format actual পরিবর্তিত row image record করে, SQL text না যা এটা produce করেছে, তাই এর বদলে চালানোর মতো কোনো equivalent plain SQL নেই"},
+      {"en": "BINLOG statements run faster than equivalent plain SQL", "bn": "BINLOG statement equivalent plain SQL-এর চেয়ে দ্রুত চলে"},
+      {"en": "Plain SQL replay is disabled by default in MySQL 8.4", "bn": "Plain SQL replay MySQL 8.4-এ default-ভাবে disabled"},
+      {"en": "mysqldump and mysqlbinlog produce incompatible SQL dialects", "bn": "mysqldump আর mysqlbinlog incompatible SQL dialect produce করে"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "In ROW format, binlog events store row images rather than the original SQL statement - replaying them means re-applying those row images directly, which only the BINLOG statement syntax can do.",
+      "bn": "ROW format-এ, binlog event original SQL statement-এর বদলে row image store করে - এগুলো replay করা মানে সরাসরি সেই row image আবার apply করা, যা শুধু BINLOG statement syntax দিয়েই করা যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why does MySQL require SUPER or REPLICATION_APPLIER to apply a BINLOG statement?",
+      "bn": "MySQL কেন একটা BINLOG statement apply করতে SUPER বা REPLICATION_APPLIER require করে?"
+    },
+    "options": [
+      {"en": "A session that can replay arbitrary row-image events can inject data changes that bypass normal statement-level checks", "bn": "একটা session যা arbitrary row-image event replay করতে পারে, সেটা normal statement-level check bypass করে data change inject করতে পারে"},
+      {"en": "It is a legacy restriction with no current technical reason", "bn": "এটা একটা legacy restriction, কোনো current technical কারণ নেই"},
+      {"en": "BINLOG statements consume significantly more server resources than normal queries", "bn": "BINLOG statement normal query-র চেয়ে উল্লেখযোগ্যভাবে বেশি server resource consume করে"},
+      {"en": "Only accounts with REPLICATION_APPLIER can read binary log files from disk", "bn": "শুধু REPLICATION_APPLIER থাকা account disk থেকে binary log file পড়তে পারে"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "This is a genuine security boundary, not an arbitrary one - replaying raw row images bypasses the normal checks that run during ordinary statement execution, so MySQL requires an administrative-grade privilege for it.",
+      "bn": "এটা একটা genuine security boundary, কোনো arbitrary একটা না - raw row image replay করা normal statement execution-এর সময় চলা normal check bypass করে, তাই MySQL এর জন্য একটা administrative-grade privilege require করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why did this chapter deliberately not grant the scoped backup_demo account the privilege needed to complete the binlog replay?",
+      "bn": "এই chapter কেন deliberately scoped backup_demo account-কে binlog replay সম্পূর্ণ করার জন্য লাগা privilege দেয়নি?"
+    },
+    "options": [
+      {"en": "A real backup/restore automation account should never hold SUPER-equivalent access, and granting it just to finish a demo would misrepresent real practice", "bn": "একটা real backup/restore automation account-এ কখনো SUPER-equivalent access থাকা উচিত না, আর শুধু একটা demo শেষ করার জন্য এটা দেওয়া real practice-কে misrepresent করতো"},
+      {"en": "MySQL 8.4 does not allow granting REPLICATION_APPLIER to any local account", "bn": "MySQL 8.4 কোনো local account-কে REPLICATION_APPLIER grant করতে দেয় না"},
+      {"en": "The privilege would have conflicted with the earlier backup_demo grants from Chapter 2", "bn": "এই privilege Chapter 2-এর আগের backup_demo grant-এর সাথে conflict করতো"},
+      {"en": "It was simply forgotten and not a deliberate choice", "bn": "এটা শুধু ভুলে যাওয়া হয়েছিল, কোনো deliberate choice না"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Real point-in-time recovery's final replay step is deliberately a manual, administrative-session action - the same category as Chapter 4's --copy-back needing a stopped live server - so an automation account holding that privilege would contradict real best practice.",
+      "bn": "Real point-in-time recovery-র final replay step deliberately একটা manual, administrative-session action - Chapter 4-এর --copy-back-এর জন্য একটা বন্ধ live server লাগার একই category - তাই একটা automation account-এ এই privilege থাকা real best practice-এর বিরোধিতা করতো।"
+    }
+  }
+]

@@ -229,7 +229,7 @@ return [
                 '02-mysqldump-logical-backups' => ['title' => 'mysqldump for real: logical backups and proving a restore works', 'status' => 'available'],
                 '03-automating-backups-cron-and-retention' => ['title' => 'Automating backups: cron, retention, and rotation', 'status' => 'available'],
                 '04-physical-backups-with-xtrabackup' => ['title' => 'Physical backups with XtraBackup', 'status' => 'available'],
-                '05-point-in-time-recovery' => ['title' => 'Point-in-time recovery: binary logs plus a base backup', 'status' => 'coming_soon'],
+                '05-point-in-time-recovery' => ['title' => 'Point-in-time recovery: binary logs plus a base backup', 'status' => 'available'],
                 '06-offsite-storage-and-encryption' => ['title' => 'Offsite storage: encrypting dumps and getting them off the server', 'status' => 'coming_soon'],
                 '07-replication-basics' => ['title' => 'Replication basics, and why it is not a backup', 'status' => 'coming_soon'],
                 '08-real-project-backup-and-restore-drill' => ['title' => 'Real project: an end-to-end backup-and-restore drill', 'status' => 'coming_soon'],
