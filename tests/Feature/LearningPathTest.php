@@ -2,10 +2,16 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class LearningPathTest extends TestCase
 {
+    // CourseController::show() now reads course_pricing even for a guest
+    // (to show a price/buy box), so the course-page test below needs a
+    // migrated database - the other tests here don't touch the DB at all.
+    use RefreshDatabase;
+
     public function test_every_course_only_requires_courses_that_come_before_it(): void
     {
         $slugs = array_keys(config('course.courses'));

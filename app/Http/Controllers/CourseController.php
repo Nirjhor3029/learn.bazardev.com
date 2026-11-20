@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contribution;
+use App\Models\CoursePricing;
 use App\Services\CourseContent;
+use App\Services\Entitlements;
 use App\Services\Exam;
 use App\Services\Learning;
 use App\Services\Quiz;
@@ -12,7 +14,13 @@ use Illuminate\View\View;
 
 class CourseController extends Controller
 {
-    public function __construct(private CourseContent $content, private Learning $learning, private Quiz $quizzes, private Exam $exams) {}
+    public function __construct(
+        private CourseContent $content,
+        private Learning $learning,
+        private Quiz $quizzes,
+        private Exam $exams,
+        private Entitlements $entitlements,
+    ) {}
 
     public function home(Request $request): View
     {
@@ -28,6 +36,7 @@ class CourseController extends Controller
     public function show(Request $request, string $course): View
     {
         $user = $request->user();
+        $pricing = CoursePricing::query()->where('course_slug', $course)->first();
 
         return view('courses.toc', [
             'course' => $this->content->course($course),
@@ -36,6 +45,9 @@ class CourseController extends Controller
             'bookmarked' => $user ? $this->learning->bookmarkedSlugs($user, $course) : [],
             'nextUp' => $user ? $this->learning->nextInCourse($user, $course) : null,
             'exam' => $this->exams->summary($user, $course),
+            // Null pricing (not yet configured by an admin) means free/open, same as Entitlements::canAccessCourse().
+            'pricing' => $pricing,
+            'owned' => $this->entitlements->canAccessCourse($user, $course),
         ]);
     }
 

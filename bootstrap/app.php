@@ -21,10 +21,13 @@ return Application::configure(basePath: dirname(__DIR__))
             'course.entitled' => EnsureCourseEntitlement::class,
         ]);
 
-        // Server-to-server call from the terminal orchestrator — no browser session,
-        // so no CSRF token to present. Guarded instead by the shared-secret middleware.
+        // Server-to-server calls — no browser session, so no CSRF token to present.
+        // The terminal orchestrator call is guarded by a shared-secret middleware;
+        // the pay.bazardev webhook is guarded by its own HMAC signature check
+        // (PayBazarDevGateway::verifyWebhookSignature, inside PaymentWebhookController).
         $middleware->validateCsrfTokens(except: [
             'internal/terminal/verify-ticket',
+            'webhooks/pay-bazardev',
         ]);
 
         // Not logged in -> login page; already logged in and visiting /login -> home.

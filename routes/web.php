@@ -14,6 +14,8 @@ use App\Http\Controllers\ContributionController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\LearningController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PaymentWebhookController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\TerminalLaunchController;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +26,10 @@ Route::get('/', [CourseController::class, 'home'])->name('home');
 // orchestrator calls this to redeem a launch ticket. See TerminalLaunchController.
 Route::post('/internal/terminal/verify-ticket', [TerminalLaunchController::class, 'verify'])
     ->middleware('terminal.secret');
+
+// Server-to-server only (HMAC-signed, not a browser session) — pay.bazardev
+// calls this when a payment's status changes. See PaymentWebhookController.
+Route::post('/webhooks/pay-bazardev', [PaymentWebhookController::class, 'handle']);
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +59,11 @@ Route::middleware('auth')->group(function () {
 
     // Hands this logged-in reader off to terminal.bazardev.com via a one-time ticket.
     Route::get('/terminal/launch', [TerminalLaunchController::class, 'launch'])->name('terminal.launch');
+
+    // Starts a real payment via pay.bazardev for a paid course.
+    Route::post('/pay/course/{course}', [PaymentController::class, 'checkoutCourse'])
+        ->middleware('throttle:10,1')->name('payments.checkout.course');
+    Route::get('/pay/return', [PaymentController::class, 'returned'])->name('payments.return');
 
     // Personal learning: progress, bookmarks, private notes.
     Route::get('/my-learning', [LearningController::class, 'dashboard'])->name('learning.dashboard');

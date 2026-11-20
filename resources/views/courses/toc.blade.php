@@ -16,6 +16,29 @@
             </p>
         @endif
 
+        {{-- Price / buy, only shown once an admin has actually marked this course paid. --}}
+        @if ($pricing && ! $pricing->is_free && $pricing->price_amount > 0)
+            <div class="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-gray-100 bg-white px-5 py-4 shadow-sm">
+                @if ($owned)
+                    <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1 text-sm font-medium text-emerald-700">
+                        <x-icon name="check" class="h-4 w-4" /> You own this course
+                    </span>
+                @else
+                    <p class="text-sm text-gray-600">
+                        Price: <span class="font-semibold text-gray-900">{{ number_format($pricing->price_amount) }} {{ $pricing->currency }}</span>
+                    </p>
+                    @guest
+                        <a href="{{ route('login') }}" class="inline-flex items-center rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700">Log in to buy</a>
+                    @else
+                        <form method="POST" action="{{ route('payments.checkout.course', $course['slug']) }}">
+                            @csrf
+                            <x-button class="px-4 py-2">Buy via bKash / Nagad</x-button>
+                        </form>
+                    @endguest
+                @endif
+            </div>
+        @endif
+
         {{-- Logged-in readers: how far they are, and one button to carry on. --}}
         @if ($progress && $progress['total'] > 0)
             <div class="mt-6 rounded-2xl border border-gray-100 bg-white p-5 shadow-sm">

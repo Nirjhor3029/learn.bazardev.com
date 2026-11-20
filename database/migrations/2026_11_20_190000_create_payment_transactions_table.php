@@ -21,8 +21,8 @@ return new class extends Migration
             $table->unsignedInteger('amount');
             $table->string('currency', 3)->default('BDT');
             $table->string('payment_method', 20)->nullable(); // bkash | nagad, as reported back by pay.bazardev
-            $table->string('gateway_reference', 100)->nullable()->unique(); // pay.bazardev's transaction id - the webhook idempotency key
-            $table->string('status', 20)->default('pending'); // pending | completed | failed | refunded
+            $table->string('gateway_reference', 100)->nullable()->unique(); // pay.bazardev's reference_code - the webhook idempotency key
+            $table->string('status', 20)->default('pending'); // pending | paid | failed | expired | manual_review | refunded (see a later migration for tran_id, our own id)
             $table->json('raw_payload')->nullable(); // the gateway's own response/webhook body, for dispute resolution
             $table->timestamps();
 

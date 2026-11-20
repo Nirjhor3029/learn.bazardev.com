@@ -41,4 +41,17 @@ return [
         'shared_secret' => env('TERMINAL_SHARED_SECRET'),
     ],
 
+    // pay.bazardev.com — see app/Services/Payments/PayBazarDevGateway.php.
+    // Not usable yet: learn.bazardev.com has no Store registered there,
+    // so api_key/api_secret are empty until that happens (plans/paid-access-and-entitlements.md §8).
+    'pay_bazardev' => [
+        'base_url' => env('PAY_BAZARDEV_URL', 'https://pay.bazardev.com'),
+        'api_key' => env('PAY_BAZARDEV_API_KEY'),
+        'api_secret' => env('PAY_BAZARDEV_API_SECRET'),
+        // Webhook signatures are always HMAC'd with the LIVE secret by pay.bazardev,
+        // even for a sandbox transaction - usually the same value as api_secret
+        // above once this account is live, but kept separate on purpose.
+        'live_api_secret' => env('PAY_BAZARDEV_LIVE_API_SECRET'),
+    ],
+
 ];
