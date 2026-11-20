@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Why doesn't RAID or Multi-AZ count as a backup?",
+      "bn": "RAID বা Multi-AZ কেন backup হিসেবে count হয় না?"
+    },
+    "options": [
+      {"en": "A bad write (wrong UPDATE, dropped table) gets faithfully copied to every redundant copy too - redundancy survives hardware failure, not mistakes", "bn": "একটা খারাপ write (ভুল UPDATE, drop হওয়া table) প্রতিটা redundant copy-তেও faithfully copy হয় - redundancy hardware failure survive করে, mistake না"},
+      {"en": "RAID and Multi-AZ are too expensive to use for small databases", "bn": "RAID আর Multi-AZ ছোট database-এর জন্য ব্যবহার করতে খুব expensive"},
+      {"en": "They only work with cloud providers, never on a self-managed VPS", "bn": "এগুলো শুধু cloud provider-এর সাথে কাজ করে, self-managed VPS-এ না"},
+      {"en": "They are actually backups, just slower to restore from", "bn": "এগুলো আসলে backup, শুধু restore করতে ধীরগতির"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Redundancy protects against a disk failing, but a mistake is correctly-written data that happens to be wrong - it gets copied everywhere redundancy keeps a copy, so hardware redundancy alone never covers human error, bad deploys, or compromise.",
+      "bn": "Redundancy একটা disk fail হওয়া থেকে রক্ষা করে, কিন্তু একটা mistake হলো সঠিকভাবে-লেখা data যা শুধু ভুল হয়ে গেছে - redundancy যেখানে copy রাখে সেখানেই এটা copy হয়ে যায়, তাই শুধু hardware redundancy কখনো human error, bad deploy, বা compromise cover করে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "A team backs up nightly only. What is their RPO, even if nobody wrote the number down?",
+      "bn": "একটা team শুধু রাতে backup নেয়। তাদের RPO কত, কেউ সংখ্যাটা না লিখলেও?"
+    },
+    "options": [
+      {"en": "Up to 24 hours - whatever was written since the last backup is lost if disaster strikes right before the next one", "bn": "24 ঘণ্টা পর্যন্ত - পরের backup-এর ঠিক আগে disaster হলে শেষ backup-এর পর থেকে যা লেখা হয়েছে সব হারায়"},
+      {"en": "Zero, because a backup exists at all", "bn": "শূন্য, কারণ একটা backup আছে"},
+      {"en": "It depends only on how large the database is", "bn": "এটা শুধু database কত বড় তার উপর নির্ভর করে"},
+      {"en": "RPO only applies to physical backups, not logical ones", "bn": "RPO শুধু physical backup-এ apply হয়, logical-এ না"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "RPO is a property of the actual backup schedule, not of intention - a nightly-only schedule can lose up to a full day of writes, regardless of what target was written down anywhere.",
+      "bn": "RPO actual backup schedule-এর একটা property, intention-এর না - শুধু-রাতের schedule পুরো একদিনের write পর্যন্ত হারাতে পারে, কোথাও যে target লেখা থাকুক না থাকুক।"
+    }
+  },
+  {
+    "q": {
+      "en": "A 40GB mysqldump takes 3 hours to restore. What does this tell you about the team's actual RTO?",
+      "bn": "একটা 40GB mysqldump restore করতে 3 ঘণ্টা লাগে। এটা team-এর actual RTO নিয়ে কী বলে?"
+    },
+    "options": [
+      {"en": "Their real RTO is 3 hours, regardless of any target written on paper - RTO is what the restore process actually takes", "bn": "তাদের real RTO 3 ঘণ্টা, কাগজে লেখা target যাই হোক - RTO হলো restore process আসলে কতক্ষণ নেয়"},
+      {"en": "RTO doesn't apply to logical backups", "bn": "RTO logical backup-এ apply হয় না"},
+      {"en": "Their RPO is automatically also 3 hours", "bn": "তাদের RPO automatically 3 ঘণ্টাও হয়ে যায়"},
+      {"en": "The backup must be corrupted if it takes that long", "bn": "এত সময় লাগলে backup corrupt হওয়ার কথা"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "RTO is the actual time a restore takes in practice, including finding the right backup, running it, and verifying the app works - a documented target that doesn't match reality isn't the real RTO.",
+      "bn": "RTO হলো practice-এ restore করতে আসলে কতটা সময় লাগে, সঠিক backup খুঁজে পাওয়া, চালানো, আর app কাজ করছে কিনা verify করা সহ - reality-র সাথে না মেলা একটা documented target real RTO না।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the key practical trade-off between a logical backup (mysqldump) and a physical backup (XtraBackup)?",
+      "bn": "Logical backup (mysqldump) আর physical backup (XtraBackup)-এর মধ্যে key practical trade-off কী?"
+    },
+    "options": [
+      {"en": "Logical is portable and table-restorable but slower at scale; physical is fast at scale but tied to the same MySQL version/engine", "bn": "Logical portable আর table-restorable কিন্তু scale-এ slower; physical scale-এ fast কিন্তু একই MySQL version/engine-এর সাথে বাঁধা"},
+      {"en": "Logical backups cannot be restored at all, only inspected", "bn": "Logical backup একদমই restore করা যায় না, শুধু inspect করা যায়"},
+      {"en": "Physical backups are always smaller in file size than logical ones", "bn": "Physical backup সবসময় logical-এর চেয়ে file size-এ ছোট হয়"},
+      {"en": "There is no real difference once compression is applied", "bn": "Compression apply করলে real পার্থক্য থাকে না"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Logical backups export replayable SQL - portable across versions, easy to restore a single table, but slow at scale since it replays row by row. Physical backups copy the raw data files - fast at any scale, but locked to the same MySQL version and storage engine.",
+      "bn": "Logical backup replayable SQL export করে - version-এর মধ্যে portable, একটা table আলাদা restore করা সহজ, কিন্তু scale-এ slow কারণ এটা row by row replay করে। Physical backup raw data file copy করে - যে কোনো scale-এ fast, কিন্তু একই MySQL version আর storage engine-এর সাথে বাঁধা।"
+    }
+  },
+  {
+    "q": {
+      "en": "A nightly mysqldump is stored on the same server's disk as the live database. Which part of the 3-2-1 rule does this fail?",
+      "bn": "একটা রাতের mysqldump সেই একই server-এর disk-এ store হয় যেখানে live database আছে। এটা 3-2-1 rule-এর কোন অংশ fail করে?"
+    },
+    "options": [
+      {"en": "The '1 offsite' requirement - a disk failure or full compromise of that one server destroys both the data and the backup meant to recover it", "bn": "'1 offsite' requirement - ওই একটা server-এর disk failure বা পুরো compromise দুটোই ধ্বংস করে: data আর সেটা recover করার backup"},
+      {"en": "The '3 copies' requirement, because there is only one database", "bn": "'3 copies' requirement, কারণ শুধু একটা database আছে"},
+      {"en": "No part of the rule - this setup is already compliant", "bn": "Rule-এর কোনো অংশই না - এই setup already compliant"},
+      {"en": "The rule doesn't apply to self-managed MySQL, only managed cloud databases", "bn": "এই rule self-managed MySQL-এ apply হয় না, শুধু managed cloud database-এ"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "3-2-1 requires at least one copy stored somewhere a local disaster can't also reach. A dump on the same disk as the live database fails exactly that requirement - both die together in a disk failure or a full compromise of that server.",
+      "bn": "3-2-1 অন্তত একটা copy এমন জায়গায় store করা দাবি করে যেখানে একটা local disaster পৌঁছাতে পারে না। Live database-এর same disk-এ একটা dump ঠিক সেই requirement-টাই fail করে - disk failure বা সেই server-এর পুরো compromise-এ দুটোই একসাথে মারা যায়।"
+    }
+  }
+]
