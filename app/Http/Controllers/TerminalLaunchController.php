@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\TerminalLaunchTicket;
+use App\Services\Entitlements;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -12,12 +12,29 @@ use Symfony\Component\HttpFoundation\Response;
 // or cookies between the two apps. See terminal.bazardev.com/PROJECT_CONTEXT.md §6.
 class TerminalLaunchController extends Controller
 {
-    // Auth-protected: a logged-in reader clicks "Open Terminal" here, we mint a
-    // one-time, 60-second ticket, and bounce them to the terminal app with it.
+    // There is only one terminal product today. Generalizing this to other
+    // courses is explicitly out of scope for the payment feature (Phase 5,
+    // not committed) - see plans/paid-access-and-entitlements.md §2/§7.
+    private const COURSE = 'linux-shell';
+
+    public function __construct(private Entitlements $entitlements) {}
+
+    // Auth-protected: a logged-in reader clicks "Open Terminal" here. The
+    // terminal is a separate paid add-on (not unlocked by owning the course),
+    // so access is checked BEFORE a ticket is minted - an unentitled reader
+    // never gets a ticket at all, and the orchestrator needs no changes of
+    // its own (it keeps trusting a valid, unused, unexpired ticket as before).
     public function launch(Request $request)
     {
+        $user = $request->user();
+
+        if (! $this->entitlements->canAccessTerminal($user, self::COURSE)) {
+            return back()->with('status', 'Terminal access is a separate add-on and needs to be purchased (or granted by an admin) first.');
+        }
+
         $ticket = TerminalLaunchTicket::create([
-            'user_id' => Auth::id(),
+            'user_id' => $user->id,
+            'course_slug' => self::COURSE,
             'token' => Str::random(64),
             'expires_at' => now()->addSeconds(60),
         ]);
@@ -51,6 +68,10 @@ class TerminalLaunchController extends Controller
             'id' => $user->id,
             'name' => $user->name,
             'email' => $user->email,
+            // Informational only, for the orchestrator's own logging - the
+            // entitlement check already happened at mint time (above), so
+            // the orchestrator does not need to (and should not) re-check this.
+            'course' => $ticket->course_slug,
         ]);
     }
 }

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-#[Fillable(['user_id', 'token', 'expires_at'])]
+#[Fillable(['user_id', 'course_slug', 'token', 'expires_at'])]
 class TerminalLaunchTicket extends Model
 {
     protected function casts(): array
