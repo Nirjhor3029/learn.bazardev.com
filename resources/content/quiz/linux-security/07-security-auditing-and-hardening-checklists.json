@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "What does a Lynis hardening index score actually represent?",
+      "bn": "একটা Lynis hardening index score আসলে কী represent করে?"
+    },
+    "options": [
+      {"en": "A 0-100 summary of how many of its hundreds of checks currently pass", "bn": "এর শত শত check-এর মধ্যে কতগুলো এখন pass করে তার একটা 0-100 summary"},
+      {"en": "The exact number of security vulnerabilities present on the system", "bn": "System-এ উপস্থিত security vulnerability-র সঠিক সংখ্যা"},
+      {"en": "How many days since the server was last rebooted", "bn": "Server সবশেষ কবে reboot হয়েছে তার কতদিন হলো"},
+      {"en": "The percentage of disk space currently free", "bn": "এখন কত শতাংশ disk space ফ্রি আছে"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The hardening index summarizes how many of Lynis's hundreds of checks currently pass - it's a snapshot of posture, not a vulnerability count or an unrelated system metric.",
+      "bn": "Hardening index summarize করে Lynis-এর শত শত check-এর মধ্যে কতগুলো এখন pass করে - এটা posture-এর একটা snapshot, কোনো vulnerability count বা অসম্পর্কিত system metric না।"
+    }
+  },
+  {
+    "q": {
+      "en": "By default, what does unattended-upgrades actually install automatically?",
+      "bn": "Default-এ, unattended-upgrades আসলে কী automatically install করে?"
+    },
+    "options": [
+      {"en": "Only updates from security-relevant repositories, scoped by Allowed-Origins", "bn": "শুধু security-relevant repository থেকে update, Allowed-Origins দিয়ে scoped"},
+      {"en": "Every single available package update, including major version bumps", "bn": "Available প্রতিটা package update, major version bump সহ"},
+      {"en": "Nothing, until a human manually approves each update", "bn": "কিছুই না, যতক্ষণ না একজন human manually প্রতিটা update approve করে"},
+      {"en": "Only updates to the Linux kernel itself", "bn": "শুধু Linux kernel নিজেরই update"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Allowed-Origins scopes unattended-upgrades to security repositories by default, so it patches known security issues without silently pulling in unrelated package version bumps.",
+      "bn": "Allowed-Origins default-এ unattended-upgrades-কে security repository-তে scope করে, তাই এটা অসম্পর্কিত package version bump নিঃশব্দে pull না করে known security issue patch করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "A kernel security patch was installed automatically overnight. Is the server now protected against the issue it fixes?",
+      "bn": "একটা kernel security patch রাতে automatically install হয়েছে। Server কি এখন এটা fix করে এমন issue-এর বিরুদ্ধে protected?"
+    },
+    "options": [
+      {"en": "Not necessarily yet - a kernel upgrade typically needs a reboot to take effect, and that isn't automatic by default", "bn": "Necessarily এখনও না - একটা kernel upgrade typically effect নেওয়ার জন্য একটা reboot লাগে, আর এটা default-এ automatic না"},
+      {"en": "Yes, installing the package alone always applies a kernel-level fix immediately", "bn": "হ্যাঁ, শুধু package install করলেই সবসময় সাথে সাথে একটা kernel-level fix apply হয়ে যায়"},
+      {"en": "No, kernel patches require lynis to be run first to take effect", "bn": "না, kernel patch effect নেওয়ার জন্য প্রথমে lynis চালানো লাগে"},
+      {"en": "Yes, but only if ss -tulpn is run right after", "bn": "হ্যাঁ, কিন্তু শুধু যদি ss -tulpn ঠিক পরে চালানো হয়"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A kernel upgrade usually needs a reboot to actually take effect, and unattended-upgrades doesn't reboot automatically unless explicitly configured to, since an unattended reboot of a production server has its own risk.",
+      "bn": "একটা kernel upgrade সাধারণত effect নেওয়ার জন্য একটা reboot লাগে, আর unattended-upgrades explicitly configure না করা থাকলে automatically reboot করে না, কারণ একটা production server-এর unattended reboot-এর নিজের risk আছে।"
+    }
+  },
+  {
+    "q": {
+      "en": "ss -tulpn shows a database listening on both 127.0.0.1 and a private network address. What should an audit do with that fact?",
+      "bn": "ss -tulpn একটা database 127.0.0.1 আর একটা private network address দুটোতেই listen করছে দেখায়। একটা audit এই fact নিয়ে কী করা উচিত?"
+    },
+    "options": [
+      {"en": "Surface it explicitly and check whether the firewall actually restricts who can reach that address", "bn": "এটা explicitly surface করা আর firewall আসলে সেই address কে reach করতে পারে তা restrict করে কিনা check করা"},
+      {"en": "Ignore it, since binding to any address other than loopback is always safe", "bn": "এটা ignore করা, কারণ loopback-এর বাইরে কোনো address-এ bind করা সবসময় নিরাপদ"},
+      {"en": "Immediately uninstall the database software", "bn": "সাথে সাথেই database software uninstall করা"},
+      {"en": "Assume it is a Lynis false positive and skip it", "bn": "এটা একটা Lynis false positive ধরে নিয়ে skip করা"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Binding and firewalling are two separate layers - the point of an audit is to surface the fact explicitly and verify the firewall layer too, not to assume either way.",
+      "bn": "Binding আর firewalling দুটো আলাদা layer - একটা audit-এর point হলো fact explicitly surface করা আর firewall layer-ও verify করা, কোনোভাবে assume করে রাখা না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why shouldn't chasing a perfect Lynis hardening index of 100 be the goal?",
+      "bn": "একটা perfect Lynis hardening index 100 chase করা কেন goal হওয়া উচিত না?"
+    },
+    "options": [
+      {"en": "Some suggestions trade away functionality a specific server genuinely needs, so each finding deserves a deliberate decision", "bn": "কিছু suggestion একটা specific server genuinely যা লাগে তা trade away করে দেয়, তাই প্রতিটা finding একটা deliberate decision পাওয়া উচিত"},
+      {"en": "Lynis scores above 90 are always technically impossible to reach", "bn": "90-এর উপর Lynis score technically সবসময় পাওয়া অসম্ভব"},
+      {"en": "A perfect score means the server no longer needs unattended-upgrades", "bn": "একটা perfect score মানে server-এর আর unattended-upgrades লাগে না"},
+      {"en": "Lynis stops running once it reaches 100", "bn": "100-এ পৌঁছালে Lynis চলা বন্ধ হয়ে যায়"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Some suggestions assume a generic server and may break something the specific server actually relies on - the right habit is reading why each finding was raised and making a deliberate call, not mechanical compliance.",
+      "bn": "কিছু suggestion একটা generic server assume করে আর specific server আসলে যার উপর নির্ভর করে তা ভাঙতে পারে - সঠিক habit হলো প্রতিটা finding কেন তুলেছে তা পড়া আর একটা deliberate call নেওয়া, mechanical compliance না।"
+    }
+  }
+]
