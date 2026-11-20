@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Why does the xtrabackup_demo MySQL user need instance-wide privileges instead of privileges scoped to just backup_demo?",
+      "bn": "xtrabackup_demo MySQL user-এর কেন শুধু backup_demo-তে scoped privilege-এর বদলে instance-wide privilege লাগে?"
+    },
+    "options": [
+      {"en": "XtraBackup copies raw files directly rather than reading through SQL, so its coordination privileges are inherently instance-level in MySQL, even with zero data-read access", "bn": "XtraBackup SQL-এর মাধ্যমে পড়ার বদলে সরাসরি raw file copy করে, তাই এর coordination privilege MySQL-এ inherently instance-level, zero data-read access থাকলেও"},
+      {"en": "The backup_demo user from Chapter 2 was deleted before this chapter started", "bn": "Chapter 2-এর backup_demo user এই chapter শুরু হওয়ার আগে delete করা হয়েছিল"},
+      {"en": "XtraBackup requires SELECT access on every table in the instance to function", "bn": "XtraBackup কাজ করতে instance-এর প্রতিটা table-এ SELECT access লাগে"},
+      {"en": "Instance-wide privileges are only needed for incremental backups, not full ones", "bn": "Instance-wide privilege শুধু incremental backup-এর জন্য লাগে, full-এর জন্য না"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Privileges like BACKUP_ADMIN, RELOAD, and PROCESS can't be scoped to a single schema in MySQL - they're instance-level by nature, even though the xtrabackup_demo account was verified to have no SELECT privilege on any table's actual data.",
+      "bn": "BACKUP_ADMIN, RELOAD, আর PROCESS-এর মতো privilege MySQL-এ একটা মাত্র schema-তে scope করা যায় না - এগুলো স্বভাবতই instance-level, যদিও xtrabackup_demo account-এর কোনো table-এর actual data-তে SELECT privilege নেই, verify করা হয়েছে।"
+    }
+  },
+  {
+    "q": {
+      "en": "backup_demo's own tables were 244KB, but the full XtraBackup output was 81MB. What explains the difference?",
+      "bn": "backup_demo-র নিজের table 244KB ছিল, কিন্তু full XtraBackup output 81MB হলো। এই পার্থক্যের কারণ কী?"
+    },
+    "options": [
+      {"en": "The shared system tablespace, the mysql schema, and undo logs exist once per instance and are always included, regardless of the --databases filter", "bn": "Shared system tablespace, mysql schema, আর undo log একটা instance-এ একবার exist করে আর --databases filter নির্বিশেষে সবসময় include হয়"},
+      {"en": "The --databases flag was typed incorrectly during the backup", "bn": "Backup নেওয়ার সময় --databases flag ভুলভাবে টাইপ করা হয়েছিল"},
+      {"en": "XtraBackup always compresses output, inflating its apparent size", "bn": "XtraBackup সবসময় output compress করে, যা apparent size বাড়িয়ে দেয়"},
+      {"en": "The orders and customers tables were backed up twice by mistake", "bn": "orders আর customers table ভুলে দুইবার backup হয়েছিল"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "--databases only filters which schema's own table files get copied - it cannot exclude the instance-wide system tablespace, the mysql schema, or undo logs, since those aren't part of any single database to begin with.",
+      "bn": "--databases শুধু filter করে কোন schema-র নিজের table file copy হবে - এটা instance-wide system tablespace, mysql schema, বা undo log exclude করতে পারে না, কারণ শুরু থেকেই এগুলো কোনো একটা database-এর অংশ না।"
+    }
+  },
+  {
+    "q": {
+      "en": "What can XtraBackup's incremental backups do that mysqldump has no equivalent for?",
+      "bn": "XtraBackup-এর incremental backup কী করতে পারে যার mysqldump-এ কোনো equivalent নেই?"
+    },
+    "options": [
+      {"en": "Back up only the InnoDB pages changed since a previous backup's LSN checkpoint, instead of re-exporting everything", "bn": "আগের backup-এর LSN checkpoint-এর পর থেকে শুধু পরিবর্তিত InnoDB page backup করা, সবকিছু আবার export করার বদলে"},
+      {"en": "Back up a database without any MySQL user account at all", "bn": "কোনো MySQL user account ছাড়াই একটা database backup করা"},
+      {"en": "Compress the backup to a smaller size than gzip can achieve", "bn": "gzip-এর চেয়ে ছোট size-এ backup compress করা"},
+      {"en": "Automatically email the backup to an offsite address", "bn": "Automatically backup-টা একটা offsite address-এ email করা"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "mysqldump has no concept of 'only what changed' - every run exports every row from scratch. XtraBackup tracks an LSN checkpoint and can capture only the pages modified since a previous backup, demonstrated by a 260KB incremental versus an 81MB full backup.",
+      "bn": "mysqldump-এর 'শুধু যা পরিবর্তন হয়েছে' এমন কোনো concept নেই - প্রতিটা run শুরু থেকে সব row export করে। XtraBackup একটা LSN checkpoint track করে আর শুধু আগের backup-এর পর থেকে পরিবর্তিত page capture করতে পারে, একটা 81MB full backup-এর বিপরীতে 260KB একটা incremental দিয়ে demonstrate করা।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why must the full backup be prepared with --apply-log-only before merging an incremental into it, rather than with a plain --prepare?",
+      "bn": "একটা incremental merge করার আগে কেন full backup-কে plain --prepare-এর বদলে --apply-log-only দিয়ে prepare করতে হয়?"
+    },
+    "options": [
+      {"en": "A plain --prepare finishes the backup before the incremental is merged in, and a later prepare on top of that can corrupt the data instead of extending it", "bn": "একটা plain --prepare incremental merge হওয়ার আগেই backup শেষ করে দেয়, আর এর উপর পরের একটা prepare data extend করার বদলে corrupt করতে পারে"},
+      {"en": "--apply-log-only is required by MySQL licensing for incremental backups", "bn": "--apply-log-only MySQL licensing-এর জন্য incremental backup-এ required"},
+      {"en": "It makes the merge run faster, with no effect on correctness", "bn": "এটা merge দ্রুত চালায়, correctness-এ কোনো effect নেই"},
+      {"en": "Without it, XtraBackup refuses to recognize the incremental directory at all", "bn": "এটা ছাড়া, XtraBackup incremental directory-টাই recognize করতে অস্বীকার করে"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "--apply-log-only keeps the full backup in a mergeable state. Skipping it and running a final prepare too early makes the backup fully consistent before the incremental's changes are folded in, risking corruption rather than a correct merge.",
+      "bn": "--apply-log-only full backup-কে একটা mergeable অবস্থায় রাখে। এটা skip করে খুব আগে একটা final prepare চালালে incremental-এর পরিবর্তন fold হওয়ার আগেই backup সম্পূর্ণ consistent হয়ে যায়, একটা সঠিক merge-এর বদলে corruption-এর risk তৈরি করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why wasn't xtrabackup --copy-back actually run in this chapter?",
+      "bn": "এই chapter-এ xtrabackup --copy-back কেন actually চালানো হয়নি?"
+    },
+    "options": [
+      {"en": "Restoring for real requires copying into an empty datadir, which means stopping the live mysqld process first - not reversible if something goes wrong on a shared production server", "bn": "আসলে restore করতে একটা empty datadir-এ copy করা লাগে, যার মানে আগে live mysqld process বন্ধ করা - একটা shared production server-এ কিছু ভুল হলে এটা reversible না"},
+      {"en": "The --copy-back command does not exist in XtraBackup 8.4", "bn": "--copy-back command XtraBackup 8.4-এ exist করে না"},
+      {"en": "The prepared backup directory was deleted before it could be used", "bn": "Prepared backup directory এটা ব্যবহারের আগেই delete হয়ে গিয়েছিল"},
+      {"en": "copy-back only works on a different operating system", "bn": "copy-back শুধু একটা আলাদা operating system-এ কাজ করে"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A real restore requires an empty datadir, meaning the live mysqld serving every database on this server would have to be fully stopped first - a risk this course avoids on its own shared writing server, the same reasoning applied to never touching live SSH or firewall config in earlier chapters.",
+      "bn": "একটা real restore-এ একটা empty datadir লাগে, মানে এই server-এর প্রতিটা database serve করা live mysqld আগে সম্পূর্ণভাবে বন্ধ করতে হবে - এই course তার নিজের shared writing server-এ এই risk এড়িয়ে যায়, আগের chapter-এ live SSH বা firewall config কখনো touch না করার একই reasoning।"
+    }
+  }
+]
