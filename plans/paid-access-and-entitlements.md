@@ -1,6 +1,8 @@
 # Plan: Paid courses, admin-controlled free access, and a paid terminal add-on
 
-**Status:** Planning only — nothing in this document has been built yet. This file is the reference to read before any implementation work starts on this feature.
+**Status:** Phase 1 (§7) is **live** on learn.bazardev.com as of 2026-11-20 — the data model, `Entitlements` service, the `EnsureCourseEntitlement` paywall middleware, and the two admin screens (`/admin/pricing`, `/admin/entitlements`) all exist and are tested (126/126 `php artisan test`, including 17 new tests in `tests/Feature/EntitlementTest.php`). **No course is actually paid yet** — every course still has no `course_pricing` row, so every chapter remains exactly as open as before this shipped (see the safe-by-default note in §3.1, which changed slightly during implementation — read it, it matters). Phases 2-4 (real pay.bazardev payment, subscriptions, the terminal add-on) are **not started**; §8's open items still block them.
+
+One implementation-time deviation from the original plan, worth reading before touching this again: **§3.1's "no row = not free, no price set = blocked" default was flipped to the opposite** once actually building it — a course with no `course_pricing` row is now **open/free**, not locked. The original "blocked by default" rule would have instantly locked every chapter (except each course's free-preview Chapter 1) across the entire site — including all 9 free core-path courses — the moment the migration ran, with zero admin action taken. The admin now switches the paywall on **per course, explicitly**, by unchecking "Free" on `/admin/pricing` — nothing is ever silently locked by a migration running. `App\Models\CoursePricing::isFree()` and its docblock reflect this; treat that method's current behavior as the real spec, not this document's original §3.1 wording.
 
 ## 1. The owner's requirements, as given
 
