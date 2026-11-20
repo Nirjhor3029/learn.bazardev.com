@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Chapter 2 found a PROCESS privilege error in mysqldump's stderr. What's the actual fix for a nightly cron job, instead of just checking for the error afterward?",
+      "bn": "Chapter 2 mysqldump-এর stderr-এ একটা PROCESS privilege error পেয়েছিল। একটা রাতের cron job-এর জন্য actual fix কী, পরে error check করার বদলে?"
+    },
+    "options": [
+      {"en": "Add --no-tablespaces, which skips the tablespace-dump attempt entirely instead of trying and failing", "bn": "--no-tablespaces add করো, যা চেষ্টা করে fail হওয়ার বদলে tablespace-dump চেষ্টাটা সম্পূর্ণ skip করে"},
+      {"en": "Grant the PROCESS privilege to every backup user, always", "bn": "সবসময় প্রতিটা backup user-কে PROCESS privilege দিয়ে দাও"},
+      {"en": "Switch from mysqldump to a GUI tool", "bn": "mysqldump থেকে একটা GUI tool-এ switch করো"},
+      {"en": "Disable stderr redirection in the cron job", "bn": "Cron job-এ stderr redirection disable করো"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "--no-tablespaces tells mysqldump to skip the attempt that needs PROCESS privilege, removing the stderr noise at the source - the right fix for a backup user deliberately scoped without that elevated privilege.",
+      "bn": "--no-tablespaces mysqldump-কে বলে দেয় PROCESS privilege লাগে এমন চেষ্টাটা skip করতে, source-এ stderr noise সরিয়ে দেয় - একটা backup user-এর জন্য সঠিক fix যাকে deliberately ওই elevated privilege ছাড়া scoped করা হয়েছে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why does a well-written backup script delete its own output file when the completion-trailer check fails?",
+      "bn": "একটা ভালোভাবে লেখা backup script কেন completion-trailer check fail হলে নিজের output file delete করে?"
+    },
+    "options": [
+      {"en": "A half-written backup file looks like a valid one by filename but is useless or dangerous if later restored from", "bn": "একটা half-written backup file filename দিয়ে একটা valid file-এর মতো দেখায় কিন্তু পরে এটা থেকে restore করলে useless বা dangerous"},
+      {"en": "Disk space is always more valuable than having any backup at all", "bn": "Disk space সবসময় কোনো backup থাকার চেয়ে বেশি valuable"},
+      {"en": "mysqldump requires the previous file to be deleted before it can run again", "bn": "mysqldump আবার চালানোর আগে আগের file delete করা required"},
+      {"en": "gzip cannot overwrite an existing file", "bn": "gzip একটা existing file overwrite করতে পারে না"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A failed, incomplete dump is indistinguishable by name from a good one - leaving it in place risks a later restore silently picking a broken file instead of a real backup.",
+      "bn": "একটা failed, incomplete dump নাম দিয়ে একটা ভালো file থেকে আলাদা করা যায় না - এটা রেখে দিলে পরে একটা restore নিঃশব্দে একটা real backup-এর বদলে একটা broken file বেছে নেওয়ার risk থাকে।"
+    }
+  },
+  {
+    "q": {
+      "en": "How was the find -mtime +7 -delete retention rule actually tested in this chapter, without waiting a week?",
+      "bn": "এই chapter-এ find -mtime +7 -delete retention rule কীভাবে actually test করা হলো, এক সপ্তাহ অপেক্ষা না করে?"
+    },
+    "options": [
+      {"en": "touch -d \"N days ago\" was used to fake several files' ages, then the real delete command was run against them", "bn": "touch -d \"N days ago\" ব্যবহার করে কয়েকটা file-এর age fake করা হয়েছিল, তারপর real delete command সেগুলোর বিরুদ্ধে চালানো হয়েছিল"},
+      {"en": "The script's RETENTION_DAYS variable was temporarily set to 0", "bn": "Script-এর RETENTION_DAYS variable সাময়িকভাবে 0-তে set করা হয়েছিল"},
+      {"en": "The system clock was changed forward by a week", "bn": "System clock এক সপ্তাহ এগিয়ে change করা হয়েছিল"},
+      {"en": "It wasn't actually tested, only described", "bn": "এটা actually test করা হয়নি, শুধু describe করা হয়েছে"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "touch -d can set a file's modification time to any point in the past in seconds, letting the real find -mtime +7 -delete command be run and verified against genuinely aged files right away.",
+      "bn": "touch -d সেকেন্ডে একটা file-এর modification time অতীতের যেকোনো সময়ে set করতে পারে, যা real find -mtime +7 -delete command সত্যিকারভাবে বয়স্ক file-এর বিরুদ্ধে এখনই চালিয়ে verify করতে দেয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What's the key practical difference between time-based retention and count-based retention?",
+      "bn": "Time-based retention আর count-based retention-এর মধ্যে key practical পার্থক্য কী?"
+    },
+    "options": [
+      {"en": "Time-based keeps a variable number of backups depending on how often the job ran; count-based always keeps exactly N regardless of schedule gaps", "bn": "Time-based job কতবার চলেছে তার উপর নির্ভর করে একটা variable সংখ্যক backup রাখে; count-based schedule gap নির্বিশেষে সবসময় exactly N টা রাখে"},
+      {"en": "Count-based retention is only possible on cloud storage, never on a local disk", "bn": "Count-based retention শুধু cloud storage-এ সম্ভব, কখনো local disk-এ না"},
+      {"en": "Time-based retention never actually deletes any files", "bn": "Time-based retention actually কখনো কোনো file delete করে না"},
+      {"en": "There is no real difference between the two approaches", "bn": "দুটো approach-এর মধ্যে কোনো real পার্থক্য নেই"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Time-based retention (mtime-based) depends on the job actually having run on schedule - missed nights mean fewer backups kept than intended, silently. Count-based retention always keeps exactly N backups, guaranteeing a count but not any specific span of history.",
+      "bn": "Time-based retention (mtime-based) job আসলে schedule মতো চলেছে তার উপর নির্ভর করে - miss হওয়া রাত মানে intended-এর চেয়ে কম backup, silently। Count-based retention সবসময় exactly N টা backup রাখে, একটা count guarantee করে কিন্তু কোনো নির্দিষ্ট time span-এর history না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why can a script that runs correctly when invoked by hand fail silently under cron?",
+      "bn": "হাতে চালালে ঠিকমতো চলা একটা script কেন cron-এর অধীনে silently fail করতে পারে?"
+    },
+    "options": [
+      {"en": "Cron runs jobs with a minimal environment, not the interactive shell's $PATH or aliases, so bare filenames can fail to resolve", "bn": "Cron job গুলো একটা minimal environment দিয়ে চালায়, interactive shell-এর $PATH বা alias না, তাই bare filename resolve হতে fail করতে পারে"},
+      {"en": "Cron jobs are always run as a different, unrelated user", "bn": "Cron job সবসময় একটা আলাদা, unrelated user হিসেবে চলে"},
+      {"en": "Cron cannot run bash scripts, only raw binaries", "bn": "Cron bash script চালাতে পারে না, শুধু raw binary"},
+      {"en": "cron ignores the shebang line at the top of a script", "bn": "Cron script-এর শুরুর shebang লাইন ignore করে"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Since cron's environment doesn't include the interactive shell's PATH or aliases, a script or command referenced by a bare name that works fine interactively can resolve to nothing under cron - using full absolute paths avoids this entirely.",
+      "bn": "Cron-এর environment-এ interactive shell-এর PATH বা alias না থাকায়, একটা bare name দিয়ে reference করা script বা command যা interactively ঠিক কাজ করে, cron-এর অধীনে কিছুতেই resolve না হতে পারে - full absolute path ব্যবহার করলে এটা সম্পূর্ণ avoid হয়।"
+    }
+  }
+]

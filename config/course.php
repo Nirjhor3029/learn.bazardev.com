@@ -227,7 +227,7 @@ return [
             'chapters' => [
                 '01-why-backups-rpo-and-rto' => ['title' => 'Why backups: RPO, RTO, and choosing a strategy', 'status' => 'available'],
                 '02-mysqldump-logical-backups' => ['title' => 'mysqldump for real: logical backups and proving a restore works', 'status' => 'available'],
-                '03-automating-backups-cron-and-retention' => ['title' => 'Automating backups: cron, retention, and rotation', 'status' => 'coming_soon'],
+                '03-automating-backups-cron-and-retention' => ['title' => 'Automating backups: cron, retention, and rotation', 'status' => 'available'],
                 '04-physical-backups-with-xtrabackup' => ['title' => 'Physical backups with XtraBackup', 'status' => 'coming_soon'],
                 '05-point-in-time-recovery' => ['title' => 'Point-in-time recovery: binary logs plus a base backup', 'status' => 'coming_soon'],
                 '06-offsite-storage-and-encryption' => ['title' => 'Offsite storage: encrypting dumps and getting them off the server', 'status' => 'coming_soon'],
