@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "A mysqldump run printed a PROCESS privilege error to stderr but exited 0. What's the real lesson here?",
+      "bn": "একটা mysqldump run stderr-এ একটা PROCESS privilege error print করেছে কিন্তু 0 exit করেছে। এখানে real শিক্ষা কী?"
+    },
+    "options": [
+      {"en": "Exit code alone isn't enough to confirm a dump fully succeeded - check for the 'Dump completed on' trailer line too", "bn": "একটা dump সম্পূর্ণ সফল হয়েছে confirm করতে শুধু exit code যথেষ্ট না - 'Dump completed on' trailer লাইনও check করো"},
+      {"en": "mysqldump should never be used with a scoped, limited-privilege user", "bn": "mysqldump কখনো একটা scoped, limited-privilege user দিয়ে ব্যবহার করা উচিত না"},
+      {"en": "The dump file is always corrupted whenever any stderr output appears", "bn": "কোনো stderr output এলেই dump file সবসময় corrupt হয়ে যায়"},
+      {"en": "PROCESS privilege errors always mean the backup has zero usable data", "bn": "PROCESS privilege error মানে সবসময় backup-এ কোনো usable data নেই"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The dump still completed successfully for the actual table data - a cron job checking only $? would miss the stderr warning entirely. The dump file's own trailer line is the reliable completion signal.",
+      "bn": "Dump তাও actual table data-এর জন্য successfully সম্পূর্ণ হয়েছে - একটা cron job যা শুধু $? check করে, stderr warning সম্পূর্ণ miss করবে। Dump file-এর নিজের trailer লাইনই reliable completion signal।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does mysqldump --databases dbname bake into the dump file that a plain mysqldump dbname doesn't?",
+      "bn": "mysqldump --databases dbname dump file-এ কী bake করে দেয় যা একটা plain mysqldump dbname করে না?"
+    },
+    "options": [
+      {"en": "A CREATE DATABASE and USE statement, forcing a restore to always target that exact database name", "bn": "একটা CREATE DATABASE আর USE statement, যা restore-কে সবসময় exact ওই database নাম target করতে বাধ্য করে"},
+      {"en": "Compression of the output file", "bn": "Output file-এর compression"},
+      {"en": "Automatic encryption of all table data", "bn": "সব table data-এর automatic encryption"},
+      {"en": "A guarantee that routines and triggers are included", "bn": "Routine আর trigger include হওয়ার একটা guarantee"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "--databases adds explicit CREATE DATABASE/USE lines naming the source database, so restoring the file always recreates and targets that same name - a plain dump has no database name baked in and can be restored into any target you name.",
+      "bn": "--databases source database-এর নাম সহ explicit CREATE DATABASE/USE লাইন add করে, তাই file restore করলে সবসময় সেই একই নাম recreate আর target হয় - একটা plain dump-এ কোনো database নাম bake করা নেই আর তুমি যেকোনো target-এ restore করতে পারো।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why did this chapter restore into a separate scratch database (backup_demo_restore_test) instead of restoring straight back into backup_demo?",
+      "bn": "এই chapter কেন সরাসরি backup_demo-তে restore না করে একটা আলাদা scratch database (backup_demo_restore_test)-এ restore করেছে?"
+    },
+    "options": [
+      {"en": "Restoring into a separate database lets you verify the actual recovered data without further risking the original", "bn": "একটা আলাদা database-এ restore করলে original-কে আরও risk না করেই actual recovered data verify করা যায়"},
+      {"en": "MySQL doesn't allow restoring a dump into the same database it came from", "bn": "MySQL একটা dump-কে সেই একই database-এ restore করতে দেয় না যেখান থেকে এসেছে"},
+      {"en": "It makes the dump file smaller", "bn": "এটা dump file ছোট করে"},
+      {"en": "It is required by the PROCESS privilege restriction", "bn": "এটা PROCESS privilege restriction-এর জন্য required"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A restore test's whole point is proving the backup works by checking real data (row counts, values) - doing that in a scratch database avoids putting the original at further risk while still proving recovery genuinely succeeded.",
+      "bn": "একটা restore test-এর পুরো point হলো real data (row count, value) check করে backup কাজ করে প্রমাণ করা - একটা scratch database-এ এটা করলে original আরও risk-এ না ফেলেই recovery genuinely successful হয়েছে প্রমাণ হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What problem does --single-transaction solve when dumping an InnoDB database?",
+      "bn": "একটা InnoDB database dump করার সময় --single-transaction কোন problem solve করে?"
+    },
+    "options": [
+      {"en": "It keeps the dump consistent as of one point in time, even if the database keeps receiving writes during the dump", "bn": "Database dump-এর সময়ও write পেতে থাকলেও এটা dump-কে একটা নির্দিষ্ট সময়ের হিসেবে consistent রাখে"},
+      {"en": "It compresses the output automatically", "bn": "এটা automatically output compress করে"},
+      {"en": "It grants the PROCESS privilege to the current user", "bn": "এটা current user-কে PROCESS privilege দিয়ে দেয়"},
+      {"en": "It skips all foreign key constraints during restore", "bn": "Restore-এর সময় এটা সব foreign key constraint skip করে দেয়"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Without it, a long-running dump against a database still receiving writes could mix rows from before and after a concurrent change. Wrapping the dump in one transaction on InnoDB tables avoids that inconsistency.",
+      "bn": "এটা ছাড়া, এখনও write পাচ্ছে এমন একটা database-এর বিরুদ্ধে একটা long-running dump একটা concurrent change-এর আগে আর পরের row মিশিয়ে ফেলতে পারে। InnoDB table-এ dump-টাকে একটা transaction-এ wrap করলে এই inconsistency avoid হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Does a plain mysqldump command capture stored procedures and triggers by default?",
+      "bn": "একটা plain mysqldump command default-ভাবে stored procedure আর trigger capture করে কি?"
+    },
+    "options": [
+      {"en": "No - --routines, --triggers, and --events must be added explicitly or they're silently left out", "bn": "না - --routines, --triggers, আর --events explicitly add করতে হবে, না হলে এগুলো নিঃশব্দে বাদ পড়ে যায়"},
+      {"en": "Yes, always, with no extra flags needed", "bn": "হ্যাঁ, সবসময়, কোনো extra flag ছাড়াই"},
+      {"en": "Only triggers are captured by default, never routines", "bn": "Default-ভাবে শুধু trigger capture হয়, routine কখনো না"},
+      {"en": "Only if the --single-transaction flag is also used", "bn": "শুধু যদি --single-transaction flag-ও ব্যবহার করা হয়"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "mysqldump skips routines, triggers, and events unless explicitly told to include them. A schema that relies on any of these needs those flags added, or a restore will be missing them with no warning.",
+      "bn": "mysqldump explicitly না বললে routine, trigger, আর event skip করে। যে schema এগুলোর উপর নির্ভর করে, তার এই flag গুলো add করতে হবে, না হলে একটা restore কোনো warning ছাড়াই এগুলো miss করবে।"
+    }
+  }
+]
