@@ -209,7 +209,7 @@ return [
                 '05-secrets-management' => ['title' => 'Secrets management: never in git, always rotatable', 'status' => 'available'],
                 '06-least-privilege-and-sudo' => ['title' => 'Least privilege: sudo policy, service accounts, and file permissions', 'status' => 'available'],
                 '07-security-auditing-and-hardening-checklists' => ['title' => 'Security auditing: Lynis, unattended-upgrades, and a hardening checklist', 'status' => 'available'],
-                '08-real-project-hardening-a-laravel-server' => ['title' => 'Real project: hardening a Laravel production server end to end', 'status' => 'coming_soon'],
+                '08-real-project-hardening-a-laravel-server' => ['title' => 'Real project: hardening a Laravel production server end to end', 'status' => 'available'],
             ],
         ],
     ],

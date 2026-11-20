@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "What real finding did running this chapter's checks against learn.bazardev.com actually surface?",
+      "bn": "learn.bazardev.com-এর বিরুদ্ধে এই chapter-এর check চালিয়ে আসলে কী real finding surface হলো?"
+    },
+    "options": [
+      {"en": ".env had permissions readable by other accounts on the shared box, despite an earlier recommendation to lock it down", "bn": "Shared box-এর অন্য account-দের জন্য .env readable permission-এ ছিল, যদিও আগে এটা lock down করার recommendation ছিল"},
+      {"en": "The SSH server was configured to allow root login over the network", "bn": "SSH server network-এর মাধ্যমে root login allow করার জন্য configure করা ছিল"},
+      {"en": "The firewall had no rules at all configured", "bn": "Firewall-এ কোনো rule-ই configure করা ছিল না"},
+      {"en": "APP_DEBUG was set to true in the production environment file", "bn": "Production environment file-এ APP_DEBUG true সেট করা ছিল"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": ".env was found to be 664 plus an execute bit for other (rw-rw-r-x) - readable by any other account on the shared box, despite Chapter 5 already recommending chmod 600 for this exact kind of file.",
+      "bn": ".env পাওয়া গেলো 664 plus other-এর জন্য একটা execute bit (rw-rw-r-x) - shared box-এর যেকোনো অন্য account পড়তে পারতো, যদিও Chapter 5 আগে থেকেই ঠিক এই ধরনের file-এর জন্য chmod 600 recommend করেছিল।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why wasn't the .env permission finding fixed immediately during this chapter?",
+      "bn": ".env permission finding এই chapter-এর সময় সাথে সাথে fix করা হলো না কেন?"
+    },
+    "options": [
+      {"en": "To avoid running any write command against the course's own shared writing server, consistent with every earlier chapter's convention", "bn": "Course-এর নিজের shared writing server-এর বিরুদ্ধে কোনো write command না চালাতে, আগের প্রতিটা chapter-এর convention-এর সাথে consistent থাকার জন্য"},
+      {"en": "Because chmod 600 does not actually exist as a valid command", "bn": "কারণ chmod 600 আসলে একটা valid command না"},
+      {"en": "Because fixing it would have required installing a new package", "bn": "কারণ এটা fix করতে একটা নতুন package install করা লাগতো"},
+      {"en": "Because the finding was considered unimportant and safe to ignore", "bn": "কারণ এই finding-কে unimportant আর ignore করা নিরাপদ ধরা হয়েছিল"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Every chapter in this course avoided running chmod/chown/sudoers/SSH/firewall write commands against the shared writing server to avoid lockout or disruption risk - the fix is given here, not applied, for that same reason.",
+      "bn": "এই course-এর প্রতিটা chapter shared writing server-এর বিরুদ্ধে chmod/chown/sudoers/SSH/firewall write command চালানো এড়িয়ে গেছে lockout বা disruption risk এড়ানোর জন্য - একই কারণে fix এখানে দেওয়া হয়েছে, apply করা হয়নি।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why were the secrets (Ch5) and least-privilege (Ch6) checklist items verifiable live in this chapter, while SSH/firewall/fail2ban/MFA (Ch1-4) items weren't?",
+      "bn": "Secrets (Ch5) আর least-privilege (Ch6) checklist item এই chapter-এ live verify করা গেলো, কিন্তু SSH/firewall/fail2ban/MFA (Ch1-4) item না কেন?"
+    },
+    "options": [
+      {"en": "The former only needed reading files the session already owned; the latter need sudo or risk a live SSH/firewall change", "bn": "প্রথমগুলোর শুধু session-এর মালিকানায় থাকা file পড়া লাগতো; শেষগুলোর sudo লাগে বা একটা live SSH/firewall change-এর risk নেয়"},
+      {"en": "Secrets and permissions checks are simply faster to run than SSH checks", "bn": "Secrets আর permission check শুধু SSH check-এর চেয়ে চালাতে দ্রুত"},
+      {"en": "SSH and firewall checks are not covered anywhere in this course", "bn": "SSH আর firewall check এই course-এ কোথাও cover করা হয়নি"},
+      {"en": "Lynis was required for the SSH and firewall checks and it wasn't installed", "bn": "SSH আর firewall check-এর জন্য Lynis লাগতো আর এটা install করা ছিল না"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Reading .env and storage/ permissions needed no elevated access at all, while checking sshd_config, ufw status, or fail2ban-client status for real needs sudo or risks a live config change - the same lockout risk flagged throughout the course.",
+      "bn": ".env আর storage/ permission পড়তে কোনো elevated access লাগেনি, যখন sshd_config, ufw status, বা fail2ban-client status real-ভাবে check করতে sudo লাগে বা একটা live config change-এর risk নেয় - এই course জুড়ে flag করা একই lockout risk।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why does this chapter describe the .env finding as \"exactly what the checklist is for\" rather than a failure of Chapter 5?",
+      "bn": "এই chapter কেন .env finding-কে Chapter 5-এর একটা failure না বলে \"ঠিক checklist-এর purpose\" বলে?"
+    },
+    "options": [
+      {"en": "A recommendation being correct in theory is not the same as it staying true in practice - only re-checking later catches the drift", "bn": "একটা recommendation theory-তে সঠিক হওয়া practice-এ এখনও true থাকার মতো একই না - শুধু পরে আবার check করাই drift ধরে"},
+      {"en": "Chapter 5's advice was actually wrong and needed correcting", "bn": "Chapter 5-এর advice আসলে ভুল ছিল আর সংশোধন করা লাগতো"},
+      {"en": "The checklist's only purpose is to find mistakes made by earlier chapters", "bn": "Checklist-এর একমাত্র purpose আগের chapter-গুলোর ভুল খুঁজে বের করা"},
+      {"en": "umask settings cannot be explained by any earlier chapter", "bn": "umask setting কোনো আগের chapter দিয়ে explain করা যায় না"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Chapter 5's chmod 600 recommendation was correct advice, but nothing enforced it afterward - configuration drifts quietly over time, and a recurring audit is what catches the gap between a recommendation and its current real state.",
+      "bn": "Chapter 5-এর chmod 600 recommendation সঠিক advice ছিল, কিন্তু পরে কিছুই এটা enforce করেনি - configuration সময়ের সাথে নিঃশব্দে drift করে, আর একটা recurring audit-ই recommendation আর এর current real state-এর মধ্যে gap ধরে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does \"not re-verified this run\" mean for the SSH/firewall/fail2ban/MFA items in this chapter's checklist run?",
+      "bn": "এই chapter-এর checklist run-এ SSH/firewall/fail2ban/MFA item-এর জন্য \"এই run-এ re-verify করা হয়নি\" মানে কী?"
+    },
+    "options": [
+      {"en": "The checklist run is honestly incomplete for those items - it is not a claim that they are actually fine", "bn": "Checklist run ওই item-গুলোর জন্য honestly incomplete - এটা কোনো claim না যে এগুলো আসলে ঠিক আছে"},
+      {"en": "Those items were checked but the results were hidden from readers", "bn": "ওই item-গুলো check করা হয়েছিল কিন্তু result পাঠকদের থেকে hide করা হয়েছে"},
+      {"en": "Those items are permanently impossible to check on any server", "bn": "ওই item-গুলো কোনো server-ই কখনো check করা সম্ভব না"},
+      {"en": "Those items do not matter for a Laravel deployment", "bn": "ওই item-গুলো একটা Laravel deployment-এর জন্য গুরুত্বপূর্ণ না"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "It's an honest gap in this specific run, not a claim those items are secure - a real admin running this same checklist on their own server would check those for real too, rather than skipping them.",
+      "bn": "এটা এই specific run-এর একটা honest gap, ওই item-গুলো secure এমন কোনো claim না - একজন real admin তার নিজের server-এ এই একই checklist চালালে ওই item-গুলোও real-ভাবেই check করতো, skip না করে।"
+    }
+  }
+]
