@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\EnsureAdmin;
+use App\Http\Middleware\EnsureCourseEntitlement;
 use App\Http\Middleware\EnsureTerminalSharedSecret;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -17,6 +18,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'admin' => EnsureAdmin::class,
             'terminal.secret' => EnsureTerminalSharedSecret::class,
+            'course.entitled' => EnsureCourseEntitlement::class,
         ]);
 
         // Server-to-server call from the terminal orchestrator — no browser session,

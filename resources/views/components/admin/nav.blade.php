@@ -4,6 +4,8 @@
     $tabs = [
         ['route' => 'admin.contributions.index', 'label' => 'Contributions', 'badge' => $waiting],
         ['route' => 'admin.users.index', 'label' => 'Users', 'badge' => 0],
+        ['route' => 'admin.pricing.index', 'label' => 'Pricing', 'badge' => 0],
+        ['route' => 'admin.entitlements.index', 'label' => 'Access grants', 'badge' => 0],
     ];
 @endphp
 

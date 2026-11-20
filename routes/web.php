@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\Admin\ContributionController as AdminContributionController;
+use App\Http\Controllers\Admin\CoursePricingController;
+use App\Http\Controllers\Admin\EntitlementController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\LoginController;
@@ -77,6 +79,13 @@ Route::middleware('auth')->group(function () {
         Route::get('/contributions', [AdminContributionController::class, 'index'])->name('contributions.index');
         Route::post('/contributions/{contribution}/approve', [AdminContributionController::class, 'approve'])->name('contributions.approve');
         Route::post('/contributions/{contribution}/reject', [AdminContributionController::class, 'reject'])->name('contributions.reject');
+
+        Route::get('/pricing', [CoursePricingController::class, 'index'])->name('pricing.index');
+        Route::put('/pricing/{course}', [CoursePricingController::class, 'update'])->name('pricing.update');
+
+        Route::get('/entitlements', [EntitlementController::class, 'index'])->name('entitlements.index');
+        Route::post('/entitlements', [EntitlementController::class, 'store'])->name('entitlements.store');
+        Route::post('/entitlements/{entitlement}/revoke', [EntitlementController::class, 'revoke'])->name('entitlements.revoke');
     });
 });
 
@@ -109,6 +118,7 @@ Route::post('/certificate/{code}/name', [CertificateController::class, 'refreshN
 
 Route::get('/{course}/{chapter}', [CourseController::class, 'chapter'])
     ->whereIn('course', $courseSlugs)
+    ->middleware('course.entitled')
     ->name('course.chapter');
 
 // Chapter quizzes: anyone can take one; only a logged-in reader's result is saved.
