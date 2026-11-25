@@ -38,6 +38,11 @@ class StudyGroupPost extends Model
         return $this->hasMany(self::class, 'parent_id')->oldest();
     }
 
+    public function reactions(): HasMany
+    {
+        return $this->hasMany(StudyGroupPostReaction::class);
+    }
+
     public function isQuestion(): bool
     {
         return $this->type === self::QUESTION;
@@ -46,5 +51,10 @@ class StudyGroupPost extends Model
     public function typeLabel(): string
     {
         return $this->type === self::QUESTION ? 'Question' : 'Comment';
+    }
+
+    public function reactedBy(User $user): bool
+    {
+        return $this->reactions->contains('user_id', $user->id);
     }
 }

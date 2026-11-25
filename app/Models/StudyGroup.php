@@ -34,6 +34,16 @@ class StudyGroup extends Model
         return $this->hasMany(StudyGroupPost::class);
     }
 
+    public function goals(): HasMany
+    {
+        return $this->hasMany(StudyGroupGoal::class);
+    }
+
+    public function resources(): HasMany
+    {
+        return $this->hasMany(StudyGroupResource::class);
+    }
+
     public function isOwner(User $user): bool
     {
         return $this->members()->where('user_id', $user->id)->where('role', 'owner')->exists();

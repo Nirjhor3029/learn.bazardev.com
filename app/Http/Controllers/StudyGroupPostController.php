@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\StudyGroup;
 use App\Models\StudyGroupPost;
+use App\Notifications\StudyGroupActivity;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -17,11 +18,13 @@ class StudyGroupPostController extends Controller
     {
         abort_unless($studyGroup->hasMember($request->user()), 403);
 
+        $chapters = array_keys(config("course.courses.{$studyGroup->course}.chapters", []));
+
         $data = $request->validate([
             'body' => ['required', 'string', 'max:'.self::BODY_MAX],
             'parent_id' => ['nullable', 'integer'],
             'type' => ['required_without:parent_id', 'nullable', Rule::in([StudyGroupPost::QUESTION, StudyGroupPost::COMMENT])],
-            'chapter' => ['nullable', 'string', 'max:120'],
+            'chapter' => ['nullable', 'string', Rule::in($chapters)],
         ]);
 
         $parent = null;
@@ -31,13 +34,16 @@ class StudyGroupPostController extends Controller
             abort_unless($parent, 404);
         }
 
-        $studyGroup->posts()->create([
+        $post = $studyGroup->posts()->create([
             'user_id' => $request->user()->id,
             'parent_id' => $parent?->id,
             'type' => $parent ? null : $data['type'],
             'chapter' => $parent ? null : ($data['chapter'] ?? null),
             'body' => $data['body'],
         ]);
+
+        $studyGroup->members()->with('user')->where('user_id', '!=', $request->user()->id)->get()
+            ->each(fn ($member) => $member->user->notify(new StudyGroupActivity($post)));
 
         return back()->with('status', $parent ? 'Reply posted.' : 'Posted.');
     }

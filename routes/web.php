@@ -20,7 +20,10 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PaymentWebhookController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\StudyGroupController;
+use App\Http\Controllers\StudyGroupGoalController;
 use App\Http\Controllers\StudyGroupPostController;
+use App\Http\Controllers\StudyGroupPostReactionController;
+use App\Http\Controllers\StudyGroupResourceController;
 use App\Http\Controllers\TerminalLaunchController;
 use Illuminate\Support\Facades\Route;
 
@@ -101,9 +104,19 @@ Route::middleware('auth')->group(function () {
         Route::post('/{studyGroup}/regenerate-code', [StudyGroupController::class, 'regenerateCode'])->name('regenerate-code');
         Route::delete('/{studyGroup}/members/{member}', [StudyGroupController::class, 'removeMember'])->name('members.remove');
 
+        Route::put('/{studyGroup}/privacy', [StudyGroupController::class, 'updatePrivacy'])->name('privacy');
+
         Route::post('/{studyGroup}/posts', [StudyGroupPostController::class, 'store'])
             ->middleware('throttle:30,1')->name('posts.store');
         Route::delete('/{studyGroup}/posts/{post}', [StudyGroupPostController::class, 'destroy'])->name('posts.destroy');
+        Route::post('/{studyGroup}/posts/{post}/react', [StudyGroupPostReactionController::class, 'toggle'])
+            ->middleware('throttle:60,1')->name('posts.react');
+
+        Route::post('/{studyGroup}/goals', [StudyGroupGoalController::class, 'store'])->name('goals.store');
+        Route::delete('/{studyGroup}/goals/{goal}', [StudyGroupGoalController::class, 'destroy'])->name('goals.destroy');
+
+        Route::post('/{studyGroup}/resources', [StudyGroupResourceController::class, 'store'])->name('resources.store');
+        Route::delete('/{studyGroup}/resources/{resource}', [StudyGroupResourceController::class, 'destroy'])->name('resources.destroy');
     });
 
     Route::get('/email/verify/{id}/{hash}', [EmailVerificationController::class, 'verify'])

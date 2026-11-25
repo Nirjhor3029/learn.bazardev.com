@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /** One row per user per group: their role and when they joined. */
-#[Fillable(['user_id', 'role', 'joined_at'])]
+#[Fillable(['user_id', 'role', 'joined_at', 'hide_counts'])]
 class StudyGroupMember extends Model
 {
     public const OWNER = 'owner';
@@ -16,7 +16,7 @@ class StudyGroupMember extends Model
 
     protected function casts(): array
     {
-        return ['joined_at' => 'datetime'];
+        return ['joined_at' => 'datetime', 'hide_counts' => 'boolean'];
     }
 
     public function studyGroup(): BelongsTo

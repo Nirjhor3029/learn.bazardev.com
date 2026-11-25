@@ -230,4 +230,137 @@ class StudyGroupTest extends TestCase
         $this->actingAs($owner)->delete("/study-groups/{$group->id}/posts/{$post->id}")->assertRedirect();
         $this->assertNull(\App\Models\StudyGroupPost::find($post->id));
     }
+
+    public function test_only_the_owner_can_add_or_remove_a_goal(): void
+    {
+        $owner = User::factory()->create();
+        $group = $this->createGroup($owner);
+        $member = User::factory()->create();
+        $this->actingAs($member)->post('/study-groups/join', ['code' => $group->invite_code]);
+
+        $this->actingAs($member)->post("/study-groups/{$group->id}/goals", ['title' => 'Sneaky goal'])->assertForbidden();
+
+        $this->actingAs($owner)->post("/study-groups/{$group->id}/goals", [
+            'title' => 'Finish Chapter 1',
+            'target_chapter' => '01-what-is-docker',
+            'due_date' => now()->addWeek()->toDateString(),
+        ])->assertRedirect();
+
+        $goal = $group->goals()->first();
+        $this->assertSame('Finish Chapter 1', $goal->title);
+
+        $this->actingAs($member)->delete("/study-groups/{$group->id}/goals/{$goal->id}")->assertForbidden();
+        $this->actingAs($owner)->delete("/study-groups/{$group->id}/goals/{$goal->id}")->assertRedirect();
+        $this->assertNull(\App\Models\StudyGroupGoal::find($goal->id));
+    }
+
+    public function test_a_goal_shows_as_met_once_the_target_chapter_is_done(): void
+    {
+        $owner = User::factory()->create();
+        $group = $this->createGroup($owner);
+
+        $this->actingAs($owner)->post("/study-groups/{$group->id}/goals", ['title' => 'Finish Chapter 1', 'target_chapter' => '01-what-is-docker']);
+        $goal = $group->goals()->first();
+
+        $this->assertFalse($goal->isMetBy([]));
+
+        $this->actingAs($owner)->postJson('/learn/docker/01-what-is-docker/done', ['value' => true]);
+
+        $response = $this->actingAs($owner)->get('/study-groups/'.$group->id);
+        $response->assertOk()->assertSee('line-through', false);
+    }
+
+    public function test_any_member_can_pin_a_resource_but_only_the_owner_or_author_can_remove_it(): void
+    {
+        $owner = User::factory()->create();
+        $group = $this->createGroup($owner);
+        $member = User::factory()->create();
+        $this->actingAs($member)->post('/study-groups/join', ['code' => $group->invite_code]);
+
+        $this->actingAs($member)->post("/study-groups/{$group->id}/resources", [
+            'title' => 'Docker docs',
+            'url' => 'https://docs.docker.com',
+        ])->assertRedirect();
+
+        $resource = $group->resources()->first();
+
+        $stranger = User::factory()->create();
+        $this->actingAs($stranger)->delete("/study-groups/{$group->id}/resources/{$resource->id}")->assertForbidden();
+
+        $this->actingAs($owner)->delete("/study-groups/{$group->id}/resources/{$resource->id}")->assertRedirect();
+        $this->assertNull(\App\Models\StudyGroupResource::find($resource->id));
+    }
+
+    public function test_reacting_to_a_post_toggles_it_on_and_off(): void
+    {
+        $owner = User::factory()->create();
+        $group = $this->createGroup($owner);
+        $this->actingAs($owner)->post("/study-groups/{$group->id}/posts", ['type' => 'comment', 'body' => 'Hello']);
+        $post = $group->posts()->first();
+
+        $member = User::factory()->create();
+        $this->actingAs($member)->post('/study-groups/join', ['code' => $group->invite_code]);
+
+        $this->actingAs($member)->post("/study-groups/{$group->id}/posts/{$post->id}/react")->assertRedirect();
+        $this->assertSame(1, $post->reactions()->count());
+
+        $this->actingAs($member)->post("/study-groups/{$group->id}/posts/{$post->id}/react")->assertRedirect();
+        $this->assertSame(0, $post->reactions()->count());
+    }
+
+    public function test_a_member_can_hide_their_exact_progress_count_from_others(): void
+    {
+        $owner = User::factory()->create();
+        $group = $this->createGroup($owner);
+        $member = User::factory()->create();
+        $this->actingAs($member)->post('/study-groups/join', ['code' => $group->invite_code]);
+
+        $this->actingAs($member)->put("/study-groups/{$group->id}/privacy", ['hide_counts' => '1'])->assertRedirect();
+
+        $response = $this->actingAs($owner)->get('/study-groups/'.$group->id);
+        $response->assertOk()->assertDontSee('0/8 done');
+    }
+
+    public function test_posting_a_question_notifies_other_members_but_not_the_author(): void
+    {
+        $owner = User::factory()->create();
+        $group = $this->createGroup($owner);
+        $member = User::factory()->create();
+        $this->actingAs($member)->post('/study-groups/join', ['code' => $group->invite_code]);
+
+        $this->actingAs($owner)->post("/study-groups/{$group->id}/posts", ['type' => 'question', 'body' => 'Help?']);
+
+        $this->assertSame(1, $member->unreadNotifications()->count());
+        $this->assertSame(0, $owner->unreadNotifications()->count());
+    }
+
+    public function test_viewing_the_group_marks_its_notifications_read(): void
+    {
+        $owner = User::factory()->create();
+        $group = $this->createGroup($owner);
+        $member = User::factory()->create();
+        $this->actingAs($member)->post('/study-groups/join', ['code' => $group->invite_code]);
+
+        $this->actingAs($owner)->post("/study-groups/{$group->id}/posts", ['type' => 'question', 'body' => 'Help?']);
+        $this->assertSame(1, $member->unreadNotifications()->count());
+
+        $this->actingAs($member)->get('/study-groups/'.$group->id);
+
+        $this->assertSame(0, $member->unreadNotifications()->count());
+    }
+
+    public function test_a_question_can_be_anchored_to_a_specific_chapter(): void
+    {
+        $owner = User::factory()->create();
+        $group = $this->createGroup($owner);
+
+        $this->actingAs($owner)->post("/study-groups/{$group->id}/posts", [
+            'type' => 'question',
+            'body' => 'Stuck here',
+            'chapter' => '01-what-is-docker',
+        ])->assertRedirect();
+
+        $response = $this->actingAs($owner)->get('/study-groups/'.$group->id);
+        $response->assertOk()->assertSee('What is Docker, and why does it matter?');
+    }
 }

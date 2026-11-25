@@ -112,25 +112,52 @@ class StudyGroupController extends Controller
 
         $progress = $this->learning->progress($user);
 
+        // Leaderboard: furthest along first, ties broken by who joined earliest.
         $members = $studyGroup->members()->with('user')->oldest('joined_at')->get()
             ->map(function (StudyGroupMember $member) use ($studyGroup) {
-                $memberProgress = $this->learning->courseProgress($member->user, $studyGroup->course);
-
                 return [
                     'member' => $member,
-                    'progress' => $memberProgress,
+                    'progress' => $this->learning->courseProgress($member->user, $studyGroup->course),
                 ];
-            });
+            })
+            ->sortByDesc(fn ($row) => $row['progress']['percent'])
+            ->values();
 
-        $posts = $studyGroup->posts()->whereNull('parent_id')->with(['user', 'replies.user'])->latest()->get();
+        $posts = $studyGroup->posts()->whereNull('parent_id')->with(['user', 'replies.user', 'reactions'])->latest()->get();
+
+        $goals = $studyGroup->goals()->with('creator')->oldest('due_date')->get();
+        $doneSlugs = $this->learning->doneSlugs($user, $studyGroup->course);
+
+        $myMembership = $studyGroup->members()->where('user_id', $user->id)->first();
+
+        // Reading this group's notifications clears its unread badge.
+        $user->unreadNotifications()
+            ->get()
+            ->filter(fn ($n) => ($n->data['study_group_id'] ?? null) == $studyGroup->id)
+            ->each->markAsRead();
 
         return view('study-groups.show', [
             'group' => $studyGroup,
             'isOwner' => $studyGroup->isOwner($user),
+            'myMembership' => $myMembership,
             'members' => $members,
             'posts' => $posts,
+            'goals' => $goals,
+            'doneSlugs' => $doneSlugs,
+            'resources' => $studyGroup->resources()->with('user')->latest()->get(),
+            'chapters' => config("course.courses.{$studyGroup->course}.chapters", []),
             'courseProgress' => $progress[$studyGroup->course] ?? ['done' => 0, 'total' => 0, 'percent' => 0],
         ]);
+    }
+
+    public function updatePrivacy(Request $request, StudyGroup $studyGroup): RedirectResponse
+    {
+        $membership = $studyGroup->members()->where('user_id', $request->user()->id)->first();
+        abort_unless($membership, 403);
+
+        $membership->update(['hide_counts' => $request->boolean('hide_counts')]);
+
+        return back()->with('status', 'Privacy setting saved.');
     }
 
     public function rename(Request $request, StudyGroup $studyGroup): RedirectResponse
