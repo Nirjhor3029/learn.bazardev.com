@@ -35,4 +35,22 @@
     @case('x')
         <svg {{ $attributes }} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5.3 5.3a1 1 0 0 1 1.4 0L10 8.6l3.3-3.3a1 1 0 1 1 1.4 1.4L11.4 10l3.3 3.3a1 1 0 0 1-1.4 1.4L10 11.4l-3.3 3.3a1 1 0 0 1-1.4-1.4L8.6 10 5.3 6.7a1 1 0 0 1 0-1.4Z"/></svg>
         @break
+    @case('grid')
+        <svg {{ $attributes }} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M3 4.5A1.5 1.5 0 0 1 4.5 3h3A1.5 1.5 0 0 1 9 4.5v3A1.5 1.5 0 0 1 7.5 9h-3A1.5 1.5 0 0 1 3 7.5v-3Zm8 0A1.5 1.5 0 0 1 12.5 3h3A1.5 1.5 0 0 1 17 4.5v3A1.5 1.5 0 0 1 15.5 9h-3A1.5 1.5 0 0 1 11 7.5v-3ZM3 12.5A1.5 1.5 0 0 1 4.5 11h3A1.5 1.5 0 0 1 9 12.5v3A1.5 1.5 0 0 1 7.5 17h-3A1.5 1.5 0 0 1 3 15.5v-3Zm8 0a1.5 1.5 0 0 1 1.5-1.5h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a1.5 1.5 0 0 1-1.5-1.5v-3Z"/></svg>
+        @break
+    @case('users')
+        <svg {{ $attributes }} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M7 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm6.5-1a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM1.5 16a5.5 5.5 0 0 1 11 0v.25a.75.75 0 0 1-.75.75h-9.5a.75.75 0 0 1-.75-.75V16Zm12 .75h4.25a.75.75 0 0 0 .75-.75v-.1a4.5 4.5 0 0 0-6.4-4.07c1.46.98 2.4 2.64 2.4 4.42v.5Z"/></svg>
+        @break
+    @case('currency')
+        <svg {{ $attributes }} viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="7.25"/><path d="M12.3 7.6a2 2 0 0 0-1.9-1.1h-.8a1.85 1.85 0 0 0 0 3.7h.8a1.85 1.85 0 0 1 0 3.7h-.8a2 2 0 0 1-1.9-1.1M10 5.3v1.2M10 13.5v1.2"/></svg>
+        @break
+    @case('clock')
+        <svg {{ $attributes }} viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="7.25"/><path d="M10 6v4l3 2"/></svg>
+        @break
+    @case('book')
+        <svg {{ $attributes }} viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 4.5c2-1 4.5-1 6.5.3 2-1.3 4.5-1.3 6.5-.3v10.7c-2-1-4.5-1-6.5.3-2-1.3-4.5-1.3-6.5-.3V4.5Z"/><path d="M10 4.8v10.7"/></svg>
+        @break
+    @case('chevron-down')
+        <svg {{ $attributes }} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.2 7.2a1 1 0 0 1 1.4 0L10 10.6l3.4-3.4a1 1 0 1 1 1.4 1.4l-4.1 4.1a1 1 0 0 1-1.4 0L5.2 8.6a1 1 0 0 1 0-1.4Z" clip-rule="evenodd"/></svg>
+        @break
 @endswitch

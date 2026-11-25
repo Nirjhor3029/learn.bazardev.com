@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "How many marks do you lose for a wrong guess?",
+      "bn": "একটা ভুল guess করলে কত মার্ক কমে?"
+    },
+    "options": [
+      {"en": "One full mark", "bn": "একটা পূর্ণ মার্ক"},
+      {"en": "Half a mark", "bn": "অর্ধেক মার্ক"},
+      {"en": "Zero — there's no negative marking", "bn": "শূন্য — কোনো negative marking নেই"},
+      {"en": "Two marks", "bn": "দুই মার্ক"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "There's no negative marking in IELTS Reading, so every question should get an answer, even a guess.",
+      "bn": "IELTS Reading-এ কোনো negative marking নেই, তাই প্রতিটা question-এর answer দেওয়া উচিত, guess হলেও।"
+    }
+  },
+  {
+    "q": {
+      "en": "The passage says \"the city's population grew rapidly.\" The question says \"there was a sudden increase in residents.\" What's happening here?",
+      "bn": "Passage বলে \"the city's population grew rapidly.\" Question বলে \"there was a sudden increase in residents.\" এখানে কী হচ্ছে?"
+    },
+    "options": [
+      {"en": "The question is factually wrong", "bn": "Question factually ভুল"},
+      {"en": "Paraphrase — the same fact in different words", "bn": "Paraphrase — একই fact আলাদা শব্দে"},
+      {"en": "The passage contradicts the question", "bn": "Passage question-এর সাথে contradict করে"},
+      {"en": "This never happens in real IELTS tests", "bn": "এটা real IELTS test-এ কখনো হয় না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "This is paraphrase — the same fact expressed with different vocabulary and sentence structure, the core skill every question type tests.",
+      "bn": "এটা paraphrase — একই fact আলাদা vocabulary আর sentence structure-এ, যেটা প্রতিটা question type-এর মূল skill।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which technique is for hunting a specific date or name in a passage?",
+      "bn": "Passage-এ একটা specific date বা name খোঁজার জন্য কোন technique?"
+    },
+    "options": [
+      {"en": "Skimming", "bn": "Skimming"},
+      {"en": "Scanning", "bn": "Scanning"},
+      {"en": "Re-reading the whole passage word by word", "bn": "পুরো passage শব্দ ধরে ধরে আবার পড়া"},
+      {"en": "Skipping the passage entirely", "bn": "Passage সম্পূর্ণ skip করা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Scanning is for hunting a specific keyword, name, date, or number — skimming is for getting the overall gist.",
+      "bn": "Scanning একটা specific keyword, name, date, বা number খোঁজার জন্য — skimming overall gist পাওয়ার জন্য।"
+    }
+  },
+  {
+    "q": {
+      "en": "A statement is true in real life, but the passage never mentions it. How should you answer a True/False/Not Given question about it?",
+      "bn": "একটা statement real life-এ সত্য, কিন্তু passage এটা কখনো উল্লেখ করেনি। True/False/Not Given question-এ কী উত্তর দেওয়া উচিত?"
+    },
+    "options": [
+      {"en": "True, since it's true in real life", "bn": "True, কারণ এটা real life-এ সত্য"},
+      {"en": "False", "bn": "False"},
+      {"en": "Not Given", "bn": "Not Given"},
+      {"en": "Leave it blank", "bn": "খালি রাখা"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "The passage's content decides the answer, not outside knowledge — if it's never mentioned, the answer is Not Given.",
+      "bn": "Passage-এর content answer ঠিক করে, outside knowledge না — কখনো উল্লেখ না হলে answer হলো Not Given।"
+    }
+  },
+  {
+    "q": {
+      "en": "How many reading passages and questions does the test have?",
+      "bn": "Test-এ কতগুলো reading passage আর question থাকে?"
+    },
+    "options": [
+      {"en": "2 passages, 30 questions", "bn": "২টা passage, ৩০টা question"},
+      {"en": "3 passages, 40 questions", "bn": "৩টা passage, ৪০টা question"},
+      {"en": "4 passages, 50 questions", "bn": "৪টা passage, ৫০টা question"},
+      {"en": "1 passage, 20 questions", "bn": "১টা passage, ২০টা question"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "IELTS Reading has 3 passages and 40 questions total, one mark each, in 60 minutes.",
+      "bn": "IELTS Reading-এ ৩টা passage এবং মোট ৪০টা question থাকে, প্রতিটা এক মার্ক, ৬০ মিনিটে।"
+    }
+  }
+]

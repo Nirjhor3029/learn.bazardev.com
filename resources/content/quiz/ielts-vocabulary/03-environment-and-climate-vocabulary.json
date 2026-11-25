@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "\"Oil and coal are ___ resources.\"",
+      "bn": "\"Oil and coal are ___ resources.\""
+    },
+    "options": [
+      {"en": "renewable", "bn": "renewable"},
+      {"en": "non-renewable", "bn": "non-renewable"},
+      {"en": "sustainable", "bn": "sustainable"},
+      {"en": "endangered", "bn": "endangered"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Oil and coal are finite and cannot be replenished naturally, which makes them non-renewable.",
+      "bn": "Oil আর coal finite, প্রাকৃতিকভাবে replenish হয় না — তাই এগুলো non-renewable।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"The river has become dangerously ___.\"",
+      "bn": "\"The river has become dangerously ___.\""
+    },
+    "options": [
+      {"en": "pollute", "bn": "pollute"},
+      {"en": "pollution", "bn": "pollution"},
+      {"en": "polluted", "bn": "polluted"},
+      {"en": "polluting", "bn": "polluting"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "\"Polluted\" is the adjective form, describing the state of the river after \"become\".",
+      "bn": "\"Polluted\" হলো adjective form, \"become\"-এর পরে নদীর অবস্থা বর্ণনা করছে।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"Wildlife ___ efforts have helped several species recover.\"",
+      "bn": "\"Wildlife ___ efforts have helped several species recover.\""
+    },
+    "options": [
+      {"en": "conserve", "bn": "conserve"},
+      {"en": "conservation", "bn": "conservation"},
+      {"en": "conserved", "bn": "conserved"},
+      {"en": "conservative", "bn": "conservative"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Wildlife conservation efforts\" is the fixed collocation, using the noun form \"conservation\".",
+      "bn": "\"Wildlife conservation efforts\" fixed collocation, noun form \"conservation\" ব্যবহার করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "In the standard cause-and-effect chain, which comes first?",
+      "bn": "Standard cause-and-effect chain-এ কোনটা প্রথমে আসে?"
+    },
+    "options": [
+      {"en": "Global warming", "bn": "Global warming"},
+      {"en": "Burning fossil fuels", "bn": "Burning fossil fuels"},
+      {"en": "Rising sea levels", "bn": "Rising sea levels"},
+      {"en": "Extreme weather events", "bn": "Extreme weather events"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The chain runs: burning fossil fuels → greenhouse gas emissions → global warming → rising sea levels / extreme weather.",
+      "bn": "Chain-টা চলে এভাবে: burning fossil fuels → greenhouse gas emissions → global warming → rising sea levels / extreme weather।"
+    }
+  },
+  {
+    "q": {
+      "en": "What's the difference between \"climate change\" and \"climate crisis\"?",
+      "bn": "\"Climate change\" আর \"climate crisis\"-এর পার্থক্য কী?"
+    },
+    "options": [
+      {"en": "They mean completely unrelated things.", "bn": "দুটো সম্পূর্ণ unrelated বিষয়।"},
+      {"en": "\"Climate crisis\" is the neutral term; \"climate change\" signals urgency.", "bn": "\"Climate crisis\" neutral term; \"climate change\" urgency বোঝায়।"},
+      {"en": "\"Climate change\" is the neutral/technical term; \"climate crisis\" signals urgency.", "bn": "\"Climate change\" neutral/technical term; \"climate crisis\" urgency বোঝায়।"},
+      {"en": "\"Climate crisis\" only refers to volcanoes.", "bn": "\"Climate crisis\" শুধু আগ্নেয়গিরি বোঝায়।"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "\"Climate change\" is the standard, neutral term; \"climate crisis\" is used to emphasise urgency and severity.",
+      "bn": "\"Climate change\" standard, neutral term; \"climate crisis\" urgency ও severity emphasize করতে ব্যবহার হয়।"
+    }
+  }
+]

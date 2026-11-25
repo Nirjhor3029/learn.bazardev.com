@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "\"Local authorities are working to ___ the region's cultural heritage.\"",
+      "bn": "\"Local authorities are working to ___ the region's cultural heritage.\""
+    },
+    "options": [
+      {"en": "preserve", "bn": "preserve"},
+      {"en": "preservation", "bn": "preservation"},
+      {"en": "preserved", "bn": "preserved"},
+      {"en": "preserving", "bn": "preserving"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The verb form \"preserve\" is needed after \"to\" (the infinitive).",
+      "bn": "\"to\"-এর পরে (infinitive) verb form \"preserve\" লাগবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"Many travellers experience ___ during their first few days abroad.\"",
+      "bn": "\"Many travellers experience ___ during their first few days abroad.\""
+    },
+    "options": [
+      {"en": "cultural immersion", "bn": "cultural immersion"},
+      {"en": "culture shock", "bn": "culture shock"},
+      {"en": "overtourism", "bn": "overtourism"},
+      {"en": "commercialisation", "bn": "commercialisation"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Culture shock\" describes the disorientation of encountering an unfamiliar culture.",
+      "bn": "\"Culture shock\" মানে অপরিচিত culture-এর মুখোমুখি হওয়ার disorientation।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which pair contrasts large-scale tourism with small-scale, environmentally conscious tourism?",
+      "bn": "কোন pair large-scale tourism আর small-scale, environmentally conscious tourism-এর মধ্যে contrast দেখায়?"
+    },
+    "options": [
+      {"en": "domestic vs. international tourism", "bn": "domestic vs. international tourism"},
+      {"en": "mass tourism vs. eco-tourism", "bn": "mass tourism vs. eco-tourism"},
+      {"en": "authentic vs. commercialised experience", "bn": "authentic vs. commercialised experience"},
+      {"en": "attraction vs. preservation", "bn": "attraction vs. preservation"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Mass tourism\" is large-scale and high-volume; \"eco-tourism\" is small-scale and environmentally conscious.",
+      "bn": "\"Mass tourism\" large-scale, high-volume; \"eco-tourism\" small-scale, environmentally conscious।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"She prefers destinations ___ to crowded cities.\"",
+      "bn": "\"She prefers destinations ___ to crowded cities.\""
+    },
+    "options": [
+      {"en": "on the beaten path", "bn": "on the beaten path"},
+      {"en": "off the beaten track", "bn": "off the beaten track"},
+      {"en": "in the beaten zone", "bn": "in the beaten zone"},
+      {"en": "near the beaten route", "bn": "near the beaten route"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Off the beaten track\" means unusual or less-visited places.",
+      "bn": "\"Off the beaten track\" মানে unusual বা কম visited জায়গা।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which word describes a destination being damaged by too many visitors?",
+      "bn": "কোন শব্দ একটা destination খুব বেশি visitor-এর কারণে damaged হওয়া বোঝায়?"
+    },
+    "options": [
+      {"en": "sustainable tourism", "bn": "sustainable tourism"},
+      {"en": "overtourism", "bn": "overtourism"},
+      {"en": "cultural immersion", "bn": "cultural immersion"},
+      {"en": "tourist revenue", "bn": "tourist revenue"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Overtourism\" refers to a destination being damaged by excessive numbers of visitors.",
+      "bn": "\"Overtourism\" মানে অতিরিক্ত visitor-এর কারণে একটা destination damaged হওয়া।"
+    }
+  }
+]

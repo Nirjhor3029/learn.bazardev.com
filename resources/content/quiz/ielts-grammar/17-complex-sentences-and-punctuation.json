@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Fix: \"Because it was raining. We stayed inside.\"",
+      "bn": "ঠিক করো: \"Because it was raining. We stayed inside.\""
+    },
+    "options": [
+      {"en": "Because it was raining, we stayed inside.", "bn": "Because it was raining, we stayed inside."},
+      {"en": "Because it was raining we stayed, inside.", "bn": "Because it was raining we stayed, inside."},
+      {"en": "Because, it was raining. We stayed inside.", "bn": "Because, it was raining. We stayed inside."},
+      {"en": "Because it was raining. We, stayed inside.", "bn": "Because it was raining. We, stayed inside."}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "\"Because it was raining\" is a dependent clause (a fragment) — it must be joined to the independent clause with a comma, not left as its own sentence.",
+      "bn": "\"Because it was raining\" একটা dependent clause (fragment) — এটা comma দিয়ে independent clause-এর সাথে জোড়া দিতে হবে, আলাদা sentence রাখা যাবে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix the comma splice: \"It was raining, we stayed inside.\"",
+      "bn": "Comma splice ঠিক করো: \"It was raining, we stayed inside.\""
+    },
+    "options": [
+      {"en": "It was raining we stayed inside.", "bn": "It was raining we stayed inside."},
+      {"en": "It was raining, so we stayed inside.", "bn": "It was raining, so we stayed inside."},
+      {"en": "It was raining, we, stayed inside.", "bn": "It was raining, we, stayed inside."},
+      {"en": "It, was raining, we stayed inside.", "bn": "It, was raining, we stayed inside."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A comma alone can't join two independent clauses — add a conjunction like \"so\", or use a period/semicolon instead.",
+      "bn": "শুধু comma দিয়ে দুটো independent clause জোড়া দেওয়া যায় না — \"so\"-এর মতো conjunction যুক্ত করো, বা period/semicolon ব্যবহার করো।"
+    }
+  },
+  {
+    "q": {
+      "en": "Does this need a comma: \"We stayed inside because it was raining\"?",
+      "bn": "এটার কি comma লাগবে: \"We stayed inside because it was raining\"?"
+    },
+    "options": [
+      {"en": "Yes, always.", "bn": "হ্যাঁ, সবসময়।"},
+      {"en": "No — the independent clause comes first.", "bn": "না — independent clause আগে আছে।"},
+      {"en": "Only in formal writing.", "bn": "শুধু formal writing-এ।"},
+      {"en": "Yes, but only before \"inside\".", "bn": "হ্যাঁ, কিন্তু শুধু \"inside\"-এর আগে।"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "When the independent clause comes first and the dependent clause follows, a comma usually isn't needed.",
+      "bn": "Independent clause আগে থাকলে এবং dependent clause পরে আসলে, সাধারণত comma লাগে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Is \"Although the exam was difficult\" a fragment or a complete sentence?",
+      "bn": "\"Although the exam was difficult\" — এটা fragment না কি complete sentence?"
+    },
+    "options": [
+      {"en": "A complete sentence.", "bn": "একটা complete sentence।"},
+      {"en": "A fragment — it needs a main clause attached.", "bn": "একটা fragment — এর সাথে main clause লাগানো লাগবে।"},
+      {"en": "A comma splice.", "bn": "একটা comma splice।"},
+      {"en": "A run-on sentence.", "bn": "একটা run-on sentence।"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Although\" makes this a dependent clause — it can't stand alone and needs an independent clause attached, e.g. \"...I passed.\"",
+      "bn": "\"Although\" এটাকে dependent clause বানায় — এটা একা দাঁড়াতে পারে না, এর সাথে independent clause লাগাতে হয়, যেমন \"...I passed.\""
+    }
+  },
+  {
+    "q": {
+      "en": "Which is a run-on (fused) sentence?",
+      "bn": "কোনটা run-on (fused) sentence?"
+    },
+    "options": [
+      {"en": "It was raining, so we stayed inside.", "bn": "It was raining, so we stayed inside."},
+      {"en": "It was raining we stayed inside.", "bn": "It was raining we stayed inside."},
+      {"en": "Because it was raining, we stayed inside.", "bn": "Because it was raining, we stayed inside."},
+      {"en": "It was raining; we stayed inside.", "bn": "It was raining; we stayed inside."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A run-on joins two independent clauses with no punctuation at all between them.",
+      "bn": "Run-on sentence দুটো independent clause-এর মাঝে কোনো punctuation ছাড়াই জোড়া দেয়।"
+    }
+  }
+]

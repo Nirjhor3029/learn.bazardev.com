@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "\"Housing ___ 40% of total spending.\"",
+      "bn": "\"Housing ___ 40% of total spending.\""
+    },
+    "options": [
+      {"en": "is", "bn": "is"},
+      {"en": "accounts for", "bn": "accounts for"},
+      {"en": "has", "bn": "has"},
+      {"en": "says", "bn": "says"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Accounts for\" is a proper reporting verb used with proportions, more precise than the bare verb \"is\".",
+      "bn": "\"Accounts for\" একটা proper reporting verb, proportion-এর সাথে ব্যবহার হয়, খালি \"is\"-এর চেয়ে বেশি precise।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which phrase best rewrites \"33% of respondents chose option A\"?",
+      "bn": "\"33% of respondents chose option A\" — কোন phrase দিয়ে এটা সবচেয়ে ভালো rewrite হয়?"
+    },
+    "options": [
+      {"en": "The vast majority of respondents chose option A.", "bn": "The vast majority of respondents chose option A."},
+      {"en": "Roughly a third of respondents chose option A.", "bn": "Roughly a third of respondents chose option A."},
+      {"en": "A small minority of respondents chose option A.", "bn": "A small minority of respondents chose option A."},
+      {"en": "Almost all respondents chose option A.", "bn": "Almost all respondents chose option A."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "33% is approximately one-third, so \"roughly a third\" is the accurate proportion phrase.",
+      "bn": "33% মানে প্রায় এক-তৃতীয়াংশ, তাই \"roughly a third\" সঠিক proportion phrase।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix: \"Country B's output was three time as high as Country A's.\"",
+      "bn": "ঠিক করো: \"Country B's output was three time as high as Country A's.\""
+    },
+    "options": [
+      {"en": "Country B's output was three times as high as Country A's.", "bn": "Country B's output was three times as high as Country A's."},
+      {"en": "Country B's output was three time high as Country A's.", "bn": "Country B's output was three time high as Country A's."},
+      {"en": "Country B's output was three times high than Country A's.", "bn": "Country B's output was three times high than Country A's."},
+      {"en": "Country B's output was three time as higher as Country A's.", "bn": "Country B's output was three time as higher as Country A's."}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "\"Times\" needs an \"-s\" in this structure, and the comparison uses \"as...as\", not \"than\".",
+      "bn": "এই structure-এ \"times\"-এ \"-s\" লাগে, এবং comparison-এ \"as...as\" ব্যবহার হয়, \"than\" না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which word signals contrast between two categories: \"whereas\" or \"moreover\"?",
+      "bn": "দুটো category-র মধ্যে contrast বোঝাতে কোন word ব্যবহার হয়: \"whereas\" না \"moreover\"?"
+    },
+    "options": [
+      {"en": "moreover", "bn": "moreover"},
+      {"en": "whereas", "bn": "whereas"},
+      {"en": "both work the same way", "bn": "দুটোই একইভাবে কাজ করে"},
+      {"en": "neither — use \"and\" instead", "bn": "কোনোটাই না — এর বদলে \"and\" ব্যবহার করো"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Whereas\" introduces a contrast between two things; \"moreover\" adds similar, supporting information.",
+      "bn": "\"Whereas\" দুটো বিষয়ের মধ্যে contrast তুলে ধরে; \"moreover\" একই রকম, supporting information যুক্ত করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which sentence correctly combines proportion and change for two pie charts over time?",
+      "bn": "দুটো সময়ের pie chart-এর জন্য কোন sentence proportion আর change ঠিকভাবে একসাথে দেখায়?"
+    },
+    "options": [
+      {"en": "The proportion of spending on housing is 35%.", "bn": "The proportion of spending on housing is 35%."},
+      {"en": "The proportion of spending on housing rose from 20% to 35% between 2000 and 2020.", "bn": "The proportion of spending on housing rose from 20% to 35% between 2000 and 2020."},
+      {"en": "Housing spending will probably keep rising.", "bn": "Housing spending will probably keep rising."},
+      {"en": "Housing is the biggest category of spending.", "bn": "Housing is the biggest category of spending."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "This sentence combines a proportion (percentages) with trend language (\"rose from...to\") and a time phrase, exactly as needed for two charts over time.",
+      "bn": "এই sentence proportion (percentage) আর trend language (\"rose from...to\") এবং time phrase একসাথে মিলিয়ে দেখায়, দুটো সময়ের chart-এর জন্য যেমন লাগে।"
+    }
+  }
+]

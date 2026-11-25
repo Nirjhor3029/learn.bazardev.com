@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Which is correct?",
+      "bn": "কোনটা সঠিক?"
+    },
+    "options": [
+      {"en": "She can to swim.", "bn": "She can to swim."},
+      {"en": "She can swims.", "bn": "She can swims."},
+      {"en": "She can swim.", "bn": "She can swim."},
+      {"en": "She cans swim.", "bn": "She cans swim."}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "A modal verb is always followed by the base verb — no \"to\", no \"s\".",
+      "bn": "Modal verb-এর পরে সবসময় base verb বসে — কোনো \"to\" না, কোনো \"s\" না।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"The exam was tight, but I ___ finish it in time yesterday.\" (one specific past success)",
+      "bn": "\"The exam was tight, but I ___ finish it in time yesterday.\" (একটা specific past success)"
+    },
+    "options": [
+      {"en": "could", "bn": "could"},
+      {"en": "was able to", "bn": "was able to"},
+      {"en": "can", "bn": "can"},
+      {"en": "must", "bn": "must"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "For one specific past achievement, use \"was/were able to\", not \"could\" (which is for general past ability).",
+      "bn": "একটা specific past achievement-এর জন্য \"was/were able to\" লাগে, \"could\" না (যেটা general past ability-এর জন্য)।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"You ___ come to the party if you don't want to — it's totally optional.\"",
+      "bn": "\"You ___ come to the party if you don't want to — it's totally optional.\""
+    },
+    "options": [
+      {"en": "mustn't", "bn": "mustn't"},
+      {"en": "don't have to", "bn": "don't have to"},
+      {"en": "can't", "bn": "can't"},
+      {"en": "shouldn't", "bn": "shouldn't"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Don't have to\" means no obligation (optional). \"Mustn't\" would mean it's forbidden, which is the opposite meaning.",
+      "bn": "\"Don't have to\" মানে obligation নেই (optional)। \"Mustn't\" মানে forbidden, যেটা উল্টো অর্থ।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"The lights are off and the car is gone — they ___ be home.\" (strong evidence they are NOT home)",
+      "bn": "\"The lights are off and the car is gone — they ___ be home.\" (তারা বাসায় নেই, এমন strong evidence)"
+    },
+    "options": [
+      {"en": "must", "bn": "must"},
+      {"en": "might", "bn": "might"},
+      {"en": "can't", "bn": "can't"},
+      {"en": "should", "bn": "should"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "\"Can't\" expresses near-certainty that something is NOT true, based on evidence.",
+      "bn": "\"Can't\" প্রায় নিশ্চিত যে কিছু সত্য নয়, evidence-এর ভিত্তিতে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix: \"She must has forgotten her keys.\"",
+      "bn": "ঠিক করো: \"She must has forgotten her keys.\""
+    },
+    "options": [
+      {"en": "She must have forgotten her keys.", "bn": "She must have forgotten her keys."},
+      {"en": "She must forgotten her keys.", "bn": "She must forgotten her keys."},
+      {"en": "She must had forgotten her keys.", "bn": "She must had forgotten her keys."},
+      {"en": "She must forgot her keys.", "bn": "She must forgot her keys."}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Past deduction is always \"modal + have + past participle\" — never \"must has\".",
+      "bn": "Past deduction সবসময় \"modal + have + past participle\" — \"must has\" কখনো না।"
+    }
+  }
+]

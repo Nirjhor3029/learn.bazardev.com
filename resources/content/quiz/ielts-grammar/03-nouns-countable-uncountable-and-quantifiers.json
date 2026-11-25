@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "\"There isn't ___ time left.\" Which word fits?",
+      "bn": "\"There isn't ___ time left.\" কোন শব্দটা বসবে?"
+    },
+    "options": [
+      {"en": "many", "bn": "many"},
+      {"en": "much", "bn": "much"},
+      {"en": "a few", "bn": "a few"},
+      {"en": "several", "bn": "several"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Time\" is uncountable, so it pairs with \"much,\" not \"many.\"",
+      "bn": "\"Time\" uncountable, তাই \"much\" বসবে, \"many\" না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which sentence is correct?",
+      "bn": "কোন বাক্যটা সঠিক?"
+    },
+    "options": [
+      {"en": "He gave me three advices about the interview.", "bn": "He gave me three advices about the interview."},
+      {"en": "He gave me some advice about the interview.", "bn": "He gave me some advice about the interview."},
+      {"en": "He gave me an advice about the interview.", "bn": "He gave me an advice about the interview."},
+      {"en": "He gave me advices about the interview.", "bn": "He gave me advices about the interview."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Advice\" is uncountable — it has no plural and never takes \"a/an.\" To count it, say \"a piece of advice.\"",
+      "bn": "\"Advice\" uncountable — এর plural হয় না, \"a/an\"-ও বসে না। গুনতে চাইলে \"a piece of advice\" বলতে হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which of these is uncountable in English (no plural, no \"a/an\")?",
+      "bn": "নিচের কোনটা English-এ uncountable (plural হয় না, \"a/an\" বসে না)?"
+    },
+    "options": [
+      {"en": "book", "bn": "book"},
+      {"en": "idea", "bn": "idea"},
+      {"en": "furniture", "bn": "furniture"},
+      {"en": "student", "bn": "student"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "\"Furniture\" is uncountable — you can't say \"a furniture\" or \"furnitures.\" Use \"a piece/item of furniture\" to count it.",
+      "bn": "\"Furniture\" uncountable — \"a furniture\" বা \"furnitures\" বলা যায় না। গুনতে \"a piece/item of furniture\" ব্যবহার করতে হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"I have ___ friends here\" (meaning it's fine — you have some, enough to be okay).",
+      "bn": "\"I have ___ friends here\" (মানে ঠিক আছে — কিছু বন্ধু আছে, যথেষ্ট)।"
+    },
+    "options": [
+      {"en": "few", "bn": "few"},
+      {"en": "a few", "bn": "a few"},
+      {"en": "much", "bn": "much"},
+      {"en": "little", "bn": "little"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"A few\" sounds positive/neutral (some, enough). \"Few\" (no \"a\") sounds negative — almost none.",
+      "bn": "\"A few\" positive/neutral শোনায় (কিছু আছে, যথেষ্ট)। \"Few\" (\"a\" ছাড়া) negative শোনায় — প্রায় নেই।"
+    }
+  },
+  {
+    "q": {
+      "en": "For an IELTS Writing Task 1 chart, which phrase is the most formal way to say \"most\"?",
+      "bn": "IELTS Writing Task 1 chart-এ \"most\" বোঝানোর সবচেয়ে formal উপায় কোনটা?"
+    },
+    "options": [
+      {"en": "a lot of", "bn": "a lot of"},
+      {"en": "the majority of", "bn": "the majority of"},
+      {"en": "a few", "bn": "a few"},
+      {"en": "much", "bn": "much"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"The majority of\" is the formal, Task-1-appropriate way to express \"most.\"",
+      "bn": "\"The majority of\" হলো formal, Task-1-উপযোগী way \"most\" বোঝানোর।"
+    }
+  }
+]

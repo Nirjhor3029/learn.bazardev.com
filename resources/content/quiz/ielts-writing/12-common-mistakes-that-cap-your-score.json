@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Which single Task 1 mistake is both the most common and most costly?",
+      "bn": "কোন একটা Task 1 mistake সবচেয়ে common এবং সবচেয়ে costly?"
+    },
+    "options": [
+      {"en": "Using too many degree adverbs", "bn": "খুব বেশি degree adverb ব্যবহার করা"},
+      {"en": "Skipping the overview entirely", "bn": "Overview সম্পূর্ণ skip করা"},
+      {"en": "Writing slightly over 150 words", "bn": "১৫০ শব্দের থেকে একটু বেশি লেখা"},
+      {"en": "Using passive voice in process descriptions", "bn": "Process description-এ passive voice ব্যবহার করা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Skipping the overview holds down Task Achievement regardless of how good the rest of the report is.",
+      "bn": "Overview skip করলে Task Achievement আটকে থাকে, রিপোর্টের বাকি অংশ যতই ভালো হোক।"
+    }
+  },
+  {
+    "q": {
+      "en": "A discussion essay states the writer's opinion in the introduction. What's wrong?",
+      "bn": "একটা discussion essay introduction-এ writer-এর opinion বলে দেয়। সমস্যা কী?"
+    },
+    "options": [
+      {"en": "Nothing — this is the correct approach", "bn": "কিছুই না — এটাই সঠিক approach"},
+      {"en": "It's too early — both views should be presented first; the opinion belongs in the conclusion", "bn": "এটা খুব আগে — প্রথমে দুটো view presented হওয়া উচিত; opinion conclusion-এ থাকে"},
+      {"en": "Discussion essays should never state an opinion at all", "bn": "Discussion essay-তে কখনোই opinion বলা উচিত না"},
+      {"en": "This only matters for General Training", "bn": "এটা শুধু General Training-এর জন্য matter করে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A discussion essay must present both views fairly before the opinion is given, usually in the conclusion.",
+      "bn": "একটা discussion essay-তে opinion দেওয়ার আগে দুটো view fairly present করতে হয়, সাধারণত conclusion-এ।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which criterion does \"topic sentence → because → as a result → example\" most directly support?",
+      "bn": "\"Topic sentence → because → as a result → example\" কোন criterion-কে সবচেয়ে সরাসরি support করে?"
+    },
+    "options": [
+      {"en": "Task Achievement/Response, by developing ideas fully", "bn": "Task Achievement/Response, idea পূর্ণভাবে develop করে"},
+      {"en": "Only spelling accuracy", "bn": "শুধু spelling accuracy"},
+      {"en": "Only handwriting neatness", "bn": "শুধু handwriting neatness"},
+      {"en": "Nothing — it's a stylistic choice only", "bn": "কিছুই না — এটা শুধু একটা stylistic choice"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Fully developing each idea with reasoning and examples directly strengthens Task Achievement/Response, and indirectly Coherence and Cohesion.",
+      "bn": "প্রতিটা idea reasoning এবং example দিয়ে পূর্ণভাবে develop করলে সরাসরি Task Achievement/Response শক্তিশালী হয়, এবং আংশিকভাবে Coherence and Cohesion-ও।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which course in this track builds Grammatical Range and Accuracy most directly?",
+      "bn": "এই track-এ কোন কোর্স Grammatical Range and Accuracy সবচেয়ে সরাসরি তৈরি করে?"
+    },
+    "options": [
+      {"en": "IELTS Vocabulary", "bn": "IELTS Vocabulary"},
+      {"en": "IELTS Grammar", "bn": "IELTS Grammar"},
+      {"en": "IELTS Writing itself, exclusively", "bn": "শুধু IELTS Writing নিজে"},
+      {"en": "None of the courses cover this", "bn": "কোনো কোর্সই এটা কভার করে না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "IELTS Grammar covers comparatives for Task 1, passive voice for processes, conditionals and linking words for Task 2 — all Grammatical Range and Accuracy.",
+      "bn": "IELTS Grammar Task 1-এর জন্য comparatives, process-এর জন্য passive voice, Task 2-এর জন্য conditionals এবং linking words কভার করে — সবই Grammatical Range and Accuracy।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which pre-submission check applies to BOTH Task 1 and Task 2?",
+      "bn": "কোন pre-submission check Task 1 আর Task 2 দুটোর জন্যই প্রযোজ্য?"
+    },
+    "options": [
+      {"en": "Does the overview avoid specific numbers?", "bn": "Overview specific number avoid করে কিনা?"},
+      {"en": "Is there a clear personal opinion in every paragraph?", "bn": "প্রতিটা paragraph-এ একটা clear personal opinion আছে কিনা?"},
+      {"en": "Are there four clear paragraphs, correctly structured, with no invented statistics?", "bn": "চারটা clear paragraph আছে কিনা, সঠিকভাবে structured, কোনো invented statistic ছাড়া?"},
+      {"en": "Does the essay stay under 150 words?", "bn": "Essay ১৫০ শব্দের নিচে থাকে কিনা?"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Clear paragraphing and avoiding invented statistics are checks that apply to both tasks, unlike task-specific checks like the overview or word minimums.",
+      "bn": "Clear paragraphing এবং invented statistic avoid করা — এই check দুটো task-এই প্রযোজ্য, overview বা word minimum-এর মতো task-specific check না।"
+    }
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Fix: \"Let's discuss about the plan.\"",
+      "bn": "ঠিক করো: \"Let's discuss about the plan.\""
+    },
+    "options": [
+      {"en": "Let's discuss the plan.", "bn": "Let's discuss the plan."},
+      {"en": "Let's discuss on the plan.", "bn": "Let's discuss on the plan."},
+      {"en": "Let's discussion about the plan.", "bn": "Let's discussion about the plan."},
+      {"en": "Let's discuss with the plan.", "bn": "Let's discuss with the plan."}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "\"Discuss\" never takes a preposition — it's followed directly by the object.",
+      "bn": "\"Discuss\"-এর পরে কখনো preposition বসে না — সরাসরি object আসে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix: \"He is married with my sister.\"",
+      "bn": "ঠিক করো: \"He is married with my sister.\""
+    },
+    "options": [
+      {"en": "He is married to my sister.", "bn": "He is married to my sister."},
+      {"en": "He is married at my sister.", "bn": "He is married at my sister."},
+      {"en": "He is married for my sister.", "bn": "He is married for my sister."},
+      {"en": "He is married on my sister.", "bn": "He is married on my sister."}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The correct preposition is \"married to\", not \"married with\".",
+      "bn": "সঠিক preposition হলো \"married to\", \"married with\" না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix: \"I can able to swim.\"",
+      "bn": "ঠিক করো: \"I can able to swim.\""
+    },
+    "options": [
+      {"en": "I can swim.", "bn": "I can swim."},
+      {"en": "I can able swim.", "bn": "I can able swim."},
+      {"en": "I able can swim.", "bn": "I able can swim."},
+      {"en": "I can to swim.", "bn": "I can to swim."}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Only one modal-type expression is used at a time — \"can swim\" or \"am able to swim\", never both stacked together.",
+      "bn": "একবারে একটাই modal-type expression ব্যবহার হয় — \"can swim\" বা \"am able to swim\", দুটো একসাথে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix: \"This method is much more better.\"",
+      "bn": "ঠিক করো: \"This method is much more better.\""
+    },
+    "options": [
+      {"en": "This method is much better.", "bn": "This method is much better."},
+      {"en": "This method is more better.", "bn": "This method is more better."},
+      {"en": "This method is much more good.", "bn": "This method is much more good."},
+      {"en": "This method is most better.", "bn": "This method is most better."}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Don't stack two comparative markers — \"better\" is already a comparative, so it only needs \"much\", not \"more\" too.",
+      "bn": "দুটো comparative marker একসাথে বসানো যায় না — \"better\" নিজেই comparative, তাই শুধু \"much\" লাগে, \"more\" লাগে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix: \"I am angry on you.\"",
+      "bn": "ঠিক করো: \"I am angry on you.\""
+    },
+    "options": [
+      {"en": "I am angry with you.", "bn": "I am angry with you."},
+      {"en": "I am angry to you.", "bn": "I am angry to you."},
+      {"en": "I am angry for you.", "bn": "I am angry for you."},
+      {"en": "I am angry of you.", "bn": "I am angry of you."}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The correct preposition after \"angry\" (about a person) is \"with\", not \"on\".",
+      "bn": "\"Angry\"-এর পরে (একটা মানুষের ক্ষেত্রে) সঠিক preposition হলো \"with\", \"on\" না।"
+    }
+  }
+]

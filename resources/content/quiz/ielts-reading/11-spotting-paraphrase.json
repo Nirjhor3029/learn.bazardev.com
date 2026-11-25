@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "The question says \"increased sharply.\" The passage says \"did not decrease.\" Do these definitely match?",
+      "bn": "Question বলছে \"increased sharply.\" Passage বলছে \"did not decrease.\" এগুলো কি definitely মেলে?"
+    },
+    "options": [
+      {"en": "Yes, they always mean exactly the same thing", "bn": "হ্যাঁ, এগুলো সবসময় exactly একই মানে বোঝায়"},
+      {"en": "Not necessarily — \"did not decrease\" only confirms \"not falling,\" not a sharp rise", "bn": "অগত্যা না — \"did not decrease\" শুধু \"not falling\" নিশ্চিত করে, একটা sharp rise না"},
+      {"en": "No, they are always complete opposites", "bn": "না, এগুলো সবসময় সম্পূর্ণ বিপরীত"},
+      {"en": "This can never be assessed from context", "bn": "এটা context থেকে কখনো assess করা যায় না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Did not decrease\" only rules out a fall — it doesn't confirm a sharp increase, so the meaning must be checked carefully.",
+      "bn": "\"Did not decrease\" শুধু একটা fall বাদ দেয় — এটা একটা sharp increase নিশ্চিত করে না, তাই মানে carefully check করতে হবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "A statement shares five exact words with the passage. Does that make the statement True?",
+      "bn": "একটা statement passage-এর সাথে পাঁচটা exact word share করে। এটা কি statement-কে True বানায়?"
+    },
+    "options": [
+      {"en": "Yes, shared words always confirm the meaning matches", "bn": "হ্যাঁ, shared word সবসময় মানে মেলে তা নিশ্চিত করে"},
+      {"en": "Not necessarily — matching words isn't the same as matching meaning", "bn": "অগত্যা না — word মেলা মানে মেলার মতো না"},
+      {"en": "Yes, but only if there are more than three shared words", "bn": "হ্যাঁ, কিন্তু শুধু তিনটার বেশি word share করলে"},
+      {"en": "No, shared words always mean the statement is False", "bn": "না, shared word সবসময় statement False মানে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Matching vocabulary doesn't guarantee matching meaning — the full sense of the statement still has to agree with the passage.",
+      "bn": "Vocabulary মেলা মানে মেলার guarantee দেয় না — statement-এর সম্পূর্ণ মানে তাও passage-এর সাথে মিলতে হবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "The passage says \"cars.\" The question says \"vehicles.\" Is this a valid paraphrase?",
+      "bn": "Passage বলছে \"cars.\" Question বলছে \"vehicles.\" এটা কি একটা valid paraphrase?"
+    },
+    "options": [
+      {"en": "No, they refer to completely different things", "bn": "না, এগুলো সম্পূর্ণ ভিন্ন কিছুকে refer করে"},
+      {"en": "Yes — \"vehicles\" is a generalisation of \"cars,\" a common paraphrase pattern", "bn": "হ্যাঁ — \"vehicles\" হলো \"cars\"-এর একটা generalisation, একটা common paraphrase pattern"},
+      {"en": "Only if the passage also uses the word \"vehicles\" somewhere", "bn": "শুধু passage-এ কোথাও \"vehicles\" শব্দটাও থাকলে"},
+      {"en": "This is never a valid paraphrase in IELTS Reading", "bn": "IELTS Reading-এ এটা কখনো valid paraphrase না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Generalisation and specification (general term ↔ specific term) is one of the standard paraphrase patterns the passage uses.",
+      "bn": "Generalisation এবং specification (general term ↔ specific term) passage যে standard paraphrase pattern ব্যবহার করে তার একটা।"
+    }
+  },
+  {
+    "q": {
+      "en": "What's the purpose of building a keyword table before scanning the passage?",
+      "bn": "Passage scan করার আগে একটা keyword table তৈরি করার purpose কী?"
+    },
+    "options": [
+      {"en": "To predict likely paraphrases for each key term before scanning", "bn": "Scan করার আগে প্রতিটা key term-এর likely paraphrase predict করা"},
+      {"en": "To memorize the entire passage word for word", "bn": "সম্পূর্ণ passage word for word মুখস্থ করা"},
+      {"en": "To translate every question into Bangla first", "bn": "প্রতিটা question প্রথমে বাংলায় translate করা"},
+      {"en": "To count how many words the passage contains", "bn": "Passage-এ কতগুলো word আছে তা count করা"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A keyword table lets you predict likely paraphrases for each key term, so you scan for meaning instead of an exact word match.",
+      "bn": "একটা keyword table তোমাকে প্রতিটা key term-এর likely paraphrase predict করতে দেয়, তাই তুমি exact word match-এর বদলে মানে scan করো।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"Few researchers believed the theory would succeed\" is paraphrased in the passage as \"Only a small number of scientists thought the theory would be successful.\" What kind of change is \"succeed\" → \"be successful\"?",
+      "bn": "\"Few researchers believed the theory would succeed\" passage-এ paraphrase হয়েছে \"Only a small number of scientists thought the theory would be successful\" হিসেবে। \"succeed\" → \"be successful\" কোন ধরনের change?"
+    },
+    "options": [
+      {"en": "A word-class change — verb to adjective", "bn": "একটা word-class change — verb থেকে adjective"},
+      {"en": "A generalisation", "bn": "একটা generalisation"},
+      {"en": "An antonym with negation", "bn": "একটা antonym negation সহ"},
+      {"en": "No change at all — these are identical words", "bn": "কোনো change না — এগুলো identical word"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "\"Succeed\" is a verb; \"be successful\" uses the adjective form of the same idea — a classic word-class paraphrase.",
+      "bn": "\"Succeed\" একটা verb; \"be successful\" একই idea-র adjective form ব্যবহার করে — একটা classic word-class paraphrase।"
+    }
+  }
+]

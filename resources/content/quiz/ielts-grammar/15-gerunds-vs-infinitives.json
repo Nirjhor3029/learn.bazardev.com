@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Fix: \"I enjoy to read books.\"",
+      "bn": "ঠিক করো: \"I enjoy to read books.\""
+    },
+    "options": [
+      {"en": "I enjoy reading books.", "bn": "I enjoy reading books."},
+      {"en": "I enjoy read books.", "bn": "I enjoy read books."},
+      {"en": "I enjoy for reading books.", "bn": "I enjoy for reading books."},
+      {"en": "I enjoy to reading books.", "bn": "I enjoy to reading books."}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "\"Enjoy\" always takes a gerund (-ing form), never \"to + base verb\".",
+      "bn": "\"Enjoy\"-এর পরে সবসময় gerund (-ing form) বসে, \"to + base verb\" কখনো না।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"She decided ___ to the party.\"",
+      "bn": "\"She decided ___ to the party.\""
+    },
+    "options": [
+      {"en": "go", "bn": "go"},
+      {"en": "going", "bn": "going"},
+      {"en": "to go", "bn": "to go"},
+      {"en": "went", "bn": "went"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "\"Decide\" always takes an infinitive (\"to go\").",
+      "bn": "\"Decide\"-এর পরে সবসময় infinitive বসে (\"to go\")।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which sentence recalls a memory of an already-completed action?",
+      "bn": "কোন sentence একটা আগেই শেষ হওয়া কাজের memory recall করে?"
+    },
+    "options": [
+      {"en": "Remember to call her.", "bn": "Remember to call her."},
+      {"en": "Remember calling her.", "bn": "Remember calling her."},
+      {"en": "Remember call her.", "bn": "Remember call her."},
+      {"en": "Remember for calling her.", "bn": "Remember for calling her."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Remember + gerund\" recalls a memory of a past action. \"Remember + infinitive\" is a reminder not to forget a future task.",
+      "bn": "\"Remember + gerund\" past action-এর memory recall করে। \"Remember + infinitive\" future task ভুলে না যাওয়ার reminder।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix: \"I'm interested to learn Spanish.\"",
+      "bn": "ঠিক করো: \"I'm interested to learn Spanish.\""
+    },
+    "options": [
+      {"en": "I'm interested learning Spanish.", "bn": "I'm interested learning Spanish."},
+      {"en": "I'm interested in learning Spanish.", "bn": "I'm interested in learning Spanish."},
+      {"en": "I'm interested for learn Spanish.", "bn": "I'm interested for learn Spanish."},
+      {"en": "I'm interested to learning Spanish.", "bn": "I'm interested to learning Spanish."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "After a preposition like \"in\", the verb must be a gerund, not an infinitive.",
+      "bn": "\"in\"-এর মতো preposition-এর পরে verb অবশ্যই gerund হবে, infinitive না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix: \"She made him to apologise.\"",
+      "bn": "ঠিক করো: \"She made him to apologise.\""
+    },
+    "options": [
+      {"en": "She made him apologise.", "bn": "She made him apologise."},
+      {"en": "She made him apologising.", "bn": "She made him apologising."},
+      {"en": "She made to him apologise.", "bn": "She made to him apologise."},
+      {"en": "She made him for apologise.", "bn": "She made him for apologise."}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "\"Make\" + object is followed by the bare infinitive — no \"to\".",
+      "bn": "\"Make\" + object-এর পরে bare infinitive বসে — \"to\" লাগে না।"
+    }
+  }
+]

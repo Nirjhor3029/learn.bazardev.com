@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "What is the main goal of skimming, as opposed to scanning?",
+      "bn": "Scanning-এর বিপরীতে, skimming-এর মূল goal কী?"
+    },
+    "options": [
+      {"en": "Finding one exact fact or number", "bn": "একটা exact fact বা number খুঁজে পাওয়া"},
+      {"en": "Getting the gist of what each paragraph is about", "bn": "প্রতিটা paragraph কী নিয়ে তার gist পাওয়া"},
+      {"en": "Memorizing the passage word for word", "bn": "Passage-টা word for word মুখস্থ করা"},
+      {"en": "Translating the passage into Bangla", "bn": "Passage-টা বাংলায় translate করা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Skimming builds a quick understanding of each paragraph's topic, not a hunt for one specific detail.",
+      "bn": "Skimming প্রতিটা paragraph-এর topic নিয়ে একটা quick understanding তৈরি করে, একটা specific detail খোঁজা না।"
+    }
+  },
+  {
+    "q": {
+      "en": "When should you switch from skimming to scanning?",
+      "bn": "Skimming থেকে scanning-এ কখন switch করা উচিত?"
+    },
+    "options": [
+      {"en": "Never — always use only one technique", "bn": "কখনো না — সবসময় একটা technique ব্যবহার করো"},
+      {"en": "Once you know exactly what you're looking for, like a name or number", "bn": "একবার তুমি জানলে যে exactly কী খুঁজছ, যেমন একটা নাম বা number"},
+      {"en": "Only after reading the entire passage word by word first", "bn": "শুধু সম্পূর্ণ passage প্রথমে word by word পড়ার পর"},
+      {"en": "Only for the final question of each passage", "bn": "শুধু প্রতিটা passage-এর শেষ question-এর জন্য"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Scanning is targeted searching for something specific — switch to it once a question tells you exactly what to find.",
+      "bn": "Scanning হলো কোনো specific কিছুর জন্য targeted searching — একটা question exactly কী খুঁজতে হবে বললে এটায় switch করো।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the fastest way to locate the right paragraph for a question?",
+      "bn": "একটা question-এর জন্য সঠিক paragraph খুঁজে পাওয়ার fastest উপায় কী?"
+    },
+    "options": [
+      {"en": "Re-read the whole passage from the start", "bn": "শুরু থেকে সম্পূর্ণ passage আবার পড়া"},
+      {"en": "Use the paragraph map built from skimming", "bn": "Skimming থেকে তৈরি করা paragraph map ব্যবহার করা"},
+      {"en": "Guess a random paragraph and check", "bn": "একটা random paragraph guess করে check করা"},
+      {"en": "Ask the examiner for a hint", "bn": "Examiner-কে hint-এর জন্য জিজ্ঞাসা করা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A paragraph map built during skimming lets you jump straight to the relevant paragraph instead of re-scanning everything.",
+      "bn": "Skimming-এর সময় তৈরি করা paragraph map তোমাকে সরাসরি relevant paragraph-এ jump করতে দেয়, সবকিছু আবার scan করার বদলে।"
+    }
+  },
+  {
+    "q": {
+      "en": "With 60 minutes for 40 questions across three passages, should you read every word carefully on your first pass?",
+      "bn": "তিনটা passage জুড়ে ৪০টা question-এর জন্য ৬০ মিনিট থাকলে, প্রথম পাসে কি প্রতিটা শব্দ carefully পড়া উচিত?"
+    },
+    "options": [
+      {"en": "Yes, careful reading is always required first", "bn": "হ্যাঁ, প্রথমে careful reading সবসময় দরকার"},
+      {"en": "No — skim first for structure, then scan for specifics", "bn": "না — প্রথমে structure-এর জন্য skim করো, তারপর specific-এর জন্য scan করো"},
+      {"en": "Only for the first passage", "bn": "শুধু প্রথম passage-এর জন্য"},
+      {"en": "Only if the passage is under 500 words", "bn": "শুধু passage ৫০০ শব্দের কম হলে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "There isn't enough time to read every word carefully — skimming for structure and scanning for specifics is faster and effective.",
+      "bn": "প্রতিটা শব্দ carefully পড়ার জন্য যথেষ্ট সময় নেই — structure-এর জন্য skim এবং specific-এর জন্য scan করা দ্রুত এবং effective।"
+    }
+  },
+  {
+    "q": {
+      "en": "When scanning for a date or number, what should your eyes mainly look for?",
+      "bn": "একটা date বা number scan করার সময়, তোমার চোখ মূলত কী খুঁজবে?"
+    },
+    "options": [
+      {"en": "Every word in the sentence, read carefully", "bn": "Sentence-এর প্রতিটা শব্দ, carefully পড়া"},
+      {"en": "Digits and numerals, skipping the surrounding words", "bn": "Digit এবং numeral, আশেপাশের শব্দ skip করে"},
+      {"en": "Only words in bold or italics", "bn": "শুধু bold বা italics-এ থাকা শব্দ"},
+      {"en": "The first word of every paragraph", "bn": "প্রতিটা paragraph-এর প্রথম শব্দ"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "When scanning for a number or date, let your eyes catch the digits and skip past the words around them.",
+      "bn": "একটা number বা date scan করার সময়, তোমার চোখকে digit ধরতে দাও এবং আশেপাশের শব্দ skip করো।"
+    }
+  }
+]

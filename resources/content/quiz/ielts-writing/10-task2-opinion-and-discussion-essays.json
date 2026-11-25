@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "In the worked opinion essay, which sentence is the thesis?",
+      "bn": "Worked opinion essay-তে কোন sentence-টা thesis?"
+    },
+    "options": [
+      {"en": "\"Many argue that government funds would be better spent...\"", "bn": "\"Many argue that government funds would be better spent...\""},
+      {"en": "\"I completely agree with this view, mainly because public transport reduces congestion more effectively...\"", "bn": "\"I completely agree with this view, mainly because public transport reduces congestion more effectively...\""},
+      {"en": "\"For instance, cities that have expanded their metro networks...\"", "bn": "\"For instance, cities that have expanded their metro networks...\""},
+      {"en": "\"In conclusion, I firmly believe...\"", "bn": "\"In conclusion, I firmly believe...\""}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "This sentence states a clear position and the two reasons that the body paragraphs will develop — exactly what a thesis does.",
+      "bn": "এই sentence একটা clear position বলে এবং দুটো reason উল্লেখ করে যা body paragraph develop করবে — thesis যা করে ঠিক সেটাই।"
+    }
+  },
+  {
+    "q": {
+      "en": "In the discussion essay, where does the writer's own opinion appear?",
+      "bn": "Discussion essay-তে writer-এর নিজের opinion কোথায় আসে?"
+    },
+    "options": [
+      {"en": "In the introduction, before any views are presented", "bn": "Introduction-এ, কোনো view presented হওয়ার আগে"},
+      {"en": "In the conclusion, after both views are presented fairly", "bn": "Conclusion-এ, দুটো view fairly presented হওয়ার পরে"},
+      {"en": "It never appears in a discussion essay", "bn": "Discussion essay-তে এটা কখনো আসে না"},
+      {"en": "In body paragraph 1 only", "bn": "শুধু body paragraph ১-এ"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A discussion essay presents both views fairly first, and only states the writer's opinion at the end, in the conclusion.",
+      "bn": "Discussion essay প্রথমে দুটো view fairly presents করে, writer-এর opinion শুধু শেষে, conclusion-এ আসে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which four-step pattern does each body paragraph in the opinion essay follow?",
+      "bn": "Opinion essay-র প্রতিটা body paragraph কোন চার-step pattern follow করে?"
+    },
+    "options": [
+      {"en": "Question, answer, example, summary", "bn": "Question, answer, example, summary"},
+      {"en": "Topic sentence → because → as a result → example", "bn": "Topic sentence → because → as a result → example"},
+      {"en": "Intro, body, body, conclusion", "bn": "Intro, body, body, conclusion"},
+      {"en": "Paraphrase, thesis, opinion, conclusion", "bn": "Paraphrase, thesis, opinion, conclusion"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "This is the chain-of-reasoning technique from Chapter 9, applied to each body paragraph.",
+      "bn": "এটা Chapter 9-এর chain-of-reasoning technique, প্রতিটা body paragraph-এ applied।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why doesn't the discussion essay's introduction state a firm opinion right away?",
+      "bn": "Discussion essay-র introduction কেন সাথে সাথে একটা firm opinion বলে না?"
+    },
+    "options": [
+      {"en": "Because opinions are never allowed in discussion essays", "bn": "কারণ discussion essay-তে opinion কখনো allowed না"},
+      {"en": "Because a discussion essay must present both views fairly first", "bn": "কারণ discussion essay-তে প্রথমে দুটো view fairly present করতে হয়"},
+      {"en": "Because the introduction is too short for an opinion", "bn": "কারণ introduction opinion-এর জন্য খুব ছোট"},
+      {"en": "Because it would use too many words", "bn": "কারণ এতে বেশি শব্দ লাগবে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Stating an opinion too early would unbalance a discussion essay, which needs to treat both views fairly before concluding.",
+      "bn": "আগে থেকে opinion বলা discussion essay-কে unbalanced করে দেবে, যেখানে conclusion-এর আগে দুটো view-ই fairly treat করতে হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which is the correct self-check before submitting a Task 2 essay?",
+      "bn": "Task 2 essay submit করার আগে কোনটা সঠিক self-check?"
+    },
+    "options": [
+      {"en": "Does the conclusion introduce a brand-new argument?", "bn": "Conclusion কি একটা নতুন argument introduce করে?"},
+      {"en": "Does every body paragraph follow topic sentence → because → as a result → example?", "bn": "প্রতিটা body paragraph কি topic sentence → because → as a result → example follow করে?"},
+      {"en": "Is the introduction copied word-for-word from the question?", "bn": "Introduction কি question থেকে word-for-word copy করা?"},
+      {"en": "Is the essay under 150 words?", "bn": "Essay কি ১৫০ শব্দের নিচে?"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Checking that every body paragraph follows the chain-of-reasoning pattern is one of the key self-checks before submitting.",
+      "bn": "প্রতিটা body paragraph chain-of-reasoning pattern follow করছে কিনা check করা submit করার আগে একটা মূল self-check।"
+    }
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "In the problem-solution essay, which sentence names the main cause of traffic congestion?",
+      "bn": "Problem-solution essay-তে কোন sentence traffic congestion-এর মূল cause নাম বলে?"
+    },
+    "options": [
+      {"en": "\"This essay will examine the main causes...\"", "bn": "\"This essay will examine the main causes...\""},
+      {"en": "\"One of the primary causes of traffic congestion is the rapid growth in private car ownership.\"", "bn": "\"One of the primary causes of traffic congestion is the rapid growth in private car ownership.\""},
+      {"en": "\"London's congestion charge, introduced in 2003...\"", "bn": "\"London's congestion charge, introduced in 2003...\""},
+      {"en": "\"In conclusion, while rising car ownership...\"", "bn": "\"In conclusion, while rising car ownership...\""}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "This is the topic sentence of the causes paragraph, naming the specific cause the rest of the paragraph develops.",
+      "bn": "এটা causes paragraph-এর topic sentence, যেটা specific cause নাম বলে, বাকি paragraph সেটাই develop করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why must each proposed solution connect back to a cause raised earlier?",
+      "bn": "প্রতিটা proposed solution কেন আগে বলা cause-এর সাথে যুক্ত হতে হবে?"
+    },
+    "options": [
+      {"en": "It isn't necessary — solutions can be unrelated", "bn": "এটা দরকার নেই — solution unrelated হতে পারে"},
+      {"en": "A solution that doesn't address a named cause feels disconnected and weakens Task Response", "bn": "আগে বলা cause address না করলে solution disconnected মনে হয় এবং Task Response দুর্বল হয়"},
+      {"en": "It only matters for the word count", "bn": "এটা শুধু word count-এর জন্য matter করে"},
+      {"en": "It affects grammar scoring only", "bn": "এটা শুধু grammar scoring-এ প্রভাব ফেলে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A disconnected solution weakens the logical flow that Task Response and Coherence and Cohesion both reward.",
+      "bn": "একটা disconnected solution logical flow দুর্বল করে, যেটা Task Response এবং Coherence and Cohesion দুটোই reward করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "In an advantage-disadvantage essay, how should the two body paragraphs be balanced?",
+      "bn": "একটা advantage-disadvantage essay-তে দুটো body paragraph কিভাবে balanced হওয়া উচিত?"
+    },
+    "options": [
+      {"en": "Advantages should get almost all the word count", "bn": "Advantages-এ প্রায় সব word count যাওয়া উচিত"},
+      {"en": "Roughly equally, with neither side dominating", "bn": "মোটামুটি সমানভাবে, কোনো side dominate না করে"},
+      {"en": "Disadvantages should always be longer", "bn": "Disadvantages সবসময় লম্বা হওয়া উচিত"},
+      {"en": "It doesn't matter at all", "bn": "এটা মোটেও matter করে না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A balanced advantage-disadvantage essay gives roughly equal space and development to both sides.",
+      "bn": "একটা balanced advantage-disadvantage essay দুই পক্ষকেই মোটামুটি সমান জায়গা এবং development দেয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Should the conclusion of an advantage-disadvantage essay argue strongly for one side, unless the prompt asks for an opinion?",
+      "bn": "Prompt opinion না চাইলে, advantage-disadvantage essay-র conclusion কি কোনো এক পক্ষের জন্য strongly argue করা উচিত?"
+    },
+    "options": [
+      {"en": "Yes, always take a strong side", "bn": "হ্যাঁ, সবসময় একটা strong side নেওয়া উচিত"},
+      {"en": "No — it should stay balanced unless an opinion is explicitly requested", "bn": "না — opinion নির্দিষ্টভাবে না চাওয়া পর্যন্ত এটা balanced থাকা উচিত"},
+      {"en": "Only if the topic is about technology", "bn": "শুধু topic technology নিয়ে হলে"},
+      {"en": "It doesn't matter for scoring", "bn": "Scoring-এর জন্য এটা matter করে না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Unless the prompt explicitly asks for an opinion, the conclusion should stay balanced, matching the body paragraphs.",
+      "bn": "Prompt নির্দিষ্টভাবে opinion না চাইলে, conclusion body paragraph-এর মতোই balanced থাকা উচিত।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which is a vague, weak solution in a problem-solution essay?",
+      "bn": "Problem-solution essay-তে কোনটা একটা vague, weak solution?"
+    },
+    "options": [
+      {"en": "\"Introduce congestion charges in city centres.\"", "bn": "\"Introduce congestion charges in city centres.\""},
+      {"en": "\"Expand bus frequency during peak hours.\"", "bn": "\"Expand bus frequency during peak hours.\""},
+      {"en": "\"People should be more careful.\"", "bn": "\"People should be more careful.\""},
+      {"en": "\"Improve public transport reliability.\"", "bn": "\"Improve public transport reliability.\""}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "\"People should be more careful\" is vague and not a specific, actionable measure, unlike the other options.",
+      "bn": "\"People should be more careful\" vague, এটা একটা specific, actionable measure না, বাকিগুলোর মতো।"
+    }
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "In \"How many hours do adult bats sleep each day?\", which part is the unchangeable keyword worth scanning for?",
+      "bn": "\"How many hours do adult bats sleep each day?\"-এ, কোন অংশ unchangeable keyword যা scan করার মতো?"
+    },
+    "options": [
+      {"en": "\"adult bats\"", "bn": "\"adult bats\""},
+      {"en": "\"sleep\"", "bn": "\"sleep\""},
+      {"en": "\"how many hours\"", "bn": "\"how many hours\""},
+      {"en": "The entire question, word for word", "bn": "সম্পূর্ণ question, word for word"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "\"How many hours\" and the eventual number are unchangeable; \"adult bats\" and \"sleep\" are changeable concepts likely paraphrased.",
+      "bn": "\"How many hours\" এবং eventual number unchangeable; \"adult bats\" এবং \"sleep\" changeable concept যা সম্ভবত paraphrase করা হবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Once you locate the right sentence, is the short-answer typically paraphrased or copied directly?",
+      "bn": "সঠিক sentence খুঁজে পেলে, short-answer সাধারণত paraphrased বা directly copied হয়?"
+    },
+    "options": [
+      {"en": "Always paraphrased into your own words", "bn": "সবসময় নিজের ভাষায় paraphrased"},
+      {"en": "Copied directly from the passage", "bn": "Passage থেকে directly copied"},
+      {"en": "A mix of both, roughly half and half", "bn": "দুটোর mix, মোটামুটি অর্ধেক-অর্ধেক"},
+      {"en": "Never written in the passage at all", "bn": "Passage-এ কখনোই লেখা থাকে না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Once located, short-answer responses are almost always taken word-for-word from the passage, not paraphrased.",
+      "bn": "একবার খুঁজে পেলে, short-answer response প্রায় সবসময় passage থেকে word-for-word নেওয়া হয়, paraphrased না।"
+    }
+  },
+  {
+    "q": {
+      "en": "The limit is \"NO MORE THAN TWO WORDS\" and the answer is \"25 October.\" Is this within the limit?",
+      "bn": "Limit হলো \"NO MORE THAN TWO WORDS\" এবং answer হলো \"25 October.\" এটা কি limit-এর মধ্যে?"
+    },
+    "options": [
+      {"en": "No — it's three words because of the number", "bn": "না — number-এর কারণে এটা তিন শব্দ"},
+      {"en": "Yes — \"25\" and \"October\" count as two words total", "bn": "হ্যাঁ — \"25\" এবং \"October\" মোট দুই শব্দ হিসেবে count হয়"},
+      {"en": "No, numbers are never allowed in answers", "bn": "না, answer-এ number কখনো allowed না"},
+      {"en": "It depends on the examiner's discretion", "bn": "এটা examiner-এর discretion-এর উপর নির্ভর করে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A number counts as one word, so \"25 October\" is exactly two words and fits the limit.",
+      "bn": "একটা number একটা word হিসেবে count হয়, তাই \"25 October\" exactly দুই শব্দ এবং limit-এর মধ্যে ফিট করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Do short-answer questions usually follow the order information appears in the passage?",
+      "bn": "Short-answer question সাধারণত passage-এ information আসার order follow করে?"
+    },
+    "options": [
+      {"en": "No, they're always in random order", "bn": "না, এগুলো সবসময় random order-এ"},
+      {"en": "Yes, almost always — use neighbouring questions as anchors", "bn": "হ্যাঁ, প্রায় সবসময় — পাশের question-কে anchor হিসেবে ব্যবহার করো"},
+      {"en": "Only in General Training, not Academic", "bn": "শুধু General Training-এ, Academic-এ না"},
+      {"en": "Only when there are fewer than five questions", "bn": "শুধু পাঁচটার কম question থাকলে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Like other completion and matching types in this course, short-answer questions almost always follow passage order.",
+      "bn": "এই course-এর অন্য completion এবং matching type-এর মতো, short-answer question প্রায় সবসময় passage order follow করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "You find the correct word in the passage but spell it wrong in your answer. What happens?",
+      "bn": "তুমি passage-এ সঠিক word খুঁজে পাও কিন্তু answer-এ ভুল spell করো। কী হবে?"
+    },
+    "options": [
+      {"en": "You still get the mark since the meaning is right", "bn": "তুমি তাও মার্ক পাবে কারণ meaning সঠিক"},
+      {"en": "You lose the mark — spelling must match the passage exactly", "bn": "তুমি মার্ক হারাবে — spelling-টা passage-এর সাথে exactly মিলতে হবে"},
+      {"en": "You get half a mark for partial credit", "bn": "তুমি partial credit-এর জন্য অর্ধেক মার্ক পাবে"},
+      {"en": "It only matters for words longer than 6 letters", "bn": "এটা শুধু ৬ letter-এর বেশি লম্বা শব্দের জন্য matter করে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Spelling must exactly match the passage — a misspelled correct word still loses the mark, same rule as Chapter 6.",
+      "bn": "Spelling-টা exactly passage-এর সাথে মিলতে হবে — misspelled সঠিক word-ও মার্ক হারায়, Chapter 6-এর একই rule।"
+    }
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Which two of the four scoring criteria does the IELTS Grammar course most directly build?",
+      "bn": "IELTS Grammar কোর্স চারটা scoring criteria-র মধ্যে কোনটার সাথে সবচেয়ে সরাসরি জড়িত?"
+    },
+    "options": [
+      {"en": "Task Achievement and Lexical Resource", "bn": "Task Achievement and Lexical Resource"},
+      {"en": "Grammatical Range and Accuracy (and partly Coherence and Cohesion)", "bn": "Grammatical Range and Accuracy (এবং আংশিকভাবে Coherence and Cohesion)"},
+      {"en": "Only Task Response", "bn": "শুধু Task Response"},
+      {"en": "None of the four criteria", "bn": "চারটার কোনোটাই না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Grammar directly builds Grammatical Range and Accuracy, and chapters like linking words also support Coherence and Cohesion.",
+      "bn": "Grammar সরাসরি Grammatical Range and Accuracy তৈরি করে, এবং linking words-এর মতো চ্যাপ্টার Coherence and Cohesion-কেও সাহায্য করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "If you only have 10 minutes left and haven't started Task 2, what should you prioritise?",
+      "bn": "যদি তোমার হাতে শুধু ১০ মিনিট থাকে আর Task 2 শুরুই না করে থাকো, তাহলে কী priority দেওয়া উচিত?"
+    },
+    "options": [
+      {"en": "Finish perfecting Task 1 first", "bn": "আগে Task 1 পারফেক্ট করা"},
+      {"en": "Start Task 2 immediately", "bn": "সাথে সাথে Task 2 শুরু করা"},
+      {"en": "Re-check your grammar on Task 1 only", "bn": "শুধু Task 1-এর grammar re-check করা"},
+      {"en": "Skip both and plan the next test", "bn": "দুটোই skip করে পরের test-এর প্ল্যান করা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Task 2 is worth 66% of the Writing score, double Task 1's 33%, so it must be prioritised.",
+      "bn": "Task 2, Writing score-এর ৬৬% — Task 1-এর ৩৩%-এর দ্বিগুণ, তাই এটাই priority পাওয়া উচিত।"
+    }
+  },
+  {
+    "q": {
+      "en": "True or false: Task 1 should include your personal opinion on the data.",
+      "bn": "সত্য না মিথ্যা: Task 1-এ data নিয়ে তোমার নিজের opinion দেওয়া উচিত।"
+    },
+    "options": [
+      {"en": "True", "bn": "সত্য"},
+      {"en": "False", "bn": "মিথ্যা"},
+      {"en": "Only in General Training", "bn": "শুধু General Training-এ"},
+      {"en": "Only if the chart shows a trend", "bn": "শুধু chart-এ trend দেখালে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Task 1 asks for an objective description of the data, not a personal opinion — that's Task 2's job.",
+      "bn": "Task 1 data-র objective description চায়, personal opinion না — সেটা Task 2-র কাজ।"
+    }
+  },
+  {
+    "q": {
+      "en": "A Task 2 question asks you to discuss both views and give your opinion. You only discuss both views. What happens to your score?",
+      "bn": "একটা Task 2 question বলে both views discuss করতে আর opinion দিতে। তুমি শুধু both views discuss করলে। তোমার score-এ কী হবে?"
+    },
+    "options": [
+      {"en": "Nothing — only grammar matters", "bn": "কিছু হবে না — শুধু grammar matter করে"},
+      {"en": "It's capped lower on Task Response, regardless of writing quality elsewhere", "bn": "Task Response-এ score কমে যাবে, বাকি লেখার quality যতই ভালো হোক না কেন"},
+      {"en": "It automatically fails the whole test", "bn": "পুরো test automatically fail হয়ে যাবে"},
+      {"en": "The examiner will ask you to rewrite it", "bn": "Examiner তোমাকে আবার লিখতে বলবে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Missing part of the question is penalised on Task Response specifically, no matter how well-written the rest is.",
+      "bn": "Question-এর কোনো part miss করলে Task Response-এ নির্দিষ্টভাবে penalty পড়ে, বাকিটা যতই ভালো লেখা হোক না কেন।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is Task 1's \"golden rule\"?",
+      "bn": "Task 1-এর \"golden rule\" কী?"
+    },
+    "options": [
+      {"en": "Give a strong personal opinion", "bn": "একটা strong personal opinion দেওয়া"},
+      {"en": "Describe the data; don't explain why it happened or give an opinion", "bn": "Data বর্ণনা করো; কেন হলো সেটা explain করো না বা opinion দিও না"},
+      {"en": "Use as many complex words as possible", "bn": "যত বেশি সম্ভব complex word ব্যবহার করা"},
+      {"en": "Write at least 400 words", "bn": "কমপক্ষে ৪০০ শব্দ লেখা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Task 1's job is an objective report of visual data — describing, not explaining or opining.",
+      "bn": "Task 1-এর কাজ visual data-র objective report — describe করা, explain বা opine করা না।"
+    }
+  }
+]

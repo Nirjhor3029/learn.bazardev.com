@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Which accent is always used for single-speaker sections like Section 4?",
+      "bn": "Section 4-এর মতো single-speaker section-এ সবসময় কোন accent ব্যবহার হয়?"
+    },
+    "options": [
+      {"en": "Australian English", "bn": "Australian English"},
+      {"en": "British English", "bn": "British English"},
+      {"en": "North American English", "bn": "North American English"},
+      {"en": "It changes randomly every test", "bn": "এটা প্রতিটা test-এ randomly change হয়"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "British English is the most common accent in the test and is standard for single-speaker, solo monologue sections.",
+      "bn": "British English test-এ সবচেয়ে common accent এবং single-speaker, solo monologue section-এর জন্য standard।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"However\" and \"as a result\" are examples of which kind of signposting language?",
+      "bn": "\"However\" এবং \"as a result\" কোন ধরনের signposting language-এর example?"
+    },
+    "options": [
+      {"en": "Order signposting", "bn": "Order signposting"},
+      {"en": "Relation signposting", "bn": "Relation signposting"},
+      {"en": "Accent signposting", "bn": "Accent signposting"},
+      {"en": "Numerical signposting", "bn": "Numerical signposting"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Relation signposts like \"however\" and \"as a result\" show how the current idea connects to the previous one.",
+      "bn": "\"However\" এবং \"as a result\"-এর মতো relation signpost দেখায় কীভাবে current idea আগের idea-র সাথে connect হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What should you do during the short pause between Listening sections?",
+      "bn": "Listening section-গুলোর মধ্যে ছোট pause-এর সময় কী করা উচিত?"
+    },
+    "options": [
+      {"en": "Review your answers from the section you just finished", "bn": "তুমি just সম্পূর্ণ করা section-এর answer review করা"},
+      {"en": "Read ahead and predict the next section's answers", "bn": "আগে পড়া এবং পরের section-এর answer predict করা"},
+      {"en": "Rest your eyes and think about something else", "bn": "চোখ বিশ্রাম দেওয়া এবং অন্য কিছু ভাবা"},
+      {"en": "Nothing — the pause is too short to matter", "bn": "কিছুই না — pause matter করার জন্য খুব ছোট"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Using the pause to read ahead and predict the next section's answers is far more valuable than reviewing past answers.",
+      "bn": "Pause-টা পরের section-এর answer আগে পড়ে predict করার জন্য ব্যবহার করা, আগের answer review করার চেয়ে অনেক বেশি valuable।"
+    }
+  },
+  {
+    "q": {
+      "en": "You miss a question in Section 3. What should you do?",
+      "bn": "Section 3-এ একটা question miss করো। কী করা উচিত?"
+    },
+    "options": [
+      {"en": "Stop and try to recall it before moving on", "bn": "থেমে গিয়ে এগোনোর আগে এটা recall করার চেষ্টা করা"},
+      {"en": "Let it go immediately — the audio doesn't pause", "bn": "অবিলম্বে এটা ছেড়ে দেওয়া — audio pause করে না"},
+      {"en": "Skip the rest of Section 3 entirely", "bn": "সম্পূর্ণ Section 3 skip করা"},
+      {"en": "Wait for Section 4 to repeat the missed information", "bn": "Section 4 missed information repeat করবে বলে wait করা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Dwelling on a missed question costs you the next few answers, since the audio keeps moving regardless — let it go and refocus immediately.",
+      "bn": "একটা missed question নিয়ে থাকলে পরের কয়েকটা answer-ও miss হয়, কারণ audio চলতেই থাকে — অবিলম্বে এটা ছেড়ে দিয়ে refocus করো।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why is it a mistake to only practise Listening with one accent, like British?",
+      "bn": "শুধু একটা accent, যেমন British, দিয়ে Listening practice করা কেন একটা mistake?"
+    },
+    "options": [
+      {"en": "The test only ever uses British accents, so practice is unnecessary", "bn": "Test সবসময় শুধু British accent ব্যবহার করে, তাই practice দরকার নেই"},
+      {"en": "The test uses four accent families: British, Australian, New Zealand, and North American", "bn": "Test চারটা accent family ব্যবহার করে: British, Australian, New Zealand, এবং North American"},
+      {"en": "Accents never affect comprehension in a listening test", "bn": "Accent কখনো listening test-এ comprehension-কে affect করে না"},
+      {"en": "Only Section 1 uses accents other than British", "bn": "শুধু Section 1-এ British ছাড়া অন্য accent ব্যবহার হয়"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The test draws on British, Australian, New Zealand, and North American accents, so regular exposure to all four is important preparation.",
+      "bn": "Test British, Australian, New Zealand, এবং North American accent ব্যবহার করে, তাই চারটাতেই regular exposure গুরুত্বপূর্ণ preparation।"
+    }
+  }
+]

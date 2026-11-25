@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "\"Doctors made an early ___ after running several tests.\"",
+      "bn": "\"Doctors made an early ___ after running several tests.\""
+    },
+    "options": [
+      {"en": "diagnose", "bn": "diagnose"},
+      {"en": "diagnosis", "bn": "diagnosis"},
+      {"en": "diagnostic", "bn": "diagnostic"},
+      {"en": "diagnosed", "bn": "diagnosed"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Diagnosis\" is the noun form, needed here after \"an early\".",
+      "bn": "\"Diagnosis\" noun form, \"an early\"-এর পরে এটাই লাগবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"A ___ lifestyle significantly increases the risk of heart disease.\"",
+      "bn": "\"A ___ lifestyle significantly increases the risk of heart disease.\""
+    },
+    "options": [
+      {"en": "sudden", "bn": "sudden"},
+      {"en": "sedentary", "bn": "sedentary"},
+      {"en": "chronic", "bn": "chronic"},
+      {"en": "diagnostic", "bn": "diagnostic"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Sedentary\" describes a lifestyle involving little physical activity, which raises heart disease risk.",
+      "bn": "\"Sedentary\" মানে কম physical activity-যুক্ত lifestyle, যা heart disease-এর risk বাড়ায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which pair contrasts stopping illness before it happens with treating it afterward?",
+      "bn": "কোন pair অসুখ হওয়ার আগে থামানো আর পরে treat করার মধ্যে contrast দেখায়?"
+    },
+    "options": [
+      {"en": "acute vs. chronic illness", "bn": "acute vs. chronic illness"},
+      {"en": "preventive vs. curative care", "bn": "preventive vs. curative care"},
+      {"en": "physical vs. mental health", "bn": "physical vs. mental health"},
+      {"en": "diagnosis vs. treatment", "bn": "diagnosis vs. treatment"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Preventive\" care stops illness before it happens; \"curative\" care treats it after it has occurred.",
+      "bn": "\"Preventive\" care অসুখ হওয়ার আগে থামায়; \"curative\" care হয়ে যাওয়ার পরে treat করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"Washing hands regularly is one of the simplest ___ measures.\"",
+      "bn": "\"Washing hands regularly is one of the simplest ___ measures.\""
+    },
+    "options": [
+      {"en": "curative", "bn": "curative"},
+      {"en": "preventive", "bn": "preventive"},
+      {"en": "diagnostic", "bn": "diagnostic"},
+      {"en": "chronic", "bn": "chronic"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Preventive measures\" is the fixed collocation for actions taken to stop illness before it occurs.",
+      "bn": "\"Preventive measures\" fixed collocation, অসুখ হওয়ার আগে নেওয়া পদক্ষেপের জন্য।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which is a short-term, sudden illness, as opposed to a long-lasting one?",
+      "bn": "কোনটা একটা short-term, sudden illness, long-lasting-এর বিপরীতে?"
+    },
+    "options": [
+      {"en": "chronic illness", "bn": "chronic illness"},
+      {"en": "acute illness", "bn": "acute illness"},
+      {"en": "underlying condition", "bn": "underlying condition"},
+      {"en": "stress-related illness", "bn": "stress-related illness"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Acute\" illness is sudden and short-term, while \"chronic\" illness is long-lasting or recurring.",
+      "bn": "\"Acute\" illness sudden এবং short-term, আর \"chronic\" illness long-lasting বা recurring।"
+    }
+  }
+]

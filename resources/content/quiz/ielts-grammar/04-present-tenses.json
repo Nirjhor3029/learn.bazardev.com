@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "\"I ___ an email right now — can you wait a minute?\"",
+      "bn": "\"I ___ an email right now — can you wait a minute?\""
+    },
+    "options": [
+      {"en": "write", "bn": "write"},
+      {"en": "am writing", "bn": "am writing"},
+      {"en": "have written", "bn": "have written"},
+      {"en": "have been writing", "bn": "have been writing"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Happening at this exact moment → present continuous.",
+      "bn": "এই মুহূর্তে ঘটছে → present continuous।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"Water ___ at 100°C.\" Which tense, and why?",
+      "bn": "\"Water ___ at 100°C.\" কোন tense, কেন?"
+    },
+    "options": [
+      {"en": "is boiling — present continuous, it's happening now", "bn": "is boiling — present continuous, এখনই ঘটছে"},
+      {"en": "boils — present simple, a general fact", "bn": "boils — present simple, general fact"},
+      {"en": "has boiled — present perfect, an experience", "bn": "has boiled — present perfect, experience"},
+      {"en": "has been boiling — present perfect continuous", "bn": "has been boiling — present perfect continuous"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "This is a general fact, always true, not a one-time event — present simple.",
+      "bn": "এটা একটা general fact, সবসময় সত্য, one-time event না — present simple।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix the mistake: \"I have finished my homework yesterday.\"",
+      "bn": "ভুলটা ঠিক করো: \"I have finished my homework yesterday.\""
+    },
+    "options": [
+      {"en": "It's already correct", "bn": "এটা already ঠিক আছে"},
+      {"en": "I finished my homework yesterday.", "bn": "I finished my homework yesterday."},
+      {"en": "I have finish my homework yesterday.", "bn": "I have finish my homework yesterday."},
+      {"en": "I am finishing my homework yesterday.", "bn": "I am finishing my homework yesterday."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Yesterday\" is a specific time word, so it must be past simple, never present perfect.",
+      "bn": "\"Yesterday\" একটা specific time word, তাই এটা past simple হতে হবে, present perfect না।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"She ___ here for six months.\" Which tense best fits (emphasising the ongoing duration)?",
+      "bn": "\"She ___ here for six months.\" কোন tense ঠিক (duration-এর উপর জোর দিয়ে)?"
+    },
+    "options": [
+      {"en": "works", "bn": "works"},
+      {"en": "is working", "bn": "is working"},
+      {"en": "has been working", "bn": "has been working"},
+      {"en": "worked", "bn": "worked"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Present perfect continuous emphasises an ongoing duration (\"for six months\") that is still true now.",
+      "bn": "Present perfect continuous একটা চলমান duration-এর (\"for six months\") উপর জোর দেয় যেটা এখনো সত্য।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix the mistake: \"I am understanding the lesson now.\"",
+      "bn": "ভুলটা ঠিক করো: \"I am understanding the lesson now.\""
+    },
+    "options": [
+      {"en": "It's already correct", "bn": "এটা already ঠিক আছে"},
+      {"en": "I understand the lesson now.", "bn": "I understand the lesson now."},
+      {"en": "I have understood the lesson now.", "bn": "I have understood the lesson now."},
+      {"en": "I understanding the lesson now.", "bn": "I understanding the lesson now."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Understand\" is a stative verb (like know, want, believe) — it doesn't take the -ing continuous form.",
+      "bn": "\"Understand\" একটা stative verb (know, want, believe-এর মতো) — এটা -ing continuous form নেয় না।"
+    }
+  }
+]

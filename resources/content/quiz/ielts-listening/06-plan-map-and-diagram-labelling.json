@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Why is it important to catch the starting point before a route description begins?",
+      "bn": "একটা route description শুরু হওয়ার আগে starting point ধরা কেন গুরুত্বপূর্ণ?"
+    },
+    "options": [
+      {"en": "It's not important — you can figure it out later", "bn": "এটা গুরুত্বপূর্ণ না — তুমি পরে এটা বুঝতে পারবে"},
+      {"en": "The whole route is described relative to it", "bn": "সম্পূর্ণ route এটার relative হিসেবে describe করা হয়"},
+      {"en": "It determines the word limit for the answer", "bn": "এটা answer-এর word limit নির্ধারণ করে"},
+      {"en": "It's only relevant for diagram labelling, not maps", "bn": "এটা শুধু diagram labelling-এর জন্য relevant, map-এর জন্য না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The speaker describes the whole route relative to the starting point, so missing it makes the rest of the directions hard to follow.",
+      "bn": "Speaker সম্পূর্ণ route starting point-এর relative হিসেবে describe করে, তাই এটা miss করলে বাকি direction follow করা কঠিন হয়ে যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "The plan has no compass rose shown. Where should you assume north is?",
+      "bn": "Plan-এ কোনো compass rose দেখানো নেই। North কোথায় ধরে নেওয়া উচিত?"
+    },
+    "options": [
+      {"en": "At the bottom of the plan", "bn": "Plan-এর নিচে"},
+      {"en": "At the top of the plan, with east to the right", "bn": "Plan-এর উপরে, এবং east ডানে"},
+      {"en": "It cannot be determined at all", "bn": "এটা কোনোভাবেই নির্ধারণ করা যায় না"},
+      {"en": "Always to the left of the plan", "bn": "সবসময় plan-এর বামে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Unless a compass rose is shown, assume north is at the top and east is to the right, the default for most IELTS maps.",
+      "bn": "কোনো compass rose দেখানো না থাকলে, ধরে নাও north উপরে এবং east ডানে, অধিকাংশ IELTS map-এর default।"
+    }
+  },
+  {
+    "q": {
+      "en": "You lose track of the route for a moment while listening. What should you do?",
+      "bn": "শোনার সময় একটু route-এর track হারিয়ে ফেলো। কী করা উচিত?"
+    },
+    "options": [
+      {"en": "Stop and try to reconstruct it from memory afterward", "bn": "থেমে গিয়ে পরে memory থেকে এটা reconstruct করার চেষ্টা করা"},
+      {"en": "Pick up the next direction word, like \"then\" or \"after that,\" and rejoin", "bn": "পরের direction word ধরা, যেমন \"then\" বা \"after that,\" এবং rejoin করা"},
+      {"en": "Mark the whole question as unanswerable", "bn": "সম্পূর্ণ question-টা unanswerable মার্ক করা"},
+      {"en": "Switch immediately to the next question", "bn": "অবিলম্বে পরের question-এ switch করা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Picking up the next sequencing word and rejoining the route in real time works better than trying to reconstruct the path from memory.",
+      "bn": "পরের sequencing word ধরে real time-এ route rejoin করা, memory থেকে path reconstruct করার চেষ্টার চেয়ে ভালো কাজ করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Do strict word-limit rules usually apply to plan/map/diagram labelling answers?",
+      "bn": "Plan/map/diagram labelling answer-এ কি strict word-limit rule সাধারণত apply হয়?"
+    },
+    "options": [
+      {"en": "Yes, always exactly two words", "bn": "হ্যাঁ, সবসময় exactly দুই শব্দ"},
+      {"en": "Generally no — you're usually choosing a letter, not writing a word", "bn": "সাধারণত না — তুমি সাধারণত একটা letter choose করো, একটা word লেখো না"},
+      {"en": "Yes, exactly the same rule as sentence completion", "bn": "হ্যাঁ, sentence completion-এর ঠিক একই rule"},
+      {"en": "It depends on whether the task is a map or a diagram", "bn": "এটা নির্ভর করে task-টা map না diagram তার উপর"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "This question type usually asks you to select a letter matching a location, so word-limit rules generally don't apply.",
+      "bn": "এই question type সাধারণত একটা location-এর সাথে মেলা letter select করতে বলে, তাই word-limit rule সাধারণত apply হয় না।"
+    }
+  },
+  {
+    "q": {
+      "en": "For diagram labelling specifically (not a map), what kind of language should you listen for?",
+      "bn": "Specifically diagram labelling-এর জন্য (map না), কোন ধরনের language শোনা উচিত?"
+    },
+    "options": [
+      {"en": "Compass directions like north and south only", "bn": "শুধু north এবং south-এর মতো compass direction"},
+      {"en": "Shape and part descriptions like \"this part\" or \"the segment that\"", "bn": "\"this part\" বা \"the segment that\"-এর মতো shape এবং part description"},
+      {"en": "Only numbers and prices", "bn": "শুধু number এবং price"},
+      {"en": "Names of people only", "bn": "শুধু মানুষের নাম"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Diagrams are often described using shape and part language like \"this part,\" \"the segment that,\" or \"the bit which,\" rather than compass directions.",
+      "bn": "Diagram প্রায়ই shape এবং part language দিয়ে describe করা হয়, যেমন \"this part,\" \"the segment that,\" বা \"the bit which,\" compass direction-এর বদলে।"
+    }
+  }
+]

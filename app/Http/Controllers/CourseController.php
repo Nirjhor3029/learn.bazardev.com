@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contribution;
 use App\Models\CoursePricing;
+use App\Models\Entitlement;
 use App\Services\CourseContent;
 use App\Services\Entitlements;
 use App\Services\Exam;
@@ -26,10 +27,22 @@ class CourseController extends Controller
     {
         $user = $request->user();
 
+        // One query for every active entitlement, so "is this paid course
+        // already mine" doesn't cost a query per card.
+        $active = $user ? $this->entitlements->activeFor($user) : collect();
+        $ownedCourses = $active->where('product_type', Entitlement::COURSE)->pluck('product_key')->all();
+        $hasSubscription = $active->contains('product_type', Entitlement::SUBSCRIPTION_ALL_ACCESS);
+
         return view('home', [
             'courses' => $this->content->courses(),
             'progress' => $user ? $this->learning->progress($user) : [],
             'resume' => $user ? $this->learning->resume($user) : null,
+            // One query for every course's pricing row, so the "Paid" badge on
+            // each card doesn't cost an extra query per course (no row = free,
+            // same rule as CoursePricing::isFree()).
+            'pricing' => CoursePricing::query()->get()->keyBy('course_slug'),
+            'ownedCourses' => $ownedCourses,
+            'hasSubscription' => $hasSubscription,
         ]);
     }
 

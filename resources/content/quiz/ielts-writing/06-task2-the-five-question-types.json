@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "\"Discuss both views and give your opinion\" — which essay type is this?",
+      "bn": "\"Discuss both views and give your opinion\" — এটা কোন essay type?"
+    },
+    "options": [
+      {"en": "Opinion", "bn": "Opinion"},
+      {"en": "Discussion", "bn": "Discussion"},
+      {"en": "Problem-solution", "bn": "Problem-solution"},
+      {"en": "Advantage-disadvantage", "bn": "Advantage-disadvantage"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Discuss both views and give your opinion\" is the exact trigger phrase for a discussion essay.",
+      "bn": "\"Discuss both views and give your opinion\" discussion essay-র exact trigger phrase।"
+    }
+  },
+  {
+    "q": {
+      "en": "A prompt asks \"Why do you think this is happening? What measures could be taken to address it?\" — which type?",
+      "bn": "একটা prompt জিজ্ঞেস করে \"Why do you think this is happening? What measures could be taken to address it?\" — এটা কোন type?"
+    },
+    "options": [
+      {"en": "Opinion", "bn": "Opinion"},
+      {"en": "Advantage-disadvantage", "bn": "Advantage-disadvantage"},
+      {"en": "Two-part (direct question)", "bn": "Two-part (direct question)"},
+      {"en": "Discussion", "bn": "Discussion"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Two separate direct questions in one prompt means both need a direct answer — this is the two-part type.",
+      "bn": "একটা prompt-এ দুটো আলাদা direct question মানে দুটোরই সরাসরি উত্তর দিতে হবে — এটাই two-part type।"
+    }
+  },
+  {
+    "q": {
+      "en": "In a discussion essay, if you only argue your own opinion and ignore the opposing view, what happens?",
+      "bn": "একটা discussion essay-তে যদি শুধু নিজের opinion argue করো আর opposing view ignore করো, কী হবে?"
+    },
+    "options": [
+      {"en": "Nothing — it's still a complete answer", "bn": "কিছুই না — এটা তাও একটা complete answer"},
+      {"en": "You lose marks on Task Response, since both views are required", "bn": "Task Response-এ মার্ক কমে যাবে, কারণ দুটো view-ই দরকার"},
+      {"en": "You automatically get a higher score for having a strong opinion", "bn": "Strong opinion থাকার জন্য automatically বেশি score পাবে"},
+      {"en": "The examiner ignores Task Response entirely", "bn": "Examiner Task Response সম্পূর্ণ ignore করে দেবে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A discussion prompt specifically requires both views to be discussed — skipping one loses Task Response marks.",
+      "bn": "Discussion prompt নির্দিষ্টভাবে দুটো view discuss করা চায় — একটা skip করলে Task Response-এর মার্ক কমে যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Does an advantage-disadvantage essay always need your personal opinion?",
+      "bn": "একটা advantage-disadvantage essay-তে কি সবসময় নিজের personal opinion দরকার?"
+    },
+    "options": [
+      {"en": "Yes, always", "bn": "হ্যাঁ, সবসময়"},
+      {"en": "No — only if the prompt explicitly asks for one", "bn": "না — শুধু prompt নির্দিষ্টভাবে চাইলে"},
+      {"en": "Only in General Training", "bn": "শুধু General Training-এ"},
+      {"en": "Only for environmental topics", "bn": "শুধু environmental topic-এর জন্য"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Unless the prompt explicitly asks for an opinion, an advantage-disadvantage essay should stay balanced and objective.",
+      "bn": "Prompt নির্দিষ্টভাবে opinion না চাইলে, advantage-disadvantage essay balanced আর objective থাকা উচিত।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which is a problem with a problem-solution essay that says \"people should be more careful\"?",
+      "bn": "একটা problem-solution essay যেখানে বলা হয় \"people should be more careful\" — এটার সমস্যা কী?"
+    },
+    "options": [
+      {"en": "It's grammatically incorrect", "bn": "এটা grammatically ভুল"},
+      {"en": "It's too vague — a strong answer needs specific, realistic solutions", "bn": "এটা খুব vague — ভালো answer-এ specific, realistic solution লাগে"},
+      {"en": "It uses the wrong tense", "bn": "এটা ভুল tense ব্যবহার করে"},
+      {"en": "It's not a complete sentence", "bn": "এটা একটা complete sentence না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Vague solutions like \"be more careful\" score poorly — specific measures (e.g., \"stricter fines\", \"mandatory training\") are needed.",
+      "bn": "\"be more careful\"-এর মতো vague solution কম score পায় — specific measure (যেমন \"stricter fines\", \"mandatory training\") দরকার।"
+    }
+  }
+]

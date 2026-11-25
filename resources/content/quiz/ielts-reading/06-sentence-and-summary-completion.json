@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "The instructions say \"NO MORE THAN TWO WORDS.\" You write a correct three-word phrase. What's your score for that question?",
+      "bn": "Instruction বলে \"NO MORE THAN TWO WORDS.\" তুমি একটা সঠিক তিন-শব্দের phrase লিখেছ। সেই question-এ score কত?"
+    },
+    "options": [
+      {"en": "Full marks, since the meaning is correct", "bn": "পূর্ণ মার্ক, কারণ meaning সঠিক"},
+      {"en": "Zero — exceeding the word limit scores nothing", "bn": "শূন্য — word limit অতিক্রম করলে কিছুই পাওয়া যায় না"},
+      {"en": "Half marks for partial credit", "bn": "আংশিক credit-এর জন্য অর্ধেক মার্ক"},
+      {"en": "It depends on the examiner's judgment", "bn": "এটা examiner-এর judgment-এর উপর নির্ভর করে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Exceeding the word limit scores zero, even with a perfectly correct meaning — this is a strict mechanical rule.",
+      "bn": "Word limit অতিক্রম করলে score শূন্য হয়, meaning সম্পূর্ণ সঠিক হলেও — এটা একটা strict mechanical rule।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"The population grew ___ between 1990 and 2000.\" What part of speech fits the gap?",
+      "bn": "\"The population grew ___ between 1990 and 2000.\" Gap-এ কোন part of speech বসবে?"
+    },
+    "options": [
+      {"en": "A noun", "bn": "একটা noun"},
+      {"en": "An adverb", "bn": "একটা adverb"},
+      {"en": "A preposition", "bn": "একটা preposition"},
+      {"en": "A pronoun", "bn": "একটা pronoun"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The gap follows a verb (\"grew\"), so it needs an adverb like \"rapidly\" or \"steadily\" — not a noun.",
+      "bn": "Gap-টা একটা verb-এর (\"grew\") পরে আসে, তাই এখানে \"rapidly\" বা \"steadily\"-র মতো adverb লাগবে — noun না।"
+    }
+  },
+  {
+    "q": {
+      "en": "If a summary completion task gives you a word bank, does spelling matter?",
+      "bn": "যদি একটা summary completion task-এ word bank দেওয়া থাকে, spelling কি matter করে?"
+    },
+    "options": [
+      {"en": "Yes, spelling is still at risk", "bn": "হ্যাঁ, spelling তাও risk-এ থাকে"},
+      {"en": "No — you select the exact word from the list, so spelling is never at risk", "bn": "না — তুমি list থেকে exact word select করো, তাই spelling কখনো risk-এ থাকে না"},
+      {"en": "Only for words longer than 6 letters", "bn": "শুধু ৬ letter-এর বেশি লম্বা শব্দের জন্য"},
+      {"en": "Only in General Training", "bn": "শুধু General Training-এ"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "With a word bank, you choose from a provided list, so spelling is never an issue — unlike finding words yourself in the passage.",
+      "bn": "Word bank থাকলে, তুমি দেওয়া list থেকে choose করো, তাই spelling কখনো সমস্যা হয় না — passage থেকে নিজে শব্দ খুঁজে বের করার মতো না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Without a word bank, what happens if you find the right word but misspell it?",
+      "bn": "Word bank না থাকলে, যদি সঠিক শব্দ খুঁজে পাও কিন্তু misspell করো, কী হবে?"
+    },
+    "options": [
+      {"en": "You still get the mark, since the meaning is right", "bn": "তুমি তাও মার্ক পাবে, কারণ meaning সঠিক"},
+      {"en": "You lose the mark — spelling must match the passage exactly", "bn": "তুমি মার্ক হারাবে — spelling-টা passage-এর সাথে exactly মিলতে হবে"},
+      {"en": "You get half a mark", "bn": "তুমি অর্ধেক মার্ক পাবে"},
+      {"en": "The examiner corrects it automatically", "bn": "Examiner automatically এটা ঠিক করে দেয়"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "When you must find the word yourself, spelling must exactly match the passage — a misspelled correct word still loses the mark.",
+      "bn": "যখন তোমাকে নিজে শব্দ খুঁজে বের করতে হয়, spelling-টা passage-এর সাথে exactly মিলতে হবে — misspelled সঠিক শব্দও মার্ক হারায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Should you expect the summary to repeat the passage's exact wording?",
+      "bn": "Summary-তে কি passage-এর exact wording পুনরাবৃত্তি হবে বলে আশা করা উচিত?"
+    },
+    "options": [
+      {"en": "Yes, it's always word-for-word", "bn": "হ্যাঁ, এটা সবসময় word-for-word"},
+      {"en": "No — the summary is almost always paraphrased", "bn": "না — summary প্রায় সবসময় paraphrased"},
+      {"en": "Only in sentence completion, not summary completion", "bn": "শুধু sentence completion-এ, summary completion-এ না"},
+      {"en": "Only for short passages", "bn": "শুধু ছোট passage-এর জন্য"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The summary is almost always paraphrased, so recognising synonyms is more useful than hunting for identical phrases.",
+      "bn": "Summary প্রায় সবসময় paraphrased থাকে, তাই synonym চেনা identical phrase খোঁজার চেয়ে বেশি useful।"
+    }
+  }
+]

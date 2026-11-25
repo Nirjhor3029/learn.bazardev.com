@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "\"Parliament ___ new legislation to tighten environmental standards.\"",
+      "bn": "\"Parliament ___ new legislation to tighten environmental standards.\""
+    },
+    "options": [
+      {"en": "pass", "bn": "pass"},
+      {"en": "passed", "bn": "passed"},
+      {"en": "passing", "bn": "passing"},
+      {"en": "passes", "bn": "passes"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Passed\" is the past simple form, needed for this completed past action.",
+      "bn": "\"Passed\" past simple form, এই completed past action-এর জন্য এটাই লাগবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"The minister resigned following allegations of ___.\"",
+      "bn": "\"The minister resigned following allegations of ___.\""
+    },
+    "options": [
+      {"en": "legislation", "bn": "legislation"},
+      {"en": "corruption", "bn": "corruption"},
+      {"en": "turnout", "bn": "turnout"},
+      {"en": "apathy", "bn": "apathy"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Allegations of corruption\" is the standard collocation for accusations of dishonest or illegal conduct.",
+      "bn": "\"Allegations of corruption\" standard collocation, অসৎ বা অবৈধ আচরণের অভিযোগের জন্য।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which pair contrasts elected leadership with centralised, restricted power?",
+      "bn": "কোন pair elected leadership আর centralised, restricted power-এর মধ্যে contrast দেখায়?"
+    },
+    "options": [
+      {"en": "left-wing vs. right-wing politics", "bn": "left-wing vs. right-wing politics"},
+      {"en": "democracy vs. authoritarian regime", "bn": "democracy vs. authoritarian regime"},
+      {"en": "centralised vs. decentralised government", "bn": "centralised vs. decentralised government"},
+      {"en": "government vs. legislation", "bn": "government vs. legislation"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A \"democracy\" has elected leaders and protected civil liberties; an \"authoritarian regime\" has centralised, restricted power.",
+      "bn": "\"Democracy\"-তে elected leader এবং civil liberties protected থাকে; \"authoritarian regime\"-এ power centralised এবং restricted।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"Voter ___ was notably low in the last election.\"",
+      "bn": "\"Voter ___ was notably low in the last election.\""
+    },
+    "options": [
+      {"en": "apathy", "bn": "apathy"},
+      {"en": "turnout", "bn": "turnout"},
+      {"en": "legislation", "bn": "legislation"},
+      {"en": "stability", "bn": "stability"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Voter turnout\" refers to the proportion of eligible voters who actually voted.",
+      "bn": "\"Voter turnout\" মানে ভোট দেওয়ার যোগ্য মানুষদের মধ্যে আসলে কতজন ভোট দিয়েছে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which word family member fits: \"The agency is a ___ body responsible for enforcing health regulations.\" (govern / government / governmental)",
+      "bn": "কোন word family member ঠিক বসবে: \"The agency is a ___ body responsible for enforcing health regulations.\" (govern / government / governmental)"
+    },
+    "options": [
+      {"en": "govern", "bn": "govern"},
+      {"en": "government", "bn": "government"},
+      {"en": "governmental", "bn": "governmental"},
+      {"en": "governed", "bn": "governed"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "\"Governmental\" is the adjective form, needed here to describe the type of \"body\".",
+      "bn": "\"Governmental\" adjective form, \"body\"-র ধরন বর্ণনা করতে এটাই লাগবে।"
+    }
+  }
+]

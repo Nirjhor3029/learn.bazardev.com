@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "\"The factory increased its ___ of cars by 20% this year.\"",
+      "bn": "\"The factory increased its ___ of cars by 20% this year.\""
+    },
+    "options": [
+      {"en": "produce", "bn": "produce"},
+      {"en": "production", "bn": "production"},
+      {"en": "productive", "bn": "productive"},
+      {"en": "producer", "bn": "producer"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Production\" is the noun form, needed here after \"its\".",
+      "bn": "\"Production\" noun form, \"its\"-এর পরে এটাই লাগবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"Hundreds of workers were made ___ after the factory closed.\"",
+      "bn": "\"Hundreds of workers were made ___ after the factory closed.\""
+    },
+    "options": [
+      {"en": "redundant", "bn": "redundant"},
+      {"en": "recession", "bn": "recession"},
+      {"en": "employable", "bn": "employable"},
+      {"en": "productive", "bn": "productive"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "\"Made redundant\" means losing a job because it's no longer needed.",
+      "bn": "\"Made redundant\" মানে চাকরি হারানো কারণ সেটা আর প্রয়োজন নেই।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which stage of the business cycle follows a recession?",
+      "bn": "Business cycle-এ recession-এর পরে কোন stage আসে?"
+    },
+    "options": [
+      {"en": "Boom", "bn": "Boom"},
+      {"en": "Recovery", "bn": "Recovery"},
+      {"en": "Depression", "bn": "Depression"},
+      {"en": "Inflation", "bn": "Inflation"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "After a recession, the economy enters \"recovery\" before eventually reaching another boom.",
+      "bn": "Recession-এর পরে economy \"recovery\"-তে ঢোকে, তারপর আরেকটা boom-এ পৌঁছায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which pair contrasts manual/industrial labour with office/professional work?",
+      "bn": "কোন pair manual/industrial labour আর office/professional work-এর মধ্যে contrast দেখায়?"
+    },
+    "options": [
+      {"en": "boom vs. recession", "bn": "boom vs. recession"},
+      {"en": "developed vs. developing economy", "bn": "developed vs. developing economy"},
+      {"en": "blue-collar vs. white-collar jobs", "bn": "blue-collar vs. white-collar jobs"},
+      {"en": "employment vs. unemployment", "bn": "employment vs. unemployment"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "\"Blue-collar\" refers to manual/industrial jobs; \"white-collar\" refers to office/professional jobs.",
+      "bn": "\"Blue-collar\" মানে manual/industrial job; \"white-collar\" মানে office/professional job।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"Tax incentives have helped attract ___.\"",
+      "bn": "\"Tax incentives have helped attract ___.\""
+    },
+    "options": [
+      {"en": "foreign investment", "bn": "foreign investment"},
+      {"en": "job security", "bn": "job security"},
+      {"en": "income inequality", "bn": "income inequality"},
+      {"en": "minimum wage", "bn": "minimum wage"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "\"Attract foreign investment\" is the standard collocation for drawing in money from overseas companies or governments.",
+      "bn": "\"Attract foreign investment\" standard collocation, বিদেশি company বা government-এর টাকা আনার জন্য।"
+    }
+  }
+]

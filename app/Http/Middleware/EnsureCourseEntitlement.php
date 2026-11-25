@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\CoursePricing;
 use App\Services\Entitlements;
 use App\Services\Learning;
 use Closure;
@@ -9,11 +10,13 @@ use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * Gates a chapter page behind payment. Chapter 1 of every course stays a free
- * preview (so a reader can judge quality before buying) — everything after
- * that needs the course to be free, an active subscription, or an entitlement.
- * The course overview page itself is NOT behind this middleware; people need
- * to see what a course covers and its price before deciding to buy it.
+ * Gates a chapter page behind payment. By default only chapter 1 of a course
+ * stays a free preview (so a reader can judge quality before buying); an
+ * admin can instead pick a different set of free chapters on the pricing
+ * screen (CoursePricing::isChapterFree()). Everything else needs the course
+ * to be free, an active subscription, or an entitlement. The course overview
+ * page itself is NOT behind this middleware; people need to see what a
+ * course covers and its price before deciding to buy it.
  */
 class EnsureCourseEntitlement
 {
@@ -25,7 +28,10 @@ class EnsureCourseEntitlement
         $chapter = $request->route('chapter');
 
         $chapters = $this->learning->catalog()[$course] ?? [];
-        $isFreePreview = array_key_first($chapters) === $chapter;
+        $pricing = CoursePricing::query()->where('course_slug', $course)->first();
+        $isFreePreview = $pricing
+            ? $pricing->isChapterFree($chapter, array_keys($chapters))
+            : array_key_first($chapters) === $chapter;
 
         if ($isFreePreview) {
             return $next($request);

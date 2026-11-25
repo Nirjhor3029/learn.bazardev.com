@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Which single reading mistake underlies almost every question type in this course?",
+      "bn": "এই course-এর প্রায় সব question type-এর পিছনে একটা কোন mistake থাকে?"
+    },
+    "options": [
+      {"en": "Scanning for exact words instead of meaning", "bn": "মানে না, exact word-এর জন্য scan করা"},
+      {"en": "Reading too slowly overall", "bn": "সবমিলিয়ে খুব স্লো পড়া"},
+      {"en": "Using a dictionary during the test", "bn": "Test-এর সময় dictionary ব্যবহার করা"},
+      {"en": "Writing answers in Bangla instead of English", "bn": "English-এর বদলে বাংলায় answer লেখা"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Nearly every question type in this course depends on recognising paraphrase — scanning for exact words instead of meaning is the root mistake.",
+      "bn": "এই course-এর প্রায় সব question type paraphrase চেনার উপর নির্ভর করে — মানে না, exact word-এর জন্য scan করা root mistake।"
+    }
+  },
+  {
+    "q": {
+      "en": "A statement directly contradicts the passage. Is it False or Not Given?",
+      "bn": "একটা statement সরাসরি passage-কে contradict করে। এটা কি False না Not Given?"
+    },
+    "options": [
+      {"en": "Not Given, since it's never stated word for word", "bn": "Not Given, কারণ এটা কখনো word for word বলা হয় না"},
+      {"en": "False — Not Given is for when the passage says nothing on the point", "bn": "False — Not Given তখন যখন passage সেই বিষয়ে কিছুই বলে না"},
+      {"en": "Either is acceptable in this case", "bn": "এই ক্ষেত্রে দুটোই acceptable"},
+      {"en": "True, since the topic is mentioned", "bn": "True, কারণ topic mention করা আছে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "False means the passage contradicts the statement; Not Given means the passage is silent on the point entirely.",
+      "bn": "False মানে passage statement-টা contradict করে; Not Given মানে passage সেই বিষয়ে সম্পূর্ণ silent।"
+    }
+  },
+  {
+    "q": {
+      "en": "You're stuck on an unfamiliar word and the clock is running. What should you check first?",
+      "bn": "তুমি একটা unfamiliar word-এ আটকে গেছ আর সময় চলে যাচ্ছে। প্রথমে কী check করা উচিত?"
+    },
+    "options": [
+      {"en": "Whether the current question actually depends on that word", "bn": "বর্তমান question সেই word-এর উপর actually নির্ভর করে কিনা"},
+      {"en": "The word's exact dictionary definition", "bn": "Word-টার exact dictionary definition"},
+      {"en": "Whether it has a Bangla equivalent", "bn": "এর একটা বাংলা equivalent আছে কিনা"},
+      {"en": "How many letters the word has", "bn": "Word-টায় কতগুলো letter আছে"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Most unknown words don't block you from answering — check whether the question depends on it before spending time on it.",
+      "bn": "অধিকাংশ unknown word answer করতে বাধা দেয় না — এর উপর সময় খরচ করার আগে question এর উপর নির্ভর করে কিনা check করো।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which chapter's skill applies to every single question type in this IELTS Reading course?",
+      "bn": "এই IELTS Reading course-এর কোন chapter-এর skill প্রতিটা question type-এ apply হয়?"
+    },
+    "options": [
+      {"en": "Chapter 7, table and flow-chart completion", "bn": "Chapter 7, table এবং flow-chart completion"},
+      {"en": "Chapter 11, spotting paraphrase", "bn": "Chapter 11, spotting paraphrase"},
+      {"en": "Chapter 5, multiple choice questions", "bn": "Chapter 5, multiple choice question"},
+      {"en": "Chapter 8, short-answer questions", "bn": "Chapter 8, short-answer question"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Spotting paraphrase is the thread running through every question type in this course, from True/False/Not Given onward.",
+      "bn": "Spotting paraphrase এই course-এর প্রতিটা question type-এর মধ্য দিয়ে চলা thread, True/False/Not Given থেকে শুরু করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "For a multiple choice question, what should you do before reading the answer options?",
+      "bn": "একটা multiple choice question-এর জন্য, answer option পড়ার আগে কী করা উচিত?"
+    },
+    "options": [
+      {"en": "Pick the option with the most words borrowed from the passage", "bn": "Passage থেকে সবচেয়ে বেশি borrowed word থাকা option বাছা"},
+      {"en": "Predict the answer yourself first", "bn": "প্রথমে নিজে answer predict করা"},
+      {"en": "Skip the question and come back later always", "bn": "সবসময় question skip করে পরে ফিরে আসা"},
+      {"en": "Choose the longest option", "bn": "সবচেয়ে লম্বা option বাছা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Predicting the answer before reading the options avoids distractor options that borrow exact words from the passage.",
+      "bn": "Option পড়ার আগে answer predict করলে passage থেকে exact word borrow করা distractor option এড়ানো যায়।"
+    }
+  }
+]

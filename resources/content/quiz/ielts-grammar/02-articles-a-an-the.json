@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "\"I need ___ umbrella — it's raining.\" Which word fits?",
+      "bn": "\"I need ___ umbrella — it's raining.\" কোন শব্দটা বসবে?"
+    },
+    "options": [
+      {"en": "a", "bn": "a"},
+      {"en": "an", "bn": "an"},
+      {"en": "the", "bn": "the"},
+      {"en": "(no article)", "bn": "(article লাগবে না)"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Umbrella\" starts with a vowel sound, and it's the first time it's mentioned (not specific yet), so it needs \"an.\"",
+      "bn": "\"Umbrella\" vowel sound দিয়ে শুরু, আর এটা প্রথমবার mention হচ্ছে (specific না), তাই \"an\" লাগবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"___ Pacific Ocean is the largest ocean in the world.\"",
+      "bn": "\"___ Pacific Ocean is the largest ocean in the world.\""
+    },
+    "options": [
+      {"en": "A", "bn": "A"},
+      {"en": "An", "bn": "An"},
+      {"en": "The", "bn": "The"},
+      {"en": "(no article)", "bn": "(article লাগবে না)"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "There's only one Pacific Ocean — a specific, unique thing — so it takes \"the.\"",
+      "bn": "Pacific Ocean একটাই আছে — specific, unique জিনিস — তাই \"the\" বসবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which is correct: \"a university\" or \"an university\"?",
+      "bn": "কোনটা সঠিক: \"a university\" নাকি \"an university\"?"
+    },
+    "options": [
+      {"en": "a university", "bn": "a university"},
+      {"en": "an university", "bn": "an university"},
+      {"en": "the university (always)", "bn": "the university (সবসময়)"},
+      {"en": "university (no article, ever)", "bn": "university (কখনোই article লাগে না)"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "\"University\" starts with a consonant SOUND (\"yoo-\"), even though it starts with a vowel letter — so it's \"a,\" not \"an.\"",
+      "bn": "\"University\"-র শুরুর অক্ষর vowel হলেও এর SOUND হলো consonant (\"yoo-\") — তাই \"a\" বসবে, \"an\" না।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"Dogs are loyal animals.\" Why is there no article before \"Dogs\"?",
+      "bn": "\"Dogs are loyal animals.\" — \"Dogs\"-এর আগে article নেই কেন?"
+    },
+    "options": [
+      {"en": "It's a mistake — it should say \"The dogs\"", "bn": "এটা ভুল — \"The dogs\" হওয়া উচিত"},
+      {"en": "\"Dogs\" is plural and this is a general statement about dogs in general", "bn": "\"Dogs\" plural, আর এটা dog সম্পর্কে general statement"},
+      {"en": "Animal names never take articles", "bn": "Animal-এর নামে কখনো article লাগে না"},
+      {"en": "\"Dogs\" is uncountable", "bn": "\"Dogs\" uncountable"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Plural nouns take no article when making a general statement, not about any specific dogs.",
+      "bn": "General statement করার সময় plural noun-এ article লাগে না, যেহেতু এটা কোনো specific dog-এর কথা বলছে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix the mistake: \"I am going to market.\"",
+      "bn": "ভুলটা ঠিক করো: \"I am going to market.\""
+    },
+    "options": [
+      {"en": "It's already correct", "bn": "এটা already ঠিক আছে"},
+      {"en": "I am going to a market.", "bn": "I am going to a market."},
+      {"en": "I am going to the market.", "bn": "I am going to the market."},
+      {"en": "I am going market.", "bn": "I am going market."}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "A specific, known market needs \"the\" — Bangla speakers often default to omitting the article entirely here.",
+      "bn": "একটা specific, পরিচিত market-এর জন্য \"the\" লাগবে — বাংলা speaker-রা সাধারণত এখানে article বাদ দিয়ে ফেলে।"
+    }
+  }
+]

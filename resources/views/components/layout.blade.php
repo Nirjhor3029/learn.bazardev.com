@@ -52,14 +52,17 @@
                                 <a href="{{ route('terminal.launch') }}" target="_blank" rel="noopener" class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 sm:hidden">Terminal</a>
                                 <a href="{{ route('account.edit') }}" class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">Account settings</a>
                                 @if ($me->is_admin)
-                                    @php $toReview = \App\Models\Contribution::where('status', \App\Models\Contribution::PENDING)->count(); @endphp
-                                    <a href="{{ route('admin.contributions.index') }}" class="flex items-center justify-between gap-2 rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">
-                                        Admin · Contributions
+                                    @php
+                                        $toReview = \App\Models\Contribution::where('status', \App\Models\Contribution::PENDING)->count()
+                                            + \App\Models\PaymentTransaction::whereIn('status', [\App\Models\PaymentTransaction::PENDING, \App\Models\PaymentTransaction::MANUAL_REVIEW])->count()
+                                            + \App\Models\User::whereNull('email_verified_at')->count();
+                                    @endphp
+                                    <a href="{{ route('admin.dashboard') }}" class="flex items-center justify-between gap-2 rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">
+                                        Admin · Dashboard
                                         @if ($toReview > 0)
-                                            <span class="flex-shrink-0 rounded-full bg-amber-100 px-2 py-0.5 text-xs font-semibold whitespace-nowrap text-amber-800 tabular-nums">{{ $toReview }} to review</span>
+                                            <span class="flex-shrink-0 rounded-full bg-amber-100 px-2 py-0.5 text-xs font-semibold whitespace-nowrap text-amber-800 tabular-nums">{{ $toReview }} waiting</span>
                                         @endif
                                     </a>
-                                    <a href="{{ route('admin.users.index') }}" class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">Admin · Users</a>
                                 @endif
                             </div>
                             <form method="POST" action="{{ route('logout') }}" class="border-t border-gray-100 pt-1.5">
@@ -126,6 +129,137 @@
                 btn.setAttribute('aria-pressed', show ? 'true' : 'false');
             });
         });
+
+        // Word lookup: select a word or short phrase inside chapter content to
+        // hear it, see its meaning, or jump to Google Translate / Google search.
+        if (document.querySelector('.markdown-body')) {
+            const toolbar = document.createElement('div');
+            toolbar.setAttribute('data-word-toolbar', '');
+            toolbar.className = 'fixed z-50 hidden flex-col items-stretch gap-0 rounded-xl border border-gray-200 bg-white shadow-lg';
+            toolbar.innerHTML = `
+                <div class="flex items-center gap-1 p-1.5">
+                    <button type="button" data-action="say" class="rounded-lg px-2.5 py-1.5 text-sm hover:bg-gray-100" title="Pronounce">🔊</button>
+                    <button type="button" data-action="meaning" class="rounded-lg px-2.5 py-1.5 text-sm hover:bg-gray-100" title="Meaning">📖</button>
+                    <button type="button" data-action="translate" class="rounded-lg px-2.5 py-1.5 text-sm hover:bg-gray-100" title="Translate to Bangla">🌐</button>
+                    <button type="button" data-action="google" class="rounded-lg px-2.5 py-1.5 text-sm hover:bg-gray-100" title="Search on Google">🔍</button>
+                </div>
+                <div data-panel class="hidden max-w-xs border-t border-gray-100 p-3 text-sm text-gray-700"></div>
+            `;
+            document.body.appendChild(toolbar);
+            const panel = toolbar.querySelector('[data-panel]');
+            let currentWord = '';
+
+            const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (c) => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+            }[c]));
+
+            const hideToolbar = () => {
+                toolbar.classList.add('hidden');
+                panel.classList.add('hidden');
+                panel.innerHTML = '';
+            };
+
+            const showToolbarAt = (rect) => {
+                toolbar.classList.remove('hidden');
+                const width = toolbar.offsetWidth || 160;
+                let left = rect.left + rect.width / 2 - width / 2;
+                left = Math.min(Math.max(8, left), window.innerWidth - width - 8);
+                let top = rect.top - toolbar.offsetHeight - 8;
+                if (top < 8) top = rect.bottom + 8;
+                toolbar.style.left = left + 'px';
+                toolbar.style.top = top + 'px';
+            };
+
+            const handleSelection = (e) => {
+                if (e.target.closest && e.target.closest('[data-word-toolbar]')) return;
+
+                const sel = window.getSelection();
+                const text = sel ? sel.toString().trim() : '';
+
+                if (!text || !sel.anchorNode) { hideToolbar(); return; }
+
+                const host = sel.anchorNode.nodeType === 1 ? sel.anchorNode : sel.anchorNode.parentElement;
+                const content = host ? host.closest('.markdown-body') : null;
+                const inCode = host ? host.closest('pre, code') : null;
+                const looksLikeAWord = /^[A-Za-z][A-Za-z'’\- ]{0,38}$/.test(text) && text.split(/\s+/).length <= 4;
+
+                if (!content || inCode || !looksLikeAWord) { hideToolbar(); return; }
+
+                currentWord = text;
+                panel.classList.add('hidden');
+                panel.innerHTML = '';
+                showToolbarAt(sel.getRangeAt(0).getBoundingClientRect());
+            };
+
+            document.addEventListener('mouseup', handleSelection);
+            document.addEventListener('touchend', (e) => setTimeout(() => handleSelection(e), 10));
+
+            document.addEventListener('mousedown', (e) => {
+                if (!e.target.closest('[data-word-toolbar]')) hideToolbar();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') hideToolbar();
+            });
+
+            toolbar.querySelector('[data-action="say"]').addEventListener('click', () => {
+                if (!currentWord || !('speechSynthesis' in window)) return;
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(currentWord);
+                utterance.lang = 'en-US';
+                const voices = window.speechSynthesis.getVoices();
+                const enVoice = voices.find((v) => v.lang && v.lang.startsWith('en'));
+                if (enVoice) utterance.voice = enVoice;
+                window.speechSynthesis.speak(utterance);
+            });
+
+            toolbar.querySelector('[data-action="translate"]').addEventListener('click', () => {
+                if (!currentWord) return;
+                window.open('https://translate.google.com/?sl=en&tl=bn&text=' + encodeURIComponent(currentWord) + '&op=translate', '_blank', 'noopener');
+            });
+
+            toolbar.querySelector('[data-action="google"]').addEventListener('click', () => {
+                if (!currentWord) return;
+                window.open('https://www.google.com/search?q=' + encodeURIComponent(currentWord + ' meaning'), '_blank', 'noopener');
+            });
+
+            toolbar.querySelector('[data-action="meaning"]').addEventListener('click', async () => {
+                if (!currentWord) return;
+                const alreadyOpen = !panel.classList.contains('hidden');
+                if (alreadyOpen) { panel.classList.add('hidden'); return; }
+
+                panel.classList.remove('hidden');
+                panel.innerHTML = '<p class="text-gray-400">Looking up…</p>';
+                const lookupWord = currentWord.split(/\s+/)[0].toLowerCase();
+
+                try {
+                    const res = await fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + encodeURIComponent(lookupWord));
+                    if (!res.ok) throw new Error('not found');
+                    const data = await res.json();
+                    const entry = data[0];
+                    const phonetic = entry.phonetic || (entry.phonetics || []).map((p) => p.text).find(Boolean) || '';
+                    const audioUrl = (entry.phonetics || []).map((p) => p.audio).find((a) => a);
+
+                    let html = '<p class="font-semibold text-gray-900">' + escapeHtml(entry.word) + (phonetic ? ' <span class="font-normal text-gray-400">' + escapeHtml(phonetic) + '</span>' : '') + '</p>';
+                    (entry.meanings || []).slice(0, 2).forEach((m) => {
+                        const def = (m.definitions || [])[0];
+                        if (!def) return;
+                        html += '<p class="mt-2"><span class="font-medium text-blue-600">' + escapeHtml(m.partOfSpeech) + '</span> — ' + escapeHtml(def.definition) + '</p>';
+                        if (def.example) html += '<p class="mt-1 text-xs text-gray-500">"' + escapeHtml(def.example) + '"</p>';
+                    });
+                    if (audioUrl) {
+                        html += '<button type="button" data-action="play-audio" class="mt-2 text-xs font-medium text-blue-600 hover:underline">▶ play audio</button>';
+                    }
+                    panel.innerHTML = html;
+
+                    const playBtn = panel.querySelector('[data-action="play-audio"]');
+                    if (playBtn) {
+                        playBtn.addEventListener('click', () => new Audio(audioUrl).play());
+                    }
+                } catch {
+                    panel.innerHTML = '<p class="text-gray-500">No dictionary entry found — try Translate or Google instead.</p>';
+                }
+            });
+        }
     </script>
 </body>
 </html>

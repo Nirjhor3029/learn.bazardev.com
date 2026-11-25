@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Fix: \"Someone collect the raw material first.\"",
+      "bn": "ঠিক করো: \"Someone collect the raw material first.\""
+    },
+    "options": [
+      {"en": "First, someone collects the raw material.", "bn": "First, someone collects the raw material."},
+      {"en": "First, the raw material is collected.", "bn": "First, the raw material is collected."},
+      {"en": "First, the raw material collect.", "bn": "First, the raw material collect."},
+      {"en": "First, the raw material was collect.", "bn": "First, the raw material was collect."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Process steps use passive voice with no named doer, and the correct tense is present simple passive.",
+      "bn": "Process step-এ passive voice ব্যবহার হয়, কোনো doer নাম থাকে না, এবং সঠিক tense হলো present simple passive।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which verb describes a building being torn down?",
+      "bn": "কোন verb একটা building ভেঙে ফেলা বোঝায়?"
+    },
+    "options": [
+      {"en": "extended", "bn": "extended"},
+      {"en": "demolished", "bn": "demolished"},
+      {"en": "relocated", "bn": "relocated"},
+      {"en": "converted", "bn": "converted"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Demolished\" means torn down/destroyed, which is the correct change verb for this situation.",
+      "bn": "\"Demolished\" মানে ভেঙে ফেলা/destroy করা — এই situation-এর জন্য সঠিক change verb।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix: \"The factory is north the river.\"",
+      "bn": "ঠিক করো: \"The factory is north the river.\""
+    },
+    "options": [
+      {"en": "The factory is to the north of the river.", "bn": "The factory is to the north of the river."},
+      {"en": "The factory is north on the river.", "bn": "The factory is north on the river."},
+      {"en": "The factory is at north the river.", "bn": "The factory is at north the river."},
+      {"en": "The factory is north in the river.", "bn": "The factory is north in the river."}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The full preposition phrase \"to the north of\" is needed for this spatial description.",
+      "bn": "এই spatial description-এর জন্য পুরো preposition phrase \"to the north of\" লাগবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which sequencing word fits the very end of a process?",
+      "bn": "একটা process-এর একদম শেষে কোন sequencing word বসে?"
+    },
+    "options": [
+      {"en": "initially", "bn": "initially"},
+      {"en": "subsequently", "bn": "subsequently"},
+      {"en": "finally", "bn": "finally"},
+      {"en": "to begin with", "bn": "to begin with"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "\"Finally\" (or \"lastly\") marks the last step of a process.",
+      "bn": "\"Finally\" (বা \"lastly\") একটা process-এর শেষ step বোঝায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "A park on an old map became a car park on the new map. Which verb phrase describes this?",
+      "bn": "একটা পুরনো map-এ park ছিল, নতুন map-এ car park হয়ে গেছে। কোন verb phrase এটা বর্ণনা করে?"
+    },
+    "options": [
+      {"en": "was extended", "bn": "was extended"},
+      {"en": "was converted into", "bn": "was converted into"},
+      {"en": "remained unchanged", "bn": "remained unchanged"},
+      {"en": "was relocated", "bn": "was relocated"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Was converted into\" describes a location changing from one use to a different use.",
+      "bn": "\"Was converted into\" বোঝায় একটা জায়গা এক ব্যবহার থেকে ভিন্ন ব্যবহারে বদলে গেছে।"
+    }
+  }
+]

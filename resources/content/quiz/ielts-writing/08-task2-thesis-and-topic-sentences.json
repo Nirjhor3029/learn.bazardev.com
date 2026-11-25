@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Fix this thesis statement: \"Is remote work good for everyone?\"",
+      "bn": "ঠিক করো এই thesis statement-টা: \"Is remote work good for everyone?\""
+    },
+    "options": [
+      {"en": "I believe remote work benefits most employees, for the following reasons.", "bn": "I believe remote work benefits most employees, for the following reasons."},
+      {"en": "Remote work: is it good or bad?", "bn": "Remote work: is it good or bad?"},
+      {"en": "Everyone has an opinion about remote work.", "bn": "Everyone has an opinion about remote work."},
+      {"en": "Why do people like remote work?", "bn": "Why do people like remote work?"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A thesis statement must be a clear statement, not a question.",
+      "bn": "Thesis statement অবশ্যই একটা clear statement হবে, question না।"
+    }
+  },
+  {
+    "q": {
+      "en": "A thesis promises two reasons, but the essay's body only develops one. What's wrong?",
+      "bn": "Thesis দুটো reason-এর promise দেয়, কিন্তু essay-র body শুধু একটা develop করে। সমস্যা কী?"
+    },
+    "options": [
+      {"en": "Nothing — one reason is always enough", "bn": "কিছুই না — একটা reason সবসময় যথেষ্ট"},
+      {"en": "The essay breaks its promise to the reader — every point in the thesis needs its own paragraph", "bn": "Essay reader-এর কাছে করা promise ভাঙে — thesis-এর প্রতিটা point-এর নিজের paragraph লাগে"},
+      {"en": "It's a grammar mistake", "bn": "এটা একটা grammar mistake"},
+      {"en": "The thesis should be rewritten to have only one reason after the fact", "bn": "Thesis পরে rewrite করে একটা reason-এ নামিয়ে আনা উচিত"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Each reason promised in the thesis needs its own body paragraph to maintain coherence.",
+      "bn": "Thesis-এ promise করা প্রতিটা reason-এর নিজের body paragraph লাগে coherence বজায় রাখার জন্য।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which topic sentence is more specific?",
+      "bn": "কোন topic sentence বেশি specific?"
+    },
+    "options": [
+      {"en": "This is an important issue.", "bn": "This is an important issue."},
+      {"en": "Remote work increases the risk of social isolation.", "bn": "Remote work increases the risk of social isolation."},
+      {"en": "There are many things to think about.", "bn": "There are many things to think about."},
+      {"en": "Some people have different opinions.", "bn": "Some people have different opinions."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "This topic sentence names a concrete idea and connects it to the main topic, unlike the vague fillers.",
+      "bn": "এই topic sentence একটা concrete idea বলে এবং main topic-এর সাথে যুক্ত করে, vague filler-এর মতো না।"
+    }
+  },
+  {
+    "q": {
+      "en": "How long should a thesis statement typically be?",
+      "bn": "একটা thesis statement সাধারণত কত লম্বা হওয়া উচিত?"
+    },
+    "options": [
+      {"en": "A full paragraph", "bn": "একটা পুরো paragraph"},
+      {"en": "1-2 sentences", "bn": "১-২টা sentence"},
+      {"en": "Exactly 10 words", "bn": "ঠিক ১০টা শব্দ"},
+      {"en": "At least 5 sentences", "bn": "কমপক্ষে ৫টা sentence"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A thesis statement should be concise — 1-2 sentences, with the detail saved for the body paragraphs.",
+      "bn": "Thesis statement concise হওয়া উচিত — ১-২টা sentence, detail body paragraph-এর জন্য রাখতে হবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "In a discussion essay, what should the thesis statement preview?",
+      "bn": "Discussion essay-তে thesis statement কী preview করা উচিত?"
+    },
+    "options": [
+      {"en": "Only the writer's own opinion", "bn": "শুধু writer-এর নিজের opinion"},
+      {"en": "That both perspectives will be examined before a conclusion is reached", "bn": "যে দুটো perspective-ই examine করা হবে, তারপর একটা conclusion-এ আসা হবে"},
+      {"en": "A list of unrelated facts", "bn": "কিছু unrelated fact-এর একটা list"},
+      {"en": "Nothing — discussion essays don't need a thesis", "bn": "কিছুই না — discussion essay-তে thesis লাগে না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A discussion essay's thesis should signal that both views will be examined, with an opinion given at the end.",
+      "bn": "Discussion essay-র thesis-এ বোঝাতে হবে যে দুটো view-ই examine করা হবে, শেষে একটা opinion দেওয়া হবে।"
+    }
+  }
+]

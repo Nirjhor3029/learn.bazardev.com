@@ -314,7 +314,7 @@ class ContributionTest extends TestCase
         $this->make($user);
         $this->make($user, ['body' => 'second tip']);
 
-        $this->actingAs($admin)->get('/')->assertOk()->assertSee('2 to review');
-        $this->actingAs($user)->get('/')->assertOk()->assertDontSee('to review')->assertDontSee('Admin · Contributions');
+        $this->actingAs($admin)->get('/')->assertOk()->assertSee('2 waiting');
+        $this->actingAs($user)->get('/')->assertOk()->assertDontSee('waiting')->assertDontSee('Admin · Dashboard');
     }
 }

@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "\"The device was cumbersome; the newer model, by contrast, is compact.\" What does \"cumbersome\" likely mean?",
+      "bn": "\"The device was cumbersome; the newer model, by contrast, is compact.\" \"Cumbersome\"-এর মানে সম্ভবত কী?"
+    },
+    "options": [
+      {"en": "The same as \"compact\"", "bn": "\"compact\"-এর মতোই"},
+      {"en": "The opposite of \"compact\" — bulky or hard to carry", "bn": "\"compact\"-এর বিপরীত — bulky বা carry করা কঠিন"},
+      {"en": "A type of material", "bn": "এক ধরনের material"},
+      {"en": "Unrelated to the device's size", "bn": "Device-এর size-এর সাথে unrelated"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"By contrast\" signals that \"cumbersome\" means roughly the opposite of \"compact\" — something bulky.",
+      "bn": "\"By contrast\" signal দেয় যে \"cumbersome\"-এর মানে মোটামুটি \"compact\"-এর বিপরীত — bulky কিছু।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"Her findings were seminal — that is, foundational to all later research.\" What tells you the meaning of \"seminal\" here?",
+      "bn": "\"Her findings were seminal — that is, foundational to all later research.\" এখানে \"seminal\"-এর মানে কী বলে দেয়?"
+    },
+    "options": [
+      {"en": "A contrast signal word", "bn": "একটা contrast signal word"},
+      {"en": "The phrase \"that is,\" which directly restates the meaning", "bn": "\"that is,\" phrase-টা, যা সরাসরি মানে restate করে"},
+      {"en": "An example signal word", "bn": "একটা example signal word"},
+      {"en": "The grammar of the sentence alone", "bn": "শুধু sentence-এর grammar"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"That is\" is a definition/restatement clue — a plain-language explanation directly follows it.",
+      "bn": "\"That is\" একটা definition/restatement clue — এরপর সরাসরি একটা plain-language explanation আসে।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"Predators, such as wolves and hawks, limit prey populations.\" What does this tell you about \"predators\"?",
+      "bn": "\"Predators, such as wolves and hawks, limit prey populations.\" এটা \"predators\" নিয়ে কী বলে?"
+    },
+    "options": [
+      {"en": "It's a category that includes wolves and hawks", "bn": "এটা একটা category যার মধ্যে wolves এবং hawks আছে"},
+      {"en": "It means the opposite of wolves and hawks", "bn": "এর মানে wolves এবং hawks-এর বিপরীত"},
+      {"en": "It's a synonym for \"prey\"", "bn": "এটা \"prey\"-এর একটা synonym"},
+      {"en": "It has no relation to wolves or hawks", "bn": "Wolves বা hawks-এর সাথে এর কোনো relation নেই"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "\"Such as\" is an example clue — the examples given (wolves, hawks) narrow down what category \"predators\" belongs to.",
+      "bn": "\"Such as\" একটা example clue — দেওয়া example (wolves, hawks) \"predators\" কোন category-তে পড়ে সেটা narrow down করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Should you stop and work out the exact meaning of every unknown word you encounter?",
+      "bn": "তুমি encounter করা প্রতিটা unknown word-এর exact মানে কি থামিয়ে বের করা উচিত?"
+    },
+    "options": [
+      {"en": "Yes, always, to fully understand the passage", "bn": "হ্যাঁ, সবসময়, passage সম্পূর্ণ বোঝার জন্য"},
+      {"en": "No — only when a question specifically depends on that word", "bn": "না — শুধু যখন একটা question specifically সেই word-এর উপর নির্ভর করে"},
+      {"en": "Only for words longer than 8 letters", "bn": "শুধু ৮ letter-এর বেশি লম্বা শব্দের জন্য"},
+      {"en": "Only in the first passage", "bn": "শুধু প্রথম passage-এ"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Most unknown words don't block you from answering — only dig for meaning when a question depends on that exact word.",
+      "bn": "অধিকাংশ unknown word answer করতে বাধা দেয় না — শুধু তখনই মানে খোঁজো যখন একটা question exactly সেই word-এর উপর নির্ভর করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "With zero context clues available, what can still help you narrow down an unknown word's role?",
+      "bn": "কোনো context clue না থাকলে, একটা unknown word-এর role narrow down করতে এখনো কী সাহায্য করতে পারে?"
+    },
+    "options": [
+      {"en": "Its grammar — whether it's a noun, verb, or adjective", "bn": "এর grammar — এটা noun, verb, বা adjective কিনা"},
+      {"en": "Its exact letter count", "bn": "এর exact letter count"},
+      {"en": "Whether it starts with a vowel", "bn": "এটা vowel দিয়ে শুরু কিনা"},
+      {"en": "Nothing — you must always guess randomly", "bn": "কিছুই না — তোমাকে সবসময় randomly guess করতে হবে"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A word's part of speech (noun, verb, adjective) narrows down its role in the sentence, even without knowing its exact meaning.",
+      "bn": "একটা word-এর part of speech (noun, verb, adjective) sentence-এ এর role narrow down করে, এর exact মানে না জানলেও।"
+    }
+  }
+]

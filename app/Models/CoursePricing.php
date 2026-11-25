@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * instantly locked the moment this migration runs — the admin turns the
  * paywall on per course, deliberately, one at a time.
  */
-#[Fillable(['course_slug', 'is_free', 'price_amount', 'currency', 'subscription_eligible', 'updated_by'])]
+#[Fillable(['course_slug', 'is_free', 'price_amount', 'currency', 'subscription_eligible', 'free_chapter_slugs', 'updated_by'])]
 class CoursePricing extends Model
 {
     protected $table = 'course_pricing';
@@ -34,6 +34,7 @@ class CoursePricing extends Model
         return [
             'is_free' => 'boolean',
             'subscription_eligible' => 'boolean',
+            'free_chapter_slugs' => 'array',
         ];
     }
 
@@ -53,5 +54,21 @@ class CoursePricing extends Model
     public static function isConfigured(string $courseSlug): bool
     {
         return static::query()->where('course_slug', $courseSlug)->exists();
+    }
+
+    /**
+     * Whether a given chapter stays a free preview on a paid course. An admin-picked
+     * list (`free_chapter_slugs`, even an empty one) always wins; with no list saved
+     * yet, the default is "only the first chapter of the course".
+     *
+     * @param  string[]  $orderedChapterSlugs  Every readable chapter of the course, in order.
+     */
+    public function isChapterFree(string $chapterSlug, array $orderedChapterSlugs): bool
+    {
+        if ($this->free_chapter_slugs !== null) {
+            return in_array($chapterSlug, $this->free_chapter_slugs, true);
+        }
+
+        return ($orderedChapterSlugs[0] ?? null) === $chapterSlug;
     }
 }

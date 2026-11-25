@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Why does reviewing a word list only once usually fail?",
+      "bn": "একবার word list review করলে কেন সাধারণত কাজ হয় না?"
+    },
+    "options": [
+      {"en": "Because the words are too easy.", "bn": "কারণ শব্দগুলো খুব সহজ।"},
+      {"en": "Because of the forgetting curve — memory drops sharply without review.", "bn": "কারণ forgetting curve — review না করলে memory অনেক দ্রুত কমে যায়।"},
+      {"en": "Because word lists always have spelling mistakes.", "bn": "কারণ word list-এ সবসময় spelling mistake থাকে।"},
+      {"en": "Because dictionaries are unreliable.", "bn": "কারণ dictionary unreliable।"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Ebbinghaus's forgetting curve shows memory of new information drops sharply within the first day or two without review.",
+      "bn": "Ebbinghaus-এর forgetting curve দেখায় যে review না করলে নতুন information-এর memory প্রথম এক-দুই দিনেই অনেক কমে যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Instead of memorising \"significant\" alone, what should you do?",
+      "bn": "\"significant\" একা মুখস্থ করার বদলে কী করা উচিত?"
+    },
+    "options": [
+      {"en": "Memorise its Bangla meaning only.", "bn": "শুধু এর Bangla meaning মুখস্থ করা।"},
+      {"en": "Learn its whole word family: signify, significance, significant, significantly.", "bn": "এর পুরো word family শিখা: signify, significance, significant, significantly."},
+      {"en": "Memorise it in alphabetical order with other S words.", "bn": "অন্য S দিয়ে শুরু হওয়া শব্দের সাথে alphabetical order-এ মুখস্থ করা।"},
+      {"en": "Avoid using it until you've mastered simpler words.", "bn": "সহজ শব্দ মাস্টার না করা পর্যন্ত এটা use না করা।"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Learning the whole word family (verb, noun, adjective, adverb) together builds the vocabulary range IELTS rewards.",
+      "bn": "পুরো word family (verb, noun, adjective, adverb) একসাথে শিখলে IELTS-এ reward পাওয়া vocabulary range তৈরি হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which is more useful to memorise: \"rise\" alone, or \"a sharp rise in\"?",
+      "bn": "কোনটা মুখস্থ করা বেশি useful: শুধু \"rise\", না কি \"a sharp rise in\"?"
+    },
+    "options": [
+      {"en": "\"rise\" alone — shorter is always better.", "bn": "শুধু \"rise\" — ছোট সবসময় ভালো।"},
+      {"en": "\"a sharp rise in\" — collocations are more directly usable.", "bn": "\"a sharp rise in\" — collocation সরাসরি বেশি usable।"},
+      {"en": "Both are exactly equally useful.", "bn": "দুটোই সম্পূর্ণ সমান useful।"},
+      {"en": "Neither — single words should never be grouped.", "bn": "কোনোটাই না — single word কখনো group করা উচিত না।"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Collocations (words that naturally go together) transfer directly into real sentences, unlike isolated words.",
+      "bn": "Collocation (যেসব শব্দ স্বাভাবিকভাবে একসাথে বসে) সরাসরি real sentence-এ কাজে লাগে, isolated word-এর মতো না।"
+    }
+  },
+  {
+    "q": {
+      "en": "What should you do immediately after learning a new word, according to method 6?",
+      "bn": "Method 6 অনুযায়ী নতুন শব্দ শেখার পরপরই কী করা উচিত?"
+    },
+    "options": [
+      {"en": "Move on to the next word right away.", "bn": "সাথে সাথে পরের শব্দে চলে যাওয়া।"},
+      {"en": "Write or say your own sentence with it.", "bn": "নিজের একটা sentence বানানো অথবা বলা।"},
+      {"en": "Only read it silently one more time.", "bn": "শুধু একবার আরো silently পড়া।"},
+      {"en": "Translate it into three other languages.", "bn": "এটাকে আরো তিনটা ভাষায় translate করা।"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Active use (producing your own sentence) cements a word far better than passive re-reading.",
+      "bn": "Active use (নিজে sentence বানানো) passive re-reading-এর চেয়ে শব্দ অনেক বেশি মজবুত করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why does this course organise vocabulary by topic (education, environment, technology...)?",
+      "bn": "এই কোর্স কেন vocabulary-কে topic (education, environment, technology...) ভিত্তিক সাজায়?"
+    },
+    "options": [
+      {"en": "Because IELTS reuses a fairly fixed set of topics, so deep topic knowledge pays off directly.", "bn": "কারণ IELTS প্রায় fixed কিছু topic বারবার ব্যবহার করে, তাই topic-ভিত্তিক গভীর জ্ঞান সরাসরি কাজে লাগে।"},
+      {"en": "Because alphabetical lists are harder to print.", "bn": "কারণ alphabetical list print করা কঠিন।"},
+      {"en": "Because topics have fewer words than random lists.", "bn": "কারণ random list-এর চেয়ে topic-এ শব্দ কম থাকে।"},
+      {"en": "Because examiners only ask about one topic.", "bn": "কারণ examiner শুধু একটা topic নিয়ে প্রশ্ন করে।"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "IELTS topics repeat across Speaking, Writing, and Listening, so 15 words learned deeply in one topic outperform skimming 100 random words.",
+      "bn": "IELTS topic Speaking, Writing, Listening-এ repeat হয়, তাই একটা topic-এ গভীরভাবে শেখা ১৫টা শব্দ random ১০০টা শব্দ skim করার চেয়ে বেশি কাজে দেয়।"
+    }
+  }
+]

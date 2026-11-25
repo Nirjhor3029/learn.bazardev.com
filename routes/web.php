@@ -3,7 +3,9 @@
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\Admin\ContributionController as AdminContributionController;
 use App\Http\Controllers\Admin\CoursePricingController;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\EntitlementController;
+use App\Http\Controllers\Admin\PaymentController as AdminPaymentController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\LoginController;
@@ -84,6 +86,10 @@ Route::middleware('auth')->group(function () {
         ->middleware('throttle:3,1')->name('verification.send');
 
     Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
+        Route::get('/', [AdminDashboardController::class, 'index'])->name('dashboard');
+
+        Route::get('/payments', [AdminPaymentController::class, 'index'])->name('payments.index');
+
         Route::get('/users', [AdminUserController::class, 'index'])->name('users.index');
         Route::post('/users/{user}/verify', [AdminUserController::class, 'verify'])->name('users.verify');
 

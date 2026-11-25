@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "\"The company was accused of ___ against older applicants.\"",
+      "bn": "\"The company was accused of ___ against older applicants.\""
+    },
+    "options": [
+      {"en": "discriminate", "bn": "discriminate"},
+      {"en": "discrimination", "bn": "discrimination"},
+      {"en": "discriminatory", "bn": "discriminatory"},
+      {"en": "discriminated", "bn": "discriminated"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Discrimination\" is the noun form, needed here after \"accused of\".",
+      "bn": "\"Discrimination\" noun form, \"accused of\"-এর পরে এটাই লাগবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which term describes a family of parents and children only, without other relatives?",
+      "bn": "কোন term এমন একটা family বোঝায় যেখানে শুধু parents এবং children আছে, অন্য relative নেই?"
+    },
+    "options": [
+      {"en": "Extended family", "bn": "Extended family"},
+      {"en": "Nuclear family", "bn": "Nuclear family"},
+      {"en": "Close-knit community", "bn": "Close-knit community"},
+      {"en": "Generation gap", "bn": "Generation gap"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A \"nuclear family\" consists of parents and children only, as opposed to an extended family with other relatives.",
+      "bn": "\"Nuclear family\"-তে শুধু parents আর children থাকে, extended family-র মতো অন্য relative থাকে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which culture type values group harmony and family obligation over personal achievement?",
+      "bn": "কোন culture type personal achievement-এর চেয়ে group harmony আর family obligation-কে বেশি priority দেয়?"
+    },
+    "options": [
+      {"en": "Individualist culture", "bn": "Individualist culture"},
+      {"en": "Collectivist culture", "bn": "Collectivist culture"},
+      {"en": "Urban culture", "bn": "Urban culture"},
+      {"en": "Multicultural society", "bn": "Multicultural society"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Collectivist culture\" values group harmony and family obligation; \"individualist culture\" values personal achievement.",
+      "bn": "\"Collectivist culture\" group harmony আর family obligation-কে priority দেয়; \"individualist culture\" personal achievement-কে।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"Elderly people living alone often experience social ___.\"",
+      "bn": "\"Elderly people living alone often experience social ___.\""
+    },
+    "options": [
+      {"en": "mobility", "bn": "mobility"},
+      {"en": "isolation", "bn": "isolation"},
+      {"en": "cohesion", "bn": "cohesion"},
+      {"en": "integration", "bn": "integration"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Social isolation\" is the fixed collocation for lacking social contact.",
+      "bn": "\"Social isolation\" fixed collocation, social contact-এর অভাবের জন্য।"
+    }
+  },
+  {
+    "q": {
+      "en": "What has driven the shift from extended families to nuclear families in many societies?",
+      "bn": "অনেক সমাজে extended family থেকে nuclear family-তে shift হওয়ার পেছনে কী দায়ী?"
+    },
+    "options": [
+      {"en": "Peer pressure", "bn": "Peer pressure"},
+      {"en": "Rapid urbanisation", "bn": "Rapid urbanisation"},
+      {"en": "Gender equality", "bn": "Gender equality"},
+      {"en": "Social discrimination", "bn": "Social discrimination"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Rapid urbanisation has transformed traditional community structures, contributing to the shift toward nuclear families.",
+      "bn": "Rapid urbanisation traditional community structure বদলে দিয়েছে, যা nuclear family-র দিকে shift-এ অবদান রাখে।"
+    }
+  }
+]

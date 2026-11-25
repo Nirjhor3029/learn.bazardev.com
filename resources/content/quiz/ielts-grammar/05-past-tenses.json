@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "\"While I ___ dinner, the power went out.\"",
+      "bn": "\"While I ___ dinner, the power went out.\""
+    },
+    "options": [
+      {"en": "cooked", "bn": "cooked"},
+      {"en": "was cooking", "bn": "was cooking"},
+      {"en": "had cooked", "bn": "had cooked"},
+      {"en": "had been cooking", "bn": "had been cooking"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "An ongoing action (past continuous) interrupted by a past simple event (\"went out\").",
+      "bn": "একটা চলমান action (past continuous) যা past simple event (\"went out\") দিয়ে interrupt হয়েছে।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"By the time the ambulance arrived, the man ___.\"",
+      "bn": "\"By the time the ambulance arrived, the man ___.\""
+    },
+    "options": [
+      {"en": "already died", "bn": "already died"},
+      {"en": "was already dying", "bn": "was already dying"},
+      {"en": "had already died", "bn": "had already died"},
+      {"en": "has already died", "bn": "has already died"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "This event finished before another past event (\"arrived\"), so it needs past perfect.",
+      "bn": "এই event অন্য একটা past event-এর (\"arrived\") আগে শেষ হয়েছে, তাই past perfect লাগবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix the mistake: \"I was knowing the answer, but I didn't say it.\"",
+      "bn": "ভুলটা ঠিক করো: \"I was knowing the answer, but I didn't say it.\""
+    },
+    "options": [
+      {"en": "It's already correct", "bn": "এটা already ঠিক আছে"},
+      {"en": "I knew the answer, but I didn't say it.", "bn": "I knew the answer, but I didn't say it."},
+      {"en": "I have known the answer, but I didn't say it.", "bn": "I have known the answer, but I didn't say it."},
+      {"en": "I know the answer, but I didn't say it.", "bn": "I know the answer, but I didn't say it."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Know\" is a stative verb — it doesn't take the continuous form, in past tense either.",
+      "bn": "\"Know\" একটা stative verb — past tense-এও এটা continuous form নেয় না।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"She ___ English for two years before she moved to Canada.\"",
+      "bn": "\"She ___ English for two years before she moved to Canada.\""
+    },
+    "options": [
+      {"en": "studied", "bn": "studied"},
+      {"en": "was studying", "bn": "was studying"},
+      {"en": "had studied", "bn": "had studied"},
+      {"en": "had been studying", "bn": "had been studying"}
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Past perfect continuous: the duration was happening up until the later past event (\"moved\").",
+      "bn": "Past perfect continuous: duration-টা পরের past event (\"moved\") পর্যন্ত চলছিল।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which tense answers \"which of two past events happened first\"?",
+      "bn": "কোন tense \"দুইটা past event-এর মধ্যে কোনটা আগে হয়েছে\" তা বোঝায়?"
+    },
+    "options": [
+      {"en": "Past simple, always", "bn": "Past simple, সবসময়"},
+      {"en": "Past perfect, for the earlier event", "bn": "Past perfect, আগের event-এর জন্য"},
+      {"en": "Present perfect", "bn": "Present perfect"},
+      {"en": "Future perfect", "bn": "Future perfect"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Past perfect marks the earlier of two past events — the later one stays in past simple.",
+      "bn": "Past perfect দুইটা past event-এর মধ্যে আগেরটা চিহ্নিত করে — পরেরটা past simple-এই থাকে।"
+    }
+  }
+]

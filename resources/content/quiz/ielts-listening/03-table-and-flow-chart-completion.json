@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "In a table-completion task, does the audio describe the rows in any random order?",
+      "bn": "একটা table-completion task-এ, audio কি row-গুলো কোনো random order-এ describe করে?"
+    },
+    "options": [
+      {"en": "Yes, completely random", "bn": "হ্যাঁ, সম্পূর্ণ random"},
+      {"en": "No — it moves top-to-bottom, left-to-right, matching the table's layout", "bn": "না — এটা top-to-bottom, left-to-right move করে, table-এর layout-এর সাথে মিলে"},
+      {"en": "It moves bottom-to-top only", "bn": "এটা শুধু bottom-to-top move করে"},
+      {"en": "Only the first and last row are mentioned", "bn": "শুধু প্রথম এবং শেষ row mention করা হয়"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The audio's order matches the table's own layout, moving top-to-bottom and left-to-right, just like form completion's sequential order.",
+      "bn": "Audio-এর order table-এর নিজের layout-এর সাথে মিলে, top-to-bottom এবং left-to-right move করে, form completion-এর sequential order-এর মতোই।"
+    }
+  },
+  {
+    "q": {
+      "en": "What kind of language helps you locate a flow-chart gap?",
+      "bn": "একটা flow-chart gap খুঁজে পেতে কোন ধরনের language সাহায্য করে?"
+    },
+    "options": [
+      {"en": "Sequencing words like \"after that,\" \"once this is done,\" or \"the next step\"", "bn": "\"after that,\" \"once this is done,\" বা \"the next step\"-এর মতো sequencing word"},
+      {"en": "Only numbers and dates", "bn": "শুধু number এবং date"},
+      {"en": "The speaker's tone of voice alone", "bn": "শুধু speaker-এর tone of voice"},
+      {"en": "Words that rhyme with the gap's answer", "bn": "Gap-এর answer-এর সাথে rhyme করে এমন word"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Sequencing words signal exactly when the speaker reaches the step that matches a flow-chart gap.",
+      "bn": "Sequencing word exactly signal দেয় কখন speaker একটা flow-chart gap-এর সাথে মেলা step-এ পৌঁছায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "You miss a gap's answer entirely during a table or flow-chart task. What should you do?",
+      "bn": "একটা table বা flow-chart task-এ একটা gap-এর answer সম্পূর্ণ miss করো। কী করা উচিত?"
+    },
+    "options": [
+      {"en": "Leave it blank — guessing isn't worth the risk", "bn": "খালি রেখে দেওয়া — guess করা risk-এর মতো না"},
+      {"en": "Guess from its position and grammar, since there's no penalty for a wrong guess", "bn": "এর position এবং grammar থেকে guess করা, কারণ ভুল guess-এর জন্য কোনো penalty নেই"},
+      {"en": "Mark the entire section as incomplete", "bn": "সম্পূর্ণ section incomplete মার্ক করা"},
+      {"en": "Wait for the recording to repeat that part", "bn": "Recording-এর সেই part repeat হওয়ার জন্য wait করা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "There's no negative marking in Listening, so an educated guess based on position and grammar is always better than a blank.",
+      "bn": "Listening-এ কোনো negative marking নেই, তাই position এবং grammar-এর ভিত্তিতে একটা educated guess সবসময় একটা blank-এর চেয়ে ভালো।"
+    }
+  },
+  {
+    "q": {
+      "en": "Does writing \"colour\" instead of \"color\" (or vice versa) affect your score in table completion?",
+      "bn": "Table completion-এ \"color\"-এর বদলে \"colour\" লেখা (বা উল্টো) কি তোমার score-এ প্রভাব ফেলে?"
+    },
+    "options": [
+      {"en": "Yes, only British spelling is accepted", "bn": "হ্যাঁ, শুধু British spelling accepted"},
+      {"en": "Yes, only American spelling is accepted", "bn": "হ্যাঁ, শুধু American spelling accepted"},
+      {"en": "No — both UK and US spellings are accepted", "bn": "না — UK এবং US spelling দুটোই accepted"},
+      {"en": "It depends on which country administered the test", "bn": "এটা নির্ভর করে কোন দেশ test পরিচালনা করেছে তার উপর"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Both British and American spellings are accepted as correct for table and flow-chart completion answers.",
+      "bn": "Table এবং flow-chart completion answer-এর জন্য British এবং American spelling দুটোই সঠিক হিসেবে accepted।"
+    }
+  },
+  {
+    "q": {
+      "en": "In a table with columns labelled \"ITEM\" and \"PRICE,\" what does the \"PRICE\" column header predict about its gap?",
+      "bn": "\"ITEM\" এবং \"PRICE\" labelled column থাকা একটা table-এ, \"PRICE\" column header এর gap নিয়ে কী predict করে?"
+    },
+    "options": [
+      {"en": "The gap needs a person's name", "bn": "Gap-এ একটা ব্যক্তির নাম লাগবে"},
+      {"en": "The gap needs a number", "bn": "Gap-এ একটা number লাগবে"},
+      {"en": "The gap needs a date", "bn": "Gap-এ একটা date লাগবে"},
+      {"en": "The gap needs a full sentence", "bn": "Gap-এ একটা সম্পূর্ণ sentence লাগবে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Just like in Reading, a column header like \"PRICE\" predicts the category of word needed — here, a number.",
+      "bn": "Reading-এর মতোই, \"PRICE\"-এর মতো একটা column header প্রয়োজনীয় word-এর category predict করে — এখানে, একটা number।"
+    }
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "A heading mentions one specific fact that also appears in the paragraph. Is that enough to confirm it's correct?",
+      "bn": "একটা heading একটা specific fact উল্লেখ করে যা paragraph-এও আছে। এটাই কি enough সেটা সঠিক প্রমাণ করার জন্য?"
+    },
+    "options": [
+      {"en": "Yes, shared facts always confirm the heading", "bn": "হ্যাঁ, shared fact সবসময় heading confirm করে"},
+      {"en": "No — a heading must match the paragraph's overall main idea, not just one detail", "bn": "না — heading-কে paragraph-এর overall main idea-র সাথে মিলতে হবে, শুধু একটা detail না"},
+      {"en": "Only if the fact appears in the first sentence", "bn": "শুধু fact-টা প্রথম sentence-এ থাকলে"},
+      {"en": "Only in Yes/No/Not Given passages", "bn": "শুধু Yes/No/Not Given passage-এ"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Headings that only share a detail with the paragraph but miss its overall point are classic distractors.",
+      "bn": "যে heading শুধু paragraph-এর একটা detail-এর সাথে share করে কিন্তু overall point miss করে, সেটাই classic distractor।"
+    }
+  },
+  {
+    "q": {
+      "en": "Where is a paragraph's main idea usually found?",
+      "bn": "একটা paragraph-এর main idea সাধারণত কোথায় পাওয়া যায়?"
+    },
+    "options": [
+      {"en": "Always in the exact middle of the paragraph", "bn": "সবসময় paragraph-এর ঠিক মাঝখানে"},
+      {"en": "In the first or last sentence", "bn": "প্রথম বা শেষ sentence-এ"},
+      {"en": "Only in footnotes", "bn": "শুধু footnote-এ"},
+      {"en": "It is never stated directly", "bn": "এটা কখনো সরাসরি বলা থাকে না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The main idea is usually in the first or last sentence, though occasionally it only becomes clear a bit later.",
+      "bn": "Main idea সাধারণত প্রথম বা শেষ sentence-এ থাকে, কখনো কখনো একটু পরে পরিষ্কার হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why are there always more headings than paragraphs?",
+      "bn": "কেন সবসময় paragraph-এর চেয়ে বেশি heading থাকে?"
+    },
+    "options": [
+      {"en": "To make the test shorter", "bn": "Test ছোট করার জন্য"},
+      {"en": "To create distractors — tempting but incorrect options", "bn": "Distractor তৈরি করার জন্য — আকর্ষণীয় কিন্তু ভুল option"},
+      {"en": "Because every heading must be used exactly twice", "bn": "কারণ প্রতিটা heading ঠিক দুইবার ব্যবহার করতে হয়"},
+      {"en": "It's a printing error in the test", "bn": "এটা test-এর একটা printing error"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Extra headings test whether you've truly identified each paragraph's main idea, not just found a plausible-looking match.",
+      "bn": "Extra heading test করে তুমি সত্যিই প্রতিটা paragraph-এর main idea identify করেছ কিনা, শুধু একটা plausible-looking match খুঁজে পাওয়া না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Should you read every word of every paragraph closely for this question type?",
+      "bn": "এই question type-এর জন্য কি প্রতিটা paragraph-এর প্রতিটা শব্দ ভালোভাবে পড়া উচিত?"
+    },
+    "options": [
+      {"en": "Yes, always read every word slowly", "bn": "হ্যাঁ, সবসময় প্রতিটা শব্দ ধীরে ধীরে পড়া উচিত"},
+      {"en": "No — skim for the gist; this type rewards skimming over slow, detailed reading", "bn": "না — gist-এর জন্য skim করো; এই type slow, detailed reading-এর চেয়ে skimming reward করে"},
+      {"en": "Only the last paragraph needs close reading", "bn": "শুধু শেষ paragraph-টা close reading লাগে"},
+      {"en": "It doesn't matter either way", "bn": "কোনোভাবেই এটা matter করে না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Matching headings tests the skimming skill — identifying overall structure and gist, not hunting for exact details.",
+      "bn": "Matching headings skimming skill test করে — overall structure এবং gist identify করা, exact detail খোঁজা না।"
+    }
+  },
+  {
+    "q": {
+      "en": "If two headings look equally plausible for a paragraph, what should you do?",
+      "bn": "যদি একটা paragraph-এর জন্য দুটো heading সমানভাবে plausible লাগে, কী করা উচিত?"
+    },
+    "options": [
+      {"en": "Spend as long as needed until you're 100% certain", "bn": "১০০% নিশ্চিত না হওয়া পর্যন্ত যতক্ষণ লাগে সময় নেওয়া"},
+      {"en": "Note both, move on, and come back if time allows", "bn": "দুটোই note করে এগিয়ে যাওয়া, সময় থাকলে পরে ফিরে আসা"},
+      {"en": "Leave the question blank", "bn": "Question খালি রাখা"},
+      {"en": "Always pick the first heading in the list", "bn": "সবসময় list-এর প্রথম heading বাছা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Getting stuck on one hard paragraph risks running out of time — note the options and move on, returning later if possible.",
+      "bn": "একটা কঠিন paragraph-এ আটকে থাকলে সময় শেষ হয়ে যাওয়ার risk থাকে — option note করে এগিয়ে যাও, সম্ভব হলে পরে ফিরে আসো।"
+    }
+  }
+]

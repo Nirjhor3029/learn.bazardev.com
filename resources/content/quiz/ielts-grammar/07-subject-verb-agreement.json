@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "\"The reasons for his absence ___ unclear.\" Which verb fits?",
+      "bn": "\"The reasons for his absence ___ unclear.\" কোন verb বসবে?"
+    },
+    "options": [
+      {"en": "is", "bn": "is"},
+      {"en": "are", "bn": "are"},
+      {"en": "was", "bn": "was"},
+      {"en": "has", "bn": "has"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The real subject is \"reasons\" (plural), not \"absence\" — words in between don't change agreement.",
+      "bn": "আসল subject হলো \"reasons\" (plural), \"absence\" না — মাঝের শব্দগুলো agreement বদলায় না।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"Everyone ___ finished the test.\" Which verb fits?",
+      "bn": "\"Everyone ___ finished the test.\" কোন verb বসবে?"
+    },
+    "options": [
+      {"en": "have", "bn": "have"},
+      {"en": "has", "bn": "has"},
+      {"en": "are", "bn": "are"},
+      {"en": "were", "bn": "were"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Everyone\" (like everybody, nobody, someone) is always grammatically singular.",
+      "bn": "\"Everyone\" (everybody, nobody, someone-এর মতো) সবসময় grammatically singular।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"Neither the manager nor the staff ___ aware of the change.\" Which verb fits?",
+      "bn": "\"Neither the manager nor the staff ___ aware of the change.\" কোন verb বসবে?"
+    },
+    "options": [
+      {"en": "was", "bn": "was"},
+      {"en": "were", "bn": "were"},
+      {"en": "is", "bn": "is"},
+      {"en": "has", "bn": "has"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "With \"neither...nor,\" the verb agrees with the nearer subject — \"the staff\" (plural).",
+      "bn": "\"neither...nor\"-এ verb agree করে কাছের subject-এর সাথে — \"the staff\" (plural)।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"The number of candidates ___ risen sharply this year.\" Which verb fits?",
+      "bn": "\"The number of candidates ___ risen sharply this year.\" কোন verb বসবে?"
+    },
+    "options": [
+      {"en": "have", "bn": "have"},
+      {"en": "has", "bn": "has"},
+      {"en": "are", "bn": "are"},
+      {"en": "were", "bn": "were"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"The number of\" is itself the singular subject here — different from \"a number of,\" which takes a plural verb.",
+      "bn": "\"The number of\" নিজেই এখানে singular subject — \"a number of\"-এর থেকে আলাদা, যেটা plural verb নেয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"A number of students ___ already applied.\" Which verb fits?",
+      "bn": "\"A number of students ___ already applied.\" কোন verb বসবে?"
+    },
+    "options": [
+      {"en": "has", "bn": "has"},
+      {"en": "have", "bn": "have"},
+      {"en": "is", "bn": "is"},
+      {"en": "was", "bn": "was"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"A number of\" + a plural noun takes a plural verb.",
+      "bn": "\"A number of\" + plural noun-এ plural verb বসে।"
+    }
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Which single habit prevents the most avoidable losses across every Listening question type?",
+      "bn": "প্রতিটা Listening question type-এ কোন একটা habit সবচেয়ে বেশি avoidable loss prevent করে?"
+    },
+    "options": [
+      {"en": "Only answering when 100% certain", "bn": "শুধু ১০০% নিশ্চিত হলেই answer দেওয়া"},
+      {"en": "Always writing an answer, even a guess", "bn": "সবসময় একটা answer লেখা, একটা guess হলেও"},
+      {"en": "Leaving difficult questions blank to save time", "bn": "সময় বাঁচানোর জন্য কঠিন question খালি রাখা"},
+      {"en": "Writing the longest possible answer every time", "bn": "প্রতিবার সম্ভাব্য সবচেয়ে লম্বা answer লেখা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "There's no negative marking, so a blank answer is the only guaranteed zero — always write a guess.",
+      "bn": "কোনো negative marking নেই, তাই একটা blank answer-ই একমাত্র guaranteed শূন্য — সবসময় একটা guess লেখো।"
+    }
+  },
+  {
+    "q": {
+      "en": "A multiple choice option's exact wording is spoken early in the audio. Should you choose it immediately?",
+      "bn": "একটা multiple choice option-এর exact wording audio-তে প্রথম দিকে বলা হয়। অবিলম্বে কি এটা choose করা উচিত?"
+    },
+    "options": [
+      {"en": "Yes, an exact match is always correct", "bn": "হ্যাঁ, একটা exact match সবসময় সঠিক"},
+      {"en": "No — wait, since the correct option is often mentioned last", "bn": "না — wait করো, কারণ সঠিক option প্রায়ই শেষে mention করা হয়"},
+      {"en": "Yes, but only in Section 1", "bn": "হ্যাঁ, কিন্তু শুধু Section 1-এ"},
+      {"en": "It doesn't matter which option you choose", "bn": "কোন option choose করো তা matter করে না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The correct option is often mentioned last, after the wrong ones are raised and rejected — don't commit to the first one heard.",
+      "bn": "সঠিক option প্রায়ই শেষে mention করা হয়, ভুলগুলো raise এবং reject হওয়ার পর — প্রথমে শোনা option-এ commit করো না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which theme covers mistakes like exceeding the word limit or writing numbers as words instead of numerals?",
+      "bn": "Word limit exceed করা বা numeral-এর বদলে number word হিসেবে লেখার মতো mistake কোন theme-এর অধীনে পড়ে?"
+    },
+    "options": [
+      {"en": "Prediction and pacing", "bn": "Prediction and pacing"},
+      {"en": "Word-level precision", "bn": "Word-level precision"},
+      {"en": "Listening traps", "bn": "Listening traps"},
+      {"en": "Meaning and paraphrase", "bn": "Meaning and paraphrase"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Word-level precision covers exact details like word limits, numerals, currency symbols, and spelling.",
+      "bn": "Word-level precision word limit, numeral, currency symbol, এবং spelling-এর মতো exact detail cover করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which single skill connects matching, sentence completion, and short-answer questions most directly?",
+      "bn": "Matching, sentence completion, এবং short-answer question-কে সবচেয়ে সরাসরি কোন একটা skill connect করে?"
+    },
+    "options": [
+      {"en": "Recognising paraphrase — different wording for the same meaning", "bn": "Paraphrase চেনা — একই মানে ভিন্ন wording-এ"},
+      {"en": "Memorizing every possible accent", "bn": "প্রতিটা সম্ভাব্য accent মুখস্থ করা"},
+      {"en": "Writing the longest grammatically correct sentence", "bn": "সবচেয়ে লম্বা grammatically correct sentence লেখা"},
+      {"en": "Using only outside, real-world knowledge", "bn": "শুধু outside, real-world knowledge ব্যবহার করা"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Recognising paraphrase — the same meaning in different words — is the thread connecting matching, sentence completion, and short-answer questions.",
+      "bn": "Paraphrase চেনা — ভিন্ন শব্দে একই মানে — matching, sentence completion, এবং short-answer question-কে connect করা thread।"
+    }
+  },
+  {
+    "q": {
+      "en": "You miss a question and the audio has already moved on. What's the correct response?",
+      "bn": "একটা question miss করো আর audio already এগিয়ে গেছে। সঠিক response কী?"
+    },
+    "options": [
+      {"en": "Stop and mentally replay what you just heard", "bn": "থেমে গিয়ে মানসিকভাবে যা শুনেছ তা replay করা"},
+      {"en": "Let it go immediately and listen for the next cue", "bn": "অবিলম্বে এটা ছেড়ে দিয়ে পরের cue শোনা"},
+      {"en": "Assume the test is now unfair and stop trying", "bn": "ধরে নেওয়া test এখন unfair এবং চেষ্টা করা বন্ধ করা"},
+      {"en": "Write down every word you can remember from the whole section", "bn": "সম্পূর্ণ section থেকে মনে রাখা প্রতিটা শব্দ লিখে ফেলা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Letting a miss go immediately and refocusing on the next cue prevents losing several more answers in a row.",
+      "bn": "একটা miss অবিলম্বে ছেড়ে দিয়ে পরের cue-তে refocus করা আরও কয়েকটা answer একসাথে হারানো থেকে বাঁচায়।"
+    }
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "The printed sentence says \"originally built.\" The audio says \"when it was first constructed.\" What's happening?",
+      "bn": "Printed sentence বলে \"originally built.\" Audio বলে \"when it was first constructed.\" কী হচ্ছে?"
+    },
+    "options": [
+      {"en": "A literal, word-for-word match", "bn": "একটা literal, word-for-word match"},
+      {"en": "Paraphrase — the sentence restates the audio's idea differently", "bn": "Paraphrase — sentence-টা audio-এর idea ভিন্নভাবে restate করে"},
+      {"en": "An unrelated distractor", "bn": "একটা unrelated distractor"},
+      {"en": "A grammar error in the question", "bn": "Question-এ একটা grammar error"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The printed sentence almost always paraphrases the audio's wording rather than repeating it exactly.",
+      "bn": "Printed sentence প্রায় সবসময় audio-এর wording exactly repeat করার বদলে paraphrase করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Does a hyphenated word like \"police-man\" count as one word or two for the word limit?",
+      "bn": "\"police-man\"-এর মতো একটা hyphenated word word limit-এর জন্য এক শব্দ না দুই শব্দ হিসেবে count হয়?"
+    },
+    "options": [
+      {"en": "Two words", "bn": "দুই শব্দ"},
+      {"en": "One word", "bn": "এক শব্দ"},
+      {"en": "It depends on the specific question", "bn": "এটা নির্দিষ্ট question-এর উপর নির্ভর করে"},
+      {"en": "Hyphenated words are never used as answers", "bn": "Hyphenated word কখনো answer হিসেবে ব্যবহৃত হয় না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A hyphenated word counts as one word toward the limit, regardless of how many parts it has.",
+      "bn": "একটা hyphenated word limit-এর জন্য এক শব্দ হিসেবে count হয়, এর কতগুলো part আছে তা নির্বিশেষে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What kind of phrase often sits right next to the answer in a sentence-completion task?",
+      "bn": "একটা sentence-completion task-এ answer-এর ঠিক পাশে কোন ধরনের phrase প্রায়ই থাকে?"
+    },
+    "options": [
+      {"en": "A signal phrase like \"the main reason\" or \"what's interesting is\"", "bn": "\"the main reason\" বা \"what's interesting is\"-এর মতো একটা signal phrase"},
+      {"en": "A random unrelated sentence", "bn": "একটা random unrelated sentence"},
+      {"en": "The speaker's name repeated twice", "bn": "Speaker-এর নাম দুইবার repeated"},
+      {"en": "A question mark", "bn": "একটা question mark"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Signal phrases marking key information or a topic shift often sit right next to the answer, worth tuning your ear to.",
+      "bn": "মূল তথ্য বা topic shift চিহ্নিত করা signal phrase প্রায়ই answer-এর ঠিক পাশে থাকে, যা শোনার জন্য কান tune করার মতো।"
+    }
+  },
+  {
+    "q": {
+      "en": "Do sentence-completion gaps in IELTS Listening appear in the same order as the recording?",
+      "bn": "IELTS Listening-এ sentence-completion gap কি recording-এর একই order-এ আসে?"
+    },
+    "options": [
+      {"en": "No, they're in random order", "bn": "না, এগুলো random order-এ"},
+      {"en": "Yes — just like every other completion type in this course", "bn": "হ্যাঁ — এই course-এর বাকি সব completion type-এর মতোই"},
+      {"en": "Only in Section 1", "bn": "শুধু Section 1-এ"},
+      {"en": "Only when there are fewer than five gaps", "bn": "শুধু পাঁচটার কম gap থাকলে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Sentence-completion gaps follow the recording's order, consistent with every other completion type covered in this course.",
+      "bn": "Sentence-completion gap recording-এর order follow করে, এই course-এ cover করা বাকি সব completion type-এর সাথে consistent।"
+    }
+  },
+  {
+    "q": {
+      "en": "Are contractions (like \"can't\") ever tested as the correct answer in sentence completion?",
+      "bn": "Sentence completion-এ \"can't\"-এর মতো contraction কি কখনো সঠিক answer হিসেবে test করা হয়?"
+    },
+    "options": [
+      {"en": "Yes, very frequently", "bn": "হ্যাঁ, অনেক frequently"},
+      {"en": "No — contractions are never tested as an answer", "bn": "না — contraction কখনো answer হিসেবে test করা হয় না"},
+      {"en": "Only in General Training, not Academic", "bn": "শুধু General Training-এ, Academic-এ না"},
+      {"en": "Only when the word limit is one word", "bn": "শুধু word limit এক শব্দ হলে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Contractions are never tested as the correct answer in sentence-completion tasks.",
+      "bn": "Sentence-completion task-এ contraction কখনো সঠিক answer হিসেবে test করা হয় না।"
+    }
+  }
+]

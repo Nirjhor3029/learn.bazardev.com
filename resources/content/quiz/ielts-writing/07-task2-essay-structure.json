@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Which part of the essay should introduce a brand-new argument?",
+      "bn": "Essay-র কোন part-এ একটা নতুন argument আনা উচিত?"
+    },
+    "options": [
+      {"en": "The introduction", "bn": "Introduction"},
+      {"en": "The conclusion", "bn": "Conclusion"},
+      {"en": "None — new arguments belong in body paragraphs only", "bn": "কোনোটাই না — নতুন argument শুধু body paragraph-এ থাকে"},
+      {"en": "Both the introduction and conclusion", "bn": "Introduction আর conclusion দুটোতেই"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "New arguments or evidence belong only in body paragraphs — the conclusion just restates what's already been argued.",
+      "bn": "নতুন argument বা evidence শুধু body paragraph-এ থাকে — conclusion শুধু আগে argue করা বিষয়টা পুনরায় বলে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What are the three parts of a body paragraph?",
+      "bn": "একটা body paragraph-এর তিনটা part কী কী?"
+    },
+    "options": [
+      {"en": "Introduction, body, conclusion", "bn": "Introduction, body, conclusion"},
+      {"en": "Topic sentence, explanation, example", "bn": "Topic sentence, explanation, example"},
+      {"en": "Paraphrase, outline, opinion", "bn": "Paraphrase, outline, opinion"},
+      {"en": "Question, answer, summary", "bn": "Question, answer, summary"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A body paragraph states one main idea (topic sentence), develops it (explanation), then supports it (example).",
+      "bn": "Body paragraph একটা main idea বলে (topic sentence), সেটা develop করে (explanation), তারপর support করে (example)।"
+    }
+  },
+  {
+    "q": {
+      "en": "Roughly how many words should a 250-300 word essay's introduction be?",
+      "bn": "২৫০-৩০০ শব্দের essay-র introduction মোটামুটি কত শব্দের হওয়া উচিত?"
+    },
+    "options": [
+      {"en": "About 10-15 words", "bn": "প্রায় ১০-১৫ শব্দ"},
+      {"en": "About 40-60 words", "bn": "প্রায় ৪০-৬০ শব্দ"},
+      {"en": "About 150 words", "bn": "প্রায় ১৫০ শব্দ"},
+      {"en": "About 250 words", "bn": "প্রায় ২৫০ শব্দ"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The introduction stays short — just the paraphrase plus an outline statement, roughly 40-60 words.",
+      "bn": "Introduction ছোট রাখা হয় — শুধু paraphrase আর outline statement, মোটামুটি ৪০-৬০ শব্দ।"
+    }
+  },
+  {
+    "q": {
+      "en": "True or false: the introduction should copy the question's exact wording.",
+      "bn": "সত্য না মিথ্যা: introduction-এ question-এর exact wording copy করা উচিত।"
+    },
+    "options": [
+      {"en": "True", "bn": "সত্য"},
+      {"en": "False", "bn": "মিথ্যা"},
+      {"en": "Only for opinion essays", "bn": "শুধু opinion essay-র জন্য"},
+      {"en": "Only in General Training", "bn": "শুধু General Training-এ"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The introduction should paraphrase the question in the writer's own words, not copy it exactly.",
+      "bn": "Introduction-এ question-টা writer-এর নিজের শব্দে paraphrase করা উচিত, exact copy না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why is it a problem for an essay to have no clear paragraph breaks?",
+      "bn": "Essay-তে clear paragraph break না থাকলে কেন সমস্যা হয়?"
+    },
+    "options": [
+      {"en": "It makes the essay too short", "bn": "এতে essay খুব ছোট হয়ে যায়"},
+      {"en": "It hurts Coherence and Cohesion, since organisation is part of that score", "bn": "এটা Coherence and Cohesion score খারাপ করে, কারণ organisation এই score-এর অংশ"},
+      {"en": "It automatically fails Task Response", "bn": "এটা automatically Task Response fail করায়"},
+      {"en": "It has no effect on scoring", "bn": "Scoring-এ এর কোনো প্রভাব নেই"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Clear paragraphing is part of how an essay is organised, which is directly assessed under Coherence and Cohesion.",
+      "bn": "Clear paragraphing essay organise করার একটা অংশ, যেটা সরাসরি Coherence and Cohesion-এ assess হয়।"
+    }
+  }
+]

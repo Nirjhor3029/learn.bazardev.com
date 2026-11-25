@@ -16,8 +16,13 @@
             </p>
         @endif
 
+        @php
+            $isPaid = $pricing && ! $pricing->is_free && $pricing->price_amount > 0;
+            $orderedChapterSlugs = array_keys($course['chapters']);
+        @endphp
+
         {{-- Price / buy, only shown once an admin has actually marked this course paid. --}}
-        @if ($pricing && ! $pricing->is_free && $pricing->price_amount > 0)
+        @if ($isPaid)
             <div class="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-gray-100 bg-white px-5 py-4 shadow-sm">
                 @if ($owned)
                     <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1 text-sm font-medium text-emerald-700">
@@ -78,6 +83,9 @@
                     $available = $chapter['status'] === 'available';
                     $isDone = in_array($slug, $done, true);
                     $isBookmarked = in_array($slug, $bookmarked, true);
+                    // Same rule the admin set on the pricing screen — mirrors EnsureCourseEntitlement.
+                    $isFreePreview = $pricing && $pricing->isChapterFree($slug, $orderedChapterSlugs);
+                    $isPaymentLocked = $isPaid && ! $owned && ! $isFreePreview;
                 @endphp
                 <li>
                     <a href="{{ $available ? route('course.chapter', [$course['slug'], $slug]) : '#' }}"
@@ -87,18 +95,24 @@
                                 <span class="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">
                                     <x-icon name="check" class="h-4 w-4" /><span class="sr-only">Done</span>
                                 </span>
+                            @elseif ($isPaymentLocked)
+                                <span class="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-amber-50 text-amber-700">
+                                    <x-icon name="lock" class="h-3.5 w-3.5" /><span class="sr-only">Requires purchase</span>
+                                </span>
                             @else
                                 <span class="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-gray-100 text-xs font-semibold text-gray-500">{{ $loop->iteration }}</span>
                             @endif
-                            <span class="font-medium {{ $isDone ? 'text-gray-500' : '' }}">{{ $chapter['title'] }}</span>
+                            <span class="font-medium {{ $isDone ? 'text-gray-500' : ($isPaymentLocked ? 'text-gray-500' : '') }}">{{ $chapter['title'] }}</span>
                         </span>
                         <span class="flex flex-shrink-0 items-center gap-2">
                             @if ($isBookmarked)
                                 <x-icon name="bookmark-solid" class="h-4 w-4 text-blue-600" /><span class="sr-only">Bookmarked</span>
                             @endif
-                            @unless ($available)
+                            @if ($isPaymentLocked)
+                                <span class="rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700">Paid</span>
+                            @elseif (! $available)
                                 <span class="text-xs text-gray-400">Soon</span>
-                            @endunless
+                            @endif
                         </span>
                     </a>
                 </li>

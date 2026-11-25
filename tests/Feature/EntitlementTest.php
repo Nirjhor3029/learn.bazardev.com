@@ -144,6 +144,72 @@ class EntitlementTest extends TestCase
         $this->assertSame($admin->id, $pricing->updated_by);
     }
 
+    public function test_saving_a_price_over_ajax_returns_json_instead_of_a_redirect(): void
+    {
+        $admin = $this->admin();
+
+        $response = $this->actingAs($admin)
+            ->putJson('/admin/pricing/docker', ['price_amount' => 750]);
+
+        $response->assertOk()->assertJsonStructure(['message', 'updated_at', 'updated_by']);
+        $response->assertJsonPath('updated_by', $admin->name);
+
+        $pricing = CoursePricing::query()->where('course_slug', 'docker')->first();
+        $this->assertFalse($pricing->is_free);
+        $this->assertSame(750, $pricing->price_amount);
+    }
+
+    public function test_an_invalid_price_over_ajax_returns_a_422_with_errors_not_a_redirect(): void
+    {
+        $admin = $this->admin();
+
+        $this->actingAs($admin)
+            ->putJson('/admin/pricing/docker', ['price_amount' => -5])
+            ->assertStatus(422)
+            ->assertJsonValidationErrors('price_amount');
+    }
+
+    public function test_admin_can_pick_a_different_chapter_as_the_free_preview(): void
+    {
+        $admin = $this->admin();
+
+        $this->actingAs($admin)
+            ->putJson('/admin/pricing/docker', [
+                'price_amount' => 500,
+                'free_chapter_slugs' => ['02-install-and-first-container'],
+            ])
+            ->assertOk();
+
+        $this->get(self::CH1)->assertRedirect(route('course.show', 'docker'));
+        $this->get(self::CH2)->assertOk();
+    }
+
+    public function test_an_admin_can_lock_every_chapter_by_submitting_no_free_chapters(): void
+    {
+        $admin = $this->admin();
+
+        $this->actingAs($admin)
+            ->putJson('/admin/pricing/docker', [
+                'price_amount' => 500,
+                'free_chapter_slugs' => [],
+            ])
+            ->assertOk();
+
+        $this->get(self::CH1)->assertRedirect(route('course.show', 'docker'));
+    }
+
+    public function test_updating_the_price_without_touching_chapters_keeps_the_default_free_preview(): void
+    {
+        $admin = $this->admin();
+
+        $this->actingAs($admin)
+            ->putJson('/admin/pricing/docker', ['price_amount' => 600])
+            ->assertOk();
+
+        $this->get(self::CH1)->assertOk();
+        $this->get(self::CH2)->assertRedirect(route('course.show', 'docker'));
+    }
+
     public function test_admin_pricing_screen_renders(): void
     {
         $admin = $this->admin();
@@ -154,6 +220,51 @@ class EntitlementTest extends TestCase
             ->assertSee('Docker')
             ->assertSee('value="500"', false)
             ->assertSee('Not configured — currently open/free');
+    }
+
+    public function test_the_home_page_shows_a_lock_and_price_on_a_paid_course_a_guest_does_not_own(): void
+    {
+        $this->markPaid();
+
+        $this->get('/')->assertOk()->assertSee('500 BDT');
+    }
+
+    public function test_the_home_page_hides_the_lock_once_the_user_owns_the_course(): void
+    {
+        $this->markPaid();
+        $user = User::factory()->create();
+        $user->entitlements()->create([
+            'product_type' => Entitlement::COURSE,
+            'product_key' => 'docker',
+            'source' => Entitlement::ADMIN_GRANT,
+            'starts_at' => now(),
+        ]);
+
+        $this->actingAs($user)->get('/')->assertOk()->assertDontSee('500 BDT');
+    }
+
+    public function test_the_course_page_locks_every_chapter_but_the_first_for_a_non_owner(): void
+    {
+        $this->markPaid();
+
+        $response = $this->get('/docker');
+
+        $response->assertOk();
+        $response->assertSeeInOrder(['01-what-is-docker', 'Requires purchase'], false);
+    }
+
+    public function test_the_course_page_shows_no_lock_once_the_course_is_owned(): void
+    {
+        $this->markPaid();
+        $user = User::factory()->create();
+        $user->entitlements()->create([
+            'product_type' => Entitlement::COURSE,
+            'product_key' => 'docker',
+            'source' => Entitlement::ADMIN_GRANT,
+            'starts_at' => now(),
+        ]);
+
+        $this->actingAs($user)->get('/docker')->assertOk()->assertDontSee('Requires purchase');
     }
 
     public function test_admin_entitlements_screen_renders(): void

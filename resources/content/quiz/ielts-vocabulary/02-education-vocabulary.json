@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "\"The government wants to improve the ___ rate in rural areas.\"",
+      "bn": "\"The government wants to improve the ___ rate in rural areas.\""
+    },
+    "options": [
+      {"en": "literate", "bn": "literate"},
+      {"en": "literacy", "bn": "literacy"},
+      {"en": "literature", "bn": "literature"},
+      {"en": "literal", "bn": "literal"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Literacy rate\" is the fixed collocation (the noun form). \"Literate\" is an adjective describing a person, not a rate.",
+      "bn": "\"Literacy rate\" fixed collocation (noun form)। \"Literate\" একটা adjective, একটা মানুষকে বর্ণনা করে, rate-কে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"She finally ___ as a doctor last year.\"",
+      "bn": "\"She finally ___ as a doctor last year.\""
+    },
+    "options": [
+      {"en": "qualification", "bn": "qualification"},
+      {"en": "qualified", "bn": "qualified"},
+      {"en": "qualifying", "bn": "qualifying"},
+      {"en": "qualify", "bn": "qualify"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Qualified\" is the past simple of the verb \"qualify\" — needed here because the sentence is about a completed past action (\"last year\").",
+      "bn": "\"Qualified\" হলো verb \"qualify\"-এর past simple form — এখানে লাগবে কারণ sentence-টা একটা শেষ হওয়া past action (\"last year\") নিয়ে।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"___ training prepares someone for a specific trade, not an academic degree.\"",
+      "bn": "\"___ training prepares someone for a specific trade, not an academic degree.\""
+    },
+    "options": [
+      {"en": "Higher", "bn": "Higher"},
+      {"en": "Compulsory", "bn": "Compulsory"},
+      {"en": "Vocational", "bn": "Vocational"},
+      {"en": "Primary", "bn": "Primary"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "\"Vocational training\" means practical, job-specific training, as opposed to an academic degree.",
+      "bn": "\"Vocational training\" মানে practical, job-specific training — academic degree-এর বিপরীতে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the opposite of \"state school\"?",
+      "bn": "\"State school\"-এর বিপরীত কী?"
+    },
+    "options": [
+      {"en": "Primary school", "bn": "Primary school"},
+      {"en": "Private school", "bn": "Private school"},
+      {"en": "Secondary school", "bn": "Secondary school"},
+      {"en": "Vocational school", "bn": "Vocational school"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A state school is government-funded and free; a private school charges fees.",
+      "bn": "State school government-funded এবং free; private school fee নেয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which sentence uses \"disadvantaged\" correctly?",
+      "bn": "কোন sentence \"disadvantaged\" সঠিকভাবে ব্যবহার করে?"
+    },
+    "options": [
+      {"en": "Disadvantaged students often have fewer resources than their peers.", "bn": "Disadvantaged students often have fewer resources than their peers."},
+      {"en": "The school disadvantaged a new curriculum this year.", "bn": "The school disadvantaged a new curriculum this year."},
+      {"en": "She is very disadvantaged in mathematics.", "bn": "She is very disadvantaged in mathematics."},
+      {"en": "The disadvantaged of the exam was very high.", "bn": "The disadvantaged of the exam was very high."}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "\"Disadvantaged\" describes people with fewer resources or opportunities than their peers — it's an adjective for people, not a verb or a quality level.",
+      "bn": "\"Disadvantaged\" এমন মানুষদের বর্ণনা করে যাদের সমবয়সীদের চেয়ে কম resource বা সুযোগ আছে — এটা মানুষের জন্য adjective, verb বা quality-level না।"
+    }
+  }
+]

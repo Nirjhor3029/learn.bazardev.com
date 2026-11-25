@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "\"Government programmes aim to ___ the digital divide.\"",
+      "bn": "\"Government programmes aim to ___ the digital divide.\""
+    },
+    "options": [
+      {"en": "build", "bn": "build"},
+      {"en": "bridge", "bn": "bridge"},
+      {"en": "cut", "bn": "cut"},
+      {"en": "automate", "bn": "automate"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Bridge the digital divide\" is the fixed collocation meaning to reduce the gap in technology access.",
+      "bn": "\"Bridge the digital divide\" fixed collocation, মানে technology access-এর gap কমানো।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"The factory ___ its entire assembly line last year.\"",
+      "bn": "\"The factory ___ its entire assembly line last year.\""
+    },
+    "options": [
+      {"en": "automate", "bn": "automate"},
+      {"en": "automation", "bn": "automation"},
+      {"en": "automated", "bn": "automated"},
+      {"en": "automating", "bn": "automating"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "\"Automated\" is the past simple of the verb \"automate\", needed here because of \"last year\".",
+      "bn": "\"Automated\" হলো verb \"automate\"-এর past simple, \"last year\"-এর কারণে এটাই লাগবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"A sharp rise in ___\" refers to online crimes like hacking and fraud.",
+      "bn": "\"A sharp rise in ___\" online crime যেমন hacking এবং fraud বোঝায়।"
+    },
+    "options": [
+      {"en": "cyberspace", "bn": "cyberspace"},
+      {"en": "cybercrime", "bn": "cybercrime"},
+      {"en": "cyberbullying", "bn": "cyberbullying"},
+      {"en": "cybersecurity", "bn": "cybersecurity"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"A rise in cybercrime\" is the standard collocation referring to online crimes in general.",
+      "bn": "\"A rise in cybercrime\" standard collocation, সাধারণভাবে online crime বোঝায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which pair contrasts in-person interaction with interaction through a screen?",
+      "bn": "কোন pair সামনাসামনি interaction আর স্ক্রিনের মাধ্যমে interaction-এর মধ্যে contrast দেখায়?"
+    },
+    "options": [
+      {"en": "online vs. offline", "bn": "online vs. offline"},
+      {"en": "manual labour vs. automation", "bn": "manual labour vs. automation"},
+      {"en": "face-to-face vs. virtual communication", "bn": "face-to-face vs. virtual communication"},
+      {"en": "innovation vs. tradition", "bn": "innovation vs. tradition"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "\"Face-to-face\" means in-person interaction; \"virtual communication\" means interaction through a screen.",
+      "bn": "\"Face-to-face\" মানে সামনাসামনি interaction; \"virtual communication\" মানে স্ক্রিনের মাধ্যমে interaction।"
+    }
+  },
+  {
+    "q": {
+      "en": "In an essay about AI, which pair correctly represents its double-edged nature?",
+      "bn": "AI নিয়ে essay-তে কোন pair এর double-edged nature সঠিকভাবে বোঝায়?"
+    },
+    "options": [
+      {"en": "boosts productivity (benefit) vs. job displacement (risk)", "bn": "boosts productivity (benefit) vs. job displacement (risk)"},
+      {"en": "innovation (benefit) vs. innovation (risk)", "bn": "innovation (benefit) vs. innovation (risk)"},
+      {"en": "automation (benefit) vs. automation (benefit)", "bn": "automation (benefit) vs. automation (benefit)"},
+      {"en": "high-speed internet (risk) vs. cybercrime (benefit)", "bn": "high-speed internet (risk) vs. cybercrime (benefit)"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "AI essays typically weigh a benefit like boosted productivity against a risk like job displacement.",
+      "bn": "AI নিয়ে essay-তে সাধারণত boosted productivity-র মতো benefit-এর সাথে job displacement-এর মতো risk তুলনা করা হয়।"
+    }
+  }
+]

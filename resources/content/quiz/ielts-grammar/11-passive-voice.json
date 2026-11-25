@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Turn into passive: \"The company produces 500 cars a day.\"",
+      "bn": "Passive-এ রূপান্তর করো: \"The company produces 500 cars a day.\""
+    },
+    "options": [
+      {"en": "500 cars produces a day by the company.", "bn": "500 cars produces a day by the company."},
+      {"en": "500 cars are produced a day by the company.", "bn": "500 cars are produced a day by the company."},
+      {"en": "500 cars is produced a day by the company.", "bn": "500 cars is produced a day by the company."},
+      {"en": "500 cars are producing a day by the company.", "bn": "500 cars are producing a day by the company."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The object (500 cars) becomes the subject, and the verb becomes \"are produced\" — plural \"be\" plus past participle.",
+      "bn": "Object (500 cars) subject হয়ে যায়, verb হয় \"are produced\" — plural \"be\" plus past participle।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix: \"The letter was wrote yesterday.\"",
+      "bn": "ঠিক করো: \"The letter was wrote yesterday.\""
+    },
+    "options": [
+      {"en": "The letter was written yesterday.", "bn": "The letter was written yesterday."},
+      {"en": "The letter wrote yesterday.", "bn": "The letter wrote yesterday."},
+      {"en": "The letter was write yesterday.", "bn": "The letter was write yesterday."},
+      {"en": "The letter is wrote yesterday.", "bn": "The letter is wrote yesterday."}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The passive always needs the past participle (\"written\"), never the past simple form (\"wrote\").",
+      "bn": "Passive-এ সবসময় past participle লাগে (\"written\"), past simple form (\"wrote\") লাগে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which sounds more objective/academic for an essay?",
+      "bn": "Essay-এর জন্য কোনটা বেশি objective/academic শোনায়?"
+    },
+    "options": [
+      {"en": "I think pollution is a serious problem.", "bn": "I think pollution is a serious problem."},
+      {"en": "Pollution is widely considered a serious problem.", "bn": "Pollution is widely considered a serious problem."},
+      {"en": "Pollution, I believe, is a serious problem.", "bn": "Pollution, I believe, is a serious problem."},
+      {"en": "Everyone I know thinks pollution is a serious problem.", "bn": "Everyone I know thinks pollution is a serious problem."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The passive removes the personal \"I think\" and presents the idea as general knowledge, which is more academic.",
+      "bn": "Passive personal \"I think\" বাদ দিয়ে idea-কে general knowledge-এর মতো দেখায়, যেটা বেশি academic।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix: \"The bridge build in 2005.\"",
+      "bn": "ঠিক করো: \"The bridge build in 2005.\""
+    },
+    "options": [
+      {"en": "The bridge built in 2005.", "bn": "The bridge built in 2005."},
+      {"en": "The bridge was built in 2005.", "bn": "The bridge was built in 2005."},
+      {"en": "The bridge is build in 2005.", "bn": "The bridge is build in 2005."},
+      {"en": "The bridge was build in 2005.", "bn": "The bridge was build in 2005."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The passive needs \"was/were\" + past participle together — the past participle alone is not enough.",
+      "bn": "Passive-এ \"was/were\" + past participle একসাথে লাগে — past participle একা যথেষ্ট না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why can't \"He arrived\" become passive (\"was arrived\")?",
+      "bn": "\"He arrived\" কেন passive হতে পারে না (\"was arrived\")?"
+    },
+    "options": [
+      {"en": "Because \"arrive\" is in the past tense.", "bn": "কারণ \"arrive\" past tense-এ আছে।"},
+      {"en": "Because \"arrive\" has no object — it's intransitive.", "bn": "কারণ \"arrive\"-এর কোনো object নেই — এটা intransitive।"},
+      {"en": "Because \"he\" is a pronoun, not a noun.", "bn": "কারণ \"he\" একটা pronoun, noun না।"},
+      {"en": "Because the sentence is too short.", "bn": "কারণ sentence খুব ছোট।"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Only transitive verbs (verbs with an object) can be made passive. \"Arrive\" has no object, so it has no passive form.",
+      "bn": "শুধু transitive verb (যার object আছে) passive হতে পারে। \"Arrive\"-এর কোনো object নেই, তাই এর passive form নেই।"
+    }
+  }
+]

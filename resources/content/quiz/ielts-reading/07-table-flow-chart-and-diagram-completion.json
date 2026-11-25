@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "A table column is headed \"Property,\" and a row is about steel. What should NOT go in the gap?",
+      "bn": "একটা table column-এর header \"Property,\" আর একটা row steel নিয়ে। Gap-এ কী বসা উচিত না?"
+    },
+    "options": [
+      {"en": "A property word like \"strength\"", "bn": "\"strength\"-এর মতো একটা property word"},
+      {"en": "A material name like \"wood\"", "bn": "\"wood\"-এর মতো একটা material name"},
+      {"en": "A word found in the passage", "bn": "Passage-এ পাওয়া একটা word"},
+      {"en": "A single word", "bn": "একটা single word"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The column header \"Property\" signals a property word is needed, ruling out a material name like \"wood\" or \"steel.\"",
+      "bn": "Column header \"Property\" একটা property word দরকার বোঝায়, \"wood\" বা \"steel\"-এর মতো material name বাদ দেয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "In a flow-chart, how do you find the right step to match a gap?",
+      "bn": "একটা flow-chart-এ গ্যাপের সাথে মেলে এমন সঠিক step কিভাবে খুঁজে পাবে?"
+    },
+    "options": [
+      {"en": "Guess based on general knowledge", "bn": "General knowledge-এর ভিত্তিতে guess করা"},
+      {"en": "Track sequencing words like first, next, then, finally", "bn": "First, next, then, finally-র মতো sequencing word track করা"},
+      {"en": "Always pick the first paragraph's information", "bn": "সবসময় প্রথম paragraph-এর information বাছা"},
+      {"en": "Ignore the passage and use the diagram alone", "bn": "Passage ignore করে শুধু diagram ব্যবহার করা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Sequencing words in the passage help you locate exactly which stage of the process matches each gap.",
+      "bn": "Passage-এর sequencing word তোমাকে exactly বলে দেয় process-এর কোন stage প্রতিটা gap-এর সাথে মেলে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Where does the correct answer for a diagram label always come from?",
+      "bn": "একটা diagram label-এর সঠিক answer সবসময় কোথা থেকে আসে?"
+    },
+    "options": [
+      {"en": "The test-taker's outside/general knowledge", "bn": "Test-taker-এর outside/general knowledge"},
+      {"en": "The passage, often a term introduced there for the first time", "bn": "Passage, প্রায়ই সেখানে প্রথমবার introduce করা একটা term"},
+      {"en": "The diagram's title only", "bn": "শুধু diagram-এর title"},
+      {"en": "Common sense about how machines work", "bn": "Machine কিভাবে কাজ করে তার common sense"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The correct label always comes from the passage, often a new technical term introduced specifically for this purpose.",
+      "bn": "সঠিক label সবসময় passage থেকে আসে, প্রায়ই এই purpose-এর জন্য specifically introduce করা একটা নতুন technical term।"
+    }
+  },
+  {
+    "q": {
+      "en": "Do the word-limit and spelling rules from Chapter 6 still apply to table/flow-chart/diagram completion?",
+      "bn": "Chapter 6-এর word-limit এবং spelling rule কি table/flow-chart/diagram completion-এও প্রযোজ্য?"
+    },
+    "options": [
+      {"en": "No, this question type has no word limit", "bn": "না, এই question type-এ কোনো word limit নেই"},
+      {"en": "Yes — this is a visual variant of the same completion rules", "bn": "হ্যাঁ — এটা একই completion rule-এর একটা visual variant"},
+      {"en": "Only for tables, not flow-charts or diagrams", "bn": "শুধু table-এর জন্য, flow-chart বা diagram-এর জন্য না"},
+      {"en": "Only in General Training", "bn": "শুধু General Training-এ"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Table, flow-chart, and diagram completion all follow the same word-limit, spelling, and grammar rules from Chapter 6.",
+      "bn": "Table, flow-chart, এবং diagram completion সবই Chapter 6-এর একই word-limit, spelling, এবং grammar rule follow করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does a table's column header tell you before you even scan the passage?",
+      "bn": "Passage scan করার আগেই একটা table-এর column header তোমাকে কী বলে দেয়?"
+    },
+    "options": [
+      {"en": "The exact word count of the final answer", "bn": "চূড়ান্ত answer-এর exact word count"},
+      {"en": "The category or type of word expected in the gap", "bn": "Gap-এ কী category বা type-এর word expected সেটা"},
+      {"en": "Nothing useful — headers are decorative only", "bn": "কোনো useful তথ্য না — header শুধু decorative"},
+      {"en": "The page number where the answer is located", "bn": "Answer যে page-এ আছে তার number"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A column header predicts the category of word needed, letting you narrow your search before reading closely.",
+      "bn": "একটা column header প্রয়োজনীয় word-এর category predict করে, যা closely পড়ার আগে search সংকুচিত করতে সাহায্য করে।"
+    }
+  }
+]

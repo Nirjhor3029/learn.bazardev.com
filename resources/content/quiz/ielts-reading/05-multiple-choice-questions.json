@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "An option uses a word copied directly from the passage. Does that make it correct?",
+      "bn": "একটা option passage থেকে সরাসরি কোনো word copy করে। এটা কি সেটাকে সঠিক প্রমাণ করে?"
+    },
+    "options": [
+      {"en": "Yes, always", "bn": "হ্যাঁ, সবসময়"},
+      {"en": "Not necessarily — check whether the overall claim actually matches", "bn": "প্রয়োজন নেই — overall claim আসলে মেলে কিনা check করো"},
+      {"en": "Only if the word appears more than once", "bn": "শুধু শব্দটা একবারের বেশি থাকলে"},
+      {"en": "Only in multi-answer questions", "bn": "শুধু multi-answer question-এ"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "This is a classic distractor trap — borrowed vocabulary doesn't guarantee the overall claim is correct.",
+      "bn": "এটা একটা classic distractor trap — borrowed vocabulary guarantee করে না যে overall claim সঠিক।"
+    }
+  },
+  {
+    "q": {
+      "en": "A multi-answer question asks for exactly 2 correct options, but you've selected 3. What should you do?",
+      "bn": "একটা multi-answer question ঠিক ২টা সঠিক option চায়, কিন্তু তুমি ৩টা select করেছ। কী করা উচিত?"
+    },
+    "options": [
+      {"en": "Submit as is — more answers can only help", "bn": "যেমন আছে submit করো — বেশি answer শুধু সাহায্য করবে"},
+      {"en": "Recheck all 3 — at least one is likely wrong", "bn": "৩টাই recheck করো — অন্তত একটা সম্ভবত ভুল"},
+      {"en": "Randomly remove one option", "bn": "Random-ভাবে একটা option বাদ দাও"},
+      {"en": "Leave the question blank instead", "bn": "এর বদলে question খালি রাখো"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Selecting the wrong count usually scores zero for that question — recheck all selected options against the instructions.",
+      "bn": "ভুল count select করলে সাধারণত সেই question-এ zero score হয় — instruction অনুযায়ী selected সব option recheck করো।"
+    }
+  },
+  {
+    "q": {
+      "en": "Do multiple choice questions follow the passage's order?",
+      "bn": "Multiple choice question কি passage-এর order follow করে?"
+    },
+    "options": [
+      {"en": "No, never", "bn": "না, কখনো না"},
+      {"en": "Yes — unlike matching information, answers appear in the same order as the passage", "bn": "হ্যাঁ — matching information-এর বিপরীতে, answer passage-এর একই order-এ থাকে"},
+      {"en": "Only for single-answer questions", "bn": "শুধু single-answer question-এর জন্য"},
+      {"en": "Only in General Training", "bn": "শুধু General Training-এ"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Multiple choice questions follow passage order, unlike matching information where the order isn't fixed.",
+      "bn": "Multiple choice question passage order follow করে, matching information-এর মতো order fixed না।"
+    }
+  },
+  {
+    "q": {
+      "en": "What should you do before looking at the answer options?",
+      "bn": "Answer option দেখার আগে কী করা উচিত?"
+    },
+    "options": [
+      {"en": "Read all four options twice", "bn": "চারটা option দুইবার পড়া"},
+      {"en": "Try to predict the answer yourself from the question stem", "bn": "Question stem থেকে নিজেই answer predict করার চেষ্টা করা"},
+      {"en": "Pick randomly to save time", "bn": "সময় বাঁচাতে random-ভাবে বাছা"},
+      {"en": "Skip to the next question", "bn": "পরের question-এ চলে যাওয়া"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Predicting the answer first, then comparing to the options, helps you avoid being swayed by well-crafted distractors.",
+      "bn": "প্রথমে answer predict করে তারপর option-এর সাথে তুলনা করলে well-crafted distractor-এ বিভ্রান্ত হওয়া এড়ানো যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which distractor type states the exact reverse of the correct fact?",
+      "bn": "কোন distractor type সঠিক fact-এর ঠিক উল্টো বলে?"
+    },
+    "options": [
+      {"en": "The opposite", "bn": "The opposite"},
+      {"en": "Borrowed words", "bn": "Borrowed words"},
+      {"en": "Partly true", "bn": "Partly true"},
+      {"en": "Wrong question", "bn": "Wrong question"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "\"The opposite\" distractor states the exact reverse of the correct fact, hoping you'll miss the reversal.",
+      "bn": "\"The opposite\" distractor সঠিক fact-এর ঠিক উল্টো বলে, আশা করে তুমি সেই reversal miss করবে।"
+    }
+  }
+]

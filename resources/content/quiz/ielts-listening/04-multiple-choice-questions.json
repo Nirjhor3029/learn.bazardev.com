@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "A speaker mentions \"cotton,\" then \"nylon,\" then says \"in the end, we chose polyester.\" Which is the correct answer?",
+      "bn": "একজন speaker \"cotton\" বলে, তারপর \"nylon,\" তারপর বলে \"in the end, we chose polyester.\" সঠিক answer কোনটা?"
+    },
+    "options": [
+      {"en": "Cotton, since it's mentioned first", "bn": "Cotton, কারণ এটা প্রথমে mention করা"},
+      {"en": "Nylon, since it's mentioned second", "bn": "Nylon, কারণ এটা দ্বিতীয়বার mention করা"},
+      {"en": "Polyester — mentioned last, after the others are rejected", "bn": "Polyester — শেষে mention করা, অন্যগুলো reject হওয়ার পর"},
+      {"en": "All three are equally valid answers", "bn": "তিনটাই সমানভাবে valid answer"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "The correct option is often mentioned last, after the wrong options are raised and rejected with a correction signal like \"but\" or \"in the end.\"",
+      "bn": "সঠিক option প্রায়ই শেষে mention করা হয়, ভুল option-গুলো \"but\" বা \"in the end\"-এর মতো correction signal দিয়ে raise এবং reject হওয়ার পর।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why should you read every answer option before the audio starts, for a multiple choice question?",
+      "bn": "একটা multiple choice question-এর জন্য, audio শুরু হওয়ার আগে প্রতিটা answer option কেন পড়া উচিত?"
+    },
+    "options": [
+      {"en": "To memorize the exact wording of the correct answer", "bn": "সঠিক answer-এর exact wording মুখস্থ করার জন্য"},
+      {"en": "To know exactly what distinguishes each option from the others", "bn": "প্রতিটা option অন্যগুলো থেকে exactly কীভাবে আলাদা তা জানার জন্য"},
+      {"en": "It's not necessary — only the first option matters", "bn": "এটা দরকার নেই — শুধু প্রথম option matter করে"},
+      {"en": "To predict the exact word that will fill a gap", "bn": "একটা gap পূরণ করবে এমন exact word predict করার জন্য"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Unlike completion gaps, you can't predict a single word for multiple choice — instead, know what distinguishes each option so you catch the right distinction when it's spoken.",
+      "bn": "Completion gap-এর মতো না, multiple choice-এর জন্য একটা single word predict করা যায় না — বরং প্রতিটা option কীভাবে আলাদা তা জানলে কথা বলার সময় সঠিক distinction ধরা যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "The question asks \"What will the speaker do now?\" Which part of the audio matters most?",
+      "bn": "Question বলছে \"What will the speaker do now?\" Audio-এর কোন part সবচেয়ে বেশি matter করে?"
+    },
+    "options": [
+      {"en": "The speaker's original, now-changed plan", "bn": "Speaker-এর original, এখন changed plan"},
+      {"en": "The speaker's current or future plan", "bn": "Speaker-এর current বা future plan"},
+      {"en": "Any part of the audio — time doesn't matter", "bn": "Audio-এর কোনো part — সময় matter করে না"},
+      {"en": "Only the very first sentence of the recording", "bn": "শুধু recording-এর প্রথম sentence"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Matching the question's time signal (past, present, future) to the right part of the audio avoids picking an earlier, now-changed plan.",
+      "bn": "Question-এর time signal (past, present, future) audio-এর সঠিক part-এর সাথে মিলানো একটা earlier, now-changed plan বাছা এড়ায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "In a choose-two-or-three multiple choice question, you've found one correct option. What should you do next?",
+      "bn": "একটা choose-two-or-three multiple choice question-এ, তুমি একটা সঠিক option খুঁজে পেয়েছ। পরে কী করা উচিত?"
+    },
+    "options": [
+      {"en": "Stop listening — the task is complete", "bn": "শোনা বন্ধ করা — task সম্পূর্ণ"},
+      {"en": "Keep listening — the remaining options are often scattered further along", "bn": "শুনতে থাকা — বাকি option-গুলো প্রায়ই আরও সামনে ছড়িয়ে থাকে"},
+      {"en": "Assume the next option mentioned is automatically correct", "bn": "পরে mention করা option automatically সঠিক ধরে নেওয়া"},
+      {"en": "Change your first answer to something else", "bn": "তোমার প্রথম answer অন্য কিছুতে change করা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The remaining correct options in a choose-multiple question are often spread out later in the audio, not grouped together.",
+      "bn": "একটা choose-multiple question-এ বাকি সঠিক option প্রায়ই audio-এর পরের দিকে ছড়িয়ে থাকে, একসাথে grouped না।"
+    }
+  },
+  {
+    "q": {
+      "en": "What signal words often introduce the final, correct answer after wrong options are mentioned?",
+      "bn": "ভুল option mention করার পর, final, সঠিক answer প্রায়ই কোন signal word দিয়ে introduce হয়?"
+    },
+    "options": [
+      {"en": "\"For example\" and \"such as\"", "bn": "\"For example\" এবং \"such as\""},
+      {"en": "\"But,\" \"actually,\" or \"in the end\"", "bn": "\"But,\" \"actually,\" বা \"in the end\""},
+      {"en": "\"Firstly\" and \"secondly\"", "bn": "\"Firstly\" এবং \"secondly\""},
+      {"en": "There are never any signal words", "bn": "কখনোই কোনো signal word থাকে না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Correction signals like \"but,\" \"actually,\" and \"in the end\" often introduce the real, final answer after wrong options are rejected.",
+      "bn": "\"But,\" \"actually,\" এবং \"in the end\"-এর মতো correction signal প্রায়ই ভুল option reject হওয়ার পর real, final answer introduce করে।"
+    }
+  }
+]

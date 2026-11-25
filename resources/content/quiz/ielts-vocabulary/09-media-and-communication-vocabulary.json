@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "\"The documentary was very ___ about climate change.\"",
+      "bn": "\"The documentary was very ___ about climate change.\""
+    },
+    "options": [
+      {"en": "inform", "bn": "inform"},
+      {"en": "information", "bn": "information"},
+      {"en": "informative", "bn": "informative"},
+      {"en": "informed", "bn": "informed"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "The adjective form \"informative\" is needed here after \"very\".",
+      "bn": "\"Very\"-এর পরে adjective form \"informative\" লাগবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"The video ___ within hours of being posted.\"",
+      "bn": "\"The video ___ within hours of being posted.\""
+    },
+    "options": [
+      {"en": "went viral", "bn": "went viral"},
+      {"en": "went viewed", "bn": "went viewed"},
+      {"en": "got censored", "bn": "got censored"},
+      {"en": "went breaking", "bn": "went breaking"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "\"Went viral\" means it spread rapidly online.",
+      "bn": "\"Went viral\" মানে এটা অনলাইনে খুব দ্রুত ছড়িয়ে পড়েছে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which pair contrasts restricting information with the right to report freely?",
+      "bn": "কোন pair information restrict করা আর freely report করার অধিকারের মধ্যে contrast দেখায়?"
+    },
+    "options": [
+      {"en": "traditional media vs. social media", "bn": "traditional media vs. social media"},
+      {"en": "censorship vs. freedom of the press", "bn": "censorship vs. freedom of the press"},
+      {"en": "objective vs. biased reporting", "bn": "objective vs. biased reporting"},
+      {"en": "mass media vs. influencer marketing", "bn": "mass media vs. influencer marketing"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Censorship\" restricts information; \"freedom of the press\" protects the right to report freely.",
+      "bn": "\"Censorship\" information restrict করে; \"freedom of the press\" freely report করার অধিকার সুরক্ষা দেয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"Social media algorithms can trap users in an ___ of similar opinions.\"",
+      "bn": "\"Social media algorithms can trap users in an ___ of similar opinions.\""
+    },
+    "options": [
+      {"en": "echo chamber", "bn": "echo chamber"},
+      {"en": "breaking news", "bn": "breaking news"},
+      {"en": "media bias", "bn": "media bias"},
+      {"en": "social platform", "bn": "social platform"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "An \"echo chamber\" is an environment where one only encounters opinions similar to one's own.",
+      "bn": "\"Echo chamber\" মানে এমন একটা পরিবেশ যেখানে নিজের মতোই opinion শুধু শোনা যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which is an example of a RISK in the social media benefits-vs-risks debate?",
+      "bn": "Social media benefits-vs-risks debate-এ কোনটা RISK-এর উদাহরণ?"
+    },
+    "options": [
+      {"en": "raises brand awareness", "bn": "raises brand awareness"},
+      {"en": "connects people", "bn": "connects people"},
+      {"en": "invasion of privacy", "bn": "invasion of privacy"},
+      {"en": "investigative journalism", "bn": "investigative journalism"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "\"Invasion of privacy\" from targeted advertising and data collection is one of the most commonly cited risks.",
+      "bn": "Targeted advertising এবং data collection-এর কারণে \"invasion of privacy\" সবচেয়ে বেশি উল্লেখ করা risk-গুলোর একটা।"
+    }
+  }
+]

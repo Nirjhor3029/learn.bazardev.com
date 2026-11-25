@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Should you assume a matching task allows you to reuse the same option twice?",
+      "bn": "একটা matching task-এ কি একই option দুইবার reuse করা যাবে বলে ধরে নেওয়া উচিত?"
+    },
+    "options": [
+      {"en": "Yes, this is always allowed", "bn": "হ্যাঁ, এটা সবসময় allowed"},
+      {"en": "No — always check the instructions, since this varies by task", "bn": "না — সবসময় instruction check করো, কারণ এটা task অনুযায়ী ভিন্ন হয়"},
+      {"en": "No, options can never be reused in any IELTS task", "bn": "না, IELTS task-এ option কখনো reuse করা যায় না"},
+      {"en": "Only in Section 4 is reuse allowed", "bn": "শুধু Section 4-এ reuse allowed"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Some matching tasks allow reusing an option, others don't — always check the specific instructions for each task.",
+      "bn": "কিছু matching task একটা option reuse করতে দেয়, কিছু দেয় না — প্রতিটা task-এর নির্দিষ্ট instruction সবসময় check করো।"
+    }
+  },
+  {
+    "q": {
+      "en": "The audio says \"Tom just couldn't get behind the idea,\" and an option reads \"disagreed with the plan.\" What's happening?",
+      "bn": "Audio বলে \"Tom just couldn't get behind the idea,\" এবং একটা option বলে \"disagreed with the plan.\" কী হচ্ছে?"
+    },
+    "options": [
+      {"en": "A literal, word-for-word match", "bn": "একটা literal, word-for-word match"},
+      {"en": "Paraphrase — the same meaning in different words", "bn": "Paraphrase — ভিন্ন শব্দে একই মানে"},
+      {"en": "A completely unrelated statement", "bn": "একটা সম্পূর্ণ unrelated statement"},
+      {"en": "A distractor meant to confuse you", "bn": "একটা distractor যা তোমাকে confuse করার জন্য"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "This is paraphrase — the same skill from Reading, now applied to spoken language instead of text.",
+      "bn": "এটা paraphrase — Reading-এর একই skill, এখন text-এর বদলে spoken language-এ apply করা।"
+    }
+  },
+  {
+    "q": {
+      "en": "Do matching options usually appear in the audio in the same order they're printed on the paper?",
+      "bn": "Matching option সাধারণত audio-তে কি কাগজে printed order-এর মতোই আসে?"
+    },
+    "options": [
+      {"en": "Yes, always in the exact same order", "bn": "হ্যাঁ, সবসময় exactly একই order-এ"},
+      {"en": "Not necessarily — track all the options actively", "bn": "অগত্যা না — সব option actively track করো"},
+      {"en": "Only the first option follows the printed order", "bn": "শুধু প্রথম option printed order follow করে"},
+      {"en": "Only in matching tasks with four or fewer options", "bn": "শুধু চার বা তার কম option থাকা matching task-এ"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Matching options are often discussed in a different order than printed, so you need to track all of them actively rather than assuming order.",
+      "bn": "Matching option প্রায়ই printed order-এর থেকে ভিন্ন order-এ discuss হয়, তাই order ধরে নেওয়ার বদলে সবগুলো actively track করতে হবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What should you do once you're confident about a match in a matching task?",
+      "bn": "একটা matching task-এ একটা match নিয়ে confident হলে পরে কী করা উচিত?"
+    },
+    "options": [
+      {"en": "Immediately forget about it and move to a different section", "bn": "অবিলম্বে এটা ভুলে গিয়ে একটা ভিন্ন section-এ চলে যাওয়া"},
+      {"en": "Mentally eliminate that option to narrow down remaining choices", "bn": "মানসিকভাবে সেই option বাদ দিয়ে বাকি choice narrow down করা"},
+      {"en": "Assume all remaining items share that same option", "bn": "বাকি সব item একই option share করে ধরে নেওয়া"},
+      {"en": "Double-check it against every other item before continuing", "bn": "চালিয়ে যাওয়ার আগে এটা বাকি প্রতিটা item-এর সাথে double-check করা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Eliminating confirmed matches (where each option is used once) narrows down the remaining choices for unmatched items.",
+      "bn": "Confirmed match বাদ দিলে (যেখানে প্রতিটা option একবার ব্যবহৃত হয়) unmatched item-এর জন্য বাকি choice narrow down হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Who is more likely to answer a matching question correctly: someone listening for the options' exact printed words, or someone listening for their paraphrased meaning?",
+      "bn": "কে একটা matching question সঠিকভাবে answer করার সম্ভাবনা বেশি: যে option-এর exact printed word শোনে, না যে paraphrased meaning শোনে?"
+    },
+    "options": [
+      {"en": "Someone listening for the exact printed words", "bn": "যে exact printed word শোনে"},
+      {"en": "Someone listening for the paraphrased meaning", "bn": "যে paraphrased meaning শোনে"},
+      {"en": "Both are equally likely to succeed", "bn": "দুটোই সফল হওয়ার সম্ভাবনা সমান"},
+      {"en": "Neither approach matters for matching questions", "bn": "Matching question-এর জন্য কোনো approach-ই matter করে না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Weaker candidates match the same literal vocabulary, but stronger candidates recognise synonyms and paraphrase in the recording.",
+      "bn": "দুর্বল candidate একই literal vocabulary match করে, কিন্তু strong candidate recording-এ synonym এবং paraphrase চিনতে পারে।"
+    }
+  }
+]

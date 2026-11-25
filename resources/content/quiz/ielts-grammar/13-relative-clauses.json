@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Fix: \"The woman which called you is my aunt.\"",
+      "bn": "ঠিক করো: \"The woman which called you is my aunt.\""
+    },
+    "options": [
+      {"en": "The woman who called you is my aunt.", "bn": "The woman who called you is my aunt."},
+      {"en": "The woman whose called you is my aunt.", "bn": "The woman whose called you is my aunt."},
+      {"en": "The woman where called you is my aunt.", "bn": "The woman where called you is my aunt."},
+      {"en": "The woman that called you is my aunt.", "bn": "The woman that called you is my aunt."}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "\"Which\" refers to things, not people. \"Who\" is the correct pronoun for a person.",
+      "bn": "\"Which\" জিনিস বোঝায়, মানুষ না। মানুষের জন্য সঠিক pronoun হলো \"who\"।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"My brother who lives in Dhaka is a doctor.\" (no commas) — what does this imply?",
+      "bn": "\"My brother who lives in Dhaka is a doctor.\" (কোনো comma নেই) — এটা কী বোঝায়?"
+    },
+    "options": [
+      {"en": "I have only one brother.", "bn": "আমার একটাই ভাই আছে।"},
+      {"en": "I have more than one brother.", "bn": "আমার একের বেশি ভাই আছে।"},
+      {"en": "My brother doesn't live in Dhaka anymore.", "bn": "আমার ভাই আর Dhaka-এ থাকে না।"},
+      {"en": "The sentence is grammatically wrong.", "bn": "Sentence-টা grammatically ভুল।"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "No commas means a defining clause — it identifies WHICH brother, implying there's more than one.",
+      "bn": "Comma না থাকা মানে defining clause — এটা বলছে কোন ভাই, মানে একের বেশি ভাই আছে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Can \"that\" be dropped in \"The book that I read was great\"?",
+      "bn": "\"The book that I read was great\"-এ \"that\" বাদ দেওয়া যায় কি?"
+    },
+    "options": [
+      {"en": "No, never.", "bn": "না, কখনো না।"},
+      {"en": "Yes — \"that\" is the object of \"read\", so it's optional.", "bn": "হ্যাঁ — \"that\" হলো \"read\"-এর object, তাই এটা optional।"},
+      {"en": "Only in British English.", "bn": "শুধু British English-এ।"},
+      {"en": "Only if a comma is added.", "bn": "শুধু comma যুক্ত করলে।"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A relative pronoun can be dropped when it's the object of the clause, not the subject.",
+      "bn": "Clause-এর object হলে relative pronoun বাদ দেওয়া যায়, subject হলে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix: \"The man who's car was stolen called the police.\"",
+      "bn": "ঠিক করো: \"The man who's car was stolen called the police.\""
+    },
+    "options": [
+      {"en": "The man whose car was stolen called the police.", "bn": "The man whose car was stolen called the police."},
+      {"en": "The man who car was stolen called the police.", "bn": "The man who car was stolen called the police."},
+      {"en": "The man which car was stolen called the police.", "bn": "The man which car was stolen called the police."},
+      {"en": "The man who's car was stole called the police.", "bn": "The man who's car was stole called the police."}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "\"Whose\" shows possession; \"who's\" is a contraction of \"who is\" and doesn't fit here.",
+      "bn": "\"Whose\" possession দেখায়; \"who's\" মানে \"who is\" — এখানে সেটা ঠিক না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which sentence correctly uses \"that\" in a non-defining (comma'd) clause?",
+      "bn": "কোন sentence non-defining (comma যুক্ত) clause-এ \"that\" সঠিকভাবে ব্যবহার করে?"
+    },
+    "options": [
+      {"en": "My brother, that lives in Dhaka, is a doctor.", "bn": "My brother, that lives in Dhaka, is a doctor."},
+      {"en": "My brother, who lives in Dhaka, is a doctor.", "bn": "My brother, who lives in Dhaka, is a doctor."},
+      {"en": "My brother that lives in Dhaka, is a doctor.", "bn": "My brother that lives in Dhaka, is a doctor."},
+      {"en": "My brother who lives in Dhaka, is a doctor, that.", "bn": "My brother who lives in Dhaka, is a doctor, that."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"That\" is never used in a non-defining (comma'd) clause — only who/which/whose are allowed there.",
+      "bn": "Non-defining (comma যুক্ত) clause-এ \"that\" কখনো ব্যবহার হয় না — শুধু who/which/whose ব্যবহার হয়।"
+    }
+  }
+]

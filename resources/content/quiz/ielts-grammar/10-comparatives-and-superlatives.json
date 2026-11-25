@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Which is correct?",
+      "bn": "কোনটা সঠিক?"
+    },
+    "options": [
+      {"en": "This year's profit was more higher than last year's.", "bn": "This year's profit was more higher than last year's."},
+      {"en": "This year's profit was higher than last year's.", "bn": "This year's profit was higher than last year's."},
+      {"en": "This year's profit was more high than last year's.", "bn": "This year's profit was more high than last year's."},
+      {"en": "This year's profit was highest than last year's.", "bn": "This year's profit was highest than last year's."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Never combine \"more\" with an \"-er\" ending — short adjectives only need the \"-er\" ending.",
+      "bn": "\"More\"-এর সাথে \"-er\" ending কখনো একসাথে বসে না — short adjective-এ শুধু \"-er\" ending লাগে।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"Of the five countries, Brazil had ___ population.\"",
+      "bn": "\"Of the five countries, Brazil had ___ population.\""
+    },
+    "options": [
+      {"en": "the most large", "bn": "the most large"},
+      {"en": "the larger", "bn": "the larger"},
+      {"en": "the largest", "bn": "the largest"},
+      {"en": "more largest", "bn": "more largest"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "\"Large\" is a short adjective — it takes \"the ... -est\" for the superlative, not \"most\".",
+      "bn": "\"Large\" একটা short adjective — এর superlative হয় \"the ... -est\" দিয়ে, \"most\" দিয়ে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix: \"She is more good at Maths than her brother.\"",
+      "bn": "ঠিক করো: \"She is more good at Maths than her brother.\""
+    },
+    "options": [
+      {"en": "She is gooder at Maths than her brother.", "bn": "She is gooder at Maths than her brother."},
+      {"en": "She is better at Maths than her brother.", "bn": "She is better at Maths than her brother."},
+      {"en": "She is the best at Maths than her brother.", "bn": "She is the best at Maths than her brother."},
+      {"en": "She is more better at Maths than her brother.", "bn": "She is more better at Maths than her brother."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Good\" is irregular: good → better → best. It never becomes \"more good\" or \"gooder\".",
+      "bn": "\"Good\" irregular: good → better → best। এটা কখনো \"more good\" বা \"gooder\" হয় না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which phrase shows a trend that keeps progressing over time, useful for describing a line graph?",
+      "bn": "কোন phrase সময়ের সাথে continuously বদলে যাওয়া trend দেখায়, line graph বর্ণনার জন্য useful?"
+    },
+    "options": [
+      {"en": "colder", "bn": "colder"},
+      {"en": "the coldest", "bn": "the coldest"},
+      {"en": "colder and colder", "bn": "colder and colder"},
+      {"en": "cold", "bn": "cold"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "A repeated comparative joined by \"and\" (colder and colder) shows continuous, progressive change.",
+      "bn": "\"and\" দিয়ে জোড়া repeated comparative (colder and colder) continuous, progressive change দেখায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which sentence correctly uses \"than\"?",
+      "bn": "কোন sentence \"than\" সঠিকভাবে ব্যবহার করছে?"
+    },
+    "options": [
+      {"en": "Than 2015, sales were higher.", "bn": "Than 2015, sales were higher."},
+      {"en": "In 2015, sales were higher than in 2016.", "bn": "In 2015, sales were higher than in 2016."},
+      {"en": "Sales were higher than 2015 happened.", "bn": "Sales were higher than 2015 happened."},
+      {"en": "Than in 2016, sales in 2015 were higher.", "bn": "Than in 2016, sales in 2015 were higher."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Than\" introduces the second thing being compared — it doesn't mean \"in\" or start a time phrase on its own.",
+      "bn": "\"Than\" compare-করা দ্বিতীয় বিষয়কে introduce করে — এটা \"in\"-এর মতো অর্থ বহন করে না বা নিজে থেকে time phrase শুরু করে না।"
+    }
+  }
+]

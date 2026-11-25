@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "How many times does the IELTS Listening recording play?",
+      "bn": "IELTS Listening recording কতবার play হয়?"
+    },
+    "options": [
+      {"en": "Twice, with a short break in between", "bn": "দুইবার, মাঝে একটা ছোট break সহ"},
+      {"en": "Once — there's no replay", "bn": "একবার — কোনো replay নেই"},
+      {"en": "Three times, once per difficulty level", "bn": "তিনবার, প্রতিটা difficulty level-এর জন্য একবার"},
+      {"en": "As many times as you want on a computer-delivered test", "bn": "Computer-delivered test-এ যতবার চাও"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The recording plays only once with no replay, which is why reading ahead during the pause before each section matters so much.",
+      "bn": "Recording শুধু একবার play হয়, কোনো replay নেই, এই কারণেই প্রতিটা section-এর আগের pause-এ আগে থেকে পড়া এত গুরুত্বপূর্ণ।"
+    }
+  },
+  {
+    "q": {
+      "en": "A speaker says \"You'll need Platform three — oh sorry, I mean Platform five.\" What is the correct answer?",
+      "bn": "একজন speaker বলে \"You'll need Platform three — oh sorry, I mean Platform five.\" সঠিক answer কী?"
+    },
+    "options": [
+      {"en": "3, the first number mentioned", "bn": "৩, প্রথম উল্লেখিত number"},
+      {"en": "5 — the corrected, final answer", "bn": "৫ — corrected, final answer"},
+      {"en": "Both 3 and 5 are acceptable", "bn": "৩ এবং ৫ দুটোই acceptable"},
+      {"en": "Neither — the question is a distractor and has no answer", "bn": "কোনোটাই না — question-টা একটা distractor এবং এর কোনো answer নেই"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Self-correction is common in Listening — the corrected, final answer always counts, not the first one said.",
+      "bn": "Listening-এ self-correction common — corrected, final answer সবসময় count হয়, প্রথম বলা answer না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which of the four sections is generally considered the hardest?",
+      "bn": "চারটা section-এর মধ্যে কোনটা সাধারণত সবচেয়ে কঠিন বলে বিবেচিত হয়?"
+    },
+    "options": [
+      {"en": "Section 1, the everyday conversation", "bn": "Section 1, everyday conversation"},
+      {"en": "Section 2, the everyday monologue", "bn": "Section 2, everyday monologue"},
+      {"en": "Section 3, the academic conversation", "bn": "Section 3, academic conversation"},
+      {"en": "Section 4, the single-speaker academic lecture", "bn": "Section 4, single-speaker academic lecture"}
+    ],
+    "answer": 3,
+    "why": {
+      "en": "Section 4 is a single-speaker academic monologue with no conversation partner to help clarify or repeat details, making it the hardest.",
+      "bn": "Section 4 একটা single-speaker academic monologue যেখানে detail clarify বা repeat করার মতো কোনো conversation partner নেই, যা এটাকে সবচেয়ে কঠিন বানায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "How many marks do you lose for a wrong guess in IELTS Listening?",
+      "bn": "IELTS Listening-এ একটা ভুল guess-এর জন্য কত মার্ক হারাও?"
+    },
+    "options": [
+      {"en": "Zero — there's no negative marking", "bn": "শূন্য — কোনো negative marking নেই"},
+      {"en": "Half a mark", "bn": "অর্ধেক মার্ক"},
+      {"en": "A full mark, same as the question's value", "bn": "একটা পুরো মার্ক, question-এর value-এর সমান"},
+      {"en": "It depends on which section the question is in", "bn": "এটা নির্ভর করে question কোন section-এ আছে তার উপর"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "There's no negative marking in IELTS Listening, so every question should get an answer, even a guess.",
+      "bn": "IELTS Listening-এ কোনো negative marking নেই, তাই প্রতিটা question-এ একটা answer দেওয়া উচিত, একটা guess হলেও।"
+    }
+  },
+  {
+    "q": {
+      "en": "Before the audio reaches a form-completion gap like \"Platform number: ___\", what should you do during the pause?",
+      "bn": "\"Platform number: ___\"-এর মতো একটা form-completion gap-এ audio পৌঁছানোর আগে, pause-এর সময় কী করা উচিত?"
+    },
+    "options": [
+      {"en": "Nothing — just wait for the audio to start", "bn": "কিছুই না — শুধু audio শুরু হওয়ার জন্য wait করা"},
+      {"en": "Predict the word type the gap needs, like a number", "bn": "Gap-এ কী word type লাগবে তা predict করা, যেমন একটা number"},
+      {"en": "Write a random guess immediately", "bn": "অবিলম্বে একটা random guess লেখা"},
+      {"en": "Skip to the next section's questions", "bn": "পরের section-এর question-এ skip করা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Predicting the word type (number, name, place, etc.) during the pause narrows down what you listen for before the audio even starts.",
+      "bn": "Pause-এর সময় word type (number, name, place, ইত্যাদি) predict করলে audio শুরু হওয়ার আগেই তুমি কী শুনবে তা narrow down হয়।"
+    }
+  }
+]

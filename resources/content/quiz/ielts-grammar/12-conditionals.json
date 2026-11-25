@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Fix: \"If I would have more time, I would travel.\"",
+      "bn": "ঠিক করো: \"If I would have more time, I would travel.\""
+    },
+    "options": [
+      {"en": "If I have more time, I would travel.", "bn": "If I have more time, I would travel."},
+      {"en": "If I had more time, I would travel.", "bn": "If I had more time, I would travel."},
+      {"en": "If I would have more time, I will travel.", "bn": "If I would have more time, I will travel."},
+      {"en": "If I had had more time, I would travel.", "bn": "If I had had more time, I would travel."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Would\" never goes inside the if-clause. The second conditional if-clause uses the past simple: \"If I had...\"",
+      "bn": "\"Would\" কখনো if-clause-এর ভিতরে বসে না। Second conditional-এর if-clause-এ past simple লাগে: \"If I had...\""
+    }
+  },
+  {
+    "q": {
+      "en": "Which type is \"If water reaches 100°C, it boils\"?",
+      "bn": "\"If water reaches 100°C, it boils\" — এটা কোন type?"
+    },
+    "options": [
+      {"en": "First conditional", "bn": "First conditional"},
+      {"en": "Second conditional", "bn": "Second conditional"},
+      {"en": "Zero conditional", "bn": "Zero conditional"},
+      {"en": "Third conditional", "bn": "Third conditional"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "This is a general scientific truth, always true — that's the zero conditional (if + present, present).",
+      "bn": "এটা একটা general scientific truth, সবসময় সত্য — এটাই zero conditional (if + present, present)।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix: \"If she studied harder, she would have passed the exam last year.\"",
+      "bn": "ঠিক করো: \"If she studied harder, she would have passed the exam last year.\""
+    },
+    "options": [
+      {"en": "If she had studied harder, she would have passed the exam last year.", "bn": "If she had studied harder, she would have passed the exam last year."},
+      {"en": "If she studies harder, she would have passed the exam last year.", "bn": "If she studies harder, she would have passed the exam last year."},
+      {"en": "If she had studied harder, she would pass the exam last year.", "bn": "If she had studied harder, she would pass the exam last year."},
+      {"en": "If she would study harder, she would have passed the exam last year.", "bn": "If she would study harder, she would have passed the exam last year."}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "A finished past event needs the third conditional in both clauses: past perfect + would have + past participle.",
+      "bn": "একটা শেষ হয়ে যাওয়া past event-এর জন্য দুই clause-এই third conditional লাগে: past perfect + would have + past participle।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which conditional is \"If I had taken that job, I would be living in London now\"?",
+      "bn": "\"If I had taken that job, I would be living in London now\" — এটা কোন conditional?"
+    },
+    "options": [
+      {"en": "Second conditional", "bn": "Second conditional"},
+      {"en": "Third conditional", "bn": "Third conditional"},
+      {"en": "Mixed conditional", "bn": "Mixed conditional"},
+      {"en": "Zero conditional", "bn": "Zero conditional"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "A past unreal condition (\"had taken\") combined with a present-day result (\"would be living... now\") is a mixed conditional.",
+      "bn": "একটা past unreal condition (\"had taken\") এর সাথে present-day result (\"would be living... now\") মিলে mixed conditional হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which is correct, formal style?",
+      "bn": "কোনটা সঠিক, formal style-এ?"
+    },
+    "options": [
+      {"en": "If I was you, I would apologise.", "bn": "If I was you, I would apologise."},
+      {"en": "If I were you, I would apologise.", "bn": "If I were you, I would apologise."},
+      {"en": "If I am you, I would apologise.", "bn": "If I am you, I would apologise."},
+      {"en": "If I will be you, I would apologise.", "bn": "If I will be you, I would apologise."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "In formal second-conditional \"if\" clauses, \"were\" is used for all subjects, including \"I\".",
+      "bn": "Formal second-conditional \"if\" clause-এ সব subject-এর জন্য \"were\" ব্যবহার হয়, \"I\" সহ।"
+    }
+  }
+]

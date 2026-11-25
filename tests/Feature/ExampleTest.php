@@ -2,11 +2,14 @@
 
 namespace Tests\Feature;
 
-// use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class ExampleTest extends TestCase
 {
+    // The home page now reads course_pricing (for the "Paid" badge), so it needs a migrated database.
+    use RefreshDatabase;
+
     /**
      * A basic test example.
      */

@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "\"He was found guilty and received a criminal ___.\"",
+      "bn": "\"He was found guilty and received a criminal ___.\""
+    },
+    "options": [
+      {"en": "convict", "bn": "convict"},
+      {"en": "conviction", "bn": "conviction"},
+      {"en": "convicted", "bn": "convicted"},
+      {"en": "convicting", "bn": "convicting"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Conviction\" is the noun form, needed here after \"a criminal\".",
+      "bn": "\"Conviction\" noun form, \"a criminal\"-এর পরে এটাই লাগবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"Supporters argue that harsh sentences act as a ___ to crime.\"",
+      "bn": "\"Supporters argue that harsh sentences act as a ___ to crime.\""
+    },
+    "options": [
+      {"en": "detergent", "bn": "detergent"},
+      {"en": "deterrent", "bn": "deterrent"},
+      {"en": "detective", "bn": "detective"},
+      {"en": "defendant", "bn": "defendant"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A \"deterrent\" is something that discourages an action — harsh sentences are argued to deter crime.",
+      "bn": "\"Deterrent\" মানে এমন কিছু যা একটা কাজ করা থেকে বিরত রাখে — harsh sentences crime deter করে বলে argument দেওয়া হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which pair contrasts minor offences with serious offences involving harm?",
+      "bn": "কোন pair minor offence আর harm জড়িত serious offence-এর মধ্যে contrast দেখায়?"
+    },
+    "options": [
+      {"en": "civil law vs. criminal law", "bn": "civil law vs. criminal law"},
+      {"en": "petty crime vs. violent crime", "bn": "petty crime vs. violent crime"},
+      {"en": "punishment vs. rehabilitation", "bn": "punishment vs. rehabilitation"},
+      {"en": "conviction vs. sentence", "bn": "conviction vs. sentence"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Petty crime\" refers to minor offences like theft, while \"violent crime\" involves serious harm.",
+      "bn": "\"Petty crime\" মানে theft-এর মতো minor offence, আর \"violent crime\"-এ serious harm জড়িত থাকে।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"Education programmes in prisons have been shown to reduce ___.\"",
+      "bn": "\"Education programmes in prisons have been shown to reduce ___.\""
+    },
+    "options": [
+      {"en": "conviction", "bn": "conviction"},
+      {"en": "recidivism", "bn": "recidivism"},
+      {"en": "deterrent", "bn": "deterrent"},
+      {"en": "sentence", "bn": "sentence"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Recidivism\" is the tendency of a convicted criminal to reoffend — education programmes aim to reduce it.",
+      "bn": "\"Recidivism\" মানে একজন convicted criminal-এর আবার crime করার প্রবণতা — education programme এটা কমানোর চেষ্টা করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which approach focuses on helping an offender reform and reintegrate into society?",
+      "bn": "কোন approach একজন offender-কে reform করে society-তে reintegrate করতে সাহায্য করায় focus করে?"
+    },
+    "options": [
+      {"en": "Punishment", "bn": "Punishment"},
+      {"en": "Rehabilitation", "bn": "Rehabilitation"},
+      {"en": "Capital punishment", "bn": "Capital punishment"},
+      {"en": "Deterrence", "bn": "Deterrence"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Rehabilitation\" focuses on education, community service, and helping offenders reintegrate into society.",
+      "bn": "\"Rehabilitation\" education, community service, এবং offender-কে society-তে reintegrate করায় focus করে।"
+    }
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "You hear \"thirty dollars.\" What's the safest way to write this as your answer?",
+      "bn": "তুমি \"thirty dollars\" শোনো। Answer হিসেবে এটা লেখার সবচেয়ে safe উপায় কী?"
+    },
+    "options": [
+      {"en": "\"thirty dollars,\" spelled out in full", "bn": "\"thirty dollars,\" সম্পূর্ণ spell করে"},
+      {"en": "$30", "bn": "$30"},
+      {"en": "30 dollar", "bn": "30 dollar"},
+      {"en": "Thirty $", "bn": "Thirty $"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Writing the numeral ($30) avoids any risk of a spelling mistake and is an accepted form.",
+      "bn": "Numeral ($30) লেখা spelling mistake-এর কোনো risk এড়ায় এবং এটা একটা accepted form।"
+    }
+  },
+  {
+    "q": {
+      "en": "The recording says \"pounds,\" but you write \"$\" out of habit. What happens?",
+      "bn": "Recording বলে \"pounds,\" কিন্তু তুমি habit-এর কারণে \"$\" লেখো। কী হবে?"
+    },
+    "options": [
+      {"en": "It's accepted, since the number is correct", "bn": "এটা accepted, কারণ number সঠিক"},
+      {"en": "The answer is marked wrong — the symbol must match what's said", "bn": "Answer ভুল মার্ক করা হয় — symbol-টা বলা কথার সাথে মিলতে হবে"},
+      {"en": "Currency symbols are never checked in Listening", "bn": "Listening-এ currency symbol কখনো check করা হয় না"},
+      {"en": "Both symbols are always interchangeable", "bn": "দুই symbol সবসময় interchangeable"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The currency symbol carries meaning — using the wrong one marks the answer wrong even if the number itself is correct.",
+      "bn": "Currency symbol মানে বহন করে — ভুল symbol ব্যবহার করলে number সঠিক হলেও answer ভুল মার্ক হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why are words like \"February\" and \"Wednesday\" commonly tested in IELTS Listening answers?",
+      "bn": "\"February\" এবং \"Wednesday\"-এর মতো শব্দ IELTS Listening answer-এ কেন commonly test করা হয়?"
+    },
+    "options": [
+      {"en": "They're rarely used in real conversations", "bn": "এগুলো real conversation-এ rarely ব্যবহৃত হয়"},
+      {"en": "They're easy to misspell under time pressure", "bn": "Time pressure-এর অধীনে এগুলো misspell করা সহজ"},
+      {"en": "They are always optional to answer", "bn": "এগুলো answer করা সবসময় optional"},
+      {"en": "They never appear as correct answers", "bn": "এগুলো কখনো সঠিক answer হিসেবে আসে না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "These words are deliberately common because they're easy to misspell under time pressure — practising them prevents a preventable loss.",
+      "bn": "এই শব্দগুলো ইচ্ছাকৃতভাবে common কারণ time pressure-এর অধীনে এগুলো misspell করা সহজ — আগে practice করলে একটা preventable loss এড়ানো যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does \"double five\" mean when a phone number is read aloud?",
+      "bn": "একটা phone number aloud পড়ার সময় \"double five\" মানে কী?"
+    },
+    "options": [
+      {"en": "5 followed by 0", "bn": "৫ এরপর ০"},
+      {"en": "55 — the digit repeats", "bn": "৫৫ — digit-টা repeat হয়"},
+      {"en": "10, since double means multiply by two", "bn": "১০, কারণ double মানে দুই দিয়ে multiply"},
+      {"en": "Just a single 5", "bn": "শুধু একটা ৫"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Double\" signals that the digit repeats, so \"double five\" means 55.",
+      "bn": "\"Double\" signal দেয় যে digit-টা repeat হয়, তাই \"double five\" মানে ৫৫।"
+    }
+  },
+  {
+    "q": {
+      "en": "A name is spelled aloud letter by letter. Which pairs of letters are most commonly confused?",
+      "bn": "একটা নাম letter by letter aloud spell করা হয়। কোন letter pair সবচেয়ে commonly গুলিয়ে যায়?"
+    },
+    "options": [
+      {"en": "X and Z", "bn": "X এবং Z"},
+      {"en": "B/V, B/P/D, and M/N", "bn": "B/V, B/P/D, এবং M/N"},
+      {"en": "A and I", "bn": "A এবং I"},
+      {"en": "Q and U", "bn": "Q এবং U"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "B/V, B/P/D, and M/N are the most frequent mix-ups when letters are spelled aloud, due to their similar sounds.",
+      "bn": "B/V, B/P/D, এবং M/N সবচেয়ে frequent mix-up যখন letter aloud spell করা হয়, এগুলোর একই রকম শব্দের কারণে।"
+    }
+  }
+]

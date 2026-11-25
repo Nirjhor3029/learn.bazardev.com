@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Fix: \"Despite it was raining, we went out.\"",
+      "bn": "ঠিক করো: \"Despite it was raining, we went out.\""
+    },
+    "options": [
+      {"en": "Despite the rain, we went out.", "bn": "Despite the rain, we went out."},
+      {"en": "Despite it rained, we went out.", "bn": "Despite it rained, we went out."},
+      {"en": "Although the rain, we went out.", "bn": "Although the rain, we went out."},
+      {"en": "Despite of it was raining, we went out.", "bn": "Despite of it was raining, we went out."}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "\"Despite\" is followed by a noun or gerund, never a full clause with its own subject and verb.",
+      "bn": "\"Despite\"-এর পরে noun বা gerund বসে, নিজস্ব subject-verb সহ full clause কখনো না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix: \"I went to his house, however he wasn't home.\"",
+      "bn": "ঠিক করো: \"I went to his house, however he wasn't home.\""
+    },
+    "options": [
+      {"en": "I went to his house, however, he wasn't home.", "bn": "I went to his house, however, he wasn't home."},
+      {"en": "I went to his house. However, he wasn't home.", "bn": "I went to his house. However, he wasn't home."},
+      {"en": "I went to his house however he wasn't home.", "bn": "I went to his house however he wasn't home."},
+      {"en": "I went to his house, however he was, home.", "bn": "I went to his house, however he was, home."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"However\" is an adverb, not a conjunction — it can't join two full sentences with just a comma. Start a new sentence instead.",
+      "bn": "\"However\" একটা adverb, conjunction না — এটা শুধু comma দিয়ে দুটো full sentence জোড়া দিতে পারে না। নতুন sentence শুরু করতে হবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"The delay was ___ the weather.\"",
+      "bn": "\"The delay was ___ the weather.\""
+    },
+    "options": [
+      {"en": "because", "bn": "because"},
+      {"en": "because of", "bn": "because of"},
+      {"en": "although", "bn": "although"},
+      {"en": "despite", "bn": "despite"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Because of\" is followed by a noun phrase (\"the weather\"); \"because\" needs a full clause.",
+      "bn": "\"Because of\"-এর পরে noun phrase বসে (\"the weather\"); \"because\"-এর পরে full clause লাগে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which word introduces a result/consequence?",
+      "bn": "কোন word result/consequence introduce করে?"
+    },
+    "options": [
+      {"en": "although", "bn": "although"},
+      {"en": "despite", "bn": "despite"},
+      {"en": "so", "bn": "so"},
+      {"en": "while", "bn": "while"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "\"So\" introduces a result. \"Although\", \"despite\", and \"while\" all introduce contrast.",
+      "bn": "\"So\" result introduce করে। \"Although\", \"despite\", \"while\" সবই contrast introduce করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which is correct?",
+      "bn": "কোনটা সঠিক?"
+    },
+    "options": [
+      {"en": "The exam was hard but, I passed it.", "bn": "The exam was hard but, I passed it."},
+      {"en": "The exam was hard, but I passed it.", "bn": "The exam was hard, but I passed it."},
+      {"en": "The exam was hard, but, I passed it.", "bn": "The exam was hard, but, I passed it."},
+      {"en": "The exam was hard but I, passed it.", "bn": "The exam was hard but I, passed it."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The comma goes before \"but\", not right after it, when joining two clauses.",
+      "bn": "দুটো clause জোড়া দেওয়ার সময় comma \"but\"-এর আগে বসে, ঠিক পরে না।"
+    }
+  }
+]

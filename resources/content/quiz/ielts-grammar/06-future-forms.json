@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "The phone rings and, without planning it, you say:",
+      "bn": "ফোন বাজছে, হঠাৎ করে তুমি বলো:"
+    },
+    "options": [
+      {"en": "I'm going to answer it.", "bn": "I'm going to answer it."},
+      {"en": "I'll answer it.", "bn": "I'll answer it."},
+      {"en": "I answer it.", "bn": "I answer it."},
+      {"en": "I have answered it.", "bn": "I have answered it."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A spontaneous decision made at the moment of speaking → \"will,\" not \"going to.\"",
+      "bn": "কথা বলার মুহূর্তে নেওয়া spontaneous decision → \"will\", \"going to\" না।"
+    }
+  },
+  {
+    "q": {
+      "en": "You've already booked your tickets for next week's trip. How do you say it?",
+      "bn": "পরের সপ্তাহের ট্রিপের টিকিট already বুক করে ফেলেছো। কিভাবে বলবে?"
+    },
+    "options": [
+      {"en": "I will visit Cox's Bazar next week.", "bn": "I will visit Cox's Bazar next week."},
+      {"en": "I'm going to visit Cox's Bazar next week.", "bn": "I'm going to visit Cox's Bazar next week."},
+      {"en": "I visit Cox's Bazar next week.", "bn": "I visit Cox's Bazar next week."},
+      {"en": "I have visited Cox's Bazar next week.", "bn": "I have visited Cox's Bazar next week."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The decision was already made before now, so \"going to\" (or present continuous), not plain \"will.\"",
+      "bn": "Decision already আগে নেওয়া হয়েছে, তাই \"going to\" (বা present continuous), শুধু \"will\" না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Someone drops a glass and it's falling — what do you say?",
+      "bn": "কেউ একটা গ্লাস ফেলে দিয়েছে, সেটা পড়ছে — তুমি কী বলবে?"
+    },
+    "options": [
+      {"en": "It will break!", "bn": "It will break!"},
+      {"en": "It's going to break!", "bn": "It's going to break!"},
+      {"en": "It breaks!", "bn": "It breaks!"},
+      {"en": "It has broken!", "bn": "It has broken!"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A prediction based on visible evidence right now → \"going to,\" not \"will.\"",
+      "bn": "এখন চোখে দেখা evidence-এর উপর ভিত্তি করে prediction → \"going to\", \"will\" না।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"By the time you read this message, I ___ the country.\"",
+      "bn": "\"By the time you read this message, I ___ the country.\""
+    },
+    "options": [
+      {"en": "will leave", "bn": "will leave"},
+      {"en": "am leaving", "bn": "am leaving"},
+      {"en": "will have left", "bn": "will have left"},
+      {"en": "leave", "bn": "leave"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Future perfect: completed before a stated future reference point (\"by the time you read this\").",
+      "bn": "Future perfect: বলা future reference point-এর (\"by the time you read this\") আগে শেষ হবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"I'm meeting Sarah at 5pm tomorrow\" uses which form, and why?",
+      "bn": "\"I'm meeting Sarah at 5pm tomorrow\" কোন form ব্যবহার করছে, কেন?"
+    },
+    "options": [
+      {"en": "Will — a spontaneous decision", "bn": "Will — spontaneous decision"},
+      {"en": "Present continuous — a fixed, already-arranged appointment", "bn": "Present continuous — fixed, আগে থেকে ঠিক করা appointment"},
+      {"en": "Present simple — a routine", "bn": "Present simple — routine"},
+      {"en": "Future perfect — completed before a point", "bn": "Future perfect — একটা point-এর আগে শেষ হওয়া"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Present continuous is common for fixed future arrangements with a specific time, like a diary entry.",
+      "bn": "Present continuous সাধারণত fixed future arrangement-এর জন্য ব্যবহার হয়, নির্দিষ্ট সময় সহ, ঠিক diary entry-এর মতো।"
+    }
+  }
+]

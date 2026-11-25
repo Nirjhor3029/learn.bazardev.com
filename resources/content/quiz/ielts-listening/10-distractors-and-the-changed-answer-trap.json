@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "\"The tour starts at 10am — wait no, make that 10:30.\" What's the correct time?",
+      "bn": "\"The tour starts at 10am — wait no, make that 10:30.\" সঠিক time কোনটা?"
+    },
+    "options": [
+      {"en": "10am, the first time mentioned", "bn": "10am, প্রথম mention করা time"},
+      {"en": "10:30 — the corrected, final statement", "bn": "10:30 — corrected, final statement"},
+      {"en": "Both times are acceptable", "bn": "দুটো time-ই acceptable"},
+      {"en": "Neither — the question has no clear answer", "bn": "কোনোটাই না — question-এর কোনো clear answer নেই"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The corrected, final statement is always the answer in a self-correction trap, not the first thing said.",
+      "bn": "একটা self-correction trap-এ corrected, final statement সবসময় answer, প্রথমে বলা কথা না।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"We don't serve food\" is an example of which kind of trap?",
+      "bn": "\"We don't serve food\" কোন ধরনের trap-এর example?"
+    },
+    "options": [
+      {"en": "A self-correction", "bn": "একটা self-correction"},
+      {"en": "A hidden negative", "bn": "একটা hidden negative"},
+      {"en": "A rejected option", "bn": "একটা rejected option"},
+      {"en": "An outside-knowledge trap", "bn": "একটা outside-knowledge trap"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "This is a hidden negative — the word \"don't\" is easy to miss since IELTS rarely uses a loud, explicit \"NOT.\"",
+      "bn": "এটা একটা hidden negative — \"don't\" শব্দটা miss করা সহজ কারণ IELTS খুব কমই একটা loud, explicit \"NOT\" ব্যবহার করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"Bring a packed lunch, not snacks.\" Which word is the distractor here?",
+      "bn": "\"Bring a packed lunch, not snacks.\" এখানে কোন শব্দটা distractor?"
+    },
+    "options": [
+      {"en": "\"Packed lunch\"", "bn": "\"Packed lunch\""},
+      {"en": "\"Snacks\" — mentioned only to be rejected", "bn": "\"Snacks\" — শুধু reject করার জন্য mention করা"},
+      {"en": "\"Bring\"", "bn": "\"Bring\""},
+      {"en": "Both words are equally correct answers", "bn": "দুটো শব্দ-ই সমানভাবে সঠিক answer"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Snacks\" is a rejected option — it's mentioned specifically to be ruled out, while \"packed lunch\" is the correct answer.",
+      "bn": "\"Snacks\" একটা rejected option — এটা specifically বাদ দেওয়ার জন্য mention করা হয়, যখন \"packed lunch\" সঠিক answer।"
+    }
+  },
+  {
+    "q": {
+      "en": "Should you ever fill in a Listening answer based on outside, real-world knowledge if the recording doesn't state it?",
+      "bn": "Recording-এ না বলা থাকলে, কি real-world knowledge-এর ভিত্তিতে একটা Listening answer পূরণ করা উচিত?"
+    },
+    "options": [
+      {"en": "Yes, if it logically makes sense", "bn": "হ্যাঁ, যদি এটা logically make sense করে"},
+      {"en": "No — only use what's actually said in the recording", "bn": "না — শুধু recording-এ actually যা বলা হয়েছে তা ব্যবহার করো"},
+      {"en": "Yes, but only for numbers", "bn": "হ্যাঁ, কিন্তু শুধু number-এর জন্য"},
+      {"en": "It depends on the section number", "bn": "এটা section number-এর উপর নির্ভর করে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Just like Reading's golden rule, only use what the recording actually states — outside knowledge, however logical, is never the basis for an answer.",
+      "bn": "Reading-এর golden rule-এর মতোই, শুধু recording-এ actually যা বলা হয়েছে তা ব্যবহার করো — outside knowledge, যত logical হোক, কখনো answer-এর ভিত্তি না।"
+    }
+  },
+  {
+    "q": {
+      "en": "You hear an answer option's exact wording spoken in the recording. What should you do?",
+      "bn": "তুমি একটা answer option-এর exact wording recording-এ বলা শোনো। কী করা উচিত?"
+    },
+    "options": [
+      {"en": "Choose it immediately — an exact match is always correct", "bn": "অবিলম্বে এটা choose করা — একটা exact match সবসময় সঠিক"},
+      {"en": "Pause and keep listening — it may be about to be rejected", "bn": "থেমে গিয়ে শুনতে থাকা — এটা reject হতে যাচ্ছে হতে পারে"},
+      {"en": "Ignore it completely and pick a different option", "bn": "এটা সম্পূর্ণ ignore করে একটা ভিন্ন option বাছা"},
+      {"en": "Mark the question as unanswerable", "bn": "Question-টা unanswerable মার্ক করা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "An exact keyword match is often used by the speaker specifically to reject that option, with the real answer following moments later.",
+      "bn": "একটা exact keyword match প্রায়ই speaker সেই option specifically reject করার জন্য ব্যবহার করে, real answer কিছুক্ষণ পরে আসে।"
+    }
+  }
+]

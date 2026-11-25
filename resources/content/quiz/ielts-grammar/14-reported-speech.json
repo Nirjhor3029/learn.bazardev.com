@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Report: \"I am tired,\" she said.",
+      "bn": "Report করো: \"I am tired,\" she said."
+    },
+    "options": [
+      {"en": "She said she is tired.", "bn": "She said she is tired."},
+      {"en": "She said she was tired.", "bn": "She said she was tired."},
+      {"en": "She said I was tired.", "bn": "She said I was tired."},
+      {"en": "She said she were tired.", "bn": "She said she were tired."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Am\" backshifts to \"was\", and the pronoun shifts from \"I\" to \"she\".",
+      "bn": "\"Am\" backshift হয়ে \"was\" হয়, এবং pronoun \"I\" থেকে \"she\" হয়ে যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Report: \"I will call you tomorrow,\" he said.",
+      "bn": "Report করো: \"I will call you tomorrow,\" he said."
+    },
+    "options": [
+      {"en": "He said he will call me tomorrow.", "bn": "He said he will call me tomorrow."},
+      {"en": "He said he would call me the next day.", "bn": "He said he would call me the next day."},
+      {"en": "He said he would call me tomorrow.", "bn": "He said he would call me tomorrow."},
+      {"en": "He said he will call me the next day.", "bn": "He said he will call me the next day."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Will\" backshifts to \"would\", and the time word \"tomorrow\" shifts to \"the next day\".",
+      "bn": "\"Will\" backshift হয়ে \"would\" হয়, আর time word \"tomorrow\" হয়ে যায় \"the next day\"।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix: \"He told to me to wait here.\"",
+      "bn": "ঠিক করো: \"He told to me to wait here.\""
+    },
+    "options": [
+      {"en": "He told me to wait there.", "bn": "He told me to wait there."},
+      {"en": "He told to me to wait there.", "bn": "He told to me to wait there."},
+      {"en": "He told me to wait here.", "bn": "He told me to wait here."},
+      {"en": "He said me to wait there.", "bn": "He said me to wait there."}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "\"Tell\" takes a direct object with no \"to\" before it, and \"here\" also shifts to \"there\" in reported speech.",
+      "bn": "\"Tell\"-এর পরে সরাসরি object আসে, \"to\" লাগে না, এবং \"here\" reported speech-এ \"there\" হয়ে যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Report the command: \"Don't touch that,\" she said.",
+      "bn": "Command report করো: \"Don't touch that,\" she said."
+    },
+    "options": [
+      {"en": "She told me don't touch that.", "bn": "She told me don't touch that."},
+      {"en": "She told me to not touch that.", "bn": "She told me to not touch that."},
+      {"en": "She told me not to touch that.", "bn": "She told me not to touch that."},
+      {"en": "She said me not touch that.", "bn": "She said me not touch that."}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Negative reported commands use \"not to + base verb\" after tell/ask + object.",
+      "bn": "Negative reported command-এ tell/ask + object-এর পরে \"not to + base verb\" বসে।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"The sun rises in the east,\" she said. Why is backshift optional here?",
+      "bn": "\"The sun rises in the east,\" she said. — এখানে backshift optional কেন?"
+    },
+    "options": [
+      {"en": "Because it's a question.", "bn": "কারণ এটা একটা question।"},
+      {"en": "Because it's a general truth that's still true.", "bn": "কারণ এটা একটা general truth যা এখনো সত্য।"},
+      {"en": "Because \"rises\" has no past form.", "bn": "কারণ \"rises\"-এর কোনো past form নেই।"},
+      {"en": "Because it's a command.", "bn": "কারণ এটা একটা command।"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "When the reported fact is still true or a general truth, backshifting the tense is optional.",
+      "bn": "Reported fact এখনো সত্য হলে বা general truth হলে, tense backshift করা optional।"
+    }
+  }
+]

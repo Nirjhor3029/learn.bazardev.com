@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "In \"The confident student answered quickly,\" what part of speech is \"confident\"?",
+      "bn": "\"The confident student answered quickly\" বাক্যে \"confident\" কোন parts of speech?"
+    },
+    "options": [
+      {"en": "Noun", "bn": "Noun"},
+      {"en": "Adjective", "bn": "Adjective"},
+      {"en": "Adverb", "bn": "Adverb"},
+      {"en": "Verb", "bn": "Verb"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Confident\" describes the noun \"student,\" so it's an adjective.",
+      "bn": "\"Confident\" noun \"student\"-কে describe করছে, তাই এটা adjective।"
+    }
+  },
+  {
+    "q": {
+      "en": "In the same sentence, what part of speech is \"quickly\"?",
+      "bn": "একই বাক্যে \"quickly\" কোন parts of speech?"
+    },
+    "options": [
+      {"en": "Adjective", "bn": "Adjective"},
+      {"en": "Preposition", "bn": "Preposition"},
+      {"en": "Adverb", "bn": "Adverb"},
+      {"en": "Conjunction", "bn": "Conjunction"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "\"Quickly\" describes the verb \"answered\" — that's an adverb's job.",
+      "bn": "\"Quickly\" verb \"answered\"-কে describe করছে — এটাই adverb-এর কাজ।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which sentence has correct English word order?",
+      "bn": "কোন বাক্যটার word order সঠিক?"
+    },
+    "options": [
+      {"en": "I English every day study.", "bn": "I English every day study."},
+      {"en": "I study English every day.", "bn": "I study English every day."},
+      {"en": "Every day English I study.", "bn": "Every day English I study."},
+      {"en": "Study I English every day.", "bn": "Study I English every day."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "English puts the verb right after the subject (Subject-Verb-Object): I (S) study (V) English (O).",
+      "bn": "English-এ verb বসে subject-এর ঠিক পরে (Subject-Verb-Object): I (S) study (V) English (O)।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which pattern does \"She smiled.\" follow?",
+      "bn": "\"She smiled.\" কোন pattern follow করে?"
+    },
+    "options": [
+      {"en": "S-V (no object)", "bn": "S-V (object নেই)"},
+      {"en": "S-V-O", "bn": "S-V-O"},
+      {"en": "O-V-S", "bn": "O-V-S"},
+      {"en": "V-S-O", "bn": "V-S-O"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "\"Smiled\" doesn't act on anything, so there's no object — just Subject + Verb.",
+      "bn": "\"Smiled\" কোনো কিছুর উপর act করছে না, তাই object নেই — শুধু Subject + Verb।"
+    }
+  },
+  {
+    "q": {
+      "en": "Bangla sentences typically put the verb...",
+      "bn": "বাংলা বাক্যে সাধারণত verb বসে..."
+    },
+    "options": [
+      {"en": "right after the subject, like English", "bn": "subject-এর ঠিক পরে, English-এর মতো"},
+      {"en": "at the very end of the sentence", "bn": "বাক্যের একদম শেষে"},
+      {"en": "at the very start of the sentence", "bn": "বাক্যের একদম শুরুতে"},
+      {"en": "Bangla has no verbs", "bn": "বাংলায় verb বলে কিছু নেই"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Bangla is Subject-Object-Verb (verb last); English is Subject-Verb-Object (verb in the middle) — this is the biggest word-order difference between the two languages.",
+      "bn": "বাংলা হলো Subject-Object-Verb (verb শেষে); English হলো Subject-Verb-Object (verb মাঝখানে) — এটাই দুই ভাষার সবচেয়ে বড় word-order পার্থক্য।"
+    }
+  }
+]

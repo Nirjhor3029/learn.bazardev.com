@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "\"The team published a detailed ___ of the results.\"",
+      "bn": "\"The team published a detailed ___ of the results.\""
+    },
+    "options": [
+      {"en": "analyze", "bn": "analyze"},
+      {"en": "analysis", "bn": "analysis"},
+      {"en": "analytical", "bn": "analytical"},
+      {"en": "analyzing", "bn": "analyzing"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Analysis\" is the noun form, needed here after \"a detailed\".",
+      "bn": "\"Analysis\" noun form, \"a detailed\"-এর পরে এটাই লাগবে।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"It's too early to ___ a conclusion from such a small sample.\"",
+      "bn": "\"It's too early to ___ a conclusion from such a small sample.\""
+    },
+    "options": [
+      {"en": "write", "bn": "write"},
+      {"en": "draw", "bn": "draw"},
+      {"en": "make", "bn": "make"},
+      {"en": "build", "bn": "build"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Draw a conclusion\" is the fixed collocation.",
+      "bn": "\"Draw a conclusion\" fixed collocation।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which pair contrasts two things occurring together with one directly causing the other?",
+      "bn": "কোন pair দুটো বিষয় একসাথে ঘটা আর একটা সরাসরি আরেকটাকে ঘটানোর মধ্যে contrast দেখায়?"
+    },
+    "options": [
+      {"en": "pure science vs. applied science", "bn": "pure science vs. applied science"},
+      {"en": "correlation vs. causation", "bn": "correlation vs. causation"},
+      {"en": "qualitative vs. quantitative research", "bn": "qualitative vs. quantitative research"},
+      {"en": "hypothesis vs. conclusion", "bn": "hypothesis vs. conclusion"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Correlation\" means two things occur together; \"causation\" means one directly causes the other.",
+      "bn": "\"Correlation\" মানে দুটো বিষয় একসাথে ঘটে; \"causation\" মানে একটা সরাসরি আরেকটাকে ঘটায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"Universities often struggle to secure research ___.\"",
+      "bn": "\"Universities often struggle to secure research ___.\""
+    },
+    "options": [
+      {"en": "funding", "bn": "funding"},
+      {"en": "fundament", "bn": "fundament"},
+      {"en": "funded", "bn": "funded"},
+      {"en": "fund", "bn": "fund"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "\"Secure research funding\" is the standard collocation for obtaining money to support research.",
+      "bn": "\"Secure research funding\" standard collocation, research-এর জন্য টাকা পাওয়ার ক্ষেত্রে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which stage of the scientific method cycle comes right after \"experiment\"?",
+      "bn": "Scientific method cycle-এ \"experiment\"-এর ঠিক পরে কোন stage আসে?"
+    },
+    "options": [
+      {"en": "Hypothesis", "bn": "Hypothesis"},
+      {"en": "Analysis", "bn": "Analysis"},
+      {"en": "Conclusion", "bn": "Conclusion"},
+      {"en": "Funding", "bn": "Funding"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The cycle runs: hypothesis → experiment → analysis → conclusion → (a new, refined hypothesis).",
+      "bn": "Cycle চলে এভাবে: hypothesis → experiment → analysis → conclusion → (নতুন, refined hypothesis)।"
+    }
+  }
+]

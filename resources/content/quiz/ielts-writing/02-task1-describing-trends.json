@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Which verb suits a dramatic, sudden increase?",
+      "bn": "কোন verb একটা dramatic, sudden increase বোঝানোর জন্য ঠিক?"
+    },
+    "options": [
+      {"en": "rose", "bn": "rose"},
+      {"en": "rocketed", "bn": "rocketed"},
+      {"en": "remained stable", "bn": "remained stable"},
+      {"en": "fluctuated", "bn": "fluctuated"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Rocketed\" signals a much sharper, more dramatic increase than the moderate \"rose\".",
+      "bn": "\"Rocketed\" moderate \"rose\"-এর চেয়ে অনেক বেশি sharp, dramatic increase বোঝায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix: \"Sales increased by 500 units.\" (500 is the final total, not the size of the change)",
+      "bn": "ঠিক করো: \"Sales increased by 500 units.\" (৫০০ হলো final total, change-এর size না)"
+    },
+    "options": [
+      {"en": "Sales increased to 500 units.", "bn": "Sales increased to 500 units."},
+      {"en": "Sales increased from 500 units.", "bn": "Sales increased from 500 units."},
+      {"en": "Sales increased at 500 units.", "bn": "Sales increased at 500 units."},
+      {"en": "Sales increased with 500 units.", "bn": "Sales increased with 500 units."}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "\"To\" marks the end point/final total; \"by\" marks the size of the change.",
+      "bn": "\"To\" end point/final total বোঝায়; \"by\" change-এর size বোঝায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Where does the overview go in a Task 1 response?",
+      "bn": "Task 1 response-এ overview কোথায় থাকে?"
+    },
+    "options": [
+      {"en": "At the very end, as a conclusion", "bn": "একদম শেষে, conclusion হিসেবে"},
+      {"en": "Right after the paraphrased introduction, before the body paragraphs", "bn": "Paraphrased introduction-এর ঠিক পরে, body paragraph-এর আগে"},
+      {"en": "In the middle of body paragraph 1", "bn": "Body paragraph ১-এর মাঝখানে"},
+      {"en": "It isn't required", "bn": "এটা দরকার নেই"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The overview comes right after the introduction, before any detailed data, and is heavily weighted for Task Achievement.",
+      "bn": "Overview introduction-এর ঠিক পরে আসে, detailed data-র আগে, এবং Task Achievement-এ এটার ওজন বেশি।"
+    }
+  },
+  {
+    "q": {
+      "en": "Should the overview include specific numbers from the graph?",
+      "bn": "Overview-তে graph-এর specific number থাকা উচিত?"
+    },
+    "options": [
+      {"en": "Yes, as many as possible", "bn": "হ্যাঁ, যত বেশি সম্ভব"},
+      {"en": "No — it summarises the biggest-picture features; numbers belong in the body", "bn": "না — এটা বড় picture-এর feature summarize করে; number body paragraph-এ থাকে"},
+      {"en": "Only the highest number", "bn": "শুধু সবচেয়ে বড় number"},
+      {"en": "Only percentages, never totals", "bn": "শুধু percentage, কখনো total না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The overview covers the 2-3 most significant features without specific figures; detailed numbers go in the body paragraphs.",
+      "bn": "Overview specific figure ছাড়া ২-৩টা সবচেয়ে significant feature কভার করে; detailed number body paragraph-এ যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix: \"Sales increased dramatically slightly.\"",
+      "bn": "ঠিক করো: \"Sales increased dramatically slightly.\""
+    },
+    "options": [
+      {"en": "Sales increased dramatically.", "bn": "Sales increased dramatically."},
+      {"en": "Sales increased slightly.", "bn": "Sales increased slightly."},
+      {"en": "Sales increased dramatically and slightly.", "bn": "Sales increased dramatically and slightly."},
+      {"en": "Sales slightly dramatically increased.", "bn": "Sales slightly dramatically increased."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Never stack two degree adverbs together — pick the one that accurately matches the size of the change (here, small, so \"slightly\").",
+      "bn": "দুটো degree adverb একসাথে বসানো যায় না — যেটা change-এর size-এর সাথে ঠিক মেলে সেটাই বাছতে হবে (এখানে ছোট change, তাই \"slightly\")।"
+    }
+  }
+]

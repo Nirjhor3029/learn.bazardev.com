@@ -38,3 +38,5 @@
 .markdown-body hr { @apply my-8 border-gray-100; }
 .markdown-body img { @apply my-4 max-w-full rounded-lg border border-gray-100; }
 .markdown-body iframe { @apply my-4 aspect-video h-auto w-full rounded-lg; }
+.markdown-body svg { @apply my-4 h-auto max-w-full; }
+.markdown-body .diagram { @apply my-6 rounded-xl border border-gray-100 bg-gray-50 p-4; }

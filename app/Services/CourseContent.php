@@ -9,7 +9,9 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 /**
  * Reads course chapters straight from the sibling devops-for-developers repo,
  * so the markdown there (GitHub-readable) is the single source of truth and
- * the website never drifts out of sync with it.
+ * the website never drifts out of sync with it. Courses flagged
+ * `local_content` (no GitHub repo of their own) are the exception — their
+ * markdown lives entirely under resources/content/{folder}/ in this app.
  */
 class CourseContent
 {
@@ -38,14 +40,20 @@ class CourseContent
             throw new NotFoundHttpException;
         }
 
-        // English is the GitHub-readable master copy (devops-for-developers repo).
-        // Bangla is a website-only translation, kept inside this app so the content
-        // repo stays English-only for GitHub readers.
-        $path = $lang === 'bn'
-            ? resource_path("content/bn/{$course['folder']}/{$chapterSlug}.md")
-            : rtrim(config('course.content_path'), '/')."/{$course['folder']}/{$chapterSlug}.md";
+        // Most courses' English content is the GitHub-readable master copy in the
+        // sibling devops-for-developers repo, with Bangla as a website-only translation
+        // kept inside this app. A course marked `local_content` (e.g. ielts-grammar)
+        // has no GitHub repo at all — both languages live under resources/content/.
+        $isLocal = $course['local_content'] ?? false;
+        $path = match (true) {
+            $isLocal => resource_path("content/{$course['folder']}/{$chapterSlug}".($lang === 'bn' ? '.bn' : '').'.md'),
+            $lang === 'bn' => resource_path("content/bn/{$course['folder']}/{$chapterSlug}.md"),
+            default => rtrim(config('course.content_path'), '/')."/{$course['folder']}/{$chapterSlug}.md",
+        };
 
-        $hasBn = File::exists(resource_path("content/bn/{$course['folder']}/{$chapterSlug}.md"));
+        $hasBn = $isLocal
+            ? File::exists(resource_path("content/{$course['folder']}/{$chapterSlug}.bn.md"))
+            : File::exists(resource_path("content/bn/{$course['folder']}/{$chapterSlug}.md"));
 
         if (! File::exists($path)) {
             throw new NotFoundHttpException;
@@ -64,7 +72,7 @@ class CourseContent
             'course' => $course,
             'lang' => $lang,
             'has_bn' => $hasBn,
-            'github_url' => config('course.github_repo')."/blob/main/{$course['folder']}/{$chapterSlug}.md",
+            'github_url' => $isLocal ? null : config('course.github_repo')."/blob/main/{$course['folder']}/{$chapterSlug}.md",
             'prev' => $this->sibling($course, $slugs, $index - 1),
             'next' => $this->sibling($course, $slugs, $index + 1),
         ];

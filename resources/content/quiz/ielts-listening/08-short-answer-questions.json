@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Before the audio starts, what should you predict for the question \"What time does the shop open on Saturdays?\"",
+      "bn": "Audio শুরু হওয়ার আগে, \"What time does the shop open on Saturdays?\" question-এর জন্য কী predict করা উচিত?"
+    },
+    "options": [
+      {"en": "A person's name", "bn": "একজন ব্যক্তির নাম"},
+      {"en": "A time", "bn": "একটা time"},
+      {"en": "A place", "bn": "একটা জায়গা"},
+      {"en": "An opinion", "bn": "একটা opinion"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Predicting the answer type (here, a time) narrows what you listen for before the audio even starts.",
+      "bn": "Answer type predict করলে (এখানে, একটা time) audio শুরু হওয়ার আগেই তুমি কী শুনবে তা narrow down হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "You find the correct short answer but spell it incorrectly. What happens to your mark?",
+      "bn": "তুমি সঠিক short answer খুঁজে পাও কিন্তু ভুল spell করো। তোমার মার্কের কী হবে?"
+    },
+    "options": [
+      {"en": "You still get the mark, since the content is right", "bn": "তুমি তাও মার্ক পাবে, কারণ content সঠিক"},
+      {"en": "You lose the mark — spelling must be correct", "bn": "তুমি মার্ক হারাবে — spelling সঠিক হতে হবে"},
+      {"en": "You get half credit", "bn": "তুমি half credit পাবে"},
+      {"en": "Spelling is only checked for names, not other words", "bn": "Spelling শুধু নামের জন্য check হয়, অন্য শব্দের জন্য না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Spelling must be correct — a misspelled correct answer still loses the mark, just like every other question type with written answers.",
+      "bn": "Spelling সঠিক হতে হবে — একটা misspelled সঠিক answer-ও মার্ক হারায়, written answer থাকা বাকি সব question type-এর মতোই।"
+    }
+  },
+  {
+    "q": {
+      "en": "What kind of topics do short-answer questions in Listening usually target?",
+      "bn": "Listening-এ short-answer question সাধারণত কোন ধরনের topic target করে?"
+    },
+    "options": [
+      {"en": "Abstract academic theories", "bn": "Abstract academic theory"},
+      {"en": "Concrete, everyday facts like prices, times, and addresses", "bn": "Price, time, এবং address-এর মতো concrete, everyday fact"},
+      {"en": "The speaker's personal philosophy", "bn": "Speaker-এর personal philosophy"},
+      {"en": "Historical dates from centuries ago", "bn": "শত শত বছর আগের historical date"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Short-answer questions are most common on everyday, practical topics — concrete facts like prices, times, and addresses.",
+      "bn": "Short-answer question everyday, practical topic-এ সবচেয়ে common — price, time, এবং address-এর মতো concrete fact।"
+    }
+  },
+  {
+    "q": {
+      "en": "Should you expect the question's exact wording to repeat in the audio for short-answer questions?",
+      "bn": "Short-answer question-এর জন্য audio-তে কি question-এর exact wording repeat হবে বলে আশা করা উচিত?"
+    },
+    "options": [
+      {"en": "Yes, always word for word", "bn": "হ্যাঁ, সবসময় word for word"},
+      {"en": "No — expect paraphrase, just like sentence completion", "bn": "না — sentence completion-এর মতোই paraphrase আশা করো"},
+      {"en": "Only in Section 4", "bn": "শুধু Section 4-এ"},
+      {"en": "Only when the question is longer than ten words", "bn": "শুধু question দশ শব্দের বেশি হলে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The audio usually introduces the fact using different wording than the question — the same paraphrase pattern as sentence completion.",
+      "bn": "Audio সাধারণত question-এর থেকে ভিন্ন wording দিয়ে fact introduce করে — sentence completion-এর একই paraphrase pattern।"
+    }
+  },
+  {
+    "q": {
+      "en": "What happens if a correct short-answer response exceeds the stated word limit?",
+      "bn": "একটা সঠিক short-answer response stated word limit exceed করলে কী হবে?"
+    },
+    "options": [
+      {"en": "Full marks, since the content is correct", "bn": "পূর্ণ মার্ক, কারণ content সঠিক"},
+      {"en": "It scores zero, just like other completion-style questions", "bn": "এটা শূন্য স্কোর করে, বাকি completion-style question-এর মতোই"},
+      {"en": "Half marks for partial credit", "bn": "আংশিক credit-এর জন্য অর্ধেক মার্ক"},
+      {"en": "The examiner rounds it down automatically", "bn": "Examiner automatically এটা round down করে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Exceeding the word limit scores zero, regardless of correctness — the same strict rule as every other completion-style question.",
+      "bn": "Word limit exceed করলে score শূন্য হয়, correctness নির্বিশেষে — বাকি সব completion-style question-এর একই strict rule।"
+    }
+  }
+]

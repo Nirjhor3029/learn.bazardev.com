@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Which is correct?",
+      "bn": "কোনটা সঠিক?"
+    },
+    "options": [
+      {"en": "Could you tell me where is the station?", "bn": "Could you tell me where is the station?"},
+      {"en": "Could you tell me where the station is?", "bn": "Could you tell me where the station is?"},
+      {"en": "Could you tell me where does the station is?", "bn": "Could you tell me where does the station is?"},
+      {"en": "Could you tell me where the station does be?", "bn": "Could you tell me where the station does be?"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Embedded questions after phrases like \"Could you tell me\" keep statement word order — no inversion.",
+      "bn": "\"Could you tell me\"-এর পরে embedded question statement word order রাখে — inversion হয় না।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"___ broke the window?\" — who is the subject here, so which is correct?",
+      "bn": "\"___ broke the window?\" — এখানে who হলো subject, তাই কোনটা সঠিক?"
+    },
+    "options": [
+      {"en": "Who did break", "bn": "Who did break"},
+      {"en": "Who broke", "bn": "Who broke"},
+      {"en": "Did who break", "bn": "Did who break"},
+      {"en": "Who does broke", "bn": "Who does broke"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "When who/what/which is the subject of the sentence, no auxiliary is needed — it behaves like a statement.",
+      "bn": "who/what/which যখন sentence-এর subject হয়, তখন auxiliary লাগে না — statement-এর মতো behave করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Turn into an indirect question: \"Is the library open on Sundays?\"",
+      "bn": "Indirect question বানাও: \"Is the library open on Sundays?\""
+    },
+    "options": [
+      {"en": "I wonder is the library open on Sundays.", "bn": "I wonder is the library open on Sundays."},
+      {"en": "I wonder if the library is open on Sundays.", "bn": "I wonder if the library is open on Sundays."},
+      {"en": "I wonder the library is open on Sundays.", "bn": "I wonder the library is open on Sundays."},
+      {"en": "I wonder does the library open on Sundays.", "bn": "I wonder does the library open on Sundays."}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A yes/no question with no question word to embed uses \"if\" or \"whether\" instead, plus statement word order.",
+      "bn": "Yes/no question-এ embed করার কোনো question word না থাকলে \"if\" বা \"whether\" লাগে, সাথে statement word order।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix: \"I don't know what time does the train leave.\"",
+      "bn": "ঠিক করো: \"I don't know what time does the train leave.\""
+    },
+    "options": [
+      {"en": "I don't know what time the train leaves.", "bn": "I don't know what time the train leaves."},
+      {"en": "I don't know what time leaves the train.", "bn": "I don't know what time leaves the train."},
+      {"en": "I don't know what time does leave the train.", "bn": "I don't know what time does leave the train."},
+      {"en": "I don't know what time the train does leave.", "bn": "I don't know what time the train does leave."}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Embedded questions drop \"does/do/did\" and go back to statement word order: subject before verb.",
+      "bn": "Embedded question-এ \"does/do/did\" বাদ যায়, statement word order ফিরে আসে: subject verb-এর আগে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which direct question has NO auxiliary verb (do/does/did/is/are)?",
+      "bn": "কোন direct question-এ কোনো auxiliary verb নেই (do/does/did/is/are)?"
+    },
+    "options": [
+      {"en": "What did you buy?", "bn": "What did you buy?"},
+      {"en": "What happened?", "bn": "What happened?"},
+      {"en": "Does she work here?", "bn": "Does she work here?"},
+      {"en": "Is he coming?", "bn": "Is he coming?"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"What happened?\" asks about the subject itself, so it needs no auxiliary — same pattern as \"Who called you?\"",
+      "bn": "\"What happened?\" subject নিজেই জিজ্ঞেস করছে, তাই auxiliary লাগে না — \"Who called you?\"-এর মতো pattern।"
+    }
+  }
+]

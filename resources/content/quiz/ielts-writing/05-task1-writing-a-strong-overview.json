@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "True or false: the overview should include exact percentages.",
+      "bn": "সত্য না মিথ্যা: overview-এ exact percentage থাকা উচিত।"
+    },
+    "options": [
+      {"en": "True", "bn": "সত্য"},
+      {"en": "False", "bn": "মিথ্যা"},
+      {"en": "Only for pie charts", "bn": "শুধু pie chart-এর জন্য"},
+      {"en": "Only in the second sentence", "bn": "শুধু দ্বিতীয় sentence-এ"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Exact figures belong in the body paragraphs; the overview uses comparative language (highest, lowest) instead.",
+      "bn": "Exact figure body paragraph-এ থাকে; overview comparative language (highest, lowest) ব্যবহার করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Where does the overview go in the four-paragraph structure?",
+      "bn": "Four-paragraph structure-এ overview কোথায় থাকে?"
+    },
+    "options": [
+      {"en": "At the very end, as a conclusion", "bn": "একদম শেষে, conclusion হিসেবে"},
+      {"en": "Right after the paraphrased introduction, before the body paragraphs", "bn": "Paraphrased introduction-এর ঠিক পরে, body paragraph-এর আগে"},
+      {"en": "Inside body paragraph 2", "bn": "Body paragraph ২-এর ভেতরে"},
+      {"en": "It can go anywhere", "bn": "এটা যেকোনো জায়গায় থাকতে পারে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The overview comes right after the introduction, before any detailed body paragraphs.",
+      "bn": "Overview introduction-এর ঠিক পরে আসে, detailed body paragraph-এর আগে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Fix: \"Overall, this is a worrying trend.\"",
+      "bn": "ঠিক করো: \"Overall, this is a worrying trend.\""
+    },
+    "options": [
+      {"en": "Overall, the data show a clear upward trend.", "bn": "Overall, the data show a clear upward trend."},
+      {"en": "Overall, I am worried about this trend.", "bn": "Overall, I am worried about this trend."},
+      {"en": "Overall, this trend is bad for everyone.", "bn": "Overall, this trend is bad for everyone."},
+      {"en": "Overall, this is a worrying trend indeed.", "bn": "Overall, this is a worrying trend indeed."}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "The overview must stay objective — \"worrying\" is a personal opinion, which has no place in Task 1.",
+      "bn": "Overview অবশ্যই objective হতে হবে — \"worrying\" একটা personal opinion, Task 1-এ এটার জায়গা নেই।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is the minimum band that specifically mentions the overview requirement?",
+      "bn": "Overview requirement নির্দিষ্টভাবে উল্লেখ করা minimum band কোনটা?"
+    },
+    "options": [
+      {"en": "Band 4", "bn": "Band 4"},
+      {"en": "Band 5", "bn": "Band 5"},
+      {"en": "Band 6", "bn": "Band 6"},
+      {"en": "Band 9", "bn": "Band 9"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Band 6 requires a relevant overview to be attempted; Band 7 requires it to be clear.",
+      "bn": "Band 6-এ একটা relevant overview attempt করা লাগে; Band 7-এ clear overview লাগে।"
+    }
+  },
+  {
+    "q": {
+      "en": "If a graph has six lines, what should the overview do?",
+      "bn": "একটা graph-এ যদি ছয়টা line থাকে, overview-তে কী করা উচিত?"
+    },
+    "options": [
+      {"en": "Describe all six lines individually in detail", "bn": "সব ছয়টা line আলাদা আলাদা detail-এ বর্ণনা করা"},
+      {"en": "Group similar lines together and mention only the biggest-picture pattern or exception", "bn": "একইরকম line গুলো group করে শুধু সবচেয়ে বড় picture-এর pattern বা exception উল্লেখ করা"},
+      {"en": "Pick only one line and ignore the rest", "bn": "শুধু একটা line বেছে বাকি গুলো ignore করা"},
+      {"en": "List all six lines' exact final values", "bn": "ছয়টা line-এর exact final value list করা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The overview groups similar data and highlights the 2-3 biggest-picture features, not every individual category.",
+      "bn": "Overview একইরকম data group করে এবং ২-৩টা সবচেয়ে বড় picture-এর feature highlight করে, প্রতিটা category আলাদা করে না।"
+    }
+  }
+]

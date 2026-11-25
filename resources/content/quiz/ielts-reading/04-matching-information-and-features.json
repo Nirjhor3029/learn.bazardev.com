@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Does matching information test a paragraph's main idea, like matching headings?",
+      "bn": "Matching information কি matching headings-এর মতো paragraph-এর main idea test করে?"
+    },
+    "options": [
+      {"en": "Yes, exactly the same thing", "bn": "হ্যাঁ, একই বিষয়"},
+      {"en": "No — it tests a specific detail, which could be anywhere in the passage", "bn": "না — এটা একটা specific detail test করে, যা passage-এর যেকোনো জায়গায় থাকতে পারে"},
+      {"en": "It only tests the passage's title", "bn": "এটা শুধু passage-এর title test করে"},
+      {"en": "It only tests the first paragraph", "bn": "এটা শুধু প্রথম paragraph test করে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Matching information hunts for a specific detail anywhere in the passage, unlike matching headings' focus on overall main ideas.",
+      "bn": "Matching information passage-এর যেকোনো জায়গায় একটা specific detail খোঁজে, matching headings-এর overall main idea focus-এর বিপরীতে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Do the questions in a matching information task follow the passage's order?",
+      "bn": "Matching information task-এ question-গুলো কি passage-এর order follow করে?"
+    },
+    "options": [
+      {"en": "Yes, always in the same order", "bn": "হ্যাঁ, সবসময় একই order-এ"},
+      {"en": "No — you may need to jump between paragraphs", "bn": "না — paragraph-এর মধ্যে jump করতে হতে পারে"},
+      {"en": "Only in Academic Reading, not General Training", "bn": "শুধু Academic Reading-এ, General Training-এ না"},
+      {"en": "Only for the first five questions", "bn": "শুধু প্রথম পাঁচটা question-এর জন্য"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The order of the questions doesn't match the order of information in the passage, so scanning the whole passage is necessary.",
+      "bn": "Question-এর order passage-এর information-এর order-এর সাথে মেলে না, তাই পুরো passage scan করা প্রয়োজন।"
+    }
+  },
+  {
+    "q": {
+      "en": "What's the first step for a matching features question about named researchers?",
+      "bn": "Named researcher নিয়ে matching features question-এর প্রথম step কী?"
+    },
+    "options": [
+      {"en": "Guess based on the names alone", "bn": "শুধু নাম দেখে guess করা"},
+      {"en": "Underline every name as it appears in the passage, then read around each one", "bn": "Passage-এ প্রতিটা নাম underline করা, তারপর প্রতিটার আশেপাশে পড়া"},
+      {"en": "Skip the passage and answer from memory", "bn": "Passage skip করে memory থেকে answer করা"},
+      {"en": "Read only the introduction paragraph", "bn": "শুধু introduction paragraph পড়া"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Underlining names first, then reading around each one, reveals what claim or finding is attributed to them.",
+      "bn": "প্রথমে নাম underline করে, তারপর আশেপাশে পড়লে বোঝা যায় কোন claim বা finding কার সাথে যুক্ত।"
+    }
+  },
+  {
+    "q": {
+      "en": "Do statements in matching information/features questions usually repeat the passage's exact wording?",
+      "bn": "Matching information/features question-এর statement কি সাধারণত passage-এর exact wording পুনরাবৃত্তি করে?"
+    },
+    "options": [
+      {"en": "Yes, almost always word-for-word", "bn": "হ্যাঁ, প্রায় সবসময় word-for-word"},
+      {"en": "No — they're almost always paraphrased", "bn": "না — এগুলো প্রায় সবসময় paraphrased"},
+      {"en": "Only in matching headings questions", "bn": "শুধু matching headings question-এ"},
+      {"en": "Only when the passage is very short", "bn": "শুধু passage খুব ছোট হলে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Statements are almost always reworded from the passage, so recognising synonyms and paraphrase matters most.",
+      "bn": "Statement প্রায় সবসময় passage থেকে rewritten থাকে, তাই synonym এবং paraphrase চেনাটাই সবচেয়ে গুরুত্বপূর্ণ।"
+    }
+  },
+  {
+    "q": {
+      "en": "Can a paragraph letter be the correct answer for more than one matching information question?",
+      "bn": "একটা paragraph letter কি একাধিক matching information question-এর সঠিক answer হতে পারে?"
+    },
+    "options": [
+      {"en": "Never, under any circumstances", "bn": "কখনো না, কোনো পরিস্থিতিতেই না"},
+      {"en": "Sometimes — always check the instructions for this specific task", "bn": "কখনো কখনো — এই নির্দিষ্ট task-এর instruction সবসময় check করো"},
+      {"en": "Only in Listening, not Reading", "bn": "শুধু Listening-এ, Reading-এ না"},
+      {"en": "Only for the final question", "bn": "শুধু শেষ question-এর জন্য"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Unlike matching headings (usually used once), a paragraph letter in matching information can sometimes repeat — the instructions specify this.",
+      "bn": "Matching headings-এর (সাধারণত একবার ব্যবহার) বিপরীতে, matching information-এ paragraph letter কখনো কখনো repeat হতে পারে — instruction-এ এটা উল্লেখ থাকে।"
+    }
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Which is a real example: \"many people think this is true\" or \"in Seoul, bus investment reduced private car use\"?",
+      "bn": "কোনটা একটা real example: \"many people think this is true\" না কি \"in Seoul, bus investment reduced private car use\"?"
+    },
+    "options": [
+      {"en": "\"many people think this is true\"", "bn": "\"many people think this is true\""},
+      {"en": "\"in Seoul, bus investment reduced private car use\"", "bn": "\"in Seoul, bus investment reduced private car use\""},
+      {"en": "Both are equally good examples", "bn": "দুটোই সমানভাবে ভালো example"},
+      {"en": "Neither is a real example", "bn": "কোনোটাই real example না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "This names a specific place and outcome; the other is just another vague opinion, not a real example.",
+      "bn": "এটা একটা specific জায়গা আর outcome উল্লেখ করে; অন্যটা শুধু আরেকটা vague opinion, real example না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why is inventing a precise statistic like \"73.4% of people agree\" risky?",
+      "bn": "\"73.4% of people agree\"-র মতো একটা precise statistic বানিয়ে বলা কেন risky?"
+    },
+    "options": [
+      {"en": "It's grammatically incorrect", "bn": "এটা grammatically ভুল"},
+      {"en": "It's unverifiable and can sound artificial, undermining credibility", "bn": "এটা unverifiable এবং artificial শোনায়, যা credibility কমিয়ে দেয়"},
+      {"en": "IELTS forbids numbers entirely", "bn": "IELTS সম্পূর্ণভাবে number নিষিদ্ধ করে"},
+      {"en": "It makes the essay too short", "bn": "এটা essay খুব ছোট করে দেয়"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "An oddly specific, unverifiable number invented on the spot can undermine credibility rather than strengthen the argument.",
+      "bn": "তাৎক্ষণিকভাবে বানানো একটা অদ্ভুত specific, unverifiable number argument-কে শক্তিশালী না করে credibility কমিয়ে দিতে পারে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What are the four steps in the chain-of-reasoning technique?",
+      "bn": "Chain-of-reasoning technique-এর চারটা step কী কী?"
+    },
+    "options": [
+      {"en": "Intro, body, body, conclusion", "bn": "Intro, body, body, conclusion"},
+      {"en": "Claim, because, as a result, for example", "bn": "Claim, because, as a result, for example"},
+      {"en": "Question, answer, opinion, summary", "bn": "Question, answer, opinion, summary"},
+      {"en": "Topic, paraphrase, thesis, outline", "bn": "Topic, paraphrase, thesis, outline"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Claim → because → as a result → for example extends a topic sentence into a fully developed idea.",
+      "bn": "Claim → because → as a result → for example — একটা topic sentence-কে পূর্ণাঙ্গ idea-তে develop করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "If you don't have a real statistic, what should you use instead?",
+      "bn": "যদি real statistic না থাকে, তার বদলে কী ব্যবহার করা উচিত?"
+    },
+    "options": [
+      {"en": "A made-up specific number", "bn": "একটা বানানো specific number"},
+      {"en": "A hedged general claim, like \"research suggests\"", "bn": "একটা hedged general claim, যেমন \"research suggests\""},
+      {"en": "No example at all", "bn": "কোনো example না"},
+      {"en": "A personal attack on the opposing view", "bn": "Opposing view-এর উপর একটা personal attack"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A hedged general claim like \"research suggests\" or \"it is widely believed\" is safer than an invented precise statistic.",
+      "bn": "\"Research suggests\" বা \"it is widely believed\"-এর মতো hedged general claim বানানো precise statistic-এর চেয়ে নিরাপদ।"
+    }
+  },
+  {
+    "q": {
+      "en": "\"This is a serious problem. For example, it is bad.\" What's wrong with this?",
+      "bn": "\"This is a serious problem. For example, it is bad.\" — এটার সমস্যা কী?"
+    },
+    "options": [
+      {"en": "Nothing, it's a complete idea", "bn": "কিছুই না, এটা একটা complete idea"},
+      {"en": "The \"example\" is just another vague opinion, not a specific case", "bn": "\"Example\"-টা শুধু আরেকটা vague opinion, specific case না"},
+      {"en": "It uses the wrong tense", "bn": "এটা ভুল tense ব্যবহার করে"},
+      {"en": "It's too long", "bn": "এটা খুব লম্বা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A real example names a specific case, place, or scenario — not another restatement of the same vague opinion.",
+      "bn": "একটা real example নির্দিষ্ট case, জায়গা, বা scenario উল্লেখ করে — একই vague opinion-এর পুনরাবৃত্তি না।"
+    }
+  }
+]

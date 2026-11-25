@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Before the audio starts, what should you do with a gap like \"Surname: ___\"?",
+      "bn": "Audio শুরু হওয়ার আগে, \"Surname: ___\"-এর মতো একটা gap নিয়ে কী করা উচিত?"
+    },
+    "options": [
+      {"en": "Nothing — just wait for the audio to say the answer", "bn": "কিছুই না — শুধু audio answer বলার জন্য wait করা"},
+      {"en": "Turn it into a question: \"What is the surname?\"", "bn": "এটাকে একটা question-এ পরিণত করা: \"What is the surname?\""},
+      {"en": "Write a random guess immediately", "bn": "অবিলম্বে একটা random guess লেখা"},
+      {"en": "Skip it and focus only on the next gap", "bn": "এটা skip করে শুধু পরের gap-এ focus করা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Turning each gap into a question forces active listening for a specific answer, rather than passively waiting for words to match.",
+      "bn": "প্রতিটা gap-কে একটা question-এ পরিণত করলে একটা specific answer-এর জন্য active listening হয়, শুধু word মেলার জন্য passively wait করার বদলে।"
+    }
+  },
+  {
+    "q": {
+      "en": "You miss the answer to gap 3 during a form-completion task. What should you do?",
+      "bn": "একটা form-completion task-এ gap ৩-এর answer miss করো। কী করা উচিত?"
+    },
+    "options": [
+      {"en": "Stop and wait for the recording to repeat", "bn": "থেমে যাওয়া এবং recording repeat হওয়ার জন্য wait করা"},
+      {"en": "Move on immediately to gap 4's cue", "bn": "অবিলম্বে gap ৪-এর cue-তে এগিয়ে যাওয়া"},
+      {"en": "Go back and try to recall gap 1 and 2 again", "bn": "ফিরে গিয়ে gap ১ এবং ২ আবার recall করার চেষ্টা করা"},
+      {"en": "Leave all remaining gaps blank", "bn": "বাকি সব gap খালি রেখে দেওয়া"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Gaps follow the conversation's order — dwelling on a miss costs you the next gaps too, so move forward immediately.",
+      "bn": "Gap conversation-এর order follow করে — একটা miss নিয়ে দীর্ঘ সময় থাকলে পরের gap-গুলোও miss হবে, তাই অবিলম্বে এগিয়ে যাও।"
+    }
+  },
+  {
+    "q": {
+      "en": "A name is spelled out as \"B... P... D...\" What's the main risk here?",
+      "bn": "একটা নাম spell করা হয় \"B... P... D...\" এখানে মূল risk কী?"
+    },
+    "options": [
+      {"en": "The name will never appear in the answer", "bn": "নামটা কখনো answer-এ আসবে না"},
+      {"en": "Confusing similar-sounding letters like B, P, and D", "bn": "B, P, এবং D-এর মতো একই রকম শোনা letter গুলিয়ে ফেলা"},
+      {"en": "The spelling will be given twice, so it doesn't matter", "bn": "Spelling দুবার দেওয়া হবে, তাই এটা matter করে না"},
+      {"en": "Spelled names never count toward the word limit", "bn": "Spelled name কখনো word limit-এ count হয় না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Letters like B, P, and D sound similar and are a common source of errors when names are spelled out.",
+      "bn": "B, P, এবং D-এর মতো letter একই রকম শোনায় এবং নাম spell করার সময় এটা error-এর একটা common উৎস।"
+    }
+  },
+  {
+    "q": {
+      "en": "The instructions say \"ONE WORD AND/OR A NUMBER.\" Your correct answer is two words. What happens?",
+      "bn": "Instruction বলে \"ONE WORD AND/OR A NUMBER.\" তোমার সঠিক answer দুই শব্দ। কী হবে?"
+    },
+    "options": [
+      {"en": "Full marks, since the content is correct", "bn": "পূর্ণ মার্ক, কারণ content সঠিক"},
+      {"en": "It scores zero — exceeding the word limit loses the mark", "bn": "এটা শূন্য স্কোর করে — word limit exceed করলে মার্ক হারায়"},
+      {"en": "Half marks for partial credit", "bn": "আংশিক credit-এর জন্য অর্ধেক মার্ক"},
+      {"en": "The examiner rounds it down to one word automatically", "bn": "Examiner automatically এটা এক শব্দে round down করে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Exceeding the word limit scores zero, regardless of how correct the content is — the same strict rule as Reading completion tasks.",
+      "bn": "Word limit exceed করলে score শূন্য হয়, content যত সঠিকই হোক — Reading completion task-এর একই strict rule।"
+    }
+  },
+  {
+    "q": {
+      "en": "Where does form completion most commonly appear in the IELTS Listening test?",
+      "bn": "IELTS Listening test-এ form completion সবচেয়ে commonly কোথায় দেখা যায়?"
+    },
+    "options": [
+      {"en": "Section 4, the academic lecture", "bn": "Section 4, academic lecture"},
+      {"en": "Section 1, the everyday conversation", "bn": "Section 1, everyday conversation"},
+      {"en": "Section 3, the academic conversation", "bn": "Section 3, academic conversation"},
+      {"en": "It appears equally in all four sections", "bn": "এটা সব চারটা section-এ সমানভাবে দেখা যায়"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Form completion is most common in Section 1, usually a booking, registration, or enquiry call.",
+      "bn": "Form completion Section 1-এ সবচেয়ে common, সাধারণত একটা booking, registration, বা enquiry call।"
+    }
+  }
+]

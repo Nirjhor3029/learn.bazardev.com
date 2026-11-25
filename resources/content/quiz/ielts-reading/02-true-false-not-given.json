@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "The passage never mentions a fact that happens to be historically true. What's the answer?",
+      "bn": "Passage একটা historically true fact কখনো উল্লেখ করে না। উত্তর কী?"
+    },
+    "options": [
+      {"en": "True, since it's historically accurate", "bn": "True, কারণ এটা historically accurate"},
+      {"en": "False", "bn": "False"},
+      {"en": "Not Given", "bn": "Not Given"},
+      {"en": "It depends on the test-taker's own knowledge", "bn": "এটা test-taker-এর নিজের knowledge-এর উপর নির্ভর করে"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "The passage's content decides the answer, not outside knowledge — if it's never mentioned, the answer is Not Given.",
+      "bn": "Passage-এর content answer ঠিক করে, outside knowledge না — কখনো উল্লেখ না হলে answer হলো Not Given।"
+    }
+  },
+  {
+    "q": {
+      "en": "The passage says \"some scientists believe X.\" The statement says \"all scientists believe X.\" What's the answer?",
+      "bn": "Passage বলে \"some scientists believe X.\" Statement বলে \"all scientists believe X.\" উত্তর কী?"
+    },
+    "options": [
+      {"en": "True", "bn": "True"},
+      {"en": "False", "bn": "False"},
+      {"en": "Not Given", "bn": "Not Given"},
+      {"en": "Yes", "bn": "Yes"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Some\" directly contradicts \"all\" — this is a clear contradiction, not a case of the passage being silent, so the answer is False.",
+      "bn": "\"Some\" সরাসরি \"all\"-কে contradict করে — এটা একটা clear contradiction, passage silent থাকার case না, তাই answer False।"
+    }
+  },
+  {
+    "q": {
+      "en": "A statement shares several exact words with the passage. Does that guarantee the answer is True?",
+      "bn": "একটা statement passage-এর সাথে কয়েকটা exact word share করে। এটা কি guarantee করে যে answer True?"
+    },
+    "options": [
+      {"en": "Yes, always", "bn": "হ্যাঁ, সবসময়"},
+      {"en": "No — shared vocabulary doesn't guarantee a matching meaning", "bn": "না — শব্দ share করা মানে একই meaning হওয়া guarantee করে না"},
+      {"en": "Only if the words appear in the same order", "bn": "শুধু শব্দগুলো একই order-এ থাকলে"},
+      {"en": "Only in Yes/No/Not Given questions", "bn": "শুধু Yes/No/Not Given question-এ"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Because paraphrase is common, the same words can carry a different meaning — compare meaning, not word overlap.",
+      "bn": "Paraphrase common হওয়ায়, একই শব্দ আলাদা meaning বহন করতে পারে — meaning compare করো, word overlap না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which question format is used for the writer's opinions rather than plain facts?",
+      "bn": "Writer-এর opinion-এর জন্য কোন question format ব্যবহার হয়, plain fact-এর জন্য না?"
+    },
+    "options": [
+      {"en": "True/False/Not Given", "bn": "True/False/Not Given"},
+      {"en": "Yes/No/Not Given", "bn": "Yes/No/Not Given"},
+      {"en": "Both use the exact same format", "bn": "দুটোই একই format ব্যবহার করে"},
+      {"en": "Neither — opinions are never tested", "bn": "কোনোটাই না — opinion কখনো test করা হয় না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Yes/No/Not Given is used when the statement reflects the writer's opinion; True/False/Not Given is for factual information.",
+      "bn": "Statement writer-এর opinion হলে Yes/No/Not Given ব্যবহার হয়; factual information-এর জন্য True/False/Not Given।"
+    }
+  },
+  {
+    "q": {
+      "en": "What's the key test that separates False from Not Given?",
+      "bn": "False আর Not Given-এর মধ্যে পার্থক্য করার মূল test কী?"
+    },
+    "options": [
+      {"en": "Whether the statement is long or short", "bn": "Statement লম্বা না ছোট"},
+      {"en": "Whether the passage directly contradicts the statement, or simply never mentions it", "bn": "Passage statement-টাকে সরাসরি contradict করে, না কি শুধু কখনো উল্লেখ করেনি"},
+      {"en": "Whether the statement uses difficult vocabulary", "bn": "Statement-এ কঠিন vocabulary আছে কিনা"},
+      {"en": "Whether the statement comes first or last in the question set", "bn": "Statement question set-এ প্রথমে না শেষে আসে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "False requires the passage to actually contradict the statement; Not Given means the passage is simply silent on it.",
+      "bn": "False-এর জন্য passage-কে statement-টা actually contradict করতে হয়; Not Given মানে passage শুধু এটা নিয়ে silent।"
+    }
+  }
+]
