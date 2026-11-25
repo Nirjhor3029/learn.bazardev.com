@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "How much preparation time do you get before speaking in Part 2?",
+      "bn": "Part 2-তে কথা বলার আগে কতটুকু preparation time পাওয়া যায়?"
+    },
+    "options": [
+      {"en": "30 seconds", "bn": "৩০ সেকেন্ড"},
+      {"en": "1 minute", "bn": "১ মিনিট"},
+      {"en": "2 minutes", "bn": "২ মিনিট"},
+      {"en": "No preparation time at all", "bn": "কোনো preparation time নেই"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "You get exactly 1 minute to prepare notes with pencil and paper before speaking.",
+      "bn": "কথা বলার আগে pencil এবং paper দিয়ে notes তৈরি করতে ঠিক ১ মিনিট সময় পাওয়া যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What should you write during the 1-minute preparation time?",
+      "bn": "১ মিনিটের preparation time-এ কী লেখা উচিত?"
+    },
+    "options": [
+      {"en": "A full word-for-word script", "bn": "একটা সম্পূর্ণ word-for-word script"},
+      {"en": "Short keywords, one per bullet point", "bn": "ছোট keyword, প্রতিটা bullet point-এ একটা"},
+      {"en": "Nothing — notes are not allowed", "bn": "কিছুই না — notes allowed না"},
+      {"en": "A full paragraph in Bangla to translate later", "bn": "বাংলায় একটা সম্পূর্ণ paragraph, পরে translate করার জন্য"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Short keywords work as memory triggers; a full script risks sounding read-aloud, which hurts Fluency.",
+      "bn": "ছোট keyword memory trigger হিসেবে কাজ করে; একটা full script read-aloud শোনানোর ঝুঁকি থাকে, যা Fluency-কে ক্ষতি করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "How long can you speak for once Part 2 starts?",
+      "bn": "Part 2 শুরু হওয়ার পর কতক্ষণ কথা বলা যায়?"
+    },
+    "options": [
+      {"en": "Exactly 30 seconds", "bn": "ঠিক ৩০ সেকেন্ড"},
+      {"en": "Up to 2 minutes, without interruption", "bn": "সর্বোচ্চ ২ মিনিট, interruption ছাড়া"},
+      {"en": "As long as you like", "bn": "যতক্ষণ ইচ্ছা"},
+      {"en": "Exactly 5 minutes", "bn": "ঠিক ৫ মিনিট"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Part 2 allows up to 2 minutes of continuous, uninterrupted speaking on the cue-card topic.",
+      "bn": "Part 2 cue-card topic-এ সর্বোচ্চ ২ মিনিট continuous, uninterrupted speaking-এর অনুমতি দেয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What should you do if you finish speaking before the 2 minutes are up?",
+      "bn": "২ মিনিট শেষ হওয়ার আগে কথা বলা শেষ হয়ে গেলে কী করা উচিত?"
+    },
+    "options": [
+      {"en": "Panic and repeat the same points over and over", "bn": "Panic করে একই পয়েন্ট বারবার repeat করা"},
+      {"en": "Stop naturally — the examiner will move on", "bn": "Naturally থেমে যাওয়া — examiner এগিয়ে যাবে"},
+      {"en": "Ask to restart the whole answer", "bn": "পুরো answer নতুন করে শুরু করতে বলা"},
+      {"en": "Switch to Bangla to fill the time", "bn": "সময় পূরণ করার জন্য বাংলায় switch করা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "It's fine to finish early with clear content — padding with repetition doesn't help, and the examiner simply moves to the follow-up questions.",
+      "bn": "Clear content দিয়ে আগে শেষ করা ঠিক আছে — repetition দিয়ে padding করা সাহায্য করে না, এবং examiner simply follow-up question-এ চলে যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What four things does a typical cue card ask you to cover?",
+      "bn": "একটা typical cue card সাধারণত কী চারটা জিনিস cover করতে বলে?"
+    },
+    "options": [
+      {"en": "A topic plus 3-4 bullet points, one of which says \"and explain…\"", "bn": "একটা topic আর ৩-৪টা bullet point, যার একটাতে \"and explain…\" লেখা থাকে"},
+      {"en": "Four unrelated random topics", "bn": "চারটা অসম্পর্কিত random topic"},
+      {"en": "A grammar exercise to complete first", "bn": "আগে complete করার জন্য একটা grammar exercise"},
+      {"en": "A multiple-choice quiz about the topic", "bn": "Topic নিয়ে একটা multiple-choice quiz"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Every cue card follows the same shape: a topic sentence, 3-4 'you should say' bullet points, and one point asking you to explain something.",
+      "bn": "প্রতিটা cue card একই shape follow করে: একটা topic sentence, ৩-৪টা 'you should say' bullet point, এবং একটা point যা কিছু explain করতে বলে।"
+    }
+  }
+]

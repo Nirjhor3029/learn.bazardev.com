@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "What does the \"borrow and bend\" technique mean?",
+      "bn": "\"Borrow and bend\" technique-এর মানে কী?"
+    },
+    "options": [
+      {"en": "Memorising a script word-for-word", "bn": "একটা script word-for-word memorise করা"},
+      {"en": "Adapting your closest real experience to fit an unfamiliar cue card", "bn": "একটা unfamiliar cue card-এ fit করার জন্য তোমার closest real experience adapt করা"},
+      {"en": "Asking the examiner for a different topic", "bn": "Examiner-কে একটা different topic চাওয়া"},
+      {"en": "Switching to Bangla halfway through", "bn": "মাঝামাঝি বাংলায় switch করা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Since examiners score language, not biographical accuracy, borrowing the nearest real memory and bending it to the topic is a legitimate strategy.",
+      "bn": "Examiner-রা language score করে, biographical accuracy না, তাই nearest real memory borrow করে topic-এ bend করা একটা legitimate strategy।"
+    }
+  },
+  {
+    "q": {
+      "en": "What are the 5 W's fallback questions suggested for a blank-mind moment?",
+      "bn": "একটা blank-mind moment-এর জন্য suggested ৫টা W fallback question কী?"
+    },
+    "options": [
+      {"en": "What, Where/when, Who, Why, How", "bn": "What, Where/when, Who, Why, How"},
+      {"en": "Who, What, When, Where, Which", "bn": "Who, What, When, Where, Which"},
+      {"en": "Why, Why, Why, How, How", "bn": "Why, Why, Why, How, How"},
+      {"en": "What, Why, When, Who, Whose", "bn": "What, Why, When, Who, Whose"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Answering What, Where/when, Who, Why, and How in turn about any related thing almost always produces close to 2 minutes of natural speech.",
+      "bn": "What, Where/when, Who, Why, এবং How পর্যায়ক্রমে answer করলে almost always প্রায় ২ মিনিট natural speech তৈরি হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "According to this chapter, which of these safely adds length to a cue-card answer without going off-topic?",
+      "bn": "এই chapter অনুযায়ী, নিচের কোনটা off-topic না হয়ে একটা cue-card answer-এ safely length যোগ করে?"
+    },
+    "options": [
+      {"en": "Starting a completely unrelated second story", "bn": "সম্পূর্ণ unrelated একটা দ্বিতীয় story শুরু করা"},
+      {"en": "A specific example or a brief cause/consequence tied to the same topic", "bn": "একই topic-এর সাথে যুক্ত একটা specific example বা একটা brief cause/consequence"},
+      {"en": "Repeating the opening sentence several times", "bn": "Opening sentence বারবার repeat করা"},
+      {"en": "Listing random vocabulary words", "bn": "Random vocabulary word list করা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A specific example, a comparison, a cause/consequence, or a short personal reaction all tie back to the same topic rather than drifting from it.",
+      "bn": "একটা specific example, comparison, cause/consequence, বা একটা ছোট personal reaction সবই একই topic-এর সাথে যুক্ত থাকে, drift করে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Is it acceptable for your cue-card answer to not be the literal, factual truth?",
+      "bn": "একটা cue-card answer কি literal, factual truth না হওয়া acceptable?"
+    },
+    "options": [
+      {"en": "No, examiners fact-check every answer", "bn": "না, examiner-রা প্রতিটা answer fact-check করে"},
+      {"en": "Yes — examiners score the language produced, not biographical accuracy", "bn": "হ্যাঁ — examiner-রা produced language score করে, biographical accuracy না"},
+      {"en": "Only in Part 1, never in Part 2", "bn": "শুধু Part 1-এ, Part 2-তে কখনো না"},
+      {"en": "Only if you tell the examiner first", "bn": "শুধু যদি আগে examiner-কে বলো"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Examiners cannot verify facts and don't score them — they score fluency, vocabulary, grammar, and pronunciation of what you say.",
+      "bn": "Examiner-রা fact verify করতে পারে না এবং facts score করে না — তারা তুমি যা বলো তার fluency, vocabulary, grammar, এবং pronunciation score করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "In the worked smartphone example, what detail made the answer feel specific rather than generic?",
+      "bn": "Worked smartphone example-এ কোন detail answer-টাকে generic না হয়ে specific মনে করিয়েছে?"
+    },
+    "options": [
+      {"en": "A list of unrelated apps", "bn": "অসম্পর্কিত app-এর একটা list"},
+      {"en": "A specific feature (pointing the camera to translate) and a personal reflection at the end", "bn": "একটা specific feature (camera দিয়ে point করে translate করা) এবং শেষে একটা personal reflection"},
+      {"en": "A long list of grammar rules", "bn": "Grammar rule-এর একটা লম্বা list"},
+      {"en": "Repeating the question word-for-word", "bn": "Question word-for-word repeat করা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The camera-translation detail and the closing reflection on how it changed the speaker's study habits made the answer feel real and specific.",
+      "bn": "Camera-translation detail এবং speaker-এর study habit কীভাবে পরিবর্তন হলো তার closing reflection answer-টাকে real এবং specific মনে করিয়েছে।"
+    }
+  }
+]

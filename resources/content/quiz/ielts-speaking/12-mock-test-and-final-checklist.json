@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "How long should a self-run Part 2 mock be, including preparation time?",
+      "bn": "একটা self-run Part 2 mock, preparation time সহ, কতক্ষণ হওয়া উচিত?"
+    },
+    "options": [
+      {"en": "30 seconds total", "bn": "মোট ৩০ সেকেন্ড"},
+      {"en": "1 minute preparation, plus up to 2 minutes of speaking", "bn": "১ মিনিট preparation, এবং সর্বোচ্চ ২ মিনিট কথা বলা"},
+      {"en": "10 minutes total", "bn": "মোট ১০ মিনিট"},
+      {"en": "There is no recommended timing", "bn": "কোনো recommended timing নেই"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A self-run mock should match the real test's timing: 1 minute to prepare, then up to 2 minutes to speak.",
+      "bn": "একটা self-run mock real test-এর timing match করা উচিত: prepare করার জন্য ১ মিনিট, তারপর কথা বলার জন্য সর্বোচ্চ ২ মিনিট।"
+    }
+  },
+  {
+    "q": {
+      "en": "When reviewing your own recording, how many things does this chapter suggest trying to fix at once?",
+      "bn": "নিজের recording review করার সময়, এই chapter একবারে কতটা জিনিস fix করার suggest করে?"
+    },
+    "options": [
+      {"en": "All issues at once, for maximum efficiency", "bn": "সর্বোচ্চ efficiency-র জন্য একবারে সব সমস্যা"},
+      {"en": "Just one — fixing a single habit repeatedly works better", "bn": "শুধু একটা — একটা single habit বারবার fix করা ভালো কাজ করে"},
+      {"en": "None — recordings should not be reviewed critically", "bn": "কোনোটাই না — recording critically review করা উচিত না"},
+      {"en": "Exactly five, one per criterion plus one extra", "bn": "ঠিক পাঁচটা, প্রতি criterion-এ একটা এবং একটা extra"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Picking just one habit to improve per practice round is more effective than trying to fix everything simultaneously.",
+      "bn": "প্রতি practice round-এ improve করার জন্য শুধু একটা habit বেছে নেওয়া সব কিছু একসাথে fix করার চেয়ে বেশি কার্যকর।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which criterion from this chapter's review table covers \"did you paraphrase when stuck\"?",
+      "bn": "এই chapter-এর review table থেকে কোন criterion \"stuck হলে paraphrase করেছ কিনা\" cover করে?"
+    },
+    "options": [
+      {"en": "Fluency and Coherence", "bn": "Fluency and Coherence"},
+      {"en": "Lexical Resource", "bn": "Lexical Resource"},
+      {"en": "Grammatical Range and Accuracy", "bn": "Grammatical Range and Accuracy"},
+      {"en": "Pronunciation", "bn": "Pronunciation"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Paraphrasing when a specific word is forgotten is a Lexical Resource skill, covered in Chapter 7.",
+      "bn": "একটা specific word ভুলে গেলে paraphrase করা একটা Lexical Resource skill, যা Chapter 7-এ cover করা হয়েছে।"
+    }
+  },
+  {
+    "q": {
+      "en": "How many questions does this chapter recommend writing for a self-run Part 3 mock?",
+      "bn": "এই chapter একটা self-run Part 3 mock-এর জন্য কতগুলো question লেখার recommend করে?"
+    },
+    "options": [
+      {"en": "1 question", "bn": "১টা question"},
+      {"en": "4-5 follow-up questions that generalise the Part 2 topic", "bn": "৪-৫টা follow-up question যা Part 2 topic-কে generalise করে"},
+      {"en": "20 unrelated questions", "bn": "২০টা unrelated question"},
+      {"en": "None — Part 3 has no fixed questions", "bn": "কোনোটাই না — Part 3-এর কোনো fixed question নেই"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Writing 4-5 follow-up questions that generalise the Part 2 topic mirrors how real Part 3 discussions are built.",
+      "bn": "Part 2 topic-কে generalise করে ৪-৫টা follow-up question লেখা real Part 3 discussion কীভাবে তৈরি হয় তা mirror করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Do the four scoring criteria (Fluency, Lexical Resource, Grammar, Pronunciation) apply to only one part of the test?",
+      "bn": "চারটা scoring criteria (Fluency, Lexical Resource, Grammar, Pronunciation) কি test-এর শুধু একটা part-এ apply হয়?"
+    },
+    "options": [
+      {"en": "Yes, only to Part 2", "bn": "হ্যাঁ, শুধু Part 2-তে"},
+      {"en": "No — they apply throughout all three parts", "bn": "না — এগুলো তিনটা part জুড়েই apply হয়"},
+      {"en": "Yes, only to Part 3", "bn": "হ্যাঁ, শুধু Part 3-তে"},
+      {"en": "Yes, only to Part 1", "bn": "হ্যাঁ, শুধু Part 1-এ"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The final checklist applies Chapters 6 through 9's four criteria across the whole test, not to a single part.",
+      "bn": "Final checklist Chapter 6 থেকে 9-এর চারটা criteria পুরো test জুড়ে apply করে, একটা single part-এ না।"
+    }
+  }
+]

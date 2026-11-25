@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Is a strong non-native accent itself penalised under the Pronunciation criterion?",
+      "bn": "একটা strong non-native accent কি নিজেই Pronunciation criterion-এ penalise হয়?"
+    },
+    "options": [
+      {"en": "Yes, accent is the main thing scored", "bn": "হ্যাঁ, accent-ই মূল জিনিস যা score করা হয়"},
+      {"en": "No — clarity, stress, and intonation are scored, not the accent itself", "bn": "না — clarity, stress, এবং intonation score করা হয়, accent নিজে না"},
+      {"en": "Yes, but only in Part 2", "bn": "হ্যাঁ, কিন্তু শুধু Part 2-তে"},
+      {"en": "Yes, but only for General Training", "bn": "হ্যাঁ, কিন্তু শুধু General Training-এর জন্য"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Examiners score whether the message comes across clearly — features like stress and intonation — not the accent producing the sounds.",
+      "bn": "Examiner-রা score করে message কতটা স্পষ্টভাবে পৌঁছায় তা — stress এবং intonation-এর মতো feature — accent যা sound তৈরি করে তা না।"
+    }
+  },
+  {
+    "q": {
+      "en": "What's the difference between \"RE-cord\" and \"re-CORD\"?",
+      "bn": "\"RE-cord\" এবং \"re-CORD\"-এর মধ্যে পার্থক্য কী?"
+    },
+    "options": [
+      {"en": "No difference, they mean the same thing", "bn": "কোনো পার্থক্য নেই, দুটোই একই মানে"},
+      {"en": "RE-cord is the noun, re-CORD is the verb — stress changes the meaning", "bn": "RE-cord noun, re-CORD verb — stress meaning পরিবর্তন করে"},
+      {"en": "RE-cord is British English, re-CORD is American English", "bn": "RE-cord British English, re-CORD American English"},
+      {"en": "RE-cord is formal, re-CORD is informal", "bn": "RE-cord formal, re-CORD informal"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Word stress can change meaning in English — stressing the first syllable gives the noun, the second gives the verb.",
+      "bn": "ইংরেজিতে word stress meaning পরিবর্তন করতে পারে — প্রথম syllable-এ stress দিলে noun হয়, দ্বিতীয়টায় দিলে verb হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "In a sentence, which type of word usually gets the strongest sentence stress?",
+      "bn": "একটা sentence-এ, কোন type-এর word সাধারণত সবচেয়ে বেশি sentence stress পায়?"
+    },
+    "options": [
+      {"en": "Small grammar words like \"a,\" \"the,\" \"is\"", "bn": "ছোট grammar word যেমন \"a,\" \"the,\" \"is\""},
+      {"en": "Content words — nouns, verbs, key adjectives", "bn": "Content word — noun, verb, key adjective"},
+      {"en": "The first word of every sentence, always", "bn": "প্রতিটা sentence-এর প্রথম word, সবসময়"},
+      {"en": "Words with the most syllables", "bn": "সবচেয়ে বেশি syllable-যুক্ত word"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Content words that carry meaning are usually stressed, while small grammar words usually aren't — this is what makes speech sound natural rather than flat.",
+      "bn": "Meaning বহনকারী content word সাধারণত stressed হয়, ছোট grammar word সাধারণত না — এটাই speech-কে flat না করে natural শোনায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is \"chunking\" in spoken English?",
+      "bn": "Spoken English-এ \"chunking\" কী?"
+    },
+    "options": [
+      {"en": "Pausing equally between every single word", "bn": "প্রতিটা word-এর মাঝে সমানভাবে pause করা"},
+      {"en": "Grouping words into natural phrases with brief pauses between phrases", "bn": "Word-গুলোকে natural phrase-এ group করা, phrase-এর মাঝে brief pause সহ"},
+      {"en": "Speaking as fast as possible without pausing at all", "bn": "একদমই pause না করে যতটা সম্ভব তাড়াতাড়ি কথা বলা"},
+      {"en": "Only pausing at the end of a 2-minute answer", "bn": "শুধু ২ মিনিটের answer-এর শেষে pause করা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Natural English groups words into small phrase chunks, pausing between chunks rather than word-by-word, which reads as robotic.",
+      "bn": "Natural English word-গুলোকে ছোট phrase chunk-এ group করে, chunk-এর মাঝে pause করে, word-by-word না, যা robotic শোনায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does this chapter recommend as a simple daily practice routine for pronunciation?",
+      "bn": "এই chapter pronunciation-এর জন্য একটা simple daily practice routine হিসেবে কী recommend করে?"
+    },
+    "options": [
+      {"en": "Only reading pronunciation rules silently", "bn": "শুধু pronunciation rule silently পড়া"},
+      {"en": "Recording yourself, listening back, and re-recording while fixing specific issues", "bn": "নিজেকে record করা, শুনে দেখা, এবং specific issue fix করে re-record করা"},
+      {"en": "Memorising the IPA phonetic alphabet before anything else", "bn": "সবার আগে IPA phonetic alphabet memorise করা"},
+      {"en": "Avoiding speaking out loud until test day", "bn": "Test day পর্যন্ত জোরে কথা বলা এড়ানো"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Recording, listening critically, and re-recording while fixing one or two specific issues builds pronunciation far more effectively than passive reading.",
+      "bn": "Record করা, critically শোনা, এবং এক-দুইটা specific issue fix করে re-record করা passive reading-এর চেয়ে pronunciation অনেক বেশি কার্যকরভাবে develop করে।"
+    }
+  }
+]

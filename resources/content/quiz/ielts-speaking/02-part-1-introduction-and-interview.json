@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "What is the main purpose of Part 1 of the Speaking test?",
+      "bn": "Speaking test-এর Part 1-এর মূল purpose কী?"
+    },
+    "options": [
+      {"en": "To challenge you with abstract debate questions", "bn": "Abstract debate question দিয়ে challenge করা"},
+      {"en": "To put you at ease with familiar, everyday questions", "bn": "Familiar, everyday question দিয়ে স্বাচ্ছন্দ্য দেওয়া"},
+      {"en": "To test your knowledge of grammar rules directly", "bn": "সরাসরি grammar rule-এর জ্ঞান test করা"},
+      {"en": "To assess your handwriting", "bn": "তোমার handwriting assess করা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Part 1 asks familiar personal questions specifically to warm you up before the harder Part 2 and Part 3.",
+      "bn": "Part 1 harder Part 2 এবং Part 3-এর আগে warm up করার জন্য specifically familiar personal question করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why is answering \"Yes\" or \"No\" alone a risky strategy in Part 1?",
+      "bn": "Part 1-এ শুধু \"Yes\" বা \"No\" দিয়ে answer দেওয়া কেন risky?"
+    },
+    "options": [
+      {"en": "It is grammatically incorrect", "bn": "এটা গ্রামাটিকালি ভুল"},
+      {"en": "It gives the examiner too little language to score", "bn": "Examiner-কে score করার জন্য খুব কম language দেয়"},
+      {"en": "It is considered rude", "bn": "এটা rude বলে বিবেচিত হয়"},
+      {"en": "The examiner will repeat the question", "bn": "Examiner question আবার repeat করবে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A one-word answer doesn't give enough material across fluency, vocabulary, and grammar for the examiner to score fairly.",
+      "bn": "একটা one-word answer fluency, vocabulary, এবং grammar জুড়ে examiner-কে fairly score করার জন্য যথেষ্ট material দেয় না।"
+    }
+  },
+  {
+    "q": {
+      "en": "What are the three moves in the Part 1 extension formula from this chapter?",
+      "bn": "এই chapter-এর Part 1 extension formula-র তিনটা move কী কী?"
+    },
+    "options": [
+      {"en": "Answer directly, add a reason/detail, add an example or comparison", "bn": "সরাসরি answer দেওয়া, একটা reason/detail যোগ করা, একটা example বা comparison যোগ করা"},
+      {"en": "Repeat the question, pause, give a one-word answer", "bn": "Question repeat করা, pause করা, একটা one-word answer দেওয়া"},
+      {"en": "Ask the examiner to clarify, then stay silent", "bn": "Examiner-কে clarify করতে বলা, তারপর silent থাকা"},
+      {"en": "Give a memorised 2-minute speech", "bn": "একটা memorised ২ মিনিটের speech দেওয়া"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Answer directly, then add why or a detail, then add a small example or comparison — this naturally extends a short answer.",
+      "bn": "সরাসরি answer দেওয়া, তারপর কেন বা একটা detail যোগ করা, তারপর একটা ছোট example বা comparison যোগ করা — এটা naturally একটা short answer-কে extend করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Should you give a long, rehearsed-sounding speech in response to a simple Part 1 question?",
+      "bn": "Part 1-এর একটা simple question-এর জবাবে কি একটা long, rehearsed-sounding speech দেওয়া উচিত?"
+    },
+    "options": [
+      {"en": "Yes, longer is always better", "bn": "হ্যাঁ, বেশি লম্বা সবসময় ভালো"},
+      {"en": "No — that style suits Part 2's cue card, not Part 1", "bn": "না — এই style Part 2-এর cue card-এর জন্য উপযুক্ত, Part 1-এর জন্য না"},
+      {"en": "Yes, but only about your hometown", "bn": "হ্যাঁ, কিন্তু শুধু তোমার hometown নিয়ে"},
+      {"en": "Yes, if you memorised it well", "bn": "হ্যাঁ, যদি ভালোভাবে memorise করে থাকো"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A long, speech-like answer to a simple personal question can sound rehearsed and unnatural — Part 1 expects short, natural exchanges.",
+      "bn": "একটা simple personal question-এ একটা long, speech-like answer rehearsed এবং unnatural শোনাতে পারে — Part 1 short, natural exchange আশা করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Roughly how long does Part 1 usually last?",
+      "bn": "Part 1 সাধারণত কতক্ষণ স্থায়ী হয়?"
+    },
+    "options": [
+      {"en": "About 1-2 minutes", "bn": "প্রায় ১-২ মিনিট"},
+      {"en": "About 4-5 minutes", "bn": "প্রায় ৪-৫ মিনিট"},
+      {"en": "About 10 minutes", "bn": "প্রায় ১০ মিনিট"},
+      {"en": "There is no time limit", "bn": "কোনো time limit নেই"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Part 1 typically runs about 4 to 5 minutes, covering two or three familiar topics.",
+      "bn": "Part 1 সাধারণত প্রায় ৪ থেকে ৫ মিনিট চলে, দুই বা তিনটা familiar topic cover করে।"
+    }
+  }
+]

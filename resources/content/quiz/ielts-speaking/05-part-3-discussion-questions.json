@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "How do Part 3 questions typically differ from Part 2?",
+      "bn": "Part 3-এর question সাধারণত Part 2 থেকে কীভাবে ভিন্ন?"
+    },
+    "options": [
+      {"en": "Part 3 is shorter and simpler", "bn": "Part 3 ছোট এবং সহজ"},
+      {"en": "Part 3 is general and abstract, about people/society rather than one personal example", "bn": "Part 3 general এবং abstract, একটা personal example-এর বদলে মানুষ/সমাজ নিয়ে"},
+      {"en": "Part 3 only allows yes/no answers", "bn": "Part 3-এ শুধু yes/no answer allowed"},
+      {"en": "Part 3 is read from a script by the examiner", "bn": "Part 3 examiner script থেকে পড়ে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Part 3 zooms out from personal experience into general, opinion-based questions about people or society.",
+      "bn": "Part 3 personal experience থেকে zoom out করে মানুষ বা সমাজ নিয়ে general, opinion-based question করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "What are the three parts of a strong opinion answer in Part 3?",
+      "bn": "Part 3-তে একটা strong opinion answer-এর তিনটা অংশ কী?"
+    },
+    "options": [
+      {"en": "Repeat the question, pause, give a one-word answer", "bn": "Question repeat করা, pause করা, একটা one-word answer দেওয়া"},
+      {"en": "State a clear position, give one reason, add a brief example or counterpoint", "bn": "একটা clear position বলা, একটা reason দেওয়া, একটা brief example বা counterpoint যোগ করা"},
+      {"en": "Ask the examiner what they think first", "bn": "আগে examiner কী মনে করে জিজ্ঞাসা করা"},
+      {"en": "List as many vocabulary words as possible", "bn": "যতটা সম্ভব vocabulary word list করা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Stating a position, giving a reason, and adding a brief example or counterpoint shows clear reasoning, which scores well on coherence and grammar.",
+      "bn": "একটা position বলা, একটা reason দেওয়া, এবং একটা brief example বা counterpoint যোগ করা clear reasoning দেখায়, যা coherence এবং grammar-এ ভালো score করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Is it acceptable to say you are genuinely unsure about a Part 3 question?",
+      "bn": "Part 3-এর question-এ genuinely unsure বলা কি acceptable?"
+    },
+    "options": [
+      {"en": "No, you must always pick a firm side", "bn": "না, সবসময় একটা firm side বেছে নিতে হবে"},
+      {"en": "Yes, as long as you reason out loud by weighing both sides", "bn": "হ্যাঁ, যতক্ষণ দুই পক্ষ বিবেচনা করে reason out loud করো"},
+      {"en": "No, it automatically fails the test", "bn": "না, এটা automatically test fail করে"},
+      {"en": "Yes, but only by staying silent", "bn": "হ্যাঁ, কিন্তু শুধু silent থেকে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Reasoning out loud by considering both sides is natural, coherent, and gives the examiner plenty to score, even without a fixed opinion.",
+      "bn": "দুই পক্ষ বিবেচনা করে reason out loud করা natural, coherent, এবং examiner-কে score করার জন্য যথেষ্ট material দেয়, fixed opinion না থাকলেও।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which sentence is an example of \"Part 3-style\" general language, according to this chapter?",
+      "bn": "এই chapter অনুযায়ী, নিচের কোনটা \"Part 3-style\" general language-এর example?"
+    },
+    "options": [
+      {"en": "\"I learned to cook using YouTube videos.\"", "bn": "\"I learned to cook using YouTube videos.\""},
+      {"en": "\"Many people today learn practical skills through online videos rather than formal classes.\"", "bn": "\"Many people today learn practical skills through online videos rather than formal classes.\""},
+      {"en": "\"My favourite food is rice and fish.\"", "bn": "\"My favourite food is rice and fish.\""},
+      {"en": "\"Yes.\"", "bn": "\"Yes.\""}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The second sentence uses society-level language (\"many people,\" \"rather than\") instead of first-person personal narrative.",
+      "bn": "দ্বিতীয় sentence-টা society-level language (\"many people,\" \"rather than\") ব্যবহার করে, first-person personal narrative না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Roughly how long does Part 3 usually last?",
+      "bn": "Part 3 সাধারণত কতক্ষণ স্থায়ী হয়?"
+    },
+    "options": [
+      {"en": "About 1 minute", "bn": "প্রায় ১ মিনিট"},
+      {"en": "About 4-5 minutes", "bn": "প্রায় ৪-৫ মিনিট"},
+      {"en": "About 10 minutes", "bn": "প্রায় ১০ মিনিট"},
+      {"en": "It is not timed", "bn": "এটার কোনো time নেই"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Part 3 is a discussion of about 4 to 5 minutes, built on the theme introduced in Part 2.",
+      "bn": "Part 3 প্রায় ৪ থেকে ৫ মিনিটের একটা discussion, যা Part 2-তে introduce করা theme-এর উপর ভিত্তি করে।"
+    }
+  }
+]

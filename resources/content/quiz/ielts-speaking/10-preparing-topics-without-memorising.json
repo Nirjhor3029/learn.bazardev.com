@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Why do examiners penalise memorised, scripted Speaking answers?",
+      "bn": "Examiner-রা কেন memorised, scripted Speaking answer penalise করে?"
+    },
+    "options": [
+      {"en": "It's against the rules to prepare at all", "bn": "কোনোভাবে prepare করাই rule-এর বিরুদ্ধে"},
+      {"en": "Recited speech sounds unnatural and is scored down under Fluency and Coherence", "bn": "Recited speech unnatural শোনায় এবং Fluency and Coherence-এ কম score হয়"},
+      {"en": "It is only penalised in Part 1", "bn": "এটা শুধু Part 1-এ penalise হয়"},
+      {"en": "It automatically gives a band 0", "bn": "এটা automatically band ০ দেয়"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Memorised speech sounds flatter and doesn't match the actual question as naturally, which examiners are trained to notice and score down.",
+      "bn": "Memorised speech flatter শোনায় এবং actual question-এর সাথে naturally match করে না, যা examiner-রা notice করতে এবং কম score করতে trained।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does this chapter recommend preparing instead of full memorised sentences?",
+      "bn": "এই chapter পূর্ণ memorised sentence-এর বদলে কী prepare করতে recommend করে?"
+    },
+    "options": [
+      {"en": "Nothing — preparation of any kind is discouraged", "bn": "কিছুই না — যে কোনো ধরনের preparation নিরুৎসাহিত করা হয়"},
+      {"en": "Keyword ideas, relevant vocabulary, and a flexible structure", "bn": "Keyword idea, relevant vocabulary, এবং একটা flexible structure"},
+      {"en": "A single all-purpose answer for every possible question", "bn": "প্রতিটা সম্ভাব্য question-এর জন্য একটা single all-purpose answer"},
+      {"en": "Only grammar rules, no content at all", "bn": "শুধু grammar rule, কোনো content না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Preparing flexible keyword ideas and vocabulary lets you build a fresh, natural answer each time instead of reciting a fixed script.",
+      "bn": "Flexible keyword idea এবং vocabulary prepare করলে প্রতিবার একটা fixed script recite না করে fresh, natural answer তৈরি করা যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which of these is one of the five common topic categories listed in this chapter?",
+      "bn": "এই chapter-এ listed পাঁচটা common topic category-র একটা কোনটা?"
+    },
+    "options": [
+      {"en": "Grammar rules", "bn": "Grammar rule"},
+      {"en": "Places", "bn": "Places"},
+      {"en": "Listening scripts", "bn": "Listening script"},
+      {"en": "Quiz formats", "bn": "Quiz format"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The five categories are People, Places, Things, Events, and Activities — most real cue cards fall into one of these.",
+      "bn": "পাঁচটা category হলো People, Places, Things, Events, এবং Activities — বেশিরভাগ real cue card এগুলোর একটায় পড়ে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why does practising the same real memory with a slightly different question help, according to this chapter?",
+      "bn": "এই chapter অনুযায়ী, একই real memory নিয়ে একটু ভিন্ন question-এ practice করা কেন সাহায্য করে?"
+    },
+    "options": [
+      {"en": "It helps you memorise the exact wording perfectly", "bn": "এটা exact wording perfectly memorise করতে সাহায্য করে"},
+      {"en": "It builds genuine, flexible fluency with real content instead of a rigid script", "bn": "এটা rigid script-এর বদলে real content নিয়ে genuine, flexible fluency তৈরি করে"},
+      {"en": "It guarantees the exact same question on test day", "bn": "এটা test day-তে ঠিক একই question guarantee করে"},
+      {"en": "It is only useful for Part 3", "bn": "এটা শুধু Part 3-এর জন্য useful"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Rephrasing the same real memory for different but related questions builds adaptable fluency rather than a script that breaks when the exact wording differs.",
+      "bn": "একই real memory ভিন্ন কিন্তু related question-এ rephrase করলে adaptable fluency তৈরি হয়, একটা script না যা exact wording ভিন্ন হলে ভেঙে যায়।"
+    }
+  },
+  {
+    "q": {
+      "en": "What is one sign examiners notice that suggests an answer is memorised?",
+      "bn": "একটা answer memorised কিনা তা বোঝার জন্য examiner-রা কোন একটা sign notice করে?"
+    },
+    "options": [
+      {"en": "Speaking too quietly", "bn": "খুব আস্তে কথা বলা"},
+      {"en": "A sudden jump to vocabulary far more advanced than the rest of the speech", "bn": "Speech-এর বাকি অংশের চেয়ে অনেক বেশি advanced vocabulary-তে sudden jump"},
+      {"en": "Using the correct tense consistently", "bn": "Consistently সঠিক tense ব্যবহার করা"},
+      {"en": "Answering in under 10 seconds", "bn": "১০ সেকেন্ডের কমে answer দেওয়া"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A sudden mismatch in vocabulary level, along with unnatural rhythm and a poor fit to the actual question, is a classic sign of a recited, memorised answer.",
+      "bn": "Vocabulary level-এ একটা sudden mismatch, unnatural rhythm, এবং actual question-এর সাথে খারাপ fit, recited, memorised answer-এর একটা classic sign।"
+    }
+  }
+]

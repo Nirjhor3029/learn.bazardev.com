@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "How many parts does the IELTS Speaking test have?",
+      "bn": "IELTS Speaking test-এ কতটা part থাকে?"
+    },
+    "options": [
+      {"en": "Two", "bn": "দুইটা"},
+      {"en": "Three", "bn": "তিনটা"},
+      {"en": "Four", "bn": "চারটা"},
+      {"en": "Five", "bn": "পাঁচটা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Speaking has three parts — a personal interview, a cue-card talk, and a discussion — taking about 11 to 14 minutes in total.",
+      "bn": "Speaking-এ তিনটা part থাকে — একটা personal interview, একটা cue-card talk, এবং একটা discussion — যা মোট ১১ থেকে ১৪ মিনিট সময় নেয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "How many criteria make up the Speaking band score, and how are they weighted?",
+      "bn": "Speaking band score কতটা criteria নিয়ে গঠিত, এবং এগুলোর weight কেমন?"
+    },
+    "options": [
+      {"en": "Two criteria, 50% each", "bn": "দুইটা criteria, প্রতিটা ৫০%"},
+      {"en": "Three criteria, unevenly weighted", "bn": "তিনটা criteria, অসমভাবে weighted"},
+      {"en": "Four criteria, each worth an equal 25%", "bn": "চারটা criteria, প্রতিটা সমান ২৫%"},
+      {"en": "Five criteria, with pronunciation worth more", "bn": "পাঁচটা criteria, pronunciation-এর weight বেশি"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Fluency and Coherence, Lexical Resource, Grammatical Range and Accuracy, and Pronunciation each carry an equal 25% share.",
+      "bn": "Fluency and Coherence, Lexical Resource, Grammatical Range and Accuracy, এবং Pronunciation প্রতিটা সমান ২৫% share বহন করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Is a strong non-native accent, by itself, penalised in the Pronunciation score?",
+      "bn": "একটা strong non-native accent, নিজেই, কি Pronunciation score-এ penalise হয়?"
+    },
+    "options": [
+      {"en": "Yes, always", "bn": "হ্যাঁ, সবসময়"},
+      {"en": "No — clarity is scored, not accent", "bn": "না — clarity score করা হয়, accent না"},
+      {"en": "Only for General Training candidates", "bn": "শুধু General Training candidate-দের জন্য"},
+      {"en": "Only in Part 2", "bn": "শুধু Part 2-তে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Examiners are trained to understand a wide range of accents; Pronunciation is scored on how clearly you're understood, not on sounding a particular way.",
+      "bn": "Examiner-রা অনেক accent বুঝতে trained; Pronunciation কতটা স্পষ্টভাবে বোঝা যায় তার উপর score করা হয়, একটা particular way-তে বলা হচ্ছে কিনা তার উপর না।"
+    }
+  },
+  {
+    "q": {
+      "en": "What format does Part 2 of the Speaking test use?",
+      "bn": "Speaking test-এর Part 2 কোন format ব্যবহার করে?"
+    },
+    "options": [
+      {"en": "Multiple-choice questions on a screen", "bn": "স্ক্রিনে multiple-choice question"},
+      {"en": "A cue card with 1 minute to prepare, then up to 2 minutes to speak", "bn": "একটা cue card, prepare করার জন্য ১ মিনিট, তারপর কথা বলার জন্য সর্বোচ্চ ২ মিনিট"},
+      {"en": "A written essay you read aloud", "bn": "একটা written essay যা পড়ে শোনাতে হয়"},
+      {"en": "A group discussion with other candidates", "bn": "অন্য candidate-দের সাথে একটা group discussion"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Part 2 hands you a cue card, gives 1 minute of prep time, and expects up to 2 minutes of continuous speaking on that topic.",
+      "bn": "Part 2 একটা cue card দেয়, ১ মিনিট prep time দেয়, এবং সেই topic-এ সর্বোচ্চ ২ মিনিট continuous speaking আশা করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Does speaking for longer automatically earn a higher Speaking score?",
+      "bn": "বেশি সময় ধরে কথা বললে কি automatically Speaking score বেশি হয়?"
+    },
+    "options": [
+      {"en": "Yes, length is the main factor", "bn": "হ্যাঁ, length-ই মূল factor"},
+      {"en": "No — an answer that wanders off-topic can lose coherence marks", "bn": "না — একটা answer যা off-topic-এ চলে যায় তা coherence-এর মার্ক হারাতে পারে"},
+      {"en": "Yes, but only in Part 1", "bn": "হ্যাঁ, কিন্তু শুধু Part 1-এ"},
+      {"en": "Yes, but only in Part 3", "bn": "হ্যাঁ, কিন্তু শুধু Part 3-এ"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Length only helps when it stays relevant — talking more without staying on-topic can actually cost coherence marks.",
+      "bn": "Length তখনই সাহায্য করে যখন তা relevant থাকে — topic-এ না থেকে বেশি কথা বললে coherence-এর মার্ক কমে যেতে পারে।"
+    }
+  }
+]

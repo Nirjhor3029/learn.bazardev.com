@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "What is Fluency actually measuring, according to this chapter?",
+      "bn": "এই chapter অনুযায়ী, Fluency আসলে কী measure করে?"
+    },
+    "options": [
+      {"en": "How fast you can speak", "bn": "কতটা তাড়াতাড়ি কথা বলতে পারো"},
+      {"en": "Pace and flow, not raw speed", "bn": "Pace এবং flow, raw speed না"},
+      {"en": "How many words you use", "bn": "কতগুলো word ব্যবহার করো"},
+      {"en": "How loudly you speak", "bn": "কতটা জোরে কথা বলো"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Fluency is about a natural pace with few long pauses or restarts — not about speaking as fast as possible.",
+      "bn": "Fluency একটা natural pace নিয়ে, খুব কম long pause বা restart সহ — যতটা সম্ভব তাড়াতাড়ি কথা বলা না।"
+    }
+  },
+  {
+    "q": {
+      "en": "What does Coherence measure?",
+      "bn": "Coherence কী measure করে?"
+    },
+    "options": [
+      {"en": "Whether your ideas connect logically for the listener", "bn": "তোমার idea গুলো listener-এর জন্য logically connect করে কিনা"},
+      {"en": "How many grammar rules you know", "bn": "কতগুলো grammar rule জানো"},
+      {"en": "Your accent strength", "bn": "তোমার accent কতটা strong"},
+      {"en": "How formal your vocabulary is", "bn": "তোমার vocabulary কতটা formal"}
+    ],
+    "answer": 0,
+    "why": {
+      "en": "Coherence is about logical connection between ideas, often shown through appropriate linking words.",
+      "bn": "Coherence idea-গুলোর মধ্যে logical connection নিয়ে, যা প্রায়ই appropriate linking word দিয়ে দেখানো হয়।"
+    }
+  },
+  {
+    "q": {
+      "en": "Is occasional use of \"well,\" \"actually,\" or \"you know\" harmful to your Fluency score?",
+      "bn": "কখনো কখনো \"well,\" \"actually,\" বা \"you know\" ব্যবহার করা কি Fluency score-এর জন্য harmful?"
+    },
+    "options": [
+      {"en": "Yes, any filler word is always penalised", "bn": "হ্যাঁ, কোনো filler word-ই সবসময় penalise হয়"},
+      {"en": "No — used sparingly, they're normal thinking-time fillers", "bn": "না — sparingly ব্যবহার করলে, এগুলো normal thinking-time filler"},
+      {"en": "Only in Part 3, never in Part 1", "bn": "শুধু Part 3-এ, Part 1-এ কখনো না"},
+      {"en": "Only if said in Bangla", "bn": "শুধু যদি বাংলায় বলা হয়"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A little hesitation is normal even for native speakers — the real problem is frequent long pauses or constant sound-based fillers like repeated \"umm.\"",
+      "bn": "একটু hesitation native speaker-দের জন্যও normal — আসল সমস্যা frequent long pause বা বারবার \"umm\"-এর মতো sound-based filler।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which of these sentences shows better Coherence, according to this chapter's example?",
+      "bn": "এই chapter-এর example অনুযায়ী, নিচের কোন sentence-টা better Coherence দেখায়?"
+    },
+    "options": [
+      {"en": "\"I like my job. It's hard. I'm tired. I like the people.\"", "bn": "\"I like my job. It's hard. I'm tired. I like the people.\""},
+      {"en": "\"I like my job, even though it's quite demanding — I'm often tired by the end of the day, but I stick with it mainly because of the people I work with.\"", "bn": "\"I like my job, even though it's quite demanding — I'm often tired by the end of the day, but I stick with it mainly because of the people I work with.\""},
+      {"en": "\"Job. Hard. Tired. People. Good.\"", "bn": "\"Job. Hard. Tired. People. Good.\""},
+      {"en": "Both are equally coherent", "bn": "দুটোই সমানভাবে coherent"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The second version uses the same ideas but connects them logically with linking words, rather than listing disconnected short statements.",
+      "bn": "দ্বিতীয় version একই idea ব্যবহার করে কিন্তু linking word দিয়ে logically connect করে, disconnected short statement-এর list না করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Is a brief self-correction mid-sentence (e.g. \"I mean...\") penalised in the Speaking test?",
+      "bn": "মাঝ-sentence-এ একটা brief self-correction (যেমন \"I mean...\") কি Speaking test-এ penalise হয়?"
+    },
+    "options": [
+      {"en": "Yes, any self-correction loses marks", "bn": "হ্যাঁ, কোনো self-correction-ই মার্ক কমায়"},
+      {"en": "No — a quick, natural self-correction is normal; repeated lengthy ones hurt Fluency", "bn": "না — একটা quick, natural self-correction normal; repeated lengthy self-correction Fluency-কে ক্ষতি করে"},
+      {"en": "Only for Grammatical Range, never for Fluency", "bn": "শুধু Grammatical Range-এর জন্য, Fluency-এর জন্য কখনো না"},
+      {"en": "Only if done in Part 2", "bn": "শুধু Part 2-তে করলে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Examiners don't expect 100% accuracy in live speech — a brief, natural self-correction is fine, but repeated lengthy self-correction derails fluency.",
+      "bn": "Examiner-রা live speech-এ ১০০% accuracy আশা করে না — একটা brief, natural self-correction ঠিক আছে, কিন্তু repeated lengthy self-correction fluency-কে derail করে।"
+    }
+  }
+]

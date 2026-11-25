@@ -16,7 +16,7 @@ return [
         ],
         'ielts' => [
             'label' => 'IELTS Prep',
-            'tagline' => 'Grammar, Vocabulary, Reading, Writing, and Listening — everything you need for the test.',
+            'tagline' => 'Grammar, Vocabulary, Reading, Writing, Listening, and Speaking — everything you need for the test.',
             'sections' => ['ielts'],
         ],
     ],
@@ -37,7 +37,7 @@ return [
         ],
         'ielts' => [
             'label' => 'IELTS Prep',
-            'tagline' => 'A separate track — Grammar, Vocabulary, Reading, Writing, and Listening, each its own course.',
+            'tagline' => 'A separate track — Grammar, Vocabulary, Reading, Writing, Listening, and Speaking, each its own course.',
             'prefix' => 'I',
         ],
     ],
@@ -411,6 +411,33 @@ return [
                 '10-distractors-and-the-changed-answer-trap' => ['title' => 'Distractors and the changed-answer trap', 'status' => 'available'],
                 '11-accents-and-signposting-language' => ['title' => 'Accents, signposting language, and keeping pace across four sections', 'status' => 'available'],
                 '12-common-mistakes-that-cap-your-listening-score' => ['title' => 'Common mistakes that cap your Listening score, and a final checklist', 'status' => 'available'],
+            ],
+        ],
+
+        'ielts-speaking' => [
+            'title' => 'IELTS Speaking',
+            'tagline' => 'The three parts of the Speaking test and the four criteria examiners actually score, without memorised scripts.',
+            'folder' => 'ielts-speaking',
+            // Content for this course lives inside this app (resources/content/ielts-speaking),
+            // not the external devops-for-developers repo — see CourseContent::chapter().
+            'local_content' => true,
+            'requires' => [],
+            'status' => 'available',
+            // Sibling of ielts-grammar, ielts-vocabulary, ielts-writing, ielts-reading, and ielts-listening in the same IELTS track.
+            'section' => 'ielts',
+            'chapters' => [
+                '01-how-ielts-speaking-is-scored' => ['title' => 'How IELTS Speaking is scored, and the four criteria examiners actually use', 'status' => 'available'],
+                '02-part-1-introduction-and-interview' => ['title' => 'Part 1 — Introduction and interview', 'status' => 'available'],
+                '03-part-2-the-cue-card' => ['title' => 'Part 2 — The cue card', 'status' => 'available'],
+                '04-extending-your-cue-card-answer' => ['title' => 'Extending your cue-card answer, and using the one-minute prep well', 'status' => 'available'],
+                '05-part-3-discussion-questions' => ['title' => 'Part 3 — Discussion questions', 'status' => 'available'],
+                '06-fluency-and-coherence' => ['title' => 'Fluency and coherence: linking ideas without filler', 'status' => 'available'],
+                '07-lexical-resource' => ['title' => 'Lexical resource: paraphrasing instead of memorising', 'status' => 'available'],
+                '08-grammatical-range-and-accuracy' => ['title' => 'Grammatical range and accuracy: tense range and self-correction', 'status' => 'available'],
+                '09-pronunciation' => ['title' => 'Pronunciation: stress, intonation, and chunking', 'status' => 'available'],
+                '10-preparing-topics-without-memorising' => ['title' => 'Preparing common topics without memorising a script', 'status' => 'available'],
+                '11-common-mistakes-that-cap-your-speaking-score' => ['title' => 'Common mistakes that cap your Speaking score', 'status' => 'available'],
+                '12-mock-test-and-final-checklist' => ['title' => 'A full mock test, and a final checklist', 'status' => 'available'],
             ],
         ],
     ],

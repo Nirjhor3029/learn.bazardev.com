@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "What's the single biggest risk of a one-word Part 1 answer like \"Yes\"?",
+      "bn": "\"Yes\"-এর মতো একটা one-word Part 1 answer-এর সবচেয়ে বড় ঝুঁকি কী?"
+    },
+    "options": [
+      {"en": "It is grammatically incorrect", "bn": "এটা গ্রামাটিকালি ভুল"},
+      {"en": "It gives the examiner too little language to score fairly", "bn": "Examiner-কে fairly score করার জন্য খুব কম language দেয়"},
+      {"en": "It is considered impolite", "bn": "এটা impolite বলে বিবেচিত হয়"},
+      {"en": "It automatically ends the test", "bn": "এটা automatically test শেষ করে দেয়"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A one-word answer doesn't provide enough material across fluency, vocabulary, and grammar for a fair score.",
+      "bn": "একটা one-word answer fluency, vocabulary, এবং grammar জুড়ে একটা fair score-এর জন্য যথেষ্ট material দেয় না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Is it a good idea to write a full script during Part 2's 1-minute preparation time?",
+      "bn": "Part 2-এর ১ মিনিটের preparation time-এ একটা full script লেখা কি ভালো idea?"
+    },
+    "options": [
+      {"en": "Yes, a full script guarantees accuracy", "bn": "হ্যাঁ, একটা full script accuracy guarantee করে"},
+      {"en": "No — keywords only; reading a script aloud sounds unnatural", "bn": "না — শুধু keyword; একটা script জোরে পড়া unnatural শোনায়"},
+      {"en": "Yes, but only for Part 3", "bn": "হ্যাঁ, কিন্তু শুধু Part 3-এর জন্য"},
+      {"en": "There's no time to write anything at all", "bn": "কিছু লেখার জন্য একদমই সময় নেই"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Writing full sentences risks sounding read-aloud when spoken, which hurts Fluency — short keywords work better as memory triggers.",
+      "bn": "Full sentence লিখলে বলার সময় read-aloud শোনার ঝুঁকি থাকে, যা Fluency-কে ক্ষতি করে — ছোট keyword memory trigger হিসেবে ভালো কাজ করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which theme, from this chapter's grouping, covers mistakes like using only short, simple sentences and repeating the same vocabulary?",
+      "bn": "এই chapter-এর grouping থেকে, কোন theme শুধু short, simple sentence এবং একই vocabulary repeat করার মতো mistake cover করে?"
+    },
+    "options": [
+      {"en": "Under-answering", "bn": "Under-answering"},
+      {"en": "Over-scripting", "bn": "Over-scripting"},
+      {"en": "Narrow range", "bn": "Narrow range"},
+      {"en": "Losing clarity", "bn": "Losing clarity"}
+    ],
+    "answer": 2,
+    "why": {
+      "en": "Narrow range groups the Lexical Resource and Grammatical Range mistakes from Chapters 7 and 8.",
+      "bn": "Narrow range Chapter 7 এবং 8-এর Lexical Resource এবং Grammatical Range mistake-গুলো group করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Why can repeating the examiner's question word-for-word at the start of your answer be a problem?",
+      "bn": "তোমার answer-এর শুরুতে examiner-এর question word-for-word repeat করা কেন একটা সমস্যা হতে পারে?"
+    },
+    "options": [
+      {"en": "It is grammatically wrong", "bn": "এটা গ্রামাটিকালি ভুল"},
+      {"en": "It can read as a stalling tactic and doesn't show real paraphrasing if overused", "bn": "এটা একটা stalling tactic হিসেবে দেখা যেতে পারে এবং অতিরিক্ত ব্যবহার করলে real paraphrasing দেখায় না"},
+      {"en": "It is only allowed in Part 1", "bn": "এটা শুধু Part 1-এ allowed"},
+      {"en": "It always lowers your pronunciation score", "bn": "এটা সবসময় তোমার pronunciation score কমায়"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A brief natural lead-in is fine, but verbatim repetition every time can look like a stalling tactic rather than genuine paraphrasing.",
+      "bn": "একটা brief natural lead-in ঠিক আছে, কিন্তু প্রতিবার verbatim repetition genuine paraphrasing না হয়ে একটা stalling tactic-এর মতো দেখাতে পারে।"
+    }
+  },
+  {
+    "q": {
+      "en": "According to this chapter, does talking for longer automatically improve your score if the content drifts off-topic?",
+      "bn": "এই chapter অনুযায়ী, content off-topic-এ চলে গেলেও বেশি সময় কথা বলা কি automatically score বাড়ায়?"
+    },
+    "options": [
+      {"en": "Yes, length is always rewarded", "bn": "হ্যাঁ, length সবসময় reward করা হয়"},
+      {"en": "No — drifting off-topic loses Coherence marks even if fluent", "bn": "না — off-topic-এ drift করলে fluent হলেও Coherence-এর মার্ক কমে"},
+      {"en": "Yes, but only in Part 2", "bn": "হ্যাঁ, কিন্তু শুধু Part 2-তে"},
+      {"en": "Yes, but only if spoken quickly", "bn": "হ্যাঁ, কিন্তু শুধু তাড়াতাড়ি বললে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "An answer that drifts away from the actual question loses Coherence marks, regardless of how fluent or grammatically solid it sounds.",
+      "bn": "যে answer actual question থেকে drift করে তা Coherence-এর মার্ক হারায়, যতই fluent বা grammatically solid শোনাক।"
+    }
+  }
+]

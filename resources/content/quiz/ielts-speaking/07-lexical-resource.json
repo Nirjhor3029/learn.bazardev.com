@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "What does Lexical Resource mainly reward?",
+      "bn": "Lexical Resource মূলত কী reward করে?"
+    },
+    "options": [
+      {"en": "Using the rarest words possible", "bn": "যতটা সম্ভব rare word ব্যবহার করা"},
+      {"en": "Flexibility, range, and precision in vocabulary", "bn": "Vocabulary-তে flexibility, range, এবং precision"},
+      {"en": "Speaking as loudly as possible", "bn": "যতটা সম্ভব জোরে কথা বলা"},
+      {"en": "Using the same five adjectives repeatedly", "bn": "একই পাঁচটা adjective বারবার ব্যবহার করা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Examiners reward varied, precise, natural vocabulary and smooth paraphrasing, not rare words for their own sake.",
+      "bn": "Examiner-রা varied, precise, natural vocabulary এবং smooth paraphrasing reward করে, rare word নিজের জন্য না।"
+    }
+  },
+  {
+    "q": {
+      "en": "What should you do if you forget a specific word mid-answer?",
+      "bn": "Mid-answer-এ একটা specific word ভুলে গেলে কী করা উচিত?"
+    },
+    "options": [
+      {"en": "Stop speaking and stay silent until you remember", "bn": "কথা বলা থামিয়ে মনে না পড়া পর্যন্ত silent থাকা"},
+      {"en": "Paraphrase — describe the idea in other words", "bn": "Paraphrase করা — অন্য word-এ idea-টা describe করা"},
+      {"en": "Switch the whole answer to Bangla", "bn": "পুরো answer বাংলায় switch করা"},
+      {"en": "Ask the examiner to tell you the word", "bn": "Examiner-কে word বলতে বলা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A fluent paraphrase scores better than a long silent pause, since it shows you can still communicate the idea.",
+      "bn": "একটা fluent paraphrase একটা long silent pause থেকে ভালো score করে, কারণ এটা দেখায় তুমি এখনো idea-টা communicate করতে পারছো।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which collocation is correct, according to this chapter?",
+      "bn": "এই chapter অনুযায়ী, কোন collocation-টা সঠিক?"
+    },
+    "options": [
+      {"en": "\"do a decision\"", "bn": "\"do a decision\""},
+      {"en": "\"make a decision\"", "bn": "\"make a decision\""},
+      {"en": "\"give a decision\"", "bn": "\"give a decision\""},
+      {"en": "\"take a decision quickly only\"", "bn": "\"take a decision quickly only\""}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Make a decision\" is the natural collocation in English; \"do a decision\" is not how native speakers pair these words.",
+      "bn": "\"Make a decision\" ইংরেজিতে natural collocation; \"do a decision\" native speaker-রা এভাবে word pair করে না।"
+    }
+  },
+  {
+    "q": {
+      "en": "Is it a good strategy to force in advanced vocabulary you're not fully confident using correctly?",
+      "bn": "তুমি যে advanced vocabulary সঠিকভাবে ব্যবহার করতে fully confident না, তা জোর করে ব্যবহার করা কি একটা ভালো strategy?"
+    },
+    "options": [
+      {"en": "Yes, it always impresses examiners", "bn": "হ্যাঁ, এটা সবসময় examiner-কে impress করে"},
+      {"en": "No — a misused rare word hurts more than a correctly used simple one", "bn": "না — একটা ভুল ব্যবহার করা rare word একটা সঠিকভাবে ব্যবহার করা simple word-এর চেয়ে বেশি ক্ষতি করে"},
+      {"en": "Yes, but only in Part 3", "bn": "হ্যাঁ, কিন্তু শুধু Part 3-এ"},
+      {"en": "Yes, but only in Part 1", "bn": "হ্যাঁ, কিন্তু শুধু Part 1-এ"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "A misused advanced word is a clear error that hurts your score more than a correctly used, simpler alternative.",
+      "bn": "একটা ভুল ব্যবহার করা advanced word একটা clear error, যা একটা সঠিকভাবে ব্যবহার করা, সহজ alternative-এর চেয়ে বেশি score-এর ক্ষতি করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "If a question repeats the word \"important\" and you want to avoid repeating it too, what's a safe fix?",
+      "bn": "যদি একটা question \"important\" word repeat করে এবং তুমিও তা repeat করতে না চাও, একটা safe fix কী?"
+    },
+    "options": [
+      {"en": "Repeat \"important\" exactly as many times as possible", "bn": "\"important\" ঠিক যতটা সম্ভব বেশি repeat করা"},
+      {"en": "Use a near-synonym like \"significant\" or rephrase the sentence structure", "bn": "একটা near-synonym যেমন \"significant\" ব্যবহার করা, বা sentence structure rephrase করা"},
+      {"en": "Avoid answering the question at all", "bn": "Question-টার answer একদমই না দেওয়া"},
+      {"en": "Switch to a completely unrelated topic", "bn": "সম্পূর্ণ unrelated একটা topic-এ switch করা"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Swapping in a near-synonym or rephrasing the structure avoids flat repetition without forcing in unfamiliar vocabulary.",
+      "bn": "একটা near-synonym ব্যবহার করা বা structure rephrase করা flat repetition এড়ায়, unfamiliar vocabulary জোর করে ব্যবহার না করেই।"
+    }
+  }
+]

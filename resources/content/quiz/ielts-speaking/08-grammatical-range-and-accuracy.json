@@ -1,0 +1,87 @@
+[
+  {
+    "q": {
+      "en": "Can an answer made only of short, simple sentences with zero grammar errors reach the top Speaking bands?",
+      "bn": "শুধু short, simple sentence দিয়ে তৈরি, zero grammar error থাকা একটা answer কি top Speaking band-এ পৌঁছাতে পারে?"
+    },
+    "options": [
+      {"en": "Yes, zero errors is the only thing that matters", "bn": "হ্যাঁ, zero error-ই একমাত্র জিনিস যা matter করে"},
+      {"en": "No — the score is capped when sentence-structure range is missing", "bn": "না — sentence-structure range না থাকলে score cap হয়ে যায়"},
+      {"en": "Yes, but only in Part 1", "bn": "হ্যাঁ, কিন্তু শুধু Part 1-এ"},
+      {"en": "Yes, but only for General Training", "bn": "হ্যাঁ, কিন্তু শুধু General Training-এর জন্য"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "The band descriptors explicitly cap scores for candidates who only use simple structures, even flawlessly — both range and accuracy matter.",
+      "bn": "Band descriptor-গুলো explicitly শুধু simple structure ব্যবহার করা candidate-দের score cap করে, flawless হলেও — range এবং accuracy দুটোই matter করে।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which of these is an example of a \"complex\" sentence structure useful in spoken English?",
+      "bn": "নিচের কোনটা spoken English-এ useful একটা \"complex\" sentence structure-এর example?"
+    },
+    "options": [
+      {"en": "\"I like tea.\"", "bn": "\"I like tea.\""},
+      {"en": "\"If I had more free time, I'd probably learn another language.\"", "bn": "\"If I had more free time, I'd probably learn another language.\""},
+      {"en": "\"Tea. Good.\"", "bn": "\"Tea. Good.\""},
+      {"en": "\"Yes, I do.\"", "bn": "\"Yes, I do.\""}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "This is a conditional structure, one of several natural ways to show grammatical range beyond simple subject-verb-object sentences.",
+      "bn": "এটা একটা conditional structure, simple subject-verb-object sentence-এর বাইরে grammatical range দেখানোর একটা natural way।"
+    }
+  },
+  {
+    "q": {
+      "en": "Do examiners expect completely error-free spontaneous speech?",
+      "bn": "Examiner-রা কি সম্পূর্ণভাবে error-free spontaneous speech আশা করে?"
+    },
+    "options": [
+      {"en": "Yes, any slip loses marks immediately", "bn": "হ্যাঁ, কোনো slip-ই সাথে সাথে মার্ক কমায়"},
+      {"en": "No — occasional slips are normal; frequency and whether it blocks communication matter more", "bn": "না — কখনো কখনো slip হওয়া normal; frequency এবং এটা communication block করে কিনা তা বেশি matter করে"},
+      {"en": "Yes, but only for band 9 candidates", "bn": "হ্যাঁ, কিন্তু শুধু band ৯ candidate-দের জন্য"},
+      {"en": "No, grammar is never scored in Speaking", "bn": "না, Speaking-এ grammar কখনো score করা হয় না"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Even native speakers make small slips in spontaneous speech — what's scored is how often errors occur and whether they confuse the listener.",
+      "bn": "Native speaker-রাও spontaneous speech-এ ছোট slip করে — কী score করা হয় তা হলো error কত ঘন ঘন হয় এবং তা listener-কে confuse করে কিনা।"
+    }
+  },
+  {
+    "q": {
+      "en": "Is self-correcting a grammar slip mid-sentence seen positively or negatively?",
+      "bn": "মাঝ-sentence-এ একটা grammar slip self-correct করা কি positively নাকি negatively দেখা হয়?"
+    },
+    "options": [
+      {"en": "Negatively — it always lowers your score", "bn": "Negatively — এটা সবসময় তোমার score কমায়"},
+      {"en": "Positively — it shows awareness of your own language", "bn": "Positively — এটা তোমার নিজের language-এর প্রতি awareness দেখায়"},
+      {"en": "It is ignored completely", "bn": "এটা সম্পূর্ণভাবে ignore করা হয়"},
+      {"en": "Negatively — only in Part 2", "bn": "Negatively — শুধু Part 2-তে"}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "Self-correction is viewed positively, as it demonstrates monitoring of your own accuracy — the same point made for Fluency in Chapter 6.",
+      "bn": "Self-correction positively দেখা হয়, কারণ এটা নিজের accuracy monitor করার ক্ষমতা দেখায় — Chapter 6-এ Fluency-র জন্যও এই point বলা হয়েছিল।"
+    }
+  },
+  {
+    "q": {
+      "en": "Which sentence correctly fixes the subject-verb agreement issue in \"There is many reasons\"?",
+      "bn": "\"There is many reasons\"-এর subject-verb agreement সমস্যা কোন sentence-টা সঠিকভাবে fix করে?"
+    },
+    "options": [
+      {"en": "\"There is many reason.\"", "bn": "\"There is many reason.\""},
+      {"en": "\"There are many reasons.\"", "bn": "\"There are many reasons.\""},
+      {"en": "\"There was many reasons.\"", "bn": "\"There was many reasons.\""},
+      {"en": "\"There being many reasons.\"", "bn": "\"There being many reasons.\""}
+    ],
+    "answer": 1,
+    "why": {
+      "en": "\"Many reasons\" is plural, so it needs the plural verb \"are,\" not the singular \"is.\"",
+      "bn": "\"Many reasons\" plural, তাই এর জন্য plural verb \"are\" লাগবে, singular \"is\" না।"
+    }
+  }
+]
