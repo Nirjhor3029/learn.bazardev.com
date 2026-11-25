@@ -6,6 +6,26 @@ return [
 
     'github_repo' => 'https://github.com/Nirjhor3029/devops-for-developers',
 
+    // Homepage section order + copy. A future course category only needs a new
+    // entry here — resources/views/home.blade.php loops over this, no template changes.
+    'categories' => [
+        'core' => [
+            'label' => 'DevOps — Core path',
+            'tagline' => 'Take the courses in order: each one assumes the ones before it.',
+            'prefix' => '',
+        ],
+        'advanced' => [
+            'label' => 'Advanced',
+            'tagline' => 'Optional, after the core path — deeper topics for running things in production.',
+            'prefix' => 'A',
+        ],
+        'ielts' => [
+            'label' => 'IELTS Prep',
+            'tagline' => 'A separate track — Grammar, Vocabulary, Reading, Writing, and Listening, each its own course.',
+            'prefix' => 'I',
+        ],
+    ],
+
     'courses' => [
         'linux-shell' => [
             'title' => 'Linux & Shell Basics',

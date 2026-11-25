@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ $title ?? 'DevOps Shikhbo' }} — learn.bazardev.com</title>
-    <meta name="description" content="Learn DevOps from zero — in English and Bangla, with real projects and free resources.">
+    <title>{{ $title ?? 'Shikhbo' }} — learn.bazardev.com</title>
+    <meta name="description" content="Practical courses in English and Bangla — DevOps, IELTS prep, and more, with real projects and free resources.">
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700,800" rel="stylesheet" />
     @vite(['resources/css/app.css'])
@@ -16,13 +16,10 @@
         <div class="mx-auto flex max-w-5xl items-center justify-between gap-2 px-3 py-3 sm:gap-4 sm:px-4">
             <a href="{{ route('home') }}" class="flex shrink-0 items-center gap-2 whitespace-nowrap text-base font-bold tracking-tight sm:text-lg">
                 <span class="inline-flex h-7 w-7 items-center justify-center rounded-md bg-gray-900 text-sm text-white">⌘</span>
-                DevOps Shikhbo
+                Shikhbo
             </a>
 
             <nav class="flex items-center gap-1 sm:gap-2" aria-label="Account">
-                <a href="https://github.com/Nirjhor3029/devops-for-developers" target="_blank" rel="noopener"
-                   class="hidden rounded-lg px-3 py-2 text-sm text-gray-500 transition-colors hover:text-gray-900 sm:block">GitHub</a>
-
                 @guest
                     <a href="{{ route('login') }}"
                        class="whitespace-nowrap rounded-lg px-2 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 sm:px-3">Log in</a>

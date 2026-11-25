@@ -56,4 +56,16 @@ class LearningPathTest extends TestCase
 
         $this->get('/docker')->assertOk()->assertSee('Take these first')->assertSee('Linux &amp; Shell Basics', false);
     }
+
+    public function test_the_home_page_is_subject_neutral_not_devops_only_branded(): void
+    {
+        $response = $this->get('/');
+
+        $response->assertOk()
+            ->assertSee('Learn new skills')
+            ->assertSee('DevOps — Core path', false)
+            ->assertSee('IELTS Prep')
+            ->assertDontSee('DevOps Shikhbo')
+            ->assertDontSee('Learn DevOps');
+    }
 }

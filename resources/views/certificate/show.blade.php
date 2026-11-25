@@ -29,7 +29,7 @@
 
         <article class="rounded-2xl border border-gray-100 bg-white p-3 shadow-sm print:rounded-none print:border-0 print:p-0 print:shadow-none" aria-label="Certificate of completion">
             <div class="rounded-xl border-4 border-double border-blue-200 px-6 py-10 text-center sm:px-14 sm:py-14">
-                <p class="text-xs font-semibold tracking-widest text-blue-600 uppercase sm:text-sm">DevOps Shikhbo · learn.bazardev.com</p>
+                <p class="text-xs font-semibold tracking-widest text-blue-600 uppercase sm:text-sm">Shikhbo · learn.bazardev.com</p>
 
                 <h1 class="mt-5 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">Certificate of Completion</h1>
 
