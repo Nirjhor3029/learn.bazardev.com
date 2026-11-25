@@ -19,6 +19,8 @@ use App\Http\Controllers\LearningController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PaymentWebhookController;
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\StudyGroupController;
+use App\Http\Controllers\StudyGroupPostController;
 use App\Http\Controllers\TerminalLaunchController;
 use Illuminate\Support\Facades\Route;
 
@@ -85,6 +87,24 @@ Route::middleware('auth')->group(function () {
     Route::post('/learn/{course}/{chapter}/contributions', [ContributionController::class, 'store'])
         ->middleware('throttle:20,1')->name('contributions.store');
     Route::delete('/contributions/{contribution}', [ContributionController::class, 'destroy'])->name('contributions.destroy');
+
+    // Study groups: a small, invite-code-only group of readers on one course.
+    Route::prefix('study-groups')->name('study-groups.')->group(function () {
+        Route::get('/', [StudyGroupController::class, 'index'])->name('index');
+        Route::post('/', [StudyGroupController::class, 'store'])->middleware('throttle:20,1')->name('store');
+        Route::post('/join', [StudyGroupController::class, 'join'])->middleware('throttle:20,1')->name('join');
+
+        Route::get('/{studyGroup}', [StudyGroupController::class, 'show'])->name('show');
+        Route::patch('/{studyGroup}', [StudyGroupController::class, 'rename'])->name('rename');
+        Route::delete('/{studyGroup}', [StudyGroupController::class, 'destroy'])->name('destroy');
+        Route::post('/{studyGroup}/leave', [StudyGroupController::class, 'leave'])->name('leave');
+        Route::post('/{studyGroup}/regenerate-code', [StudyGroupController::class, 'regenerateCode'])->name('regenerate-code');
+        Route::delete('/{studyGroup}/members/{member}', [StudyGroupController::class, 'removeMember'])->name('members.remove');
+
+        Route::post('/{studyGroup}/posts', [StudyGroupPostController::class, 'store'])
+            ->middleware('throttle:30,1')->name('posts.store');
+        Route::delete('/{studyGroup}/posts/{post}', [StudyGroupPostController::class, 'destroy'])->name('posts.destroy');
+    });
 
     Route::get('/email/verify/{id}/{hash}', [EmailVerificationController::class, 'verify'])
         ->middleware(['signed', 'throttle:6,1'])->name('verification.verify');

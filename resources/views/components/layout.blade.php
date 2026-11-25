@@ -46,6 +46,7 @@
                             </div>
                             <div class="py-1.5">
                                 <a href="{{ route('learning.dashboard') }}" class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">My Learning</a>
+                                <a href="{{ route('study-groups.index') }}" class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">Study groups</a>
                                 <a href="{{ route('terminal.launch') }}" target="_blank" rel="noopener" class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 sm:hidden">Terminal</a>
                                 <a href="{{ route('account.edit') }}" class="block rounded-lg px-3 py-2 text-sm text-gray-700 hover:bg-gray-50">Account settings</a>
                                 @if ($me->is_admin)
