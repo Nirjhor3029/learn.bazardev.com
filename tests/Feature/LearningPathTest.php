@@ -52,7 +52,7 @@ class LearningPathTest extends TestCase
 
     public function test_the_home_page_numbers_the_courses_and_course_pages_list_prerequisites(): void
     {
-        $this->get('/')->assertOk()->assertSee('Take the courses in order');
+        $this->get('/devops')->assertOk()->assertSee('Take the courses in order');
 
         $this->get('/docker')->assertOk()->assertSee('Take these first')->assertSee('Linux &amp; Shell Basics', false);
     }
@@ -63,9 +63,12 @@ class LearningPathTest extends TestCase
 
         $response->assertOk()
             ->assertSee('Learn new skills')
-            ->assertSee('DevOps — Core path', false)
+            ->assertSee('DevOps')
             ->assertSee('IELTS Prep')
             ->assertDontSee('DevOps Shikhbo')
-            ->assertDontSee('Learn DevOps');
+            ->assertDontSee('Learn DevOps')
+            // The hub only lists subjects, not individual courses - that's the whole point.
+            ->assertDontSee('Linux &amp; Shell Basics', false)
+            ->assertDontSee('IELTS Grammar');
     }
 }

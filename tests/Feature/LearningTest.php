@@ -79,7 +79,7 @@ class LearningTest extends TestCase
             ->assertJsonPath('progress.done', 2);
 
         $this->actingAs($user)->get('/docker')->assertOk()->assertSee('2 of 8 chapters done');
-        $this->actingAs($user)->get('/')->assertOk()->assertSee('2/8 done');
+        $this->actingAs($user)->get('/devops')->assertOk()->assertSee('2/8 done');
 
         $this->actingAs($user)->postJson('/learn'.self::CH1.'/done', ['value' => false])
             ->assertJson(['on' => false, 'progress' => ['done' => 1]]);

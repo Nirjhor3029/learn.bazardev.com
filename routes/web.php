@@ -24,6 +24,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [CourseController::class, 'home'])->name('home');
 
+// Subject landing pages (DevOps, IELTS Prep, …) — the homepage only shows these as
+// cards; the actual course grid for a subject lives on its own page.
+Route::get('/{group}', [CourseController::class, 'group'])
+    ->whereIn('group', array_keys(config('course.groups')))
+    ->name('course.group');
+
 // Server-to-server only (shared-secret, not a browser session) — the terminal
 // orchestrator calls this to redeem a launch ticket. See TerminalLaunchController.
 Route::post('/internal/terminal/verify-ticket', [TerminalLaunchController::class, 'verify'])

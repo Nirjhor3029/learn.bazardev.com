@@ -17,7 +17,7 @@ class IeltsReadingRoadmapTest extends TestCase
 
     public function test_the_home_page_lists_the_ielts_reading_course(): void
     {
-        $this->get('/')->assertOk()->assertSee('IELTS Reading');
+        $this->get('/ielts')->assertOk()->assertSee('IELTS Reading');
     }
 
     public function test_the_course_page_lists_every_chapter_and_every_chapter_is_clickable(): void

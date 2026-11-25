@@ -26,6 +26,31 @@ class CourseController extends Controller
     public function home(Request $request): View
     {
         $user = $request->user();
+        $courses = $this->content->courses();
+
+        $groups = collect(config('course.groups'))->map(function ($group) use ($courses) {
+            $group['count'] = count(array_filter(
+                $courses,
+                fn ($course) => in_array($course['section'] ?? 'core', $group['sections'], true)
+            ));
+
+            return $group;
+        });
+
+        return view('home', [
+            'groups' => $groups,
+            'resume' => $user ? $this->learning->resume($user) : null,
+        ]);
+    }
+
+    public function group(Request $request, string $group): View
+    {
+        $user = $request->user();
+        $meta = config("course.groups.$group");
+        $courses = array_filter(
+            $this->content->courses(),
+            fn ($course) => in_array($course['section'] ?? 'core', $meta['sections'], true)
+        );
 
         // One query for every active entitlement, so "is this paid course
         // already mine" doesn't cost a query per card.
@@ -33,10 +58,11 @@ class CourseController extends Controller
         $ownedCourses = $active->where('product_type', Entitlement::COURSE)->pluck('product_key')->all();
         $hasSubscription = $active->contains('product_type', Entitlement::SUBSCRIPTION_ALL_ACCESS);
 
-        return view('home', [
-            'courses' => $this->content->courses(),
+        return view('courses.group', [
+            'group' => $group,
+            'meta' => $meta,
+            'courses' => $courses,
             'progress' => $user ? $this->learning->progress($user) : [],
-            'resume' => $user ? $this->learning->resume($user) : null,
             // One query for every course's pricing row, so the "Paid" badge on
             // each card doesn't cost an extra query per course (no row = free,
             // same rule as CoursePricing::isFree()).

@@ -226,7 +226,7 @@ class EntitlementTest extends TestCase
     {
         $this->markPaid();
 
-        $this->get('/')->assertOk()->assertSee('500 BDT');
+        $this->get('/devops')->assertOk()->assertSee('500 BDT');
     }
 
     public function test_the_home_page_hides_the_lock_once_the_user_owns_the_course(): void
@@ -240,7 +240,7 @@ class EntitlementTest extends TestCase
             'starts_at' => now(),
         ]);
 
-        $this->actingAs($user)->get('/')->assertOk()->assertDontSee('500 BDT');
+        $this->actingAs($user)->get('/devops')->assertOk()->assertDontSee('500 BDT');
     }
 
     public function test_the_course_page_locks_every_chapter_but_the_first_for_a_non_owner(): void

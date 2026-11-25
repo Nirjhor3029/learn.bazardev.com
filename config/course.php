@@ -6,11 +6,27 @@ return [
 
     'github_repo' => 'https://github.com/Nirjhor3029/devops-for-developers',
 
-    // Homepage section order + copy. A future course category only needs a new
-    // entry here — resources/views/home.blade.php loops over this, no template changes.
+    // Top-level subjects shown as cards on the homepage. A future subject is one new
+    // entry here (plus a 'section' on its courses) — no homepage template changes.
+    'groups' => [
+        'devops' => [
+            'label' => 'DevOps',
+            'tagline' => 'Linux, servers, Docker, Kubernetes, CI/CD, and more — zero to running real infrastructure.',
+            'sections' => ['core', 'advanced'],
+        ],
+        'ielts' => [
+            'label' => 'IELTS Prep',
+            'tagline' => 'Grammar, Vocabulary, Reading, Writing, and Listening — everything you need for the test.',
+            'sections' => ['ielts'],
+        ],
+    ],
+
+    // Section order + copy within a group's page. A future course category only needs a
+    // new entry here (and in 'groups' above) — resources/views/courses/group.blade.php
+    // loops over this, no template changes.
     'categories' => [
         'core' => [
-            'label' => 'DevOps — Core path',
+            'label' => 'Core path',
             'tagline' => 'Take the courses in order: each one assumes the ones before it.',
             'prefix' => '',
         ],

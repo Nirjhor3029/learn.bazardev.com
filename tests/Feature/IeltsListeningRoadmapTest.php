@@ -17,7 +17,7 @@ class IeltsListeningRoadmapTest extends TestCase
 
     public function test_the_home_page_lists_the_ielts_listening_course(): void
     {
-        $this->get('/')->assertOk()->assertSee('IELTS Listening');
+        $this->get('/ielts')->assertOk()->assertSee('IELTS Listening');
     }
 
     public function test_the_course_page_lists_every_chapter_and_every_chapter_is_clickable(): void

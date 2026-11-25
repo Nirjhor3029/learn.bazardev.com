@@ -17,7 +17,7 @@ class IeltsWritingRoadmapTest extends TestCase
 
     public function test_the_home_page_lists_the_ielts_writing_course(): void
     {
-        $this->get('/')->assertOk()->assertSee('IELTS Writing');
+        $this->get('/ielts')->assertOk()->assertSee('IELTS Writing');
     }
 
     public function test_the_course_page_lists_every_chapter_and_every_chapter_is_clickable(): void
