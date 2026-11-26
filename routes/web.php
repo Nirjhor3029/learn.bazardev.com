@@ -16,6 +16,7 @@ use App\Http\Controllers\ContributionController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ExamController;
 use App\Http\Controllers\LearningController;
+use App\Http\Controllers\MockExamController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PaymentWebhookController;
 use App\Http\Controllers\QuizController;
@@ -117,6 +118,25 @@ Route::middleware('auth')->group(function () {
 
         Route::post('/{studyGroup}/resources', [StudyGroupResourceController::class, 'store'])->name('resources.store');
         Route::delete('/{studyGroup}/resources/{resource}', [StudyGroupResourceController::class, 'destroy'])->name('resources.destroy');
+    });
+
+    // Mock tests: Listening is self-reported (real test taken on British Council's site —
+    // we never host IELTS audio ourselves); Reading is auto-graded; Writing/Speaking are
+    // saved for a side-by-side comparison with Band 6/8 samples, never auto-scored.
+    Route::prefix('mock-tests')->name('mock-tests.')->group(function () {
+        Route::get('/', [MockExamController::class, 'index'])->name('index');
+        Route::post('/{set}/start', [MockExamController::class, 'start'])
+            ->whereIn('set', array_keys(config('mock_exam.sets')))->middleware('throttle:20,1')->name('start');
+
+        Route::get('/{set}/{attempt}/listening', [MockExamController::class, 'listening'])->name('listening');
+        Route::post('/{set}/{attempt}/listening', [MockExamController::class, 'submitListening'])->name('listening.submit');
+        Route::get('/{set}/{attempt}/reading', [MockExamController::class, 'reading'])->name('reading');
+        Route::post('/{set}/{attempt}/reading', [MockExamController::class, 'submitReading'])->name('reading.submit');
+        Route::get('/{set}/{attempt}/writing', [MockExamController::class, 'writing'])->name('writing');
+        Route::post('/{set}/{attempt}/writing', [MockExamController::class, 'submitWriting'])->name('writing.submit');
+        Route::get('/{set}/{attempt}/speaking', [MockExamController::class, 'speaking'])->name('speaking');
+        Route::post('/{set}/{attempt}/speaking', [MockExamController::class, 'submitSpeaking'])->name('speaking.submit');
+        Route::get('/{set}/{attempt}/results', [MockExamController::class, 'results'])->name('results');
     });
 
     Route::get('/email/verify/{id}/{hash}', [EmailVerificationController::class, 'verify'])

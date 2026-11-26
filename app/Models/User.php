@@ -75,6 +75,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(PaymentTransaction::class);
     }
 
+    public function mockExamAttempts(): HasMany
+    {
+        return $this->hasMany(MockExamAttempt::class);
+    }
+
     /** One or two letters for the avatar circle, e.g. "Sazzad Hossain" -> "SH". */
     public function initials(): string
     {
