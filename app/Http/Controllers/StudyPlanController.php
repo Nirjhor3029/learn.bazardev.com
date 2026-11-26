@@ -20,18 +20,33 @@ class StudyPlanController extends Controller
         }
 
         $currentDay = $this->studyPlan->currentDay($user);
-        $today = $this->studyPlan->describeDay($this->studyPlan->day($currentDay), $user);
+        $selectedDay = $this->clampDay((int) $request->query('day', $currentDay));
 
         return view('study-plan.show', [
             'currentDay' => $currentDay,
             'totalDays' => StudyPlan::TOTAL_DAYS,
-            'today' => $today,
-            'todayDone' => $this->studyPlan->isDayDone($user, $today),
-            'todayMinutes' => $this->studyPlan->totalMinutes($today),
+            'selectedDay' => $selectedDay,
+            'selected' => $this->studyPlan->detailFor($user, $selectedDay, $currentDay),
             'catchUp' => $this->studyPlan->incompleteEarlierDays($user, $currentDay),
             'progress' => $this->studyPlan->chaptersDoneSoFar($user),
-            'overview' => $this->studyPlan->overview($user),
+            'streak' => $this->studyPlan->currentStreak($user, $currentDay),
+            'overview' => $this->studyPlan->overview($user, $currentDay),
             'finished' => $currentDay === StudyPlan::TOTAL_DAYS,
+        ]);
+    }
+
+    /** A detail-panel fragment for one day, fetched by the grid's click handler (no full reload). */
+    public function dayDetail(Request $request, int $day): View
+    {
+        $user = $request->user();
+        abort_unless($this->studyPlan->hasStarted($user), 404);
+
+        $day = $this->clampDay($day);
+        $currentDay = $this->studyPlan->currentDay($user);
+
+        return view('study-plan.partials.day-detail', [
+            'selectedDay' => $day,
+            'selected' => $this->studyPlan->detailFor($user, $day, $currentDay),
         ]);
     }
 
@@ -40,5 +55,10 @@ class StudyPlanController extends Controller
         $this->studyPlan->start($request->user());
 
         return redirect()->route('study-plan.show');
+    }
+
+    private function clampDay(int $day): int
+    {
+        return max(1, min(StudyPlan::TOTAL_DAYS, $day));
     }
 }

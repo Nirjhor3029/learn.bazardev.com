@@ -125,4 +125,62 @@ class StudyPlanTest extends TestCase
             ->assertSee('Go to Mock Tests')
             ->assertSee('href="'.route('mock-tests.index').'"', false);
     }
+
+    public function test_selecting_a_different_day_via_the_query_string_shows_that_days_detail(): void
+    {
+        $user = User::factory()->create(['study_plan_started_at' => now()->subDays(4)]); // day 5
+
+        $response = $this->actingAs($user)->get('/study-plan?day=2');
+
+        $response->assertOk()
+            ->assertSee('Selected: Day 02')
+            ->assertSee('Articles: a, an, the');
+    }
+
+    public function test_an_out_of_range_day_in_the_query_string_is_clamped(): void
+    {
+        $user = User::factory()->create();
+        $this->actingAs($user)->post('/study-plan/start');
+
+        $this->actingAs($user)->get('/study-plan?day=999')->assertOk()->assertSee('Selected: Day 90');
+        $this->actingAs($user)->get('/study-plan?day=-5')->assertOk()->assertSee('Selected: Day 01');
+    }
+
+    public function test_the_day_detail_fragment_endpoint_returns_that_days_chapters(): void
+    {
+        $user = User::factory()->create();
+        $this->actingAs($user)->post('/study-plan/start');
+
+        $response = $this->actingAs($user)->get('/study-plan/day/13');
+
+        $response->assertOk()
+            ->assertSee('Selected: Day 13')
+            ->assertSee('Relative clauses')
+            ->assertDontSee('<!DOCTYPE html>', false);
+    }
+
+    public function test_a_past_unfinished_content_day_is_marked_missed_in_the_overview(): void
+    {
+        $user = User::factory()->create(['study_plan_started_at' => now()->subDays(4)]); // day 5, day 1-4 untouched
+
+        $overview = app(\App\Services\StudyPlan::class)->overview($user, 5);
+
+        $this->assertSame('missed', $overview[0]['status']);
+        $this->assertSame('today', $overview[4]['status']);
+        $this->assertSame('upcoming', $overview[5]['status']);
+    }
+
+    public function test_the_streak_counts_consecutive_done_days_but_does_not_break_for_an_unfinished_today(): void
+    {
+        $user = User::factory()->create(['study_plan_started_at' => now()->subDays(1)]); // day 2
+        $plan = app(\App\Services\StudyPlan::class);
+
+        $this->assertSame(0, $plan->currentStreak($user, 2));
+
+        $this->actingAs($user)->post('/learn/ielts-grammar/01-parts-of-speech-and-sentence-basics/done', ['value' => 1]);
+        $this->actingAs($user)->post('/learn/ielts-vocabulary/01-how-to-learn-vocabulary-that-sticks/done', ['value' => 1]);
+
+        // Day 1 (yesterday) is now fully done; today (day 2) isn't yet, but that shouldn't erase it.
+        $this->assertSame(1, $plan->currentStreak($user, 2));
+    }
 }

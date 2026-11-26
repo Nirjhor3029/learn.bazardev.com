@@ -89,6 +89,22 @@ class StudyPlan
         return true;
     }
 
+    /** Everything a detail panel needs for one specific day, by day number. */
+    public function detailFor(User $user, int $day, int $currentDay): array
+    {
+        $config = $this->day($day) ?? ['chapters' => []];
+        $described = $this->describeDay($config, $user);
+        $hasChapters = ! isset($config['mock_test']) && ($config['chapters'] ?? []) !== [];
+        $done = $hasChapters && $this->isDayDone($user, $config);
+
+        return [
+            'day' => $day,
+            ...$described,
+            'minutes' => $this->totalMinutes($described),
+            'status' => $this->status($day, $currentDay, $hasChapters, $done),
+        ];
+    }
+
     public function totalMinutes(array $day): int
     {
         return array_sum(array_column($day['chapters'] ?? [], 'minutes'));
@@ -114,30 +130,84 @@ class StudyPlan
         return $incomplete;
     }
 
-    /** @return list<array{day:int, label:string, is_mock:bool, done:bool}> a syllabus-level row per day */
-    public function overview(User $user): array
+    /** @return list<array{day:int, label:string, is_mock:bool, done:bool, status:string}> a syllabus-level row per day */
+    public function overview(User $user, int $currentDay): array
     {
         $rows = [];
 
         foreach (config('study_plan.days') as $number => $day) {
-            if (isset($day['mock_test'])) {
-                $rows[] = ['day' => $number, 'label' => 'Mock Test', 'is_mock' => true, 'done' => false];
+            $isMock = isset($day['mock_test']);
+            $hasChapters = ! $isMock && ($day['chapters'] ?? []) !== [];
+            $done = $hasChapters && $this->isDayDone($user, $day);
 
-                continue;
+            if ($isMock) {
+                $label = 'Mock Test';
+            } else {
+                $courses = collect($day['chapters'] ?? [])->pluck('course')->unique()
+                    ->map(fn ($slug) => config("course.courses.{$slug}.title", $slug))->implode(' + ');
+                $label = $courses !== '' ? $courses : 'Review day';
             }
-
-            $courses = collect($day['chapters'] ?? [])->pluck('course')->unique()
-                ->map(fn ($slug) => config("course.courses.{$slug}.title", $slug))->implode(' + ');
 
             $rows[] = [
                 'day' => $number,
-                'label' => $courses !== '' ? $courses : 'Review day',
-                'is_mock' => false,
-                'done' => $day['chapters'] !== [] && $this->isDayDone($user, $day),
+                'label' => $label,
+                'is_mock' => $isMock,
+                'done' => $done,
+                'status' => $this->status($number, $currentDay, $hasChapters, $done),
             ];
         }
 
         return $rows;
+    }
+
+    /** 'completed' | 'today' | 'missed' | 'upcoming' — missed only applies to content days that slipped by. */
+    private function status(int $day, int $currentDay, bool $hasChapters, bool $done): string
+    {
+        if ($day === $currentDay) {
+            return 'today';
+        }
+
+        if ($day > $currentDay) {
+            return 'upcoming';
+        }
+
+        if ($hasChapters && ! $done) {
+            return 'missed';
+        }
+
+        return $done ? 'completed' : 'upcoming';
+    }
+
+    /**
+     * Consecutive content days completed, scanning back from today — review/Mock days
+     * are skipped (they neither extend nor break the streak), since they have no
+     * chapters of their own to "finish." Today doesn't break an existing streak just
+     * for being unfinished yet (the day isn't over); it only extends the streak once
+     * it's actually done.
+     */
+    public function currentStreak(User $user, int $currentDay): int
+    {
+        $streak = 0;
+        $today = $this->day($currentDay);
+        $start = ($today !== null && ($today['chapters'] ?? []) !== [] && ! $this->isDayDone($user, $today))
+            ? $currentDay - 1
+            : $currentDay;
+
+        for ($d = $start; $d >= 1; $d--) {
+            $day = $this->day($d);
+
+            if ($day === null || ($day['chapters'] ?? []) === []) {
+                continue;
+            }
+
+            if ($this->isDayDone($user, $day)) {
+                $streak++;
+            } else {
+                break;
+            }
+        }
+
+        return $streak;
     }
 
     /** @return int how many of the plan's chapters (across all 90 days) are done so far */

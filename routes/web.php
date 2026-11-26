@@ -145,6 +145,7 @@ Route::middleware('auth')->group(function () {
     Route::prefix('study-plan')->name('study-plan.')->group(function () {
         Route::get('/', [StudyPlanController::class, 'show'])->name('show');
         Route::post('/start', [StudyPlanController::class, 'start'])->name('start');
+        Route::get('/day/{day}', [StudyPlanController::class, 'dayDetail'])->whereNumber('day')->name('day-detail');
     });
 
     Route::get('/email/verify/{id}/{hash}', [EmailVerificationController::class, 'verify'])
