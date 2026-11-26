@@ -12,7 +12,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
 
-// is_admin is deliberately NOT fillable — it is only ever set with forceFill().
+// is_admin and study_plan_started_at are deliberately NOT fillable — only ever set with forceFill().
 #[Fillable(['name', 'email', 'password', 'show_email'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable implements MustVerifyEmail
@@ -32,6 +32,7 @@ class User extends Authenticatable implements MustVerifyEmail
             'password' => 'hashed',
             'is_admin' => 'boolean',
             'show_email' => 'boolean',
+            'study_plan_started_at' => 'datetime',
         ];
     }
 

@@ -25,6 +25,7 @@ use App\Http\Controllers\StudyGroupGoalController;
 use App\Http\Controllers\StudyGroupPostController;
 use App\Http\Controllers\StudyGroupPostReactionController;
 use App\Http\Controllers\StudyGroupResourceController;
+use App\Http\Controllers\StudyPlanController;
 use App\Http\Controllers\TerminalLaunchController;
 use Illuminate\Support\Facades\Route;
 
@@ -137,6 +138,13 @@ Route::middleware('auth')->group(function () {
         Route::get('/{set}/{attempt}/speaking', [MockExamController::class, 'speaking'])->name('speaking');
         Route::post('/{set}/{attempt}/speaking', [MockExamController::class, 'submitSpeaking'])->name('speaking.submit');
         Route::get('/{set}/{attempt}/results', [MockExamController::class, 'results'])->name('results');
+    });
+
+    // A guided 90-day schedule across all 6 IELTS courses — see config/study_plan.php
+    // and App\Services\StudyPlan. "Done" reuses the existing learning.done checkboxes.
+    Route::prefix('study-plan')->name('study-plan.')->group(function () {
+        Route::get('/', [StudyPlanController::class, 'show'])->name('show');
+        Route::post('/start', [StudyPlanController::class, 'start'])->name('start');
     });
 
     Route::get('/email/verify/{id}/{hash}', [EmailVerificationController::class, 'verify'])
