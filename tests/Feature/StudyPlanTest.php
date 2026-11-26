@@ -21,7 +21,7 @@ class StudyPlanTest extends TestCase
 
         $this->actingAs($user)->get('/study-plan')
             ->assertOk()
-            ->assertSee('Start my 3-month plan');
+            ->assertSee('Start day 1');
     }
 
     public function test_starting_the_plan_sets_the_start_timestamp_once(): void
@@ -71,7 +71,7 @@ class StudyPlanTest extends TestCase
         $this->actingAs($user)->get('/study-plan')
             ->assertOk()
             ->assertSee('Day 90 of 90')
-            ->assertSee("reached the end of the 90-day plan");
+            ->assertSee("You've reached day 90", false);
     }
 
     public function test_marking_a_chapter_done_from_the_study_plan_page_uses_the_real_learning_done_route(): void
@@ -98,7 +98,7 @@ class StudyPlanTest extends TestCase
         $response = $this->actingAs($user)->get('/study-plan');
 
         $response->assertOk()
-            ->assertSee('Catch up')
+            ->assertSee('Still open from earlier')
             ->assertSee('Day 1');
     }
 
@@ -111,7 +111,7 @@ class StudyPlanTest extends TestCase
 
         $response = $this->actingAs($user)->get('/study-plan');
 
-        $response->assertOk()->assertDontSee('Catch up');
+        $response->assertOk()->assertDontSee('Still open from earlier');
     }
 
     public function test_a_mock_test_day_links_to_mock_tests_instead_of_a_chapter_checklist(): void
@@ -122,7 +122,7 @@ class StudyPlanTest extends TestCase
 
         $response->assertOk()
             ->assertSee('Day 58 of 90')
-            ->assertSee('Go to Mock Tests')
+            ->assertSee('Open Mock Tests')
             ->assertSee('href="'.route('mock-tests.index').'"', false);
     }
 
@@ -133,7 +133,7 @@ class StudyPlanTest extends TestCase
         $response = $this->actingAs($user)->get('/study-plan?day=2');
 
         $response->assertOk()
-            ->assertSee('Selected: Day 02')
+            ->assertSee('Day 2')
             ->assertSee('Articles: a, an, the');
     }
 
@@ -142,8 +142,8 @@ class StudyPlanTest extends TestCase
         $user = User::factory()->create();
         $this->actingAs($user)->post('/study-plan/start');
 
-        $this->actingAs($user)->get('/study-plan?day=999')->assertOk()->assertSee('Selected: Day 90');
-        $this->actingAs($user)->get('/study-plan?day=-5')->assertOk()->assertSee('Selected: Day 01');
+        $this->actingAs($user)->get('/study-plan?day=999')->assertOk()->assertSee('Day 90');
+        $this->actingAs($user)->get('/study-plan?day=-5')->assertOk()->assertSee('Day 1');
     }
 
     public function test_the_day_detail_fragment_endpoint_returns_that_days_chapters(): void
@@ -154,7 +154,7 @@ class StudyPlanTest extends TestCase
         $response = $this->actingAs($user)->get('/study-plan/day/13');
 
         $response->assertOk()
-            ->assertSee('Selected: Day 13')
+            ->assertSee('Day 13')
             ->assertSee('Relative clauses')
             ->assertDontSee('<!DOCTYPE html>', false);
     }
